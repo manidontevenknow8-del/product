@@ -1,0 +1,136 @@
+.page {
+  width: 100%;
+  min-width: 0;
+  background: var(--color-bg);
+  --edge: var(--space-4);
+  overflow: visible;
+}
+
+@media (min-width: 768px) {
+  .page {
+    --edge: var(--space-6);
+  }
+}
+
+@media (min-width: 1100px) {
+  .page {
+    --edge: var(--space-8);
+  }
+}
+
+.body {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--space-8) var(--edge) var(--space-10);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  overflow: visible;
+}
+
+.gettingStarted {
+  padding: 0 var(--edge);
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mockBanner {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: rgba(196, 168, 130, 0.12);
+  border: 1px solid rgba(196, 168, 130, 0.25);
+  border-radius: var(--radius-md);
+}
+
+@media (min-width: 768px) {
+  .body {
+    gap: var(--space-10);
+    padding-bottom: var(--space-10);
+  }
+}
+
+/* Left scrolls with the page; right panel is sticky with its own scroll */
+.scanLayout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+@media (min-width: 1280px) {
+  .scanLayout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: var(--space-10);
+    align-items: start;
+  }
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+@media (min-width: 1280px) {
+  .leftCol {
+    gap: var(--space-10);
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.uploadBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0;
+}
+
+.docsSection {
+  min-width: 0;
+}
+
+.rightPanel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1280px) {
+  .rightPanel {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-4));
+    align-self: start;
+    min-height: 0;
+    overflow: hidden;
+  }
+}
+
+.error {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  background: rgba(184, 92, 92, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.emptyHint {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.trustNote {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 var(--edge) var(--space-8);
+}

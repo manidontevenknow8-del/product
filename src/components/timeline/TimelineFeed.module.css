@@ -1,0 +1,136 @@
+.feed {
+  position: relative;
+}
+
+.milestones {
+  margin-bottom: var(--space-10);
+}
+
+.milestonesHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.milestonesTitle {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--color-text);
+}
+
+.milestonesCount {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.milestonesScroll {
+  display: flex;
+  gap: var(--space-4);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.milestonesScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    var(--color-accent) 0%,
+    var(--color-border) 35%,
+    var(--color-border-light) 100%
+  );
+  border-radius: 2px;
+}
+
+.monthGroup {
+  margin-bottom: var(--space-10);
+}
+
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+  padding-left: var(--space-10);
+}
+
+.monthLabel {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.monthCount {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+}
+
+.monthEvents {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.eventWrap {
+  position: relative;
+  padding-left: var(--space-10);
+}
+
+.dot {
+  position: absolute;
+  left: 8px;
+  top: 1.35rem;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(196, 168, 130, 0.15);
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .monthHeader,
+  .eventWrap {
+    padding-left: var(--space-8);
+  }
+
+  .timeline::before {
+    left: 11px;
+  }
+
+  .dot {
+    left: 4px;
+    width: 14px;
+    height: 14px;
+  }
+}

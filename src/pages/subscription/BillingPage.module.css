@@ -1,0 +1,185 @@
+.page {
+  width: 100%;
+  min-width: 0;
+  background: var(--color-bg);
+}
+
+.body {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-10);
+}
+
+@media (min-width: 768px) {
+  .body {
+    padding: var(--space-8) var(--space-6) var(--space-12);
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .body {
+    max-width: 72rem;
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+.planCard {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.planInfo {
+  flex: 1;
+}
+
+.planName {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.planMeta {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.planActions {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.banner {
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-6);
+  background: rgba(196, 168, 130, 0.15);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}
+
+.support {
+  margin-bottom: var(--space-8);
+  padding: var(--space-5) var(--space-6);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-md);
+}
+
+.supportTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.supportText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.supportText a {
+  color: var(--color-accent);
+}
+
+.linkButton {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.usage {
+  margin-bottom: var(--space-8);
+}
+
+.usageTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-5);
+}
+
+.usageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.usageItem {
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-md);
+}
+
+.usageLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.usageValue {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+}
+
+.invoices {
+  margin-top: var(--space-8);
+}
+
+.invoicesTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-5);
+}
+
+.invoiceList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.invoice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}
+
+.invoiceEmpty {
+  padding: var(--space-8);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-md);
+}
+
+@media (max-width: 640px) {
+  .usageGrid {
+    grid-template-columns: 1fr;
+  }
+}

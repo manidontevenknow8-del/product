@@ -1,0 +1,42 @@
+.fallback {
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  background: var(--color-bg-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-4);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconInner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-text-light);
+  border-radius: var(--radius-sm);
+  opacity: 0.5;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.message {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 360px;
+  margin: 0 auto var(--space-4);
+}

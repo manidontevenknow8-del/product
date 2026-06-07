@@ -1,0 +1,111 @@
+.menu {
+  position: relative;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-1);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-light);
+  background: var(--color-bg-elevated);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.trigger:hover {
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.name {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chevron {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--color-text-muted);
+  margin-right: var(--space-1);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  right: 0;
+  min-width: 220px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-2);
+  z-index: 120;
+  animation: fadeIn 150ms ease forwards;
+}
+
+.userInfo {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: var(--space-2);
+}
+
+.userEmail {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.planBadge {
+  display: inline-block;
+  margin-top: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--color-accent-light);
+  color: var(--color-accent-dark);
+  border-radius: var(--radius-full);
+}
+
+.item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.item:hover {
+  color: var(--color-text);
+  background: var(--color-bg-muted);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.danger:hover {
+  background: rgba(184, 92, 92, 0.08);
+  color: var(--color-danger);
+}
+
+@media (max-width: 640px) {
+  .name {
+    display: none;
+  }
+}

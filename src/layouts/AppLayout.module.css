@@ -1,0 +1,46 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* clip avoids horizontal bleed without breaking position: sticky in main content */
+  overflow-x: clip;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-6) var(--space-8);
+}
+
+.contentFlush {
+  padding: 0;
+  overflow: visible;
+}
+
+.main:has(.contentFlush) {
+  overflow: visible;
+}
+
+@media (max-width: 900px) {
+  .content {
+    padding-bottom: calc(var(--bottom-nav-height) + var(--space-6));
+  }
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: var(--space-5) var(--space-4);
+    padding-bottom: calc(var(--bottom-nav-height) + var(--space-5));
+  }
+}

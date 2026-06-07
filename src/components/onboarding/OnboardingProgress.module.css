@@ -1,0 +1,50 @@
+.progress {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.segment {
+  flex: 1;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--color-border);
+  transition: background var(--transition);
+}
+
+.segmentComplete {
+  background: var(--color-bg-dark);
+}
+
+.segmentActive {
+  background: var(--color-accent);
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-3);
+}
+
+.stepLabel {
+  flex: 1;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+.stepLabelActive {
+  color: var(--color-text);
+}
+
+.stepLabelComplete {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 400px) {
+  .labels {
+    display: none;
+  }
+}

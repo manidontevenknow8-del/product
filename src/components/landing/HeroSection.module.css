@@ -1,0 +1,131 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 88vh;
+  min-height: 88dvh;
+  max-height: 920px;
+  overflow: hidden;
+  background: var(--color-bg-dark);
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: var(--header-height);
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(26, 31, 28, 0.78) 0%,
+    rgba(26, 31, 28, 0.45) 42%,
+    rgba(26, 31, 28, 0.2) 70%,
+    rgba(26, 31, 28, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  min-height: calc(88vh - var(--header-height));
+  min-height: calc(88dvh - var(--header-height));
+  padding: var(--space-12) 0 var(--space-16);
+}
+
+.content {
+  max-width: 36rem;
+  color: var(--color-text-inverse);
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-5);
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-accent-light) !important;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5.5vw, var(--text-5xl));
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.025em;
+  margin: 0 0 var(--space-5);
+}
+
+.subtitle {
+  margin: 0 0 var(--space-8);
+  font-size: var(--text-lg);
+  color: rgba(250, 249, 247, 0.9);
+  line-height: 1.65;
+  font-weight: 400;
+  max-width: 32rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+}
+
+.ghostBtn {
+  color: rgba(250, 249, 247, 0.92) !important;
+}
+
+.ghostBtn:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.proof {
+  margin: 0;
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+  color: rgba(250, 249, 247, 0.65);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 82vh;
+    min-height: 82dvh;
+  }
+
+  .heroInner {
+    min-height: calc(82vh - var(--header-height));
+    min-height: calc(82dvh - var(--header-height));
+    padding-bottom: var(--space-12);
+  }
+
+  .heroScrim {
+    background: linear-gradient(
+      to top,
+      rgba(26, 31, 28, 0.88) 0%,
+      rgba(26, 31, 28, 0.5) 55%,
+      rgba(26, 31, 28, 0.25) 100%
+    );
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actions a,
+  .actions button {
+    width: 100%;
+    justify-content: center;
+  }
+}

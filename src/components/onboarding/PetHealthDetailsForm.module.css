@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.header {
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.optionalNote {
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  text-align: center;
+  padding-top: var(--space-2);
+}

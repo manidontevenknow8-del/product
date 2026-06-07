@@ -1,0 +1,248 @@
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem var(--space-6) 5rem;
+  font-family: var(--font-sans);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-accent-dark);
+  text-decoration: none;
+}
+
+.back:hover {
+  color: var(--color-text);
+  text-decoration: underline;
+}
+
+.article {
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  max-width: 56rem;
+  margin: 0 auto 2rem;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  background: var(--color-bg-elevated);
+}
+
+.headerWithImage {
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  border: none;
+  background: var(--color-bg-muted);
+}
+
+.headerMedia {
+  position: absolute;
+  inset: 0;
+}
+
+.headerBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.headerScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 31, 28, 0.15) 0%,
+    rgba(26, 31, 28, 0.55) 65%,
+    rgba(26, 31, 28, 0.78) 100%
+  );
+}
+
+.headerInner {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8) var(--space-6);
+  max-width: 40rem;
+}
+
+.headerWithImage .headerInner {
+  color: var(--color-text-inverse);
+}
+
+.headerWithImage .title {
+  color: var(--color-text-inverse);
+}
+
+.headerWithImage .meta {
+  color: rgba(250, 248, 245, 0.88);
+}
+
+.headerWithImage .meta > * + *::before {
+  color: rgba(250, 248, 245, 0.5);
+}
+
+.headerWithImage .tags a {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: rgba(250, 248, 245, 0.92);
+}
+
+.headerWithImage .tags a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--color-text-inverse);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin: 0.85rem 0 1rem;
+  color: var(--color-text);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 1.1rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.meta > * + *::before {
+  content: '·';
+  margin-right: 1.1rem;
+  color: var(--color-text-light);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.15rem 0 0;
+}
+
+.tags a {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: var(--color-bg-muted);
+  border: 1px solid var(--color-border-light);
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.tags a:hover {
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.heroFigure {
+  width: 100%;
+  max-width: 56rem;
+  margin: 0 auto 2.75rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-md);
+}
+
+.heroImage {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.prose {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.footer {
+  max-width: 40rem;
+  margin: 3.5rem auto 0;
+  padding: 2rem 1.75rem;
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-muted);
+  border: 1px solid var(--color-border-light);
+  text-align: center;
+}
+
+.footer p {
+  font-family: var(--font-sans);
+  color: var(--color-text-muted);
+  margin: 0 0 1.25rem;
+  line-height: 1.65;
+  font-size: 1rem;
+}
+
+.status,
+.error,
+.notFound {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-family: var(--font-sans);
+}
+
+.stateWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  min-height: 14rem;
+}
+
+.notFoundAction {
+  margin-top: var(--space-4);
+}
+
+.disclaimer {
+  margin: 0 0 var(--space-4);
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  line-height: 1.65;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding-top: 1.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .headerWithImage {
+    min-height: 240px;
+  }
+
+  .headerInner {
+    padding: var(--space-6) var(--space-5);
+  }
+
+  .heroImage {
+    aspect-ratio: 16 / 10;
+  }
+
+  .footer {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .headerWithImage:not(:has(+ .heroFigure)) {
+    margin-bottom: 2.75rem;
+  }
+}

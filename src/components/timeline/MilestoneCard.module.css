@@ -1,0 +1,83 @@
+.card {
+  flex-shrink: 0;
+  width: 240px;
+  padding: var(--space-4);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  scroll-snap-align: start;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--color-accent-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.card[data-event-type='adoption'] {
+  background: linear-gradient(
+    160deg,
+    rgba(196, 168, 130, 0.16) 0%,
+    var(--color-bg-elevated) 55%
+  );
+}
+
+.icon {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    145deg,
+    var(--color-accent-light) 0%,
+    var(--color-bg-muted) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconInner {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-dark);
+  box-shadow: 0 0 0 6px rgba(196, 168, 130, 0.25);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-2);
+  line-height: 1.35;
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.date {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: 0.35rem;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

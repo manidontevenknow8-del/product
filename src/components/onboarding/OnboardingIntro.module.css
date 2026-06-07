@@ -1,0 +1,80 @@
+.intro {
+  text-align: center;
+  padding: var(--space-6) 0 var(--space-4);
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--color-accent-light), var(--color-bg-muted));
+  margin: 0 auto var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconInner {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  border: 2px solid var(--color-accent-dark);
+  opacity: 0.6;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-5);
+}
+
+.lead {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: var(--space-8);
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  text-align: left;
+}
+
+.point {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+}
+
+.pointDot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent);
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.pointText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+.pointText strong {
+  display: block;
+  color: var(--color-text);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  font-size: var(--text-sm);
+}

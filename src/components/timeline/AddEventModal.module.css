@@ -1,0 +1,120 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(26, 31, 28, 0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: fadeIn 200ms ease forwards;
+}
+
+@media (min-width: 640px) {
+  .overlay {
+    align-items: center;
+    padding: var(--space-6);
+  }
+}
+
+.modal {
+  width: 100%;
+  max-width: 480px;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--color-border-light);
+}
+
+@media (min-width: 640px) {
+  .modal {
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+  }
+}
+
+.header {
+  margin-bottom: var(--space-5);
+}
+
+.eyebrow {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-3);
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.actionsList {
+  padding: var(--space-5);
+  background: var(--color-bg-muted);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-5);
+}
+
+.actionsTitle {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+  color: var(--color-text);
+}
+
+.actionsList ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+}
+
+.actionsList li {
+  margin-bottom: 0.55rem;
+}
+
+.actionsList li:last-child {
+  margin-bottom: 0;
+}
+
+.actionsList strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

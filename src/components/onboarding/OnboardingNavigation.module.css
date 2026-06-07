@@ -1,0 +1,26 @@
+.nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.navSingle {
+  justify-content: stretch;
+}
+
+.navSingle button:last-child {
+  flex: 1;
+}
+
+.backBtn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 400px) {
+  .nav:not(.navSingle) {
+    flex-direction: column-reverse;
+  }
+
+  .nav:not(.navSingle) .backBtn {
+    width: 100%;
+  }
+}

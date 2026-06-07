@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+# Authenticated app & account areas
+Disallow: /dashboard
+Disallow: /onboarding
+Disallow: /pet-profile
+Disallow: /scan
+Disallow: /timeline
+Disallow: /reminders
+Disallow: /emergency-passport
+Disallow: /pet-care-score
+Disallow: /monthly-report
+Disallow: /settings
+Disallow: /billing
+Disallow: /referrals
+
+# Auth flows
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+Disallow: /verify-email
+Disallow: /auth/
+Disallow: /reset-password
+
+# Internal / deferred routes
+Disallow: /waitlist
+Disallow: /analytics
+Disallow: /beta-release
+Disallow: /beta-feedback
+Disallow: /launch-readiness
+Disallow: /notifications
+Disallow: /family
+Disallow: /lost-pet
+Disallow: /age-translator
+
+Sitemap: https://petclues.com/sitemap.xml

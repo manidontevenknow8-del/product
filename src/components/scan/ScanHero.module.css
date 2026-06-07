@@ -1,0 +1,100 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  overflow: visible;
+  background: var(--color-bg-dark);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    min-height: 400px;
+  }
+}
+
+.heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.heroScrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(26, 31, 28, 0.85) 0%,
+    rgba(26, 31, 28, 0.45) 50%,
+    rgba(26, 31, 28, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-5) var(--space-14);
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-4);
+  color: var(--color-text-inverse);
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .heroInner {
+    min-height: 400px;
+    padding-bottom: var(--space-16);
+  }
+}
+
+@media (min-width: 768px) {
+  .heroInner {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+@media (min-width: 1100px) {
+  .heroInner {
+    padding-left: var(--space-10);
+    padding-right: var(--space-10);
+  }
+}
+
+.eyebrow {
+  align-self: flex-start;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-accent-light) !important;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: 500;
+  line-height: 1.08;
+  max-width: 14ch;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: var(--text-base);
+  line-height: 1.6;
+  color: rgba(250, 249, 247, 0.88);
+  max-width: 36rem;
+}
+
+@media (max-width: 640px) {
+  .heroInner button {
+    width: 100%;
+  }
+}

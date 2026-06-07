@@ -1,0 +1,73 @@
+.card {
+  padding: var(--space-6);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  font-weight: 300;
+  margin-bottom: var(--space-5);
+}
+
+.linkBox {
+  display: flex;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.linkInput {
+  flex: 1;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  outline: none;
+}
+
+.code {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+}
+
+.codeValue {
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.1em;
+  color: var(--color-accent-dark);
+  font-weight: 500;
+}
+
+.copied {
+  font-size: var(--text-xs);
+  color: var(--color-success);
+}
+
+.shareBtn {
+  margin-top: var(--space-4);
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .linkBox {
+    flex-direction: column;
+  }
+}

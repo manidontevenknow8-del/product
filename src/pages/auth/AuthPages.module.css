@@ -1,0 +1,119 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.error {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  background: rgba(184, 92, 92, 0.08);
+  border-radius: var(--radius-md);
+}
+
+.linkRow {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+}
+
+.linkRow a {
+  color: var(--color-accent-dark);
+  font-weight: 500;
+}
+
+.forgot {
+  text-align: right;
+  margin-top: calc(-1 * var(--space-2));
+}
+
+.forgot a {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.forgot a:hover {
+  color: var(--color-text);
+}
+
+.success {
+  text-align: center;
+  padding: var(--space-4) 0;
+}
+
+.successIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-light);
+  margin: 0 auto var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.check {
+  width: 18px;
+  height: 10px;
+  border-left: 2px solid var(--color-accent-dark);
+  border-bottom: 2px solid var(--color-accent-dark);
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+.successTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+.successText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: var(--space-6);
+}
+
+.textButton {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.textButton:hover:not(:disabled) {
+  color: var(--color-text);
+}
+
+.textButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.resendSuccess {
+  font-size: var(--text-sm);
+  color: var(--color-success);
+  margin-bottom: var(--space-4);
+}

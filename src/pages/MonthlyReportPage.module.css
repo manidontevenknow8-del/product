@@ -1,0 +1,127 @@
+.page {
+  width: 100%;
+  min-width: 0;
+  background: var(--color-bg);
+}
+
+.loadingWrap,
+.emptyWrap {
+  padding: var(--space-8) var(--space-6) var(--space-16);
+  max-width: 40rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.toolbar {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-border-light);
+  background: var(--color-bg);
+}
+
+@media (min-width: 768px) {
+  .toolbar {
+    padding: var(--space-6);
+  }
+}
+
+@media (min-width: 1100px) {
+  .toolbar {
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+  }
+}
+
+.layout {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-4) var(--space-12);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    padding: var(--space-8) var(--space-6) var(--space-14);
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 320px);
+    padding-left: var(--space-8);
+    padding-right: var(--space-8);
+    gap: var(--space-10);
+  }
+}
+
+.reportCol {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.sideCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+@media (min-width: 1100px) {
+  .sideCol {
+    position: sticky;
+    top: calc(var(--header-height) + var(--space-4));
+  }
+}
+
+.caption {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.archiveCard,
+.signInCard {
+  padding: var(--space-5);
+}
+
+.archiveTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  margin: 0 0 var(--space-2);
+}
+
+.archiveText {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 var(--space-3);
+}
+
+.error {
+  margin: 0;
+  flex: 1;
+  min-width: 100%;
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+}
+
+@media (min-width: 640px) {
+  .error {
+    min-width: auto;
+    text-align: right;
+  }
+}

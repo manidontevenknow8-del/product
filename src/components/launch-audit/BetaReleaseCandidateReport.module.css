@@ -1,0 +1,170 @@
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.scores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 640px) {
+  .scores {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scoreCard {
+  padding: var(--space-6);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.scoreValue {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.scoreBeta {
+  color: var(--color-success);
+}
+
+.scoreProd {
+  color: var(--color-accent-dark);
+}
+
+.scoreLabel {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.scoreDesc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+.blockers {
+  padding: var(--space-5);
+  background: rgba(184, 92, 92, 0.06);
+  border: 1px solid rgba(184, 92, 92, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.blockersTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+  color: var(--color-danger);
+}
+
+.section {
+  padding: var(--space-6);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  margin-bottom: var(--space-5);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.item {
+  padding: var(--space-4);
+  background: var(--color-bg-muted);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-border);
+}
+
+.itemPass { border-left-color: var(--color-success); }
+.itemPartial { border-left-color: var(--color-warning); }
+.itemFail { border-left-color: var(--color-danger); }
+
+.itemTitle {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.itemDesc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.rec {
+  font-size: var(--text-xs);
+  color: var(--color-accent-dark);
+  font-weight: 500;
+  margin-top: var(--space-2);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-left: var(--space-2);
+}
+
+.badgeBlocker {
+  background: rgba(184, 92, 92, 0.12);
+  color: var(--color-danger);
+}
+
+.milestones {
+  padding: var(--space-6);
+  background: linear-gradient(135deg, var(--color-bg-muted), var(--color-bg-elevated));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
+}
+
+.milestonesTitle {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+}
+
+.milestoneList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.milestone {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 300;
+  padding-left: var(--space-4);
+  position: relative;
+  line-height: 1.6;
+}
+
+.milestone::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-accent-dark);
+}

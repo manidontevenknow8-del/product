@@ -1,0 +1,78 @@
+.card {
+  padding: var(--space-6);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-6);
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+}
+
+.current {
+  font-family: var(--font-serif);
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  color: var(--color-accent-dark);
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  height: 140px;
+  padding-top: var(--space-4);
+}
+
+.barWrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  height: 100%;
+  justify-content: flex-end;
+}
+
+.bar {
+  width: 100%;
+  max-width: 40px;
+  background: linear-gradient(180deg, var(--color-accent), rgba(196, 168, 130, 0.4));
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  transition: height 600ms ease;
+  min-height: 8px;
+}
+
+.barCurrent {
+  background: linear-gradient(180deg, var(--color-accent-dark), var(--color-accent));
+}
+
+.label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.milestone {
+  margin-top: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  background: rgba(90, 138, 106, 0.08);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-align: center;
+  line-height: 1.55;
+}
+
+.milestone strong {
+  color: var(--color-success, #5a8a6a);
+  font-weight: 500;
+}

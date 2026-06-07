@@ -1,0 +1,22 @@
+# Local environment (contains secrets)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+
+# Dependencies & build
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Supabase CLI temp (project refs, pooler URLs)
+supabase/.temp/
+
+# Credentials
+*.pem
+credentials.json
+service-account*.json
+
+# Editor
+.DS_Store

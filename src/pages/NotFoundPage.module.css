@@ -1,0 +1,22 @@
+.page {
+  min-height: calc(100vh - 12rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+}
+
+.disclaimer {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-10);
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  line-height: 1.65;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .disclaimer {
+    padding: 0 var(--space-4) var(--space-8);
+  }
+}
