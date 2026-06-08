@@ -12,7 +12,7 @@ export function NotificationsPage() {
       <PageContainer size="xl" className={styles.page}>
         <SectionHeader
           title="Notifications"
-          subtitle="Stay gently updated on your pet's care — nothing overwhelming."
+          subtitle="Stay gently updated on your pet's care - nothing overwhelming."
         />
 
         <div className={styles.grid}>

@@ -17,7 +17,7 @@ export const mockInsight: DashboardInsight = {
   id: '1',
   title: 'Coat health trending well',
   message:
-    'Luna\'s last two skin scans show consistent coat density. No irritation patterns detected — keep up the current grooming routine.',
+    'Luna\'s last two skin scans show consistent coat density. No irritation patterns detected - keep up the current grooming routine.',
   type: 'observation',
 };
 
@@ -46,14 +46,14 @@ export const mockRecentActivity: ActivityItem[] = [
     id: '3',
     type: 'note',
     title: 'Behavioral note added',
-    description: 'Increased activity levels — monitoring for 2 weeks.',
+    description: 'Increased activity levels - monitoring for 2 weeks.',
     timestamp: 'Apr 20',
   },
   {
     id: '4',
     type: 'update',
     title: 'Vet visit recorded',
-    description: 'Annual wellness check — all vitals normal.',
+    description: 'Annual wellness check - all vitals normal.',
     timestamp: 'Apr 28',
   },
 ];

@@ -8,7 +8,7 @@ export function LaunchReadinessPage() {
       <PageContainer size="lg">
         <SectionHeader
           title="Launch readiness"
-          subtitle="V1 product audit — mobile, empty states, accessibility, and production gaps."
+          subtitle="V1 product audit - mobile, empty states, accessibility, and production gaps."
         />
         <LaunchReadinessReport />
       </PageContainer>

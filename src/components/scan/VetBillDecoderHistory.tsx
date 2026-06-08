@@ -14,7 +14,7 @@ const STATUS_LABELS: Record<string, string> = {
 };
 
 const STATUS_HINT: Record<string, string> = {
-  pending_review: 'Report saved — confirm items to add to timeline',
+  pending_review: 'Report saved - confirm items to add to timeline',
   approved: 'Saved to health records & reminders',
   partially_approved: 'Some items saved to timeline',
   rejected: 'Closed without saving items',
@@ -27,7 +27,7 @@ export function VetBillDecoderHistory({ records, onOpenRecord }: VetBillDecoderH
     <section className={styles.section}>
       <h2 className={styles.title}>Saved reports</h2>
       <p className={styles.subtitle}>
-        Each decode is stored once. Tap a report to reopen it — no extra AI usage.
+        Each decode is stored once. Tap a report to reopen it - no extra AI usage.
       </p>
       <ul className={styles.list}>
         {records.slice(0, 10).map((record) => (

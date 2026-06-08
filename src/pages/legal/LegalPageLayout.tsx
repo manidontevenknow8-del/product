@@ -56,8 +56,6 @@ export function LegalPageLayout({
             <p className={styles.contactLine}>
               Questions?{' '}
               <a href={`mailto:${LEGAL_CONTACT.support}`}>{LEGAL_CONTACT.support}</a>
-              {' · '}
-              <a href={`mailto:${LEGAL_CONTACT.legal}`}>{LEGAL_CONTACT.legal}</a>
             </p>
           </div>
         </div>
@@ -111,10 +109,6 @@ export function LegalContactBlock() {
       <p className={styles.contactItem}>
         <span className={styles.contactLabel}>Support</span>
         <a href={`mailto:${LEGAL_CONTACT.support}`}>{LEGAL_CONTACT.support}</a>
-      </p>
-      <p className={styles.contactItem}>
-        <span className={styles.contactLabel}>Legal</span>
-        <a href={`mailto:${LEGAL_CONTACT.legal}`}>{LEGAL_CONTACT.legal}</a>
       </p>
     </div>
   );

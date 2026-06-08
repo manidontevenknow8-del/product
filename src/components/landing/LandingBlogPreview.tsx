@@ -19,7 +19,7 @@ export function LandingBlogPreview() {
           </h2>
           <p className={styles.subtitle}>
             Search-friendly articles on puppy vaccination schedules, cat health records, medication
-            reminders, and emergency pet information — written for pet parents and Google alike.
+            reminders, and emergency pet information - written for pet parents and Google alike.
           </p>
         </div>
 

@@ -23,7 +23,7 @@ export function ReferralCard({ member, referralUrl, onShare }: ReferralCardProps
       <h2 className={styles.title}>Your referral link</h2>
       <p className={styles.subtitle}>
         Every friend who creates a free account counts toward your rewards. Share
-        thoughtfully — quality over quantity.
+        thoughtfully - quality over quantity.
       </p>
 
       <div className={styles.linkBox}>

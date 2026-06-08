@@ -20,7 +20,7 @@ export function CareJourneyCard(props: CareJourneyCardProps) {
           <span className={styles.eyebrow}>Your care journey</span>
           <h2 className={styles.title}>Turn records into a story</h2>
           <p className={styles.subtitle}>
-            Each step unlocks the next — from first scan to monthly celebration.{' '}
+            Each step unlocks the next - from first scan to monthly celebration.{' '}
             <strong>{completed}</strong> of <strong>{total}</strong> complete ({percent}%).
           </p>
         </div>

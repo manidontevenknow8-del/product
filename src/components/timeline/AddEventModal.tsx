@@ -41,7 +41,7 @@ export function AddEventModal({ isOpen, onClose, petName }: AddEventModalProps) 
             Add a moment
           </h2>
           <p className={styles.description}>
-            Timeline updates automatically from your real actions — each scan, health
+            Timeline updates automatically from your real actions - each scan, health
             record, and completed reminder becomes part of {petName}&apos;s story.
           </p>
         </header>
@@ -50,15 +50,15 @@ export function AddEventModal({ isOpen, onClose, petName }: AddEventModalProps) 
           <p className={styles.actionsTitle}>Fastest ways to add chapters</p>
           <ul>
             <li>
-              <strong>Scan a vet document</strong> — appears as a document moment with
+              <strong>Scan a vet document</strong> - appears as a document moment with
               photo previews when applicable
             </li>
             <li>
-              <strong>Log a health record</strong> on Profile — vaccinations, weight,
+              <strong>Log a health record</strong> on Profile - vaccinations, weight,
               and wellness entries show up in Care
             </li>
             <li>
-              <strong>Complete a reminder</strong> — marked-done tasks appear on the
+              <strong>Complete a reminder</strong> - marked-done tasks appear on the
               timeline with their category
             </li>
           </ul>

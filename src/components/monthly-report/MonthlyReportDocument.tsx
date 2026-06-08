@@ -44,7 +44,7 @@ export const MonthlyReportDocument = forwardRef<HTMLDivElement, MonthlyReportDoc
             aria-hidden
           />
           <figcaption className={styles.featureCaption}>
-            {report.petName}&apos;s {report.monthLabel} — built from your real PetClues activity
+            {report.petName}&apos;s {report.monthLabel} - built from your real PetClues activity
           </figcaption>
         </figure>
 

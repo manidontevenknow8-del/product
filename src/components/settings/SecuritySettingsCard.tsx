@@ -1,34 +1,37 @@
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
-import { SettingsToggle } from './SettingsToggle';
-import { useSettings } from '@/settings';
+import { ROUTES } from '@/routes/paths';
 import styles from './SettingsCard.module.css';
 
 export function SecuritySettingsCard() {
-  const { settings, updateSettings } = useSettings();
-  if (!settings) return null;
-
-  const handleTwoFactor = async (enabled: boolean) => {
-    await updateSettings({
-      ...settings,
-      security: { ...settings.security, twoFactorEnabled: enabled },
-    });
-  };
-
   return (
     <article className={styles.card}>
       <h2 className={styles.title}>Security settings</h2>
       <p className={styles.subtitle}>
-        Keep your account safe with additional security options.
+        Keep your account safe with password resets and future security options.
       </p>
 
-      <div className={styles.section}>
-        <SettingsToggle
-          label="Two-factor authentication"
-          description="Add an extra layer of protection to your account (coming soon)"
-          checked={settings.security.twoFactorEnabled}
-          onChange={handleTwoFactor}
-          disabled
-        />
+      <div className={styles.placeholder}>
+        <div className={styles.placeholderTitle}>Password</div>
+        <div className={styles.placeholderDesc}>
+          Reset your password securely via a link sent to your registered email.
+        </div>
+        <div className={styles.actions}>
+          <Link to={ROUTES.FORGOT_PASSWORD}>
+            <Button variant="secondary" size="sm">
+              Reset password
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      <div className={styles.divider} />
+
+      <div className={styles.placeholder}>
+        <div className={styles.placeholderTitle}>Two-factor authentication</div>
+        <div className={styles.placeholderDesc}>
+          An extra layer of protection for your account is coming soon. You will be able to enable it here when it launches.
+        </div>
       </div>
 
       <div className={styles.divider} />
@@ -36,26 +39,7 @@ export function SecuritySettingsCard() {
       <div className={styles.placeholder}>
         <div className={styles.placeholderTitle}>Active login sessions</div>
         <div className={styles.placeholderDesc}>
-          Review devices where you&apos;re currently signed in and sign out remotely.
-        </div>
-        <div className={styles.actions}>
-          <Button variant="secondary" size="sm" disabled>
-            View sessions (coming soon)
-          </Button>
-        </div>
-      </div>
-
-      <div className={styles.divider} />
-
-      <div className={styles.placeholder}>
-        <div className={styles.placeholderTitle}>Device management</div>
-        <div className={styles.placeholderDesc}>
-          Manage trusted devices and notification permissions per device.
-        </div>
-        <div className={styles.actions}>
-          <Button variant="secondary" size="sm" disabled>
-            Manage devices (coming soon)
-          </Button>
+          Review devices where you are signed in and sign out remotely - planned for a future release.
         </div>
       </div>
     </article>

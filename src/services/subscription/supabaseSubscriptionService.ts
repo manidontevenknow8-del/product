@@ -120,7 +120,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
 
     return (data ?? []).map((row) => ({
       id: row.razorpay_payment_id ?? row.id,
-      date: formatRenewalDate(row.started_at) ?? '—',
+      date: formatRenewalDate(row.started_at) ?? '-',
       amount: PRO_MONTHLY_PRICE_DISPLAY,
       status: row.status === 'active' || row.status === 'captured' ? 'paid' as const : 'pending' as const,
     }));

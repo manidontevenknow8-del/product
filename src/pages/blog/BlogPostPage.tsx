@@ -138,7 +138,7 @@ export function BlogPostPage() {
             <footer className={styles.footer}>
               <p>
                 Organize pet health records, vaccination reminders, and emergency pet passports
-                with PetClues — free for one pet.
+                with PetClues - free for one pet.
               </p>
               <p className={styles.disclaimer}>{HEALTH_DISCLAIMER}</p>
               <Link to={ROUTES.SIGNUP}>

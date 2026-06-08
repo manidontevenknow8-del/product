@@ -60,7 +60,7 @@ export const BETA_RELEASE_AUDIT: BetaAuditItem[] = [
     status: 'partial',
     severity: 'high',
     isBlocker: true,
-    recommendation: 'Connect Supabase before production GA — acceptable for closed beta.',
+    recommendation: 'Connect Supabase before production GA - acceptable for closed beta.',
   },
   {
     id: 'a11y-focus',
@@ -156,7 +156,7 @@ export const BETA_RELEASE_AUDIT: BetaAuditItem[] = [
     id: 'analytics-providers',
     audit: 'analytics',
     title: 'Third-party analytics',
-    description: 'PostHog, Plausible, GA, Mixpanel adapters stubbed — not yet connected.',
+    description: 'PostHog, Plausible, GA, Mixpanel adapters stubbed - not yet connected.',
     status: 'partial',
     severity: 'medium',
     recommendation: 'Enable one analytics provider for beta cohort measurement.',

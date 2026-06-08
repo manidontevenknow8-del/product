@@ -40,7 +40,7 @@ export function AuthCallbackPage() {
     <AuthLayout
       visualImage={PAGE_IMG.auth.login}
       visualTitle="Almost there"
-      visualSubtitle="We're confirming your account — you'll be redirected in a moment."
+      visualSubtitle="We're confirming your account - you'll be redirected in a moment."
     >
       <LoadingState message="Confirming your account" />
     </AuthLayout>

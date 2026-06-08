@@ -41,11 +41,16 @@ export function ProtectedRoute({
     return <Navigate to={ROUTES.ONBOARDING} replace />;
   }
 
+  const isAddPetFlow =
+    location.pathname === ROUTES.ONBOARDING &&
+    new URLSearchParams(location.search).get('add') === 'true';
+
   if (
     !requireOnboardingComplete &&
     location.pathname === ROUTES.ONBOARDING &&
     user &&
-    !user.needsOnboarding
+    !user.needsOnboarding &&
+    !isAddPetFlow
   ) {
     return <Navigate to={ROUTES.DASHBOARD} replace />;
   }

@@ -12,7 +12,7 @@ export function EmptyNotificationsState({ compact = false }: EmptyNotificationsS
     <EmptyStateFrame
       variant="notifications"
       title="Nothing new right now"
-      description="When reminders, passport updates, or shared care activity happen, they will appear here — gently, without overwhelm."
+      description="When reminders, passport updates, or shared care activity happen, they will appear here - gently, without overwhelm."
       hint="You can adjust what you receive anytime"
       compact={compact}
       action={

@@ -24,7 +24,9 @@ export function MonthlyReportActions({
     <Card variant="elevated" className={styles.card}>
       <h2 className={styles.title}>Share your month</h2>
       <p className={styles.subtitle}>
-        Download the full visual report, share with family, or save it to your archive.
+        {isPremium
+          ? 'Download the full visual report, share with family, or save it to your archive.'
+          : 'Browse this month on Free. Pro unlocks a downloadable PNG - perfect for family, your sitter, or your vet folder.'}
       </p>
 
       <div className={styles.actions}>

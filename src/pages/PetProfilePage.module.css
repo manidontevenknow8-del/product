@@ -205,6 +205,17 @@
   gap: var(--space-3);
 }
 
+.heroLightBtn {
+  background: #ffffff !important;
+  color: var(--color-text) !important;
+  border-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.heroLightBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: #ffffff !important;
+}
+
 /* ── Body ───────────────────────────────────────────────────── */
 
 .body {
@@ -417,12 +428,12 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-6);
-  margin-bottom: var(--space-6);
 }
 
 @media (min-width: 960px) {
   .dataGrid {
     grid-template-columns: 1fr 1fr;
+    gap: var(--space-6) var(--space-7);
     align-items: start;
   }
 }
@@ -432,16 +443,11 @@
   flex-direction: column;
   gap: var(--space-6);
   min-width: 0;
-}
-
-.vaultPanel {
-  width: 100%;
-  min-width: 0;
+  align-self: start;
 }
 
 /* Child sections: consistent spacing inside workspace */
-.dataCol > section,
-.vaultPanel > section {
+.dataCol > section {
   margin: 0;
 }
 

@@ -12,7 +12,7 @@ export function DownloadStoryCard({ petName, onDownload }: DownloadStoryCardProp
       <h2 className={styles.title}>Download for sharing</h2>
       <p className={styles.subtitle}>
         Save a beautiful story card featuring {petName}&apos;s age translation
-        — perfect for Instagram, WhatsApp status, or messages to friends.
+        - perfect for Instagram, WhatsApp status, or messages to friends.
       </p>
 
       <div className={styles.formats}>
@@ -26,7 +26,7 @@ export function DownloadStoryCard({ petName, onDownload }: DownloadStoryCardProp
       </Button>
 
       <p className={styles.note}>
-        Image export coming soon — use copy &amp; share for now
+        Image export coming soon - use copy &amp; share for now
       </p>
     </article>
   );

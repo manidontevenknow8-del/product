@@ -8,7 +8,10 @@ Fallback: `profiles.subscription_tier` in `premium` / `family` (founding, manual
 | 1 pet profile | ✅ | — | `unlimitedPets` |
 | Unlimited pets | — | ✅ | `unlimitedPets` |
 | Daily check-in | ✅ | ✅ | — |
-| Reminders & automation | ✅ | ✅ | — |
+| Up to 2 active reminders | ✅ | — | `unlimitedReminders` |
+| Unlimited reminders | — | ✅ | `unlimitedReminders` |
+| Up to 3 health records | ✅ | — | `unlimitedHealthRecords` |
+| Unlimited health records | — | ✅ | `unlimitedHealthRecords` |
 | Document vault | ✅ | ✅ | — |
 | Emergency passport | ✅ | ✅ | — |
 | Basic PetCare Score | ✅ | ✅ | — |
@@ -16,7 +19,8 @@ Fallback: `profiles.subscription_tier` in `premium` / `family` (founding, manual
 | **Vet Bill Decoder** | — | ✅ | `vetBillDecoder` |
 | **Advanced AI insights** | — | ✅ | `advancedHealthInsights` |
 | **Unlimited monthly report exports** | — | ✅ | `unlimitedMonthlyReports` |
-| **Premium timeline enhancements** | — | ✅ | `premiumTimeline` |
+| Timeline (last 6 months) | ✅ | — | `premiumTimeline` |
+| **Full timeline history** | — | ✅ | `premiumTimeline` |
 | Advanced PetCare Score | — | ✅ | `advancedPetCareScore` |
 | Priority support | — | ✅ | `prioritySupport` |
 | **Future AI companion** | — | ✅ (reserved) | `futureAiCompanion` |

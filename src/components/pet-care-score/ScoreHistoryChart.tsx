@@ -47,12 +47,12 @@ export function ScoreHistoryChart({
 
       {trendDelta > 0 && trend === 'up' && (
         <p className={styles.milestone}>
-          <strong>+{trendDelta} points</strong> {spanLabel} — your care record is getting stronger.
+          <strong>+{trendDelta} points</strong> {spanLabel} - your care record is getting stronger.
         </p>
       )}
       {trendDelta > 0 && trend === 'down' && (
         <p className={styles.milestone}>
-          <strong>{trendDelta} points lower</strong> {spanLabel} — see breakdown for what changed.
+          <strong>{trendDelta} points lower</strong> {spanLabel} - see breakdown for what changed.
         </p>
       )}
     </article>

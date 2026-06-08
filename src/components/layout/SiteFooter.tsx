@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { PetCluesLogo } from '@/components/brand';
 import { ROUTES } from '@/routes/paths';
 import { BUILD_INFO } from '@/data/buildInfo';
-import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
+import { HEALTH_DISCLAIMER, LEGAL_CONTACT } from '@/data/legalConfig';
 import {
   FOOTER_COMPANY_LINKS,
   FOOTER_LEGAL_LINKS,
@@ -13,11 +13,20 @@ import styles from './SiteFooter.module.css';
 export function SiteFooter() {
   return (
     <footer className={styles.footer}>
+      <div className={styles.accentBar} aria-hidden />
       <div className={`container ${styles.inner}`}>
         <div className={styles.top}>
-          <Link to={ROUTES.LANDING} className={styles.brand} aria-label="PetClues home">
-            <PetCluesLogo size="lg" />
-          </Link>
+          <div className={styles.brandCol}>
+            <Link to={ROUTES.LANDING} className={styles.brand} aria-label="PetClues home">
+              <PetCluesLogo size="lg" className={styles.footerLogo} />
+            </Link>
+            <p className={styles.tagline}>
+              Calm, organized pet care for dog and cat parents.
+            </p>
+            <a href={`mailto:${LEGAL_CONTACT.support}`} className={styles.supportLink}>
+              {LEGAL_CONTACT.support}
+            </a>
+          </div>
 
           <nav className={styles.groups} aria-label="Footer">
             <div className={styles.group}>
@@ -53,6 +62,9 @@ export function SiteFooter() {
           <span className={styles.copyright}>
             © {new Date().getFullYear()} PetClues · v{BUILD_INFO.version}
           </span>
+          <Link to={ROUTES.SIGNUP} className={styles.ctaLink}>
+            Get started free
+          </Link>
         </div>
       </div>
     </footer>

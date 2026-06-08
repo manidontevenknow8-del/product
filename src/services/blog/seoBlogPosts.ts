@@ -13,7 +13,7 @@ const SEO_BLOG_POSTS_RAW: BlogPost[] = [
     title: 'Puppy Vaccination Schedule 2026: Month-by-Month Shot Timeline',
     slug: 'puppy-vaccination-schedule-2026',
     excerpt:
-      'Complete puppy vaccination schedule for 2026 — core shots, booster timing, and how to set pet vaccination reminders so you never miss a vet visit.',
+      'Complete puppy vaccination schedule for 2026 - core shots, booster timing, and how to set pet vaccination reminders so you never miss a vet visit.',
     content: `## Why a puppy vaccination schedule matters
 
 Puppies need a predictable shot timeline during their first year. Missing a booster can leave gaps in immunity and make future vet visits more stressful. The easiest fix is a **pet vaccination reminder** tied to your puppy's exact due dates.
@@ -25,7 +25,7 @@ Puppies need a predictable shot timeline during their first year. Missing a boos
 - **14–16 weeks:** DHPP booster, rabies (per local law)
 - **12–16 months:** Adult boosters
 
-Always confirm timing with your veterinarian — breed, region, and lifestyle change the plan.
+Always confirm timing with your veterinarian - breed, region, and lifestyle change the plan.
 
 ## How to never miss a puppy shot
 
@@ -40,13 +40,13 @@ Always confirm timing with your veterinarian — breed, region, and lifestyle ch
 - Reactions or side effects
 - Next appointment date
 
-PetClues links **pet health records**, **vaccination reminders**, and your **emergency passport** — so puppy care stays organized from day one.
+PetClues links **pet health records**, **vaccination reminders**, and your **emergency passport** - so puppy care stays organized from day one.
 
 ## FAQ
 
 **When do puppies get their first shots?** Most start at 6–8 weeks with a veterinarian-guided series.
 
-**Can I use a pet health tracker app for vaccines?** Yes — digital reminders outperform paper calendars for busy pet parents.
+**Can I use a pet health tracker app for vaccines?** Yes - digital reminders outperform paper calendars for busy pet parents.
 
 **What is the best way to organize puppy vet records?** Scan receipts after each visit and set the next due date immediately.`,
     category: 'dog-health',
@@ -63,7 +63,7 @@ PetClues links **pet health records**, **vaccination reminders**, and your **eme
     title: 'How to Organize Pet Medical Records Online (Free Step-by-Step Guide)',
     slug: 'organize-pet-medical-records-online',
     excerpt:
-      'Learn how to organize pet medical records online — digitize vet bills, lab results, and vaccination history in one searchable pet health vault.',
+      'Learn how to organize pet medical records online - digitize vet bills, lab results, and vaccination history in one searchable pet health vault.',
     content: `## The problem with scattered pet health records
 
 Most pet parents store records in email attachments, photo rolls, and paper folders. When a sitter asks about medications or a new vet wants history, the search begins again.
@@ -84,7 +84,7 @@ Photograph or upload PDFs the same day you receive them. Name files by date and 
 
 ## Step 3: Build a pet health timeline
 
-Convert documents into dated events: vaccines, diagnoses, weight checks, dental cleanings. A **pet health timeline** reveals patterns — seasonal allergies, medication responses, appetite shifts.
+Convert documents into dated events: vaccines, diagnoses, weight checks, dental cleanings. A **pet health timeline** reveals patterns - seasonal allergies, medication responses, appetite shifts.
 
 ## Step 4: Set reminders from your records
 
@@ -101,7 +101,7 @@ Store owner contacts, microchip ID, allergies, and active medications in an **em
 - PetCare Score showing organization gaps
 - Emergency passport export for travel and boarding
 
-Start free — one pet, full records, no credit card required.`,
+Start free - one pet, full records, no credit card required.`,
     category: 'pet-records',
     tags: ['organize pet medical records', 'pet health records app', 'digital pet records', 'vet bills'],
     author: 'PetClues Team',
@@ -116,7 +116,7 @@ Start free — one pet, full records, no credit card required.`,
     title: 'Pet Emergency Information Card: What Every Dog & Cat Owner Needs',
     slug: 'pet-emergency-information-card-guide',
     excerpt:
-      'Build a pet emergency information card with allergies, medications, vet contacts, and microchip details — shareable in seconds when every moment counts.',
+      'Build a pet emergency information card with allergies, medications, vet contacts, and microchip details - shareable in seconds when every moment counts.',
     content: `## What is a pet emergency information card?
 
 A **pet emergency information card** (sometimes called an emergency passport) is a single summary of critical health facts: allergies, medications, conditions, vet clinic, and owner contacts. It is the fastest way to help groomers, sitters, boarding staff, or emergency clinics care for your pet correctly.
@@ -153,7 +153,7 @@ Paper cards get outdated. A digital **emergency pet passport** updates automatic
 
 ## How PetClues helps
 
-PetClues builds your emergency passport from the pet profile and health records you already maintain — so it stays accurate without duplicate data entry.
+PetClues builds your emergency passport from the pet profile and health records you already maintain - so it stays accurate without duplicate data entry.
 
 Create your free account and add your pet's profile in minutes.`,
     category: 'pet-records',
@@ -170,10 +170,10 @@ Create your free account and add your pet's profile in minutes.`,
     title: 'Cat Vaccination Schedule: Core Shots, Boosters & Reminder Tips',
     slug: 'cat-vaccination-schedule-guide',
     excerpt:
-      'Cat vaccination schedule explained — core FVRCP and rabies shots, kitten booster timing, and how to set cat vaccination reminders that actually work.',
+      'Cat vaccination schedule explained - core FVRCP and rabies shots, kitten booster timing, and how to set cat vaccination reminders that actually work.',
     content: `## Understanding the cat vaccination schedule
 
-Cats need a structured **cat vaccination schedule** during kittenhood and regular boosters as adults. Indoor cats still require core vaccines — rabies is often legally required regardless of lifestyle.
+Cats need a structured **cat vaccination schedule** during kittenhood and regular boosters as adults. Indoor cats still require core vaccines - rabies is often legally required regardless of lifestyle.
 
 ## Kitten vaccine timeline
 
@@ -184,13 +184,13 @@ Cats need a structured **cat vaccination schedule** during kittenhood and regula
 
 ## Core vs non-core vaccines
 
-**Core:** FVRCP, rabies — recommended for nearly all cats.
+**Core:** FVRCP, rabies - recommended for nearly all cats.
 
-**Non-core:** FeLV, Bordetella, chlamydia — depend on multi-cat homes, outdoor access, and regional risk. Your vet should personalize the plan.
+**Non-core:** FeLV, Bordetella, chlamydia - depend on multi-cat homes, outdoor access, and regional risk. Your vet should personalize the plan.
 
 ## Why cat parents miss boosters
 
-Cats hide illness well, so preventive care feels less urgent — until an emergency happens. **Cat vaccination reminders** with email alerts 7 and 3 days before due dates dramatically improve adherence.
+Cats hide illness well, so preventive care feels less urgent - until an emergency happens. **Cat vaccination reminders** with email alerts 7 and 3 days before due dates dramatically improve adherence.
 
 ## Records worth saving after each visit
 
@@ -203,7 +203,7 @@ Link records to reminders in a **pet health records app** so your cat's history 
 
 ## Organize cat care with PetClues
 
-Free tier includes one pet profile, vaccination reminders, document vault, and emergency passport — built for cat parents who want calm, organized care.`,
+Free tier includes one pet profile, vaccination reminders, document vault, and emergency passport - built for cat parents who want calm, organized care.`,
     category: 'cat-health',
     tags: ['cat vaccination schedule', 'kitten vaccines', 'cat health records', 'pet vaccination reminder'],
     author: 'PetClues Team',
@@ -218,10 +218,10 @@ Free tier includes one pet profile, vaccination reminders, document vault, and e
     title: 'Pet Medication Reminder: How to Never Miss a Dose Again',
     slug: 'pet-medication-reminder-guide',
     excerpt:
-      'Set up a reliable pet medication reminder for pills, flea prevention, and heartworm meds — with vet-approved tips and app-based alerts.',
+      'Set up a reliable pet medication reminder for pills, flea prevention, and heartworm meds - with vet-approved tips and app-based alerts.',
     content: `## Why pet medication reminders fail
 
-Twice-daily pills, monthly flea chews, and seasonal heartworm prevention do not align with human habits. A dedicated **pet medication reminder** system — not a generic phone alarm — should know which pet, which drug, and what to do when a dose is late.
+Twice-daily pills, monthly flea chews, and seasonal heartworm prevention do not align with human habits. A dedicated **pet medication reminder** system - not a generic phone alarm - should know which pet, which drug, and what to do when a dose is late.
 
 ## Medications to schedule
 
@@ -236,7 +236,7 @@ Twice-daily pills, monthly flea chews, and seasonal heartworm prevention do not 
 1. Tie reminders to feeding times when meds must be given with food
 2. Log each dose in your **pet health records** for vet follow-ups
 3. Set refill reminders 5 days before you run out
-4. Note side effects immediately — they inform future doses
+4. Note side effects immediately - they inform future doses
 
 ## Email + in-app alerts
 
@@ -248,7 +248,7 @@ A medication log becomes evidence at wellness visits: "How consistent were we th
 
 ## Start organizing today
 
-Add your pet's active medications to PetClues, upload the prescription label, and turn on reminder notifications — free for one pet.`,
+Add your pet's active medications to PetClues, upload the prescription label, and turn on reminder notifications - free for one pet.`,
     category: 'pet-records',
     tags: ['pet medication reminder', 'dog medication schedule', 'cat meds', 'pet care reminders'],
     author: 'PetClues Team',
@@ -263,7 +263,7 @@ Add your pet's active medications to PetClues, upload the prescription label, an
     title: 'Dog Feeding Schedule & Walk Tracker: Build a Daily Pet Care Habit',
     slug: 'dog-feeding-schedule-walk-tracker',
     excerpt:
-      'Create a dog feeding schedule and walk tracker habit in under a minute a day — improve weight management, digestion, and monthly pet health reports.',
+      'Create a dog feeding schedule and walk tracker habit in under a minute a day - improve weight management, digestion, and monthly pet health reports.',
     content: `## Small daily logs, big health insights
 
 Vets ask about appetite and activity at every visit. Most owners guess. A **dog feeding schedule** paired with a simple **walk tracker** gives accurate answers and catches changes early.
@@ -292,7 +292,7 @@ Sudden appetite drops or walk refusals often precede illness. When feeding and w
 
 ## Try PetClues daily check-ins
 
-Log feeding and walks from your dashboard. Free forever for one dog — upgrade for unlimited pets and advanced trends.`,
+Log feeding and walks from your dashboard. Free forever for one dog - upgrade for unlimited pets and advanced trends.`,
     category: 'dog-health',
     tags: ['dog feeding schedule', 'walk tracker', 'pet health tracker', 'daily pet check-in'],
     author: 'PetClues Team',
@@ -307,10 +307,10 @@ Log feeding and walks from your dashboard. Free forever for one dog — upgrade 
     title: 'Best Pet Health Tracker App Features to Look For in 2026',
     slug: 'best-pet-health-tracker-app-2026',
     excerpt:
-      'Compare the best pet health tracker app features in 2026 — records vault, vaccination reminders, emergency passport, daily check-ins, and vet bill storage.',
+      'Compare the best pet health tracker app features in 2026 - records vault, vaccination reminders, emergency passport, daily check-ins, and vet bill storage.',
     content: `## What makes a great pet health tracker app?
 
-Pet parents in 2026 expect more than a photo gallery. The **best pet health tracker app** combines medical records, reminders, emergency sharing, and lightweight daily habits — without clutter or ads.
+Pet parents in 2026 expect more than a photo gallery. The **best pet health tracker app** combines medical records, reminders, emergency sharing, and lightweight daily habits - without clutter or ads.
 
 ## Must-have features
 
@@ -318,7 +318,7 @@ Pet parents in 2026 expect more than a photo gallery. The **best pet health trac
 Upload vet bills, lab PDFs, and prescriptions. Search by date and type.
 
 ### 2. Vaccination & medication reminders
-Automated alerts before due dates — not just a static calendar.
+Automated alerts before due dates - not just a static calendar.
 
 ### 3. Emergency passport
 Shareable summary of allergies, meds, and contacts for sitters and clinics.
@@ -327,7 +327,7 @@ Shareable summary of allergies, meds, and contacts for sitters and clinics.
 Feeding and activity logs that build monthly wellness stories.
 
 ### 5. PetCare Score or completeness metric
-Shows what is missing — expired vaccines, empty profile fields, overdue reminders.
+Shows what is missing - expired vaccines, empty profile fields, overdue reminders.
 
 ## Nice-to-have premium features
 
@@ -344,7 +344,7 @@ Shows what is missing — expired vaccines, empty profile fields, overdue remind
 
 ## Why pet parents choose PetClues
 
-PetClues is a **pet health records app** built for calm, premium organization — free for one pet with reminders, passport, and daily check-ins included.
+PetClues is a **pet health records app** built for calm, premium organization - free for one pet with reminders, passport, and daily check-ins included.
 
 Read our guides on [organizing pet medical records](/blog/organize-pet-medical-records-online) and [puppy vaccination schedules](/blog/puppy-vaccination-schedule-2026), then start free.`,
     category: 'petclues-guides',
@@ -361,7 +361,7 @@ Read our guides on [organizing pet medical records](/blog/organize-pet-medical-r
     title: 'Vet Bill Organizer: Store & Understand Pet Medical Bills Digitally',
     slug: 'vet-bill-organizer-pet-medical-bills',
     excerpt:
-      'Use a vet bill organizer to store pet medical bills, spot billing errors, and track care costs — with optional AI decoding on PetClues Premium.',
+      'Use a vet bill organizer to store pet medical bills, spot billing errors, and track care costs - with optional AI decoding on PetClues Premium.',
     content: `## Why organize vet bills?
 
 Pet medical bills contain procedure codes, medication names, and follow-up instructions easy to lose in email. A **vet bill organizer** keeps spending visible and gives you receipts when insurance or taxes need documentation.
@@ -383,7 +383,7 @@ Duplicate charges and wrong pet names happen. Stored PDFs let you compare agains
 
 ## AI vet bill decoder (Premium)
 
-PetClues Premium explains line items in plain language — helpful when emergency visits produce long, confusing invoices.
+PetClues Premium explains line items in plain language - helpful when emergency visits produce long, confusing invoices.
 
 ## Free organization workflow
 
@@ -392,7 +392,7 @@ PetClues Premium explains line items in plain language — helpful when emergenc
 3. Set reminders for follow-up care
 4. Review monthly spending in your pet health report
 
-Start with a free PetClues account — document vault and reminders included.`,
+Start with a free PetClues account - document vault and reminders included.`,
     category: 'pet-records',
     tags: ['vet bill organizer', 'pet medical bills', 'vet bill decoder', 'pet insurance records'],
     author: 'PetClues Team',

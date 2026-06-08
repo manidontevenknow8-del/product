@@ -2,6 +2,22 @@ import { getSupabaseClient } from '@/services/supabase/client';
 import type { NotificationSettings } from '@/types/settings';
 import { buildDefaultSettings } from '@/data/settingsData';
 import type { ISettingsService } from './settingsService';
+import type { UserSettings } from '@/types/settings';
+
+function mergeCachedSettings(userId: string, base: UserSettings): UserSettings {
+  try {
+    const cached = localStorage.getItem(`petclues_user_settings_${userId}`);
+    if (!cached) return base;
+    const parsed = JSON.parse(cached) as Partial<UserSettings>;
+    return {
+      ...base,
+      privacy: parsed.privacy ?? base.privacy,
+      security: parsed.security ?? base.security,
+    };
+  } catch {
+    return base;
+  }
+}
 
 function notificationsFromJson(raw: unknown, fallback: NotificationSettings): NotificationSettings {
   if (!raw || typeof raw !== 'object') return fallback;
@@ -19,9 +35,9 @@ export const supabaseSettingsService: ISettingsService = {
       .eq('user_id', userId)
       .single();
 
-    if (error || !data) return defaults;
+    if (error || !data) return mergeCachedSettings(userId, defaults);
 
-    return {
+    const merged: ReturnType<typeof buildDefaultSettings> = {
       ...defaults,
       account: {
         name: data.name ?? name,
@@ -30,6 +46,8 @@ export const supabaseSettingsService: ISettingsService = {
       },
       notifications: notificationsFromJson(data.notification_preferences, defaults.notifications),
     };
+
+    return mergeCachedSettings(userId, merged);
   },
 
   async updateSettings(userId, settings) {

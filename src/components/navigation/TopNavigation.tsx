@@ -13,7 +13,7 @@ export function TopNavigation({ onMenuOpen }: TopNavigationProps) {
     <header className={styles.header}>
       <div className={styles.inner}>
         <Link to={ROUTES.DASHBOARD} className={styles.logo} aria-label="PetClues dashboard">
-          <PetCluesLogo size="md" />
+          <PetCluesLogo size="xl" />
         </Link>
 
         <div className={styles.actions}>

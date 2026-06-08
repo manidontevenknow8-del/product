@@ -162,6 +162,6 @@ export function formatPassportRecordLine(record: HealthRecord): string {
     ? ` · Next due ${formatHealthRecordDate(record.nextDueDate)}`
     : '';
 
-  if (detail) return `${record.title} (${date}) — ${detail}${due}`;
+  if (detail) return `${record.title} (${date}) - ${detail}${due}`;
   return `${record.title} · ${date}${due}`;
 }

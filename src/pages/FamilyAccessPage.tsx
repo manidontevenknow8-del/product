@@ -37,7 +37,7 @@ export function FamilyAccessPage() {
       <PageContainer size="lg" className={styles.page}>
         <SectionHeader
           title="Family & shared care"
-          subtitle="Invite people you trust to help care for your pets — partners, family, or pet sitters."
+          subtitle="Invite people you trust to help care for your pets - partners, family, or pet sitters."
         />
 
         <section className={styles.section}>

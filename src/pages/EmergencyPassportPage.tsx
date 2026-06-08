@@ -1,6 +1,9 @@
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { AppLayout } from '@/layouts/AppLayout';
 import { Button, LoadingState } from '@/components/ui';
+import { UpgradeModal } from '@/components/subscription';
+import { useAuth } from '@/auth/AuthProvider';
+import { canCreateHealthRecord } from '@/subscription/featureGates';
 import { EmptyPetProfileState } from '@/components/empty-states';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
 import { HealthRecordModal } from '@/components/pet-profile/HealthRecordModal';
@@ -23,11 +26,13 @@ import styles from './EmergencyPassportPage.module.css';
 
 export function EmergencyPassportPage() {
   const { track } = useAnalytics();
+  const { user } = useAuth();
   const { activePet, isLoading: petsLoading, hasPets } = usePets();
   const { records, isLoading: recordsLoading, createRecord, updateRecord, deleteRecord } =
     useHealthRecords();
   const { documents, isLoading: documentsLoading } = useDocuments();
   const [healthModalOpen, setHealthModalOpen] = useState(false);
+  const [healthUpgradeOpen, setHealthUpgradeOpen] = useState(false);
   const [editingRecord, setEditingRecord] = useState<HealthRecord | null>(null);
   const [defaultRecordType, setDefaultRecordType] = useState<HealthRecordType | undefined>();
   const [exporting, setExporting] = useState(false);
@@ -62,10 +67,22 @@ export function EmergencyPassportPage() {
   }, [passport, track]);
 
   const openAdd = useCallback((type: HealthRecordType) => {
+    if (
+      !canCreateHealthRecord(
+        {
+          subscriptionStatus: user?.subscriptionStatus,
+          subscriptionTier: user?.subscriptionTier ?? 'free',
+        },
+        records.length,
+      )
+    ) {
+      setHealthUpgradeOpen(true);
+      return;
+    }
     setEditingRecord(null);
     setDefaultRecordType(type);
     setHealthModalOpen(true);
-  }, []);
+  }, [user?.subscriptionStatus, user?.subscriptionTier, records.length]);
 
   const openEdit = useCallback((record: HealthRecord) => {
     setEditingRecord(record);
@@ -138,7 +155,7 @@ export function EmergencyPassportPage() {
           <header className={styles.sectionIntro}>
             <h2 className={styles.sectionIntroTitle}>Medical record</h2>
             <p className={styles.sectionIntroText}>
-              Structured health data for clinics and emergencies. Add or edit any section — counts
+              Structured health data for clinics and emergencies. Add or edit any section - counts
               and notes update live from your pet profile.
             </p>
           </header>
@@ -156,7 +173,7 @@ export function EmergencyPassportPage() {
             <PassportRecordSection
               title="Allergies"
               records={passport.allergies}
-              emptyMessage="No allergies on file — add known reactions for safer care."
+              emptyMessage="No allergies on file - add known reactions for safer care."
               variant="critical"
               image={PASSPORT_IMG.allergies}
               imageAlt="Allergy and ingredient label"
@@ -207,6 +224,11 @@ export function EmergencyPassportPage() {
           onSubmit={handleHealthSubmit}
           onDelete={deleteRecord}
           defaultRecordType={defaultRecordType}
+        />
+
+        <UpgradeModal
+          isOpen={healthUpgradeOpen}
+          onClose={() => setHealthUpgradeOpen(false)}
         />
       </div>
     </AppLayout>

@@ -72,7 +72,7 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             Daily check-in
           </h2>
           <p className={styles.subtitle}>
-            Log what {petName} ate and how far you walked — builds streaks and monthly stories.
+            Log what {petName} ate and how far you walked - builds streaks and monthly stories.
           </p>
         </div>
         {streak > 0 && (
@@ -122,7 +122,7 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
               inputMode="decimal"
               value={walkKm}
               onChange={(e) => setWalkKm(e.target.value)}
-              placeholder="Optional — e.g. 2.5"
+              placeholder="Optional - e.g. 2.5"
             />
           </label>
 
@@ -186,7 +186,7 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             </div>
             <div>
               <span className={styles.weekValue}>
-                {weekSummary.avgWalkKm != null ? weekSummary.avgWalkKm : '—'}
+                {weekSummary.avgWalkKm != null ? weekSummary.avgWalkKm : '-'}
               </span>
               <span className={styles.weekLabel}>avg km / walk</span>
             </div>

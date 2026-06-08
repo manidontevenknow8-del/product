@@ -10,7 +10,7 @@ import { useJsonLd } from './useJsonLd';
 
 export function getBlogIndexSEO(): SEOConfig {
   return {
-    title: 'Pet Health Blog — Vaccination Guides, Records & Care Tips | PetClues',
+    title: 'Pet Health Blog - Vaccination Guides, Records & Care Tips | PetClues',
     description:
       'Free pet health guides: puppy & cat vaccination schedules, medication reminders, vet bill organization, emergency pet information, and daily care habits.',
     keywords:
@@ -25,7 +25,7 @@ export function getBlogIndexSEO(): SEOConfig {
 
 export function getBlogPostSEO(post: BlogPost): SEOConfig {
   const categoryLabel = getBlogCategoryLabel(post.category);
-  const title = `${post.title} — PetClues`;
+  const title = `${post.title} - PetClues`;
   const canonical = `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`;
   const image = (() => {
     const img = resolveBlogFeaturedImage(post.slug, post.featuredImage);
@@ -192,7 +192,7 @@ type BlogArticleNotFoundSEOProps = {
 
 export function BlogArticleNotFoundSEO({ slug }: BlogArticleNotFoundSEOProps) {
   const config: SEOConfig = {
-    title: 'Article Not Found — PetClues Blog',
+    title: 'Article Not Found - PetClues Blog',
     description: 'This blog article could not be found. Browse pet health guides on the PetClues blog.',
     canonical: `${SITE_META.siteUrl}${ROUTES.BLOG}/${slug}`,
     ogImage: DEFAULT_OG_IMAGE,

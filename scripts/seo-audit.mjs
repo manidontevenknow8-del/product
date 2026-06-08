@@ -158,7 +158,6 @@ const staticExpected = [
   '/security',
   '/data-deletion',
   '/data-export',
-  '/status',
 ];
 
 writeFileSync(

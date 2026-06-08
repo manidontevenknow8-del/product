@@ -1,5 +1,6 @@
 import { getSupabaseClient } from '@/services/supabase/client';
 import { isSupabaseConfigured } from '@/services/supabase/config';
+import { parseFunctionInvokeError } from '@/services/supabase/parseFunctionInvokeError';
 import type {
   CommunityStats,
   LeaderboardEntry,
@@ -103,10 +104,26 @@ export const supabaseReferralService: IReferralService = {
     };
   },
 
-  async getMyReferralCode(_userId) {
+  async getMyReferralCode(userId) {
     const supabase = getSupabaseClient();
+
+    const { data: existing, error: readError } = await supabase
+      .from('referral_codes')
+      .select('code')
+      .eq('user_id', userId)
+      .maybeSingle();
+
+    if (readError) {
+      throw new Error(readError.message);
+    }
+    if (existing?.code) {
+      return String(existing.code);
+    }
+
     const { data, error } = await supabase.functions.invoke('get-referral-code', { body: {} });
-    if (error) throw new Error(error.message);
+    if (error) {
+      throw new Error(await parseFunctionInvokeError(error, 'Unable to load referral code'));
+    }
     if (data?.error) throw new Error(String(data.error));
     if (!data?.code) throw new Error('Referral code not returned');
     return String(data.code);
@@ -117,7 +134,9 @@ export const supabaseReferralService: IReferralService = {
     const { error, data } = await supabase.functions.invoke('send-referral-invite', {
       body: { email: inviteeEmail, referralSource: referralSource ?? 'in_app' },
     });
-    if (error) throw new Error(error.message);
+    if (error) {
+      throw new Error(await parseFunctionInvokeError(error, 'Unable to send invite'));
+    }
     if (data?.error) throw new Error(String(data.error));
   },
 
@@ -151,21 +170,40 @@ export const supabaseReferralService: IReferralService = {
 
   async getLeaderboard(period) {
     const supabase = getSupabaseClient();
-    const { data, error } = await supabase.functions.invoke('get-referral-leaderboard', {
-      body: { period },
-    });
-    if (error) throw new Error(error.message);
-    if (data?.error) throw new Error(String(data.error));
-
-    return {
-      entries: (data?.entries ?? []) as LeaderboardEntry[],
-      communityStats: (data?.communityStats ?? {
-        waitlistTotal: 0,
-        referralsThisWeek: 0,
-        spotsClaimedToday: 0,
-        countriesRepresented: 0,
-      }) as CommunityStats,
+    const emptyStats: CommunityStats = {
+      waitlistTotal: 0,
+      referralsThisWeek: 0,
+      spotsClaimedToday: 0,
+      countriesRepresented: 0,
     };
+
+    try {
+      const { data, error } = await supabase.functions.invoke('get-referral-leaderboard', {
+        body: { period },
+      });
+      if (error) {
+        throw new Error(await parseFunctionInvokeError(error, 'Unable to load leaderboard'));
+      }
+      if (data?.error) throw new Error(String(data.error));
+
+      return {
+        entries: (data?.entries ?? []) as LeaderboardEntry[],
+        communityStats: (data?.communityStats ?? emptyStats) as CommunityStats,
+      };
+    } catch {
+      const { count: memberCount } = await supabase
+        .from('referral_codes')
+        .select('id', { count: 'exact', head: true });
+
+      return {
+        entries: [],
+        communityStats: {
+          ...emptyStats,
+          waitlistTotal: memberCount ?? 0,
+          countriesRepresented: (memberCount ?? 0) > 0 ? 1 : 0,
+        },
+      };
+    }
   },
 
   async trackShare(channel) {
@@ -173,7 +211,10 @@ export const supabaseReferralService: IReferralService = {
     const { error } = await supabase.functions.invoke('track-referral-share', {
       body: { channel },
     });
-    if (error) throw new Error(error.message);
+    if (error) {
+      // Share tracking is non-critical; don't block the user flow.
+      console.warn('referral_share_track_failed', await parseFunctionInvokeError(error));
+    }
   },
 };
 

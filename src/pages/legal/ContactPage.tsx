@@ -85,8 +85,7 @@ export function ContactPage() {
         </form>
         <LegalParagraph>
           Submitting opens your default email client addressed to{' '}
-          {LEGAL_CONTACT.support}. For legal matters, contact{' '}
-          <a href={`mailto:${LEGAL_CONTACT.legal}`}>{LEGAL_CONTACT.legal}</a>.
+          {LEGAL_CONTACT.support}.
         </LegalParagraph>
       </LegalSection>
     </LegalPageLayout>

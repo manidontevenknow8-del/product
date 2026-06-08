@@ -20,7 +20,7 @@ const FAQ_ITEMS = [
   {
     question: 'How do AI document features work?',
     answer:
-      'When you upload a document, AI may suggest structured fields to save time. Suggestions are assistive and may be inaccurate — review everything before saving.',
+      'When you upload a document, AI may suggest structured fields to save time. Suggestions are assistive and may be inaccurate - review everything before saving.',
   },
   {
     question: 'How do I delete my account or export my data?',

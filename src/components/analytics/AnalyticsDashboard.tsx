@@ -21,7 +21,7 @@ export function AnalyticsDashboard() {
         <div>
           <h2 className={styles.title}>Analytics events</h2>
           <p className={styles.subtitle}>
-            Beta event log — PostHog sends when VITE_POSTHOG_KEY and VITE_POSTHOG_HOST are set at build time.
+            Beta event log - PostHog sends when VITE_POSTHOG_KEY and VITE_POSTHOG_HOST are set at build time.
           </p>
         </div>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -67,7 +67,7 @@ export function AnalyticsDashboard() {
                   <td>
                     {event.properties
                       ? JSON.stringify(event.properties).slice(0, 80)
-                      : '—'}
+                      : '-'}
                   </td>
                 </tr>
               ))}

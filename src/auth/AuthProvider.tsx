@@ -81,7 +81,7 @@ export function AuthProvider({
       previousEmailVerified.current = isVerified ? true : false;
     });
 
-    // Safety net — never leave the app stuck on "Loading"
+    // Safety net - never leave the app stuck on "Loading"
     const timeout = window.setTimeout(() => {
       if (mounted) setIsLoading(false);
     }, 5000);

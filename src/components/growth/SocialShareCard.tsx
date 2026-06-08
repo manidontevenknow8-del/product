@@ -7,7 +7,7 @@ type SocialShareCardProps = {
 };
 
 const defaultMessage =
-  "I've been using PetClues for my pet's health — join free with my link!";
+  "I've been using PetClues for my pet's health - join free with my link!";
 
 export function SocialShareCard({ referralUrl, onShare }: SocialShareCardProps) {
   const urls = buildShareUrls(referralUrl, defaultMessage);

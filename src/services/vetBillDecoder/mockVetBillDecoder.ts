@@ -21,10 +21,10 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
       clinicalNarrative:
         'During the visit, the veterinarian performed a routine wellness examination. Rabies and DHPP vaccines were administered. Flea prevention was dispensed for six months. No acute illness was documented; the visit is classified as preventive care.',
       keyFindings: [
-        'Rabies vaccine administered — booster typically due in 1–3 years depending on local regulations and vaccine type.',
-        'DHPP (distemper combination) booster given — maintain schedule for core puppy/adult vaccines.',
-        'Flea prevention prescribed for 6 months — set a refill reminder before supply runs out.',
-        'Annual wellness recheck suggested — good opportunity to review weight, dental health, and diet.',
+        'Rabies vaccine administered - booster typically due in 1–3 years depending on local regulations and vaccine type.',
+        'DHPP (distemper combination) booster given - maintain schedule for core puppy/adult vaccines.',
+        'Flea prevention prescribed for 6 months - set a refill reminder before supply runs out.',
+        'Annual wellness recheck suggested - good opportunity to review weight, dental health, and diet.',
       ],
       careRecommendations: [
         'Confirm exact booster due dates with your clinic if not clearly printed on the document.',
@@ -33,7 +33,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
         'Keep this invoice for insurance or tax records if applicable.',
       ],
       watchFor: [
-        'Mild lethargy or soreness for 24–48 hours after vaccination is common — contact your vet if symptoms worsen or persist.',
+        'Mild lethargy or soreness for 24–48 hours after vaccination is common - contact your vet if symptoms worsen or persist.',
       ],
       dataQualityNotes:
         'Mock extraction for demo. Real documents may have partial text if scanned or photographed at an angle.',
@@ -46,7 +46,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
           'Rabies vaccination administered during the March 12, 2026 visit. Required by law in most areas for dogs and cats.',
         explanation:
           'Listed on the invoice as a vaccine line item with a next-due date printed on the certificate section.',
-        sourceExcerpt: 'Rabies Vaccine — 1yr — administered 03/12/2026',
+        sourceExcerpt: 'Rabies Vaccine - 1yr - administered 03/12/2026',
         ownerAction: 'Schedule the next rabies booster before the due date on your certificate.',
         dateRecorded: '2026-03-12',
         nextDueDate: '2027-03-12',
@@ -62,7 +62,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
           'Topical or oral flea/tick preventive dispensed for six months. Dosage should match your pet’s weight per the product label.',
         explanation:
           'Appears as a pharmacy line item with quantity and end date on the invoice.',
-        sourceExcerpt: 'Flea/Tick Prevention — 6 mo supply',
+        sourceExcerpt: 'Flea/Tick Prevention - 6 mo supply',
         ownerAction: 'Set a reminder to refill before September 2026.',
         dateRecorded: '2026-03-12',
         endDate: '2026-09-12',
@@ -73,7 +73,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
     diagnoses: [
       {
         id: id(),
-        title: 'Routine wellness exam — no acute concerns',
+        title: 'Routine wellness exam - no acute concerns',
         description:
           'General physical examination completed. Document indicates preventive visit rather than illness treatment.',
         explanation:
@@ -99,7 +99,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
       {
         id: id(),
         title: 'Rabies booster due',
-        description: 'Legal and health requirement — do not let this lapse.',
+        description: 'Legal and health requirement - do not let this lapse.',
         explanation: 'Next due date extracted from the vaccination certificate or invoice footer.',
         dueDate: '2027-03-12',
         category: 'vaccinations',

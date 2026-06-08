@@ -26,7 +26,7 @@ export function EmptyDocumentsState({
       description={
         isVault
           ? 'Bills, prescriptions, reports, and images will appear here once uploaded.'
-          : 'Scan or upload vaccination records, vet bills, and health reports — PetClues will organize them for you.'
+          : 'Scan or upload vaccination records, vet bills, and health reports - PetClues will organize them for you.'
       }
       hint={isVault ? 'Documents stay encrypted and private' : 'PDF, JPG, or PNG supported'}
       compact={compact}

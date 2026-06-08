@@ -6,7 +6,7 @@ export function PartnershipsPlaceholder() {
     <section className={styles.section} aria-label="Future partnerships">
       <h2 className={styles.title}>Partnership programs</h2>
       <p className={styles.subtitle}>
-        Future ways to grow PetClues together — without compromising what makes it special.
+        Future ways to grow PetClues together - without compromising what makes it special.
       </p>
 
       <div className={styles.grid}>

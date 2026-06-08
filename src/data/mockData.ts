@@ -15,7 +15,7 @@ export const mockTimelineEvents: TimelineEvent[] = [
     id: '1',
     date: '2026-05-28',
     title: 'Annual wellness check',
-    description: 'Routine examination — all vitals normal.',
+    description: 'Routine examination - all vitals normal.',
     category: 'vet',
   },
   {
@@ -36,7 +36,7 @@ export const mockTimelineEvents: TimelineEvent[] = [
     id: '4',
     date: '2026-04-20',
     title: 'Behavioral note',
-    description: 'Increased activity levels noted — monitor for 2 weeks.',
+    description: 'Increased activity levels noted - monitor for 2 weeks.',
     category: 'note',
   },
 ];

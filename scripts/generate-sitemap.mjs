@@ -39,7 +39,6 @@ const STATIC = [
   { loc: '/data-deletion', priority: '0.3', changefreq: 'yearly' },
   { loc: '/data-export', priority: '0.3', changefreq: 'yearly' },
   { loc: '/faq', priority: '0.5', changefreq: 'monthly' },
-  { loc: '/status', priority: '0.3', changefreq: 'weekly' },
 ];
 
 const blogSlugs = extractBlogSlugs();

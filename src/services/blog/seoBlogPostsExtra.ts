@@ -11,7 +11,7 @@ const SEO_BLOG_POSTS_EXTRA_RAW: BlogPost[] = [
     title: 'New Puppy Checklist: Health Records, Vaccines & First Vet Visit',
     slug: 'new-puppy-checklist-health-records-vaccines',
     excerpt:
-      'Complete new puppy checklist — first vet visit prep, vaccination records, microchip setup, and pet health app onboarding in the first 30 days.',
+      'Complete new puppy checklist - first vet visit prep, vaccination records, microchip setup, and pet health app onboarding in the first 30 days.',
     content: `## Your first 30 days with a puppy
 
 Bringing home a puppy is joyful and overwhelming. A **new puppy checklist** for health records prevents missed vaccines, lost vet receipts, and midnight Google searches.
@@ -38,7 +38,7 @@ Add every future due date the day you leave the clinic. **Pet vaccination remind
 
 Log feeding and walk distance with a **daily pet check-in**. Small logs become monthly wellness stories your vet will love.
 
-Start your free PetClues account — one puppy profile, reminders, and emergency passport included.`,
+Start your free PetClues account - one puppy profile, reminders, and emergency passport included.`,
     category: 'dog-health',
     tags: ['new puppy checklist', 'puppy first vet visit', 'puppy vaccination', 'puppy health records'],
     author: 'PetClues Team',
@@ -73,13 +73,13 @@ Kittens need early vaccines and parasite prevention on a tight timeline. A **new
 
 ## Set reminders before you forget
 
-**Cat vaccination reminders** and flea prevention alerts should be created in the clinic parking lot — not three weeks later.
+**Cat vaccination reminders** and flea prevention alerts should be created in the clinic parking lot - not three weeks later.
 
 ## Build the long-term timeline
 
 Cat health problems hide until they are serious. A chronological **pet health timeline** makes appetite dips and litter box changes visible early.
 
-Organize your kitten's care free with PetClues — records, reminders, and emergency info in one app.`,
+Organize your kitten's care free with PetClues - records, reminders, and emergency info in one app.`,
     category: 'cat-health',
     tags: ['new kitten checklist', 'kitten vaccines', 'kitten vet visit', 'cat health records'],
     author: 'PetClues Team',
@@ -94,7 +94,7 @@ Organize your kitten's care free with PetClues — records, reminders, and emerg
     title: 'Senior Dog Care Guide: Health Records & Medication Tracker',
     slug: 'senior-dog-care-health-records-medication-tracker',
     excerpt:
-      'Senior dog care guide — track medications, lab trends, mobility notes, and vet visits with organized health records and gentle reminders.',
+      'Senior dog care guide - track medications, lab trends, mobility notes, and vet visits with organized health records and gentle reminders.',
     content: `## Senior dogs need precision, not panic
 
 Aging dogs often take multiple medications and visit the vet more frequently. **Senior dog care** improves when records, reminders, and daily notes live in one searchable place.
@@ -108,7 +108,7 @@ Aging dogs often take multiple medications and visit the vet more frequently. **
 
 ## Medication tracker habits
 
-Use a **pet medication reminder** for every pill — including supplements. Log missed doses honestly; your vet needs accurate adherence data.
+Use a **pet medication reminder** for every pill - including supplements. Log missed doses honestly; your vet needs accurate adherence data.
 
 ## Make vet visits efficient
 
@@ -118,7 +118,7 @@ Export a timeline of the last six months: weight trends, medication changes, and
 
 Update your **emergency pet passport** whenever medications change. Sitters and emergency clinics need current information.
 
-PetClues helps senior dog parents stay organized — free daily check-ins and medication reminders for one pet.`,
+PetClues helps senior dog parents stay organized - free daily check-ins and medication reminders for one pet.`,
     category: 'dog-health',
     tags: ['senior dog care', 'dog medication tracker', 'senior dog health records', 'aging dog care'],
     author: 'PetClues Team',
@@ -133,7 +133,7 @@ PetClues helps senior dog parents stay organized — free daily check-ins and me
     title: 'Pet Sitter Instructions: Medical Info & Emergency Details to Share',
     slug: 'pet-sitter-instructions-medical-emergency-info',
     excerpt:
-      'Pet sitter instructions template — what medical info, feeding schedule, medications, and emergency contacts to share before you leave town.',
+      'Pet sitter instructions template - what medical info, feeding schedule, medications, and emergency contacts to share before you leave town.',
     content: `## Sitters need more than a spare key
 
 Professional pet sitters ask about feeding, medications, and emergency protocols. Clear **pet sitter instructions** prevent mistakes when you are unreachable.
@@ -157,7 +157,7 @@ Tell sitters whether you want feeding and walk logs. Consistent **daily pet chec
 
 Boarding facilities require vaccination proof. In-home sitters need door codes and behavioral notes. Store both document types in your vault.
 
-Prepare sitter-ready care packets with PetClues — free emergency passport and reminder sharing.`,
+Prepare sitter-ready care packets with PetClues - free emergency passport and reminder sharing.`,
     category: 'pet-records',
     tags: ['pet sitter instructions', 'pet sitter checklist', 'emergency pet info', 'pet boarding info'],
     author: 'PetClues Team',
@@ -172,10 +172,10 @@ Prepare sitter-ready care packets with PetClues — free emergency passport and 
     title: 'Microchip Registration Guide for Dogs & Cats (Plus What to Store)',
     slug: 'microchip-registration-guide-dogs-cats',
     excerpt:
-      'Microchip registration guide for dogs and cats — how to register, update contacts, and store chip numbers in your pet health records app.',
+      'Microchip registration guide for dogs and cats - how to register, update contacts, and store chip numbers in your pet health records app.',
     content: `## A microchip only works if it is registered
 
-Implanting a chip takes seconds. **Microchip registration** — linking the ID to your phone — is what brings lost pets home.
+Implanting a chip takes seconds. **Microchip registration** - linking the ID to your phone - is what brings lost pets home.
 
 ## Registration steps
 
@@ -209,7 +209,7 @@ Set a yearly check to confirm registry details still match your ID. PetClues pro
     title: 'Heartworm Prevention Schedule & Reminder Guide for Dogs',
     slug: 'heartworm-prevention-schedule-reminder-dogs',
     excerpt:
-      'Heartworm prevention schedule for dogs — monthly chewable reminders, annual test timing, and how to log prevention in pet health records.',
+      'Heartworm prevention schedule for dogs - monthly chewable reminders, annual test timing, and how to log prevention in pet health records.',
     content: `## Heartworm prevention is non-negotiable
 
 Heartworm disease is preventable yet expensive to treat. A reliable **heartworm prevention schedule** with automated reminders protects dogs year-round.
@@ -232,7 +232,7 @@ Record the brand, date, and lot in your **pet medication reminder** app. Vets re
 
 Save lab PDFs in your document vault. A **pet health timeline** connecting tests and prevention shows complete compliance.
 
-Never miss a monthly dose — set heartworm reminders in PetClues free for one dog.`,
+Never miss a monthly dose - set heartworm reminders in PetClues free for one dog.`,
     category: 'dog-health',
     tags: ['heartworm prevention', 'dog medication reminder', 'monthly dog prevention', 'heartworm test'],
     author: 'PetClues Team',
@@ -247,7 +247,7 @@ Never miss a monthly dose — set heartworm reminders in PetClues free for one d
     title: 'Flea and Tick Prevention Calendar for Dogs & Cats',
     slug: 'flea-tick-prevention-calendar-pets',
     excerpt:
-      'Flea and tick prevention calendar — monthly schedules, seasonal risks, and reminder tips for dogs and cats in one pet health app.',
+      'Flea and tick prevention calendar - monthly schedules, seasonal risks, and reminder tips for dogs and cats in one pet health app.',
     content: `## Fleas and ticks are a records problem too
 
 Prevention products only work when given on schedule. A **flea and tick prevention calendar** with refill alerts stops gaps that lead to infestations and Lyme exposure.
@@ -262,13 +262,13 @@ Note itching relief or breakthrough ticks after walks. Your vet adjusts products
 
 ## Multi-pet households
 
-Each pet needs separate reminders — doses and weights differ. Premium plans support unlimited pets with individual schedules.
+Each pet needs separate reminders - doses and weights differ. Premium plans support unlimited pets with individual schedules.
 
 ## Tie prevention to wellness visits
 
 Store annual screening results alongside prevention history in your **pet medical records** vault.
 
-Build your flea and tick calendar in PetClues — reminders included on the free plan.`,
+Build your flea and tick calendar in PetClues - reminders included on the free plan.`,
     category: 'dog-health',
     tags: ['flea tick prevention', 'flea reminder', 'tick prevention dogs', 'cat flea prevention'],
     author: 'PetClues Team',
@@ -283,7 +283,7 @@ Build your flea and tick calendar in PetClues — reminders included on the free
     title: 'Dog Dental Care Schedule: Cleanings, Home Care & Vet Reminders',
     slug: 'dog-dental-care-schedule-cleanings-reminders',
     excerpt:
-      'Dog dental care schedule — professional cleaning intervals, daily brushing habits, and vet reminder setup for long-term oral health.',
+      'Dog dental care schedule - professional cleaning intervals, daily brushing habits, and vet reminder setup for long-term oral health.',
     content: `## Dental disease affects whole-body health
 
 Gum disease links to heart and kidney problems in dogs. A **dog dental care schedule** combines home brushing with professional cleanings on a predictable timeline.
@@ -294,7 +294,7 @@ Small breeds often need annual dentistry; larger dogs may go longer. Your vet re
 
 ## Home care log
 
-Brush when possible — even a few days weekly helps. Log chews, water additives, and brushing in your **pet health timeline**.
+Brush when possible - even a few days weekly helps. Log chews, water additives, and brushing in your **pet health timeline**.
 
 ## Reminders that matter
 
@@ -306,7 +306,7 @@ Brush when possible — even a few days weekly helps. Log chews, water additives
 
 Dental extractions are costly. Organized **vet bill records** help with insurance claims and tax documentation where applicable.
 
-Track dental care alongside vaccines in PetClues — one calm health hub for your dog.`,
+Track dental care alongside vaccines in PetClues - one calm health hub for your dog.`,
     category: 'dog-health',
     tags: ['dog dental care', 'dog teeth cleaning schedule', 'pet dental reminders', 'dog oral health'],
     author: 'PetClues Team',
@@ -321,7 +321,7 @@ Track dental care alongside vaccines in PetClues — one calm health hub for you
     title: 'Traveling with Pets: Health Documents & Emergency Checklist',
     slug: 'traveling-with-pets-health-documents-checklist',
     excerpt:
-      'Traveling with pets checklist — vaccination certificates, health forms, medication supply, and emergency contacts for road trips and flights.',
+      'Traveling with pets checklist - vaccination certificates, health forms, medication supply, and emergency contacts for road trips and flights.',
     content: `## Travel fails when documents are missing
 
 Airlines, hotels, and border crossings require proof of rabies vaccination and sometimes health certificates. A **traveling with pets** checklist prevents last-minute scrambles.
@@ -345,7 +345,7 @@ Your **emergency pet information** card should show travel contacts and microchi
 
 Log any vet visits or stomach upset in your timeline. Travel stress sometimes surfaces days later.
 
-Keep travel-ready records in PetClues — export emergency passports before every trip.`,
+Keep travel-ready records in PetClues - export emergency passports before every trip.`,
     category: 'pet-records',
     tags: ['traveling with pets', 'pet health certificate', 'pet travel checklist', 'dog travel documents'],
     author: 'PetClues Team',
@@ -360,7 +360,7 @@ Keep travel-ready records in PetClues — export emergency passports before ever
     title: 'Pet Boarding Preparation: Vaccination Records & Health Forms',
     slug: 'pet-boarding-preparation-vaccination-records-health-forms',
     excerpt:
-      'Pet boarding preparation guide — required vaccination records, Bordetella timing, medication instructions, and forms kennels ask for.',
+      'Pet boarding preparation guide - required vaccination records, Bordetella timing, medication instructions, and forms kennels ask for.',
     content: `## Kennels require paperwork, not just payment
 
 Boarding facilities mandate current rabies, distemper combo, and often **Bordetella (kennel cough)** vaccines. **Pet boarding preparation** starts weeks before drop-off.
@@ -378,13 +378,13 @@ Provide labeled photos of prescriptions, exact feeding measurements, and emergen
 
 ## Trial day benefits
 
-Many kennels offer daycare trials. Log behavior notes afterward — they inform future boarding choices.
+Many kennels offer daycare trials. Log behavior notes afterward - they inform future boarding choices.
 
 ## Emergency contacts
 
 Boarding staff need your vet, backup contact, and permission to treat. Mirror details in your digital **emergency pet passport**.
 
-Upload vaccination PDFs once in PetClues — reuse for every boarding booking.`,
+Upload vaccination PDFs once in PetClues - reuse for every boarding booking.`,
     category: 'pet-records',
     tags: ['pet boarding preparation', 'kennel vaccination requirements', 'bordetella vaccine', 'dog boarding records'],
     author: 'PetClues Team',
@@ -399,7 +399,7 @@ Upload vaccination PDFs once in PetClues — reuse for every boarding booking.`,
     title: 'Dog Weight Tracker: Log Trends for Better Vet Conversations',
     slug: 'dog-weight-tracker-log-trends-vet-health',
     excerpt:
-      'Dog weight tracker guide — why monthly weigh-ins matter, how to log trends in pet health apps, and when to call the vet about changes.',
+      'Dog weight tracker guide - why monthly weigh-ins matter, how to log trends in pet health apps, and when to call the vet about changes.',
     content: `## Weight is vital sign number one
 
 Sudden loss or gain signals thyroid issues, diabetes, pain, or parasites. A simple **dog weight tracker** habit catches changes between annual exams.
@@ -422,7 +422,7 @@ Export a six-month chart before wellness visits. Objective data beats "I think h
 
 Side-profile photos monthly complement scale numbers in your **pet health timeline**.
 
-Log weight notes in PetClues health records — free for one dog, Premium for multi-pet trends.`,
+Log weight notes in PetClues health records - free for one dog, Premium for multi-pet trends.`,
     category: 'dog-health',
     tags: ['dog weight tracker', 'pet weight log', 'dog health monitoring', 'pet wellness tracking'],
     author: 'PetClues Team',
@@ -437,8 +437,8 @@ Log weight notes in PetClues health records — free for one dog, Premium for mu
     title: 'Pet Allergy Tracker: Symptoms, Triggers & Vet Record Keeping',
     slug: 'pet-allergy-tracker-symptoms-triggers-records',
     excerpt:
-      'Pet allergy tracker for dogs and cats — log itching, food trials, seasonal flare-ups, and medications in organized health records for your vet.',
-    content: `## Allergies are chronic — records should be too
+      'Pet allergy tracker for dogs and cats - log itching, food trials, seasonal flare-ups, and medications in organized health records for your vet.',
+    content: `## Allergies are chronic - records should be too
 
 Environmental and food **pet allergies** require months of observation. A structured **pet allergy tracker** helps vets connect triggers to symptoms faster.
 
@@ -459,7 +459,7 @@ Compare timeline entries across months. Pollen seasons become obvious when data 
 
 ## Medication adherence
 
-Apoquel, Cytopoint, antihistamines — set **pet medication reminders** and note response within 48 hours.
+Apoquel, Cytopoint, antihistamines - set **pet medication reminders** and note response within 48 hours.
 
 Give your vet complete allergy histories with PetClues timelines and searchable health records.`,
     category: 'cat-health',

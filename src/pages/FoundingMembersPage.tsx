@@ -82,7 +82,7 @@ export function FoundingMembersPage() {
           <Badge variant="accent">Launch program</Badge>
           <h1 className={styles.title}>Founding Pet Parents</h1>
           <p className={styles.subtitle}>
-            A limited early-adopter program for people who want calmer pet care — and want to help shape PetClues from day one.
+            A limited early-adopter program for people who want calmer pet care - and want to help shape PetClues from day one.
           </p>
 
           <div className={styles.heroCard}>

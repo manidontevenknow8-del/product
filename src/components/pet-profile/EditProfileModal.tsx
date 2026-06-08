@@ -166,7 +166,7 @@ export function EditProfileModal({ pet, isOpen, onClose, onSave }: EditProfileMo
                     disabled={isSaving}
                   />
                 </label>
-                <span className={styles.photoHint}>Optional — stored as profile photo</span>
+                <span className={styles.photoHint}>Optional - stored as profile photo</span>
                 {form.photo && (
                   <button
                     type="button"

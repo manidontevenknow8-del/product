@@ -35,7 +35,7 @@ export function ImportantInsightCard({ insight: insightOverride }: ImportantInsi
         <span className={styles.label}>Important insight</span>
         <h2 className={styles.title}>Your story is just beginning</h2>
         <p className={styles.message}>
-          Scan a document or add a health record — insights appear from your real data.
+          Scan a document or add a health record - insights appear from your real data.
         </p>
       </article>
     );

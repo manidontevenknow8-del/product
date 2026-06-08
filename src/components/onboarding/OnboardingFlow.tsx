@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { PetCluesLogo } from '@/components/brand';
 import { useAuth } from '@/auth/AuthProvider';
 import { usePets } from '@/pets';
@@ -23,10 +23,12 @@ const STEP_ORDER: OnboardingStepId[] = ['intro', 'basics', 'health', 'confirm'];
 
 export function OnboardingFlow() {
   const navigate = useNavigate();
-  const { completeOnboarding } = useAuth();
+  const [searchParams] = useSearchParams();
+  const isAddPetMode = searchParams.get('add') === 'true';
+  const { completeOnboarding, user } = useAuth();
   const { createPetFromOnboarding } = usePets();
   const { track } = useAnalytics();
-  const [step, setStep] = useState<OnboardingStepId>('intro');
+  const [step, setStep] = useState<OnboardingStepId>(isAddPetMode ? 'basics' : 'intro');
   const [data, setData] = useState<OnboardingPetData>(emptyOnboardingData);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
@@ -50,8 +52,12 @@ export function OnboardingFlow() {
       setSubmitting(true);
       try {
         await createPetFromOnboarding(data);
-        await completeOnboarding();
-        track('onboarding_completed', { species: data.species });
+        if (!user?.needsOnboarding) {
+          track('pet_created', { species: data.species, source: 'add_another_pet' });
+        } else {
+          await completeOnboarding();
+          track('onboarding_completed', { species: data.species });
+        }
         navigate(ROUTES.DASHBOARD);
       } catch (err) {
         setSubmitError(
@@ -79,7 +85,9 @@ export function OnboardingFlow() {
       : step === 'confirm'
         ? submitting
           ? 'Creating profile…'
-          : 'Go to dashboard'
+          : isAddPetMode
+            ? 'Add pet'
+            : 'Go to dashboard'
         : 'Save & continue';
 
   const visualTitle =
@@ -93,9 +101,9 @@ export function OnboardingFlow() {
 
   const visualSubtitle =
     step === 'intro'
-      ? 'Health records, reminders, and emergency details — beautifully organized in one place.'
+      ? 'Health records, reminders, and emergency details - beautifully organized in one place.'
       : step === 'basics'
-        ? 'A name, species, and a few basics — then we tailor everything to your pet.'
+        ? 'A name, species, and a few basics - then we tailor everything to your pet.'
         : step === 'health'
           ? 'Optional details now make reminders and records smarter later.'
           : 'Review everything once, then step into your personalized dashboard.';

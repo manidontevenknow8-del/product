@@ -4,7 +4,7 @@ type PassportQRCodeProps = {
   petName: string;
 };
 
-/* Decorative QR-style grid — placeholder for future scannable code */
+/* Decorative QR-style grid - placeholder for future scannable code */
 const PATTERN = [
   1,1,1,1,1,1,1,0,1,
   1,0,0,0,0,0,1,0,1,

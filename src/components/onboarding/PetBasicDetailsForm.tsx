@@ -39,7 +39,7 @@ export function PetBasicDetailsForm({ data, onChange }: PetBasicDetailsFormProps
       <div className={styles.header}>
         <h2 className={styles.title}>Tell us about your companion</h2>
         <p className={styles.subtitle}>
-          Just the essentials — you can always add more later.
+          Just the essentials - you can always add more later.
         </p>
       </div>
 
@@ -65,7 +65,7 @@ export function PetBasicDetailsForm({ data, onChange }: PetBasicDetailsFormProps
                   onChange={handlePhotoChange}
                 />
               </label>
-              <span className={styles.photoHint}>Optional — helps personalize their profile</span>
+              <span className={styles.photoHint}>Optional - helps personalize their profile</span>
               {data.photo && (
                 <button type="button" className={styles.removeBtn} onClick={clearPhoto}>
                   Remove photo

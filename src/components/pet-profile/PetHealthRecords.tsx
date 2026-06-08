@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { EmptyHealthRecordsState } from '@/components/empty-states/EmptyHealthRecordsState';
+import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
 import { useHealthRecords } from '@/healthRecords';
+import { useHealthRecordLimit } from '@/hooks/useHealthRecordLimit';
 import {
   formatHealthRecordDate,
   healthRecordTypeLabels,
@@ -60,7 +63,17 @@ function RecordDocumentLink({ record }: { record: HealthRecord }) {
 
 export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
   const { records, isLoading } = useHealthRecords();
+  const { atLimit, recordCount, limit } = useHealthRecordLimit();
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
   const groups = groupRecords(records);
+
+  const handleAdd = () => {
+    if (atLimit) {
+      setUpgradeOpen(true);
+      return;
+    }
+    onAdd();
+  };
 
   return (
     <section className={styles.section}>
@@ -71,15 +84,24 @@ export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
             <span className={styles.count}>{records.length} entries</span>
           )}
         </div>
-        <button type="button" className={styles.addBtn} onClick={onAdd}>
+        <button type="button" className={styles.addBtn} onClick={handleAdd}>
           Add record
         </button>
       </div>
 
+      {atLimit && (
+        <PremiumUpgradePrompt
+          feature="unlimitedHealthRecords"
+          compact
+          onUpgrade={() => setUpgradeOpen(true)}
+          emotionalOverride={`You've used ${recordCount} of ${limit} free health records. Upgrade to Pro to log every vaccination, diagnosis, and vet visit without limits.`}
+        />
+      )}
+
       {isLoading ? (
         <p className={styles.loadingHint}>Loading health records…</p>
       ) : records.length === 0 ? (
-        <EmptyHealthRecordsState onAdd={onAdd} compact />
+        <EmptyHealthRecordsState onAdd={handleAdd} compact />
       ) : (
         groups.map((group) => (
           <div key={group.type}>
@@ -122,6 +144,8 @@ export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
           </div>
         ))
       )}
+
+      <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
     </section>
   );
 }

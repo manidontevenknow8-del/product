@@ -28,11 +28,11 @@ export function HeroSection() {
             </Badge>
 
             <h1 className={styles.title}>
-              Pet health records, vaccination reminders &amp; emergency info — organized
+              Pet health records, vaccination reminders &amp; emergency info - organized
             </h1>
 
             <p className={styles.subtitle}>
-              The pet health app for dog and cat parents — store vet bills, set medication
+              The pet health app for dog and cat parents - store vet bills, set medication
               reminders, log daily check-ins, and share an emergency pet passport in one calm
               place.
             </p>
@@ -44,7 +44,7 @@ export function HeroSection() {
                 </Button>
               </Link>
               <Link to={ROUTES.PET_MATCH}>
-                <Button variant="secondary" size="lg">
+                <Button variant="secondary" size="lg" className={styles.lightBtn}>
                   Pet match quiz
                 </Button>
               </Link>

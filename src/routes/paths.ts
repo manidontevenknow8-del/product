@@ -46,7 +46,6 @@ export const ROUTES = {
   BETA_RELEASE: '/beta-release',
   ANALYTICS: '/analytics',
   BETA_FEEDBACK: '/beta-feedback',
-  SYSTEM_STATUS: '/status',
 } as const;
 
 export type RouteKey = keyof typeof ROUTES;

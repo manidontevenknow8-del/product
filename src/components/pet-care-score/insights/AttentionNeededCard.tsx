@@ -12,7 +12,7 @@ export function AttentionNeededCard({ items }: AttentionNeededCardProps) {
     <article className={styles.card}>
       <h2 className={styles.title}>Gentle reminders</h2>
       <p className={styles.subtitle}>
-        Small opportunities to strengthen your care score — no pressure, just helpful nudges.
+        Small opportunities to strengthen your care score - no pressure, just helpful nudges.
       </p>
       <div className={styles.list}>
         {items.map((item) => (

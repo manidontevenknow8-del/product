@@ -39,14 +39,13 @@ import { SecurityPage } from '@/pages/legal/SecurityPage';
 import { DataDeletionPage } from '@/pages/legal/DataDeletionPage';
 import { DataExportPage } from '@/pages/legal/DataExportPage';
 import { FaqPage } from '@/pages/legal/FaqPage';
-import { SystemStatusPage } from '@/pages/SystemStatusPage';
 import { BlogIndexPage } from '@/pages/blog/BlogIndexPage';
 import { BlogPostPage } from '@/pages/blog/BlogPostPage';
 
 export function App() {
   return (
     <Routes>
-      {/* Public — V1 acquisition */}
+      {/* Public - V1 acquisition */}
       <Route path={ROUTES.LANDING} element={<LandingPage />} />
       <Route path={ROUTES.PRICING} element={<PricingPage />} />
       <Route path={ROUTES.PET_MATCH} element={<PetMatchPage />} />
@@ -62,7 +61,6 @@ export function App() {
       <Route path={ROUTES.DATA_DELETION} element={<DataDeletionPage />} />
       <Route path={ROUTES.DATA_EXPORT} element={<DataExportPage />} />
       <Route path={ROUTES.FAQ} element={<FaqPage />} />
-      <Route path={ROUTES.SYSTEM_STATUS} element={<SystemStatusPage />} />
 
       {/* Deferred public routes → landing */}
       <Route path={ROUTES.FOUNDING_MEMBERS} element={<FoundingMembersPage />} />
@@ -77,7 +75,7 @@ export function App() {
       <Route path={ROUTES.AUTH_CALLBACK} element={<AuthCallbackPage />} />
       <Route path={ROUTES.RESET_PASSWORD} element={<ResetPasswordPage />} />
 
-      {/* Protected — V1 core */}
+      {/* Protected - V1 core */}
       <Route path={ROUTES.ONBOARDING} element={<ProtectedRoute requireOnboardingComplete={false}><OnboardingPage /></ProtectedRoute>} />
       <Route path={ROUTES.DASHBOARD} element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       <Route path={ROUTES.PET_PROFILE} element={<ProtectedRoute><PetProfilePage /></ProtectedRoute>} />

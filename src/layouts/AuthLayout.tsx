@@ -18,7 +18,7 @@ export function AuthLayout({
   footer,
   visualImage = PAGE_IMG.auth.login,
   visualTitle = 'Calm, organized pet care',
-  visualSubtitle = 'Health records, reminders, and emergency passports — beautifully in one place.',
+  visualSubtitle = 'Health records, reminders, and emergency passports - beautifully in one place.',
 }: AuthLayoutProps) {
   return (
     <div className={styles.shell}>
@@ -35,7 +35,7 @@ export function AuthLayout({
       <div className={styles.formSide}>
         <header className={styles.header}>
           <Link to={ROUTES.LANDING} className={styles.logo} aria-label="PetClues home">
-            <PetCluesLogo size="md" />
+            <PetCluesLogo size="xl" />
           </Link>
         </header>
         <main className={styles.main}>

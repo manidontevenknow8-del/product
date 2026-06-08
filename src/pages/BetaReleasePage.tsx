@@ -8,7 +8,7 @@ export function BetaReleasePage() {
       <PageContainer size="lg">
         <SectionHeader
           title="Beta release candidate"
-          subtitle="Full production audit — routing, components, accessibility, mobile, SEO, and analytics."
+          subtitle="Full production audit - routing, components, accessibility, mobile, SEO, and analytics."
         />
         <BetaReleaseCandidateReport />
       </PageContainer>

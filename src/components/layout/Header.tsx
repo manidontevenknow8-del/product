@@ -1,16 +1,19 @@
-import { Link, useLocation } from 'react-router-dom';
+import type { MouseEvent } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { PetCluesLogo } from '@/components/brand';
 import { Button } from '@/components/ui';
 import { useAuth } from '@/auth/AuthProvider';
 import { getPostAuthPath } from '@/auth/postAuthRedirect';
 import { ROUTES } from '@/routes/paths';
+import { scrollToLandingSection } from '@/utils/landingSectionScroll';
 import styles from './Header.module.css';
 
 const publicNav = [
   { label: 'Features', href: '#features' },
   { label: 'How it works', href: '#how-it-works' },
-  { label: 'Pet guides', href: '#pet-health-guides' },
   { label: 'Blog', path: ROUTES.BLOG },
+  { label: 'About', path: ROUTES.ABOUT },
+  { label: 'Pricing', path: ROUTES.PRICING },
 ] as const;
 
 const appNav = [
@@ -21,25 +24,38 @@ const appNav = [
 
 type HeaderProps = {
   variant?: 'landing' | 'app';
-  /** Transparent bar over full-bleed landing hero */
-  overHero?: boolean;
 };
 
-export function Header({ variant = 'landing', overHero = false }: HeaderProps) {
+export function Header({ variant = 'landing' }: HeaderProps) {
   const location = useLocation();
+  const navigate = useNavigate();
   const { isAuthenticated, isLoading, user } = useAuth();
   const isApp = variant === 'app';
+  const isLanding = location.pathname === ROUTES.LANDING;
 
   const showAuthedNav = !isLoading && isAuthenticated && user;
 
+  const handleLandingSectionClick =
+    (hash: string) => (event: MouseEvent<HTMLAnchorElement>) => {
+      event.preventDefault();
+      if (isLanding) {
+        scrollToLandingSection(hash);
+        window.history.pushState(null, '', hash);
+        return;
+      }
+      navigate(`${ROUTES.LANDING}${hash}`);
+    };
+
   return (
-    <header className={`${styles.header} ${overHero ? styles.headerOverHero : ''}`}>
+    <header
+      className={`${styles.header} ${isApp ? styles.headerApp : styles.headerLanding}`}
+    >
       <div className={`container ${styles.inner}`}>
         <Link to={ROUTES.LANDING} className={styles.logo} aria-label="PetClues home">
-          <PetCluesLogo size="md" />
+          <PetCluesLogo size="xl" />
         </Link>
 
-        <nav className={styles.nav}>
+        <nav className={styles.nav} aria-label="Main">
           {isApp
             ? appNav.map((item) => (
                 <Link
@@ -58,7 +74,12 @@ export function Header({ variant = 'landing', overHero = false }: HeaderProps) {
                     {item.label}
                   </Link>
                 ) : (
-                  <a key={item.href} href={item.href} className={styles.navLink}>
+                  <a
+                    key={item.href}
+                    href={`${ROUTES.LANDING}${item.href}`}
+                    className={styles.navLink}
+                    onClick={handleLandingSectionClick(item.href)}
+                  >
                     {item.label}
                   </a>
                 ),
@@ -73,13 +94,11 @@ export function Header({ variant = 'landing', overHero = false }: HeaderProps) {
               </Button>
             </Link>
           ) : showAuthedNav && user ? (
-            <>
-              <Link to={getPostAuthPath(user, ROUTES.DASHBOARD)}>
-                <Button variant="primary" size="sm">
-                  {user.needsOnboarding ? 'Continue setup' : 'Open app'}
-                </Button>
-              </Link>
-            </>
+            <Link to={getPostAuthPath(user, ROUTES.DASHBOARD)}>
+              <Button variant="primary" size="sm">
+                {user.needsOnboarding ? 'Continue setup' : 'Open app'}
+              </Button>
+            </Link>
           ) : (
             <>
               <Link to={ROUTES.PET_MATCH}>

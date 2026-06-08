@@ -38,7 +38,7 @@ export function formatLastUpdated(date: string): string {
 
 export function getEncouragingMessage(snapshot: ScoreSnapshot): string {
   if (snapshot.trend === 'up' && snapshot.trendDelta >= 5) {
-    return `You've improved ${snapshot.trendDelta} points — keep building on what's working.`;
+    return `You've improved ${snapshot.trendDelta} points - keep building on what's working.`;
   }
   if (snapshot.score >= 85) {
     return "You're doing wonderfully. Small refinements keep momentum going.";

@@ -41,8 +41,8 @@ export function PassportExportCard({ passport }: PassportExportCardProps) {
           Export passport
         </h2>
         <p className={styles.description}>
-          Download a PNG snapshot of {passport.identity.petName}&apos;s emergency passport —
-          identity, health records, notes, and vault file list — for travel, boarding, or your
+          Download a PNG snapshot of {passport.identity.petName}&apos;s emergency passport -
+          identity, health records, notes, and vault file list - for travel, boarding, or your
           vet.
         </p>
         {error && (

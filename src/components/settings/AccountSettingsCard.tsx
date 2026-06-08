@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Input, Avatar } from '@/components/ui';
 import { useSettings } from '@/settings';
+import { ROUTES } from '@/routes/paths';
 import type { AccountSettings } from '@/types/settings';
 import styles from './SettingsCard.module.css';
 
@@ -56,8 +58,9 @@ export function AccountSettingsCard({ onSave }: AccountSettingsCardProps) {
         <Input
           label="Email"
           type="email"
-          value={local?.email ?? account.email}
-          onChange={(e) => update({ email: e.target.value })}
+          value={account.email}
+          readOnly
+          hint="Email is tied to your sign-in. Contact support if you need to change it."
         />
       </div>
 
@@ -66,21 +69,35 @@ export function AccountSettingsCard({ onSave }: AccountSettingsCardProps) {
       <div className={styles.placeholder}>
         <div className={styles.placeholderTitle}>Password</div>
         <div className={styles.placeholderDesc}>
-          Change your password securely. Password management will connect to your auth provider.
+          Reset your password securely via email.
         </div>
         <div className={styles.actions}>
-          <Button variant="secondary" size="sm" disabled>
-            Update password
-          </Button>
+          <Link to={ROUTES.FORGOT_PASSWORD}>
+            <Button variant="secondary" size="sm">
+              Reset password
+            </Button>
+          </Link>
         </div>
       </div>
 
       <div className={styles.divider} />
 
       <div className={styles.placeholder}>
-        <div className={styles.placeholderTitle}>Account management</div>
+        <div className={styles.placeholderTitle}>Your data</div>
         <div className={styles.placeholderDesc}>
-          Export your data or close your account. These options will be available when backend support is ready.
+          Export a copy of your records or request account deletion.
+        </div>
+        <div className={styles.actions}>
+          <Link to={ROUTES.DATA_EXPORT}>
+            <Button variant="secondary" size="sm">
+              Export data
+            </Button>
+          </Link>
+          <Link to={ROUTES.DATA_DELETION}>
+            <Button variant="destructive" size="sm">
+              Delete account
+            </Button>
+          </Link>
         </div>
       </div>
 

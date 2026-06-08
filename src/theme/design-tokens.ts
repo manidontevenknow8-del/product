@@ -74,7 +74,7 @@ export const layout = {
   maxWidthSm: '640px',
   maxWidthMd: '720px',
   maxWidthLg: '960px',
-  headerHeight: '64px',
+  headerHeight: '72px',
   sidebarWidth: '240px',
   bottomNavHeight: '64px',
 } as const;

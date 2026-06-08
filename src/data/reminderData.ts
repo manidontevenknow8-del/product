@@ -12,7 +12,7 @@ function daysFromNow(days: number): string {
   return `${y}-${m}-${day}`;
 }
 
-/** Seed reminders for demo — keyed per user in service */
+/** Seed reminders for demo - keyed per user in service */
 export function getSeedReminders(userId: string): Reminder[] {
   return [
     {
@@ -24,7 +24,7 @@ export function getSeedReminders(userId: string): Reminder[] {
       category: 'medication',
       dueDate: daysFromNow(3),
       repeatFrequency: 'monthly',
-      notes: 'Topical treatment — apply between shoulder blades.',
+      notes: 'Topical treatment - apply between shoulder blades.',
       priority: 'high',
       createdAt: now,
       updatedAt: now,

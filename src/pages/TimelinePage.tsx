@@ -2,6 +2,10 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { Button, EmptyState, LoadingState } from '@/components/ui';
+import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
+import { useSubscription } from '@/subscription/SubscriptionProvider';
+import { FREE_TIMELINE_MONTHS } from '@/subscription/featureGates';
+import { partitionTimelineEvents } from '@/utils/timelineAccess';
 import { PageHeroBand, GettingStartedStrip } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
 import {
@@ -25,14 +29,14 @@ const TIMELINE_GETTING_STARTED = [
   {
     step: '1',
     title: 'Add your first moment',
-    body: 'Capture vet visits, milestones, and everyday memories — each entry becomes part of your pet’s life story.',
+    body: 'Capture vet visits, milestones, and everyday memories - each entry becomes part of your pet’s life story.',
     image: PAGE_IMG.app.timeline,
     alt: 'Illustration of a pet life timeline',
   },
   {
     step: '2',
     title: 'Scan a document',
-    body: 'Upload bills, prescriptions, or reports — decoded documents can flow straight into the timeline.',
+    body: 'Upload bills, prescriptions, or reports - decoded documents can flow straight into the timeline.',
     image: PAGE_IMG.app.scan,
     alt: 'Illustration of scanning a pet document',
   },
@@ -47,15 +51,26 @@ const TIMELINE_GETTING_STARTED = [
 
 export function TimelinePage() {
   const { activePet, pets } = usePets();
+  const { isPremium, canAccess } = useSubscription();
   const petName = activePet?.name ?? 'your pet';
   const [activeFilter, setActiveFilter] = useState<TimelineFilter>('all');
   const [showAddEvent, setShowAddEvent] = useState(false);
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
   const { events, milestones, stats, isLoading, isDemo } = useTimelineData();
 
   const filteredEvents = useMemo(
     () => events.filter((e) => eventMatchesFilter(e, activeFilter)),
     [events, activeFilter],
   );
+
+  const { visible: freeVisibleEvents, locked: lockedEvents } = useMemo(() => {
+    if (canAccess('premiumTimeline')) {
+      return { visible: filteredEvents, locked: [] as typeof filteredEvents };
+    }
+    return partitionTimelineEvents(filteredEvents);
+  }, [filteredEvents, canAccess]);
+
+  const displayEvents = isPremium ? filteredEvents : freeVisibleEvents;
 
   const storySummary = useMemo(
     () =>
@@ -165,7 +180,7 @@ export function TimelinePage() {
         <div className={styles.body}>
           {isDemo && (
             <p className={styles.demoBanner}>
-              Preview mode — timeline demo data is enabled via VITE_DEMO_TIMELINE.
+              Preview mode - timeline demo data is enabled via VITE_DEMO_TIMELINE.
             </p>
           )}
 
@@ -186,14 +201,33 @@ export function TimelinePage() {
                 events={events}
               />
 
-              {filteredEvents.length > 0 ? (
-                <TimelineFeed
-                  events={filteredEvents}
-                  milestones={milestones}
-                  petName={petName}
-                  storySummary={storySummary}
-                  showMilestones={showMilestones}
-                />
+              {displayEvents.length > 0 ? (
+                <>
+                  <TimelineFeed
+                    events={displayEvents}
+                    milestones={milestones}
+                    petName={petName}
+                    storySummary={storySummary}
+                    showMilestones={showMilestones}
+                  />
+                  {lockedEvents.length > 0 && (
+                    <div className={styles.proGate}>
+                      <PremiumUpgradePrompt
+                        feature="premiumTimeline"
+                        onUpgrade={() => setUpgradeOpen(true)}
+                        emotionalOverride={`${lockedEvents.length} older moment${lockedEvents.length === 1 ? '' : 's'} from before the last ${FREE_TIMELINE_MONTHS} months are waiting in ${petName}'s full story. Unlock Pro to revisit every chapter.`}
+                      />
+                    </div>
+                  )}
+                </>
+              ) : lockedEvents.length > 0 ? (
+                <div className={styles.proGate}>
+                  <PremiumUpgradePrompt
+                    feature="premiumTimeline"
+                    onUpgrade={() => setUpgradeOpen(true)}
+                    emotionalOverride={`Your older memories are saved - Free shows the last ${FREE_TIMELINE_MONTHS} months. Upgrade to Pro to see ${petName}'s complete timeline.`}
+                  />
+                </div>
               ) : (
                 <EmptyTimelineState petName={petName} filtered />
               )}
@@ -213,6 +247,8 @@ export function TimelinePage() {
         onClose={() => setShowAddEvent(false)}
         petName={petName}
       />
+
+      <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
     </AppLayout>
   );
 }

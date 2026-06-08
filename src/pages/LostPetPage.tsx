@@ -73,7 +73,7 @@ export function LostPetPage() {
             </h2>
             <p className={styles.inactiveText}>
               Activate Lost Pet Mode to generate recovery assets, share with your
-              community, and track sightings — calmly, clearly, and without the
+              community, and track sightings - calmly, clearly, and without the
               noise of social media.
             </p>
 
@@ -88,7 +88,7 @@ export function LostPetPage() {
               </li>
               <li className={styles.trustItem}>
                 <strong>Sighting reports</strong>
-                Structured community reports — not a social feed
+                Structured community reports - not a social feed
               </li>
             </ul>
 

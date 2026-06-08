@@ -45,7 +45,7 @@ export const LIFE_STAGE_INSIGHTS: LifeStageInsight[] = [
     stage: 'adult',
     title: 'Adult',
     meaning:
-      'The prime years — settled, capable, and full of personality. A wonderful time to deepen your bond through consistent care.',
+      'The prime years - settled, capable, and full of personality. A wonderful time to deepen your bond through consistent care.',
     carePriorities: [
       'Preventative health screenings',
       'Balanced diet and regular activity',
@@ -86,7 +86,7 @@ export const LIFE_STAGE_INSIGHTS: LifeStageInsight[] = [
     stage: 'senior',
     title: 'Senior',
     meaning:
-      'Golden years filled with quiet companionship. Every day together is precious — gentle care keeps comfort high.',
+      'Golden years filled with quiet companionship. Every day together is precious - gentle care keeps comfort high.',
     carePriorities: [
       'Pain management and mobility support',
       'Easily digestible, senior-appropriate nutrition',
@@ -118,7 +118,7 @@ export const GOLDEN_RETRIEVER_INSIGHTS: BreedInsight[] = [
     category: 'weight',
     title: 'Weight management',
     description:
-      'This breed tends to enjoy food — keeping a healthy weight reduces stress on hips and extends active years.',
+      'This breed tends to enjoy food - keeping a healthy weight reduces stress on hips and extends active years.',
     tip: 'Measure meals and account for treats in daily calories.',
   },
   {

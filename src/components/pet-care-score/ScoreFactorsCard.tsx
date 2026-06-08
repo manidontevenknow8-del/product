@@ -11,7 +11,7 @@ export function ScoreFactorsCard({ factors }: ScoreFactorsCardProps) {
     <article className={styles.card}>
       <h2 className={styles.title}>Score factors</h2>
       <p className={styles.subtitle}>
-        Six areas that shape your wellness score — all improvable with small, steady actions.
+        Six areas that shape your wellness score - all improvable with small, steady actions.
       </p>
       <div className={styles.list}>
         {factors.map((factor) => (

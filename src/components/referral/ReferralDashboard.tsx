@@ -121,7 +121,7 @@ export function ReferralDashboard() {
       <header className={styles.header}>
         <h1 className={styles.title}>Referral dashboard</h1>
         <p className={styles.subtitle}>
-          Share PetClues with people who&apos;d genuinely love it — friends who sign up count toward
+          Share PetClues with people who&apos;d genuinely love it - friends who sign up count toward
           your rewards.
         </p>
       </header>

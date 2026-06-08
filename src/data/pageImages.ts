@@ -25,6 +25,8 @@ export const PAGE_IMG = {
     trust: '/images/landing/landing-trust.png',
     how: '/images/landing/landing-how.png',
     cta: '/images/landing/landing-cta.png',
+    /** Warm welcome moment - used on About only */
+    about: '/images/auth/auth-signup.png',
   },
   profile: {
     health: '/images/profile/profile-health.png',

@@ -8,7 +8,7 @@ export const mockPetProfile: PetProfile = {
   age: '4 years',
   weight: '28 kg',
   avatarInitials: 'LU',
-  diet: 'Mixed — dry & wet',
+  diet: 'Mixed - dry & wet',
   vaccinationStatus: 'Up to date',
   allergies: 'None recorded',
   microchipId: '985112004567890',
@@ -46,7 +46,7 @@ export const mockHealthRecords: HealthRecordEntry[] = [
     type: 'vet',
     title: 'Annual wellness check',
     date: 'May 28, 2026',
-    detail: 'Dr. Sarah Chen — all vitals normal, weight stable',
+    detail: 'Dr. Sarah Chen - all vitals normal, weight stable',
     status: 'Recent',
   },
   {
@@ -54,7 +54,7 @@ export const mockHealthRecords: HealthRecordEntry[] = [
     type: 'medication',
     title: 'Flea prevention',
     date: 'May 1, 2026',
-    detail: 'Monthly topical treatment — next due Jun 3',
+    detail: 'Monthly topical treatment - next due Jun 3',
     status: 'Active',
   },
   {
@@ -62,7 +62,7 @@ export const mockHealthRecords: HealthRecordEntry[] = [
     type: 'note',
     title: 'Care note',
     date: 'Apr 20, 2026',
-    detail: 'Increased activity levels noted — monitor for 2 weeks',
+    detail: 'Increased activity levels noted - monitor for 2 weeks',
   },
 ];
 
@@ -90,7 +90,7 @@ export const mockVaultDocuments: VaultDocument[] = [
   },
   {
     id: '4',
-    name: 'Clinic invoice — May visit',
+    name: 'Clinic invoice - May visit',
     category: 'bill',
     date: 'May 28, 2026',
     size: '156 KB',

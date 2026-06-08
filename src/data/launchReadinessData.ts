@@ -106,7 +106,7 @@ export const LAUNCH_READINESS_AUDIT: AuditItem[] = [
     id: 'mock-data',
     category: 'Content',
     title: 'Placeholder / mock data',
-    description: 'Core features use localStorage mocks — auth, reminders, scores, notifications, family sharing.',
+    description: 'Core features use localStorage mocks - auth, reminders, scores, notifications, family sharing.',
     status: 'partial',
     severity: 'high',
     recommendation: 'Connect Supabase backend before production users.',
@@ -188,7 +188,7 @@ export const LAUNCH_READINESS_AUDIT: AuditItem[] = [
     id: 'premium-placeholders',
     category: 'Production',
     title: 'Coming soon placeholders',
-    description: 'Multiple "coming soon" CTAs (2FA, data export, AI features) — acceptable for V1 beta.',
+    description: 'Multiple "coming soon" CTAs (2FA, data export, AI features) - acceptable for V1 beta.',
     status: 'partial',
     severity: 'medium',
     recommendation: 'Disable or hide non-functional destructive actions until backend ready.',
@@ -240,8 +240,8 @@ export function getReadinessSummary() {
 
   let label: string;
   if (score >= 85) label = 'Launch ready (V1 beta)';
-  else if (score >= 70) label = 'Near ready — address high-severity items';
-  else label = 'Not ready — critical gaps remain';
+  else if (score >= 70) label = 'Near ready - address high-severity items';
+  else label = 'Not ready - critical gaps remain';
 
   return { score, pass, partial, fail, high, label };
 }

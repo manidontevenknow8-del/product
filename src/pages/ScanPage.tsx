@@ -39,7 +39,7 @@ const SCAN_GETTING_STARTED = [
   {
     step: '1',
     title: 'Upload a document',
-    body: 'Drop a vet bill, prescription, or health report — PDF, JPG, or PNG all work.',
+    body: 'Drop a vet bill, prescription, or health report - PDF, JPG, or PNG all work.',
     image: PAGE_IMG.scan.docs,
     alt: 'Illustration of uploading pet documents',
   },
@@ -381,7 +381,7 @@ export function ScanPage() {
           <div className={styles.gettingStarted}>
             <GettingStartedStrip
               title="How scanning works"
-              description="Upload once — PetClues organizes documents and builds your pet's care history."
+              description="Upload once - PetClues organizes documents and builds your pet's care history."
               steps={SCAN_GETTING_STARTED}
             />
           </div>
@@ -390,7 +390,7 @@ export function ScanPage() {
         <div className={styles.body}>
           {decoderMockMode && (
             <p className={styles.mockBanner} role="status">
-              Local preview — Vet Bill Decoder uses sample extraction data until Supabase is configured.
+              Local preview - Vet Bill Decoder uses sample extraction data until Supabase is configured.
             </p>
           )}
 

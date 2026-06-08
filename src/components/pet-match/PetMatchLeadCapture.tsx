@@ -18,30 +18,52 @@ export function PetMatchLeadCapture({
 }: PetMatchLeadCaptureProps) {
   return (
     <Card variant="elevated" className={styles.card}>
-      <h3 className={styles.title}>Keep your perfect match</h3>
+      <h3 className={styles.title}>What happens after you find the one</h3>
       <p className={styles.subtitle}>
-        Save this recommendation so you can compare options and return later.
+        The match is only the beginning. PetClues helps you keep vaccines, vet visits, medications,
+        and memories in one calm place - so the life you imagined does not dissolve into scattered
+        notes and forgotten dates.
       </p>
 
       <div className={styles.actions}>
         <Button variant="primary" onClick={onSave}>
-          {saveSuccess ? 'Saved' : 'Save recommendation'}
+          {saveSuccess ? 'Saved' : 'Save this match'}
         </Button>
         <Button variant="ghost" onClick={onRestart}>
-          Start again
+          Retake quiz
         </Button>
       </div>
 
-      {!isAuthenticated && (
-        <div className={styles.cta}>
-          <p className={styles.ctaText}>
-            Create an account before leaving to keep your pet match synced across devices.
-          </p>
-          <Link to={ROUTES.SIGNUP}>
-            <Button variant="secondary">Create account</Button>
-          </Link>
-        </div>
-      )}
+      <div className={styles.nextSteps}>
+        {isAuthenticated ? (
+          <>
+            <p className={styles.nextLead}>Ready to build their home in PetClues?</p>
+            <div className={styles.nextActions}>
+              <Link to={ROUTES.PET_PROFILE}>
+                <Button variant="secondary">Set up pet profile</Button>
+              </Link>
+              <Link to={ROUTES.DASHBOARD}>
+                <Button variant="ghost">Go to dashboard</Button>
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <p className={styles.nextLead}>
+              Create a free account to save this match and start organizing their health story from
+              day one.
+            </p>
+            <div className={styles.nextActions}>
+              <Link to={ROUTES.SIGNUP}>
+                <Button variant="secondary">Create free account</Button>
+              </Link>
+              <Link to={ROUTES.ABOUT}>
+                <Button variant="ghost">Why PetClues exists</Button>
+              </Link>
+            </div>
+          </>
+        )}
+      </div>
     </Card>
   );
 }

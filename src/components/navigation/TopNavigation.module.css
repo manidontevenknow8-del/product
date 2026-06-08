@@ -3,9 +3,9 @@
   top: 0;
   z-index: 110;
   height: var(--header-height);
-  background: rgba(250, 249, 247, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-border-light);
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
 }
 
 .inner {

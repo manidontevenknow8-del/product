@@ -39,7 +39,7 @@ export function SavedReportsGrid({
         <section className={styles.section}>
           <h2 className={styles.title}>Saved reports</h2>
           <p className={styles.empty}>
-            Scan a vet bill or health document — your AI report will appear here with a preview.
+            Scan a vet bill or health document - your AI report will appear here with a preview.
           </p>
           {onUpload && (
             <button type="button" className={styles.emptyBtn} onClick={onUpload}>
@@ -58,7 +58,7 @@ export function SavedReportsGrid({
         Saved reports
       </h2>
       <p className={styles.subtitle}>
-        Tap a card to reopen — no new AI scan. Add timeline items anytime from the report.
+        Tap a card to reopen - no new AI scan. Add timeline items anytime from the report.
       </p>
       <div
         className={`${styles.grid} ${styles.gridScroll}`}

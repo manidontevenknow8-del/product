@@ -3,7 +3,7 @@ import styles from './PetCluesLogo.module.css';
 export const PETCLUES_LOGO_SRC = '/images/petclues-logo.png';
 
 type PetCluesLogoProps = {
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
   className?: string;
 };
 

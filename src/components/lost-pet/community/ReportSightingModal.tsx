@@ -108,7 +108,7 @@ export function ReportSightingModal({
             )}
 
             <p className={styles.photoNote}>
-              Photo upload placeholder — attach a photo in a future release
+              Photo upload placeholder - attach a photo in a future release
             </p>
 
             <div className={styles.actions}>

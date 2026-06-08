@@ -59,7 +59,7 @@ export function PetAgeTranslatorPage() {
       <PageContainer size="xl" className={styles.page}>
         <SectionHeader
           title="Pet Age Translator"
-          subtitle="Discover your companion's life stage — and share the magic"
+          subtitle="Discover your companion's life stage - and share the magic"
         />
 
         <div className={styles.heroGrid}>
@@ -88,7 +88,7 @@ export function PetAgeTranslatorPage() {
         <section className={styles.shareSection}>
           <h2 className={styles.shareTitle}>Share the story</h2>
           <p className={styles.shareSubtitle}>
-            {translation.shareMessage} Spread the word — and invite friends to discover PetClues.
+            {translation.shareMessage} Spread the word - and invite friends to discover PetClues.
           </p>
           <div className={styles.shareGrid}>
             <AgeShareCard pet={selectedPet} translation={translation} />

@@ -20,7 +20,7 @@ const messages = {
   },
   overdue: {
     title: 'Nothing overdue',
-    description: 'Great work — every reminder is on track.',
+    description: 'Great work - every reminder is on track.',
   },
   calendar: {
     title: 'Your calendar is clear',

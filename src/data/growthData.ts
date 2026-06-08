@@ -1,6 +1,6 @@
 import type { ReferralReward, UpcomingFeature } from '@/types/growth';
 
-/** Launch target for countdown — update for campaigns */
+/** Launch target for countdown - update for campaigns */
 export const LAUNCH_DATE = new Date('2026-09-15T09:00:00');
 
 export const SPOTS_PER_REFERRAL = 5;
@@ -17,7 +17,7 @@ export const REFERRAL_REWARDS: ReferralReward[] = [
     id: 'reward-2',
     type: 'premium_trial',
     title: 'Premium trial',
-    description: '30 days of Premium — unlimited pets and advanced scans.',
+    description: '30 days of Premium - unlimited pets and advanced scans.',
     referralsRequired: 3,
   },
   {
@@ -31,7 +31,7 @@ export const REFERRAL_REWARDS: ReferralReward[] = [
     id: 'reward-4',
     type: 'founder_badge',
     title: 'Champion badge',
-    description: 'A permanent badge on your profile — you helped grow PetClues.',
+    description: 'A permanent badge on your profile - you helped grow PetClues.',
     referralsRequired: 10,
   },
   {
@@ -83,6 +83,6 @@ export const PARTNERSHIP_PLACEHOLDERS = [
   {
     id: 'community',
     label: 'Pet community partnerships',
-    description: 'Rescue groups, breeders, and clubs — grow together.',
+    description: 'Rescue groups, breeders, and clubs - grow together.',
   },
 ];

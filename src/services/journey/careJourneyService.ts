@@ -47,7 +47,7 @@ export function computeCareJourney(input: CareJourneyInput): CareJourneyStep[] {
     {
       id: 'profile',
       title: 'Meet your pet',
-      description: 'Profile and basics — the foundation of every care decision.',
+      description: 'Profile and basics - the foundation of every care decision.',
       path: ROUTES.PET_PROFILE,
       completed: profileDone,
     },
@@ -69,7 +69,7 @@ export function computeCareJourney(input: CareJourneyInput): CareJourneyStep[] {
     {
       id: 'reminders',
       title: 'Never miss care',
-      description: 'Reminders from your records — automation creates the next due date.',
+      description: 'Reminders from your records - automation creates the next due date.',
       path: ROUTES.REMINDERS,
       completed: hasReminders,
     },
@@ -90,7 +90,7 @@ export function computeCareJourney(input: CareJourneyInput): CareJourneyStep[] {
     {
       id: 'monthly_report',
       title: 'Share a monthly moment',
-      description: 'Instagram-ready monthly report — celebrate consistency.',
+      description: 'Instagram-ready monthly report - celebrate consistency.',
       path: ROUTES.MONTHLY_REPORT,
       completed: hasMonthly,
       premiumTease: 'Premium: unlimited exports & archive',
@@ -101,7 +101,7 @@ export function computeCareJourney(input: CareJourneyInput): CareJourneyStep[] {
       description: 'AI decoding, premium passport, and priority features.',
       path: ROUTES.PRICING,
       completed: false,
-      premiumTease: 'Upgrade to Pro with Razorpay — unlock Vet Bill Decoder and AI insights',
+      premiumTease: 'Upgrade to Pro with Razorpay - unlock Vet Bill Decoder and AI insights',
     },
   ];
 }

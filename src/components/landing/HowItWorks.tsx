@@ -6,7 +6,7 @@ const steps = [
     number: '01',
     title: 'Add your pet',
     description:
-      'Create a profile in minutes — breed, age, photo, and care preferences become the foundation for everything else.',
+      'Create a profile in minutes - breed, age, photo, and care preferences become the foundation for everything else.',
   },
   {
     number: '02',
@@ -24,7 +24,7 @@ const steps = [
     number: '04',
     title: 'Share when it matters',
     description:
-      'Emergency Passport puts critical details in the right hands — sitters, family, or clinics when seconds count.',
+      'Emergency Passport puts critical details in the right hands - sitters, family, or clinics when seconds count.',
   },
 ];
 
@@ -46,7 +46,7 @@ export function HowItWorks() {
             <span className={`label ${styles.eyebrow}`}>How it works</span>
             <h2 className={styles.title}>Simple by design</h2>
             <p className={styles.subtitle}>
-              From first profile to peace of mind — four calm steps that mirror how you already
+              From first profile to peace of mind - four calm steps that mirror how you already
               care for your pet, with less mental load.
             </p>
 

@@ -12,8 +12,8 @@ export function OnboardingIntro() {
       </h1>
 
       <p className={styles.lead}>
-        PetClues keeps everything about your companion — health records,
-        reminders, and emergency details — beautifully organized in one place.
+        PetClues keeps everything about your companion - health records,
+        reminders, and emergency details - beautifully organized in one place.
       </p>
 
       <div className={styles.points}>
@@ -21,14 +21,14 @@ export function OnboardingIntro() {
           <span className={styles.pointDot} />
           <p className={styles.pointText}>
             <strong>Takes under two minutes</strong>
-            A few simple questions — then you&apos;re ready to go.
+            A few simple questions - then you&apos;re ready to go.
           </p>
         </div>
         <div className={styles.point}>
           <span className={styles.pointDot} />
           <p className={styles.pointText}>
             <strong>Always within reach</strong>
-            Scans, timelines, and emergency info — whenever you need them.
+            Scans, timelines, and emergency info - whenever you need them.
           </p>
         </div>
         <div className={styles.point}>

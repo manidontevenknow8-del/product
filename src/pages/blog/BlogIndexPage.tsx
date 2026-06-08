@@ -61,7 +61,7 @@ export function BlogIndexPage() {
 
   const heroTitle = activeCategory
     ? activeCategory.label
-    : 'Pet health guides — records, vaccines & reminders';
+    : 'Pet health guides - records, vaccines & reminders';
 
   const heroSubtitle = activeCategory
     ? activeCategory.description
@@ -89,7 +89,7 @@ export function BlogIndexPage() {
           <SectionIntro
             eyebrow="Browse"
             title={activeCategory ? `Articles in ${activeCategory.label}` : 'Latest guides'}
-            description="Practical advice for pet parents — from first vaccines to emergency preparedness."
+            description="Practical advice for pet parents - from first vaccines to emergency preparedness."
           />
 
           <BlogCategoryNav />

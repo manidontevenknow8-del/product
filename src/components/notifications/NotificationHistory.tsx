@@ -27,7 +27,7 @@ export function NotificationHistory({
         <div className={styles.searchPlaceholder}>
           <div className={styles.searchLabel}>Search notifications</div>
           <div className={styles.searchHint}>
-            Search by pet, category, or date — coming soon
+            Search by pet, category, or date - coming soon
           </div>
         </div>
       )}

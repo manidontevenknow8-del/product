@@ -10,7 +10,7 @@ export function SupportedDocuments() {
           Works with any pet document
         </h2>
         <p className={styles.subtitle}>
-          PetClues understands the documents you already have — no special format needed.
+          PetClues understands the documents you already have - no special format needed.
         </p>
       </div>
       <div className={styles.grid}>

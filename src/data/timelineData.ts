@@ -5,7 +5,7 @@ import type {
   LifeStorySummary,
 } from '@/types/timeline';
 
-/** Demo-only — requires VITE_DEMO_TIMELINE=true */
+/** Demo-only - requires VITE_DEMO_TIMELINE=true */
 export const mockTimelineStats: TimelineStats = {
   totalMoments: 32,
   milestones: 8,
@@ -192,7 +192,7 @@ export function buildLifeStorySummary(
   if (events.length === 0) {
     return {
       headline: `${petName}'s story starts here`,
-      detail: 'Upload a document, log a health record, or complete a reminder — each action becomes a chapter automatically.',
+      detail: 'Upload a document, log a health record, or complete a reminder - each action becomes a chapter automatically.',
       highlights: [],
     };
   }

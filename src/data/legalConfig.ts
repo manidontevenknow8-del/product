@@ -3,7 +3,6 @@ export const LEGAL_EFFECTIVE_DATE = 'June 2, 2026';
 
 export const LEGAL_CONTACT = {
   support: 'support@petclues.com',
-  legal: 'legal@petclues.com',
 } as const;
 
 export const HEALTH_DISCLAIMER =

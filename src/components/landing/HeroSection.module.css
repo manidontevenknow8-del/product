@@ -1,13 +1,11 @@
 .hero {
   position: relative;
   width: 100%;
-  min-height: 88vh;
-  min-height: 88dvh;
-  max-height: 920px;
+  min-height: 82vh;
+  min-height: 82dvh;
+  max-height: 880px;
   overflow: hidden;
   background: var(--color-bg-dark);
-  margin-top: calc(-1 * var(--header-height));
-  padding-top: var(--header-height);
 }
 
 .heroImg {
@@ -37,8 +35,8 @@
   z-index: 1;
   display: flex;
   align-items: flex-end;
-  min-height: calc(88vh - var(--header-height));
-  min-height: calc(88dvh - var(--header-height));
+  min-height: 82vh;
+  min-height: 82dvh;
   padding: var(--space-12) 0 var(--space-16);
 }
 
@@ -81,6 +79,17 @@
   margin-bottom: var(--space-5);
 }
 
+.lightBtn {
+  background: #ffffff !important;
+  color: var(--color-text) !important;
+  border-color: #ffffff !important;
+}
+
+.lightBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: #ffffff !important;
+}
+
 .ghostBtn {
   color: rgba(250, 249, 247, 0.92) !important;
 }
@@ -99,13 +108,13 @@
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 82vh;
-    min-height: 82dvh;
+    min-height: 76vh;
+    min-height: 76dvh;
   }
 
   .heroInner {
-    min-height: calc(82vh - var(--header-height));
-    min-height: calc(82dvh - var(--header-height));
+    min-height: 76vh;
+    min-height: 76dvh;
     padding-bottom: var(--space-12);
   }
 

@@ -13,5 +13,9 @@
 }
 
 .lg {
-  height: 36px;
+  height: 40px;
+}
+
+.xl {
+  height: 48px;
 }

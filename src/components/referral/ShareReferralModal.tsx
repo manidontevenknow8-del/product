@@ -70,7 +70,7 @@ export function ShareReferralModal({
             Share your link
           </h2>
           <p className={styles.subtitle}>
-            Invite fellow pet parents — no pressure, just genuine recommendations.
+            Invite fellow pet parents - no pressure, just genuine recommendations.
           </p>
         </div>
 
@@ -122,7 +122,7 @@ export function ShareReferralModal({
           </button>
 
           <span className={styles.placeholder}>
-            Instagram sharing coming soon — copy your link for now
+            Instagram sharing coming soon - copy your link for now
           </span>
         </div>
       </div>

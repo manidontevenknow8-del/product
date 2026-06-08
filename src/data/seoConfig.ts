@@ -29,7 +29,7 @@ export const HOME_OG_DESCRIPTION = 'Everything your pet needs. Remembered.';
 export const BRAND_THEME_COLOR = '#2C3E35';
 export const BRAND_BG_COLOR = '#F7F4EF';
 
-/** Square brand logo — used for OG, Twitter, Organization schema, and PWA icons. */
+/** Square brand logo - used for OG, Twitter, Organization schema, and PWA icons. */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
 const OG_IMAGE_ALT = 'PetClues logo';
 
@@ -60,7 +60,6 @@ export const INDEXABLE_PUBLIC_ROUTES = [
   ROUTES.DATA_DELETION,
   ROUTES.DATA_EXPORT,
   ROUTES.FAQ,
-  ROUTES.SYSTEM_STATUS,
 ] as const;
 
 const INDEXABLE_SET = new Set<string>(INDEXABLE_PUBLIC_ROUTES);
@@ -99,24 +98,24 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: OG_IMAGE_ALT,
   },
   [ROUTES.PRICING]: {
-    title: 'PetClues Pricing — Free Pet Health App & Premium Plans',
+    title: 'PetClues Pricing - Free Pet Health App & Premium Plans',
     description:
       'Free pet health records, reminders, and emergency passport for one pet. Premium adds Vet Bill Decoder AI, unlimited pets, and monthly report exports.',
     keywords: 'pet health app pricing, free pet records app, pet care subscription',
     ogImage: DEFAULT_OG_IMAGE,
-    ogImageAlt: 'PetClues pricing — free and premium pet health plans',
+    ogImageAlt: 'PetClues pricing - free and premium pet health plans',
   },
   [ROUTES.PET_MATCH]: {
-    title: 'Pet Match Quiz — Find Your Ideal Companion | PetClues',
+    title: 'Pet Match Quiz - Find Your Ideal Companion | PetClues',
     description:
-      'Take the free PetClues pet match quiz to discover dog and cat breeds that fit your lifestyle — then organize their health records in one app.',
+      'Take the free PetClues pet match quiz to discover dog and cat breeds that fit your lifestyle - then organize their health records in one app.',
     keywords: 'pet match quiz, best dog breed for me, cat breed quiz',
     ogType: 'website',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues pet match quiz',
   },
   [ROUTES.FOUNDING_MEMBERS]: {
-    title: 'Founding Members — Early Access to PetClues',
+    title: 'Founding Members - Early Access to PetClues',
     description:
       'Join PetClues founding members for early access, premium trial benefits, and a permanent founding badge. Help shape the future of pet care organization.',
     keywords: 'petclues founding members, early access pet health app',
@@ -124,7 +123,7 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: 'PetClues founding members program',
   },
   [ROUTES.BLOG]: {
-    title: 'Pet Health Blog — Vaccination Guides, Records & Care Tips | PetClues',
+    title: 'Pet Health Blog - Vaccination Guides, Records & Care Tips | PetClues',
     description:
       'Free pet health guides: puppy & cat vaccination schedules, medication reminders, vet bill organization, emergency pet information, and daily care habits.',
     keywords:
@@ -134,126 +133,120 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: 'PetClues pet health blog',
   },
   [ROUTES.PRIVACY]: {
-    title: 'Privacy Policy — PetClues',
+    title: 'Privacy Policy - PetClues',
     description: 'How PetClues collects, uses, and protects your pet health data.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues privacy policy',
   },
   [ROUTES.TERMS]: {
-    title: 'Terms of Service — PetClues',
+    title: 'Terms of Service - PetClues',
     description: 'Terms and conditions for using PetClues.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues terms of service',
   },
   [ROUTES.COOKIES]: {
-    title: 'Cookie Policy — PetClues',
+    title: 'Cookie Policy - PetClues',
     description: 'How PetClues uses cookies and similar technologies.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues cookie policy',
   },
   [ROUTES.CONTACT]: {
-    title: 'Contact — PetClues',
+    title: 'Contact - PetClues',
     description: 'Get in touch with PetClues support for account help, feedback, and data requests.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'Contact PetClues support',
   },
   [ROUTES.ABOUT]: {
-    title: 'About Us — PetClues',
-    description: 'Why PetClues exists — calm, premium pet care organization for modern pet parents.',
+    title: 'About Us - PetClues',
+    description: 'Why PetClues exists - calm, premium pet care organization for modern pet parents.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'About PetClues',
   },
   [ROUTES.SECURITY]: {
-    title: 'Security — PetClues',
+    title: 'Security - PetClues',
     description: 'How PetClues protects your account and pet data with access controls and safeguards.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues security practices',
   },
   [ROUTES.DATA_DELETION]: {
-    title: 'Delete Your Data — PetClues',
+    title: 'Delete Your Data - PetClues',
     description: 'Request deletion of your PetClues account and associated pet data.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'Delete your PetClues data',
   },
   [ROUTES.DATA_EXPORT]: {
-    title: 'Export Your Data — PetClues',
+    title: 'Export Your Data - PetClues',
     description: 'Request a copy of your PetClues account and pet records.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'Export your PetClues data',
   },
   [ROUTES.FAQ]: {
-    title: 'FAQ — PetClues',
+    title: 'FAQ - PetClues',
     description: 'Frequently asked questions about PetClues pet care organization.',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues frequently asked questions',
   },
-  [ROUTES.SYSTEM_STATUS]: {
-    title: 'System Status — PetClues',
-    description: 'Current operational status of PetClues services.',
-    ogImage: DEFAULT_OG_IMAGE,
-    ogImageAlt: 'PetClues system status',
-  },
   [ROUTES.WAITLIST]: {
-    title: 'Join the Waitlist — PetClues',
-    description: 'Be first to access PetClues — premium pet health intelligence for modern pet parents.',
+    title: 'Join the Waitlist - PetClues',
+    description: 'Be first to access PetClues - premium pet health intelligence for modern pet parents.',
     noIndex: true,
   },
   [ROUTES.REFERRALS]: {
-    title: 'Refer Friends — PetClues Pet Health App',
+    title: 'Refer Friends - PetClues Pet Health App',
     description:
       'Share PetClues with fellow pet parents and earn referral rewards when friends organize their pet health records.',
     keywords: 'pet app referral, share pet health app',
     noIndex: true,
   },
   [ROUTES.LOGIN]: {
-    title: 'Sign In — PetClues',
+    title: 'Sign In - PetClues',
     description: 'Sign in to your PetClues pet health records account.',
     noIndex: true,
   },
   [ROUTES.SIGNUP]: {
-    title: 'Create Free Account — PetClues Pet Health Records App',
+    title: 'Create Free Account - PetClues Pet Health Records App',
     description:
-      'Create a free PetClues account — organize pet vaccinations, vet bills, medication reminders, and emergency info for one pet.',
+      'Create a free PetClues account - organize pet vaccinations, vet bills, medication reminders, and emergency info for one pet.',
     keywords: 'sign up pet health app, free pet records account',
     noIndex: true,
   },
   [ROUTES.DASHBOARD]: {
-    title: 'Dashboard — PetClues',
+    title: 'Dashboard - PetClues',
     description: 'Your pet care command center.',
     noIndex: true,
   },
   [ROUTES.PET_PROFILE]: {
-    title: 'Pet Profile — PetClues',
+    title: 'Pet Profile - PetClues',
     description: "View and manage your pet's profile and health records.",
     noIndex: true,
   },
   [ROUTES.REMINDERS]: {
-    title: 'Reminders — PetClues',
+    title: 'Reminders - PetClues',
     description: 'Stay on top of vaccinations, medications, and vet visits.',
     noIndex: true,
   },
   [ROUTES.SCAN]: {
-    title: 'Scan Documents — PetClues',
+    title: 'Scan Documents - PetClues',
     description: 'Upload and organize pet health documents.',
     noIndex: true,
   },
   [ROUTES.TIMELINE]: {
-    title: 'Timeline — PetClues',
+    title: 'Timeline - PetClues',
     description: "Your pet's health story, beautifully organized.",
     noIndex: true,
   },
   [ROUTES.EMERGENCY_PASSPORT]: {
-    title: 'Emergency Passport — PetClues',
+    title: 'Emergency Passport - PetClues',
     description: 'Critical pet information ready when seconds matter.',
     noIndex: true,
   },
   [ROUTES.PET_CARE_SCORE]: {
-    title: 'PetCare Score — PetClues',
+    title: 'PetCare Score - PetClues',
     description: "See how organized your pet's care is and what to improve next.",
     noIndex: true,
   },
   [ROUTES.BETA_FEEDBACK]: {
-    title: 'Beta Feedback — PetClues',
+    title: 'Beta Feedback - PetClues',
     description: 'Help us improve PetClues during the beta period.',
     noIndex: true,
   },

@@ -89,14 +89,20 @@ export function GrowthProvider({ children, growthService: growthServiceOverride 
     setError(null);
     try {
       const current = await growthService.getCurrentMember();
-      const [stats, board] = await Promise.all([
+      setMember(current);
+      setPendingReferralState(growthService.getPendingReferral());
+
+      const [statsResult, boardResult] = await Promise.allSettled([
         growthService.getCommunityStats(),
         growthService.getLeaderboard(leaderboardPeriod, current),
       ]);
-      setMember(current);
-      setCommunityStats(stats);
-      setLeaderboard(board);
-      setPendingReferralState(growthService.getPendingReferral());
+
+      setCommunityStats(
+        statsResult.status === 'fulfilled'
+          ? statsResult.value
+          : { waitlistTotal: 0, referralsThisWeek: 0, spotsClaimedToday: 0, countriesRepresented: 0 },
+      );
+      setLeaderboard(boardResult.status === 'fulfilled' ? boardResult.value : []);
 
       if (user?.id) {
         const referralStats = await getReferralService().getStats(user.id);

@@ -1,7 +1,13 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { Button, LoadingState } from '@/components/ui';
+import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
+import { useAuth } from '@/auth/AuthProvider';
+import {
+  canCreateReminder,
+  FREE_REMINDER_LIMIT,
+} from '@/subscription/featureGates';
 import {
   ReminderList,
   ReminderFilters,
@@ -42,7 +48,7 @@ const HOW_IT_WORKS = [
   {
     step: '3',
     title: 'Get nudged on schedule',
-    body: 'PetClues tracks due dates in the app. If your account email and notification preferences are on, we also send email reminders on the schedule below — not the instant you tap save.',
+    body: 'PetClues tracks due dates in the app. If your account email and notification preferences are on, we also send email reminders on the schedule below - not the instant you tap save.',
   },
 ] as const;
 
@@ -55,7 +61,7 @@ const USE_CASES = [
   },
   {
     title: 'Daily life & refills',
-    body: 'Grooming, food refills, insurance renewals, or custom tasks — all with the same due-date and repeat rules.',
+    body: 'Grooming, food refills, insurance renewals, or custom tasks - all with the same due-date and repeat rules.',
     image: IMG.notify,
     alt: 'Illustration of pet care reminders arriving on a phone',
   },
@@ -70,6 +76,12 @@ function formatUpcomingDays(): string {
 
 export function RemindersPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { user } = useAuth();
+  const accessInput = {
+    subscriptionStatus: user?.subscriptionStatus,
+    subscriptionTier: user?.subscriptionTier ?? 'free',
+  };
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
   const {
     stats,
     isLoading,
@@ -89,6 +101,26 @@ export function RemindersPage() {
 
   const [createOpen, setCreateOpen] = useState(searchParams.get('create') === 'true');
   const [editReminder, setEditReminder] = useState<Reminder | null>(null);
+
+  const activeReminderCount = stats.total - stats.completed;
+  const atReminderLimit = !canCreateReminder(accessInput, activeReminderCount);
+
+  const handleOpenCreate = () => {
+    if (atReminderLimit) {
+      setUpgradeOpen(true);
+      return;
+    }
+    setCreateOpen(true);
+  };
+
+  useEffect(() => {
+    if (searchParams.get('create') !== 'true' || isLoading) return;
+    if (atReminderLimit) {
+      setUpgradeOpen(true);
+      setCreateOpen(false);
+      setSearchParams({});
+    }
+  }, [searchParams, isLoading, atReminderLimit, setSearchParams]);
 
   const filtered = useMemo(() => filterReminders(filters), [filterReminders, filters]);
 
@@ -119,12 +151,12 @@ export function RemindersPage() {
             <p className={styles.heroEyebrow}>Pet care scheduling</p>
             <h1 className={styles.heroTitle}>Reminders that match real pet life</h1>
             <p className={styles.heroLead}>
-              Set appointments, vaccines, grooming, medication, and anything else — then let
+              Set appointments, vaccines, grooming, medication, and anything else - then let
               PetClues surface what is due in the app and, when enabled, by email on a fixed
               schedule so you are not guessing when the next nudge arrives.
             </p>
             <div className={styles.heroActions}>
-              <Button variant="primary" size="md" onClick={() => setCreateOpen(true)}>
+              <Button variant="primary" size="md" onClick={handleOpenCreate}>
                 New reminder
               </Button>
               {!isLoading && (
@@ -197,7 +229,7 @@ export function RemindersPage() {
                 ))}
               </div>
               <p className={styles.scheduleNote}>
-                In-app reminders and dashboard widgets update as soon as data syncs — email is an
+                In-app reminders and dashboard widgets update as soon as data syncs - email is an
                 extra layer on top of that rhythm.
               </p>
             </div>
@@ -228,10 +260,19 @@ export function RemindersPage() {
                   Everything here stays in sync with your pets and dashboard.
                 </p>
               </div>
-              <Button variant="secondary" size="sm" onClick={() => setCreateOpen(true)}>
+              <Button variant="secondary" size="sm" onClick={handleOpenCreate}>
                 Add reminder
               </Button>
             </div>
+
+            {atReminderLimit && (
+              <PremiumUpgradePrompt
+                feature="unlimitedReminders"
+                compact
+                onUpgrade={() => setUpgradeOpen(true)}
+                emotionalOverride={`You've used ${FREE_REMINDER_LIMIT} of ${FREE_REMINDER_LIMIT} free reminders. Upgrade to Pro for unlimited scheduling - vaccines, meds, grooming, and more.`}
+              />
+            )}
 
             {isLoading ? (
               <LoadingState message="Loading reminders" />
@@ -255,7 +296,7 @@ export function RemindersPage() {
                 ) : filtered.length === 0 ? (
                   <ReminderEmptyState
                     view={emptyView}
-                    onCreate={() => setCreateOpen(true)}
+                    onCreate={handleOpenCreate}
                   />
                 ) : (
                   <ReminderList
@@ -289,6 +330,8 @@ export function RemindersPage() {
         onSubmit={(id, input) => updateReminder(id, input)}
         onDelete={deleteReminder}
       />
+
+      <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
     </AppLayout>
   );
 }

@@ -21,7 +21,7 @@ export function NearbySightingsFeed({
           <h2 className={styles.title}>Sightings & reports</h2>
           <p className={styles.subtitle}>
             {sightings.length === 0
-              ? 'No reports yet — share your recovery link to reach more people'
+              ? 'No reports yet - share your recovery link to reach more people'
               : `${sightings.length} report${sightings.length === 1 ? '' : 's'} received`}
           </p>
         </div>
@@ -34,7 +34,7 @@ export function NearbySightingsFeed({
 
       {sightings.length === 0 ? (
         <p className={styles.empty}>
-          Community reports will appear here. This is not a social feed — only
+          Community reports will appear here. This is not a social feed - only
           verified sighting reports related to your recovery case.
         </p>
       ) : (

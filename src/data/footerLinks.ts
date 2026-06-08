@@ -5,7 +5,7 @@ export type FooterLink = {
   to: string;
 };
 
-/** Launch footer — legal & trust links only (no product clutter). */
+/** Launch footer - legal & trust links only (no product clutter). */
 export const FOOTER_LEGAL_LINKS: FooterLink[] = [
   { label: 'Privacy Policy', to: ROUTES.PRIVACY },
   { label: 'Terms of Service', to: ROUTES.TERMS },
@@ -22,7 +22,6 @@ export const FOOTER_COMPANY_LINKS: FooterLink[] = [
 
 export const FOOTER_RESOURCE_LINKS: FooterLink[] = [
   { label: 'Blog', to: ROUTES.BLOG },
-  { label: 'Status', to: ROUTES.SYSTEM_STATUS },
   { label: 'FAQ', to: ROUTES.FAQ },
 ];
 

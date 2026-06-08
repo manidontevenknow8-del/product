@@ -22,7 +22,7 @@ export function CTASection() {
             <h2 className={styles.title}>Ready to care with clarity?</h2>
             <p className={styles.subtitle}>
               Create a free account in minutes. Organize pet health records, vaccination reminders,
-              daily check-ins, and your emergency pet passport — no credit card required.
+              daily check-ins, and your emergency pet passport - no credit card required.
             </p>
 
             <div className={styles.actions}>

@@ -75,7 +75,7 @@ export function PetDocumentsVault() {
 
       <div className={styles.uploadArea}>
         <p className={styles.uploadLabel}>Upload a document</p>
-        <p className={styles.uploadHint}>PDF, JPG, or PNG — up to 10 MB</p>
+        <p className={styles.uploadHint}>PDF, JPG, or PNG - up to 10 MB</p>
 
         {isUploading && (
           <div className={styles.uploadProgress}>

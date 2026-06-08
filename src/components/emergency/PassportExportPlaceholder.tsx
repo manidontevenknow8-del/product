@@ -11,7 +11,7 @@ export function PassportExportPlaceholder() {
         <span className={styles.badge}>Coming soon</span>
       </div>
       <p className={styles.description}>
-        Download a printable PDF of {`your pet's`} emergency passport — ideal for travel,
+        Download a printable PDF of {`your pet's`} emergency passport - ideal for travel,
         boarding, and vet visits.
       </p>
       <div className={styles.actions}>

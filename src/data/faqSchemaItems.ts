@@ -13,7 +13,7 @@ export const FAQ_PAGE_SCHEMA_ITEMS = [
   {
     question: 'How do AI document features work?',
     answer:
-      'When you upload a document, AI may suggest structured fields to save time. Suggestions are assistive and may be inaccurate — review everything before saving.',
+      'When you upload a document, AI may suggest structured fields to save time. Suggestions are assistive and may be inaccurate - review everything before saving.',
   },
   {
     question: 'How do I delete my account or export my data?',
@@ -47,7 +47,7 @@ export const LANDING_FAQ_SCHEMA_ITEMS = [
   {
     question: 'Can PetClues send pet vaccination reminders?',
     answer:
-      'Yes. PetClues sends in-app and email reminders for vaccinations, medications, and vet visits — with alerts before due dates.',
+      'Yes. PetClues sends in-app and email reminders for vaccinations, medications, and vet visits - with alerts before due dates.',
   },
   {
     question: 'How do I organize pet medical records online?',

@@ -18,7 +18,7 @@ import { useDocuments } from '@/documents';
 import { useDailyCheckIn } from '@/dailyCheckIn';
 import { usePetCareScore } from '@/petCareScore';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
-import { UpgradeModal } from '@/components/subscription';
+import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
 import { MonthlyReportEngine, saveMonthlyReport } from '@/services/monthlyReport';
 import { exportNodeToPng, downloadBlob } from '@/utils/imageExport';
 import { eventTracker } from '@/analytics/EventTracker';
@@ -204,15 +204,21 @@ export function MonthlyReportPage() {
               <SectionIntro
                 eyebrow="This month"
                 title="Your pet's life report"
-                description="Scroll through every chapter below — download captures the full report when you're ready to share."
+                description="Scroll through every chapter below - download captures the full report when you're ready to share."
               />
               <MonthlyReportDocument ref={reportRef} report={report} />
               <p className={styles.caption}>
-                Download captures the full report above — scroll through every chapter before exporting.
+                Download captures the full report above - scroll through every chapter before exporting.
               </p>
             </div>
 
             <aside className={styles.sideCol} aria-label="Report actions">
+              {!isPremium && (
+                <PremiumUpgradePrompt
+                  feature="unlimitedMonthlyReports"
+                  onUpgrade={() => setUpgradeOpen(true)}
+                />
+              )}
               <MonthlyReportActions
                 onShare={() => void handleShare()}
                 onDownload={() => void handleDownload()}

@@ -2,7 +2,8 @@ import { useEffect, useMemo } from 'react';
 import { capturePostHogEvent } from '@/analytics/posthog';
 import { Link } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
-import { PageHeroBand, SectionIntro } from '@/components/visual';
+import { SectionIntro } from '@/components/visual';
+import { Avatar } from '@/components/ui';
 import { PAGE_IMG } from '@/data/pageImages';
 import { EmptyDashboardState } from '@/components/empty-states';
 import { DashboardHeaderLoading } from '@/components/dashboard';
@@ -13,6 +14,7 @@ import { useDocuments } from '@/documents';
 import { usePetCareScore } from '@/petCareScore';
 import { DailyCheckInCard } from '@/components/daily-check-in';
 import { useDailyCheckIn } from '@/dailyCheckIn';
+import { AddAnotherPetButton } from '@/components/pets/AddAnotherPetButton';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { getActivityLogForPet } from '@/services/activity/activityLogService';
 import { MonthlyReportEngine } from '@/services/monthlyReport';
@@ -165,7 +167,7 @@ function StatsStrip({
         <span className={styles.statLabel}>upcoming</span>
       </div>
       <div className={styles.statPill}>
-        <span className={styles.statValue}>{score ?? '—'}</span>
+        <span className={styles.statValue}>{score ?? '-'}</span>
         <span className={styles.statLabel}>care score</span>
       </div>
     </div>
@@ -451,12 +453,14 @@ export function DashboardPage() {
     return (
       <AppLayout flushContent>
         <div className={styles.page}>
-          <PageHeroBand
-            compact
-            image={PAGE_IMG.app.dashboard}
-            eyebrow="Dashboard"
-            title="Loading your care hub…"
-          />
+          <header className={styles.hero}>
+            <img className={styles.heroBg} src={PAGE_IMG.app.dashboard} alt="" aria-hidden />
+            <div className={styles.heroScrim} aria-hidden />
+            <div className={styles.heroInner}>
+              <p className={styles.heroEyebrow}>Dashboard</p>
+              <h1 className={styles.heroTitle}>Loading your care hub…</h1>
+            </div>
+          </header>
           <div className={styles.body}>
             <DashboardHeaderLoading />
           </div>
@@ -469,12 +473,23 @@ export function DashboardPage() {
     return (
       <AppLayout flushContent>
         <div className={styles.page}>
-          <PageHeroBand
-            image={PAGE_IMG.app.dashboardWelcome}
-            eyebrow="Your dashboard"
-            title="Welcome to PetClues"
-            subtitle="Add your first pet to unlock reminders, health records, and your personalized care dashboard."
-          />
+          <header className={styles.hero}>
+            <img
+              className={styles.heroBg}
+              src={PAGE_IMG.app.dashboardWelcome}
+              alt=""
+              aria-hidden
+            />
+            <div className={styles.heroScrim} aria-hidden />
+            <div className={styles.heroInner}>
+              <p className={styles.heroEyebrow}>Your dashboard</p>
+              <h1 className={styles.heroTitle}>Welcome to PetClues</h1>
+              <p className={styles.heroLead}>
+                Add your first pet to unlock reminders, health records, and your personalized care
+                dashboard.
+              </p>
+            </div>
+          </header>
           <div className={styles.body}>
             <EmptyDashboardState />
           </div>
@@ -512,7 +527,7 @@ export function DashboardPage() {
   const insightBody =
     scoreData?.weeklyInsight?.message ??
     scoreData?.insights[0]?.message ??
-    'Add a health record or document — we surface one clear insight from your real data.';
+    'Add a health record or document - we surface one clear insight from your real data.';
 
   const activityEntries: ActivityLogEntry[] = isDemoDataEnabled('dashboardActivity')
     ? mockRecentActivity.map((item) => ({
@@ -532,23 +547,46 @@ export function DashboardPage() {
   return (
     <AppLayout flushContent>
       <div className={styles.page}>
-        <PageHeroBand
-          image={heroImage}
-          eyebrow={getGreeting()}
-          title={display.name}
-          meta={meta || undefined}
-          footer={`${chip.label} · Updated today`}
-          avatar={{
-            src: display.photo,
-            initials: getAvatarInitials(display.name),
-          }}
-          actions={
-            <div className={styles.heroActions}>
-              <span className={`${styles.statusChip} ${CHIP_CLASS[chip.tone]}`}>{chip.label}</span>
+        <header className={styles.hero}>
+          <img className={styles.heroBg} src={heroImage} alt="" aria-hidden />
+          <div className={styles.heroScrim} aria-hidden />
+
+          {pets.length > 1 && (
+            <div className={styles.heroTop}>
               <PetSwitcher pets={pets} activeId={activePet.id} onSelect={setActivePet} />
             </div>
-          }
-        />
+          )}
+
+          <div className={styles.heroInner}>
+            <div className={styles.heroIdentityRow}>
+              <div className={styles.heroAvatar}>
+                {display.photo ? (
+                  <img
+                    src={display.photo}
+                    alt={display.name}
+                    className={styles.heroAvatarImg}
+                  />
+                ) : (
+                  <Avatar initials={getAvatarInitials(display.name)} size="xl" />
+                )}
+              </div>
+              <div className={styles.heroText}>
+                <p className={styles.heroEyebrow}>{getGreeting()}</p>
+                <h1 className={styles.heroTitle}>{display.name}</h1>
+                {meta && <p className={styles.heroMeta}>{meta}</p>}
+                <div className={styles.heroBadges}>
+                  <span className={`${styles.statusChip} ${CHIP_CLASS[chip.tone]}`}>
+                    {chip.label}
+                  </span>
+                  <span className={styles.heroUpdated}>Updated today</span>
+                </div>
+              </div>
+            </div>
+            <div className={styles.heroActions}>
+              <AddAnotherPetButton size="md" className={styles.heroLightBtn} />
+            </div>
+          </div>
+        </header>
 
         <StatsStrip upcoming={upcomingCount} overdue={overdueCount} score={score} />
 
@@ -559,13 +597,9 @@ export function DashboardPage() {
             description="Check in, tackle what matters next, and see how your pet's health picture is shaping up."
           />
 
-          <div className={styles.topGrid}>
-            <DailyCheckInCard petName={activePet.name} />
-            <NextTaskCard task={nextTask} />
-          </div>
-
-          <div className={styles.mainGrid}>
+          <div className={styles.contentGrid}>
             <div className={styles.col}>
+              <DailyCheckInCard petName={activePet.name} />
               <CareScoreCard
                 metrics={careMetrics}
                 score={score}
@@ -583,6 +617,7 @@ export function DashboardPage() {
             </div>
 
             <div className={styles.col}>
+              <NextTaskCard task={nextTask} />
               <MonthlyPreviewCard report={monthlyReport} exportIsPro={!isPremium} />
               <section aria-labelledby="dash-actions">
                 <h2 id="dash-actions" className={styles.inlineHead}>

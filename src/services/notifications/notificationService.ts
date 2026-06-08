@@ -4,7 +4,7 @@ import { buildMockNotifications } from '@/data/notificationData';
 const STORAGE_KEY = 'petclues_notifications';
 
 /**
- * Notification service — swap for Supabase + push/email delivery.
+ * Notification service - swap for Supabase + push/email delivery.
  *
  * Backend requirements:
  * - Real-time notification delivery (push, email, in-app)

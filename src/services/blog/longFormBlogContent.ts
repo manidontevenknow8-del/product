@@ -1,5 +1,5 @@
 export const LONG_FORM_BLOG_CONTENT: Record<string, string> = {
-  "puppy-vaccination-schedule-2026": `Bringing home a puppy is pure joy—until you realize how many vet tasks stack up in the first year. A clear **puppy vaccination schedule** turns that overwhelm into a simple plan you can actually follow. And when life gets busy (because it will), a **pet vaccination reminder** is often the difference between “on time” and “we missed the window.”
+  "puppy-vaccination-schedule-2026": `Bringing home a puppy is pure joy-until you realize how many vet tasks stack up in the first year. A clear **puppy vaccination schedule** turns that overwhelm into a simple plan you can actually follow. And when life gets busy (because it will), a **pet vaccination reminder** is often the difference between “on time” and “we missed the window.”
 
 In 2026, many vets still follow the same core science: protect puppies early, then “boost” immunity as maternal antibodies fade. But schedules can vary by region, lifestyle, and local disease risk. This guide walks you through a practical timeline, what each vaccine protects against, and how to keep records clean so boarding, grooming, and travel are painless.
 
@@ -144,7 +144,7 @@ Vets generally recommend:
 
   "organize-pet-medical-records-online": `If you’ve ever searched your inbox for a rabies certificate while the groomer waits on the phone, you already understand why it’s worth learning how to **organize pet medical records**. A modern **pet health records app** can turn a scattered pile of PDFs, photos, and paper handouts into a calm, searchable library you can share in seconds.
 
-This guide gives you a practical system you can set up in one afternoon—and keep consistent for years. You’ll learn what to save, how to name things, how to plan reminders, and how to make sure an emergency doesn’t become a paperwork problem.
+This guide gives you a practical system you can set up in one afternoon-and keep consistent for years. You’ll learn what to save, how to name things, how to plan reminders, and how to make sure an emergency doesn’t become a paperwork problem.
 
 ## Why this matters
 Pet care gets complicated fast:
@@ -171,7 +171,7 @@ Think beyond vaccines. A complete set usually includes:
 - Weight logs and growth charts
 - Vet bills and itemized invoices
 
-If you’re starting from scratch, your goal isn’t perfection—it’s creating a reliable “single source of truth” that you can update after each appointment.
+If you’re starting from scratch, your goal isn’t perfection-it’s creating a reliable “single source of truth” that you can update after each appointment.
 
 ## The fastest way to organize pet medical records online
 You can build a strong system in about 60–90 minutes.
@@ -204,7 +204,7 @@ Examples:
 In a pet health records app, the same principle applies: label documents clearly so you can find them under pressure.
 
 ## Build a “timeline” so you never miss the next step
-Records aren’t just history—they’re a schedule.
+Records aren’t just history-they’re a schedule.
 
 ### Vaccines and boosters
 Store proof and set a due date right away. If you want guided vaccine timelines, start with:
@@ -220,7 +220,7 @@ Monthly preventatives and daily meds disappear from memory quickly. Create remin
 For a detailed workflow, see [pet medication reminder](/blog/pet-medication-reminder-guide).
 
 ### Daily check-ins for patterns
-Short notes—“itchy today,” “vomited once,” “skipped breakfast”—become valuable when a vet asks, “How long has this been happening?” PetClues includes a daily check-in pattern that helps you log the small stuff without writing a novel.
+Short notes-“itchy today,” “vomited once,” “skipped breakfast”-become valuable when a vet asks, “How long has this been happening?” PetClues includes a daily check-in pattern that helps you log the small stuff without writing a novel.
 
 ## Create an emergency-ready snapshot
 Even with perfect records, emergencies need a quick summary:
@@ -297,9 +297,9 @@ PetClues supports this by combining document storage with reminders and daily ch
 - [pet boarding preparation](/blog/pet-boarding-preparation-vaccination-records-health-forms)
 `,
 
-  "pet-emergency-information-card-guide": `You don’t think you’ll need **pet emergency information** until the day you do—when your dog slips out the door, your cat suddenly can’t keep food down, or a pet sitter texts, “I’m heading to the ER—what meds is she on?” In those moments, an organized card can save minutes and prevent mistakes.
+  "pet-emergency-information-card-guide": `You don’t think you’ll need **pet emergency information** until the day you do-when your dog slips out the door, your cat suddenly can’t keep food down, or a pet sitter texts, “I’m heading to the ER-what meds is she on?” In those moments, an organized card can save minutes and prevent mistakes.
 
-An “emergency pet passport” is simply a concise profile you can share fast. Call it a card, a note, or an **emergency pet passport**—the purpose is the same: give a vet or caregiver the essentials without hunting through files.
+An “emergency pet passport” is simply a concise profile you can share fast. Call it a card, a note, or an **emergency pet passport**-the purpose is the same: give a vet or caregiver the essentials without hunting through files.
 
 This guide shows what to include, how to format it, and how to keep it current so it actually works when you’re stressed.
 
@@ -356,7 +356,7 @@ Include anything that changes safe care:
    - A profile stored in a pet health records app (best for sharing)
 6. **Set a monthly review reminder** so it stays current.
 
-PetClues supports this workflow well because your emergency passport can live next to vaccine certificates, medication lists, and daily check-in notes—so the summary matches the real record.
+PetClues supports this workflow well because your emergency passport can live next to vaccine certificates, medication lists, and daily check-in notes-so the summary matches the real record.
 
 ## Where to store it (use redundancy)
 Use at least two locations:
@@ -446,7 +446,7 @@ If you want a minimalist printed card, include:
 In 2026, vets still rely on a core principle: vaccinate kittens in a series, then boost at one year, then maintain protection on a schedule based on risk and product type. This guide explains the common timeline and the decisions that change it for indoor vs outdoor cats.
 
 ## Why this matters
-Vaccines reduce the risk of contagious illness and outbreaks—especially for kittens, multi-cat homes, rescues, and boarding situations. Staying current also:
+Vaccines reduce the risk of contagious illness and outbreaks-especially for kittens, multi-cat homes, rescues, and boarding situations. Staying current also:
 - Keeps boarding options open
 - Reduces stress during unexpected travel
 - Prevents “restart” scenarios if boosters are missed
@@ -500,7 +500,7 @@ Depending on region and risk, your vet may discuss additional options. The impor
 4. **Log any reactions** after vaccines (lethargy, swelling, vomiting) to inform future decisions.
 5. **Prepare a boarding packet** if you might travel or board within the year.
 
-PetClues supports steps 2 and 3 by keeping documents and reminders tied to your cat’s profile—useful when boarding asks for proof on short notice.
+PetClues supports steps 2 and 3 by keeping documents and reminders tied to your cat’s profile-useful when boarding asks for proof on short notice.
 
 ## Make vet visits easier (so the plan is realistic)
 ### Carrier training as a routine
@@ -537,7 +537,7 @@ Cat vaccines become urgent in moments that feel “sudden,” even when the need
 - Your indoor cat escapes briefly and you realize you’re not sure what’s up to date
 - You switch vets and the new clinic asks for records you can’t find
 
-A clear **cat vaccination schedule** protects health, but it also protects your options. The best time to organize proof is when everything is calm—not when you’re rushing.
+A clear **cat vaccination schedule** protects health, but it also protects your options. The best time to organize proof is when everything is calm-not when you’re rushing.
 
 ## Expanded step-by-step: from kitten series to adult boosters
 ### Kittens: complete the series
@@ -606,7 +606,7 @@ If you’re still building your kitten foundations, use [new kitten checklist](/
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "pet-medication-reminder-guide": `If you’ve ever stared at a pill bottle and thought, “Did I already give this?” you’re not alone. A reliable **pet medication reminder** system is one of the most practical upgrades you can make for your pet’s health—especially when prescriptions multiply, schedules change, or more than one person helps with care. And if you’re managing a chronic condition, building a consistent **dog medication schedule** (or cat schedule) can be the difference between stable symptoms and confusing flare-ups.
+  "pet-medication-reminder-guide": `If you’ve ever stared at a pill bottle and thought, “Did I already give this?” you’re not alone. A reliable **pet medication reminder** system is one of the most practical upgrades you can make for your pet’s health-especially when prescriptions multiply, schedules change, or more than one person helps with care. And if you’re managing a chronic condition, building a consistent **dog medication schedule** (or cat schedule) can be the difference between stable symptoms and confusing flare-ups.
 
 This guide gives you a simple medication routine you can set up today. You’ll learn how to write a schedule your whole household can follow, how to prevent missed or double doses, and how to keep documentation ready for your vet and pet sitter.
 
@@ -617,7 +617,7 @@ Medication mistakes are common because life is messy:
 - Instructions change after a recheck
 - You forget refills until the bottle is empty
 
-Consistent reminders improve outcomes and protect your pet from preventable side effects. PetClues helps by combining medication lists, refill tracking, and reminders inside a pet health records app—so the plan and the proof live together.
+Consistent reminders improve outcomes and protect your pet from preventable side effects. PetClues helps by combining medication lists, refill tracking, and reminders inside a pet health records app-so the plan and the proof live together.
 
 ## Start with a clear medication list
 Before you set reminders, write a single “source of truth.” Include:
@@ -639,7 +639,7 @@ Pick 2–4 consistent daily anchors that already happen:
 - Last walk
 - Bedtime
 
-Then match doses to anchors where possible. For a **dog medication schedule**, “with breakfast and dinner” is easier to maintain than “every 12 hours” for many families—unless your vet specifically requires strict spacing.
+Then match doses to anchors where possible. For a **dog medication schedule**, “with breakfast and dinner” is easier to maintain than “every 12 hours” for many families-unless your vet specifically requires strict spacing.
 
 ### Separate “daily” vs “as needed”
 Create two lists:
@@ -700,7 +700,7 @@ Medication schedules break in predictable situations:
 - Travel disrupts your normal anchor times and you miss doses
 - The label says “twice daily” but no one agrees on what times that means
 
-A strong **pet medication reminder** system prevents both missed doses and dangerous double doses—especially when managing a long-term **dog medication schedule** or a complex cat medication routine.
+A strong **pet medication reminder** system prevents both missed doses and dangerous double doses-especially when managing a long-term **dog medication schedule** or a complex cat medication routine.
 
 ## Expanded step-by-step: build a schedule your whole household can follow
 1. **Translate the label into a timeline**: morning/evening, with food/without food, and what “twice daily” means in your home.
@@ -727,7 +727,7 @@ Vets commonly recommend:
 - **Accuracy over memory**: write it down and confirm it, especially for critical meds.
 - **Bring a complete medication list** to visits and emergencies.
 - **Track side effects** with dates so adjustments are safer.
-- **Don’t improvise** missed-dose plans—call the clinic for medication-specific guidance.
+- **Don’t improvise** missed-dose plans-call the clinic for medication-specific guidance.
 
 Pair your medication list with a concise emergency summary using [pet emergency information](/blog/pet-emergency-information-card-guide).
 
@@ -758,9 +758,9 @@ Pair your medication list with a concise emergency summary using [pet emergency 
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "dog-feeding-schedule-walk-tracker": `A dependable **dog feeding schedule** is one of the simplest ways to improve digestion, energy, training focus, and bathroom predictability. Pair it with a walk tracker and a quick **daily pet check-in**, and you’ll spot patterns you’d otherwise miss—like “late dinner equals midnight potty,” or “short walk days correlate with restlessness.”
+  "dog-feeding-schedule-walk-tracker": `A dependable **dog feeding schedule** is one of the simplest ways to improve digestion, energy, training focus, and bathroom predictability. Pair it with a walk tracker and a quick **daily pet check-in**, and you’ll spot patterns you’d otherwise miss-like “late dinner equals midnight potty,” or “short walk days correlate with restlessness.”
 
-In 2026, most dog parents aren’t struggling because they don’t care—they’re struggling because routines are shared across people, work days vary, and “I think he ate” isn’t data. This guide gives you a realistic schedule and tracking system you can maintain even when life is chaotic.
+In 2026, most dog parents aren’t struggling because they don’t care-they’re struggling because routines are shared across people, work days vary, and “I think he ate” isn’t data. This guide gives you a realistic schedule and tracking system you can maintain even when life is chaotic.
 
 ## Why this matters
 Consistent feeding and walking supports:
@@ -786,7 +786,7 @@ If you’re bringing home a puppy, start with [new puppy checklist](/blog/new-pu
 4. **Add water routine** if potty timing is sensitive (especially for puppies).
 5. **Track stool and appetite** briefly in a daily check-in.
 
-PetClues can support this with daily check-ins and reminders for scheduled routines—useful in multi-person homes.
+PetClues can support this with daily check-ins and reminders for scheduled routines-useful in multi-person homes.
 
 ## Add a walk tracker that’s actually informative
 ### Track the “three Ws”
@@ -913,7 +913,7 @@ Health problems are often pattern problems. Vets diagnose faster when you can an
 - How often does it happen?
 - What changed before it began?
 
-A strong tracker also reduces administrative stress by keeping documents and dates accessible for boarding, travel, and new clinics. PetClues is built as a pet health tracker app with medical records storage, vaccination reminders, an emergency passport, and daily check-ins—so the data you track is actually actionable.
+A strong tracker also reduces administrative stress by keeping documents and dates accessible for boarding, travel, and new clinics. PetClues is built as a pet health tracker app with medical records storage, vaccination reminders, an emergency passport, and daily check-ins-so the data you track is actually actionable.
 
 ## What the best pet health tracker app should do
 ### 1) Store medical records and proof
@@ -977,7 +977,7 @@ Build this using [pet emergency information](/blog/pet-emergency-information-car
    - Any daily medication
 5. **Run daily check-ins for 14 days** to build the habit.
 
-If an app makes step 5 too hard, you won’t use it long-term—no matter how pretty it is.
+If an app makes step 5 too hard, you won’t use it long-term-no matter how pretty it is.
 
 ## What to avoid (common pitfalls)
 - Reminders without logging (you can’t tell if it was done)
@@ -1032,7 +1032,7 @@ If allergies are a common issue, pair this with [pet allergy tracker](/blog/pet-
 - Forgetting to include a backup caregiver in your sharing plan
 
 ## What veterinarians recommend (expert tracking tips)
-Vets typically don’t need perfect data—they need reliable patterns:
+Vets typically don’t need perfect data-they need reliable patterns:
 - **Consistency beats detail**: a daily 30-second check-in is more useful than one long note a month.
 - **Track timing**: when symptoms happen matters as much as what happens.
 - **Bring a summary**: “vomiting 3 times in 7 days, always after treats” is actionable.
@@ -1051,7 +1051,7 @@ PetClues is designed around this clinician-friendly structure: records storage, 
 
 **Question? Can a tracker help with weight management?** Yes. Pair routine tracking with [dog weight tracker](/blog/dog-weight-tracker-log-trends-vet-health) and consistent feeding/walk notes.
 
-**Question? What’s the first thing to upload?** Rabies certificate and the most recent invoice or visit summary—these usually contain the most useful identifiers and dates.
+**Question? What’s the first thing to upload?** Rabies certificate and the most recent invoice or visit summary-these usually contain the most useful identifiers and dates.
 
 **Question? What should an emergency-ready section include?** Current meds and last dose time, allergies, key conditions, microchip ID, vet contacts, and your consent plan. Use [pet emergency information](/blog/pet-emergency-information-card-guide).
 
@@ -1067,7 +1067,7 @@ PetClues is designed around this clinician-friendly structure: records storage, 
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "vet-bill-organizer-pet-medical-bills": `Few things feel as confusing as opening an itemized invoice and wondering what half the lines mean. A good **vet bill organizer** workflow helps you store, understand, and compare bills over time—especially if you’re submitting insurance claims or managing a chronic condition. If you’ve ever thought, “Is this normal?” a simple **vet bill decoder** mindset can reduce stress and help you ask better questions.
+  "vet-bill-organizer-pet-medical-bills": `Few things feel as confusing as opening an itemized invoice and wondering what half the lines mean. A good **vet bill organizer** workflow helps you store, understand, and compare bills over time-especially if you’re submitting insurance claims or managing a chronic condition. If you’ve ever thought, “Is this normal?” a simple **vet bill decoder** mindset can reduce stress and help you ask better questions.
 
 This guide explains common invoice terms, how to organize bills so they’re useful later, and how to turn receipts into a clear medical and financial timeline.
 
@@ -1228,9 +1228,9 @@ If you file claims, try to save these as a standard bundle:
 - [dog dental care schedule](/blog/dog-dental-care-schedule-cleanings-reminders)
 `,
 
-  "new-puppy-checklist-health-records-vaccines": `A **new puppy checklist** should do more than list toys and treats. The first weeks at home are when you set habits that determine your puppy’s health for years—vaccines, parasite prevention, training, and record-keeping. If you organize early, you’ll spend less time scrambling for paperwork and more time enjoying your puppy.
+  "new-puppy-checklist-health-records-vaccines": `A **new puppy checklist** should do more than list toys and treats. The first weeks at home are when you set habits that determine your puppy’s health for years-vaccines, parasite prevention, training, and record-keeping. If you organize early, you’ll spend less time scrambling for paperwork and more time enjoying your puppy.
 
-This guide gives you a practical new puppy checklist focused on health, records, and routines. You’ll also learn how to build a system that supports vaccination reminders and daily check-ins—without becoming overwhelming.
+This guide gives you a practical new puppy checklist focused on health, records, and routines. You’ll also learn how to build a system that supports vaccination reminders and daily check-ins-without becoming overwhelming.
 
 ## Why this matters
 Puppies grow fast, and so do responsibilities:
@@ -1394,7 +1394,7 @@ PetClues can support this by keeping records, reminders, and daily check-ins in 
 - [heartworm prevention schedule](/blog/heartworm-prevention-schedule-reminder-dogs)
 `,
 
-  "new-kitten-checklist-vet-vaccines-records": `A **new kitten checklist** is your best defense against “we forgot to schedule that” moments—especially for vaccines, parasite prevention, and record-keeping. Kittens change quickly, and the first months are when you build habits that make future vet care easier and less stressful.
+  "new-kitten-checklist-vet-vaccines-records": `A **new kitten checklist** is your best defense against “we forgot to schedule that” moments-especially for vaccines, parasite prevention, and record-keeping. Kittens change quickly, and the first months are when you build habits that make future vet care easier and less stressful.
 
 This guide focuses on health and documentation: a kitten vaccine timeline, what to record, how to plan carrier training, and how to set up reminders so you don’t miss critical booster windows.
 
@@ -1549,7 +1549,7 @@ Stress can worsen GI issues and upper respiratory symptoms. A predictable routin
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "senior-dog-care-health-records-medication-tracker": `Good **senior dog care** is mostly about consistency and early detection. Senior dogs can look “fine” while subtle changes build—slower walks, quieter energy, pickier eating, or a new cough that comes and goes. When you track those changes and keep medical records organized, your vet can act earlier and tailor care more precisely.
+  "senior-dog-care-health-records-medication-tracker": `Good **senior dog care** is mostly about consistency and early detection. Senior dogs can look “fine” while subtle changes build-slower walks, quieter energy, pickier eating, or a new cough that comes and goes. When you track those changes and keep medical records organized, your vet can act earlier and tailor care more precisely.
 
 This guide covers senior dog routines, medication tracking, dental timing, mobility support, and the practical record system that keeps everything coherent.
 
@@ -1621,7 +1621,7 @@ Senior dog care becomes “real” in small moments:
 - Appetite stays mostly normal, yet weight drifts down slowly
 - A new medication is added, and suddenly timing and refills matter every day
 
-These changes are easy to dismiss because they’re gradual. A good **senior dog care** plan creates a baseline, then notices meaningful drift early—when interventions are simpler and comfort can improve quickly.
+These changes are easy to dismiss because they’re gradual. A good **senior dog care** plan creates a baseline, then notices meaningful drift early-when interventions are simpler and comfort can improve quickly.
 
 ## Month-by-month senior dog care plan (repeatable)
 Use this cycle as a framework and customize it with your vet.
@@ -1665,7 +1665,7 @@ Vets often emphasize senior care that is proactive but simple:
 
 PetClues helps by keeping daily check-ins, medication reminders, and documents in one place, so your senior dog’s story is easy to share without relying on memory.
 
-If you’re not sure where to start, pick one habit for two weeks—weekly weight checks, a daily mobility note, or medication logging—and build from there. Small consistency beats a perfect plan you can’t sustain.
+If you’re not sure where to start, pick one habit for two weeks-weekly weight checks, a daily mobility note, or medication logging-and build from there. Small consistency beats a perfect plan you can’t sustain.
 
 ## FAQ
 **Question? What does senior dog care include day-to-day?** A stable routine plus lightweight tracking of appetite, energy, mobility, and symptoms so you catch changes early.
@@ -1696,10 +1696,10 @@ If you’re not sure where to start, pick one habit for two weeks—weekly weigh
 
   "pet-sitter-instructions-medical-emergency-info": `Clear **pet sitter instructions** prevent emergencies from becoming chaos. Even the most responsible sitter can’t guess your pet’s medication timing, vet contact, or what “normal” looks like. The goal is simple: give your sitter the information they need to keep your pet safe and to act fast if something goes wrong.
 
-This guide helps you create sitter instructions that cover routines, medical details, and **medical emergency info**—without overwhelming the person helping you.
+This guide helps you create sitter instructions that cover routines, medical details, and **medical emergency info**-without overwhelming the person helping you.
 
 ## Why this matters
-Most sitter problems aren’t bad intent—they’re missing context:
+Most sitter problems aren’t bad intent-they’re missing context:
 - A medication dose is skipped because the label is unclear
 - A symptom is dismissed because the sitter doesn’t know it’s new
 - An ER visit is delayed because no one knows who can consent
@@ -1844,12 +1844,12 @@ This keeps communication consistent and helps you catch changes early without ov
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "microchip-registration-guide-dogs-cats": `Getting a microchip is only half the job. **Microchip registration**—connecting that chip number to your current contact details—is what turns a tiny implant into a real safety net. In 2026, many lost pets are still delayed in returning home because chips are unregistered, registered to a previous owner, or linked to an old phone number.
+  "microchip-registration-guide-dogs-cats": `Getting a microchip is only half the job. **Microchip registration**-connecting that chip number to your current contact details-is what turns a tiny implant into a real safety net. In 2026, many lost pets are still delayed in returning home because chips are unregistered, registered to a previous owner, or linked to an old phone number.
 
 This guide explains how microchips work, how to register or update them, and how to store proof so you can act quickly if your pet is found.
 
 ## Why this matters
-When a shelter or vet scans a pet, they get a number—not your name. Registration is what links that number to you. A registered chip can:
+When a shelter or vet scans a pet, they get a number-not your name. Registration is what links that number to you. A registered chip can:
 - Reunite lost pets faster
 - Reduce time in shelters
 - Provide proof of ownership in disputes
@@ -1917,7 +1917,7 @@ If you’re building a broader onboarding system, use:
 - Review your emergency passport summary so it matches reality:
   - [pet emergency information](/blog/pet-emergency-information-card-guide)
 
-PetClues can help by keeping the chip number and registry details inside your pet profile alongside your emergency passport and medical records—so you don’t have to remember where you saved that confirmation email.
+PetClues can help by keeping the chip number and registry details inside your pet profile alongside your emergency passport and medical records-so you don’t have to remember where you saved that confirmation email.
 
 ## Expand your “lost pet plan” (do this before you need it)
 Microchip registration is the core, but your plan should include:
@@ -1976,7 +1976,7 @@ If your pet is lost, have an emergency-ready info packet and contacts ready. If 
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "heartworm-prevention-schedule-reminder-dogs": `A consistent **heartworm prevention schedule** is one of the highest-impact, lowest-effort health habits you can build for your dog. Heartworm disease is serious, expensive to treat, and far easier to prevent than to manage. The challenge isn’t knowing it’s important—the challenge is remembering every month without fail. A reliable reminder system matters.
+  "heartworm-prevention-schedule-reminder-dogs": `A consistent **heartworm prevention schedule** is one of the highest-impact, lowest-effort health habits you can build for your dog. Heartworm disease is serious, expensive to treat, and far easier to prevent than to manage. The challenge isn’t knowing it’s important-the challenge is remembering every month without fail. A reliable reminder system matters.
 
 This guide explains how heartworm prevention works, how to create a schedule you’ll follow, what to do if you miss a dose, and how to tie it into the rest of your dog’s health calendar.
 
@@ -2031,7 +2031,7 @@ Heartworm prevention often fails for practical, not emotional, reasons:
 - Two people “think the other person did it,” leading to missed months or double dosing
 - Your dog gains or loses weight and the dose size isn’t reviewed
 
-The point of a **heartworm prevention schedule** is to remove decision-making from busy days. If it’s on autopilot—with reminders, confirmation, and records—you’re far more likely to stay protected.
+The point of a **heartworm prevention schedule** is to remove decision-making from busy days. If it’s on autopilot-with reminders, confirmation, and records-you’re far more likely to stay protected.
 
 ## Month-by-month heartworm prevention schedule (simple and repeatable)
 Use this structure for the whole year.
@@ -2093,7 +2093,7 @@ If something changes (new product, travel, dose size), update the schedule the s
 
 **Question? How do I remember every month?** Use reminders with confirmation logging. PetClues can send reminders and store the medication record so you can prove consistency.
 
-**Question? Do puppies need heartworm prevention?** Often yes once they reach an appropriate age/weight—your vet will guide timing as part of a new puppy plan.
+**Question? Do puppies need heartworm prevention?** Often yes once they reach an appropriate age/weight-your vet will guide timing as part of a new puppy plan.
 
 **Question? Can I coordinate heartworm with flea/tick meds?** Yes. Pair calendars so prevention becomes one monthly routine rather than multiple scattered dates.
 
@@ -2111,7 +2111,7 @@ If something changes (new product, travel, dose size), update the schedule the s
 - [new puppy checklist](/blog/new-puppy-checklist-health-records-vaccines)
 `,
 
-  "flea-tick-prevention-calendar-pets": `Staying consistent with **flea tick prevention** is much easier when you treat it like a calendar—not a vague intention. Many pets get preventatives “most months,” which is exactly how infestations happen. A prevention calendar, plus a simple reminder system, helps you protect your pet and your home year-round.
+  "flea-tick-prevention-calendar-pets": `Staying consistent with **flea tick prevention** is much easier when you treat it like a calendar-not a vague intention. Many pets get preventatives “most months,” which is exactly how infestations happen. A prevention calendar, plus a simple reminder system, helps you protect your pet and your home year-round.
 
 This guide explains how to build a flea/tick calendar, coordinate it with other preventatives, and track what you used so your vet can advise accurately.
 
@@ -2155,7 +2155,7 @@ Fleas and ticks rarely show up at a convenient time. Common “how did this happ
 - You go hiking once, find a tick days later, and now you’re worried about what you missed
 - A new pet joins the home and brings pests before you’ve synced prevention schedules
 
-Because fleas reproduce quickly, “just one” can become a household problem. And with ticks, the risk isn’t only the bite—it’s the possibility of tick-borne illness depending on region and exposure.
+Because fleas reproduce quickly, “just one” can become a household problem. And with ticks, the risk isn’t only the bite-it’s the possibility of tick-borne illness depending on region and exposure.
 
 ## Month-by-month flea/tick prevention calendar (easy structure)
 Use a repeating monthly routine. The goal is to make prevention boring:
@@ -2234,7 +2234,7 @@ If your pet already has allergy-like itching, combine this with consistent sympt
 - [traveling with pets](/blog/traveling-with-pets-health-documents-checklist)
 `,
 
-  "dog-dental-care-schedule-cleanings-reminders": `A reliable **dog dental care schedule** can prevent a surprising number of problems: bad breath, painful chewing, infections, and even appetite changes that look like “picky eating.” The challenge is that dental disease progresses quietly. Without a plan—home care plus cleanings and reminders—many dogs don’t get dental care until pain is obvious.
+  "dog-dental-care-schedule-cleanings-reminders": `A reliable **dog dental care schedule** can prevent a surprising number of problems: bad breath, painful chewing, infections, and even appetite changes that look like “picky eating.” The challenge is that dental disease progresses quietly. Without a plan-home care plus cleanings and reminders-many dogs don’t get dental care until pain is obvious.
 
 This guide helps you build a realistic schedule, know what to watch for, and keep records and reminders so dental care doesn’t fall off the list.
 
@@ -2288,7 +2288,7 @@ Dental disease often hides behind everyday moments:
 - Your dog eats, then backs away from the bowl and licks their lips repeatedly
 - A senior dog sleeps more and walks less, and the real issue is mouth pain
 
-Because dogs are good at masking pain, dental problems can progress for months. A predictable **dog dental care schedule** makes it more likely you catch issues early—when cleanings are simpler and your dog is more comfortable.
+Because dogs are good at masking pain, dental problems can progress for months. A predictable **dog dental care schedule** makes it more likely you catch issues early-when cleanings are simpler and your dog is more comfortable.
 
 ## Step-by-step: a realistic 12-month dental plan
 Use this as a repeatable cycle (your vet may adjust based on risk).
@@ -2725,7 +2725,7 @@ If multiple people feed or treat, set one rule: treat changes must be logged for
 2. **Measure meals** for 14 days (no eyeballing).
 3. **Reduce treat calories** first (often easiest), then adjust meals if needed.
 4. **Add low-stress activity** (extra short walks) rather than one huge weekend hike.
-5. **Track energy and mobility** so changes stay safe—especially in seniors.
+5. **Track energy and mobility** so changes stay safe-especially in seniors.
 
 If mobility is limiting exercise, revisit your senior plan using [senior dog care](/blog/senior-dog-care-health-records-medication-tracker).
 
@@ -2753,7 +2753,7 @@ Weight trends often surprise caring pet parents because the changes are slow:
 - Training season increases treats and chews, and the scale drifts up even though meals didn’t change
 - Dental pain reduces chewing, and weight drops before you realize meals are being left behind
 
-The goal of a **dog weight tracker** is not perfection—it’s early awareness and clear context so you and your vet can make safer decisions sooner.
+The goal of a **dog weight tracker** is not perfection-it’s early awareness and clear context so you and your vet can make safer decisions sooner.
 
 ## Common mistakes (and how to avoid them)
 - Weighing at random times and comparing numbers that aren’t comparable
@@ -2805,7 +2805,7 @@ If a medication change coincides with weight drift, log it clearly and keep dosi
 - [dog dental care schedule](/blog/dog-dental-care-schedule-cleanings-reminders)
 `,
 
-  "pet-allergy-tracker-symptoms-triggers-records": `A **pet allergy tracker** helps you turn frustrating flare-ups into useful patterns by logging **symptoms, triggers, and records** consistently. Allergies can look random—itchy paws one week, ear issues the next, soft stool after a new treat—until you see the timeline.
+  "pet-allergy-tracker-symptoms-triggers-records": `A **pet allergy tracker** helps you turn frustrating flare-ups into useful patterns by logging **symptoms, triggers, and records** consistently. Allergies can look random-itchy paws one week, ear issues the next, soft stool after a new treat-until you see the timeline.
 
 This guide shows how to track allergies without overcomplicating your life, how to spot common triggers, and how to bring actionable notes to your vet.
 
@@ -2901,7 +2901,7 @@ Allergy management is emotionally draining because flare-ups interrupt normal li
 - Your vet asks, “What changed before this started?” and you honestly can’t remember
 - Symptoms improve, then suddenly return, and you don’t know what triggered it
 
-A **pet allergy tracker** doesn’t cure allergies, but it reduces the “guessing spiral.” When you can describe frequency, timing, and exposures, your vet can choose the next step more confidently—whether that’s flea control, infection treatment, a food trial, or long-term allergy management.
+A **pet allergy tracker** doesn’t cure allergies, but it reduces the “guessing spiral.” When you can describe frequency, timing, and exposures, your vet can choose the next step more confidently-whether that’s flea control, infection treatment, a food trial, or long-term allergy management.
 
 ## Common mistakes (and how to avoid them)
 - Changing multiple variables at once (food + treats + shampoo + meds), so you can’t tell what helped
@@ -2958,7 +2958,7 @@ If you want the simplest possible routine, log:
 - [organize pet medical records](/blog/organize-pet-medical-records-online)
 `,
 
-  "dog-vaccination-schedule-guide": `If you’re searching for a **dog vaccination schedule** in 2026, you’re probably trying to answer a practical question: “What does my dog actually need, and when?” The science is well established, but the real challenge is staying organized—especially when boosters move from puppy timing to adult intervals. A reliable **pet vaccination reminder** system keeps you on track without relying on memory.
+  "dog-vaccination-schedule-guide": `If you’re searching for a **dog vaccination schedule** in 2026, you’re probably trying to answer a practical question: “What does my dog actually need, and when?” The science is well established, but the real challenge is staying organized-especially when boosters move from puppy timing to adult intervals. A reliable **pet vaccination reminder** system keeps you on track without relying on memory.
 
 This guide covers a realistic dog vaccination schedule from the first year through adulthood, how lifestyle changes recommendations, how to avoid common booster mistakes, and how to store proof for boarding and travel.
 
@@ -3122,7 +3122,7 @@ Store these together with your emergency summary:
 - [traveling with pets](/blog/traveling-with-pets-health-documents-checklist)
 `,
 
-  "cat-health-records-checklist": `If you’ve ever tried to find a rabies certificate five minutes before boarding drop-off, you already understand why **cat health records** matter. Keeping complete **vet visit records** for your cat isn’t just “admin work”—it’s the difference between calm decisions and frantic guessing, especially when something changes quickly.
+  "cat-health-records-checklist": `If you’ve ever tried to find a rabies certificate five minutes before boarding drop-off, you already understand why **cat health records** matter. Keeping complete **vet visit records** for your cat isn’t just “admin work”-it’s the difference between calm decisions and frantic guessing, especially when something changes quickly.
 
 This guide gives you a practical cat health records checklist, a simple system for storing proof, and a care timeline that helps you keep records current year after year.
 
@@ -3272,7 +3272,7 @@ For older cats, even short monthly notes help: appetite, litter box changes, wei
 ## FAQ
 **Question? What are cat health records?** They’re the documents and timelines that capture your cat’s medical history: vaccines, lab results, invoices, medications, and visit notes.
 
-**Question? What counts as vet visit records?** Visit summaries, discharge notes, prescriptions, lab results, and itemized invoices all count as records—and each helps your vet understand history.
+**Question? What counts as vet visit records?** Visit summaries, discharge notes, prescriptions, lab results, and itemized invoices all count as records-and each helps your vet understand history.
 
 **Question? What should I upload first if I’m overwhelmed?** Start with rabies certificate, most recent visit summary/invoice, and current prescriptions. Add older records gradually.
 
@@ -3294,7 +3294,7 @@ For older cats, even short monthly notes help: appetite, litter box changes, wei
 - [pet emergency information](/blog/pet-emergency-information-card-guide)
 `,
 
-  "bird-care-health-routine": `Building a reliable **bird care** routine is one of the best ways to prevent emergencies. Birds often hide illness until they can’t, and changes can happen quickly. That’s why an organized routine—plus consistent **avian health records**—is so valuable. When you can track weight, appetite, droppings, and behavior over time, you can catch problems early and communicate clearly with an avian vet.
+  "bird-care-health-routine": `Building a reliable **bird care** routine is one of the best ways to prevent emergencies. Birds often hide illness until they can’t, and changes can happen quickly. That’s why an organized routine-plus consistent **avian health records**-is so valuable. When you can track weight, appetite, droppings, and behavior over time, you can catch problems early and communicate clearly with an avian vet.
 
 This guide covers a realistic bird care health routine, what to record, how to create avian health records you’ll actually maintain, and how PetClues can help you keep everything organized without overcomplication.
 
@@ -3305,7 +3305,7 @@ Birds are prey animals. Many species instinctively mask weakness. Real scenarios
 - You need an emergency appointment and the clinic asks for weight history and diet details
 - A pet sitter is caring for your bird and doesn’t know “normal” behavior or handling rules
 
-PetClues can help as a central home for records, reminders, and a shareable emergency summary—useful even if your pet isn’t a dog or cat.
+PetClues can help as a central home for records, reminders, and a shareable emergency summary-useful even if your pet isn’t a dog or cat.
 
 ## Daily bird care routine (high-signal checks)
 ### Morning (2–5 minutes)
@@ -3416,7 +3416,7 @@ If you travel, birds often do better with predictable routines and clear caregiv
 Use [pet sitter instructions](/blog/pet-sitter-instructions-medical-emergency-info) as a structure and adapt the details for your species. Keeping your bird’s records in PetClues can also help because you can share a consistent emergency summary and vet contact list without searching for paperwork.
 
 ## FAQ
-**Question? What is a bird care health routine?** It’s a consistent set of daily and weekly checks—behavior, appetite, droppings, and weight—plus record keeping that helps detect illness early.
+**Question? What is a bird care health routine?** It’s a consistent set of daily and weekly checks-behavior, appetite, droppings, and weight-plus record keeping that helps detect illness early.
 
 **Question? Why are avian health records important?** Birds can decline quickly. Weight trends, diet notes, and dated symptom changes help an avian vet make faster, safer decisions.
 
@@ -3430,7 +3430,7 @@ Use [pet sitter instructions](/blog/pet-sitter-instructions-medical-emergency-in
 
 **Question? Can PetClues work for birds?** Yes, as a record and reminder system: you can store documents, log weight trends and daily check-ins, and keep an emergency passport-style summary ready to share.
 
-**Question? What are common early warning signs worth logging?** Reduced appetite, quieter behavior, droppings changes, fluffed posture, and weight loss—especially if they persist across multiple days.
+**Question? What are common early warning signs worth logging?** Reduced appetite, quieter behavior, droppings changes, fluffed posture, and weight loss-especially if they persist across multiple days.
 
 **Question? Should I store invoices and lab reports?** Yes. They contain test names, medication details, and dates that matter for future comparisons.
 
@@ -3440,7 +3440,7 @@ Use [pet sitter instructions](/blog/pet-sitter-instructions-medical-emergency-in
 - [pet sitter instructions](/blog/pet-sitter-instructions-medical-emergency-info)
 `,
 
-  "exotic-pet-records-guide": `If you keep a reptile, amphibian, or small mammal, you already know “standard pet advice” doesn’t always apply. That’s why **exotic pet records** matter so much—these species often have specialized husbandry needs, and subtle changes in environment can look like “health problems.” A solid record system supports both **reptile health** and day-to-day confidence.
+  "exotic-pet-records-guide": `If you keep a reptile, amphibian, or small mammal, you already know “standard pet advice” doesn’t always apply. That’s why **exotic pet records** matter so much-these species often have specialized husbandry needs, and subtle changes in environment can look like “health problems.” A solid record system supports both **reptile health** and day-to-day confidence.
 
 This guide explains what to record for exotic pets, how to build a practical system, what veterinarians typically want to see, and how PetClues can help you store and share records in a consistent way.
 
@@ -3595,7 +3595,7 @@ This approach keeps your record system sustainable while still giving your vet a
 - [pet medication reminder](/blog/pet-medication-reminder-guide)
 `,
 
-  "pet-records-101-care-timeline": `If you’ve ever wondered what to save and what to ignore, this is your starting point. **Pet records** aren’t just paperwork—they’re the raw material for a clear **pet health timeline** that helps you make better decisions, communicate with veterinarians, and reduce stress during boarding, travel, and emergencies.
+  "pet-records-101-care-timeline": `If you’ve ever wondered what to save and what to ignore, this is your starting point. **Pet records** aren’t just paperwork-they’re the raw material for a clear **pet health timeline** that helps you make better decisions, communicate with veterinarians, and reduce stress during boarding, travel, and emergencies.
 
 This guide explains what counts as a pet record, how to build a timeline that stays current, and how to connect routine care (vaccines, prevention, dental, weight) into a system you can actually maintain.
 
@@ -3727,7 +3727,7 @@ If you need an even simpler version, pick one weekly moment (Sunday evening) to 
 ## FAQ
 **Question? What are pet records?** They’re the documents and notes that capture your pet’s medical and care history, including vaccines, medications, lab results, and invoices.
 
-**Question? What is a pet health timeline?** It’s a chronological view of key events: vaccines, preventatives, vet visits, symptoms, and treatments—organized so patterns are easy to see.
+**Question? What is a pet health timeline?** It’s a chronological view of key events: vaccines, preventatives, vet visits, symptoms, and treatments-organized so patterns are easy to see.
 
 **Question? What should I save after every vet visit?** Visit summary (if available), itemized invoice, prescriptions, and any lab results or imaging summaries.
 
@@ -3749,7 +3749,7 @@ If you need an even simpler version, pick one weekly moment (Sunday evening) to 
 - [pet medication reminder](/blog/pet-medication-reminder-guide)
 `,
 
-  "petclues-guides-life-stage-care-tools": `If you’ve ever felt like pet care advice is everywhere—but not organized for real life—you’re not alone. “Do vaccines,” “track weight,” “prevent parasites” all sound simple until you’re juggling a new puppy, a senior dog’s medications, or last-minute boarding paperwork. What most families need is **pet care by life stage**—clear priorities, realistic routines, and tools that make the plan easy to follow.
+  "petclues-guides-life-stage-care-tools": `If you’ve ever felt like pet care advice is everywhere-but not organized for real life-you’re not alone. “Do vaccines,” “track weight,” “prevent parasites” all sound simple until you’re juggling a new puppy, a senior dog’s medications, or last-minute boarding paperwork. What most families need is **pet care by life stage**-clear priorities, realistic routines, and tools that make the plan easy to follow.
 
 This guide is a “map” of PetClues content and tools: how to choose the right guides for your pet’s life stage, what to track, and how to build a reliable pet health timeline using PetClues guides.
 
@@ -3890,7 +3890,7 @@ This small habit is what turns PetClues guides from “good articles” into a m
 If you want to go one step further, schedule your quarterly review right after a routine task you already do (like replacing air filters). The best care system is the one that’s anchored to real life.
 
 ## FAQ
-**Question? What does “pet care by life stage” mean?** It means focusing on the highest-impact priorities for your pet’s current age and situation—vaccines for young pets, prevention and maintenance for adults, and trend tracking and comfort for seniors.
+**Question? What does “pet care by life stage” mean?** It means focusing on the highest-impact priorities for your pet’s current age and situation-vaccines for young pets, prevention and maintenance for adults, and trend tracking and comfort for seniors.
 
 **Question? Which PetClues guides should I read first?** Start with the checklist for your life stage: [new puppy checklist](/blog/new-puppy-checklist-health-records-vaccines) or [new kitten checklist](/blog/new-kitten-checklist-vet-vaccines-records), then add vaccine schedules and prevention calendars.
 

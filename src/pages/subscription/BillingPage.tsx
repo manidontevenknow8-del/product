@@ -62,7 +62,7 @@ export function BillingPage() {
                 {isPremium && subscription?.renewalDate
                   ? `Renews ${subscription.renewalDate}`
                   : isPremium
-                    ? `Pro — ${PRO_MONTHLY_PRICE_DISPLAY}/month`
+                    ? `Pro - ${PRO_MONTHLY_PRICE_DISPLAY}/month`
                     : 'No active subscription'}
               </p>
               {subscription?.startedAt && isPremium && (
@@ -143,7 +143,7 @@ export function BillingPage() {
               <div className={styles.invoiceEmpty}>
                 {isPremium
                   ? 'No payment records yet.'
-                  : 'No payments yet — upgrade to Pro to see billing history here.'}
+                  : 'No payments yet - upgrade to Pro to see billing history here.'}
               </div>
             ) : (
               <div className={styles.invoiceList}>

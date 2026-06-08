@@ -13,7 +13,7 @@ export function PetHealthDetailsForm({ data, onChange }: PetHealthDetailsFormPro
       <div className={styles.header}>
         <h2 className={styles.title}>A little about their health</h2>
         <p className={styles.subtitle}>
-          Skip anything you&apos;re unsure of — you can update these anytime.
+          Skip anything you&apos;re unsure of - you can update these anytime.
         </p>
       </div>
 
@@ -33,7 +33,7 @@ export function PetHealthDetailsForm({ data, onChange }: PetHealthDetailsFormPro
 
         <Input
           label="Allergies"
-          placeholder="e.g. Chicken, pollen — or none"
+          placeholder="e.g. Chicken, pollen - or none"
           value={data.allergies}
           onChange={(e) => onChange({ allergies: e.target.value })}
         />
@@ -61,7 +61,7 @@ export function PetHealthDetailsForm({ data, onChange }: PetHealthDetailsFormPro
 
         <Textarea
           label="Current conditions or notes"
-          placeholder="Anything you'd like us to remember — medications, sensitivities, habits…"
+          placeholder="Anything you'd like us to remember - medications, sensitivities, habits…"
           value={data.conditionsNotes}
           onChange={(e) => onChange({ conditionsNotes: e.target.value })}
         />

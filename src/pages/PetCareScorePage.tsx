@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { AppLayout } from '@/layouts/AppLayout';
 import { Link } from 'react-router-dom';
 import { Button, EmptyState, LoadingState } from '@/components/ui';
@@ -11,6 +12,7 @@ import {
   ScoreHistoryChart,
   ScoreFactorsCard,
   FuturePetCareIntelligence,
+  PetCareScoreProGate,
 } from '@/components/pet-care-score';
 import {
   HealthInsightsCard,
@@ -18,14 +20,22 @@ import {
   PositiveProgressCard,
   AttentionNeededCard,
 } from '@/components/pet-care-score/insights';
-import { PremiumGate } from '@/components/subscription';
+import { UpgradeModal } from '@/components/subscription';
+import { useSubscription } from '@/subscription/SubscriptionProvider';
+import { usePets } from '@/pets';
 import { usePetCareScore } from '@/petCareScore';
 import { getEncouragingMessage } from '@/utils/petCareScoreUtils';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
 import styles from './PetCareScorePage.module.css';
 
 export function PetCareScorePage() {
+  const { canAccess } = useSubscription();
+  const { activePet } = usePets();
+  const [scoreUpgradeOpen, setScoreUpgradeOpen] = useState(false);
   const { data, isLoading, error, refresh } = usePetCareScore();
+
+  const hasProInsights =
+    canAccess('advancedPetCareScore') && canAccess('advancedHealthInsights');
 
   if (isLoading) {
     return (
@@ -90,6 +100,7 @@ export function PetCareScorePage() {
   }
 
   const encouragingMessage = getEncouragingMessage(data.snapshot);
+  const petName = activePet?.name ?? 'your pet';
 
   return (
     <AppLayout flushContent>
@@ -103,45 +114,54 @@ export function PetCareScorePage() {
           meta={`Current score: ${data.snapshot.score} · ${data.snapshot.trend === 'up' ? 'Trending up' : data.snapshot.trend === 'down' ? 'Needs attention' : 'Holding steady'}`}
         />
 
-        <div className={styles.body}>
+        <div className={`${styles.body} ${!hasProInsights ? styles.bodyFree : ''}`}>
           <SectionIntro
             eyebrow="Your snapshot"
             title="How you're doing"
-            description="A living score built from reminders, health records, documents, and daily check-ins — updated as your care routine evolves."
+            description="A living score built from reminders, health records, documents, and daily check-ins - updated as your care routine evolves."
           />
 
           <PetCareScoreCard snapshot={data.snapshot} />
           <ScoreFactorsCard factors={data.factors} />
 
-          <PremiumGate feature="advancedPetCareScore">
-            <div className={styles.grid}>
-              <ScoreHistoryChart
-                history={data.history}
-                currentScore={data.snapshot.score}
-                trendDelta={data.snapshot.trendDelta}
-                trend={data.snapshot.trend}
-              />
-              <ScoreBreakdownCard breakdown={data.breakdown} />
-            </div>
-          </PremiumGate>
+          {hasProInsights ? (
+            <>
+              <div className={styles.grid}>
+                <ScoreHistoryChart
+                  history={data.history}
+                  currentScore={data.snapshot.score}
+                  trendDelta={data.snapshot.trendDelta}
+                  trend={data.snapshot.trend}
+                />
+                <ScoreBreakdownCard breakdown={data.breakdown} />
+              </div>
 
-          <PremiumGate feature="advancedHealthInsights">
-            <div className={styles.insightsGrid}>
-              <HealthInsightsCard insights={data.insights} />
-              <PositiveProgressCard items={data.positiveProgress} />
-            </div>
+              <div className={styles.insightsGrid}>
+                <HealthInsightsCard insights={data.insights} />
+                <PositiveProgressCard items={data.positiveProgress} />
+              </div>
 
-            <div className={styles.grid}>
-              <CareRecommendationsCard recommendations={data.recommendations} />
-              <AttentionNeededCard items={data.attentionItems} />
-            </div>
+              <div className={styles.grid}>
+                <CareRecommendationsCard recommendations={data.recommendations} />
+                <AttentionNeededCard items={data.attentionItems} />
+              </div>
 
-            <FuturePetCareIntelligence />
-          </PremiumGate>
+              <FuturePetCareIntelligence />
+            </>
+          ) : (
+            <PetCareScoreProGate
+              petName={petName}
+              score={data.snapshot.score}
+              trend={data.snapshot.trend}
+              onUpgrade={() => setScoreUpgradeOpen(true)}
+            />
+          )}
 
           <HealthDisclaimerNote />
         </div>
       </div>
+
+      <UpgradeModal isOpen={scoreUpgradeOpen} onClose={() => setScoreUpgradeOpen(false)} />
     </AppLayout>
   );
 }

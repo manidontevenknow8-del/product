@@ -83,7 +83,7 @@ Deno.serve(async (req) => {
       .from('profiles')
       .select('name, email')
       .eq('user_id', userData.user.id)
-      .single();
+      .maybeSingle();
 
     const code = await getOrCreateCode({
       userId: userData.user.id,

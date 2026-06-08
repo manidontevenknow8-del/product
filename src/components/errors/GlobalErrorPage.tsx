@@ -14,7 +14,7 @@ export function GlobalErrorPage({
   error,
   onRetry,
   title = 'Something unexpected happened',
-  message = 'We hit a small bump. Your data is safe — try refreshing or return to the dashboard.',
+  message = 'We hit a small bump. Your data is safe - try refreshing or return to the dashboard.',
 }: GlobalErrorPageProps) {
   return (
     <div className={styles.page}>

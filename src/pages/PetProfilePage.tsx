@@ -2,6 +2,9 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { Avatar, Badge, Button, LoadingState } from '@/components/ui';
+import { UpgradeModal } from '@/components/subscription';
+import { useAuth } from '@/auth/AuthProvider';
+import { canCreateHealthRecord } from '@/subscription/featureGates';
 import {
   PetSummaryCard,
   PetDetailsGrid,
@@ -11,6 +14,7 @@ import {
   EditProfileModal,
   HealthRecordModal,
 } from '@/components/pet-profile';
+import { AddAnotherPetButton } from '@/components/pets/AddAnotherPetButton';
 import { EmptyPetProfileState } from '@/components/empty-states';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
 import { usePets } from '@/pets';
@@ -38,7 +42,7 @@ const HOW_PROFILE_WORKS = [
   {
     step: '1',
     title: 'Your pet’s identity',
-    body: 'Name, breed, age, photo, diet, microchip, and care notes live here — the source of truth that powers your dashboard, reminders, and timeline.',
+    body: 'Name, breed, age, photo, diet, microchip, and care notes live here - the source of truth that powers your dashboard, reminders, and timeline.',
   },
   {
     step: '2',
@@ -55,7 +59,7 @@ const HOW_PROFILE_WORKS = [
 const PROFILE_PILLARS = [
   {
     title: 'Health records',
-    body: 'Structured entries grouped by type — vaccines, wellness, meds, and more — with a chronological medical history below.',
+    body: 'Structured entries grouped by type - vaccines, wellness, meds, and more - with a chronological medical history below.',
     image: IMG.health,
     alt: 'Illustration of pet vaccination and vet visit records',
   },
@@ -78,16 +82,27 @@ function deriveProfileStatus(recordCount: number): ProfileStatus {
 }
 
 export function PetProfilePage() {
+  const { user } = useAuth();
   const { activePet, pets, setActivePet, isLoading, hasPets, updatePet } = usePets();
   const { healthSummary, createRecord, updateRecord, deleteRecord } = useHealthRecords();
   const [editOpen, setEditOpen] = useState(false);
   const [healthModalOpen, setHealthModalOpen] = useState(false);
+  const [healthUpgradeOpen, setHealthUpgradeOpen] = useState(false);
   const [editingRecord, setEditingRecord] = useState<HealthRecord | null>(null);
 
   const profile = activePet ? petRecordToPetProfile(activePet) : null;
   const profileStatus = deriveProfileStatus(healthSummary.recordCount);
 
+  const accessInput = {
+    subscriptionStatus: user?.subscriptionStatus,
+    subscriptionTier: user?.subscriptionTier ?? 'free',
+  };
+
   const openAddRecord = () => {
+    if (!canCreateHealthRecord(accessInput, healthSummary.recordCount)) {
+      setHealthUpgradeOpen(true);
+      return;
+    }
     setEditingRecord(null);
     setHealthModalOpen(true);
   };
@@ -208,9 +223,15 @@ export function PetProfilePage() {
               <Button variant="primary" size="md" onClick={() => setEditOpen(true)}>
                 Edit profile
               </Button>
-              <Button variant="secondary" size="md" onClick={openAddRecord}>
+              <Button
+                variant="secondary"
+                size="md"
+                className={styles.heroLightBtn}
+                onClick={openAddRecord}
+              >
                 Add health record
               </Button>
+              <AddAnotherPetButton size="md" className={styles.heroLightBtn} />
             </div>
           </div>
         </header>
@@ -221,7 +242,7 @@ export function PetProfilePage() {
               What your pet profile does
             </h2>
             <p className={styles.sectionLead}>
-              This is not just a photo and name — it is the hub that keeps {profile.name}&apos;s care
+              This is not just a photo and name - it is the hub that keeps {profile.name}&apos;s care
               organized, searchable, and connected to everything else in PetClues.
             </p>
             <div className={styles.steps}>
@@ -260,7 +281,7 @@ export function PetProfilePage() {
               <article className={styles.toolCard}>
                 <h3 className={styles.toolTitle}>PetCare Score</h3>
                 <p className={styles.toolBody}>
-                  See how well {profile.name}&apos;s care is organized — profile completeness,
+                  See how well {profile.name}&apos;s care is organized - profile completeness,
                   reminders, records, and documents feed the score.
                 </p>
                 <Link to={ROUTES.PET_CARE_SCORE}>
@@ -273,7 +294,7 @@ export function PetProfilePage() {
               <article className={styles.toolCard}>
                 <h3 className={styles.toolTitle}>Daily check-in</h3>
                 <p className={styles.toolBody}>
-                  Log what {profile.name} ate and how far you walked today — builds streaks and
+                  Log what {profile.name} ate and how far you walked today - builds streaks and
                   monthly stories.
                 </p>
                 <Link to={ROUTES.DASHBOARD}>
@@ -302,22 +323,19 @@ export function PetProfilePage() {
               {profile.name}&apos;s records & details
             </h2>
             <p className={styles.workspaceLead}>
-              Edit basics anytime, add health events, and upload documents — all scoped to this pet.
+              Edit basics anytime, add health events, and upload documents - all scoped to this pet.
             </p>
 
             <div className={styles.dataGrid}>
               <div className={styles.dataCol}>
                 <PetSummaryCard profile={profile} />
                 <PetDetailsGrid profile={profile} />
+                <PetDocumentsVault />
               </div>
               <div className={styles.dataCol}>
                 <PetMedicalHistory onAdd={openAddRecord} />
                 <PetHealthRecords onAdd={openAddRecord} onEdit={openEditRecord} />
               </div>
-            </div>
-
-            <div className={styles.vaultPanel}>
-              <PetDocumentsVault />
             </div>
           </section>
 
@@ -341,6 +359,11 @@ export function PetProfilePage() {
         }}
         onSubmit={handleHealthSubmit}
         onDelete={editingRecord ? deleteRecord : undefined}
+      />
+
+      <UpgradeModal
+        isOpen={healthUpgradeOpen}
+        onClose={() => setHealthUpgradeOpen(false)}
       />
     </AppLayout>
   );

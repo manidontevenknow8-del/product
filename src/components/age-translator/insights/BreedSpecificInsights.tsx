@@ -20,7 +20,7 @@ export function BreedSpecificInsights({ insights, breed }: BreedSpecificInsights
     <section className={styles.section} aria-label="Breed-specific insights">
       <h2 className={styles.title}>Insights for {breed}</h2>
       <p className={styles.subtitle}>
-        Educational tips tailored to your companion&apos;s breed — always consult your vet for personalised advice.
+        Educational tips tailored to your companion&apos;s breed - always consult your vet for personalised advice.
       </p>
       <div className={styles.grid}>
         {insights.map((insight) => (

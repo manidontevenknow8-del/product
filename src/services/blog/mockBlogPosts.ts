@@ -3,7 +3,7 @@ import { SEO_BLOG_POSTS } from './seoBlogPosts';
 import { SEO_BLOG_POSTS_EXTRA } from './seoBlogPostsExtra';
 import { applyLongFormToPosts } from './applyLongFormContent';
 
-/** Offline / demo posts — mirrors migration seed for consistent UX without Supabase */
+/** Offline / demo posts - mirrors migration seed for consistent UX without Supabase */
 const LEGACY_MOCK_BLOG_POSTS: BlogPost[] = [
   {
     id: 'mock-1',
@@ -11,7 +11,7 @@ const LEGACY_MOCK_BLOG_POSTS: BlogPost[] = [
     slug: 'dog-vaccination-schedule-guide',
     content: `## Why schedules fail
 
-Most pet parents start strong, then life gets busy. The fix is not more willpower — it is a system that lives where you already look.
+Most pet parents start strong, then life gets busy. The fix is not more willpower - it is a system that lives where you already look.
 
 ## The calm approach
 
@@ -48,7 +48,7 @@ After each visit, save three things: the summary PDF, medication changes, and th
 
 ## Why it matters
 
-Cats hide discomfort. A clear record history helps you spot patterns early — appetite shifts, weight trends, recurring symptoms.
+Cats hide discomfort. A clear record history helps you spot patterns early - appetite shifts, weight trends, recurring symptoms.
 
 ## Starter checklist
 
@@ -115,7 +115,7 @@ Temperature logs, shedding cycles, appetite notes, and enclosure changes all inf
 
 ## Shareable summaries
 
-When you can export a clean timeline, sitters and vets stay aligned — especially for species with specialized care needs.`,
+When you can export a clean timeline, sitters and vets stay aligned - especially for species with specialized care needs.`,
     excerpt:
       'A practical guide to health records for reptiles and small mammals, built for precision and peace of mind.',
     category: 'exotic-pets',
@@ -133,7 +133,7 @@ When you can export a clean timeline, sitters and vets stay aligned — especial
     slug: 'pet-records-101-care-timeline',
     content: `## Records are a story
 
-Vaccines, bills, prescriptions, and notes are not clutter — they are chapters in your pet's life.
+Vaccines, bills, prescriptions, and notes are not clutter - they are chapters in your pet's life.
 
 ## From folders to timeline
 
@@ -171,7 +171,7 @@ Track mobility, appetite, lab trends, and comfort-focused reminders.
 
 ## How PetClues helps
 
-Reminders, document vault, emergency passport, and PetCare Score work together — so you spend less time searching and more time caring.`,
+Reminders, document vault, emergency passport, and PetCare Score work together - so you spend less time searching and more time caring.`,
     excerpt:
       'A PetClues guide to choosing the right care tools for puppies, adults, and senior pets.',
     category: 'petclues-guides',

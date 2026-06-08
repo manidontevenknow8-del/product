@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { PublicLayout } from '@/layouts/PublicLayout';
-import { PageContainer, Badge, Card } from '@/components/ui';
+import { PageContainer, Card } from '@/components/ui';
 import { PageHeroBand } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
 import {
@@ -15,6 +16,7 @@ import { PET_MATCH_QUESTIONS } from '@/services/petMatch/petMatchQuestionnaire';
 import { runPetMatchEngine } from '@/services/petMatch/petMatchEngine';
 import { savePetMatchRecommendation } from '@/services/petMatch/petMatchLeadService';
 import type { PetMatchAnswers } from '@/types/petMatch';
+import { ROUTES } from '@/routes/paths';
 import styles from './PetMatchPage.module.css';
 
 const TOTAL_STEPS = PET_MATCH_QUESTIONS.length;
@@ -56,25 +58,27 @@ export function PetMatchPage() {
     setSaveSuccess(true);
   };
 
+  const heroTitle = isComplete
+    ? 'A companion that fits your real life'
+    : 'Before you choose with your heart alone';
+
   const heroSubtitle = isComplete
-    ? 'Your personalized compatibility results are ready.'
-    : 'A premium compatibility experience to help future pet owners discover their best match.';
+    ? 'Your match is ready. Save it, then build a calm home for their health records, reminders, and story in PetClues.'
+    : 'Many new pet parents fall in love first - then feel overwhelmed by energy levels, vet costs, and routines that never quite fit. A few honest answers can spare you years of guilt and second-guessing.';
 
   const content = (
     <div className={styles.page}>
       <PageHeroBand
         image={PAGE_IMG.app.petMatch}
         imageAlt=""
-        eyebrow="Pet Match Engine"
-        title="Find your perfect pet match"
+        eyebrow="Pet Match"
+        title={heroTitle}
         subtitle={heroSubtitle}
-        meta={!isComplete ? `Question ${Math.min(stepIndex + 1, TOTAL_STEPS)} of ${TOTAL_STEPS}` : undefined}
       />
 
       <PageContainer size="xl" className={styles.body}>
         {!isComplete && (
           <div className={styles.progressWrap}>
-            <Badge variant="accent">Acquisition Engine</Badge>
             <PetMatchProgress currentStep={stepIndex + 1} totalSteps={TOTAL_STEPS} />
           </div>
         )}
@@ -90,12 +94,27 @@ export function PetMatchPage() {
               onBack={handleBack}
             />
             <Card variant="information" className={styles.sideCard}>
-              <h3 className={styles.sideTitle}>How matching works</h3>
+              <h3 className={styles.sideTitle}>Why this matters</h3>
+              <p className={styles.sideLead}>
+                The wrong match is not a small mistake. It is sleepless nights, strained budgets,
+                and a pet who never quite gets the life they deserve.
+              </p>
               <ul className={styles.sideList}>
-                <li>Rule-based scoring tuned to lifestyle fit and care practicality.</li>
-                <li>No AI guessing, just transparent compatibility logic.</li>
-                <li>Each recommendation explains why it fits your answers.</li>
+                <li>Match energy to your home, not your weekend fantasy.</li>
+                <li>See care difficulty and monthly costs before you commit.</li>
+                <li>Get breed picks with clear reasons - no mystery algorithms.</li>
               </ul>
+              <p className={styles.sideFooter}>
+                Already have a pet?{' '}
+                <Link to={ROUTES.SIGNUP} className={styles.sideLink}>
+                  Start organizing their story
+                </Link>{' '}
+                or{' '}
+                <Link to={ROUTES.ABOUT} className={styles.sideLink}>
+                  read why we built PetClues
+                </Link>
+                .
+              </p>
             </Card>
           </div>
         ) : (

@@ -21,7 +21,7 @@ const features: {
   {
     title: 'Emergency Passport',
     description:
-      'Critical allergies, medications, and vet contacts — ready to share with sitters, groomers, or emergency clinics in one tap.',
+      'Critical allergies, medications, and vet contacts - ready to share with sitters, groomers, or emergency clinics in one tap.',
     image: LANDING_IMG.passport,
     alt: 'Pet emergency passport with medical details and ID information',
     span: 'wide',
@@ -29,7 +29,7 @@ const features: {
   {
     title: 'Smart reminders',
     description:
-      'Pet vaccination reminders, medication alerts, and vet visit due dates — with email nudges 7, 3, and 1 day before.',
+      'Pet vaccination reminders, medication alerts, and vet visit due dates - with email nudges 7, 3, and 1 day before.',
     image: LANDING_IMG.reminders,
     alt: 'Pet vaccination and medication reminder calendar on phone',
     span: 'trio',
@@ -37,7 +37,7 @@ const features: {
   {
     title: 'PetCare Score',
     description:
-      'See how organized your pet health records are — profile completeness, reminders, documents, and care gaps at a glance.',
+      'See how organized your pet health records are - profile completeness, reminders, documents, and care gaps at a glance.',
     image: LANDING_IMG.score,
     alt: 'Pet wellness score dashboard showing organized dog health records',
     span: 'trio',
@@ -74,7 +74,7 @@ export function FeatureHighlights() {
           <span className={`label ${styles.eyebrow}`}>Pet health app features</span>
           <h2 className={styles.title}>All-in-one pet health records &amp; care tools</h2>
           <p className={styles.subtitle}>
-            Vaccination reminders, medical records, daily check-ins, and emergency passports —
+            Vaccination reminders, medical records, daily check-ins, and emergency passports -
             seven tools that work together so dog and cat parents stay organized.
           </p>
         </div>

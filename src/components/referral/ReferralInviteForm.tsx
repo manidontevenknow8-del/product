@@ -17,7 +17,7 @@ export function ReferralInviteForm() {
     setLoading(true);
     try {
       await sendInvite(email);
-      setMessage('Invite recorded — we’ll attribute signup when they join with your link.');
+      setMessage('Invite recorded - we’ll attribute signup when they join with your link.');
       setEmail('');
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Unable to send invite');

@@ -41,7 +41,7 @@ export function ScoreBreakdownCard({ breakdown }: ScoreBreakdownCardProps) {
         <ul className={styles.list}>
           {breakdown.helping.map((f) => (
             <li key={f.id} className={styles.item}>
-              {f.label} — {f.description}
+              {f.label} - {f.description}
             </li>
           ))}
         </ul>
@@ -53,7 +53,7 @@ export function ScoreBreakdownCard({ breakdown }: ScoreBreakdownCardProps) {
           <ul className={styles.list}>
             {breakdown.improving.map((f) => (
               <li key={f.id} className={`${styles.item} ${styles.itemImprove}`}>
-                {f.label} — {f.suggestion ?? f.description}
+                {f.label} - {f.suggestion ?? f.description}
               </li>
             ))}
           </ul>

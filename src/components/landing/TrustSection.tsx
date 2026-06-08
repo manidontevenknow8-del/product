@@ -5,7 +5,7 @@ const trustPoints = [
   {
     title: 'Peace of mind',
     description:
-      'Pet allergies, medications, and vet contacts stay safe, current, and ready — online or in an emergency.',
+      'Pet allergies, medications, and vet contacts stay safe, current, and ready - online or in an emergency.',
   },
   {
     title: 'Organized records',
@@ -15,7 +15,7 @@ const trustPoints = [
   {
     title: 'Smart reminders',
     description:
-      'Pet medication reminders and vaccine due-date alerts — timely, unobtrusive, never overwhelming.',
+      'Pet medication reminders and vaccine due-date alerts - timely, unobtrusive, never overwhelming.',
   },
   {
     title: 'Easy sharing',
@@ -42,7 +42,7 @@ export function TrustSection() {
             <span className={`label ${styles.eyebrow}`}>Why PetClues</span>
             <h2 className={styles.title}>Care you can trust, designed with intention</h2>
             <p className={styles.lead}>
-              We built PetClues for pet parents who want clarity without complexity — a calm
+              We built PetClues for pet parents who want clarity without complexity - a calm
               companion for every stage of your pet&apos;s life, from playful years to gentle
               seniors.
             </p>

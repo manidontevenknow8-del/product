@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
 import { SettingsToggle } from './SettingsToggle';
 import { useSettings } from '@/settings';
+import { ROUTES } from '@/routes/paths';
 import type { PrivacySettings } from '@/types/settings';
 import styles from './SettingsCard.module.css';
 
@@ -38,18 +40,18 @@ export function PrivacySettingsCard({ onSave }: PrivacySettingsCardProps) {
 
       <div className={styles.section}>
         <SettingsToggle
-          label="Public profile"
-          description="Allow a limited public view of your pet profile (coming soon)"
-          checked={privacy.publicProfileEnabled}
-          onChange={(v) => update({ publicProfileEnabled: v })}
-          disabled
-        />
-        <SettingsToggle
-          label="Passport sharing"
-          description="Allow trusted contacts to view the emergency passport via secure link"
+          label="Passport sharing preference"
+          description="When secure sharing launches, this controls whether trusted contacts can view your emergency passport via link"
           checked={privacy.passportSharingEnabled}
           onChange={(v) => update({ passportSharingEnabled: v })}
         />
+      </div>
+
+      <div className={styles.placeholder}>
+        <div className={styles.placeholderTitle}>Public profile</div>
+        <div className={styles.placeholderDesc}>
+          A limited public view of your pet profile is on our roadmap. We will notify you before it launches.
+        </div>
       </div>
 
       <div className={styles.divider} />
@@ -57,12 +59,14 @@ export function PrivacySettingsCard({ onSave }: PrivacySettingsCardProps) {
       <div className={styles.placeholder}>
         <div className={styles.placeholderTitle}>Data export</div>
         <div className={styles.placeholderDesc}>
-          Download a copy of all your pet records and account data.
+          Request a copy of your pet records and account data.
         </div>
         <div className={styles.actions}>
-          <Button variant="secondary" size="sm" disabled>
-            Export data (coming soon)
-          </Button>
+          <Link to={ROUTES.DATA_EXPORT}>
+            <Button variant="secondary" size="sm">
+              Request export
+            </Button>
+          </Link>
         </div>
       </div>
 
@@ -74,9 +78,11 @@ export function PrivacySettingsCard({ onSave }: PrivacySettingsCardProps) {
           Permanently remove your account and all associated pet data. This cannot be undone.
         </div>
         <div className={styles.actions}>
-          <Button variant="destructive" size="sm" disabled>
-            Delete account (coming soon)
-          </Button>
+          <Link to={ROUTES.DATA_DELETION}>
+            <Button variant="destructive" size="sm">
+              Request deletion
+            </Button>
+          </Link>
         </div>
       </div>
 
