@@ -5,28 +5,43 @@ export type SEOConfig = {
   description: string;
   canonical?: string;
   ogType?: 'website' | 'article';
+  ogTitle?: string;
+  ogDescription?: string;
   ogImage?: string;
   ogImageAlt?: string;
   noIndex?: boolean;
   keywords?: string;
   articleAuthor?: string;
   articlePublishedTime?: string;
+  articleModifiedTime?: string;
   articleSection?: string;
 };
 
 const SITE_URL = import.meta.env.VITE_SITE_URL ?? 'https://petclues.com';
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/landing/landing-hero.png`;
-const OG_IMAGE_ALT = 'PetClues — pet health records and care organization app';
+
+export const HOME_TITLE = 'PetClues | AI-Powered Pet Health & Life Management';
+export const HOME_DESCRIPTION =
+  'Track health records, reminders, vaccinations, life stories, monthly reports, pet passports, and AI-powered pet insights in one place.';
+export const HOME_KEYWORDS =
+  'pet health tracker, pet passport, pet reminders, pet vaccinations, pet records, pet care app, pet health management, AI pet care, dog health tracker, cat health tracker, exotic pet care';
+export const HOME_OG_TITLE = 'PetClues';
+export const HOME_OG_DESCRIPTION = 'Everything your pet needs. Remembered.';
+export const BRAND_THEME_COLOR = '#2C3E35';
+export const BRAND_BG_COLOR = '#F7F4EF';
+
+/** Square brand logo — used for OG, Twitter, Organization schema, and PWA icons. */
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
+const OG_IMAGE_ALT = 'PetClues logo';
 
 const DEFAULT: SEOConfig = {
-  title: 'PetClues — Pet Health Records App & Vaccination Reminders',
-  description:
-    'Organize pet medical records, vaccination reminders, daily check-ins, and emergency passports in one free pet health app for dog and cat parents.',
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   ogType: 'website',
+  ogTitle: HOME_OG_TITLE,
+  ogDescription: HOME_OG_DESCRIPTION,
   ogImage: DEFAULT_OG_IMAGE,
   ogImageAlt: OG_IMAGE_ALT,
-  keywords:
-    'pet health records app, pet vaccination reminder, organize pet medical records, pet emergency passport, dog health tracker',
+  keywords: HOME_KEYWORDS,
 };
 
 /** Public routes that should be indexed and included in sitemap. */
@@ -67,19 +82,18 @@ const FORCE_NOINDEX_ROUTES = new Set<string>([
   ROUTES.LOST_PET,
   ROUTES.LOST_PET_REPORT,
   ROUTES.AGE_TRANSLATOR,
-  ROUTES.FOUNDING_MEMBERS, // removed - founding members IS indexable
+  ROUTES.FOUNDING_MEMBERS,
 ]);
 
-// Founding members is indexable — remove from force noindex
 FORCE_NOINDEX_ROUTES.delete(ROUTES.FOUNDING_MEMBERS);
 
 export const SEO_PAGES: Record<string, SEOConfig> = {
   [ROUTES.LANDING]: {
-    title: 'PetClues — Pet Health Records App | Vaccination Reminders & Emergency Passport',
-    description:
-      'Free pet health app to organize medical records, set vaccination & medication reminders, log daily check-ins, and share an emergency pet passport. Start in minutes — no credit card.',
-    keywords:
-      'pet health records app, pet vaccination reminder, pet medical records organizer, emergency pet passport, dog vaccination schedule, cat health records, pet medication reminder, daily pet check-in',
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    ogTitle: HOME_OG_TITLE,
+    ogDescription: HOME_OG_DESCRIPTION,
+    keywords: HOME_KEYWORDS,
     ogType: 'website',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: OG_IMAGE_ALT,
@@ -294,9 +308,14 @@ export function getPageSEO(pathname: string): SEOConfig {
 export const SITE_META = {
   siteName: 'PetClues',
   siteUrl: SITE_URL,
-  logoUrl: `${SITE_URL}/images/petclues-logo.png`,
+  logoUrl: `${SITE_URL}/logo.png`,
   twitterHandle: '@petclues',
   locale: 'en_US',
   defaultOgImage: DEFAULT_OG_IMAGE,
   defaultOgImageAlt: OG_IMAGE_ALT,
+  themeColor: BRAND_THEME_COLOR,
+  backgroundColor: BRAND_BG_COLOR,
+  organizationDescription: 'AI-powered pet health and life management platform.',
+  softwareDescription:
+    'Pet health records, reminders, passports, AI insights, monthly reports, and life story management.',
 };

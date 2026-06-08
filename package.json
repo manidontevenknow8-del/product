@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "audit:v1": "node scripts/v1-audit.mjs",
     "smoke:welcome-email": "node scripts/smoke-welcome-email.mjs",
-    "create:razorpay-test-user": "node scripts/create-razorpay-test-user.mjs"
+    "create:razorpay-test-user": "node scripts/create-razorpay-test-user.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

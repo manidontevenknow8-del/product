@@ -42,6 +42,7 @@ export function getBlogPostSEO(post: BlogPost): SEOConfig {
     keywords: [categoryLabel, ...post.tags].join(', '),
     articleAuthor: post.author,
     articlePublishedTime: post.publishedAt ?? undefined,
+    articleModifiedTime: post.updatedAt,
     articleSection: categoryLabel,
     noIndex: false,
   };

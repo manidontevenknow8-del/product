@@ -1,17 +1,24 @@
-import { SITE_META } from '@/data/seoConfig';
+import { HOME_OG_DESCRIPTION, SITE_META } from '@/data/seoConfig';
 import { ROUTES } from '@/routes/paths';
 
 type FaqItem = { question: string; answer: string };
 
-export function buildOrganizationSchema() {
+export function buildOrganizationSchema(sameAs: string[] = []) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE_META.siteUrl}/#organization`,
     name: SITE_META.siteName,
     url: SITE_META.siteUrl,
-    logo: SITE_META.logoUrl,
-    description:
-      'Pet health records app for vaccination reminders, medical records organization, and emergency pet passports.',
+    logo: {
+      '@type': 'ImageObject',
+      url: SITE_META.logoUrl,
+      width: 512,
+      height: 512,
+    },
+    image: SITE_META.logoUrl,
+    description: SITE_META.organizationDescription,
+    ...(sameAs.length > 0 ? { sameAs } : {}),
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
@@ -25,17 +32,43 @@ export function buildWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_META.siteUrl}/#website`,
     name: SITE_META.siteName,
     url: SITE_META.siteUrl,
+    description: HOME_OG_DESCRIPTION,
     publisher: {
-      '@type': 'Organization',
-      name: SITE_META.siteName,
-      url: SITE_META.siteUrl,
+      '@id': `${SITE_META.siteUrl}/#organization`,
     },
+    inLanguage: 'en-US',
     potentialAction: {
       '@type': 'SearchAction',
-      target: `${SITE_META.siteUrl}${ROUTES.BLOG}?q={search_term_string}`,
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE_META.siteUrl}${ROUTES.BLOG}?q={search_term_string}`,
+      },
       'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function buildSoftwareApplicationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    '@id': `${SITE_META.siteUrl}/#software`,
+    name: SITE_META.siteName,
+    url: SITE_META.siteUrl,
+    applicationCategory: 'HealthApplication',
+    operatingSystem: 'Web',
+    description: SITE_META.softwareDescription,
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      description: 'Free plan available',
+    },
+    publisher: {
+      '@id': `${SITE_META.siteUrl}/#organization`,
     },
   };
 }
@@ -56,21 +89,16 @@ export function buildFaqPageSchema(items: readonly FaqItem[]) {
 }
 
 export function buildLandingGraphSchema(faqItems: readonly FaqItem[]) {
+  const organization = buildOrganizationSchema();
+  const website = buildWebSiteSchema();
+  const software = buildSoftwareApplicationSchema();
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      buildOrganizationSchema(),
-      buildWebSiteSchema(),
-      {
-        '@type': 'WebApplication',
-        name: SITE_META.siteName,
-        url: SITE_META.siteUrl,
-        applicationCategory: 'HealthApplication',
-        operatingSystem: 'Web',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-        description:
-          'Organize pet medical records, vaccination reminders, daily check-ins, and emergency pet passports.',
-      },
+      organization,
+      website,
+      software,
       buildFaqPageSchema(faqItems),
     ],
   };

@@ -55,6 +55,9 @@ export function MetaTags({ config }: MetaTagsProps) {
       if (config.articlePublishedTime) {
         setMetaTag('article:published_time', config.articlePublishedTime, 'property');
       }
+      if (config.articleModifiedTime) {
+        setMetaTag('article:modified_time', config.articleModifiedTime, 'property');
+      }
       if (config.articleSection) {
         setMetaTag('article:section', config.articleSection, 'property');
       }
@@ -73,8 +76,8 @@ export function OpenGraph({ config }: OpenGraphProps) {
     const image = config.ogImage ?? SITE_META.defaultOgImage;
     const imageAlt = config.ogImageAlt ?? SITE_META.defaultOgImageAlt;
 
-    setMetaTag('og:title', config.title, 'property');
-    setMetaTag('og:description', config.description, 'property');
+    setMetaTag('og:title', config.ogTitle ?? config.title, 'property');
+    setMetaTag('og:description', config.ogDescription ?? config.description, 'property');
     setMetaTag('og:type', config.ogType ?? 'website', 'property');
     setMetaTag('og:site_name', SITE_META.siteName, 'property');
     setMetaTag('og:locale', SITE_META.locale, 'property');
@@ -86,13 +89,14 @@ export function OpenGraph({ config }: OpenGraphProps) {
     setMetaTag('og:image', image, 'property');
     setMetaTag('og:image:secure_url', image, 'property');
     setMetaTag('og:image:alt', imageAlt, 'property');
-    setMetaTag('og:image:width', '1200', 'property');
-    setMetaTag('og:image:height', '630', 'property');
+    const isSquareLogo = image.endsWith('/logo.png');
+    setMetaTag('og:image:width', isSquareLogo ? '512' : '1200', 'property');
+    setMetaTag('og:image:height', isSquareLogo ? '512' : '630', 'property');
 
     setMetaTag('twitter:card', 'summary_large_image');
     setMetaTag('twitter:site', SITE_META.twitterHandle);
-    setMetaTag('twitter:title', config.title);
-    setMetaTag('twitter:description', config.description);
+    setMetaTag('twitter:title', config.ogTitle ?? config.title);
+    setMetaTag('twitter:description', config.ogDescription ?? config.description);
     setMetaTag('twitter:image', image);
     setMetaTag('twitter:image:alt', imageAlt);
   }, [config]);
