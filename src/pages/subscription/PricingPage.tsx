@@ -11,13 +11,11 @@ import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { useAnalytics } from '@/analytics';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import { ROUTES } from '@/routes/paths';
-import type { BillingInterval } from '@/types/subscription';
 import styles from './PricingPage.module.css';
 
 export function PricingPage() {
-  const [interval, setInterval] = useState<BillingInterval>('monthly');
   const { isAuthenticated } = useAuth();
-  const { subscription, startCheckout, openBillingPortal } = useSubscription();
+  const { isPremium, startCheckout, openBillingPortal } = useSubscription();
   const { track } = useAnalytics();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
@@ -43,11 +41,9 @@ export function PricingPage() {
           setLoading(false);
           return;
         }
-        track('upgrade_clicked', { interval, plan: 'premium' });
-        await startCheckout(interval);
-        track('premium_started', { interval, plan: 'premium' });
-        track('subscription_started', { interval, plan: 'premium' });
-      } else if (subscription?.plan === 'premium') {
+        track('upgrade_clicked', { interval: 'monthly', plan: 'pro' });
+        await startCheckout('monthly');
+      } else if (isPremium) {
         await openBillingPortal();
       } else {
         navigate(ROUTES.BILLING);
@@ -65,7 +61,7 @@ export function PricingPage() {
       imageAlt=""
       eyebrow="Plans"
       title="Simple, honest pricing"
-      subtitle="Start free with everything you need for one pet. Upgrade when you're ready for Vet Bill Decoder, advanced insights, and unlimited pets."
+      subtitle="Start free with everything you need for one pet. Upgrade to Pro for Vet Bill Decoder, AI insights, and unlimited pets."
     />
   );
 
@@ -77,31 +73,13 @@ export function PricingPage() {
         </p>
       )}
 
-      <div className={styles.toggle}>
-        <button
-          type="button"
-          className={`${styles.toggleBtn} ${interval === 'monthly' ? styles.toggleBtnActive : ''}`}
-          onClick={() => setInterval('monthly')}
-        >
-          Monthly
-        </button>
-        <button
-          type="button"
-          className={`${styles.toggleBtn} ${interval === 'yearly' ? styles.toggleBtnActive : ''}`}
-          onClick={() => setInterval('yearly')}
-        >
-          Yearly
-          <span className={styles.savings}>Save 27%</span>
-        </button>
-      </div>
-
       <div className={styles.grid}>
         {PLANS.map((plan) => (
           <SubscriptionCard
             key={plan.id}
             plan={plan}
-            interval={interval}
-            isCurrent={isAuthenticated && subscription?.plan === plan.id}
+            interval="monthly"
+            isCurrent={isAuthenticated && (plan.id === 'premium' ? isPremium : !isPremium)}
             onSelect={() => void handleSelect(plan.id)}
             loading={loading}
           />

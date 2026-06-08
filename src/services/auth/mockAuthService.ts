@@ -63,6 +63,8 @@ export const mockAuthService: IAuthService = {
       emailVerified: false,
       needsOnboarding: true,
       subscriptionTier: 'free',
+      subscriptionPlan: 'free',
+      subscriptionStatus: 'inactive',
       createdAt: new Date().toISOString(),
     };
 

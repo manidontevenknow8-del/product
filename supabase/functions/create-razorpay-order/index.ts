@@ -1,5 +1,10 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
-import { getAppBaseUrl, getStripeClient } from '../_shared/stripe/client.ts';
+import {
+  createRazorpayOrder,
+  getRazorpayKeyId,
+  PRO_MONTHLY_PLAN,
+  pricingForPlan,
+} from '../_shared/razorpay/client.ts';
 import { enforceRateLimit, rateLimitKey } from '../_shared/security/rateLimit.ts';
 
 const corsHeaders = {
@@ -38,6 +43,14 @@ Deno.serve(async (req) => {
       });
     }
 
+    const { plan } = await req.json() as { plan?: string };
+    if (plan !== PRO_MONTHLY_PLAN) {
+      return new Response(JSON.stringify({ error: 'plan must be "pro"' }), {
+        status: 400,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
     const supabase = userClient(authHeader);
     const { data: userData, error: userError } = await supabase.auth.getUser();
     if (userError || !userData.user) {
@@ -50,43 +63,27 @@ Deno.serve(async (req) => {
     const admin = adminClient();
     const rateLimited = await enforceRateLimit(
       admin,
-      rateLimitKey('create_portal_session', userData.user.id),
+      rateLimitKey('create_razorpay_order', userData.user.id),
       corsHeaders,
     );
     if (rateLimited) return rateLimited;
 
-    const { data: customerRow, error: customerError } = await admin
-      .from('stripe_customers')
-      .select('stripe_customer_id')
-      .eq('user_id', userData.user.id)
-      .maybeSingle();
-
-    if (customerError) {
-      return new Response(JSON.stringify({ error: customerError.message }), {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
-    }
-
-    if (!customerRow?.stripe_customer_id) {
-      return new Response(
-        JSON.stringify({ error: 'No billing account yet. Subscribe to Premium first.' }),
-        {
-          status: 404,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        },
-      );
-    }
-
-    const stripe = getStripeClient();
-    const session = await stripe.billingPortal.sessions.create({
-      customer: customerRow.stripe_customer_id,
-      return_url: `${getAppBaseUrl()}/billing`,
+    const order = await createRazorpayOrder({
+      userId: userData.user.id,
+      plan: PRO_MONTHLY_PLAN,
     });
 
-    return new Response(JSON.stringify({ url: session.url }), {
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    const pricing = pricingForPlan(PRO_MONTHLY_PLAN);
+
+    return new Response(
+      JSON.stringify({
+        orderId: order.id,
+        amount: pricing.amount,
+        currency: pricing.currency,
+        razorpayKey: getRazorpayKeyId(),
+      }),
+      { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+    );
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';
     return new Response(JSON.stringify({ error: message }), {

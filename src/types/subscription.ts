@@ -8,6 +8,7 @@ export type SubscriptionPlan = {
   description: string;
   monthlyPrice: number;
   yearlyPrice: number;
+  priceDisplay: string;
   features: string[];
   highlighted?: boolean;
 };
@@ -15,9 +16,12 @@ export type SubscriptionPlan = {
 export type Subscription = {
   plan: PlanTier;
   interval: BillingInterval;
-  status: 'active' | 'trialing' | 'canceled' | 'past_due';
+  status: 'active' | 'inactive' | 'trialing' | 'canceled' | 'past_due' | 'failed';
   renewalDate: string | null;
   cancelAtPeriodEnd: boolean;
+  subscriptionPlan: string;
+  subscriptionStatus: string;
+  startedAt?: string | null;
 };
 
 export type UsageLimits = {
@@ -31,4 +35,9 @@ export type Invoice = {
   date: string;
   amount: string;
   status: 'paid' | 'pending';
+};
+
+export type CheckoutPrefill = {
+  email: string;
+  name: string;
 };

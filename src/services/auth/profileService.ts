@@ -34,6 +34,8 @@ export async function ensureProfile(
       name,
       onboarding_completed: false,
       subscription_tier: 'free',
+      subscription_plan: 'free',
+      subscription_status: 'inactive',
     })
     .select('*')
     .single();

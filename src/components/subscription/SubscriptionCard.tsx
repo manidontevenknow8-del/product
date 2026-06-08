@@ -17,8 +17,8 @@ export function SubscriptionCard({
   onSelect,
   loading = false,
 }: SubscriptionCardProps) {
-  const price = interval === 'yearly' ? plan.yearlyPrice : plan.monthlyPrice;
   const period = plan.id === 'free' ? '' : interval === 'yearly' ? '/ year' : '/ month';
+  const priceLabel = plan.id === 'free' ? 'Free' : plan.priceDisplay;
 
   return (
     <article
@@ -30,9 +30,7 @@ export function SubscriptionCard({
       <p className={styles.description}>{plan.description}</p>
 
       <div className={styles.price}>
-        <span className={styles.amount}>
-          {price === 0 ? 'Free' : `$${price}`}
-        </span>
+        <span className={styles.amount}>{priceLabel}</span>
         {period && <span className={styles.period}> {period}</span>}
       </div>
 
@@ -58,7 +56,7 @@ export function SubscriptionCard({
             onClick={onSelect}
             disabled={loading || !onSelect}
           >
-            {plan.id === 'free' ? 'Downgrade' : 'Upgrade to Premium'}
+            {plan.id === 'free' ? 'Stay on Free' : 'Upgrade to Pro'}
           </Button>
         )}
       </div>

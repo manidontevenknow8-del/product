@@ -11,7 +11,7 @@ export async function requirePremiumTier(
 ): Promise<Response | null> {
   const { data: profile, error } = await supabase
     .from('profiles')
-    .select('subscription_tier')
+    .select('subscription_tier, subscription_status')
     .eq('user_id', userId)
     .single();
 
@@ -22,10 +22,14 @@ export async function requirePremiumTier(
     });
   }
 
-  if (!['premium', 'family'].includes(profile.subscription_tier)) {
+  const isPremium =
+    profile.subscription_status === 'active' ||
+    ['premium', 'family'].includes(profile.subscription_tier);
+
+  if (!isPremium) {
     return new Response(
       JSON.stringify({
-        error: 'Vet Bill Decoder requires Premium. Upgrade to unlock AI document decoding.',
+        error: 'Vet Bill Decoder requires Pro. Upgrade to unlock AI document decoding.',
         code: 'premium_required',
       }),
       {

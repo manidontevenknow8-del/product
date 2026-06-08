@@ -50,6 +50,8 @@ export function mapToUser(
     needsOnboarding: !(profile?.onboarding_completed ?? false),
     foundingMember: profile?.founding_member ?? false,
     subscriptionTier: profile?.subscription_tier ?? 'free',
+    subscriptionPlan: profile?.subscription_plan ?? 'free',
+    subscriptionStatus: profile?.subscription_status ?? 'inactive',
     createdAt: supabaseUser.created_at,
   };
 }

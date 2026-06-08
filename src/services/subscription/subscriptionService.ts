@@ -1,11 +1,11 @@
 /**
- * Subscription service — Supabase subscription state.
- * Live checkout: Razorpay (pending). Legacy Stripe edge functions remain in repo but are not the deployment path.
+ * Subscription service — Supabase + Razorpay checkout.
  */
 
 import { isSupabaseConfigured } from '@/services/supabase/config';
 import type {
   BillingInterval,
+  CheckoutPrefill,
   Invoice,
   PlanTier,
   Subscription,
@@ -18,7 +18,12 @@ export interface ISubscriptionService {
   getSubscription(userId: string): Promise<Subscription>;
   getUsage(userId: string, plan: PlanTier): Promise<UsageLimits>;
   getInvoices(userId: string): Promise<Invoice[]>;
-  startCheckout(userId: string, plan: PlanTier, interval: BillingInterval): Promise<void>;
+  startCheckout(
+    userId: string,
+    plan: PlanTier,
+    interval: BillingInterval,
+    prefill: CheckoutPrefill,
+  ): Promise<void>;
   openBillingPortal(userId: string): Promise<void>;
 }
 
@@ -43,9 +48,11 @@ function defaultSubscription(): Subscription {
   return {
     plan: 'free',
     interval: 'monthly',
-    status: 'active',
+    status: 'inactive',
     renewalDate: null,
     cancelAtPeriodEnd: false,
+    subscriptionPlan: 'free',
+    subscriptionStatus: 'inactive',
   };
 }
 
@@ -71,7 +78,7 @@ export const mockSubscriptionService: ISubscriptionService = {
     return [];
   },
 
-  async startCheckout(userId, plan, interval) {
+  async startCheckout(userId, plan, interval, _prefill) {
     const subs = loadSubs();
     const renewal = new Date();
     renewal.setMonth(renewal.getMonth() + (interval === 'yearly' ? 12 : 1));
@@ -87,6 +94,8 @@ export const mockSubscriptionService: ISubscriptionService = {
         year: 'numeric',
       }),
       cancelAtPeriodEnd: false,
+      subscriptionPlan: 'pro',
+      subscriptionStatus: 'active',
     };
 
     const idx = subs.findIndex((s) => s.userId === userId);

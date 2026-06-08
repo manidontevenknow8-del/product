@@ -113,8 +113,13 @@ export function PetProvider({ children, petService: service = getPetService() }:
   const createPet = useCallback(
     async (input: CreatePetInput) => {
       if (!user?.id) throw new Error('Not authenticated');
-      const tier = subscription?.plan ?? 'free';
-      if (!canAddPet(tier, pets.length)) {
+      if (!canAddPet(
+        {
+          subscriptionStatus: subscription?.subscriptionStatus,
+          subscriptionTier: subscription?.plan ?? 'free',
+        },
+        pets.length,
+      )) {
         throw new Error(
           `Free plan includes ${FREE_PET_LIMIT} pet. Upgrade to Premium for unlimited pets.`,
         );

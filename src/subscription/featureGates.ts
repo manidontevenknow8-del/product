@@ -6,16 +6,24 @@ export const FREE_PET_LIMIT = 1;
 export type PremiumFeature =
   | 'unlimitedPets'
   | 'vetBillDecoder'
-  | 'advancedPetCareScore'
   | 'advancedHealthInsights'
+  | 'unlimitedMonthlyReports'
+  | 'premiumTimeline'
+  | 'futureAiCompanion'
+  | 'futureBreedIntelligence'
+  | 'advancedPetCareScore'
   | 'prioritySupport'
   | 'futurePremium';
 
 export const PREMIUM_FEATURE_GATES: Record<PremiumFeature, 'premium'> = {
   unlimitedPets: 'premium',
   vetBillDecoder: 'premium',
-  advancedPetCareScore: 'premium',
   advancedHealthInsights: 'premium',
+  unlimitedMonthlyReports: 'premium',
+  premiumTimeline: 'premium',
+  futureAiCompanion: 'premium',
+  futureBreedIntelligence: 'premium',
+  advancedPetCareScore: 'premium',
   prioritySupport: 'premium',
   futurePremium: 'premium',
 };
@@ -23,8 +31,12 @@ export const PREMIUM_FEATURE_GATES: Record<PremiumFeature, 'premium'> = {
 export const FEATURE_LABELS: Record<PremiumFeature, string> = {
   unlimitedPets: 'Unlimited pets',
   vetBillDecoder: 'Vet Bill Decoder',
+  advancedHealthInsights: 'Advanced AI insights',
+  unlimitedMonthlyReports: 'Unlimited monthly reports',
+  premiumTimeline: 'Premium timeline enhancements',
+  futureAiCompanion: 'Future AI companion',
+  futureBreedIntelligence: 'Future breed intelligence',
   advancedPetCareScore: 'Advanced PetCare Score',
-  advancedHealthInsights: 'Advanced health insights',
   prioritySupport: 'Priority support',
   futurePremium: 'Future premium features',
 };
@@ -33,19 +45,34 @@ export function isPremiumTier(tier: PlanTier | SubscriptionTier | null | undefin
   return tier === 'premium' || tier === 'family';
 }
 
+/** Source of truth: profiles.subscription_status, with tier fallback for founding/manual grants. */
+export function hasPremiumAccess(input: {
+  subscriptionStatus?: string | null;
+  subscriptionTier?: PlanTier | SubscriptionTier | null;
+}): boolean {
+  if (input.subscriptionStatus === 'active') return true;
+  return isPremiumTier(input.subscriptionTier ?? 'free');
+}
+
 export function canAccessFeature(
-  tier: PlanTier | SubscriptionTier | null | undefined,
+  input: {
+    subscriptionStatus?: string | null;
+    subscriptionTier?: PlanTier | SubscriptionTier | null;
+  },
   feature: PremiumFeature,
 ): boolean {
-  if (isPremiumTier(tier)) return true;
+  if (hasPremiumAccess(input)) return true;
   return PREMIUM_FEATURE_GATES[feature] !== 'premium';
 }
 
 export function canAddPet(
-  tier: PlanTier | SubscriptionTier | null | undefined,
+  input: {
+    subscriptionStatus?: string | null;
+    subscriptionTier?: PlanTier | SubscriptionTier | null;
+  },
   currentPetCount: number,
 ): boolean {
-  if (isPremiumTier(tier)) return true;
+  if (hasPremiumAccess(input)) return true;
   return currentPetCount < FREE_PET_LIMIT;
 }
 

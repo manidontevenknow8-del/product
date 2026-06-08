@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   readonly VITE_DEMO_TIMELINE?: string;
   readonly VITE_DEMO_DASHBOARD?: string;
   readonly VITE_PAYMENTS_ENABLED?: string;
+  readonly VITE_RAZORPAY_KEY_ID?: string;
 }
 
 interface ImportMeta {

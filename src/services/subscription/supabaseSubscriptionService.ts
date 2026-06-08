@@ -1,17 +1,13 @@
 import { getSupabaseClient } from '@/services/supabase/client';
-import type {
-  BillingInterval,
-  Invoice,
-  PlanTier,
-  Subscription,
-  UsageLimits,
-} from '@/types/subscription';
+import { PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
+import { razorpayCheckoutService } from '@/services/payments/razorpayCheckoutService';
+import type { Subscription, UsageLimits } from '@/types/subscription';
 import { FREE_PET_LIMIT } from '@/subscription/featureGates';
 import type { ISubscriptionService } from './subscriptionService';
 
 function formatRenewalDate(iso: string | null): string | null {
   if (!iso) return null;
-  return new Date(iso).toLocaleDateString('en-US', {
+  return new Date(iso).toLocaleDateString('en-IN', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
@@ -19,55 +15,45 @@ function formatRenewalDate(iso: string | null): string | null {
 }
 
 function mapSubscriptionRow(
-  profileTier: string | null,
+  profile: {
+    subscription_plan: string | null;
+    subscription_status: string | null;
+    subscription_tier: string | null;
+  } | null,
   row: {
     status: string;
-    interval: string;
-    current_period_end: string | null;
-    cancel_at_period_end: boolean;
+    plan: string;
+    expires_at: string | null;
+    started_at: string | null;
   } | null,
 ): Subscription {
-  const isPremium = profileTier === 'premium' || profileTier === 'family';
+  const isPremium =
+    profile?.subscription_status === 'active' ||
+    profile?.subscription_tier === 'premium' ||
+    profile?.subscription_tier === 'family';
 
   if (!isPremium) {
     return {
       plan: 'free',
       interval: 'monthly',
-      status: 'active',
+      status: 'inactive',
       renewalDate: null,
       cancelAtPeriodEnd: false,
-    };
-  }
-
-  // Profile tier is source of truth (manual grant, founding, or Stripe sync).
-  // Stripe row only enriches billing metadata when present.
-  if (!row) {
-    return {
-      plan: 'premium',
-      interval: 'monthly',
-      status: 'active',
-      renewalDate: null,
-      cancelAtPeriodEnd: false,
+      subscriptionPlan: 'free',
+      subscriptionStatus: 'inactive',
     };
   }
 
   return {
     plan: 'premium',
-    interval: row.interval === 'yearly' ? 'yearly' : 'monthly',
-    status: row.status as Subscription['status'],
-    renewalDate: formatRenewalDate(row.current_period_end),
-    cancelAtPeriodEnd: row.cancel_at_period_end,
+    interval: 'monthly',
+    status: row?.status === 'active' ? 'active' : 'active',
+    renewalDate: formatRenewalDate(row?.expires_at ?? null),
+    cancelAtPeriodEnd: false,
+    subscriptionPlan: profile?.subscription_plan ?? row?.plan ?? 'pro',
+    subscriptionStatus: profile?.subscription_status ?? 'active',
+    startedAt: row?.started_at ?? null,
   };
-}
-
-async function invokeStripeFunction<T>(name: string, body: Record<string, unknown>): Promise<T> {
-  const supabase = getSupabaseClient();
-  const { data, error } = await supabase.functions.invoke(name, { body });
-
-  if (error) throw new Error(error.message);
-  if (data?.error) throw new Error(String(data.error));
-
-  return data as T;
 }
 
 export const supabaseSubscriptionService: ISubscriptionService = {
@@ -75,13 +61,22 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     const supabase = getSupabaseClient();
 
     const [{ data: profile }, { data: subRow }] = await Promise.all([
-      supabase.from('profiles').select('subscription_tier').eq('user_id', userId).single(),
-      supabase.from('subscriptions').select(
-        'status, interval, current_period_end, cancel_at_period_end',
-      ).eq('user_id', userId).maybeSingle(),
+      supabase
+        .from('profiles')
+        .select('subscription_plan, subscription_status, subscription_tier')
+        .eq('user_id', userId)
+        .single(),
+      supabase
+        .from('subscriptions')
+        .select('status, plan, expires_at, started_at')
+        .eq('user_id', userId)
+        .eq('status', 'active')
+        .order('started_at', { ascending: false })
+        .limit(1)
+        .maybeSingle(),
     ]);
 
-    return mapSubscriptionRow(profile?.subscription_tier ?? 'free', subRow);
+    return mapSubscriptionRow(profile, subRow);
   },
 
   async getUsage(userId, plan) {
@@ -112,21 +107,33 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     } satisfies UsageLimits;
   },
 
-  async getInvoices(_userId) {
-    return [] as Invoice[];
+  async getInvoices(userId) {
+    const supabase = getSupabaseClient();
+    const { data, error } = await supabase
+      .from('subscriptions')
+      .select('id, razorpay_payment_id, started_at, status, plan')
+      .eq('user_id', userId)
+      .not('razorpay_payment_id', 'is', null)
+      .order('started_at', { ascending: false });
+
+    if (error) throw new Error(error.message);
+
+    return (data ?? []).map((row) => ({
+      id: row.razorpay_payment_id ?? row.id,
+      date: formatRenewalDate(row.started_at) ?? '—',
+      amount: PRO_MONTHLY_PRICE_DISPLAY,
+      status: row.status === 'active' || row.status === 'captured' ? 'paid' as const : 'pending' as const,
+    }));
   },
 
-  async startCheckout(_userId, _plan: PlanTier, interval: BillingInterval) {
-    const { url } = await invokeStripeFunction<{ url: string }>('create-checkout-session', {
-      interval,
+  async startCheckout(userId, _plan, _interval, prefill) {
+    await razorpayCheckoutService.startProCheckout({
+      userId,
+      prefill,
     });
-    if (!url) throw new Error('Checkout session did not return a URL');
-    window.location.assign(url);
   },
 
   async openBillingPortal(_userId) {
-    const { url } = await invokeStripeFunction<{ url: string }>('create-portal-session', {});
-    if (!url) throw new Error('Billing portal did not return a URL');
-    window.location.assign(url);
+    window.location.assign('/billing');
   },
 };

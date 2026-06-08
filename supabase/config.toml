@@ -15,13 +15,13 @@ verify_jwt = false
 [functions.decode-vet-document]
 verify_jwt = true
 
-[functions.create-checkout-session]
+[functions.create-razorpay-order]
 verify_jwt = true
 
-[functions.create-portal-session]
+[functions.verify-razorpay-payment]
 verify_jwt = true
 
-[functions.stripe-webhook]
+[functions.razorpay-webhook]
 verify_jwt = false
 
 [functions.founding-member-signup]

@@ -73,6 +73,8 @@ export type ProfileRow = {
   avatar_url: string | null;
   onboarding_completed: boolean;
   subscription_tier: SubscriptionTier;
+  subscription_plan: string;
+  subscription_status: string;
   founding_member: boolean;
   notification_preferences: Record<string, boolean> | null;
   created_at: string;
@@ -115,31 +117,22 @@ export type VetBillExtractionRow = {
   reviewed_at: string | null;
 };
 
-export type StripeCustomerRow = {
-  id: string;
-  user_id: string;
-  stripe_customer_id: string;
-  created_at: string;
-};
-
 export type SubscriptionRow = {
   id: string;
   user_id: string;
-  stripe_subscription_id: string;
-  stripe_customer_id: string;
-  status: string;
   plan: string;
-  interval: string;
-  current_period_start: string | null;
-  current_period_end: string | null;
-  cancel_at_period_end: boolean;
+  status: string;
+  razorpay_order_id: string | null;
+  razorpay_payment_id: string | null;
+  started_at: string | null;
+  expires_at: string | null;
   created_at: string;
   updated_at: string;
 };
 
-export type StripeWebhookEventRow = {
+export type WebhookEventRow = {
   id: string;
-  event_type: string;
+  payload: Record<string, unknown>;
   processed_at: string;
 };
 
@@ -209,6 +202,8 @@ export type Database = {
           avatar_url?: string | null;
           onboarding_completed?: boolean;
           subscription_tier?: SubscriptionTier;
+          subscription_plan?: string;
+          subscription_status?: string;
           founding_member?: boolean;
           notification_preferences?: Record<string, boolean> | null;
           created_at?: string;
@@ -222,6 +217,8 @@ export type Database = {
           avatar_url?: string | null;
           onboarding_completed?: boolean;
           subscription_tier?: SubscriptionTier;
+          subscription_plan?: string;
+          subscription_status?: string;
           founding_member?: boolean;
           notification_preferences?: Record<string, boolean> | null;
           created_at?: string;
@@ -487,64 +484,44 @@ export type Database = {
         };
         Relationships: [];
       };
-      stripe_customers: {
-        Row: StripeCustomerRow;
-        Insert: {
-          id?: string;
-          user_id: string;
-          stripe_customer_id: string;
-          created_at?: string;
-        };
-        Update: {
-          id?: string;
-          user_id?: string;
-          stripe_customer_id?: string;
-          created_at?: string;
-        };
-        Relationships: [];
-      };
       subscriptions: {
         Row: SubscriptionRow;
         Insert: {
           id?: string;
           user_id: string;
-          stripe_subscription_id: string;
-          stripe_customer_id: string;
-          status?: string;
-          plan?: string;
-          interval?: string;
-          current_period_start?: string | null;
-          current_period_end?: string | null;
-          cancel_at_period_end?: boolean;
+          plan: string;
+          status: string;
+          razorpay_order_id?: string | null;
+          razorpay_payment_id?: string | null;
+          started_at?: string | null;
+          expires_at?: string | null;
           created_at?: string;
           updated_at?: string;
         };
         Update: {
           id?: string;
           user_id?: string;
-          stripe_subscription_id?: string;
-          stripe_customer_id?: string;
-          status?: string;
           plan?: string;
-          interval?: string;
-          current_period_start?: string | null;
-          current_period_end?: string | null;
-          cancel_at_period_end?: boolean;
+          status?: string;
+          razorpay_order_id?: string | null;
+          razorpay_payment_id?: string | null;
+          started_at?: string | null;
+          expires_at?: string | null;
           created_at?: string;
           updated_at?: string;
         };
         Relationships: [];
       };
-      stripe_webhook_events: {
-        Row: StripeWebhookEventRow;
+      webhook_events: {
+        Row: WebhookEventRow;
         Insert: {
           id: string;
-          event_type: string;
+          payload: Record<string, unknown>;
           processed_at?: string;
         };
         Update: {
           id?: string;
-          event_type?: string;
+          payload?: Record<string, unknown>;
           processed_at?: string;
         };
         Relationships: [];

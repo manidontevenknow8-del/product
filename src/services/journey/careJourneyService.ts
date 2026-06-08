@@ -101,7 +101,7 @@ export function computeCareJourney(input: CareJourneyInput): CareJourneyStep[] {
       description: 'AI decoding, premium passport, and priority features.',
       path: ROUTES.PRICING,
       completed: false,
-      premiumTease: 'Razorpay checkout coming soon — explore plans now',
+      premiumTease: 'Upgrade to Pro with Razorpay — unlock Vet Bill Decoder and AI insights',
     },
   ];
 }

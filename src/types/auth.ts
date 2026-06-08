@@ -8,6 +8,8 @@ export type User = {
   needsOnboarding: boolean;
   foundingMember?: boolean;
   subscriptionTier: SubscriptionTier;
+  subscriptionPlan: string;
+  subscriptionStatus: string;
   createdAt: string;
 };
 

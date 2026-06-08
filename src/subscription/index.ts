@@ -2,6 +2,7 @@ export { SubscriptionProvider, useSubscription } from './SubscriptionProvider';
 export {
   canAccessFeature,
   canAddPet,
+  hasPremiumAccess,
   isPremiumTier,
   tierToPlan,
   FREE_PET_LIMIT,

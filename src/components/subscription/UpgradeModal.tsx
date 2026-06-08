@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui';
+import { PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
-import type { BillingInterval } from '@/types/subscription';
 import styles from './UpgradeModal.module.css';
 
 type UpgradeModalProps = {
@@ -12,8 +12,7 @@ type UpgradeModalProps = {
 };
 
 export function UpgradeModal({ isOpen, onClose, onSuccess }: UpgradeModalProps) {
-  const { startCheckout } = useSubscription();
-  const [interval, setInterval] = useState<BillingInterval>('monthly');
+  const { startCheckout, refresh } = useSubscription();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -26,17 +25,21 @@ export function UpgradeModal({ isOpen, onClose, onSuccess }: UpgradeModalProps) 
 
   if (!isOpen) return null;
 
-  const price = interval === 'yearly' ? 79 : 9;
   const paymentsLive = isPaymentsLive();
 
   const handleUpgrade = async () => {
     setLoading(true);
     setError(null);
     try {
-      await startCheckout(interval);
+      await startCheckout('monthly');
+      await refresh();
       onSuccess?.();
+      onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Checkout failed');
+      const message = err instanceof Error ? err.message : 'Checkout failed';
+      if (message !== 'Checkout canceled') {
+        setError(message);
+      }
       setLoading(false);
     }
   };
@@ -45,34 +48,15 @@ export function UpgradeModal({ isOpen, onClose, onSuccess }: UpgradeModalProps) 
     <div className={styles.overlay} onClick={onClose} role="presentation">
       <div className={styles.modal} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
         <div className={styles.header}>
-          <h2 className={styles.title}>Upgrade to Premium</h2>
+          <h2 className={styles.title}>Upgrade to PetClues Pro</h2>
           <p className={styles.subtitle}>
-            Unlock Vet Bill Decoder, unlimited pets, advanced PetCare Score, and more.
+            Unlock Vet Bill Decoder, unlimited pets, advanced AI insights, and monthly report exports.
           </p>
         </div>
 
-        <div className={styles.toggle}>
-          <button
-            type="button"
-            className={`${styles.toggleBtn} ${interval === 'monthly' ? styles.toggleBtnActive : ''}`}
-            onClick={() => setInterval('monthly')}
-          >
-            Monthly
-          </button>
-          <button
-            type="button"
-            className={`${styles.toggleBtn} ${interval === 'yearly' ? styles.toggleBtnActive : ''}`}
-            onClick={() => setInterval('yearly')}
-          >
-            Yearly
-          </button>
-        </div>
-
         <div className={styles.priceDisplay}>
-          <div className={styles.priceAmount}>${price}</div>
-          <div className={styles.priceNote}>
-            {interval === 'yearly' ? 'Billed annually · Save $29/year' : 'Billed monthly · Cancel anytime'}
-          </div>
+          <div className={styles.priceAmount}>{PRO_MONTHLY_PRICE_DISPLAY}</div>
+          <div className={styles.priceNote}>Billed monthly · 30-day access · Secure Razorpay checkout</div>
         </div>
 
         {error && (
@@ -92,13 +76,13 @@ export function UpgradeModal({ isOpen, onClose, onSuccess }: UpgradeModalProps) 
             onClick={handleUpgrade}
             disabled={loading || !paymentsLive}
           >
-            {loading ? 'Redirecting…' : paymentsLive ? 'Continue to checkout' : 'Coming soon'}
+            {loading ? 'Opening checkout…' : paymentsLive ? 'Pay with Razorpay' : 'Coming soon'}
           </Button>
         </div>
 
         <p className={styles.note}>
           {paymentsLive
-            ? 'Secure checkout powered by Razorpay. Manage or cancel anytime from Billing.'
+            ? 'Secure checkout powered by Razorpay. Manage your subscription from Billing.'
             : PAYMENTS_COMING_SOON_MESSAGE}
         </p>
       </div>

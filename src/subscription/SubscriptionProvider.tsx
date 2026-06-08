@@ -18,7 +18,10 @@ import {
   getSubscriptionService,
   type ISubscriptionService,
 } from '@/services/subscription/subscriptionService';
-import { canAccessFeature, isPremiumTier, tierToPlan } from '@/subscription/featureGates';
+import {
+  canAccessFeature,
+  hasPremiumAccess,
+} from '@/subscription/featureGates';
 import type { PremiumFeature } from '@/subscription/featureGates';
 import type {
   BillingInterval,
@@ -35,7 +38,7 @@ type SubscriptionContextValue = {
   isLoading: boolean;
   isPremium: boolean;
   canAccess: (feature: PremiumFeature) => boolean;
-  startCheckout: (interval: BillingInterval) => Promise<void>;
+  startCheckout: (interval?: BillingInterval) => Promise<void>;
   openBillingPortal: () => Promise<void>;
   refresh: () => Promise<void>;
 };
@@ -59,6 +62,14 @@ export function SubscriptionProvider({
   const previousPlan = useRef<PlanTier | null>(null);
   const premiumTracked = useRef(false);
 
+  const accessInput = useMemo(
+    () => ({
+      subscriptionStatus: user?.subscriptionStatus ?? subscription?.subscriptionStatus,
+      subscriptionTier: user?.subscriptionTier ?? 'free',
+    }),
+    [user?.subscriptionStatus, user?.subscriptionTier, subscription?.subscriptionStatus],
+  );
+
   const refresh = useCallback(async () => {
     if (!user?.id) {
       setSubscription(null);
@@ -79,15 +90,18 @@ export function SubscriptionProvider({
       setInvoices(invoiceData);
 
       const wasPremium = previousPlan.current === 'premium';
-      const isNowPremium = sub.plan === 'premium';
-      previousPlan.current = sub.plan;
+      const isNowPremium = hasPremiumAccess({
+        subscriptionStatus: sub.subscriptionStatus,
+        subscriptionTier: sub.plan === 'premium' ? 'premium' : 'free',
+      });
+      previousPlan.current = isNowPremium ? 'premium' : 'free';
 
       if (isNowPremium && !wasPremium && !premiumTracked.current) {
         premiumTracked.current = true;
-        eventTracker.track('premium_started', {
+        eventTracker.track('premium_subscription_activated', {
           interval: sub.interval ?? 'monthly',
-          plan: 'premium',
-          source: 'subscription_sync',
+          plan: sub.subscriptionPlan,
+          user_id: user.id,
         });
       }
     } finally {
@@ -106,36 +120,31 @@ export function SubscriptionProvider({
   }, [isAuthenticated, user?.id, refresh]);
 
   const startCheckout = useCallback(
-    async (interval: BillingInterval) => {
+    async (_interval: BillingInterval = 'monthly') => {
       if (!user?.id) return;
       if (!isPaymentsLive()) {
         throw new Error(PAYMENTS_COMING_SOON_MESSAGE);
       }
-      await subscriptionService.startCheckout(user.id, 'premium', interval);
+      await subscriptionService.startCheckout(user.id, 'premium', 'monthly', {
+        email: user.email,
+        name: user.name,
+      });
       await refresh();
     },
-    [user?.id, subscriptionService, refresh],
+    [user, subscriptionService, refresh],
   );
 
   const openBillingPortal = useCallback(async () => {
     if (!user?.id) return;
-    if (!isPaymentsLive()) {
-      throw new Error(PAYMENTS_COMING_SOON_MESSAGE);
-    }
     await subscriptionService.openBillingPortal(user.id);
     await refresh();
   }, [user?.id, subscriptionService, refresh]);
 
-  const plan: PlanTier = useMemo(() => {
-    if (user?.subscriptionTier && isPremiumTier(user.subscriptionTier)) {
-      return tierToPlan(user.subscriptionTier);
-    }
-    return subscription?.plan ?? 'free';
-  }, [user?.subscriptionTier, subscription?.plan]);
+  const isPremium = hasPremiumAccess(accessInput);
 
   const canAccess = useCallback(
-    (feature: PremiumFeature) => canAccessFeature(plan, feature),
-    [plan],
+    (feature: PremiumFeature) => canAccessFeature(accessInput, feature),
+    [accessInput],
   );
 
   const value = useMemo<SubscriptionContextValue>(
@@ -144,7 +153,7 @@ export function SubscriptionProvider({
       usage,
       invoices,
       isLoading,
-      isPremium: isPremiumTier(plan),
+      isPremium,
       canAccess,
       startCheckout,
       openBillingPortal,
@@ -155,7 +164,7 @@ export function SubscriptionProvider({
       usage,
       invoices,
       isLoading,
-      plan,
+      isPremium,
       canAccess,
       startCheckout,
       openBillingPortal,
