@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from 'react';
 import { eventTracker } from '@/analytics/EventTracker';
+import { capturePostHogEvent } from '@/analytics/posthog';
 import { authService, type IAuthService } from '@/services/auth/authService';
 import { queueWelcomeEmail } from '@/services/email/queueWelcomeEmail';
 import type { AuthSession, SignInInput, SignUpInput, User } from '@/types/auth';
@@ -102,6 +103,7 @@ export function AuthProvider({
       if ('pendingVerification' in result && result.pendingVerification) {
         setSession(null);
         setPendingVerificationEmail(result.email);
+        eventTracker.track('signup_completed', { verification_required: true });
         return { pendingVerification: true, email: result.email };
       }
 
@@ -111,6 +113,7 @@ export function AuthProvider({
 
       setSession(result.session);
       setPendingVerificationEmail(null);
+      eventTracker.track('signup_completed', { verification_required: false });
       void queueWelcomeEmail();
       return {
         needsOnboarding: result.session.user.needsOnboarding,
@@ -132,6 +135,14 @@ export function AuthProvider({
 
       setSession(result.session);
       setPendingVerificationEmail(null);
+      eventTracker.track('login_completed', {
+        email_verified: result.session.user.emailVerified,
+        needs_onboarding: result.session.user.needsOnboarding,
+      });
+      capturePostHogEvent('user_logged_in', {
+        email_verified: result.session.user.emailVerified,
+        needs_onboarding: result.session.user.needsOnboarding,
+      });
       return {
         emailVerified: result.session.user.emailVerified,
         needsOnboarding: result.session.user.needsOnboarding,

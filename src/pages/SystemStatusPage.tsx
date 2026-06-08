@@ -6,6 +6,7 @@ import {
   LegalParagraph,
   LegalComingSoon,
 } from '@/pages/legal/LegalPageLayout';
+import { PostHogVerification } from '@/components/analytics/PostHogVerification';
 import styles from './SystemStatusPage.module.css';
 
 const SERVICES = [
@@ -60,6 +61,10 @@ export function SystemStatusPage() {
             </div>
           ))}
         </div>
+      </LegalSection>
+
+      <LegalSection title="Analytics">
+        <PostHogVerification />
       </LegalSection>
 
       <LegalComingSoon>

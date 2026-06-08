@@ -1,4 +1,5 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
+import { capturePostHogEvent } from '@/analytics/posthog';
 import { Link } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { PageHeroBand, SectionIntro } from '@/components/visual';
@@ -397,6 +398,11 @@ function QuickActionsGrid({ hasDecoder }: { hasDecoder: boolean }) {
 
 export function DashboardPage() {
   const { activePet, pets, setActivePet, isLoading, hasPets } = usePets();
+
+  useEffect(() => {
+    capturePostHogEvent('dashboard_viewed');
+  }, []);
+
   const { reminders, stats: reminderStats } = useReminders();
   const { records } = useHealthRecords();
   const { documents } = useDocuments();

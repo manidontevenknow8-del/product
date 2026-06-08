@@ -5,6 +5,7 @@ import { PageContainer, Card, Button, Input, Badge } from '@/components/ui';
 import { ROUTES } from '@/routes/paths';
 import { isSupabaseConfigured } from '@/services/supabase/config';
 import { getSupabaseClient } from '@/services/supabase/client';
+import { eventTracker } from '@/analytics/EventTracker';
 import styles from './FoundingMembersPage.module.css';
 
 type Benefit = {
@@ -67,6 +68,7 @@ export function FoundingMembersPage() {
     try {
       await submitSignup(email.trim().toLowerCase(), referralSource);
       setStatus('success');
+      eventTracker.track('waitlist_joined', referralSource ? { referral_source: referralSource } : undefined);
     } catch (err) {
       setStatus('error');
       setError(err instanceof Error ? err.message : 'Signup failed');

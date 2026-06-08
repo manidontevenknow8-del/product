@@ -9,6 +9,7 @@ import {
 } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useAuth } from '@/auth/AuthProvider';
+import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { eventTracker, type EventTracker } from './EventTracker';
 import type { AnalyticsEvent, AnalyticsEventName } from '@/types/analytics';
 import { getPageSEO } from '@/data/seoConfig';
@@ -32,12 +33,20 @@ export function AnalyticsProvider({
   tracker = eventTracker,
 }: AnalyticsProviderProps) {
   const { user } = useAuth();
+  const { subscription } = useSubscription();
   const location = useLocation();
   const [recentEvents, setRecentEvents] = useState<AnalyticsEvent[]>([]);
 
   useEffect(() => {
-    tracker.setUserId(user?.id);
-  }, [user?.id, tracker]);
+    if (!user) {
+      tracker.setUserId(undefined);
+      return;
+    }
+    tracker.setUserId(user.id, {
+      email: user.email,
+      plan: user.subscriptionTier ?? subscription?.plan ?? 'free',
+    });
+  }, [user?.id, user?.email, user?.subscriptionTier, subscription?.plan, tracker]);
 
   useEffect(() => {
     const seo = getPageSEO(location.pathname);

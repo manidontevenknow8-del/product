@@ -8,6 +8,7 @@ import {
   type ReactNode,
 } from 'react';
 import { eventTracker } from '@/analytics/EventTracker';
+import { capturePostHogEvent } from '@/analytics/posthog';
 import { useAuth } from '@/auth/AuthProvider';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { canAddPet, FREE_PET_LIMIT } from '@/subscription/featureGates';
@@ -120,6 +121,7 @@ export function PetProvider({ children, petService: service = getPetService() }:
       }
       const pet = await service.createPet(user.id, input);
       eventTracker.track('pet_created', { species: pet.species });
+      capturePostHogEvent('pet_created', { species: pet.species });
       await refreshPets();
       setActivePet(pet.id);
       return pet;

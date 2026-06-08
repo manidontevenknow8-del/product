@@ -4,6 +4,12 @@ import type {
   AnalyticsEventName,
 } from '@/types/analytics';
 import { sanitizeEventProperties } from './sanitizeProperties';
+import {
+  capturePostHogEvent,
+  identifyPostHogUser,
+  isPostHogEnabled,
+  resetPostHog,
+} from './posthog';
 
 const STORAGE_KEY = 'petclues_analytics_events';
 const MAX_STORED_EVENTS = 200;
@@ -48,12 +54,27 @@ export const localStorageAdapter: IAnalyticsAdapter = {
   },
 };
 
-/** Placeholder adapters — wire when credentials are available */
 export const posthogAdapter: IAnalyticsAdapter = {
   name: 'posthog',
   track(event) {
-    // window.posthog?.capture(event.name, event.properties);
-    void event;
+    if (!isPostHogEnabled()) return;
+    const properties = event.properties
+      ? (Object.fromEntries(
+          Object.entries(event.properties).filter(([, value]) => value !== null),
+        ) as Record<string, string | number | boolean>)
+      : undefined;
+    capturePostHogEvent(event.name, properties);
+  },
+  identify(userId, traits) {
+    if (!isPostHogEnabled()) return;
+    identifyPostHogUser(userId, traits);
+  },
+  pageView(path, title) {
+    if (!isPostHogEnabled()) return;
+    capturePostHogEvent('$pageview', {
+      path,
+      title: title ?? path,
+    });
   },
 };
 
@@ -99,13 +120,18 @@ export class EventTracker {
     this.adapters = adapters;
   }
 
-  setUserId(userId: string | undefined) {
+  setUserId(
+    userId: string | undefined,
+    traits?: Record<string, string | number | boolean>,
+  ) {
     this.userId = userId;
     if (userId) {
       for (const adapter of this.adapters) {
-        adapter.identify?.(userId);
+        adapter.identify?.(userId, traits);
       }
+      return;
     }
+    resetPostHog();
   }
 
   track(name: AnalyticsEventName, properties?: AnalyticsEvent['properties']) {
@@ -145,8 +171,7 @@ export class EventTracker {
 export const eventTracker = new EventTracker([
   consoleAdapter,
   localStorageAdapter,
-  // Enable when configured:
-  // posthogAdapter,
+  posthogAdapter,
   // plausibleAdapter,
   // googleAnalyticsAdapter,
   // mixpanelAdapter,

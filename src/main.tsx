@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import { initPostHog } from '@/analytics/posthog';
 import { AuthProvider } from '@/auth';
 import { PetProvider } from '@/pets';
 import { DocumentProvider } from '@/documents';
@@ -20,6 +21,8 @@ import { SEOProvider } from '@/seo';
 import { ErrorBoundary } from '@/components/errors';
 import { App } from './App';
 import '@/styles/global.css';
+
+initPostHog();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
