@@ -8,6 +8,7 @@ const host = import.meta.env.VITE_POSTHOG_HOST?.trim();
 let initialized = false;
 
 function debug(message: string, detail?: unknown): void {
+  if (!import.meta.env.DEV) return;
   if (detail !== undefined) {
     console.info(DEBUG_PREFIX, message, detail);
     return;
@@ -36,7 +37,8 @@ export function initPostHog(): boolean {
 
   posthog.init(key, {
     api_host: host,
-    person_profiles: 'identified_only',
+    defaults: '2026-01-30',
+    person_profiles: 'always',
     capture_pageview: false,
     autocapture: true,
     persistence: 'localStorage+cookie',
@@ -66,7 +68,7 @@ export function capturePostHogEvent(
     debug('Event skipped — PostHog not initialized', event);
     return;
   }
-  posthog.capture(event, properties);
+  posthog.capture(event, properties, { send_instantly: true });
   debug('Event successfully fired', event);
 }
 

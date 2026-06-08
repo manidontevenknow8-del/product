@@ -124,6 +124,7 @@ export class EventTracker {
     userId: string | undefined,
     traits?: Record<string, string | number | boolean>,
   ) {
+    const hadUser = Boolean(this.userId);
     this.userId = userId;
     if (userId) {
       for (const adapter of this.adapters) {
@@ -131,7 +132,10 @@ export class EventTracker {
       }
       return;
     }
-    resetPostHog();
+    // Only reset on sign-out — not on initial anonymous page load.
+    if (hadUser) {
+      resetPostHog();
+    }
   }
 
   track(name: AnalyticsEventName, properties?: AnalyticsEvent['properties']) {
