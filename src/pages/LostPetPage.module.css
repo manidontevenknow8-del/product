@@ -4,6 +4,10 @@
   gap: var(--space-6);
 }
 
+.petSwitcher {
+  margin-bottom: var(--space-4);
+}
+
 .inactiveHero {
   text-align: center;
   padding: var(--space-10) var(--space-6);

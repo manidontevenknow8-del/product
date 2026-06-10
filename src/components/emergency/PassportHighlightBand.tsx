@@ -1,12 +1,14 @@
+import type { ReactNode } from 'react';
 import type { PassportData } from '@/services/passport/passportSummaryService';
 import { PASSPORT_IMG, passportImageUrl } from '@/data/passportImages';
 import styles from './PassportHighlightBand.module.css';
 
 type PassportHighlightBandProps = {
   passport: PassportData;
+  topActions?: ReactNode;
 };
 
-export function PassportHighlightBand({ passport }: PassportHighlightBandProps) {
+export function PassportHighlightBand({ passport, topActions }: PassportHighlightBandProps) {
   const { identity } = passport;
 
   return (
@@ -17,6 +19,8 @@ export function PassportHighlightBand({ passport }: PassportHighlightBandProps) 
         className={styles.heroImg}
         aria-hidden
       />
+
+      {topActions}
 
       <div className={styles.identity}>
         <div className={styles.avatar}>

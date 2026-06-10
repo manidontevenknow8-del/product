@@ -23,6 +23,20 @@
   object-position: center;
 }
 
+.heroTop {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .heroTop {
+    top: var(--space-6);
+    right: var(--space-6);
+  }
+}
+
 .identity {
   position: absolute;
   left: var(--space-4);

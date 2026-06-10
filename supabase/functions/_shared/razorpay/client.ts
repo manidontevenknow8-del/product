@@ -1,9 +1,14 @@
 /** Razorpay REST + signature helpers — secrets stay server-side only. */
 
 export const PRO_MONTHLY_PLAN = 'pro' as const;
-export const PRO_MONTHLY_AMOUNT_PAISE = 29_900;
+export const PRO_MONTHLY_AMOUNT_PAISE = 199_900;
+export const FOUNDING_DISCOUNT_PERCENT = 5;
+export const FOUNDING_DISCOUNT_AMOUNT_PAISE = Math.round(
+  PRO_MONTHLY_AMOUNT_PAISE * (1 - FOUNDING_DISCOUNT_PERCENT / 100),
+);
 export const PRO_MONTHLY_CURRENCY = 'INR';
-export const PRO_MONTHLY_DISPLAY = '₹299';
+export const PRO_MONTHLY_DISPLAY = '₹1,999';
+export const FOUNDING_DISCOUNT_DISPLAY = '₹1,899';
 
 export type RazorpayPlanId = typeof PRO_MONTHLY_PLAN;
 
@@ -51,8 +56,11 @@ export type RazorpayOrder = {
 export async function createRazorpayOrder(input: {
   userId: string;
   plan: RazorpayPlanId;
+  amountPaise?: number;
 }): Promise<RazorpayOrder> {
-  const { amount, currency } = pricingForPlan(input.plan);
+  const pricing = pricingForPlan(input.plan);
+  const amount = input.amountPaise ?? pricing.amount;
+  const currency = pricing.currency;
   const receipt = `pro_${input.userId.slice(0, 8)}_${Date.now()}`;
 
   const response = await fetch('https://api.razorpay.com/v1/orders', {

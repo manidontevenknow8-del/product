@@ -17,6 +17,8 @@ import {
   EditReminderModal,
 } from '@/components/reminders';
 import { useReminders } from '@/reminders';
+import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import {
   UPCOMING_REMINDER_DAYS,
   OVERDUE_REMINDER_MAX_DAYS,
@@ -77,6 +79,7 @@ function formatUpcomingDays(): string {
 export function RemindersPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { user } = useAuth();
+  const { pets, activePet, setActivePet } = usePets();
   const accessInput = {
     subscriptionStatus: user?.subscriptionStatus,
     subscriptionTier: user?.subscriptionTier ?? 'free',
@@ -129,6 +132,11 @@ export function RemindersPage() {
     setSearchParams(next.view !== 'list' ? { view: next.view } : {});
   };
 
+  const handlePetSwitch = (petId: string) => {
+    setActivePet(petId);
+    setFilters((prev) => ({ ...prev, petId }));
+  };
+
   const emptyView =
     filters.view === 'calendar'
       ? 'calendar'
@@ -147,6 +155,13 @@ export function RemindersPage() {
         <header className={styles.hero}>
           <img className={styles.heroImg} src={IMG.hero} alt="" aria-hidden />
           <div className={styles.heroScrim} aria-hidden />
+          {activePet && (
+            <PetSwitcherHero
+              pets={pets}
+              activeId={activePet.id}
+              onSelect={handlePetSwitch}
+            />
+          )}
           <div className={styles.heroInner}>
             <p className={styles.heroEyebrow}>Pet care scheduling</p>
             <h1 className={styles.heroTitle}>Reminders that match real pet life</h1>
@@ -321,6 +336,7 @@ export function RemindersPage() {
           if (searchParams.get('create')) setSearchParams({});
         }}
         onSubmit={createReminder}
+        preferredPetId={filters.petId !== 'all' ? filters.petId : undefined}
       />
 
       <EditReminderModal

@@ -3,7 +3,9 @@ import { ROUTES } from '@/routes/paths';
 
 type FaqItem = { question: string; answer: string };
 
-export function buildOrganizationSchema(sameAs: string[] = []) {
+export function buildOrganizationSchema(
+  sameAs: readonly string[] = SITE_META.sameAs,
+) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -18,7 +20,7 @@ export function buildOrganizationSchema(sameAs: string[] = []) {
     },
     image: SITE_META.logoUrl,
     description: SITE_META.organizationDescription,
-    ...(sameAs.length > 0 ? { sameAs } : {}),
+    sameAs: [...sameAs],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
@@ -89,16 +91,11 @@ export function buildFaqPageSchema(items: readonly FaqItem[]) {
 }
 
 export function buildLandingGraphSchema(faqItems: readonly FaqItem[]) {
-  const organization = buildOrganizationSchema();
-  const website = buildWebSiteSchema();
-  const software = buildSoftwareApplicationSchema();
-
   return {
     '@context': 'https://schema.org',
     '@graph': [
-      organization,
-      website,
-      software,
+      buildWebSiteSchema(),
+      buildSoftwareApplicationSchema(),
       buildFaqPageSchema(faqItems),
     ],
   };

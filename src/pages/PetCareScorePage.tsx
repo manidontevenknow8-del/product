@@ -23,6 +23,7 @@ import {
 import { UpgradeModal } from '@/components/subscription';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import { usePetCareScore } from '@/petCareScore';
 import { getEncouragingMessage } from '@/utils/petCareScoreUtils';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
@@ -30,7 +31,7 @@ import styles from './PetCareScorePage.module.css';
 
 export function PetCareScorePage() {
   const { canAccess } = useSubscription();
-  const { activePet } = usePets();
+  const { activePet, pets, setActivePet } = usePets();
   const [scoreUpgradeOpen, setScoreUpgradeOpen] = useState(false);
   const { data, isLoading, error, refresh } = usePetCareScore();
 
@@ -109,9 +110,18 @@ export function PetCareScorePage() {
           image={PAGE_IMG.app.score}
           imageAlt=""
           eyebrow="Care intelligence"
-          title="PetCare Score"
+          title={`${petName}'s PetCare Score`}
           subtitle={encouragingMessage}
           meta={`Current score: ${data.snapshot.score} · ${data.snapshot.trend === 'up' ? 'Trending up' : data.snapshot.trend === 'down' ? 'Needs attention' : 'Holding steady'}`}
+          topActions={
+            activePet ? (
+              <PetSwitcherHero
+                pets={pets}
+                activeId={activePet.id}
+                onSelect={setActivePet}
+              />
+            ) : undefined
+          }
         />
 
         <div className={`${styles.body} ${!hasProInsights ? styles.bodyFree : ''}`}>

@@ -11,6 +11,7 @@ type PageHeroBandProps = {
   footer?: string;
   avatar?: { src?: string | null; initials?: string };
   actions?: ReactNode;
+  topActions?: ReactNode;
   compact?: boolean;
 };
 
@@ -24,6 +25,7 @@ export function PageHeroBand({
   footer,
   avatar,
   actions,
+  topActions,
   compact = false,
 }: PageHeroBandProps) {
   return (
@@ -33,6 +35,8 @@ export function PageHeroBand({
     >
       <img src={image} alt={imageAlt} className={styles.heroImg} aria-hidden={!imageAlt} />
       <div className={styles.scrim} aria-hidden />
+
+      {topActions}
 
       <div className={styles.identity}>
         {avatar && (

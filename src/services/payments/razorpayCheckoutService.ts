@@ -1,5 +1,9 @@
 import { eventTracker } from '@/analytics/EventTracker';
-import { getRazorpayKeyId, PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
+import {
+  getRazorpayKeyId,
+  PRO_MONTHLY_PRICE_DISPLAY,
+  PRO_MONTHLY_PRICE_INR,
+} from '@/config/razorpayConfig';
 import { getSupabaseClient } from '@/services/supabase/client';
 
 type CreateOrderResponse = {
@@ -79,7 +83,7 @@ export const razorpayCheckoutService = {
   }): Promise<void> {
     eventTracker.track('premium_checkout_started', {
       plan: 'pro',
-      amount: 299,
+      amount: PRO_MONTHLY_PRICE_INR,
       user_id: input.userId,
     });
 
@@ -109,12 +113,12 @@ export const razorpayCheckoutService = {
             await verifyPayment(response);
             eventTracker.track('premium_payment_success', {
               plan: 'pro',
-              amount: 299,
+              amount: PRO_MONTHLY_PRICE_INR,
               user_id: input.userId,
             });
             eventTracker.track('premium_subscription_activated', {
               plan: 'pro',
-              amount: 299,
+              amount: PRO_MONTHLY_PRICE_INR,
               user_id: input.userId,
             });
             input.onSuccess?.();
@@ -123,7 +127,7 @@ export const razorpayCheckoutService = {
             const message = err instanceof Error ? err.message : 'Payment verification failed';
             eventTracker.track('premium_payment_failed', {
               plan: 'pro',
-              amount: 299,
+              amount: PRO_MONTHLY_PRICE_INR,
               user_id: input.userId,
               reason: message,
             });
@@ -134,7 +138,7 @@ export const razorpayCheckoutService = {
           ondismiss: () => {
             eventTracker.track('premium_payment_failed', {
               plan: 'pro',
-              amount: 299,
+              amount: PRO_MONTHLY_PRICE_INR,
               user_id: input.userId,
               reason: 'checkout_dismissed',
             });
@@ -147,7 +151,7 @@ export const razorpayCheckoutService = {
       checkout.on('payment.failed', () => {
         eventTracker.track('premium_payment_failed', {
           plan: 'pro',
-          amount: 299,
+          amount: PRO_MONTHLY_PRICE_INR,
           user_id: input.userId,
           reason: 'payment_failed',
         });

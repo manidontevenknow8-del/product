@@ -1,6 +1,7 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import {
   createRazorpayOrder,
+  FOUNDING_DISCOUNT_AMOUNT_PAISE,
   getRazorpayKeyId,
   PRO_MONTHLY_PLAN,
   pricingForPlan,
@@ -68,17 +69,27 @@ Deno.serve(async (req) => {
     );
     if (rateLimited) return rateLimited;
 
+    const { data: profile } = await admin
+      .from('profiles')
+      .select('founding_lifetime_discount')
+      .eq('user_id', userData.user.id)
+      .maybeSingle();
+
+    const foundingDiscount = profile?.founding_lifetime_discount === true;
+    const pricing = pricingForPlan(PRO_MONTHLY_PLAN);
+    const amount = foundingDiscount ? FOUNDING_DISCOUNT_AMOUNT_PAISE : pricing.amount;
+
     const order = await createRazorpayOrder({
       userId: userData.user.id,
       plan: PRO_MONTHLY_PLAN,
+      amountPaise: amount,
     });
-
-    const pricing = pricingForPlan(PRO_MONTHLY_PLAN);
 
     return new Response(
       JSON.stringify({
         orderId: order.id,
-        amount: pricing.amount,
+        amount,
+        foundingDiscount,
         currency: pricing.currency,
         razorpayKey: getRazorpayKeyId(),
       }),

@@ -1,3 +1,4 @@
+import { usePets } from '@/pets';
 import type { ReminderFilters as ReminderFiltersState, ReminderView } from '@/types/reminder';
 import {
   REMINDER_CATEGORIES,
@@ -16,6 +17,7 @@ type ReminderFiltersProps = {
 };
 
 export function ReminderFilters({ filters, stats, onChange }: ReminderFiltersProps) {
+  const { pets } = usePets();
   const setView = (view: ReminderView) => onChange({ ...filters, view });
 
   return (
@@ -34,6 +36,27 @@ export function ReminderFilters({ filters, stats, onChange }: ReminderFiltersPro
       </nav>
 
       <div className={styles.secondary}>
+        {pets.length > 1 && (
+          <select
+            className={styles.select}
+            value={filters.petId}
+            onChange={(e) =>
+              onChange({
+                ...filters,
+                petId: e.target.value,
+              })
+            }
+            aria-label="Filter by pet"
+          >
+            <option value="all">All pets</option>
+            {pets.map((pet) => (
+              <option key={pet.id} value={pet.id}>
+                {pet.name}
+              </option>
+            ))}
+          </select>
+        )}
+
         <select
           className={styles.select}
           value={filters.category}

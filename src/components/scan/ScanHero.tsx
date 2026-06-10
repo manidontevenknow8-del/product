@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { Badge, Button } from '@/components/ui';
 import { SCAN_IMG } from '@/data/scanImages';
 import styles from './ScanHero.module.css';
@@ -6,13 +7,20 @@ type ScanHeroProps = {
   onUploadClick: () => void;
   petName?: string;
   disabled?: boolean;
+  topActions?: ReactNode;
 };
 
-export function ScanHero({ onUploadClick, petName = 'your pet', disabled = false }: ScanHeroProps) {
+export function ScanHero({
+  onUploadClick,
+  petName = 'your pet',
+  disabled = false,
+  topActions,
+}: ScanHeroProps) {
   return (
     <section className={styles.hero} aria-label="PetClues Scan">
       <img className={styles.heroImg} src={SCAN_IMG.hero} alt="" aria-hidden />
       <div className={styles.heroScrim} aria-hidden />
+      {topActions}
       <div className={styles.heroInner}>
         <Badge variant="accent" className={styles.eyebrow}>
           PetClues Scan

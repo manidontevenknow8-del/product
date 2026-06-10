@@ -14,7 +14,7 @@ import { useDocuments } from '@/documents';
 import { usePetCareScore } from '@/petCareScore';
 import { DailyCheckInCard } from '@/components/daily-check-in';
 import { useDailyCheckIn } from '@/dailyCheckIn';
-import { AddAnotherPetButton } from '@/components/pets/AddAnotherPetButton';
+import { AddAnotherPetButton, PetSwitcherHero } from '@/components/pets';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { getActivityLogForPet } from '@/services/activity/activityLogService';
 import { MonthlyReportEngine } from '@/services/monthlyReport';
@@ -33,7 +33,6 @@ import type { ActivityLogEntry } from '@/services/activity/activityLogService';
 import { petRecordToPet } from '@/services/pets/petService';
 import { getAvatarInitials } from '@/services/pets/petUtils';
 import { getTrendLabel } from '@/utils/petCareScoreUtils';
-import type { PetRecord } from '@/services/pets/petTypes';
 import { ROUTES } from '@/routes/paths';
 import type { MonthlyPetLifeReport } from '@/types/monthlyReport';
 import styles from './DashboardPage.module.css';
@@ -116,34 +115,6 @@ function ScoreRing({ score, size = 120 }: { score: number; size?: number }) {
         strokeDashoffset={offset}
       />
     </svg>
-  );
-}
-
-function PetSwitcher({
-  pets,
-  activeId,
-  onSelect,
-}: {
-  pets: PetRecord[];
-  activeId: string;
-  onSelect: (id: string) => void;
-}) {
-  if (pets.length <= 1) return null;
-  return (
-    <div className={styles.petSwitcher} role="tablist" aria-label="Switch pet">
-      {pets.map((p) => (
-        <button
-          key={p.id}
-          type="button"
-          role="tab"
-          aria-selected={p.id === activeId}
-          onClick={() => onSelect(p.id)}
-          className={`${styles.petTab} ${p.id === activeId ? styles.petTabActive : ''}`}
-        >
-          {p.name}
-        </button>
-      ))}
-    </div>
   );
 }
 
@@ -551,11 +522,7 @@ export function DashboardPage() {
           <img className={styles.heroBg} src={heroImage} alt="" aria-hidden />
           <div className={styles.heroScrim} aria-hidden />
 
-          {pets.length > 1 && (
-            <div className={styles.heroTop}>
-              <PetSwitcher pets={pets} activeId={activePet.id} onSelect={setActivePet} />
-            </div>
-          )}
+          <PetSwitcherHero pets={pets} activeId={activePet.id} onSelect={setActivePet} />
 
           <div className={styles.heroInner}>
             <div className={styles.heroIdentityRow}>

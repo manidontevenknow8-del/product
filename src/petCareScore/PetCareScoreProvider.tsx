@@ -38,15 +38,20 @@ export function PetCareScoreProvider({ children }: PetCareScoreProviderProps) {
   const isLoading =
     petsLoading || healthLoading || docsLoading || remindersLoading;
 
+  const petReminders = useMemo(
+    () => (activePet ? reminders.filter((r) => r.petId === activePet.id) : []),
+    [reminders, activePet],
+  );
+
   const data = useMemo(() => {
     if (!isAuthenticated || !activePet) return null;
     return computePetCareScoreFromSources({
       pet: activePet,
       healthRecords: records,
       documents,
-      reminders,
+      reminders: petReminders,
     });
-  }, [isAuthenticated, activePet, records, documents, reminders]);
+  }, [isAuthenticated, activePet, records, documents, petReminders]);
 
   const error = petsError ?? refreshError;
 

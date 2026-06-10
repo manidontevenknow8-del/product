@@ -76,6 +76,8 @@ export type ProfileRow = {
   subscription_plan: string;
   subscription_status: string;
   founding_member: boolean;
+  founding_trial_ends_at: string | null;
+  founding_lifetime_discount: boolean;
   notification_preferences: Record<string, boolean> | null;
   created_at: string;
   updated_at: string;
@@ -205,6 +207,8 @@ export type Database = {
           subscription_plan?: string;
           subscription_status?: string;
           founding_member?: boolean;
+          founding_trial_ends_at?: string | null;
+          founding_lifetime_discount?: boolean;
           notification_preferences?: Record<string, boolean> | null;
           created_at?: string;
           updated_at?: string;
@@ -220,6 +224,8 @@ export type Database = {
           subscription_plan?: string;
           subscription_status?: string;
           founding_member?: boolean;
+          founding_trial_ends_at?: string | null;
+          founding_lifetime_discount?: boolean;
           notification_preferences?: Record<string, boolean> | null;
           created_at?: string;
           updated_at?: string;
@@ -708,11 +714,57 @@ export type Database = {
         };
         Relationships: [];
       };
+      founding_feature_candidates: {
+        Row: {
+          id: string;
+          title: string;
+          description: string;
+          sort_order: number;
+          active: boolean;
+        };
+        Insert: {
+          id: string;
+          title: string;
+          description: string;
+          sort_order?: number;
+          active?: boolean;
+        };
+        Update: {
+          id?: string;
+          title?: string;
+          description?: string;
+          sort_order?: number;
+          active?: boolean;
+        };
+        Relationships: [];
+      };
+      founding_feature_votes: {
+        Row: {
+          user_id: string;
+          feature_id: string;
+          created_at: string;
+        };
+        Insert: {
+          user_id: string;
+          feature_id: string;
+          created_at?: string;
+        };
+        Update: {
+          user_id?: string;
+          feature_id?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
       sync_profile_subscription_tier: {
         Args: { p_user_id: string };
+        Returns: undefined;
+      };
+      expire_founding_trials: {
+        Args: Record<string, never>;
         Returns: undefined;
       };
     };

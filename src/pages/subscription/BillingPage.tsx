@@ -7,11 +7,17 @@ import { PAGE_IMG } from '@/data/pageImages';
 import { PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import { UpgradeModal } from '@/components/subscription';
+import { useAuth } from '@/auth/AuthProvider';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
+import {
+  FOUNDING_DISCOUNT_PERCENT,
+  FOUNDING_DISCOUNTED_PRICE_DISPLAY,
+} from '@/config/razorpayConfig';
 import { ROUTES } from '@/routes/paths';
 import styles from './BillingPage.module.css';
 
 export function BillingPage() {
+  const { user } = useAuth();
   const { subscription, usage, invoices, isPremium, isLoading, refresh } = useSubscription();
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [banner, setBanner] = useState<string | null>(null);
@@ -49,6 +55,13 @@ export function BillingPage() {
           {!paymentsLive && (
             <div className={styles.banner} role="status">
               {PAYMENTS_COMING_SOON_MESSAGE}
+            </div>
+          )}
+
+          {user?.foundingLifetimeDiscount && !isPremium && (
+            <div className={styles.banner} role="status">
+              Founding Member pricing: Pro at {FOUNDING_DISCOUNTED_PRICE_DISPLAY}/month (
+              {FOUNDING_DISCOUNT_PERCENT}% lifetime discount applied at checkout).
             </div>
           )}
 

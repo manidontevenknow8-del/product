@@ -11,6 +11,7 @@ import {
   PrivacySettingsCard,
   SecuritySettingsCard,
 } from '@/components/settings';
+import { FoundingBenefitsCard } from '@/components/founding';
 import { useSettings } from '@/settings';
 import type { SettingsSection } from '@/types/settings';
 import styles from './SettingsPage.module.css';
@@ -73,7 +74,12 @@ export function SettingsPage() {
           <div className={styles.layout}>
             <SettingsNav active={section} onChange={handleSectionChange} />
             <div className={styles.content}>
-              {section === 'account' && <AccountSettingsCard />}
+              {section === 'account' && (
+                <>
+                  <FoundingBenefitsCard />
+                  <AccountSettingsCard />
+                </>
+              )}
               {section === 'notifications' && <NotificationSettingsCard />}
               {section === 'privacy' && <PrivacySettingsCard />}
               {section === 'security' && <SecuritySettingsCard />}

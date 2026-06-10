@@ -298,10 +298,19 @@ export function getPageSEO(pathname: string): SEOConfig {
   return merged;
 }
 
+/** Official social profiles for Organization schema `sameAs` (Google Search). */
+export const ORGANIZATION_SAME_AS = [
+  'https://www.instagram.com/petclues',
+  'https://www.facebook.com/petclues',
+  'https://www.linkedin.com/company/petclues',
+  'https://twitter.com/petclues',
+] as const;
+
 export const SITE_META = {
   siteName: 'PetClues',
   siteUrl: SITE_URL,
   logoUrl: `${SITE_URL}/logo.png`,
+  sameAs: ORGANIZATION_SAME_AS,
   twitterHandle: '@petclues',
   locale: 'en_US',
   defaultOgImage: DEFAULT_OG_IMAGE,

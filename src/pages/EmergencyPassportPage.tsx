@@ -17,6 +17,7 @@ import {
 import { PASSPORT_IMG } from '@/data/passportImages';
 import { downloadBlob, exportNodeToPng } from '@/utils/imageExport';
 import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import { useHealthRecords } from '@/healthRecords';
 import { useDocuments } from '@/documents';
 import { buildPassportSummary } from '@/services/passport/passportService';
@@ -27,7 +28,7 @@ import styles from './EmergencyPassportPage.module.css';
 export function EmergencyPassportPage() {
   const { track } = useAnalytics();
   const { user } = useAuth();
-  const { activePet, isLoading: petsLoading, hasPets } = usePets();
+  const { activePet, pets, setActivePet, isLoading: petsLoading, hasPets } = usePets();
   const { records, isLoading: recordsLoading, createRecord, updateRecord, deleteRecord } =
     useHealthRecords();
   const { documents, isLoading: documentsLoading } = useDocuments();
@@ -129,7 +130,16 @@ export function EmergencyPassportPage() {
   return (
     <AppLayout flushContent>
       <div className={styles.page}>
-        <PassportHighlightBand passport={passport} />
+        <PassportHighlightBand
+          passport={passport}
+          topActions={
+            <PetSwitcherHero
+              pets={pets}
+              activeId={activePet.id}
+              onSelect={setActivePet}
+            />
+          }
+        />
 
         <div className={styles.downloadBar}>
           <Button

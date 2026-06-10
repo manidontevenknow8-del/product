@@ -29,6 +29,7 @@ function mapSubscriptionRow(
 ): Subscription {
   const isPremium =
     profile?.subscription_status === 'active' ||
+    profile?.subscription_status === 'trialing' ||
     profile?.subscription_tier === 'premium' ||
     profile?.subscription_tier === 'family';
 
@@ -59,6 +60,7 @@ function mapSubscriptionRow(
 export const supabaseSubscriptionService: ISubscriptionService = {
   async getSubscription(userId) {
     const supabase = getSupabaseClient();
+    await supabase.rpc('expire_founding_trials');
 
     const [{ data: profile }, { data: subRow }] = await Promise.all([
       supabase

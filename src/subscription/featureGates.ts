@@ -59,7 +59,9 @@ export function hasPremiumAccess(input: {
   subscriptionStatus?: string | null;
   subscriptionTier?: PlanTier | SubscriptionTier | null;
 }): boolean {
-  if (input.subscriptionStatus === 'active') return true;
+  if (input.subscriptionStatus === 'active' || input.subscriptionStatus === 'trialing') {
+    return true;
+  }
   return isPremiumTier(input.subscriptionTier ?? 'free');
 }
 

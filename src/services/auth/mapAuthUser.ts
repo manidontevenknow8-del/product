@@ -49,6 +49,8 @@ export function mapToUser(
     emailVerified: isEmailVerified(supabaseUser, options?.hasActiveSession ?? false),
     needsOnboarding: !(profile?.onboarding_completed ?? false),
     foundingMember: profile?.founding_member ?? false,
+    foundingTrialEndsAt: profile?.founding_trial_ends_at ?? null,
+    foundingLifetimeDiscount: profile?.founding_lifetime_discount ?? false,
     subscriptionTier: profile?.subscription_tier ?? 'free',
     subscriptionPlan: profile?.subscription_plan ?? 'free',
     subscriptionStatus: profile?.subscription_status ?? 'inactive',

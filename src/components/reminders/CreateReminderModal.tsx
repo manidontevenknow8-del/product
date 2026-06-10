@@ -10,12 +10,14 @@ type CreateReminderModalProps = {
   isOpen: boolean;
   onClose: () => void;
   onSubmit: (input: CreateReminderInput) => Promise<void>;
+  preferredPetId?: string;
 };
 
 export function CreateReminderModal({
   isOpen,
   onClose,
   onSubmit,
+  preferredPetId,
 }: CreateReminderModalProps) {
   const { pets, activePet } = usePets();
   const [form, setForm] = useState<CreateReminderInput>(() =>
@@ -25,10 +27,13 @@ export function CreateReminderModal({
   const [error, setError] = useState<string | null>(null);
 
   const buildDefault = useCallback(() => {
-    const pet = activePet ?? pets[0];
+    const pet =
+      (preferredPetId ? pets.find((p) => p.id === preferredPetId) : undefined) ??
+      activePet ??
+      pets[0];
     if (!pet) return defaultCreateReminderInput('', '');
     return defaultCreateReminderInput(pet.id, pet.name);
-  }, [activePet, pets]);
+  }, [activePet, pets, preferredPetId]);
 
   useEffect(() => {
     if (isOpen) {

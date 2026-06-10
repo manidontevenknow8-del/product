@@ -18,6 +18,7 @@ import { useDocuments } from '@/documents';
 import { useHealthRecords } from '@/healthRecords';
 import { useReminders } from '@/reminders';
 import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { useAnalytics } from '@/analytics';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
@@ -71,7 +72,7 @@ export function ScanPage() {
   const { canAccess } = useSubscription();
   const uploadRef = useRef<UploadZoneHandle>(null);
   const decoderService = useMemo(() => getVetBillDecoderService(), []);
-  const { activePet, isLoading: petsLoading, hasPets } = usePets();
+  const { activePet, pets, setActivePet, isLoading: petsLoading, hasPets } = usePets();
   const { refreshRecords } = useHealthRecords();
   const { refresh: refreshReminders } = useReminders();
   const {
@@ -113,6 +114,14 @@ export function ScanPage() {
   useEffect(() => {
     void loadHistory();
   }, [loadHistory]);
+
+  useEffect(() => {
+    resetUploadState();
+    setDecodeState('idle');
+    setActiveExtraction(null);
+    setReviewResult(null);
+    setDecodeError(null);
+  }, [activePet?.id, resetUploadState]);
 
   useLayoutEffect(() => {
     const upload = uploadBlockRef.current;
@@ -375,7 +384,17 @@ export function ScanPage() {
   return (
     <AppLayout flushContent>
       <div className={styles.page}>
-        <ScanHero onUploadClick={handleUploadClick} petName={activePet.name} />
+        <ScanHero
+          onUploadClick={handleUploadClick}
+          petName={activePet.name}
+          topActions={
+            <PetSwitcherHero
+              pets={pets}
+              activeId={activePet.id}
+              onSelect={setActivePet}
+            />
+          }
+        />
 
         {showGettingStarted && (
           <div className={styles.gettingStarted}>

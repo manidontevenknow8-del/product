@@ -7,6 +7,8 @@ export type User = {
   emailVerified: boolean;
   needsOnboarding: boolean;
   foundingMember?: boolean;
+  foundingTrialEndsAt?: string | null;
+  foundingLifetimeDiscount?: boolean;
   subscriptionTier: SubscriptionTier;
   subscriptionPlan: string;
   subscriptionStatus: string;

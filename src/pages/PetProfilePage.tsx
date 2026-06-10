@@ -14,7 +14,7 @@ import {
   EditProfileModal,
   HealthRecordModal,
 } from '@/components/pet-profile';
-import { AddAnotherPetButton } from '@/components/pets/AddAnotherPetButton';
+import { AddAnotherPetButton, PetSwitcherHero } from '@/components/pets';
 import { EmptyPetProfileState } from '@/components/empty-states';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
 import { usePets } from '@/pets';
@@ -181,24 +181,7 @@ export function PetProfilePage() {
           )}
           <div className={styles.heroScrim} aria-hidden />
 
-          {pets.length > 1 && (
-            <div className={styles.heroTop}>
-              <div className={styles.petSwitcher} role="tablist" aria-label="Switch pet">
-                {pets.map((p) => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    role="tab"
-                    aria-selected={p.id === activePet.id}
-                    onClick={() => setActivePet(p.id)}
-                    className={`${styles.petTab} ${p.id === activePet.id ? styles.petTabActive : ''}`}
-                  >
-                    {p.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+          <PetSwitcherHero pets={pets} activeId={activePet.id} onSelect={setActivePet} />
 
           <div className={styles.heroInner}>
             <div className={styles.heroIdentityRow}>

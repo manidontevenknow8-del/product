@@ -1,5 +1,8 @@
 import type { SubscriptionPlan } from '@/types/subscription';
-import { PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
+import {
+  PRO_MONTHLY_PRICE_DISPLAY,
+  PRO_MONTHLY_PRICE_INR,
+} from '@/config/razorpayConfig';
 
 export { PREMIUM_FEATURE_GATES, FEATURE_LABELS, FREE_PET_LIMIT } from '@/subscription/featureGates';
 export type { PremiumFeature } from '@/subscription/featureGates';
@@ -27,8 +30,8 @@ export const PLANS: SubscriptionPlan[] = [
     id: 'premium',
     name: 'Pro',
     description: 'Unlock AI tools, unlimited pets, and deeper insights.',
-    monthlyPrice: 299,
-    yearlyPrice: 299,
+    monthlyPrice: PRO_MONTHLY_PRICE_INR,
+    yearlyPrice: PRO_MONTHLY_PRICE_INR,
     priceDisplay: `${PRO_MONTHLY_PRICE_DISPLAY}/month`,
     highlighted: true,
     features: [

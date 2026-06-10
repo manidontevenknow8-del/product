@@ -12,6 +12,7 @@ import {
 } from '@/components/monthly-report';
 import { useAuth } from '@/auth/AuthProvider';
 import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import { useReminders } from '@/reminders';
 import { useHealthRecords } from '@/healthRecords';
 import { useDocuments } from '@/documents';
@@ -33,7 +34,7 @@ function currentMonthKey(): string {
 
 export function MonthlyReportPage() {
   const { user } = useAuth();
-  const { activePet, isLoading: petsLoading, hasPets } = usePets();
+  const { activePet, pets, setActivePet, isLoading: petsLoading, hasPets } = usePets();
   const { reminders, isLoading: remindersLoading } = useReminders();
   const { records: healthRecords, isLoading: healthLoading } = useHealthRecords();
   const { documents, isLoading: docsLoading } = useDocuments();
@@ -186,6 +187,13 @@ export function MonthlyReportPage() {
             eyebrow="PetClues · Monthly life report"
             title={`${report.petName}'s ${report.monthLabel}`}
             subtitle="A visual story of care, consistency, and milestones."
+            topActions={
+              <PetSwitcherHero
+                pets={pets}
+                activeId={activePet.id}
+                onSelect={setActivePet}
+              />
+            }
           />
         )}
 

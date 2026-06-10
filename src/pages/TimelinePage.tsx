@@ -15,6 +15,7 @@ import {
   AddEventModal,
 } from '@/components/timeline';
 import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import { useTimelineData } from '@/hooks/useTimelineData';
 import { buildLifeStorySummary } from '@/data/timelineData';
 import { getAvatarInitials } from '@/services/pets/petUtils';
@@ -50,7 +51,7 @@ const TIMELINE_GETTING_STARTED = [
 ] as const;
 
 export function TimelinePage() {
-  const { activePet, pets } = usePets();
+  const { activePet, pets, setActivePet } = usePets();
   const { isPremium, canAccess } = useSubscription();
   const petName = activePet?.name ?? 'your pet';
   const [activeFilter, setActiveFilter] = useState<TimelineFilter>('all');
@@ -170,6 +171,13 @@ export function TimelinePage() {
             src: activePet.photoUrl,
             initials: getAvatarInitials(petName),
           }}
+          topActions={
+            <PetSwitcherHero
+              pets={pets}
+              activeId={activePet.id}
+              onSelect={setActivePet}
+            />
+          }
           actions={
             <Button variant="secondary" size="sm" onClick={() => setShowAddEvent(true)}>
               Add moment

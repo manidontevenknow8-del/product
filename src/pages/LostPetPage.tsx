@@ -21,11 +21,12 @@ import {
 import { useLostPet } from '@/lostPet';
 import { formatMissingSince } from '@/utils/lostPetUtils';
 import { usePets } from '@/pets';
+import { PetSwitcher } from '@/components/pets';
 import { ROUTES } from '@/routes/paths';
 import styles from './LostPetPage.module.css';
 
 export function LostPetPage() {
-  const { activePet } = usePets();
+  const { activePet, pets, setActivePet } = usePets();
   const petName = activePet?.name ?? 'your pet';
   const {
     activeCase,
@@ -63,6 +64,16 @@ export function LostPetPage() {
             title="Lost Pet Mode"
             subtitle="Emergency recovery when you need it most"
           />
+
+          {activePet && (
+            <PetSwitcher
+              pets={pets}
+              activeId={activePet.id}
+              onSelect={setActivePet}
+              variant="light"
+              className={styles.petSwitcher}
+            />
+          )}
 
           <div className={styles.inactiveHero}>
             <Badge variant="accent" className={styles.inactiveEyebrow}>

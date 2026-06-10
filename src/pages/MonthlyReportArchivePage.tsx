@@ -6,6 +6,7 @@ import { PageHeroBand } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
 import { useAuth } from '@/auth/AuthProvider';
 import { usePets } from '@/pets';
+import { PetSwitcherHero } from '@/components/pets';
 import { getMonthlyReport, listMonthlyReports } from '@/services/monthlyReport';
 import { MonthlyReportCard } from '@/components/monthly-report';
 import { ROUTES } from '@/routes/paths';
@@ -13,7 +14,7 @@ import styles from './MonthlyReportArchivePage.module.css';
 
 export function MonthlyReportArchivePage() {
   const { user } = useAuth();
-  const { activePet } = usePets();
+  const { activePet, pets, setActivePet } = usePets();
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedMonthKey = searchParams.get('month') ?? null;
 
@@ -42,6 +43,15 @@ export function MonthlyReportArchivePage() {
             activePet
               ? `Saved stories for ${activePet.name}`
               : 'Saved monthly life reports'
+          }
+          topActions={
+            activePet ? (
+              <PetSwitcherHero
+                pets={pets}
+                activeId={activePet.id}
+                onSelect={setActivePet}
+              />
+            ) : undefined
           }
           actions={
             <Link to={ROUTES.MONTHLY_REPORT}>
