@@ -1,3 +1,5 @@
+import styles from './MinimalLineChart.module.css';
+
 type MinimalLineChartProps = {
   label: string;
   values: number[];
@@ -29,21 +31,15 @@ export function MinimalLineChart({
   const latest = values[values.length - 1];
 
   return (
-    <figure className={`space-y-3 ${className}`.trim()}>
-      <figcaption className="flex items-baseline justify-between gap-3">
-        <span className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">
-          {label}
-        </span>
-        <span className="font-sans text-sm tabular-nums text-stone-600">
-          <span className="font-medium text-stone-900">{latest}</span>
+    <figure className={`${styles.figure} ${className}`.trim()}>
+      <figcaption className={styles.caption}>
+        <span className={styles.label}>{label}</span>
+        <span className={styles.value}>
+          <span className={styles.valueStrong}>{latest}</span>
           {unit ? ` ${unit}` : ''}
         </span>
       </figcaption>
-      <svg
-        viewBox={`0 0 ${width} ${height}`}
-        className="h-24 w-full text-stone-800"
-        aria-hidden
-      >
+      <svg viewBox={`0 0 ${width} ${height}`} className={styles.chart} aria-hidden>
         <line
           x1={padding}
           y1={height - padding}

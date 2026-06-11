@@ -17,7 +17,7 @@ import { useDocuments } from '@/documents';
 import { useHealthRecords } from '@/healthRecords';
 import { useReminders } from '@/reminders';
 import { usePets } from '@/pets';
-import { PetSwitcherHero } from '@/components/pets';
+import { PetSwitcher } from '@/components/pets';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { useAnalytics } from '@/analytics';
@@ -35,6 +35,7 @@ import {
   type VetBillExtractionRecord,
   type VetBillExtractionResult,
 } from '@/services/vetBillDecoder';
+import styles from './ScanPage.module.css';
 
 type DecodeState = 'idle' | 'decoding' | 'report' | 'error';
 
@@ -288,7 +289,7 @@ export function ScanPage() {
   if (petsLoading || docsLoading) {
     return (
       <AppLayout flushContent>
-        <div className="mx-auto w-full max-w-3xl px-6 py-16">
+        <div className={styles.loadingWrap}>
           <LoadingState message="Loading scan" />
         </div>
       </AppLayout>
@@ -298,12 +299,10 @@ export function ScanPage() {
   if (!hasPets || !activePet) {
     return (
       <AppLayout flushContent>
-        <div className="mx-auto w-full max-w-3xl px-6 py-16">
-          <header className="mb-10 text-center">
-            <h1 className="font-serif text-4xl text-stone-900">PetClues Scan</h1>
-            <p className="mt-3 font-sans text-sm text-stone-500">
-              Add a pet first to scan documents.
-            </p>
+        <div className={styles.page}>
+          <header className={styles.header}>
+            <h1 className={styles.title}>PetClues Scan</h1>
+            <p className={styles.lead}>Add a pet first to scan documents.</p>
           </header>
         </div>
       </AppLayout>
@@ -317,6 +316,7 @@ export function ScanPage() {
     documents.find((d) => d.id === activeExtraction?.documentId)?.fileName ?? 'Document';
   const showReport = decodeState === 'report' && activeExtraction && reviewResult;
   const upgradeTier = decoderAccess.upgradeTierTarget;
+  const showSwitcher = pets.length > 1;
 
   const dropzone = (
     <ScanMagicDropzone
@@ -331,39 +331,36 @@ export function ScanPage() {
 
   return (
     <AppLayout flushContent>
-      <div className="mx-auto w-full max-w-3xl px-6 pb-20 pt-8 sm:px-8 sm:pt-12">
-        <div className="relative mb-10">
-          <PetSwitcherHero
-            pets={pets}
-            activeId={activePet.id}
-            onSelect={setActivePet}
-          />
-        </div>
-
-        <header className="mb-10 text-center sm:mb-12">
-          <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-stone-400">
-            {activePet.name}
-          </p>
-          <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900 sm:text-5xl">
-            PetClues Scan
-          </h1>
-          <p className="mx-auto mt-4 max-w-lg font-sans text-sm leading-relaxed text-stone-500 sm:text-base">
+      <div className={styles.page}>
+        <header className={styles.header}>
+          <div className={styles.headerRow}>
+            <p className={styles.eyebrow}>{activePet.name}</p>
+            {showSwitcher && (
+              <div className={styles.switcher}>
+                <PetSwitcher
+                  pets={pets}
+                  activeId={activePet.id}
+                  onSelect={setActivePet}
+                  variant="light"
+                />
+              </div>
+            )}
+          </div>
+          <h1 className={styles.title}>PetClues Scan</h1>
+          <p className={styles.lead}>
             Upload any vet bill, prescription, or health record. We extract the clarity.
           </p>
         </header>
 
         {decoderMockMode && (
-          <p
-            className="mb-6 border border-amber-200/60 bg-amber-50/50 px-4 py-3 font-sans text-xs text-amber-900"
-            role="status"
-          >
+          <p className={styles.mockBanner} role="status">
             Local preview — Vet Bill Decoder uses sample extraction data until Supabase is
             configured.
           </p>
         )}
 
         {showReport && (
-          <div className="mb-12">
+          <div className={styles.reportBlock}>
             <VetBillDecoderReview
               record={activeExtraction}
               result={reviewResult}
@@ -378,20 +375,20 @@ export function ScanPage() {
           </div>
         )}
 
-        <div className="space-y-6">
+        <div className={styles.stack}>
           <DecoderUsageBar
             decoderAccess={decoderAccess}
             isEnterprise={isEnterprise}
             isMonthlyQuota={isMonthlyDecoderQuota}
           />
 
-          <div className="relative">
+          <div className={styles.dropzoneWrap}>
             {documentVaultFull ? (
               <PremiumGate
                 requiredTier="Plus"
                 title="Document Vault Limit Reached"
                 description="Upgrade to Plus to unlock unlimited secure medical document storage."
-                className="!min-h-[18rem] !rounded-none sm:!min-h-[22rem]"
+                className={styles.gateMinHeight}
                 onUpgrade={() => setDocumentUpgradeOpen(true)}
               >
                 {dropzone}
@@ -401,7 +398,7 @@ export function ScanPage() {
                 requiredTier={upgradeTier}
                 title="Scan Limit Reached"
                 description={`Upgrade to ${upgradeTier} to unlock more AI document extractions.`}
-                className="!min-h-[18rem] !rounded-none sm:!min-h-[22rem]"
+                className={styles.gateMinHeight}
               >
                 {dropzone}
               </PremiumGate>
@@ -414,7 +411,7 @@ export function ScanPage() {
             <LoadingState message="Creating your report (one-time AI scan)…" />
           )}
           {decodeError && !showReport && (
-            <p className="font-sans text-sm text-red-700" role="alert">
+            <p className={styles.error} role="alert">
               {decodeError}
             </p>
           )}
@@ -430,19 +427,17 @@ export function ScanPage() {
           onOpenRecord={openReport}
         />
 
-        <div className="mt-12 border-t border-stone-200/60 pt-8">
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">
-            Supported formats
-          </p>
-          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-stone-500">
-            <li>Vet bills & invoices</li>
+        <div className={styles.formats}>
+          <p className={styles.formatsEyebrow}>Supported formats</p>
+          <ul className={styles.formatsList}>
+            <li>Vet bills &amp; invoices</li>
             <li>Prescriptions</li>
             <li>Vaccine records</li>
             <li>Lab reports · PDF, JPG, PNG</li>
           </ul>
         </div>
 
-        <div className="mt-10">
+        <div className={styles.trust}>
           <HealthDisclaimerNote compact />
         </div>
 
