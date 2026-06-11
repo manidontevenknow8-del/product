@@ -21,7 +21,7 @@ drop table if exists public.subscriptions;
 -- Razorpay subscriptions
 -- ---------------------------------------------------------------------------
 
-create table public.subscriptions (
+create table if not exists public.subscriptions (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users (id) on delete cascade,
   plan text not null,
@@ -42,6 +42,8 @@ create unique index if not exists subscriptions_razorpay_payment_id_key
 
 alter table public.subscriptions enable row level security;
 
+drop policy if exists "Users read own subscription" on public.subscriptions;
+
 create policy "Users read own subscription"
   on public.subscriptions
   for select
@@ -51,7 +53,7 @@ create policy "Users read own subscription"
 -- Webhook audit log (idempotency)
 -- ---------------------------------------------------------------------------
 
-create table public.webhook_events (
+create table if not exists public.webhook_events (
   id text primary key,
   payload jsonb not null,
   processed_at timestamptz not null default now()
@@ -74,6 +76,8 @@ begin
   return new;
 end;
 $$;
+
+drop trigger if exists subscriptions_set_updated_at on public.subscriptions;
 
 create trigger subscriptions_set_updated_at
   before update on public.subscriptions

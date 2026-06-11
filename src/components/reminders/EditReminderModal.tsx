@@ -3,6 +3,7 @@ import { Button } from '@/components/ui';
 import { ReminderForm } from './ReminderForm';
 import type { CreateReminderInput, Reminder } from '@/types/reminder';
 import styles from './ReminderModal.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type EditReminderModalProps = {
   reminder: Reminder | null;
@@ -69,7 +70,7 @@ export function EditReminderModal({
       await onSubmit(reminder.id, form);
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to save reminder.');
+      setError(getUserFacingError(err, 'reminder', 'Failed to save reminder.'));
     } finally {
       setLoading(false);
     }
@@ -83,7 +84,7 @@ export function EditReminderModal({
       await onDelete(reminder.id);
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to delete reminder.');
+      setError(getUserFacingError(err, 'reminder', 'Failed to delete reminder.'));
       setLoading(false);
     }
   };

@@ -1,5 +1,13 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
 @import './tokens.css';
 @import './typography.css';
+@import './app-shell.css';
 
 /* ── Reset & base ──────────────────────────────────────────── */
 *, *::before, *::after {
@@ -37,11 +45,11 @@ a {
   text-decoration: none;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-  border: none;
-  background: none;
+@layer base {
+  button {
+    font-family: inherit;
+    cursor: pointer;
+  }
 }
 
 input, select, textarea {

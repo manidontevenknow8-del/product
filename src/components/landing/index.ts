@@ -1,4 +1,5 @@
 export { HeroSection } from './HeroSection';
+export { PlanComparisonSection } from './PlanComparisonSection';
 export { FeatureHighlights } from './FeatureHighlights';
 export { HowItWorks } from './HowItWorks';
 export { TrustSection } from './TrustSection';

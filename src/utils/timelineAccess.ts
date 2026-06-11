@@ -1,9 +1,9 @@
-import { FREE_TIMELINE_MONTHS } from '@/subscription/featureGates';
+import { FREE_TIMELINE_DAYS } from '@/subscription/featureGates';
 import type { TimelineEventItem } from '@/types/timeline';
 
 export function getTimelineCutoffDate(): Date {
   const cutoff = new Date();
-  cutoff.setMonth(cutoff.getMonth() - FREE_TIMELINE_MONTHS);
+  cutoff.setDate(cutoff.getDate() - FREE_TIMELINE_DAYS);
   cutoff.setHours(0, 0, 0, 0);
   return cutoff;
 }

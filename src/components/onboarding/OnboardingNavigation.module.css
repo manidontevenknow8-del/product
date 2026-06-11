@@ -7,6 +7,10 @@
   justify-content: stretch;
 }
 
+.navEnd {
+  justify-content: flex-end;
+}
+
 .navSingle button:last-child {
   flex: 1;
 }

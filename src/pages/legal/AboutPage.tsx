@@ -223,7 +223,7 @@ export function AboutPage() {
               </Button>
             </Link>
             <Link to={ROUTES.PRICING}>
-              <Button variant="secondary" size="lg">
+              <Button variant="secondary" size="lg" className={styles.pricingCtaBtn}>
                 View pricing
               </Button>
             </Link>

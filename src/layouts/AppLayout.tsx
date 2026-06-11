@@ -1,11 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import {
-  TopNavigation,
-  AppSidebar,
-  BottomNavigation,
-  MobileMenu,
-} from '@/components/navigation';
-import styles from './AppLayout.module.css';
+import { TopNav, AppFooter, MobileMenu } from '@/components/navigation';
 
 type AppLayoutProps = {
   children: ReactNode;
@@ -17,15 +11,23 @@ export function AppLayout({ children, flushContent = false }: AppLayoutProps) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className={styles.layout}>
-      <TopNavigation onMenuOpen={() => setMenuOpen(true)} />
-      <div className={styles.body}>
-        <AppSidebar />
-        <main className={styles.main}>
-          <div className={`${styles.content} ${flushContent ? styles.contentFlush : ''}`}>{children}</div>
-        </main>
-      </div>
-      <BottomNavigation />
+    <div className="app-root">
+      <TopNav onMenuOpen={() => setMenuOpen(true)} />
+
+      <main className="app-shell-main">
+        <div
+          className={[
+            'app-shell-content',
+            flushContent ? 'app-shell-content--flush' : '',
+          ]
+            .filter(Boolean)
+            .join(' ')}
+        >
+          {children}
+        </div>
+      </main>
+
+      <AppFooter />
       <MobileMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
     </div>
   );

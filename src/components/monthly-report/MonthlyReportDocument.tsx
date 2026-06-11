@@ -11,10 +11,12 @@ import styles from './MonthlyReportDocument.module.css';
 
 type MonthlyReportDocumentProps = {
   report: MonthlyPetLifeReport;
+  /** Free tier viral watermark — included in exports */
+  showWatermark?: boolean;
 };
 
 export const MonthlyReportDocument = forwardRef<HTMLDivElement, MonthlyReportDocumentProps>(
-  function MonthlyReportDocument({ report }, ref) {
+  function MonthlyReportDocument({ report, showWatermark = false }, ref) {
     const storySections = resolveStorySections(report);
     const narrativeIntro = resolveNarrativeIntro(report);
     const careScoreNarrative = resolveCareScoreNarrative(report);
@@ -163,9 +165,17 @@ export const MonthlyReportDocument = forwardRef<HTMLDivElement, MonthlyReportDoc
           </div>
         </section>
 
+        {showWatermark && (
+          <div className={styles.watermark} aria-label="PetClues branding">
+            <p className={styles.watermarkText}>
+              Powered by PetClues — Build your pet&apos;s life story.
+            </p>
+          </div>
+        )}
+
         <footer className={styles.footer}>
           <span>Generated {new Date(report.generatedAt).toLocaleDateString()}</span>
-          <span>PetClues · Private by default</span>
+          {!showWatermark && <span>Private report</span>}
         </footer>
       </article>
     );

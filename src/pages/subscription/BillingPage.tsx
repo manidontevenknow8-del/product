@@ -4,7 +4,10 @@ import { AppLayout } from '@/layouts/AppLayout';
 import { Button, Badge } from '@/components/ui';
 import { PageHeroBand } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
-import { PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
+import {
+  PLUS_MONTHLY_PRICE_DISPLAY,
+  PRO_MONTHLY_PRICE_DISPLAY,
+} from '@/config/razorpayConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import { UpgradeModal } from '@/components/subscription';
 import { useAuth } from '@/auth/AuthProvider';
@@ -13,12 +16,25 @@ import {
   FOUNDING_DISCOUNT_PERCENT,
   FOUNDING_DISCOUNTED_PRICE_DISPLAY,
 } from '@/config/razorpayConfig';
+import { CUSTOM_LIMITS_EMAIL, PLAN_LABELS } from '@/subscription/entitlements';
+import type { CheckoutPlan } from '@/types/subscription';
 import { ROUTES } from '@/routes/paths';
 import styles from './BillingPage.module.css';
 
 export function BillingPage() {
   const { user } = useAuth();
-  const { subscription, usage, invoices, isPremium, isLoading, refresh } = useSubscription();
+  const {
+    subscription,
+    usage,
+    invoices,
+    currentPlan,
+    planLabel,
+    nextUpgradePlan,
+    upgradeCta,
+    upgradeHeadline,
+    isLoading,
+    refresh,
+  } = useSubscription();
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const [banner, setBanner] = useState<string | null>(null);
 
@@ -26,12 +42,25 @@ export function BillingPage() {
     void refresh();
   }, [refresh]);
 
-  const planLabel =
-    subscription?.subscriptionPlan === 'pro' || subscription?.plan === 'premium'
-      ? 'Pro'
-      : 'Free';
   const paymentsLive = isPaymentsLive();
-  const statusLabel = subscription?.subscriptionStatus === 'active' ? 'Active' : 'Inactive';
+  const statusLabel =
+    subscription?.subscriptionStatus === 'active'
+      ? 'Active'
+      : subscription?.subscriptionStatus === 'trialing'
+        ? 'Trial'
+        : 'Inactive';
+
+  const upgradeTarget: CheckoutPlan | undefined =
+    nextUpgradePlan === 'plus' || nextUpgradePlan === 'pro' ? nextUpgradePlan : 'pro';
+
+  const priceNote =
+    currentPlan === 'plus'
+      ? `${PLUS_MONTHLY_PRICE_DISPLAY}/month`
+      : currentPlan === 'pro'
+        ? user?.foundingLifetimeDiscount
+          ? `${FOUNDING_DISCOUNTED_PRICE_DISPLAY}/month`
+          : `${PRO_MONTHLY_PRICE_DISPLAY}/month`
+        : null;
 
   return (
     <AppLayout flushContent>
@@ -58,10 +87,16 @@ export function BillingPage() {
             </div>
           )}
 
-          {user?.foundingLifetimeDiscount && !isPremium && (
+          {user?.foundingLifetimeDiscount && currentPlan === 'free' && (
             <div className={styles.banner} role="status">
               Founding Member pricing: Pro at {FOUNDING_DISCOUNTED_PRICE_DISPLAY}/month (
               {FOUNDING_DISCOUNT_PERCENT}% lifetime discount applied at checkout).
+            </div>
+          )}
+
+          {currentPlan !== 'enterprise' && nextUpgradePlan && (
+            <div className={styles.banner} role="status">
+              {upgradeHeadline}
             </div>
           )}
 
@@ -69,16 +104,16 @@ export function BillingPage() {
             <div className={styles.planInfo}>
               <div className={styles.planName}>
                 {planLabel} plan{' '}
-                <Badge variant={isPremium ? 'accent' : 'default'}>{statusLabel}</Badge>
+                <Badge variant={currentPlan !== 'free' ? 'accent' : 'default'}>{statusLabel}</Badge>
               </div>
               <p className={styles.planMeta}>
-                {isPremium && subscription?.renewalDate
+                {currentPlan !== 'free' && subscription?.renewalDate
                   ? `Renews ${subscription.renewalDate}`
-                  : isPremium
-                    ? `Pro - ${PRO_MONTHLY_PRICE_DISPLAY}/month`
+                  : currentPlan !== 'free' && priceNote
+                    ? `${planLabel} - ${priceNote}`
                     : 'No active subscription'}
               </p>
-              {subscription?.startedAt && isPremium && (
+              {subscription?.startedAt && currentPlan !== 'free' && (
                 <p className={styles.planMeta}>
                   Started{' '}
                   {new Date(subscription.startedAt).toLocaleDateString('en-IN', {
@@ -89,13 +124,36 @@ export function BillingPage() {
                 </p>
               )}
             </div>
-            {!isPremium ? (
+            {currentPlan === 'enterprise' ? (
+              <Button
+                variant="secondary"
+                onClick={() => {
+                  window.location.href = `mailto:${CUSTOM_LIMITS_EMAIL}?subject=PetClues%20Enterprise%20support`;
+                }}
+              >
+                Contact support
+              </Button>
+            ) : nextUpgradePlan === 'enterprise' ? (
+              <div className={styles.planActions}>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    window.location.href = `mailto:${CUSTOM_LIMITS_EMAIL}?subject=PetClues%20Enterprise`;
+                  }}
+                >
+                  {upgradeCta}
+                </Button>
+                <Link to={ROUTES.PRICING}>
+                  <Button variant="ghost">View plans</Button>
+                </Link>
+              </div>
+            ) : currentPlan === 'free' || nextUpgradePlan ? (
               <Button
                 variant="primary"
                 onClick={() => setUpgradeOpen(true)}
                 disabled={!paymentsLive}
               >
-                {paymentsLive ? 'Upgrade to Pro' : 'Coming soon'}
+                {paymentsLive ? upgradeCta : 'Coming soon'}
               </Button>
             ) : (
               <div className={styles.planActions}>
@@ -109,12 +167,12 @@ export function BillingPage() {
             )}
           </div>
 
-          {isPremium && (
+          {currentPlan !== 'free' && (
             <section className={styles.support}>
               <h2 className={styles.supportTitle}>Manage subscription</h2>
               <p className={styles.supportText}>
                 To cancel or change billing, email{' '}
-                <a href="mailto:founder@petclues.com">founder@petclues.com</a>. Your Pro access
+                <a href="mailto:founder@petclues.com">founder@petclues.com</a>. Your {planLabel} access
                 remains active until the renewal date shown above.
               </p>
             </section>
@@ -127,21 +185,27 @@ export function BillingPage() {
                 <div className={styles.usageItem}>
                   <div className={styles.usageLabel}>Pets</div>
                   <div className={styles.usageValue}>
-                    {usage.pets.used}
-                    {usage.pets.limit != null ? ` / ${usage.pets.limit}` : ' · Unlimited'}
+                    {usage.pets.used} / {usage.pets.limit ?? '∞'}
                   </div>
                 </div>
                 <div className={styles.usageItem}>
                   <div className={styles.usageLabel}>AI decodes</div>
                   <div className={styles.usageValue}>
                     {usage.scans.used}
-                    {usage.scans.limit != null ? ' · Pro only' : ' · Unlimited'}
+                    {usage.scans.limit != null ? ` / ${usage.scans.limit} per month` : ' · Unlimited'}
+                  </div>
+                </div>
+                <div className={styles.usageItem}>
+                  <div className={styles.usageLabel}>Reminders</div>
+                  <div className={styles.usageValue}>
+                    {usage.reminders.used}
+                    {usage.reminders.limit != null ? ` / ${usage.reminders.limit}` : ' · Unlimited'}
                   </div>
                 </div>
                 <div className={styles.usageItem}>
                   <div className={styles.usageLabel}>Timeline</div>
                   <div className={styles.usageValue}>
-                    {usage.timelineMonths.limit != null ? '6 months' : 'Full history'}
+                    {usage.timelineMonths.limit != null ? `${usage.timelineMonths.limit} months` : 'Full history'}
                   </div>
                 </div>
               </div>
@@ -154,15 +218,16 @@ export function BillingPage() {
               <div className={styles.invoiceEmpty}>Loading payment history…</div>
             ) : invoices.length === 0 ? (
               <div className={styles.invoiceEmpty}>
-                {isPremium
+                {currentPlan !== 'free'
                   ? 'No payment records yet.'
-                  : 'No payments yet - upgrade to Pro to see billing history here.'}
+                  : 'No payments yet — upgrade to see billing history here.'}
               </div>
             ) : (
               <div className={styles.invoiceList}>
                 {invoices.map((inv) => (
                   <div key={inv.id} className={styles.invoice}>
                     <span>{inv.date}</span>
+                    <span>{inv.plan ? PLAN_LABELS[inv.plan as keyof typeof PLAN_LABELS] ?? inv.plan : ''}</span>
                     <span>{inv.amount}</span>
                     <Badge variant={inv.status === 'paid' ? 'success' : 'warning'}>
                       {inv.status}
@@ -173,14 +238,17 @@ export function BillingPage() {
             )}
           </section>
 
-          <UpgradeModal
-            isOpen={upgradeOpen}
-            onClose={() => setUpgradeOpen(false)}
-            onSuccess={() => {
-              setBanner('Welcome to Pro! Your subscription is active.');
-              void refresh();
-            }}
-          />
+          {nextUpgradePlan && nextUpgradePlan !== 'enterprise' && (
+            <UpgradeModal
+              isOpen={upgradeOpen}
+              onClose={() => setUpgradeOpen(false)}
+              targetPlan={upgradeTarget}
+              onSuccess={() => {
+                setBanner(`Welcome to ${PLAN_LABELS[upgradeTarget]}! Your subscription is active.`);
+                void refresh();
+              }}
+            />
+          )}
         </div>
       </div>
     </AppLayout>

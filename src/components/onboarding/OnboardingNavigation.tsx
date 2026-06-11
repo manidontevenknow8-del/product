@@ -28,9 +28,11 @@ export function OnboardingNavigation({
     );
   }
 
+  const hasBack = showBack && Boolean(onBack);
+
   return (
-    <div className={styles.nav}>
-      {showBack && onBack && (
+    <div className={`${styles.nav} ${hasBack ? '' : styles.navEnd}`.trim()}>
+      {hasBack && onBack && (
         <Button variant="ghost" size="lg" onClick={onBack} className={styles.backBtn}>
           Back
         </Button>
@@ -38,7 +40,7 @@ export function OnboardingNavigation({
       <Button
         variant="primary"
         size="lg"
-        fullWidth
+        fullWidth={hasBack}
         onClick={onNext}
         disabled={nextDisabled}
       >

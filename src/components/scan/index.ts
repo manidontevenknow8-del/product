@@ -1,5 +1,10 @@
 export { ScanHero } from './ScanHero';
 export { UploadZone } from './UploadZone';
+export { ScanMagicDropzone } from './ScanMagicDropzone';
+export { DecoderUsageBar } from './DecoderUsageBar';
+export { RecentScansHistory, recordToHistoryItem } from './RecentScansHistory';
+export type { ScanHistoryItem } from './RecentScansHistory';
+export type { ScanMagicDropzoneHandle } from './ScanMagicDropzone';
 export { UploadSuccessCard } from './UploadSuccessCard';
 export type { UploadZoneHandle, UploadZoneStatus } from './UploadZone';
 export { ScanEmptyState } from './ScanEmptyState';

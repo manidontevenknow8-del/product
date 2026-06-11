@@ -15,7 +15,10 @@ import { usePetCareScore } from '@/petCareScore';
 import { DailyCheckInCard } from '@/components/daily-check-in';
 import { useDailyCheckIn } from '@/dailyCheckIn';
 import { AddAnotherPetButton, PetSwitcherHero } from '@/components/pets';
+import { PremiumGate } from '@/components/ui';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
+import type { FeatureAccessResult } from '@/subscription/planLimits';
 import { getActivityLogForPet } from '@/services/activity/activityLogService';
 import { MonthlyReportEngine } from '@/services/monthlyReport';
 import { pickDashboardNextTask } from '@/services/dashboard/dashboardNextTask';
@@ -24,6 +27,7 @@ import {
   activityToMoments,
   completenessMetrics,
   heroStatusChip,
+  partitionMomentsByHistoryWindow,
 } from '@/services/dashboard/dashboardMoments';
 import type { DashboardMoment } from '@/services/dashboard/dashboardMoments';
 import { countOverdueReminders } from '@/services/dashboard/dashboardStatus';
@@ -231,7 +235,36 @@ function CareScoreCard({
   );
 }
 
-function RecentMomentsCard({ moments }: { moments: DashboardMoment[] }) {
+function MomentsListItems({ moments }: { moments: DashboardMoment[] }) {
+  return (
+    <>
+      {moments.map((m) => (
+        <li key={m.id} className={styles.momentItem}>
+          <span className={`${styles.momentDot} ${MOMENT_ICON_CLASS[m.kind]}`} aria-hidden />
+          <div className={styles.momentBody}>
+            <div className={styles.momentTop}>
+              <p className={styles.momentTitle}>{m.title}</p>
+              <time className={styles.momentWhen} dateTime={m.occurredAt}>
+                {m.when}
+              </time>
+            </div>
+            <p className={styles.momentDesc}>{m.description}</p>
+          </div>
+        </li>
+      ))}
+    </>
+  );
+}
+
+function RecentMomentsSection({
+  moments,
+  timelineAccess,
+}: {
+  moments: DashboardMoment[];
+  timelineAccess: FeatureAccessResult;
+}) {
+  const { recentMoments, historicalMoments } = partitionMomentsByHistoryWindow(moments);
+
   if (moments.length === 0) {
     return (
       <article className={styles.emptyMoments}>
@@ -248,55 +281,93 @@ function RecentMomentsCard({ moments }: { moments: DashboardMoment[] }) {
   }
 
   return (
-    <ul className={styles.momentsList}>
-      {moments.map((m) => (
-        <li key={m.id} className={styles.momentItem}>
-          <span className={`${styles.momentDot} ${MOMENT_ICON_CLASS[m.kind]}`} aria-hidden />
-          <div className={styles.momentBody}>
-            <div className={styles.momentTop}>
-              <p className={styles.momentTitle}>{m.title}</p>
-              <time className={styles.momentWhen}>{m.when}</time>
-            </div>
-            <p className={styles.momentDesc}>{m.description}</p>
-          </div>
-        </li>
-      ))}
-    </ul>
+    <div className={styles.momentsWrap}>
+      <ul className={styles.momentsList}>
+        <MomentsListItems moments={recentMoments} />
+        {timelineAccess.isAllowed && historicalMoments.length > 0 && (
+          <MomentsListItems moments={historicalMoments} />
+        )}
+      </ul>
+      {!timelineAccess.isAllowed && historicalMoments.length > 0 && (
+        <div className={`${styles.momentsHistorical} ${styles.momentsHistoricalFade}`}>
+          <PremiumGate
+            requiredTier="Plus"
+            title="Unblur your pet's history"
+            description="Upgrade to Plus to unlock your pet's complete, permanent life story and past medical events."
+            className={styles.momentsPremiumGate}
+          >
+            <ul className={styles.momentsList} aria-hidden>
+              <MomentsListItems moments={historicalMoments} />
+            </ul>
+          </PremiumGate>
+        </div>
+      )}
+    </div>
   );
 }
 
-function InsightCard({
+function AiInsightSection({
+  aiAccess,
   title,
   body,
   isLoading,
-  showProTeaser,
+  score,
+  insightCount,
 }: {
+  aiAccess: FeatureAccessResult;
   title: string;
   body: string;
   isLoading: boolean;
-  showProTeaser: boolean;
+  score: number | null;
+  insightCount: number;
 }) {
   return (
-    <article className={styles.mediaCard}>
-      <div className={styles.mediaThumb}>
-        <img src={PAGE_IMG.app.scan} alt="" className={styles.mediaThumbImg} aria-hidden />
-      </div>
-      <div className={styles.mediaBody}>
-        <h3 className={styles.cardTitle}>{title}</h3>
-        {isLoading ? (
-          <p className={styles.loadingText}>Reading your care data…</p>
-        ) : (
-          <>
-            <p className={styles.cardText}>{body}</p>
-            {showProTeaser && (
-              <Link to={ROUTES.PRICING} className={styles.textLinkMuted}>
-                Unlock deeper health insights with Premium →
-              </Link>
+    <section className={styles.insightSection} aria-labelledby="dash-ai-insight">
+      <p className={styles.sectionKicker} id="dash-ai-insight">
+        Reflection
+      </p>
+      <PremiumGate
+        requiredTier="Pro"
+        title="Health Foresight"
+        description="Advanced medical summarization and predictive patterns are available exclusively in Pro."
+        className={styles.insightPremiumGate}
+      >
+        <article className={`${styles.mediaCard} ${styles.insightArticle}`}>
+          <div className={styles.mediaThumb}>
+            <img src={PAGE_IMG.app.scan} alt="" className={styles.mediaThumbImg} aria-hidden />
+          </div>
+          <div className={styles.mediaBody}>
+            <span className={styles.insightSpark} aria-hidden>
+              {aiAccess.isAllowed ? 'Pro insight' : 'Care signal'}
+            </span>
+            <h3 className={styles.cardTitle}>{title}</h3>
+            {isLoading ? (
+              <p className={styles.loadingText}>Reading your care data…</p>
+            ) : (
+              <>
+                <p className={styles.cardText}>{body}</p>
+                {(score != null || insightCount > 0) && (
+                  <div className={styles.insightStats}>
+                    {score != null && (
+                      <div className={styles.insightStat}>
+                        <p className={styles.insightStatValue}>{score}</p>
+                        <p className={styles.insightStatLabel}>Care score</p>
+                      </div>
+                    )}
+                    {insightCount > 0 && (
+                      <div className={styles.insightStat}>
+                        <p className={styles.insightStatValue}>{insightCount}</p>
+                        <p className={styles.insightStatLabel}>Signals</p>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </>
             )}
-          </>
-        )}
-      </div>
-    </article>
+          </div>
+        </article>
+      </PremiumGate>
+    </section>
   );
 }
 
@@ -338,29 +409,61 @@ function MonthlyPreviewCard({
 }
 
 const QUICK_ACTIONS = [
-  { id: 'record', label: 'Add record', path: ROUTES.PET_PROFILE, image: PAGE_IMG.profile.health, pro: false },
-  { id: 'document', label: 'Upload document', path: ROUTES.SCAN, image: PAGE_IMG.scan.docs, pro: false },
-  { id: 'reminder', label: 'Create reminder', path: `${ROUTES.REMINDERS}?create=true`, image: PAGE_IMG.reminders.notify, pro: false },
-  { id: 'scan', label: 'Scan vet bill', path: ROUTES.SCAN, image: PAGE_IMG.scan.report, pro: true },
+  { id: 'record', label: 'Add record', path: ROUTES.PET_PROFILE, image: PAGE_IMG.profile.health },
+  { id: 'document', label: 'Upload document', path: ROUTES.SCAN, image: PAGE_IMG.scan.docs },
+  { id: 'reminder', label: 'Create reminder', path: `${ROUTES.REMINDERS}?create=true`, image: PAGE_IMG.reminders.notify },
+  { id: 'scan', label: 'Scan vet bill', path: ROUTES.SCAN, image: PAGE_IMG.scan.report, isDecoder: true },
 ] as const;
 
-function QuickActionsGrid({ hasDecoder }: { hasDecoder: boolean }) {
+function decoderRemainingNote(
+  decoderAccess: FeatureAccessResult,
+  isEnterprise: boolean,
+  isMonthlyQuota: boolean,
+): string | null {
+  if (isEnterprise || decoderAccess.usageLimit === 'unlimited') return null;
+  const limit = decoderAccess.usageLimit;
+  if (typeof limit !== 'number') return null;
+  const remaining = Math.max(0, limit - decoderAccess.currentUsage);
+  if (isMonthlyQuota) return `${remaining}/mo remaining`;
+  return `${remaining} scan${remaining === 1 ? '' : 's'} remaining`;
+}
+
+function QuickActionsSection({
+  decoderAccess,
+  isEnterprise,
+  isMonthlyDecoderQuota,
+}: {
+  decoderAccess: FeatureAccessResult;
+  isEnterprise: boolean;
+  isMonthlyDecoderQuota: boolean;
+}) {
+  const decoderNote = decoderRemainingNote(decoderAccess, isEnterprise, isMonthlyDecoderQuota);
+
   return (
     <div className={styles.actionsGrid}>
       {QUICK_ACTIONS.map((action) => {
-        const locked = action.pro && !hasDecoder;
+        const isDecoder = 'isDecoder' in action && action.isDecoder === true;
+        const locked = isDecoder && !decoderAccess.isAllowed;
+
         return (
           <Link
             key={action.id}
-            to={action.path}
+            to={
+              locked
+                ? `${ROUTES.PRICING}?plan=pro`
+                : action.path
+            }
             className={`${styles.actionCard} ${locked ? styles.actionCardLocked : ''}`}
+            aria-disabled={locked || undefined}
           >
             <div className={styles.actionThumb}>
               <img src={action.image} alt="" className={styles.actionThumbImg} aria-hidden />
             </div>
             <span className={styles.actionLabel}>
               {action.label}
-              {action.pro && <span className={styles.proBadge}>Pro</span>}
+              {isDecoder && decoderNote ? (
+                <span className={styles.actionNote}>{decoderNote}</span>
+              ) : null}
             </span>
           </Link>
         );
@@ -381,10 +484,14 @@ export function DashboardPage() {
   const { documents } = useDocuments();
   const { data: scoreData, isLoading: scoreLoading } = usePetCareScore();
   const { checkIns } = useDailyCheckIn();
-  const { isPremium, canAccess } = useSubscription();
-  const hasDecoder = canAccess('vetBillDecoder');
+  const { canAccess, currentPlan } = useSubscription();
+  const timelineAccess = useFeatureAccess('timelineHistory');
+  const aiAccess = useFeatureAccess('aiHealthInsights');
+  const decoderAccess = useFeatureAccess('vetBillDecoder');
+  const canExportReport = canAccess('monthlyReportExport');
   const hasAdvancedScore = canAccess('advancedPetCareScore');
-  const hasAdvancedInsight = canAccess('advancedHealthInsights');
+  const isEnterprise = currentPlan === 'enterprise';
+  const isMonthlyDecoderQuota = currentPlan === 'plus' || currentPlan === 'pro';
 
   const petId = activePet?.id;
   const petReminders = useMemo(
@@ -501,16 +608,20 @@ export function DashboardPage() {
     'Add a health record or document - we surface one clear insight from your real data.';
 
   const activityEntries: ActivityLogEntry[] = isDemoDataEnabled('dashboardActivity')
-    ? mockRecentActivity.map((item) => ({
-        id: item.id,
-        petId: activePet.id,
-        type: item.type,
-        title: item.title,
-        description: item.description,
-        timestamp: item.timestamp,
-        createdAt: item.timestamp,
-      }))
-    : getActivityLogForPet(activePet.id);
+    ? mockRecentActivity.map((item, index) => {
+        const daysAgo = index * 12;
+        const createdAt = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000).toISOString();
+        return {
+          id: item.id,
+          petId: activePet.id,
+          type: item.type,
+          title: item.title,
+          description: item.description,
+          timestamp: item.timestamp,
+          createdAt,
+        };
+      })
+    : getActivityLogForPet(activePet.id, 24);
   const moments = activityToMoments(activityEntries);
 
   const heroImage = display.photo || PAGE_IMG.app.dashboard;
@@ -575,22 +686,28 @@ export function DashboardPage() {
                 isLoading={scoreLoading}
                 showProDepth={!hasAdvancedScore}
               />
-              <InsightCard
+              <AiInsightSection
+                aiAccess={aiAccess}
                 title={insightTitle}
                 body={insightBody}
                 isLoading={scoreLoading}
-                showProTeaser={!hasAdvancedInsight && (scoreData?.insights.length ?? 0) > 1}
+                score={score}
+                insightCount={scoreData?.insights.length ?? 0}
               />
             </div>
 
             <div className={styles.col}>
               <NextTaskCard task={nextTask} />
-              <MonthlyPreviewCard report={monthlyReport} exportIsPro={!isPremium} />
+              <MonthlyPreviewCard report={monthlyReport} exportIsPro={!canExportReport} />
               <section aria-labelledby="dash-actions">
                 <h2 id="dash-actions" className={styles.inlineHead}>
                   Quick actions
                 </h2>
-                <QuickActionsGrid hasDecoder={hasDecoder} />
+                <QuickActionsSection
+                  decoderAccess={decoderAccess}
+                  isEnterprise={isEnterprise}
+                  isMonthlyDecoderQuota={isMonthlyDecoderQuota}
+                />
               </section>
             </div>
           </div>
@@ -600,7 +717,7 @@ export function DashboardPage() {
             title="Recent moments"
             description="A live feed of vaccinations, uploads, reminders, and milestones from your pet's care journey."
           />
-          <RecentMomentsCard moments={moments} />
+          <RecentMomentsSection moments={moments} timelineAccess={timelineAccess} />
         </div>
       </div>
     </AppLayout>

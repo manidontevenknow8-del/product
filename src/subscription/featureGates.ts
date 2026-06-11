@@ -1,114 +1,100 @@
+/**
+ * Thin compatibility layer — delegates to entitlements.ts.
+ * Do not add new gate logic here.
+ */
 import type { PlanTier } from '@/types/subscription';
 import type { SubscriptionTier } from '@/services/supabase/database.types';
+import {
+  type CommercialPlan,
+  type EntitlementInput,
+  type PlanFeature,
+  type PremiumFeature,
+  canAccessLegacyFeature,
+  canAccessPlanFeature,
+  canAddPet as canAddPetForPlan,
+  canCreateHealthRecord as canCreateHealthRecordForPlan,
+  canCreateReminder as canCreateReminderForPlan,
+  canUseDecoder as canUseDecoderForPlan,
+  FEATURE_LABELS,
+  getDecoderMonthlyLimit,
+  getHealthRecordLimit,
+  getReminderLimit,
+  getTimelineDayLimit,
+  getTimelineMonthLimit,
+  isPaidPlan,
+  LEGACY_FEATURE_MAP,
+  PET_LIMITS,
+  resolveEffectivePlan,
+  resolveEntitlements,
+} from './entitlements';
 
-export const FREE_PET_LIMIT = 1;
-export const FREE_REMINDER_LIMIT = 2;
-export const FREE_HEALTH_RECORD_LIMIT = 3;
-export const FREE_TIMELINE_MONTHS = 6;
-
-export type PremiumFeature =
-  | 'unlimitedPets'
-  | 'unlimitedReminders'
-  | 'unlimitedHealthRecords'
-  | 'vetBillDecoder'
-  | 'advancedHealthInsights'
-  | 'unlimitedMonthlyReports'
-  | 'premiumTimeline'
-  | 'futureAiCompanion'
-  | 'futureBreedIntelligence'
-  | 'advancedPetCareScore'
-  | 'prioritySupport'
-  | 'futurePremium';
-
-export const PREMIUM_FEATURE_GATES: Record<PremiumFeature, 'premium'> = {
-  unlimitedPets: 'premium',
-  unlimitedReminders: 'premium',
-  unlimitedHealthRecords: 'premium',
-  vetBillDecoder: 'premium',
-  advancedHealthInsights: 'premium',
-  unlimitedMonthlyReports: 'premium',
-  premiumTimeline: 'premium',
-  futureAiCompanion: 'premium',
-  futureBreedIntelligence: 'premium',
-  advancedPetCareScore: 'premium',
-  prioritySupport: 'premium',
-  futurePremium: 'premium',
+export {
+  FEATURE_LABELS,
+  LEGACY_FEATURE_MAP as PREMIUM_FEATURE_GATES,
+  PET_LIMITS,
+  resolveEntitlements,
 };
+export type { PremiumFeature, PlanFeature, CommercialPlan };
 
-export const FEATURE_LABELS: Record<PremiumFeature, string> = {
-  unlimitedPets: 'Unlimited pets',
-  unlimitedReminders: 'Unlimited reminders',
-  unlimitedHealthRecords: 'Unlimited health records',
-  vetBillDecoder: 'Vet Bill Decoder',
-  advancedHealthInsights: 'Advanced AI insights',
-  unlimitedMonthlyReports: 'Unlimited monthly reports',
-  premiumTimeline: 'Premium timeline enhancements',
-  futureAiCompanion: 'Future AI companion',
-  futureBreedIntelligence: 'Future breed intelligence',
-  advancedPetCareScore: 'Advanced PetCare Score',
-  prioritySupport: 'Priority support',
-  futurePremium: 'Future premium features',
-};
+/** @deprecated Use PET_LIMITS.free */
+export const FREE_PET_LIMIT = PET_LIMITS.free;
+/** @deprecated Use getReminderLimit('free') */
+export const FREE_REMINDER_LIMIT = getReminderLimit('free') ?? 2;
+/** @deprecated Use getHealthRecordLimit('free') */
+export const FREE_HEALTH_RECORD_LIMIT = getHealthRecordLimit('free') ?? 3;
+export const FREE_TIMELINE_DAYS = getTimelineDayLimit('free') ?? 30;
+/** @deprecated Use FREE_TIMELINE_DAYS */
+export const FREE_TIMELINE_MONTHS = getTimelineMonthLimit('free') ?? 1;
 
-export function isPremiumTier(tier: PlanTier | SubscriptionTier | null | undefined): boolean {
+function toPlan(input: EntitlementInput): CommercialPlan {
+  return resolveEffectivePlan(input);
+}
+
+/** @deprecated Use isPaidPlan(resolveEffectivePlan(input)) */
+export function isPremiumTier(tier: PlanTier | SubscriptionTier | CommercialPlan | null | undefined): boolean {
+  if (tier === 'plus' || tier === 'pro' || tier === 'enterprise') return true;
   return tier === 'premium' || tier === 'family';
 }
 
-/** Source of truth: profiles.subscription_status, with tier fallback for founding/manual grants. */
-export function hasPremiumAccess(input: {
-  subscriptionStatus?: string | null;
-  subscriptionTier?: PlanTier | SubscriptionTier | null;
-}): boolean {
-  if (input.subscriptionStatus === 'active' || input.subscriptionStatus === 'trialing') {
-    return true;
-  }
-  return isPremiumTier(input.subscriptionTier ?? 'free');
+/** @deprecated Use resolveEffectivePlan + isPaidPlan */
+export function hasPremiumAccess(input: EntitlementInput): boolean {
+  return isPaidPlan(toPlan(input));
 }
 
-export function canAccessFeature(
-  input: {
-    subscriptionStatus?: string | null;
-    subscriptionTier?: PlanTier | SubscriptionTier | null;
-  },
-  feature: PremiumFeature,
-): boolean {
-  if (hasPremiumAccess(input)) return true;
-  return PREMIUM_FEATURE_GATES[feature] !== 'premium';
+export function canAccessFeature(input: EntitlementInput, feature: PremiumFeature): boolean {
+  return canAccessLegacyFeature(toPlan(input), feature);
 }
 
-export function canAddPet(
-  input: {
-    subscriptionStatus?: string | null;
-    subscriptionTier?: PlanTier | SubscriptionTier | null;
-  },
-  currentPetCount: number,
-): boolean {
-  if (hasPremiumAccess(input)) return true;
-  return currentPetCount < FREE_PET_LIMIT;
+export function canAccess(input: EntitlementInput, feature: PlanFeature): boolean {
+  return canAccessPlanFeature(toPlan(input), feature);
 }
 
-export function canCreateReminder(
-  input: {
-    subscriptionStatus?: string | null;
-    subscriptionTier?: PlanTier | SubscriptionTier | null;
-  },
-  activeReminderCount: number,
-): boolean {
-  if (hasPremiumAccess(input)) return true;
-  return activeReminderCount < FREE_REMINDER_LIMIT;
+export function canAddPet(input: EntitlementInput, currentPetCount: number): boolean {
+  return canAddPetForPlan(toPlan(input), currentPetCount);
 }
 
-export function canCreateHealthRecord(
-  input: {
-    subscriptionStatus?: string | null;
-    subscriptionTier?: PlanTier | SubscriptionTier | null;
-  },
-  recordCount: number,
-): boolean {
-  if (hasPremiumAccess(input)) return true;
-  return recordCount < FREE_HEALTH_RECORD_LIMIT;
+export function canCreateReminder(input: EntitlementInput, activeReminderCount: number): boolean {
+  return canCreateReminderForPlan(toPlan(input), activeReminderCount);
 }
 
+export function canCreateHealthRecord(input: EntitlementInput, recordCount: number): boolean {
+  return canCreateHealthRecordForPlan(toPlan(input), recordCount);
+}
+
+export function canUseDecoder(input: EntitlementInput, monthlyDecodeCount: number): boolean {
+  const plan = toPlan(input);
+  return canUseDecoderForPlan(plan, {
+    monthly: monthlyDecodeCount,
+    lifetime: monthlyDecodeCount,
+  });
+}
+
+export function getDecoderLimit(input: EntitlementInput): number | null {
+  return getDecoderMonthlyLimit(toPlan(input));
+}
+
+/** @deprecated Use resolveEffectivePlan */
 export function tierToPlan(tier: SubscriptionTier | null | undefined): PlanTier {
-  return isPremiumTier(tier) ? 'premium' : 'free';
+  const plan = resolveEffectivePlan({ subscriptionTier: tier });
+  return plan === 'free' ? 'free' : 'premium';
 }

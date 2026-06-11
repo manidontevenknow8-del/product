@@ -13,6 +13,7 @@ import { BLOG_CATEGORIES, type BlogCategoryId } from '@/data/blogCategories';
 import type { BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
 import styles from './BlogIndexPage.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 function parseCategory(value: string | null): BlogCategoryId | undefined {
   if (!value) return undefined;
@@ -47,7 +48,7 @@ export function BlogIndexPage() {
       })
       .catch((err: unknown) => {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Failed to load blog posts');
+          setError(getUserFacingError(err, 'generic', 'Failed to load blog posts'));
         }
       })
       .finally(() => {

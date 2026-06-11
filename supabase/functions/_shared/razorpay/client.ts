@@ -1,20 +1,41 @@
-/** Razorpay REST + signature helpers — secrets stay server-side only. */
+/** Razorpay REST + signature helpers — keep in sync with src/config/pricingConfig.ts */
 
+export const PLUS_MONTHLY_PLAN = 'plus' as const;
 export const PRO_MONTHLY_PLAN = 'pro' as const;
-export const PRO_MONTHLY_AMOUNT_PAISE = 199_900;
+
+export const PLUS_MONTHLY_AMOUNT_PAISE = 299_900;
+export const PLUS_ANNUAL_AMOUNT_PAISE = 2_999_000;
+export const PRO_MONTHLY_AMOUNT_PAISE = 499_900;
+export const PRO_ANNUAL_AMOUNT_PAISE = 4_999_000;
+
 export const FOUNDING_DISCOUNT_PERCENT = 5;
-export const FOUNDING_DISCOUNT_AMOUNT_PAISE = Math.round(
-  PRO_MONTHLY_AMOUNT_PAISE * (1 - FOUNDING_DISCOUNT_PERCENT / 100),
-);
+export const PRO_MONTHLY_FOUNDING_PAISE = Math.round(PRO_MONTHLY_AMOUNT_PAISE * (1 - FOUNDING_DISCOUNT_PERCENT / 100));
+export const PRO_ANNUAL_FOUNDING_PAISE = Math.round(PRO_ANNUAL_AMOUNT_PAISE * (1 - FOUNDING_DISCOUNT_PERCENT / 100));
+
 export const PRO_MONTHLY_CURRENCY = 'INR';
-export const PRO_MONTHLY_DISPLAY = '₹1,999';
-export const FOUNDING_DISCOUNT_DISPLAY = '₹1,899';
 
-export type RazorpayPlanId = typeof PRO_MONTHLY_PLAN;
+export type RazorpayPlanId = typeof PLUS_MONTHLY_PLAN | typeof PRO_MONTHLY_PLAN;
+export type BillingInterval = 'monthly' | 'yearly';
 
-const PLAN_PRICING: Record<RazorpayPlanId, { amount: number; currency: string }> = {
-  pro: { amount: PRO_MONTHLY_AMOUNT_PAISE, currency: PRO_MONTHLY_CURRENCY },
-};
+export function isRazorpayPlan(plan: string): plan is RazorpayPlanId {
+  return plan === PLUS_MONTHLY_PLAN || plan === PRO_MONTHLY_PLAN;
+}
+
+export function pricingForPlan(
+  plan: RazorpayPlanId,
+  interval: BillingInterval = 'monthly',
+  foundingDiscount = false,
+): { amount: number; currency: string } {
+  let amount: number;
+  if (plan === PLUS_MONTHLY_PLAN) {
+    amount = interval === 'yearly' ? PLUS_ANNUAL_AMOUNT_PAISE : PLUS_MONTHLY_AMOUNT_PAISE;
+  } else if (foundingDiscount) {
+    amount = interval === 'yearly' ? PRO_ANNUAL_FOUNDING_PAISE : PRO_MONTHLY_FOUNDING_PAISE;
+  } else {
+    amount = interval === 'yearly' ? PRO_ANNUAL_AMOUNT_PAISE : PRO_MONTHLY_AMOUNT_PAISE;
+  }
+  return { amount, currency: PRO_MONTHLY_CURRENCY };
+}
 
 export function getRazorpayKeyId(): string {
   const keyId = Deno.env.get('RAZORPAY_KEY_ID');
@@ -34,12 +55,6 @@ export function getRazorpayWebhookSecret(): string {
   return secret;
 }
 
-export function pricingForPlan(plan: string): { amount: number; currency: string } {
-  const pricing = PLAN_PRICING[plan as RazorpayPlanId];
-  if (!pricing) throw new Error(`Unknown plan: ${plan}`);
-  return pricing;
-}
-
 function basicAuthHeader(): string {
   const keyId = getRazorpayKeyId();
   const secret = getRazorpayKeySecret();
@@ -56,12 +71,14 @@ export type RazorpayOrder = {
 export async function createRazorpayOrder(input: {
   userId: string;
   plan: RazorpayPlanId;
+  interval?: BillingInterval;
   amountPaise?: number;
 }): Promise<RazorpayOrder> {
-  const pricing = pricingForPlan(input.plan);
+  const interval = input.interval ?? 'monthly';
+  const pricing = pricingForPlan(input.plan, interval);
   const amount = input.amountPaise ?? pricing.amount;
   const currency = pricing.currency;
-  const receipt = `pro_${input.userId.slice(0, 8)}_${Date.now()}`;
+  const receipt = `${input.plan}_${interval}_${input.userId.slice(0, 8)}_${Date.now()}`;
 
   const response = await fetch('https://api.razorpay.com/v1/orders', {
     method: 'POST',
@@ -76,6 +93,7 @@ export async function createRazorpayOrder(input: {
       notes: {
         user_id: input.userId,
         plan: input.plan,
+        interval,
       },
     }),
   });
@@ -99,11 +117,7 @@ async function hmacSha256Hex(secret: string, message: string): Promise<string> {
     false,
     ['sign'],
   );
-  const signature = await crypto.subtle.sign(
-    'HMAC',
-    key,
-    new TextEncoder().encode(message),
-  );
+  const signature = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(message));
   return [...new Uint8Array(signature)]
     .map((byte) => byte.toString(16).padStart(2, '0'))
     .join('');
@@ -118,7 +132,6 @@ export function timingSafeEqual(a: string, b: string): boolean {
   return mismatch === 0;
 }
 
-/** Payment callback: HMAC_SHA256(order_id|payment_id, secret) */
 export async function verifyPaymentSignature(
   orderId: string,
   paymentId: string,
@@ -131,7 +144,6 @@ export async function verifyPaymentSignature(
   return timingSafeEqual(expected, signature);
 }
 
-/** Webhook: HMAC_SHA256(raw body, webhook_secret) */
 export async function verifyWebhookSignature(
   rawBody: string,
   signature: string,

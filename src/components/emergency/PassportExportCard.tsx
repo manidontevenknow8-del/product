@@ -5,6 +5,7 @@ import { downloadBlob, exportNodeToPng } from '@/utils/imageExport';
 import type { PassportData } from '@/services/passport/passportSummaryService';
 import { PassportExportSheet } from './PassportExportSheet';
 import styles from './PassportExportCard.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type PassportExportCardProps = {
   passport: PassportData;
@@ -28,7 +29,7 @@ export function PassportExportCard({ passport }: PassportExportCardProps) {
       await downloadBlob(blob, `${safeName}-emergency-passport.png`);
       track('passport_exported', { petName: passport.identity.petName });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Export failed.');
+      setError(getUserFacingError(err, 'export', 'Export failed.'));
     } finally {
       setExporting(false);
     }

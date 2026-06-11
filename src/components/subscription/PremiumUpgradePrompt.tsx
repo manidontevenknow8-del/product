@@ -1,28 +1,29 @@
 import { Button } from '@/components/ui';
-import { PRO_UPGRADE_COPY } from '@/data/proUpgradeCopy';
-import type { PremiumFeature } from '@/subscription/featureGates';
+import { getUpgradeCopyForFeature } from '@/data/planUpgradeCopy';
+import type { CommercialPlan, PlanFeature, PremiumFeature } from '@/subscription/entitlements';
 import styles from './PremiumUpgradePrompt.module.css';
 
 type PremiumUpgradePromptProps = {
-  feature: PremiumFeature;
+  feature: PremiumFeature | PlanFeature;
+  currentPlan?: CommercialPlan;
   onUpgrade?: () => void;
   compact?: boolean;
-  /** Optional override for the emotional line (e.g. pet name). */
   emotionalOverride?: string;
 };
 
 export function PremiumUpgradePrompt({
   feature,
+  currentPlan = 'free',
   onUpgrade,
   compact = false,
   emotionalOverride,
 }: PremiumUpgradePromptProps) {
-  const copy = PRO_UPGRADE_COPY[feature];
+  const copy = getUpgradeCopyForFeature(currentPlan, feature);
 
   return (
     <div className={`${styles.prompt} ${compact ? styles.compact : ''}`}>
       <div className={styles.content}>
-        <span className={styles.badge}>Pro</span>
+        <span className={styles.badge}>{copy.badge}</span>
         <h3 className={styles.title}>{copy.headline}</h3>
         <p className={styles.description}>
           {emotionalOverride ?? copy.emotional}
@@ -31,7 +32,7 @@ export function PremiumUpgradePrompt({
       </div>
       {onUpgrade && (
         <Button variant="primary" onClick={onUpgrade}>
-          Upgrade to Pro
+          {copy.cta}
         </Button>
       )}
     </div>

@@ -26,11 +26,11 @@ export const emptyOnboardingData = (): OnboardingPetData => ({
   conditionsNotes: '',
 });
 
-export type OnboardingStepId = 'intro' | 'basics' | 'health' | 'confirm';
+export type OnboardingStepId = 'portrait' | 'name' | 'species' | 'age';
 
 export const ONBOARDING_STEPS: { id: OnboardingStepId; label: string }[] = [
-  { id: 'intro', label: 'Welcome' },
-  { id: 'basics', label: 'Basics' },
-  { id: 'health', label: 'Health' },
-  { id: 'confirm', label: 'Review' },
+  { id: 'portrait', label: 'Portrait' },
+  { id: 'name', label: 'Name' },
+  { id: 'species', label: 'Companion' },
+  { id: 'age', label: 'Age' },
 ];

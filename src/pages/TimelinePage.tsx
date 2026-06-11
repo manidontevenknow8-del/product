@@ -4,7 +4,7 @@ import { AppLayout } from '@/layouts/AppLayout';
 import { Button, EmptyState, LoadingState } from '@/components/ui';
 import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
-import { FREE_TIMELINE_MONTHS } from '@/subscription/featureGates';
+import { FREE_TIMELINE_DAYS } from '@/subscription/featureGates';
 import { partitionTimelineEvents } from '@/utils/timelineAccess';
 import { PageHeroBand, GettingStartedStrip } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
@@ -52,7 +52,8 @@ const TIMELINE_GETTING_STARTED = [
 
 export function TimelinePage() {
   const { activePet, pets, setActivePet } = usePets();
-  const { isPremium, canAccess } = useSubscription();
+  const { canAccess } = useSubscription();
+  const hasFullTimeline = canAccess('premiumTimeline');
   const petName = activePet?.name ?? 'your pet';
   const [activeFilter, setActiveFilter] = useState<TimelineFilter>('all');
   const [showAddEvent, setShowAddEvent] = useState(false);
@@ -71,7 +72,7 @@ export function TimelinePage() {
     return partitionTimelineEvents(filteredEvents);
   }, [filteredEvents, canAccess]);
 
-  const displayEvents = isPremium ? filteredEvents : freeVisibleEvents;
+  const displayEvents = hasFullTimeline ? filteredEvents : freeVisibleEvents;
 
   const storySummary = useMemo(
     () =>
@@ -223,7 +224,7 @@ export function TimelinePage() {
                       <PremiumUpgradePrompt
                         feature="premiumTimeline"
                         onUpgrade={() => setUpgradeOpen(true)}
-                        emotionalOverride={`${lockedEvents.length} older moment${lockedEvents.length === 1 ? '' : 's'} from before the last ${FREE_TIMELINE_MONTHS} months are waiting in ${petName}'s full story. Unlock Pro to revisit every chapter.`}
+                        emotionalOverride={`${lockedEvents.length} older moment${lockedEvents.length === 1 ? '' : 's'} from before the last ${FREE_TIMELINE_DAYS} days are waiting in ${petName}'s full story. Upgrade to Plus to revisit every chapter.`}
                       />
                     </div>
                   )}
@@ -233,7 +234,7 @@ export function TimelinePage() {
                   <PremiumUpgradePrompt
                     feature="premiumTimeline"
                     onUpgrade={() => setUpgradeOpen(true)}
-                    emotionalOverride={`Your older memories are saved - Free shows the last ${FREE_TIMELINE_MONTHS} months. Upgrade to Pro to see ${petName}'s complete timeline.`}
+                    emotionalOverride={`Your older memories are saved — Free shows the last ${FREE_TIMELINE_DAYS} days. Upgrade to Plus to see ${petName}'s complete timeline.`}
                   />
                 </div>
               ) : (
@@ -256,7 +257,11 @@ export function TimelinePage() {
         petName={petName}
       />
 
-      <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
+      <UpgradeModal
+        isOpen={upgradeOpen}
+        onClose={() => setUpgradeOpen(false)}
+        targetPlan="plus"
+      />
     </AppLayout>
   );
 }

@@ -12,6 +12,7 @@ import { getBlogCategoryLabel } from '@/data/blogCategories';
 import type { BlogPost } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
 import styles from './BlogPostPage.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 function formatDate(iso: string | null): string {
   if (!iso) return '';
@@ -46,7 +47,7 @@ export function BlogPostPage() {
       })
       .catch((err: unknown) => {
         if (!cancelled) {
-          setError(err instanceof Error ? err.message : 'Failed to load article');
+          setError(getUserFacingError(err, 'generic', 'Failed to load article'));
         }
       })
       .finally(() => {

@@ -391,6 +391,22 @@
   }
 }
 
+.watermark {
+  padding: var(--space-6) var(--space-6) var(--space-5);
+  text-align: center;
+  border-top: 1px solid var(--color-border-light);
+  background: linear-gradient(180deg, var(--color-bg-elevated) 0%, var(--color-bg) 100%);
+}
+
+.watermarkText {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(var(--text-sm), 2.5vw, var(--text-base));
+  font-style: italic;
+  letter-spacing: 0.02em;
+  color: var(--color-text-muted);
+}
+
 .footer {
   display: flex;
   flex-wrap: wrap;

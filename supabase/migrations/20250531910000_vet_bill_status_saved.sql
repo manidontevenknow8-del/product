@@ -1,10 +1,10 @@
 -- Replace pending_review with saved (report stored; timeline sync optional)
+alter table public.vet_bill_extractions
+  drop constraint if exists vet_bill_extractions_status_check;
+
 update public.vet_bill_extractions
 set status = 'saved'
 where status = 'pending_review';
-
-alter table public.vet_bill_extractions
-  drop constraint if exists vet_bill_extractions_status_check;
 
 alter table public.vet_bill_extractions
   add constraint vet_bill_extractions_status_check

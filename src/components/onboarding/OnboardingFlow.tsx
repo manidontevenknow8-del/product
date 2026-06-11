@@ -1,71 +1,122 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import { PetCluesLogo } from '@/components/brand';
 import { useAuth } from '@/auth/AuthProvider';
 import { usePets } from '@/pets';
 import { useAnalytics } from '@/analytics';
+import { EditorialUpgradeModal } from '@/components/ui';
+import { consumePendingPetMatch } from '@/data/petMatchStorage';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import {
   emptyOnboardingData,
+  ONBOARDING_STEPS,
   type OnboardingPetData,
   type OnboardingStepId,
 } from '@/types/onboarding';
 import { ROUTES } from '@/routes/paths';
-import { PAGE_IMG } from '@/data/pageImages';
-import { OnboardingProgress } from './OnboardingProgress';
 import { OnboardingNavigation } from './OnboardingNavigation';
-import { OnboardingIntro } from './OnboardingIntro';
-import { PetBasicDetailsForm } from './PetBasicDetailsForm';
-import { PetHealthDetailsForm } from './PetHealthDetailsForm';
-import { OnboardingConfirmation } from './OnboardingConfirmation';
-import shellStyles from './OnboardingShell.module.css';
+import { OnboardingProgress } from './OnboardingProgress';
+import {
+  AgeStep,
+  NameStep,
+  PortraitStep,
+  SpeciesStep,
+} from './OnboardingEditorialSteps';
+import shell from './OnboardingEditorial.module.css';
+import limitStyles from './OnboardingPetLimit.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
-const STEP_ORDER: OnboardingStepId[] = ['intro', 'basics', 'health', 'confirm'];
+const HERO_IMAGE =
+  'https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1800&q=80';
+
+const STEP_ORDER: OnboardingStepId[] = ['portrait', 'name', 'species', 'age'];
 
 export function OnboardingFlow() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const isAddPetMode = searchParams.get('add') === 'true';
+  const petAccess = useFeatureAccess('pets');
   const { completeOnboarding, user } = useAuth();
   const { createPetFromOnboarding } = usePets();
   const { track } = useAnalytics();
-  const [step, setStep] = useState<OnboardingStepId>(isAddPetMode ? 'basics' : 'intro');
+  const [step, setStep] = useState<OnboardingStepId>('portrait');
   const [data, setData] = useState<OnboardingPetData>(emptyOnboardingData);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const onboardingStarted = useRef(false);
+  const pendingMatchApplied = useRef(false);
 
   useEffect(() => {
     if (onboardingStarted.current) return;
     onboardingStarted.current = true;
-    track('onboarding_started');
-  }, [track]);
+    track('onboarding_started', { mode: isAddPetMode ? 'add_pet' : 'first_pet' });
+  }, [track, isAddPetMode]);
+
+  useEffect(() => {
+    if (step !== 'species' || pendingMatchApplied.current) return;
+    const pendingBreed = consumePendingPetMatch();
+    if (!pendingBreed) return;
+    pendingMatchApplied.current = true;
+    setData((prev) => ({ ...prev, breed: pendingBreed }));
+  }, [step]);
 
   const stepIndex = STEP_ORDER.indexOf(step);
+
+  if (isAddPetMode && !petAccess.isAllowed) {
+    return (
+      <>
+        <div className={limitStyles.page}>
+          <Link to={ROUTES.LANDING} className={limitStyles.logo} aria-label="PetClues home">
+            PetClues
+          </Link>
+          <p className={limitStyles.eyebrow}>Pet limit reached</p>
+          <h1 className={limitStyles.title}>Your family is growing</h1>
+          <p className={limitStyles.description}>
+            Upgrade to Plus to manage more pets and unlock unlimited care history.
+          </p>
+          <button type="button" onClick={() => navigate(ROUTES.DASHBOARD)} className={limitStyles.back}>
+            Back to dashboard
+          </button>
+        </div>
+        <EditorialUpgradeModal
+          isOpen
+          onClose={() => navigate(ROUTES.DASHBOARD)}
+          eyebrow="PetClues Plus"
+          title="Your family is growing"
+          description="Upgrade to Plus to manage up to 3 pets and unlock unlimited care history."
+          requiredTier="Plus"
+        />
+      </>
+    );
+  }
 
   const updateData = (updates: Partial<OnboardingPetData>) => {
     setData((prev) => ({ ...prev, ...updates }));
   };
 
-  const goNext = async () => {
-    if (step === 'confirm') {
-      setSubmitError('');
-      setSubmitting(true);
-      try {
-        await createPetFromOnboarding(data);
-        if (!user?.needsOnboarding) {
-          track('pet_created', { species: data.species, source: 'add_another_pet' });
-        } else {
-          await completeOnboarding();
-          track('onboarding_completed', { species: data.species });
-        }
-        navigate(ROUTES.DASHBOARD);
-      } catch (err) {
-        setSubmitError(
-          err instanceof Error ? err.message : 'Unable to create your pet. Please try again.',
-        );
-      } finally {
-        setSubmitting(false);
+  const submitPet = async () => {
+    setSubmitError('');
+    setSubmitting(true);
+    try {
+      await createPetFromOnboarding(data);
+      if (!user?.needsOnboarding) {
+        track('pet_created', { species: data.species, source: 'add_another_pet' });
+      } else {
+        await completeOnboarding();
+        track('onboarding_completed', { species: data.species });
       }
+      navigate(ROUTES.DASHBOARD);
+    } catch (err) {
+      setSubmitError(
+        getUserFacingError(err, 'pet', 'Unable to create your pet. Please try again.'),
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const goNext = async () => {
+    if (step === 'age') {
+      await submitPet();
       return;
     }
     setStep(STEP_ORDER[stepIndex + 1]);
@@ -75,95 +126,78 @@ export function OnboardingFlow() {
     if (stepIndex > 0) setStep(STEP_ORDER[stepIndex - 1]);
   };
 
-  const goToStep = (target: OnboardingStepId) => setStep(target);
+  const isLastStep = step === 'age';
 
-  const basicsValid = data.name.trim() !== '' && data.species !== '';
+  const nextDisabled =
+    submitting ||
+    (step === 'name' && data.name.trim() === '') ||
+    (step === 'species' && data.species === '');
 
-  const nextLabel =
-    step === 'intro'
-      ? 'Get started'
-      : step === 'confirm'
-        ? submitting
-          ? 'Creating profile…'
-          : isAddPetMode
-            ? 'Add pet'
-            : 'Go to dashboard'
-        : 'Save & continue';
+  const nextLabel = isLastStep
+    ? submitting
+      ? 'Opening your journal…'
+      : isAddPetMode
+        ? 'Enter Dashboard'
+        : 'Open the Journal'
+    : 'Continue';
 
-  const visualTitle =
-    step === 'intro'
-      ? 'Welcome to a calmer way to care'
-      : step === 'basics'
-        ? 'Tell us about your companion'
-        : step === 'health'
-          ? 'Build their health foundation'
-          : 'Almost there';
-
-  const visualSubtitle =
-    step === 'intro'
-      ? 'Health records, reminders, and emergency details - beautifully organized in one place.'
-      : step === 'basics'
-        ? 'A name, species, and a few basics - then we tailor everything to your pet.'
-        : step === 'health'
-          ? 'Optional details now make reminders and records smarter later.'
-          : 'Review everything once, then step into your personalized dashboard.';
+  const stepNumber = ONBOARDING_STEPS.findIndex((s) => s.id === step) + 1;
 
   return (
-    <div className={shellStyles.shell}>
-      <aside className={shellStyles.visual} aria-hidden>
-        <img src={PAGE_IMG.app.onboarding} alt="" className={shellStyles.visualImg} />
-        <div className={shellStyles.visualScrim} />
-        <div className={shellStyles.visualCopy}>
-          <p className={shellStyles.visualEyebrow}>PetClues</p>
-          <h2 className={shellStyles.visualTitle}>{visualTitle}</h2>
-          <p className={shellStyles.visualSubtitle}>{visualSubtitle}</p>
+    <div className={shell.shell}>
+      <aside className={shell.hero}>
+        <img src={HERO_IMAGE} alt="" className={shell.heroImage} aria-hidden />
+        <div className={shell.heroScrim} aria-hidden />
+        <Link to={ROUTES.LANDING} className={shell.heroLogo} aria-label="PetClues home">
+          PetClues
+        </Link>
+        <div className={shell.heroCopy}>
+          <p className={shell.heroEyebrow}>Picture Pro care</p>
+          <p className={shell.heroTitle}>
+            A calmer way to remember every vet visit, vaccine, and quiet milestone.
+          </p>
         </div>
       </aside>
 
-      <div className={shellStyles.formSide}>
-        <div className={shellStyles.top}>
-          <Link to={ROUTES.LANDING} className={shellStyles.logo} aria-label="PetClues home">
-            <PetCluesLogo size="md" />
-          </Link>
-          {step !== 'intro' && <OnboardingProgress currentStep={step} />}
-        </div>
+      <div className={shell.panel}>
+        <header className={shell.header}>
+          <div className={shell.headerInner}>
+            <p className={shell.stepCounter}>
+              Step {stepNumber} of {ONBOARDING_STEPS.length}
+            </p>
+            <div className={shell.progressWrap}>
+              <OnboardingProgress currentStep={step} />
+            </div>
+          </div>
+        </header>
 
-        <div className={shellStyles.main}>
-          <div className={shellStyles.content}>
-            {submitError && step === 'confirm' && (
-              <p className={shellStyles.error} role="alert">
+        <div className={shell.scroll}>
+          <div className={shell.stepArea}>
+            {submitError && isLastStep && (
+              <p className={shell.error} role="alert">
                 {submitError}
               </p>
             )}
-            <div key={step} className={shellStyles.step}>
-              {step === 'intro' && <OnboardingIntro />}
-              {step === 'basics' && (
-                <PetBasicDetailsForm data={data} onChange={updateData} />
-              )}
-              {step === 'health' && (
-                <PetHealthDetailsForm data={data} onChange={updateData} />
-              )}
-              {step === 'confirm' && (
-                <OnboardingConfirmation
-                  data={data}
-                  onEditBasics={() => goToStep('basics')}
-                  onEditHealth={() => goToStep('health')}
-                />
-              )}
+            <div key={step} className={shell.stepFrame}>
+              {step === 'portrait' && <PortraitStep data={data} onChange={updateData} />}
+              {step === 'name' && <NameStep data={data} onChange={updateData} />}
+              {step === 'species' && <SpeciesStep data={data} onChange={updateData} />}
+              {step === 'age' && <AgeStep data={data} onChange={updateData} />}
             </div>
           </div>
         </div>
 
-        <div className={shellStyles.footer}>
-          <OnboardingNavigation
-            isIntro={step === 'intro'}
-            showBack={step !== 'intro'}
-            onBack={goBack}
-            onNext={goNext}
-            nextLabel={nextLabel}
-            nextDisabled={(step === 'basics' && !basicsValid) || submitting}
-          />
-        </div>
+        <footer className={shell.footer}>
+          <div className={shell.footerInner}>
+            <OnboardingNavigation
+              onBack={stepIndex > 0 ? goBack : undefined}
+              onNext={() => void goNext()}
+              nextLabel={nextLabel}
+              showBack={stepIndex > 0}
+              nextDisabled={nextDisabled}
+            />
+          </div>
+        </footer>
       </div>
     </div>
   );

@@ -1,12 +1,14 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import {
   createRazorpayOrder,
-  FOUNDING_DISCOUNT_AMOUNT_PAISE,
   getRazorpayKeyId,
-  PRO_MONTHLY_PLAN,
+  isRazorpayPlan,
   pricingForPlan,
+  PRO_MONTHLY_PLAN,
+  type BillingInterval,
 } from '../_shared/razorpay/client.ts';
 import { enforceRateLimit, rateLimitKey } from '../_shared/security/rateLimit.ts';
+import { sanitizeEdgeUserError } from '../_shared/security/userFacingErrors.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -30,6 +32,11 @@ function adminClient() {
   return createClient(url, key, { auth: { persistSession: false } });
 }
 
+function parseInterval(raw: unknown): BillingInterval {
+  if (raw === 'yearly' || raw === 'annual') return 'yearly';
+  return 'monthly';
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -44,9 +51,15 @@ Deno.serve(async (req) => {
       });
     }
 
-    const { plan } = await req.json() as { plan?: string };
-    if (plan !== PRO_MONTHLY_PLAN) {
-      return new Response(JSON.stringify({ error: 'plan must be "pro"' }), {
+    const { plan: rawPlan, interval: rawInterval } = await req.json() as {
+      plan?: string;
+      interval?: string;
+    };
+    const plan = rawPlan ?? PRO_MONTHLY_PLAN;
+    const interval = parseInterval(rawInterval);
+
+    if (!isRazorpayPlan(plan)) {
+      return new Response(JSON.stringify({ error: 'plan must be "plus" or "pro"' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });
@@ -75,28 +88,30 @@ Deno.serve(async (req) => {
       .eq('user_id', userData.user.id)
       .maybeSingle();
 
-    const foundingDiscount = profile?.founding_lifetime_discount === true;
-    const pricing = pricingForPlan(PRO_MONTHLY_PLAN);
-    const amount = foundingDiscount ? FOUNDING_DISCOUNT_AMOUNT_PAISE : pricing.amount;
+    const foundingDiscount = plan === PRO_MONTHLY_PLAN && profile?.founding_lifetime_discount === true;
+    const pricing = pricingForPlan(plan, interval, foundingDiscount);
 
     const order = await createRazorpayOrder({
       userId: userData.user.id,
-      plan: PRO_MONTHLY_PLAN,
-      amountPaise: amount,
+      plan,
+      interval,
+      amountPaise: pricing.amount,
     });
 
     return new Response(
       JSON.stringify({
         orderId: order.id,
-        amount,
+        amount: pricing.amount,
         foundingDiscount,
         currency: pricing.currency,
         razorpayKey: getRazorpayKeyId(),
+        plan,
+        interval,
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
     );
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
+    const message = sanitizeEdgeUserError(err instanceof Error ? err.message : 'Unknown error', 'generic');
     return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

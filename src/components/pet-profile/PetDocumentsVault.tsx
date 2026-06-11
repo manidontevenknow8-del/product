@@ -1,14 +1,19 @@
 import { useRef, useState, type ChangeEvent } from 'react';
-import { useDocuments } from '@/documents';
+import { DOCUMENT_VAULT_LIMIT_MESSAGE, useDocuments } from '@/documents';
+import { EditorialUpgradeModal } from '@/components/ui';
 import { EmptyDocumentsState } from '@/components/empty-states';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import {
   formatDocumentVaultDate,
   formatFileTypeLabel,
 } from '@/services/documents/documentService';
 import styles from './PetDocumentsVault.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 export function PetDocumentsVault() {
   const fileRef = useRef<HTMLInputElement>(null);
+  const documentAccess = useFeatureAccess('documents');
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
   const {
     documents,
     isLoading,
@@ -23,6 +28,19 @@ export function PetDocumentsVault() {
   const isUploading = uploadState === 'uploading';
   const displayError = localError ?? (uploadState === 'error' ? uploadError : null);
 
+  const showDocumentLimitReached = () => {
+    setLocalError(DOCUMENT_VAULT_LIMIT_MESSAGE);
+    setUpgradeOpen(true);
+  };
+
+  const handleChooseFile = () => {
+    if (!documentAccess.isAllowed) {
+      showDocumentLimitReached();
+      return;
+    }
+    fileRef.current?.click();
+  };
+
   const handleFileChange = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     e.target.value = '';
@@ -31,10 +49,19 @@ export function PetDocumentsVault() {
     setLocalError(null);
     resetUploadState();
 
+    if (!documentAccess.isAllowed) {
+      showDocumentLimitReached();
+      return;
+    }
+
     try {
       await uploadDocument(file);
     } catch (err) {
-      setLocalError(err instanceof Error ? err.message : 'Upload failed.');
+      const message = getUserFacingError(err, 'upload', 'Upload failed.');
+      setLocalError(message);
+      if (message === DOCUMENT_VAULT_LIMIT_MESSAGE) {
+        setUpgradeOpen(true);
+      }
     }
   };
 
@@ -104,7 +131,7 @@ export function PetDocumentsVault() {
         <button
           type="button"
           className={styles.uploadBtn}
-          onClick={() => fileRef.current?.click()}
+          onClick={handleChooseFile}
           disabled={isUploading}
         >
           {displayError ? 'Try again' : 'Choose file'}
@@ -119,6 +146,14 @@ export function PetDocumentsVault() {
           aria-label="Upload vault document"
         />
       </div>
+
+      <EditorialUpgradeModal
+        isOpen={upgradeOpen}
+        onClose={() => setUpgradeOpen(false)}
+        title="Document Vault Limit Reached"
+        description="Upgrade to Plus to unlock unlimited secure medical document storage."
+        requiredTier="Plus"
+      />
     </section>
   );
 }

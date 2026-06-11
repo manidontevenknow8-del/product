@@ -1,0 +1,115 @@
+/**
+ * Picture Pro app shell — reliable layout centering (not dependent on Tailwind scan).
+ * max-width 80rem = Tailwind max-w-7xl
+ */
+
+.app-root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  overflow-x: clip;
+  background: #fafafa;
+  color: #1c1917;
+}
+
+.app-shell-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  overflow: visible;
+  border-bottom: 1px solid rgba(231, 229, 228, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.app-shell-nav-inner {
+  display: grid;
+  width: 100%;
+  max-width: 80rem;
+  height: 4.25rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.app-shell-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+}
+
+.app-shell-content {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  padding-block: 1.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.app-shell-content--flush {
+  padding: 0;
+}
+
+.app-shell-footer {
+  flex-shrink: 0;
+  border-top: 1px solid rgba(231, 229, 228, 0.5);
+  background: rgba(250, 250, 250, 0.8);
+}
+
+.app-shell-footer-inner {
+  display: flex;
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem 2rem;
+  padding: 1.25rem 1.5rem;
+  box-sizing: border-box;
+}
+
+.app-shell-footer-link {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #a8a29e;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.app-shell-footer-link:hover {
+  color: #44403c;
+}
+
+.app-shell-footer-link--emphasis {
+  color: #78716c;
+}
+
+.app-shell-footer-link--emphasis:hover {
+  color: #1c1917;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

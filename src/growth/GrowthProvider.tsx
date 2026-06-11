@@ -26,6 +26,7 @@ import type {
   ShareChannel,
   WaitlistMember,
 } from '@/types/growth';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 import {
   getEarnedRewards,
   getMilestoneProgress,
@@ -118,7 +119,7 @@ export function GrowthProvider({ children, growthService: growthServiceOverride 
         previousConversions.current = referralStats.conversions;
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unable to load referrals');
+      setError(getUserFacingError(err, 'generic', 'Unable to load referrals'));
       setMember(null);
       setCommunityStats(null);
       setLeaderboard([]);
@@ -152,7 +153,7 @@ export function GrowthProvider({ children, growthService: growthServiceOverride 
         await refresh();
         return joined;
       } catch (err) {
-        const message = err instanceof Error ? err.message : 'Unable to join';
+        const message = getUserFacingError(err, 'generic', 'Unable to join');
         setError(message);
         throw err;
       }

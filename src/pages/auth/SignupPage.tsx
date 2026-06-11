@@ -21,9 +21,11 @@ export function SignupPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  const fromPetMatch = searchParams.get('from') === 'pet-match';
+
   useEffect(() => {
-    track('signup_started');
-  }, [track]);
+    track('signup_started', fromPetMatch ? { source: 'pet_match' } : undefined);
+  }, [track, fromPetMatch]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -43,7 +45,10 @@ export function SignupPage() {
       return;
     }
 
-    navigate(result.needsOnboarding === false ? ROUTES.DASHBOARD : ROUTES.ONBOARDING);
+    const onboardingPath = fromPetMatch
+      ? `${ROUTES.ONBOARDING}?from=pet-match`
+      : ROUTES.ONBOARDING;
+    navigate(result.needsOnboarding === false ? ROUTES.DASHBOARD : onboardingPath);
   };
 
   return (
@@ -58,7 +63,11 @@ export function SignupPage() {
     >
       <div className={styles.header}>
         <h1 className={styles.title}>Create your account</h1>
-        <p className={styles.subtitle}>Start caring for your companion with clarity</p>
+        <p className={styles.subtitle}>
+          {fromPetMatch
+            ? 'Your breed matches are waiting — create a free journal for your future companion.'
+            : 'Start caring for your companion with clarity'}
+        </p>
       </div>
 
       <form className={styles.form} onSubmit={handleSubmit}>

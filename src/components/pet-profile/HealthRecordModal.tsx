@@ -14,6 +14,7 @@ import {
 } from '@/services/healthRecords/healthRecordService';
 import { formatDocumentVaultDate } from '@/services/documents/documentService';
 import styles from './HealthRecordModal.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type HealthRecordModalProps = {
   record: HealthRecord | null;
@@ -97,7 +98,7 @@ export function HealthRecordModal({
       await onSubmit(form, record?.id);
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to save record.');
+      setError(getUserFacingError(err, 'healthRecord', 'Failed to save record.'));
     } finally {
       setLoading(false);
     }
@@ -111,7 +112,7 @@ export function HealthRecordModal({
       await onDelete(record.id);
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to delete record.');
+      setError(getUserFacingError(err, 'healthRecord', 'Failed to delete record.'));
       setLoading(false);
     }
   };

@@ -11,7 +11,6 @@ import { eventTracker } from '@/analytics/EventTracker';
 import { capturePostHogEvent } from '@/analytics/posthog';
 import { useAuth } from '@/auth/AuthProvider';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
-import { canAddPet, FREE_PET_LIMIT } from '@/subscription/featureGates';
 import {
   getPetService,
   onboardingToCreatePetInput,
@@ -21,6 +20,7 @@ import {
   type UpdatePetInput,
 } from '@/services/pets/petService';
 import type { OnboardingPetData } from '@/types/onboarding';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 const ACTIVE_PET_KEY = 'petclues_active_pet';
 
@@ -55,7 +55,7 @@ type PetProviderProps = {
 
 export function PetProvider({ children, petService: service = getPetService() }: PetProviderProps) {
   const { user, isAuthenticated, isLoading: authLoading } = useAuth();
-  const { subscription } = useSubscription();
+  const { canAddPet: canAddPetForUser, getLimitMessage } = useSubscription();
   const [pets, setPets] = useState<PetRecord[]>([]);
   const [activePetId, setActivePetId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -83,7 +83,7 @@ export function PetProvider({ children, petService: service = getPetService() }:
       setActivePetId(nextActive);
       if (nextActive) storeActivePetId(user.id, nextActive);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to load pets');
+      setError(getUserFacingError(err, 'pet', 'Failed to load pets'));
       setPets([]);
       setActivePetId(null);
     } finally {
@@ -113,18 +113,8 @@ export function PetProvider({ children, petService: service = getPetService() }:
   const createPet = useCallback(
     async (input: CreatePetInput) => {
       if (!user?.id) throw new Error('Not authenticated');
-      if (
-        !canAddPet(
-          {
-            subscriptionStatus: subscription?.subscriptionStatus,
-            subscriptionTier: subscription?.plan === 'premium' ? 'premium' : 'free',
-          },
-          pets.length,
-        )
-      ) {
-        throw new Error(
-          `Free plan includes ${FREE_PET_LIMIT} pet. Upgrade to Premium for unlimited pets.`,
-        );
+      if (!canAddPetForUser(pets.length)) {
+        throw new Error(getLimitMessage('pets'));
       }
       const pet = await service.createPet(user.id, input);
       eventTracker.track('pet_created', { species: pet.species });
@@ -133,7 +123,7 @@ export function PetProvider({ children, petService: service = getPetService() }:
       setActivePet(pet.id);
       return pet;
     },
-    [service, user?.id, subscription?.plan, pets.length, refreshPets, setActivePet],
+    [service, user?.id, canAddPetForUser, getLimitMessage, pets.length, refreshPets, setActivePet],
   );
 
   const createPetFromOnboarding = useCallback(

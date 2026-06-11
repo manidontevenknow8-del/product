@@ -19,14 +19,27 @@ import {
   type ISubscriptionService,
 } from '@/services/subscription/subscriptionService';
 import {
-  canAccessFeature,
-  hasPremiumAccess,
-} from '@/subscription/featureGates';
-import type { PremiumFeature } from '@/subscription/featureGates';
+  canAccessLegacyFeature,
+  canAccessPlanFeature,
+  canAddPet,
+  canCreateHealthRecord,
+  canCreateReminder,
+  canUseDecoder as canUseDecoderForPlan,
+  getLimitReachedMessage,
+  getNextUpgradePlan,
+  getPlanLabel,
+  getUpgradeCta,
+  getUpgradeHeadline,
+  resolveEffectivePlan,
+  resolveEntitlements,
+  type CommercialPlan,
+  type PlanFeature,
+  type PremiumFeature,
+} from '@/subscription/entitlements';
 import type {
   BillingInterval,
+  CheckoutPlan,
   Invoice,
-  PlanTier,
   Subscription,
   UsageLimits,
 } from '@/types/subscription';
@@ -36,9 +49,21 @@ type SubscriptionContextValue = {
   usage: UsageLimits | null;
   invoices: Invoice[];
   isLoading: boolean;
+  /** Normalized commercial plan */
+  currentPlan: CommercialPlan;
+  planLabel: string;
+  nextUpgradePlan: CommercialPlan | null;
+  upgradeCta: string;
+  upgradeHeadline: string;
+  /** @deprecated Use currentPlan !== 'free' */
   isPremium: boolean;
-  canAccess: (feature: PremiumFeature) => boolean;
-  startCheckout: (interval?: BillingInterval) => Promise<void>;
+  canAccess: (feature: PremiumFeature | PlanFeature) => boolean;
+  canAddPet: (currentPetCount: number) => boolean;
+  canCreateReminder: (activeCount: number) => boolean;
+  canCreateHealthRecord: (recordCount: number) => boolean;
+  canUseDecoder: (monthlyDecodeCount: number) => boolean;
+  getLimitMessage: (limitType: 'pets' | 'reminders' | 'healthRecords' | 'decoder' | 'documents') => string;
+  startCheckout: (plan: CheckoutPlan, interval?: BillingInterval) => Promise<void>;
   openBillingPortal: () => Promise<void>;
   refresh: () => Promise<void>;
 };
@@ -59,16 +84,31 @@ export function SubscriptionProvider({
   const [usage, setUsage] = useState<UsageLimits | null>(null);
   const [invoices, setInvoices] = useState<Invoice[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const previousPlan = useRef<PlanTier | null>(null);
-  const premiumTracked = useRef(false);
+  const previousPlan = useRef<CommercialPlan | null>(null);
+  const paidTracked = useRef(false);
 
   const accessInput = useMemo(
     () => ({
+      subscriptionPlan: subscription?.subscriptionPlan ?? user?.subscriptionPlan,
       subscriptionStatus: user?.subscriptionStatus ?? subscription?.subscriptionStatus,
-      subscriptionTier: user?.subscriptionTier ?? 'free',
+      subscriptionTier: user?.subscriptionTier ?? subscription?.subscriptionTier ?? 'free',
     }),
-    [user?.subscriptionStatus, user?.subscriptionTier, subscription?.subscriptionStatus],
+    [
+      user?.subscriptionStatus,
+      user?.subscriptionTier,
+      user?.subscriptionPlan,
+      subscription?.subscriptionStatus,
+      subscription?.subscriptionTier,
+      subscription?.subscriptionPlan,
+    ],
   );
+
+  const currentPlan = useMemo(
+    () => resolveEffectivePlan(accessInput),
+    [accessInput],
+  );
+
+  const entitlements = useMemo(() => resolveEntitlements(accessInput), [accessInput]);
 
   const refresh = useCallback(async () => {
     if (!user?.id) {
@@ -82,22 +122,19 @@ export function SubscriptionProvider({
       await refreshSession();
       const sub = await subscriptionService.getSubscription(user.id);
       const [usageData, invoiceData] = await Promise.all([
-        subscriptionService.getUsage(user.id, sub.plan),
+        subscriptionService.getUsage(user.id, sub.commercialPlan),
         subscriptionService.getInvoices(user.id),
       ]);
       setSubscription(sub);
       setUsage(usageData);
       setInvoices(invoiceData);
 
-      const wasPremium = previousPlan.current === 'premium';
-      const isNowPremium = hasPremiumAccess({
-        subscriptionStatus: sub.subscriptionStatus,
-        subscriptionTier: sub.plan === 'premium' ? 'premium' : 'free',
-      });
-      previousPlan.current = isNowPremium ? 'premium' : 'free';
+      const wasPaid = previousPlan.current !== null && previousPlan.current !== 'free';
+      const isNowPaid = sub.commercialPlan !== 'free';
+      previousPlan.current = sub.commercialPlan;
 
-      if (isNowPremium && !wasPremium && !premiumTracked.current) {
-        premiumTracked.current = true;
+      if (isNowPaid && !wasPaid && !paidTracked.current) {
+        paidTracked.current = true;
         eventTracker.track('premium_subscription_activated', {
           interval: sub.interval ?? 'monthly',
           plan: sub.subscriptionPlan,
@@ -120,12 +157,12 @@ export function SubscriptionProvider({
   }, [isAuthenticated, user?.id, refresh]);
 
   const startCheckout = useCallback(
-    async (_interval: BillingInterval = 'monthly') => {
+    async (plan: CheckoutPlan, interval: BillingInterval = 'monthly') => {
       if (!user?.id) return;
       if (!isPaymentsLive()) {
         throw new Error(PAYMENTS_COMING_SOON_MESSAGE);
       }
-      await subscriptionService.startCheckout(user.id, 'premium', 'monthly', {
+      await subscriptionService.startCheckout(user.id, plan, interval, {
         email: user.email,
         name: user.name,
       });
@@ -140,11 +177,27 @@ export function SubscriptionProvider({
     await refresh();
   }, [user?.id, subscriptionService, refresh]);
 
-  const isPremium = hasPremiumAccess(accessInput);
+  const PLAN_FEATURES = new Set<string>([
+    'addPet', 'basicDashboard', 'basicReminders', 'basicTimeline',
+    'limitedHealthRecords', 'reportPreview', 'petPassport', 'petCareScore',
+    'aiRecordSearch', 'advancedReminders', 'vetBillDecoder', 'familySharing',
+    'monthlyReportExport', 'premiumTimeline', 'aiHealthInsights',
+    'emergencyMode', 'vetCollaborationPortal', 'smartProactiveReminders',
+    'advancedAiInsights', 'advancedPetCareScore', 'prioritySupport',
+    'apiAccess', 'customDomain', 'enterprisePetVolume', 'customLimitsSupport',
+    'basicAi', 'careAutomation', 'richMonthlyReports', 'richTimeline',
+    'advancedAutomation', 'comingSoonFeatures', 'enterpriseExclusive',
+    'basicPassport', 'limitedAiInsight',
+  ]);
 
-  const canAccess = useCallback(
-    (feature: PremiumFeature) => canAccessFeature(accessInput, feature),
-    [accessInput],
+  const canAccessFn = useCallback(
+    (feature: PremiumFeature | PlanFeature) => {
+      if (PLAN_FEATURES.has(feature)) {
+        return canAccessPlanFeature(currentPlan, feature as PlanFeature);
+      }
+      return canAccessLegacyFeature(currentPlan, feature as PremiumFeature);
+    },
+    [currentPlan],
   );
 
   const value = useMemo<SubscriptionContextValue>(
@@ -153,8 +206,22 @@ export function SubscriptionProvider({
       usage,
       invoices,
       isLoading,
-      isPremium,
-      canAccess,
+      currentPlan,
+      planLabel: getPlanLabel(currentPlan),
+      nextUpgradePlan: getNextUpgradePlan(currentPlan),
+      upgradeCta: getUpgradeCta(currentPlan),
+      upgradeHeadline: getUpgradeHeadline(currentPlan),
+      isPremium: currentPlan !== 'free',
+      canAccess: canAccessFn,
+      canAddPet: (count) => canAddPet(currentPlan, count),
+      canCreateReminder: (count) => canCreateReminder(currentPlan, count),
+      canCreateHealthRecord: (count) => canCreateHealthRecord(currentPlan, count),
+      canUseDecoder: (monthlyCount) =>
+        canUseDecoderForPlan(currentPlan, {
+          monthly: monthlyCount,
+          lifetime: usage?.scansLifetime.used ?? monthlyCount,
+        }),
+      getLimitMessage: (limitType) => getLimitReachedMessage(currentPlan, limitType),
       startCheckout,
       openBillingPortal,
       refresh,
@@ -164,8 +231,9 @@ export function SubscriptionProvider({
       usage,
       invoices,
       isLoading,
-      isPremium,
-      canAccess,
+      currentPlan,
+      entitlements,
+      canAccessFn,
       startCheckout,
       openBillingPortal,
       refresh,

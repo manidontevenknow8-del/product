@@ -1,6 +1,17 @@
 .progress {
   display: flex;
   gap: var(--space-2);
+  align-items: center;
+  width: 100%;
+}
+
+.editorial {
+  gap: var(--space-2);
+}
+
+.editorial .segment {
+  height: 1px;
+  border-radius: 0;
 }
 
 .segment {

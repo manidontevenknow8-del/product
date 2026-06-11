@@ -5,6 +5,7 @@ import { useDailyCheckIn } from '@/dailyCheckIn';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { ROUTES } from '@/routes/paths';
 import styles from './DailyCheckInCard.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 const FEEDING_PRESETS = [
   'Dry kibble',
@@ -57,7 +58,7 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
       });
       setEditing(false);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not save check-in.');
+      setError(getUserFacingError(err, 'generic', 'Could not save check-in.'));
     } finally {
       setSaving(false);
     }

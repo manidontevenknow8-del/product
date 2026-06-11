@@ -5,6 +5,7 @@ import { usePets } from '@/pets';
 import { defaultCreateReminderInput } from '@/services/reminders/reminderService';
 import type { CreateReminderInput } from '@/types/reminder';
 import styles from './ReminderModal.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type CreateReminderModalProps = {
   isOpen: boolean;
@@ -68,7 +69,7 @@ export function CreateReminderModal({
       await onSubmit(form);
       onClose();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to create reminder.');
+      setError(getUserFacingError(err, 'reminder', 'Failed to create reminder.'));
     } finally {
       setLoading(false);
     }

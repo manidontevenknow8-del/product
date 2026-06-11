@@ -1,18 +1,17 @@
-import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { AppLayout } from '@/layouts/AppLayout';
-import { LoadingState } from '@/components/ui';
-import { GettingStartedStrip } from '@/components/visual';
-import { PAGE_IMG } from '@/data/pageImages';
+import { EditorialUpgradeModal, LoadingState, PremiumGate } from '@/components/ui';
+import { DOCUMENT_VAULT_LIMIT_MESSAGE } from '@/documents';
 import {
-  ScanHero,
-  UploadZone,
+  DecoderUsageBar,
+  RecentScansHistory,
+  ScanMagicDropzone,
   UploadSuccessCard,
-  SupportedDocuments,
-  SavedReportsGrid,
   VetBillDecoderReview,
-  type UploadZoneHandle,
+  recordToHistoryItem,
+  type ScanMagicDropzoneHandle,
 } from '@/components/scan';
-import { PremiumGate, PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
+import { UpgradeModal } from '@/components/subscription';
 import { useAuth } from '@/auth/AuthProvider';
 import { useDocuments } from '@/documents';
 import { useHealthRecords } from '@/healthRecords';
@@ -20,11 +19,13 @@ import { useReminders } from '@/reminders';
 import { usePets } from '@/pets';
 import { PetSwitcherHero } from '@/components/pets';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { useAnalytics } from '@/analytics';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
 import { formatFileTypeLabel } from '@/services/documents/documentService';
 import { getHealthRecordService } from '@/services/healthRecords/healthRecordService';
 import { getReminderService } from '@/services/reminders/reminderService';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 import {
   applyApprovedExtraction,
   getVetBillDecoderService,
@@ -34,31 +35,6 @@ import {
   type VetBillExtractionRecord,
   type VetBillExtractionResult,
 } from '@/services/vetBillDecoder';
-import styles from './ScanPage.module.css';
-
-const SCAN_GETTING_STARTED = [
-  {
-    step: '1',
-    title: 'Upload a document',
-    body: 'Drop a vet bill, prescription, or health report - PDF, JPG, or PNG all work.',
-    image: PAGE_IMG.scan.docs,
-    alt: 'Illustration of uploading pet documents',
-  },
-  {
-    step: '2',
-    title: 'Review the report',
-    body: 'Our decoder extracts visits, medications, and follow-ups for you to confirm.',
-    image: PAGE_IMG.scan.report,
-    alt: 'Illustration of a decoded vet bill report',
-  },
-  {
-    step: '3',
-    title: 'Add to timeline',
-    body: 'Approved items flow into health records, reminders, and your pet\'s life story.',
-    image: PAGE_IMG.app.scan,
-    alt: 'Illustration of the scan workflow',
-  },
-] as const;
 
 type DecodeState = 'idle' | 'decoding' | 'report' | 'error';
 
@@ -69,8 +45,11 @@ function resultForRecord(record: VetBillExtractionRecord): VetBillExtractionResu
 export function ScanPage() {
   const { track } = useAnalytics();
   const { user } = useAuth();
-  const { canAccess } = useSubscription();
-  const uploadRef = useRef<UploadZoneHandle>(null);
+  const { currentPlan } = useSubscription();
+  const decoderAccess = useFeatureAccess('vetBillDecoder');
+  const documentAccess = useFeatureAccess('documents');
+  const timelineAccess = useFeatureAccess('timelineHistory');
+  const uploadRef = useRef<ScanMagicDropzoneHandle>(null);
   const decoderService = useMemo(() => getVetBillDecoderService(), []);
   const { activePet, pets, setActivePet, isLoading: petsLoading, hasPets } = usePets();
   const { refreshRecords } = useHealthRecords();
@@ -95,21 +74,22 @@ export function ScanPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
-  const uploadBlockRef = useRef<HTMLDivElement>(null);
-  const docsSectionRef = useRef<HTMLDivElement>(null);
-  const [reportsPanelHeight, setReportsPanelHeight] = useState<number | null>(null);
+  const [documentUpgradeOpen, setDocumentUpgradeOpen] = useState(false);
 
-  const hasDecoder = canAccess('vetBillDecoder');
   const decoderMockMode = isVetBillDecoderMockMode();
+  const isEnterprise = currentPlan === 'enterprise';
+  const isMonthlyDecoderQuota = currentPlan === 'plus' || currentPlan === 'pro';
+  const quotaExhausted = !decoderAccess.isAllowed;
+  const documentVaultFull = !documentAccess.isAllowed;
 
   const loadHistory = useCallback(async () => {
-    if (!user?.id || !activePet?.id || !hasDecoder) {
+    if (!user?.id || !activePet?.id) {
       setHistory([]);
       return;
     }
     const records = await decoderService.listExtractions(user.id, activePet.id);
     setHistory(records);
-  }, [decoderService, user?.id, activePet?.id, hasDecoder]);
+  }, [decoderService, user?.id, activePet?.id]);
 
   useEffect(() => {
     void loadHistory();
@@ -123,48 +103,15 @@ export function ScanPage() {
     setDecodeError(null);
   }, [activePet?.id, resetUploadState]);
 
-  useLayoutEffect(() => {
-    const upload = uploadBlockRef.current;
-    const docs = docsSectionRef.current;
-    const mq = window.matchMedia('(min-width: 1280px)');
-
-    const sync = () => {
-      if (!mq.matches || !upload || !docs) {
-        setReportsPanelHeight(null);
-        return;
-      }
-      const leftCol = upload.parentElement;
-      const gap = leftCol
-        ? Number.parseFloat(getComputedStyle(leftCol).rowGap || getComputedStyle(leftCol).gap) ||
-          40
-        : 40;
-      // Top aligns with upload (below hero); bottom aligns with end of document-types section
-      setReportsPanelHeight(
-        Math.round(upload.offsetHeight + gap + docs.offsetHeight),
-      );
-    };
-
-    const ro = new ResizeObserver(sync);
-    if (upload) ro.observe(upload);
-    if (docs) ro.observe(docs);
-    mq.addEventListener('change', sync);
-    sync();
-
-    return () => {
-      ro.disconnect();
-      mq.removeEventListener('change', sync);
-    };
-  }, [
-    petsLoading,
-    docsLoading,
-    hasPets,
-    activePet?.id,
-    history.length,
-    decodeState,
-    uploadState,
-    lastUploaded?.id,
-    activeExtraction?.id,
-  ]);
+  const historyItems = useMemo(
+    () =>
+      history.map((record) => {
+        const fileName =
+          documents.find((d) => d.id === record.documentId)?.fileName ?? 'Document';
+        return recordToHistoryItem(record, fileName);
+      }),
+    [history, documents],
+  );
 
   const openReport = useCallback((record: VetBillExtractionRecord, scroll = true) => {
     const normalized: VetBillExtractionRecord = {
@@ -185,7 +132,7 @@ export function ScanPage() {
   const runDecode = useCallback(
     async (documentId: string, fileName: string) => {
       if (!user?.id || !activePet?.id) return;
-      if (!hasDecoder) {
+      if (!decoderAccess.isAllowed) {
         setUpgradeOpen(true);
         return;
       }
@@ -215,27 +162,24 @@ export function ScanPage() {
         await loadHistory();
       } catch (err) {
         setDecodeState('error');
-        const message = err instanceof Error ? err.message : 'Decoder failed.';
+        const message = getUserFacingError(err, 'decode', 'Decoder failed.');
         if (message.includes('Premium') || message.includes('premium_required')) {
           setUpgradeOpen(true);
         }
         setDecodeError(message);
       }
     },
-    [user?.id, activePet?.id, hasDecoder, decoderService, openReport, track, loadHistory],
+    [user?.id, activePet?.id, decoderAccess.isAllowed, decoderService, openReport, track, loadHistory],
   );
-
-  const handleUploadClick = () => {
-    resetUploadState();
-    setDecodeState('idle');
-    setActiveExtraction(null);
-    setReviewResult(null);
-    uploadRef.current?.openFilePicker();
-  };
 
   const handleFileSelect = useCallback(
     async (file: File) => {
       if (!activePet) return;
+      if (documentVaultFull) {
+        setDocumentUpgradeOpen(true);
+        return;
+      }
+      if (quotaExhausted) return;
       resetUploadState();
       setActiveExtraction(null);
       setReviewResult(null);
@@ -245,14 +189,12 @@ export function ScanPage() {
         track('document_uploaded', {
           documentType: formatFileTypeLabel(document.fileType),
         });
-        if (hasDecoder) {
-          await runDecode(document.id, document.fileName);
-        }
+        await runDecode(document.id, document.fileName);
       } catch {
         // uploadDocument sets error state
       }
     },
-    [activePet, uploadDocument, resetUploadState, track, runDecode, hasDecoder],
+    [activePet, documentVaultFull, quotaExhausted, uploadDocument, resetUploadState, track, runDecode],
   );
 
   const persistReportSnapshot = async () => {
@@ -302,7 +244,7 @@ export function ScanPage() {
       };
       openReport(updated);
     } catch (err) {
-      setDecodeError(err instanceof Error ? err.message : 'Failed to add items to timeline.');
+      setDecodeError(getUserFacingError(err, 'decode', 'Failed to add items to timeline.'));
     } finally {
       setIsSaving(false);
     }
@@ -317,10 +259,6 @@ export function ScanPage() {
     setActiveExtraction(null);
     setReviewResult(null);
     setDecodeState('idle');
-  };
-
-  const handleOpenHistoryRecord = (record: VetBillExtractionRecord) => {
-    openReport(record);
   };
 
   const handleDeleteReport = async () => {
@@ -341,7 +279,7 @@ export function ScanPage() {
       setDecodeState('idle');
       await loadHistory();
     } catch (err) {
-      setDecodeError(err instanceof Error ? err.message : 'Failed to delete report.');
+      setDecodeError(getUserFacingError(err, 'decode', 'Failed to delete report.'));
     } finally {
       setIsDeleting(false);
     }
@@ -350,11 +288,8 @@ export function ScanPage() {
   if (petsLoading || docsLoading) {
     return (
       <AppLayout flushContent>
-        <div className={styles.page}>
-          <ScanHero onUploadClick={() => {}} disabled />
-          <div className={styles.body}>
-            <LoadingState message="Loading scan" />
-          </div>
+        <div className="mx-auto w-full max-w-3xl px-6 py-16">
+          <LoadingState message="Loading scan" />
         </div>
       </AppLayout>
     );
@@ -363,11 +298,13 @@ export function ScanPage() {
   if (!hasPets || !activePet) {
     return (
       <AppLayout flushContent>
-        <div className={styles.page}>
-          <ScanHero onUploadClick={() => {}} petName="your pet" disabled />
-          <div className={styles.body}>
-            <p className={styles.emptyHint}>Add a pet first to scan documents.</p>
-          </div>
+        <div className="mx-auto w-full max-w-3xl px-6 py-16">
+          <header className="mb-10 text-center">
+            <h1 className="font-serif text-4xl text-stone-900">PetClues Scan</h1>
+            <p className="mt-3 font-sans text-sm text-stone-500">
+              Add a pet first to scan documents.
+            </p>
+          </header>
         </div>
       </AppLayout>
     );
@@ -379,49 +316,54 @@ export function ScanPage() {
   const activeFileName =
     documents.find((d) => d.id === activeExtraction?.documentId)?.fileName ?? 'Document';
   const showReport = decodeState === 'report' && activeExtraction && reviewResult;
-  const showGettingStarted = history.length === 0 && !showReport;
+  const upgradeTier = decoderAccess.upgradeTierTarget;
+
+  const dropzone = (
+    <ScanMagicDropzone
+      ref={uploadRef}
+      status={zoneStatus}
+      progress={uploadProgress}
+      disabled={quotaExhausted || documentVaultFull}
+      errorMessage={documentVaultFull ? DOCUMENT_VAULT_LIMIT_MESSAGE : uploadError}
+      onFileSelect={(file) => void handleFileSelect(file)}
+    />
+  );
 
   return (
     <AppLayout flushContent>
-      <div className={styles.page}>
-        <ScanHero
-          onUploadClick={handleUploadClick}
-          petName={activePet.name}
-          topActions={
-            <PetSwitcherHero
-              pets={pets}
-              activeId={activePet.id}
-              onSelect={setActivePet}
-            />
-          }
-        />
+      <div className="mx-auto w-full max-w-3xl px-6 pb-20 pt-8 sm:px-8 sm:pt-12">
+        <div className="relative mb-10">
+          <PetSwitcherHero
+            pets={pets}
+            activeId={activePet.id}
+            onSelect={setActivePet}
+          />
+        </div>
 
-        {showGettingStarted && (
-          <div className={styles.gettingStarted}>
-            <GettingStartedStrip
-              title="How scanning works"
-              description="Upload once - PetClues organizes documents and builds your pet's care history."
-              steps={SCAN_GETTING_STARTED}
-            />
-          </div>
+        <header className="mb-10 text-center sm:mb-12">
+          <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-stone-400">
+            {activePet.name}
+          </p>
+          <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900 sm:text-5xl">
+            PetClues Scan
+          </h1>
+          <p className="mx-auto mt-4 max-w-lg font-sans text-sm leading-relaxed text-stone-500 sm:text-base">
+            Upload any vet bill, prescription, or health record. We extract the clarity.
+          </p>
+        </header>
+
+        {decoderMockMode && (
+          <p
+            className="mb-6 border border-amber-200/60 bg-amber-50/50 px-4 py-3 font-sans text-xs text-amber-900"
+            role="status"
+          >
+            Local preview — Vet Bill Decoder uses sample extraction data until Supabase is
+            configured.
+          </p>
         )}
 
-        <div className={styles.body}>
-          {decoderMockMode && (
-            <p className={styles.mockBanner} role="status">
-              Local preview - Vet Bill Decoder uses sample extraction data until Supabase is configured.
-            </p>
-          )}
-
-          {!hasDecoder && (
-            <PremiumUpgradePrompt
-              feature="vetBillDecoder"
-              compact
-              onUpgrade={() => setUpgradeOpen(true)}
-            />
-          )}
-
-          {showReport && (
+        {showReport && (
+          <div className="mb-12">
             <VetBillDecoderReview
               record={activeExtraction}
               result={reviewResult}
@@ -433,72 +375,85 @@ export function ScanPage() {
               onClose={() => void handleCloseReport()}
               onDelete={() => void handleDeleteReport()}
             />
-          )}
-
-          <div className={styles.scanLayout}>
-            <div className={styles.leftCol}>
-              <div ref={uploadBlockRef} className={styles.uploadBlock}>
-                <UploadZone
-                  ref={uploadRef}
-                  status={zoneStatus}
-                  progress={uploadProgress}
-                  errorMessage={uploadError}
-                  onFileSelect={(file) => void handleFileSelect(file)}
-                />
-                {decodeState === 'decoding' && (
-                  <LoadingState message="Creating your report (one-time AI scan)…" />
-                )}
-                {decodeError && !showReport && (
-                  <p className={styles.error} role="alert">
-                    {decodeError}
-                  </p>
-                )}
-                {displaySuccess && lastUploaded && (
-                  <UploadSuccessCard
-                    document={lastUploaded}
-                    decoding={decodeState === 'decoding'}
-                  />
-                )}
-              </div>
-              <div ref={docsSectionRef} className={styles.docsSection}>
-                <SupportedDocuments />
-              </div>
-            </div>
-
-            <div
-              className={styles.rightPanel}
-              role="region"
-              aria-label="Saved reports"
-              style={
-                reportsPanelHeight != null
-                  ? {
-                      height: reportsPanelHeight,
-                      maxHeight: reportsPanelHeight,
-                    }
-                  : undefined
-              }
-            >
-              {hasDecoder ? (
-                <SavedReportsGrid
-                  records={history}
-                  activeId={activeExtraction?.id}
-                  onOpenRecord={handleOpenHistoryRecord}
-                  onUpload={handleUploadClick}
-                />
-              ) : (
-                <PremiumGate feature="vetBillDecoder" compact>
-                  <SavedReportsGrid records={[]} onUpload={handleUploadClick} />
-                </PremiumGate>
-              )}
-            </div>
           </div>
+        )}
+
+        <div className="space-y-6">
+          <DecoderUsageBar
+            decoderAccess={decoderAccess}
+            isEnterprise={isEnterprise}
+            isMonthlyQuota={isMonthlyDecoderQuota}
+          />
+
+          <div className="relative">
+            {documentVaultFull ? (
+              <PremiumGate
+                requiredTier="Plus"
+                title="Document Vault Limit Reached"
+                description="Upgrade to Plus to unlock unlimited secure medical document storage."
+                className="!min-h-[18rem] !rounded-none sm:!min-h-[22rem]"
+                onUpgrade={() => setDocumentUpgradeOpen(true)}
+              >
+                {dropzone}
+              </PremiumGate>
+            ) : quotaExhausted ? (
+              <PremiumGate
+                requiredTier={upgradeTier}
+                title="Scan Limit Reached"
+                description={`Upgrade to ${upgradeTier} to unlock more AI document extractions.`}
+                className="!min-h-[18rem] !rounded-none sm:!min-h-[22rem]"
+              >
+                {dropzone}
+              </PremiumGate>
+            ) : (
+              dropzone
+            )}
+          </div>
+
+          {decodeState === 'decoding' && (
+            <LoadingState message="Creating your report (one-time AI scan)…" />
+          )}
+          {decodeError && !showReport && (
+            <p className="font-sans text-sm text-red-700" role="alert">
+              {decodeError}
+            </p>
+          )}
+          {displaySuccess && lastUploaded && (
+            <UploadSuccessCard document={lastUploaded} decoding={decodeState === 'decoding'} />
+          )}
         </div>
 
-        <div className={styles.trustNote}>
+        <RecentScansHistory
+          items={historyItems}
+          timelineAccess={timelineAccess}
+          activeId={activeExtraction?.id}
+          onOpenRecord={openReport}
+        />
+
+        <div className="mt-12 border-t border-stone-200/60 pt-8">
+          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">
+            Supported formats
+          </p>
+          <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-stone-500">
+            <li>Vet bills & invoices</li>
+            <li>Prescriptions</li>
+            <li>Vaccine records</li>
+            <li>Lab reports · PDF, JPG, PNG</li>
+          </ul>
+        </div>
+
+        <div className="mt-10">
           <HealthDisclaimerNote compact />
         </div>
 
         <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
+        <EditorialUpgradeModal
+          isOpen={documentUpgradeOpen}
+          onClose={() => setDocumentUpgradeOpen(false)}
+          title="Document Vault Limit Reached"
+          description="Upgrade to Plus to unlock unlimited secure medical document storage."
+          requiredTier="Plus"
+        />
       </div>
     </AppLayout>
   );

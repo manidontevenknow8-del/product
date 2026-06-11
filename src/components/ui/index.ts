@@ -8,3 +8,7 @@ export { EmptyState } from './EmptyState';
 export { PageContainer } from './PageContainer';
 export { SectionHeader } from './SectionHeader';
 export { LoadingState } from './LoadingState';
+export { PremiumGate } from './PremiumGate';
+export type { PremiumGateProps, PremiumTier } from './PremiumGate';
+export { EditorialUpgradeModal } from './EditorialUpgradeModal';
+export type { EditorialUpgradeModalProps } from './EditorialUpgradeModal';

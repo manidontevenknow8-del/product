@@ -11,6 +11,7 @@ import { getMonthlyReport, listMonthlyReports } from '@/services/monthlyReport';
 import { MonthlyReportCard } from '@/components/monthly-report';
 import { ROUTES } from '@/routes/paths';
 import styles from './MonthlyReportArchivePage.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 export function MonthlyReportArchivePage() {
   const { user } = useAuth();
@@ -92,7 +93,7 @@ export function MonthlyReportArchivePage() {
                         searchParams.set('month', report.monthKey);
                         setSearchParams(searchParams, { replace: true });
                       } catch (err) {
-                        setError(err instanceof Error ? err.message : 'Unable to select report');
+                        setError(getUserFacingError(err, 'generic', 'Unable to select report'));
                       }
                     }}
                   >

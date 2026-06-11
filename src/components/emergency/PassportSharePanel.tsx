@@ -6,6 +6,7 @@ import type { PassportData } from '@/services/passport/passportSummaryService';
 import { PassportExportSheet } from './PassportExportSheet';
 import { PassportQRCode } from './PassportQRCode';
 import styles from './PassportSharePanel.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type PassportSharePanelProps = {
   passport: PassportData;
@@ -31,7 +32,7 @@ export function PassportSharePanel({ passport }: PassportSharePanelProps) {
       await downloadBlob(blob, `${safeName}-emergency-passport.png`);
       track('passport_exported', { petName: passport.identity.petName });
     } catch (err) {
-      setExportError(err instanceof Error ? err.message : 'Export failed.');
+      setExportError(getUserFacingError(err, 'export', 'Export failed.'));
     } finally {
       setExporting(false);
     }

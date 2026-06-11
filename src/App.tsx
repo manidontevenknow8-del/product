@@ -12,7 +12,8 @@ import {
   PetMatchPage,
 } from '@/pages';
 import { RemindersPage } from '@/pages/RemindersPage';
-import { PetCareScorePage } from '@/pages/PetCareScorePage';
+import { InsightsPage } from '@/pages/InsightsPage';
+import { VetPortalPage } from '@/pages/VetPortalPage';
 import { MonthlyReportPage } from '@/pages/MonthlyReportPage';
 import { MonthlyReportArchivePage } from '@/pages/MonthlyReportArchivePage';
 import { SettingsPage } from '@/pages/SettingsPage';
@@ -83,7 +84,8 @@ export function App() {
       <Route path={ROUTES.TIMELINE} element={<ProtectedRoute><TimelinePage /></ProtectedRoute>} />
       <Route path={ROUTES.REMINDERS} element={<ProtectedRoute><RemindersPage /></ProtectedRoute>} />
       <Route path={ROUTES.EMERGENCY_PASSPORT} element={<ProtectedRoute><EmergencyPassportPage /></ProtectedRoute>} />
-      <Route path={ROUTES.PET_CARE_SCORE} element={<ProtectedRoute><PetCareScorePage /></ProtectedRoute>} />
+      <Route path={ROUTES.PET_CARE_SCORE} element={<ProtectedRoute><InsightsPage /></ProtectedRoute>} />
+      <Route path={ROUTES.VET_PORTAL} element={<ProtectedRoute><VetPortalPage /></ProtectedRoute>} />
       <Route path={ROUTES.MONTHLY_REPORT} element={<ProtectedRoute><MonthlyReportPage /></ProtectedRoute>} />
       <Route path={ROUTES.MONTHLY_REPORT_ARCHIVE} element={<ProtectedRoute><MonthlyReportArchivePage /></ProtectedRoute>} />
       <Route path={ROUTES.SETTINGS} element={<ProtectedRoute><SettingsPage /></ProtectedRoute>} />

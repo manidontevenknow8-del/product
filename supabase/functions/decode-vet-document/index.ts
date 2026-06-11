@@ -1,9 +1,14 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import { extractVetDocument } from '../_shared/vetBillDecoder/extract.ts';
 import { withItemIds } from '../_shared/vetBillDecoder/schema.ts';
-import { requirePremiumTier } from '../_shared/subscription/requirePremium.ts';
+import { getUserPlan } from '../_shared/subscription/requirePremium.ts';
+import {
+  DECODER_LIFETIME_LIMITS,
+  DECODER_MONTHLY_LIMITS,
+} from '../_shared/subscription/entitlements.ts';
 import { enforceRateLimit, rateLimitKey } from '../_shared/security/rateLimit.ts';
 import { requireUuid } from '../_shared/security/validation.ts';
+import { sanitizeEdgeUserError } from '../_shared/security/userFacingErrors.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -93,8 +98,8 @@ Deno.serve(async (req) => {
     );
     if (rateLimited) return rateLimited;
 
-    const premiumBlock = await requirePremiumTier(supabase, userData.user.id);
-    if (premiumBlock) return premiumBlock;
+    const planResult = await getUserPlan(supabase, userData.user.id);
+    if (planResult instanceof Response) return planResult;
 
     const { data: document, error: docError } = await supabase
       .from('pet_documents')
@@ -117,14 +122,50 @@ Deno.serve(async (req) => {
       });
     }
 
+    const lifetimeLimit = DECODER_LIFETIME_LIMITS[planResult.plan];
+    if (lifetimeLimit != null && lifetimeLimit > 0) {
+      const { count: lifetimeCount } = await admin
+        .from('vet_bill_extractions')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', userData.user.id);
+      if ((lifetimeCount ?? 0) >= lifetimeLimit) {
+        return new Response(
+          JSON.stringify({
+            error: 'Lifetime decode limit reached. Upgrade your plan for more.',
+            code: 'decode_limit_reached',
+          }),
+          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+        );
+      }
+    }
+
+    const monthlyLimit = DECODER_MONTHLY_LIMITS[planResult.plan];
+    if (monthlyLimit != null && monthlyLimit > 0) {
+      const monthStart = new Date();
+      monthStart.setDate(1);
+      monthStart.setHours(0, 0, 0, 0);
+      const { count: monthlyCount } = await admin
+        .from('vet_bill_extractions')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', userData.user.id)
+        .gte('created_at', monthStart.toISOString());
+      if ((monthlyCount ?? 0) >= monthlyLimit) {
+        return new Response(
+          JSON.stringify({
+            error: 'Monthly decode limit reached. Upgrade your plan for more.',
+            code: 'decode_limit_reached',
+          }),
+          { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },
+        );
+      }
+    }
+
     const { data: fileData, error: downloadError } = await admin.storage
       .from('pet-documents')
       .download(document.storage_path);
 
     if (downloadError || !fileData) {
-      const hint = downloadError?.message?.includes('Bucket not found')
-        ? 'Storage bucket "pet-documents" is missing. Run supabase db push to create it.'
-        : downloadError?.message ?? 'Download failed';
+      const hint = sanitizeEdgeUserError(downloadError?.message ?? 'Download failed', 'decode');
       return new Response(JSON.stringify({ error: hint }), {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -157,20 +198,23 @@ Deno.serve(async (req) => {
           });
         }
       }
-      const hint = insertError.message.includes('vet_bill_extractions')
-        ? `${insertError.message}. Run: npx supabase db push`
-        : insertError.message;
-      return new Response(JSON.stringify({ error: hint }), {
+      return new Response(
+        JSON.stringify({ error: sanitizeEdgeUserError(insertError.message, 'decode') }),
+        {
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+        },
+      );
     }
 
     return new Response(JSON.stringify(mapRow(record)), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
+    const message = sanitizeEdgeUserError(
+      err instanceof Error ? err.message : 'Unknown error',
+      'decode',
+    );
     return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

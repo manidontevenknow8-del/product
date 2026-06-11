@@ -1,4 +1,5 @@
 import { getSupabaseClient } from '@/services/supabase/client';
+import { throwUserFacingError } from '@/utils/userFacingErrors';
 import type { IDocumentService } from './documentTypes';
 import { DOCUMENT_BUCKET } from './documentTypes';
 import { buildStoragePath, mapDocumentRow } from './documentMappers';
@@ -13,7 +14,7 @@ export const supabaseDocumentService: IDocumentService = {
       .eq('pet_id', petId)
       .order('uploaded_at', { ascending: false });
 
-    if (error) throw new Error(error.message);
+    if (error) throwUserFacingError(error.message, 'upload');
     return (data as PetDocumentRow[]).map(mapDocumentRow);
   },
 
@@ -32,7 +33,7 @@ export const supabaseDocumentService: IDocumentService = {
         upsert: false,
       });
 
-    if (uploadError) throw new Error(uploadError.message);
+    if (uploadError) throwUserFacingError(uploadError.message, 'upload');
 
     onProgress?.(70);
 
@@ -52,7 +53,7 @@ export const supabaseDocumentService: IDocumentService = {
 
     if (insertError) {
       await supabase.storage.from(DOCUMENT_BUCKET).remove([storagePath]);
-      throw new Error(insertError.message);
+      throwUserFacingError(insertError.message, 'upload');
     }
 
     onProgress?.(100);
@@ -68,20 +69,20 @@ export const supabaseDocumentService: IDocumentService = {
       .eq('id', documentId)
       .single();
 
-    if (fetchError) throw new Error(fetchError.message);
+    if (fetchError) throwUserFacingError(fetchError.message, 'upload');
 
     const { error: deleteRowError } = await supabase
       .from('pet_documents')
       .delete()
       .eq('id', documentId);
 
-    if (deleteRowError) throw new Error(deleteRowError.message);
+    if (deleteRowError) throwUserFacingError(deleteRowError.message, 'upload');
 
     const { error: deleteFileError } = await supabase.storage
       .from(DOCUMENT_BUCKET)
       .remove([(row as { storage_path: string }).storage_path]);
 
-    if (deleteFileError) throw new Error(deleteFileError.message);
+    if (deleteFileError) throwUserFacingError(deleteFileError.message, 'upload');
   },
 
   async getDownloadUrl(_ownerId, documentId) {
@@ -93,13 +94,13 @@ export const supabaseDocumentService: IDocumentService = {
       .eq('id', documentId)
       .single();
 
-    if (fetchError) throw new Error(fetchError.message);
+    if (fetchError) throwUserFacingError(fetchError.message, 'upload');
 
     const { data, error } = await supabase.storage
       .from(DOCUMENT_BUCKET)
       .createSignedUrl((row as { storage_path: string }).storage_path, 3600);
 
-    if (error) throw new Error(error.message);
+    if (error) throwUserFacingError(error.message, 'upload');
     return data.signedUrl;
   },
 };

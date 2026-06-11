@@ -1,10 +1,12 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
 import { verifyPaymentSignature } from '../_shared/razorpay/client.ts';
+import { isRazorpayPlan } from '../_shared/razorpay/client.ts';
 import {
-  activateProSubscription,
+  activatePaidSubscription,
   paymentAlreadyProcessed,
 } from '../_shared/razorpay/syncSubscription.ts';
 import { enforceRateLimit, rateLimitKey } from '../_shared/security/rateLimit.ts';
+import { sanitizeEdgeUserError } from '../_shared/security/userFacingErrors.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -46,6 +48,8 @@ Deno.serve(async (req) => {
       razorpay_order_id?: string;
       razorpay_payment_id?: string;
       razorpay_signature?: string;
+      plan?: string;
+      interval?: string;
     };
 
     const orderId = body.razorpay_order_id?.trim();
@@ -90,17 +94,22 @@ Deno.serve(async (req) => {
       });
     }
 
-    await activateProSubscription(admin, {
+    const plan = body.plan && isRazorpayPlan(body.plan) ? body.plan : 'pro';
+    const interval = body.interval === 'yearly' || body.interval === 'annual' ? 'yearly' : 'monthly';
+
+    await activatePaidSubscription(admin, {
       userId: userData.user.id,
       orderId,
       paymentId,
+      plan,
+      interval,
     });
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
+    const message = sanitizeEdgeUserError(err instanceof Error ? err.message : 'Unknown error', 'generic');
     return new Response(JSON.stringify({ error: message }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

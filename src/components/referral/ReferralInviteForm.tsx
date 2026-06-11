@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { Button, Input } from '@/components/ui';
 import { useGrowth } from '@/growth';
 import styles from './ReferralInviteForm.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 export function ReferralInviteForm() {
   const { sendInvite } = useGrowth();
@@ -20,7 +21,7 @@ export function ReferralInviteForm() {
       setMessage('Invite recorded - we’ll attribute signup when they join with your link.');
       setEmail('');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Unable to send invite');
+      setError(getUserFacingError(err, 'generic', 'Unable to send invite'));
     } finally {
       setLoading(false);
     }

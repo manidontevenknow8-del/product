@@ -1,111 +1,117 @@
-.menu {
+.root {
   position: relative;
+  z-index: 50;
+}
+
+.rootOpen {
+  z-index: 60;
 }
 
 .trigger {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-1);
-  border-radius: var(--radius-full);
-  border: 1px solid var(--color-border-light);
-  background: var(--color-bg-elevated);
+  display: block;
+  height: 2.5rem;
+  width: 2.5rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  border: 1px solid rgba(231, 229, 228, 0.8);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+  padding: 0;
+  background: #ffffff;
   cursor: pointer;
-  transition: all var(--transition);
+  transition: transform 150ms ease;
 }
 
 .trigger:hover {
-  border-color: var(--color-border);
-  box-shadow: var(--shadow-sm);
+  transform: scale(1.02);
 }
 
-.name {
-  font-size: var(--text-sm);
-  font-weight: 500;
-  max-width: 120px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.trigger:focus-visible {
+  outline: 2px solid #292524;
+  outline-offset: 2px;
 }
 
-.chevron {
-  width: 0;
-  height: 0;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-top: 5px solid var(--color-text-muted);
-  margin-right: var(--space-1);
+.triggerImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dropdown {
   position: absolute;
-  top: calc(100% + var(--space-2));
   right: 0;
-  min-width: 220px;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-2);
-  z-index: 120;
-  animation: fadeIn 150ms ease forwards;
+  top: calc(100% + 0.75rem);
+  z-index: 100;
+  width: 16rem;
+  transform-origin: top right;
+  border-radius: 1rem;
+  border: 1px solid #e7e5e4;
+  background: #ffffff;
+  padding: 0.5rem;
+  box-shadow:
+    0 25px 50px -12px rgba(28, 25, 23, 0.2),
+    0 12px 24px rgba(28, 25, 23, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .userInfo {
-  padding: var(--space-3) var(--space-4);
-  border-bottom: 1px solid var(--color-border-light);
-  margin-bottom: var(--space-2);
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #f5f5f4;
+  padding: 0.25rem 0.75rem 0.5rem;
+}
+
+.userName {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  line-height: 1.3;
+  color: #292524;
 }
 
 .userEmail {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
-  margin-top: var(--space-1);
-}
-
-.planBadge {
-  display: inline-block;
-  margin-top: var(--space-2);
-  padding: var(--space-1) var(--space-2);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  background: var(--color-accent-light);
-  color: var(--color-accent-dark);
-  border-radius: var(--radius-full);
+  margin: 0.125rem 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: #a8a29e;
 }
 
 .item {
   display: block;
   width: 100%;
-  text-align: left;
-  padding: var(--space-3) var(--space-4);
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-  border-radius: var(--radius-md);
-  transition: all var(--transition);
   border: none;
-  background: none;
+  border-radius: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: left;
+  text-decoration: none;
+  color: #57534e;
+  background: transparent;
   cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
 }
 
 .item:hover {
-  color: var(--color-text);
-  background: var(--color-bg-muted);
+  background: #fafaf9;
+  color: #1c1917;
 }
 
-.danger {
-  color: var(--color-danger);
+.itemDanger {
+  color: #78716c;
 }
 
-.danger:hover {
-  background: rgba(184, 92, 92, 0.08);
-  color: var(--color-danger);
-}
-
-@media (max-width: 640px) {
-  .name {
-    display: none;
-  }
+.itemDanger:hover {
+  background: #fff1f2;
+  color: #be123c;
 }

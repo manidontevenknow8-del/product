@@ -13,6 +13,7 @@ import { useDocuments } from '@/documents';
 import { useReminders } from '@/reminders';
 import { computePetCareScoreFromSources } from '@/services/petCareScore/petCareScoreEngine';
 import type { PetCareScoreData } from '@/types/petCareScore';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type PetCareScoreContextValue = {
   data: PetCareScoreData | null;
@@ -66,7 +67,7 @@ export function PetCareScoreProvider({ children }: PetCareScoreProviderProps) {
       ]);
     } catch (err) {
       setRefreshError(
-        err instanceof Error ? err.message : 'Failed to load PetCare Score data',
+        getUserFacingError(err, 'generic', 'Failed to load PetCare Score data'),
       );
     }
   }, [refreshPets, refreshRecords, refreshDocuments, refreshReminders]);

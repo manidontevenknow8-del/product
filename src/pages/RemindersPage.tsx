@@ -285,7 +285,7 @@ export function RemindersPage() {
                 feature="unlimitedReminders"
                 compact
                 onUpgrade={() => setUpgradeOpen(true)}
-                emotionalOverride={`You've used ${FREE_REMINDER_LIMIT} of ${FREE_REMINDER_LIMIT} free reminders. Upgrade to Pro for unlimited scheduling - vaccines, meds, grooming, and more.`}
+                emotionalOverride={`You've used ${FREE_REMINDER_LIMIT} of ${FREE_REMINDER_LIMIT} free reminders. Upgrade to Plus for unlimited scheduling — vaccines, meds, grooming, and more.`}
               />
             )}
 
@@ -347,7 +347,11 @@ export function RemindersPage() {
         onDelete={deleteReminder}
       />
 
-      <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
+      <UpgradeModal
+        isOpen={upgradeOpen}
+        onClose={() => setUpgradeOpen(false)}
+        targetPlan="plus"
+      />
     </AppLayout>
   );
 }

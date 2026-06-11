@@ -35,6 +35,12 @@ on conflict (id) do nothing;
 alter table public.founding_feature_candidates enable row level security;
 alter table public.founding_feature_votes enable row level security;
 
+drop policy if exists "Anyone can read feature candidates" on public.founding_feature_candidates;
+drop policy if exists "Founding members read own votes" on public.founding_feature_votes;
+drop policy if exists "Founding members cast votes" on public.founding_feature_votes;
+drop policy if exists "Founding members update own votes" on public.founding_feature_votes;
+drop policy if exists "Founding members delete own votes" on public.founding_feature_votes;
+
 create policy "Anyone can read feature candidates"
   on public.founding_feature_candidates
   for select

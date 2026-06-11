@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { PRIMARY_NAV, SECONDARY_NAV, isNavActive } from '@/routes/navigation';
+import { EDITORIAL_NAV, isNavActive } from '@/routes/navigation';
+import { ROUTES } from '@/routes/paths';
 import styles from './MobileMenu.module.css';
 
 type MobileMenuProps = {
@@ -9,31 +10,23 @@ type MobileMenuProps = {
 };
 
 function MenuLink({
-  label,
-  path,
+  item,
   onClose,
 }: {
-  label: string;
-  path: string;
+  item: (typeof EDITORIAL_NAV)[number];
   onClose: () => void;
 }) {
   const location = useLocation();
-  const active = isNavActive(location.pathname, path);
-  const isHash = path.startsWith('#');
-
-  const className = `${styles.link} ${active ? styles.linkActive : ''}`;
-
-  if (isHash) {
-    return (
-      <a href={path} className={className} onClick={onClose}>
-        {label}
-      </a>
-    );
-  }
+  const active = isNavActive(location.pathname, item);
 
   return (
-    <Link to={path} className={className} onClick={onClose}>
-      {label}
+    <Link
+      to={item.path}
+      className={`${styles.navLink} ${active ? styles.navLinkActive : ''}`}
+      onClick={onClose}
+      aria-current={active ? 'page' : undefined}
+    >
+      {item.label}
     </Link>
   );
 }
@@ -56,28 +49,50 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
 
   return (
     <>
-      <div className={styles.overlay} onClick={onClose} role="presentation" />
-      <div className={styles.panel} role="dialog" aria-modal="true" aria-label="Menu">
+      <div
+        className={styles.backdrop}
+        onClick={onClose}
+        role="presentation"
+        aria-hidden
+      />
+      <div
+        className={styles.panel}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Navigation menu"
+      >
         <div className={styles.header}>
           <span className={styles.title}>Menu</span>
-          <button type="button" className={styles.closeBtn} onClick={onClose} aria-label="Close">
+          <button
+            type="button"
+            className={styles.closeBtn}
+            onClick={onClose}
+            aria-label="Close menu"
+          >
             ×
           </button>
         </div>
 
-        <nav className={styles.nav}>
-          <span className={styles.sectionLabel}>Main</span>
-          {PRIMARY_NAV.map((item) => (
-            <MenuLink key={item.path} {...item} onClose={onClose} />
-          ))}
-
-          <span className={styles.sectionLabel}>Account</span>
-          {SECONDARY_NAV.map((item) => (
-            <MenuLink key={item.path} {...item} onClose={onClose} />
+        <nav className={styles.nav} aria-label="Mobile primary">
+          {EDITORIAL_NAV.map((item) => (
+            <MenuLink key={item.path} item={item} onClose={onClose} />
           ))}
         </nav>
 
-        <div className={styles.footer}>PetClues · Premium pet care</div>
+        <div className={styles.footer}>
+          <div className={styles.footerLinks}>
+            <Link to={ROUTES.SETTINGS} className={styles.footerLink} onClick={onClose}>
+              Settings
+            </Link>
+            <Link to={ROUTES.FAMILY_ACCESS} className={styles.footerLink} onClick={onClose}>
+              Family Sharing
+            </Link>
+            <Link to={ROUTES.BILLING} className={styles.footerLink} onClick={onClose}>
+              Billing
+            </Link>
+          </div>
+          <p className={styles.footerNote}>PetClues · Premium pet care</p>
+        </div>
       </div>
     </>
   );

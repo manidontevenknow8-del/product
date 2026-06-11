@@ -6,6 +6,7 @@ import {
   type FoundingFeatureCandidate,
 } from '@/services/founding/foundingService';
 import styles from './FoundingFeatureVoting.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type FoundingFeatureVotingProps = {
   userId: string;
@@ -25,7 +26,7 @@ export function FoundingFeatureVoting({ userId, compact = false }: FoundingFeatu
       const list = await listFoundingFeatureVotes(userId);
       setCandidates(list);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Could not load votes');
+      setError(getUserFacingError(err, 'generic', 'Could not load votes'));
     } finally {
       setLoading(false);
     }
@@ -42,7 +43,7 @@ export function FoundingFeatureVoting({ userId, compact = false }: FoundingFeatu
       await toggleFoundingFeatureVote(userId, candidate.id, candidate.votedByUser);
       await refresh();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Vote failed');
+      setError(getUserFacingError(err, 'generic', 'Vote failed'));
     } finally {
       setBusyId(null);
     }

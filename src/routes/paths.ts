@@ -12,6 +12,7 @@ export const ROUTES = {
   SCAN: '/scan',
   TIMELINE: '/timeline',
   EMERGENCY_PASSPORT: '/emergency-passport',
+  VET_PORTAL: '/vet-portal',
   PET_MATCH: '/pet-match',
   BLOG: '/blog',
   PET_CARE_SCORE: '/pet-care-score',

@@ -8,6 +8,7 @@ import {
   type UpdatePetInput,
 } from '@/services/pets/petService';
 import styles from './EditProfileModal.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 type EditProfileModalProps = {
   pet: PetRecord;
@@ -100,7 +101,7 @@ export function EditProfileModal({ pet, isOpen, onClose, onSave }: EditProfileMo
       }, 900);
     } catch (err) {
       setSaveState('error');
-      setErrorMessage(err instanceof Error ? err.message : 'Failed to save changes.');
+      setErrorMessage(getUserFacingError(err, 'pet', 'Failed to save changes.'));
     }
   };
 

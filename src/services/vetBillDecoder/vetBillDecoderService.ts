@@ -1,6 +1,7 @@
 import { getSupabaseClient } from '@/services/supabase/client';
 import { isSupabaseConfigured } from '@/services/supabase/config';
 import { parseFunctionInvokeError } from '@/services/supabase/parseFunctionInvokeError';
+import { sanitizeUserFacingError, throwUserFacingError } from '@/utils/userFacingErrors';
 import { buildMockExtractionRecord } from './mockVetBillDecoder';
 import type {
   ApplyExtractionResult,
@@ -109,9 +110,9 @@ export class SupabaseVetBillDecoderService implements IVetBillDecoderService {
     });
 
     if (error) {
-      throw new Error(await parseFunctionInvokeError(error, 'Vet bill decode failed'));
+      throw new Error(await parseFunctionInvokeError(error, 'Vet bill decode failed', 'decode'));
     }
-    if (data?.error) throw new Error(String(data.error));
+    if (data?.error) throw new Error(sanitizeUserFacingError(String(data.error), 'decode'));
     return mapApiRecord(data as Record<string, unknown>);
   }
 
@@ -130,7 +131,7 @@ export class SupabaseVetBillDecoderService implements IVetBillDecoderService {
       .limit(1)
       .maybeSingle();
 
-    if (error) throw new Error(error.message);
+    if (error) throwUserFacingError(error.message, 'decode');
     return data ? mapRow(data as VetBillExtractionRow) : null;
   }
 
@@ -142,7 +143,7 @@ export class SupabaseVetBillDecoderService implements IVetBillDecoderService {
       .eq('pet_id', petId)
       .order('created_at', { ascending: false });
 
-    if (error) throw new Error(error.message);
+    if (error) throwUserFacingError(error.message, 'decode');
     return (data as VetBillExtractionRow[]).map(mapRow);
   }
 
@@ -165,14 +166,14 @@ export class SupabaseVetBillDecoderService implements IVetBillDecoderService {
       .select('*')
       .single();
 
-    if (error) throw new Error(error.message);
+    if (error) throwUserFacingError(error.message, 'decode');
     return mapRow(data as VetBillExtractionRow);
   }
 
   async deleteExtraction(_userId: string, extractionId: string): Promise<void> {
     const supabase = getSupabaseClient();
     const { error } = await supabase.from('vet_bill_extractions').delete().eq('id', extractionId);
-    if (error) throw new Error(error.message);
+    if (error) throwUserFacingError(error.message, 'decode');
   }
 }
 

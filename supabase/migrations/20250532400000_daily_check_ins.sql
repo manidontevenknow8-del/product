@@ -17,6 +17,11 @@ create index if not exists daily_check_ins_pet_date_idx
 
 alter table public.daily_check_ins enable row level security;
 
+drop policy if exists "Users can read check-ins for own pets" on public.daily_check_ins;
+drop policy if exists "Users can insert check-ins for own pets" on public.daily_check_ins;
+drop policy if exists "Users can update check-ins for own pets" on public.daily_check_ins;
+drop policy if exists "Users can delete check-ins for own pets" on public.daily_check_ins;
+
 create policy "Users can read check-ins for own pets"
   on public.daily_check_ins
   for select

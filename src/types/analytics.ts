@@ -23,6 +23,8 @@ export type AnalyticsEventName =
   | 'referral_invited'
   | 'referral_converted'
   | 'referral_completed'
+  | 'pet_match_viewed'
+  | 'pet_match_completed'
   | 'pricing_viewed'
   | 'upgrade_clicked'
   | 'premium_started'

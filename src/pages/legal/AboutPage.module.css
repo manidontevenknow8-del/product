@@ -471,6 +471,18 @@
   gap: var(--space-3);
 }
 
+.pricingCtaBtn {
+  background: #ffffff;
+  color: #1a1a1a;
+  border-color: #ffffff;
+}
+
+.pricingCtaBtn:hover:not(:disabled) {
+  background: #f5f5f5;
+  border-color: #f5f5f5;
+  color: #000000;
+}
+
 @media (max-width: 640px) {
   .heroActions,
   .ctaActions {

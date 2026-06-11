@@ -1,10 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '@/components/ui';
-import { UpgradeModal } from '@/components/subscription';
-import { useAuth } from '@/auth/AuthProvider';
+import { Button, EditorialUpgradeModal } from '@/components/ui';
 import { usePets } from '@/pets';
-import { canAddPet } from '@/subscription/featureGates';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { ROUTES } from '@/routes/paths';
 
 type AddAnotherPetButtonProps = {
@@ -20,20 +18,14 @@ export function AddAnotherPetButton({
   fullWidth = false,
   className,
 }: AddAnotherPetButtonProps) {
-  const { user } = useAuth();
   const { pets } = usePets();
+  const petAccess = useFeatureAccess('pets');
   const navigate = useNavigate();
   const [upgradeOpen, setUpgradeOpen] = useState(false);
 
   if (pets.length === 0) return null;
 
-  const allowed = canAddPet(
-    {
-      subscriptionStatus: user?.subscriptionStatus,
-      subscriptionTier: user?.subscriptionTier,
-    },
-    pets.length,
-  );
+  const allowed = petAccess.isAllowed;
 
   const handleClick = () => {
     if (allowed) {
@@ -54,7 +46,14 @@ export function AddAnotherPetButton({
       >
         Add another pet
       </Button>
-      <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
+      <EditorialUpgradeModal
+        isOpen={upgradeOpen}
+        onClose={() => setUpgradeOpen(false)}
+        eyebrow="PetClues Plus"
+        title="Your family is growing"
+        description="Upgrade to Plus to manage up to 3 pets and unlock unlimited care history."
+        requiredTier="Plus"
+      />
     </>
   );
 }

@@ -13,6 +13,8 @@ import { ROUTES } from '@/routes/paths';
 import { isSupabaseConfigured } from '@/services/supabase/config';
 import { getSupabaseClient } from '@/services/supabase/client';
 import { eventTracker } from '@/analytics/EventTracker';
+import { getUserFacingError, sanitizeUserFacingError } from '@/utils/userFacingErrors';
+import { parseFunctionInvokeError } from '@/services/supabase/parseFunctionInvokeError';
 import styles from './FoundingMembersPage.module.css';
 
 function readReferralSource(locationSearch: string): string | null {
@@ -39,8 +41,10 @@ async function submitSignup(email: string, referralSource: string | null) {
     body: { email, referralSource },
   });
 
-  if (error) throw new Error(error.message);
-  if (data?.success !== true) throw new Error(data?.error ?? 'Signup failed');
+  if (error) throw new Error(await parseFunctionInvokeError(error, 'Signup failed'));
+  if (data?.success !== true) {
+    throw new Error(sanitizeUserFacingError(String(data?.error ?? 'Signup failed')));
+  }
 }
 
 const STEPS = [
@@ -81,7 +85,7 @@ export function FoundingMembersPage() {
       eventTracker.track('waitlist_joined', referralSource ? { referral_source: referralSource } : undefined);
     } catch (err) {
       setStatus('error');
-      setError(err instanceof Error ? err.message : 'Signup failed');
+      setError(getUserFacingError(err, 'generic', 'Signup failed'));
     }
   };
 

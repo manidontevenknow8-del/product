@@ -1,8 +1,22 @@
 import { getSupabaseClient } from '@/services/supabase/client';
-import { PRO_MONTHLY_PRICE_DISPLAY } from '@/config/razorpayConfig';
+import {
+  PLUS_MONTHLY_PRICE_DISPLAY,
+  PRO_MONTHLY_PRICE_DISPLAY,
+} from '@/config/razorpayConfig';
 import { razorpayCheckoutService } from '@/services/payments/razorpayCheckoutService';
+import {
+  getDecoderLifetimeLimit,
+  getDecoderMonthlyLimit,
+  getDocumentLimit,
+  getFamilySharingLimit,
+  getHealthRecordLimit,
+  getPetLimit,
+  getReminderLimit,
+  getTimelineDayLimit,
+  resolveEffectivePlan,
+} from '@/subscription/entitlements';
+import type { CommercialPlan } from '@/subscription/entitlements';
 import type { Subscription, UsageLimits } from '@/types/subscription';
-import { FREE_PET_LIMIT } from '@/subscription/featureGates';
 import type { ISubscriptionService } from './subscriptionService';
 
 function formatRenewalDate(iso: string | null): string | null {
@@ -25,36 +39,38 @@ function mapSubscriptionRow(
     plan: string;
     expires_at: string | null;
     started_at: string | null;
+    billing_interval?: string | null;
   } | null,
 ): Subscription {
-  const isPremium =
-    profile?.subscription_status === 'active' ||
-    profile?.subscription_status === 'trialing' ||
-    profile?.subscription_tier === 'premium' ||
-    profile?.subscription_tier === 'family';
+  const commercialPlan = resolveEffectivePlan({
+    subscriptionPlan: profile?.subscription_plan,
+    subscriptionTier: profile?.subscription_tier,
+    subscriptionStatus: profile?.subscription_status,
+  });
 
-  if (!isPremium) {
-    return {
-      plan: 'free',
-      interval: 'monthly',
-      status: 'inactive',
-      renewalDate: null,
-      cancelAtPeriodEnd: false,
-      subscriptionPlan: 'free',
-      subscriptionStatus: 'inactive',
-    };
-  }
+  const isPaid = commercialPlan !== 'free';
 
   return {
-    plan: 'premium',
-    interval: 'monthly',
-    status: row?.status === 'active' ? 'active' : 'active',
+    commercialPlan,
+    plan: isPaid ? 'premium' : 'free',
+    interval: row?.billing_interval === 'yearly' ? 'yearly' : 'monthly',
+    status: isPaid
+      ? (profile?.subscription_status === 'trialing' ? 'trialing' : 'active')
+      : 'inactive',
     renewalDate: formatRenewalDate(row?.expires_at ?? null),
     cancelAtPeriodEnd: false,
-    subscriptionPlan: profile?.subscription_plan ?? row?.plan ?? 'pro',
-    subscriptionStatus: profile?.subscription_status ?? 'active',
+    subscriptionPlan: profile?.subscription_plan ?? row?.plan ?? 'free',
+    subscriptionStatus: profile?.subscription_status ?? (isPaid ? 'active' : 'inactive'),
+    subscriptionTier: profile?.subscription_tier ?? 'free',
+    billingProvider: 'razorpay',
     startedAt: row?.started_at ?? null,
   };
+}
+
+function priceDisplayForPlan(plan: string | null | undefined): string {
+  if (plan === 'plus') return PLUS_MONTHLY_PRICE_DISPLAY;
+  if (plan === 'pro') return PRO_MONTHLY_PRICE_DISPLAY;
+  return PRO_MONTHLY_PRICE_DISPLAY;
 }
 
 export const supabaseSubscriptionService: ISubscriptionService = {
@@ -70,7 +86,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
         .single(),
       supabase
         .from('subscriptions')
-        .select('status, plan, expires_at, started_at')
+        .select('status, plan, expires_at, started_at, billing_interval')
         .eq('user_id', userId)
         .eq('status', 'active')
         .order('started_at', { ascending: false })
@@ -81,30 +97,106 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     return mapSubscriptionRow(profile, subRow);
   },
 
-  async getUsage(userId, plan) {
+  async getUsage(userId, commercialPlan: CommercialPlan) {
     const supabase = getSupabaseClient();
-    const isFree = plan === 'free';
 
-    const [{ count: petCount }, { count: scanCount }] = await Promise.all([
-      supabase.from('pets').select('id', { count: 'exact', head: true }).eq('owner_id', userId),
-      supabase.from('vet_bill_extractions').select('id', { count: 'exact', head: true }).eq(
-        'user_id',
-        userId,
-      ),
+    const { data: userPets } = await supabase
+      .from('pets')
+      .select('id')
+      .eq('owner_id', userId);
+
+    const petIds = (userPets ?? []).map((pet) => pet.id);
+    const petCount = petIds.length;
+
+    const monthStart = new Date();
+    monthStart.setDate(1);
+    monthStart.setHours(0, 0, 0, 0);
+
+    const healthRecordsQuery =
+      petIds.length > 0
+        ? supabase
+            .from('health_records')
+            .select('id', { count: 'exact', head: true })
+            .in('pet_id', petIds)
+        : Promise.resolve({ count: 0, error: null });
+
+    const documentsQuery =
+      petIds.length > 0
+        ? supabase
+            .from('pet_documents')
+            .select('id', { count: 'exact', head: true })
+            .in('pet_id', petIds)
+        : Promise.resolve({ count: 0, error: null });
+
+    const remindersQuery =
+      petIds.length > 0
+        ? supabase
+            .from('reminders')
+            .select('id', { count: 'exact', head: true })
+            .in('pet_id', petIds)
+            .eq('completed', false)
+        : Promise.resolve({ count: 0, error: null });
+
+    const [
+      { count: lifetimeScanCount },
+      { count: monthlyScanCount },
+      { count: documentCount },
+      { count: reminderCount },
+      { count: recordCount },
+    ] = await Promise.all([
+      supabase
+        .from('vet_bill_extractions')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', userId),
+      supabase
+        .from('vet_bill_extractions')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', userId)
+        .gte('created_at', monthStart.toISOString()),
+      documentsQuery,
+      remindersQuery,
+      healthRecordsQuery,
     ]);
+
+    const monthlyDecoderLimit = getDecoderMonthlyLimit(commercialPlan);
+    const timelineDayLimit = getTimelineDayLimit(commercialPlan);
 
     return {
       pets: {
-        used: petCount ?? 0,
-        limit: isFree ? FREE_PET_LIMIT : null,
+        used: petCount,
+        limit: getPetLimit(commercialPlan),
+      },
+      documents: {
+        used: documentCount ?? 0,
+        limit: getDocumentLimit(commercialPlan),
       },
       scans: {
-        used: scanCount ?? 0,
-        limit: isFree ? 0 : null,
+        used: monthlyDecoderLimit != null ? (monthlyScanCount ?? 0) : (lifetimeScanCount ?? 0),
+        limit: monthlyDecoderLimit,
+      },
+      scansLifetime: {
+        used: lifetimeScanCount ?? 0,
+        limit: getDecoderLifetimeLimit(commercialPlan),
+      },
+      timelineDays: {
+        used: 0,
+        limit: timelineDayLimit,
       },
       timelineMonths: {
         used: 0,
-        limit: isFree ? 6 : null,
+        limit: timelineDayLimit != null ? 1 : null,
+      },
+      familyMembers: {
+        used: 0,
+        limit: getFamilySharingLimit(commercialPlan),
+      },
+      reminders: {
+        used: reminderCount ?? 0,
+        limit: getReminderLimit(commercialPlan),
+      },
+      healthRecords: {
+        used: recordCount ?? 0,
+        limit: getHealthRecordLimit(commercialPlan),
       },
     } satisfies UsageLimits;
   },
@@ -123,14 +215,17 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     return (data ?? []).map((row) => ({
       id: row.razorpay_payment_id ?? row.id,
       date: formatRenewalDate(row.started_at) ?? '-',
-      amount: PRO_MONTHLY_PRICE_DISPLAY,
+      amount: priceDisplayForPlan(row.plan),
+      plan: row.plan ?? 'pro',
       status: row.status === 'active' || row.status === 'captured' ? 'paid' as const : 'pending' as const,
     }));
   },
 
-  async startCheckout(userId, _plan, _interval, prefill) {
-    await razorpayCheckoutService.startProCheckout({
+  async startCheckout(userId, plan, interval, prefill) {
+    await razorpayCheckoutService.startCheckout({
       userId,
+      plan,
+      interval,
       prefill,
     });
   },

@@ -1,49 +1,84 @@
 import type { SubscriptionPlan } from '@/types/subscription';
 import {
-  PRO_MONTHLY_PRICE_DISPLAY,
-  PRO_MONTHLY_PRICE_INR,
-} from '@/config/razorpayConfig';
+  PLUS_ANNUAL_INR,
+  PLUS_MONTHLY_INR,
+  PRO_ANNUAL_INR,
+  PRO_MONTHLY_INR,
+  formatInr,
+  CUSTOM_LIMITS_EMAIL,
+} from '@/config/pricingConfig';
+import { PET_LIMITS } from '@/subscription/entitlements';
 
-export { PREMIUM_FEATURE_GATES, FEATURE_LABELS, FREE_PET_LIMIT } from '@/subscription/featureGates';
-export type { PremiumFeature } from '@/subscription/featureGates';
+export {
+  FEATURE_LABELS,
+  PET_LIMITS,
+  PLAN_LABELS,
+  UPGRADE_CTA,
+} from '@/subscription/entitlements';
+export type { PremiumFeature, CommercialPlan, PlanFeature } from '@/subscription/entitlements';
 
 export const PLANS: SubscriptionPlan[] = [
   {
     id: 'free',
     name: 'Free',
-    description: 'Daily care habit and organized health for one companion.',
+    description: 'Professional organization for one companion — start your pet care journey.',
     monthlyPrice: 0,
     yearlyPrice: 0,
-    priceDisplay: 'Free',
+    priceDisplay: '₹0',
     features: [
-      '1 pet profile',
-      'Up to 2 active reminders',
-      'Up to 3 health records',
-      'Daily check-in (feeding & walks)',
-      'Document vault & emergency passport',
-      'Basic PetCare Score',
-      '6-month timeline history',
-      'Monthly report (view only)',
+      `${PET_LIMITS.free} pet profile`,
+      'Basic health record storage',
+      'Basic reminders',
+      'Basic timeline',
+      'Daily check-ins & document vault',
     ],
   },
   {
-    id: 'premium',
+    id: 'plus',
+    name: 'Plus',
+    description: 'Complete pet care management for households with up to 3 pets.',
+    monthlyPrice: PLUS_MONTHLY_INR,
+    yearlyPrice: PLUS_ANNUAL_INR,
+    priceDisplay: formatInr(PLUS_MONTHLY_INR),
+    features: [
+      `Up to ${PET_LIMITS.plus} pets`,
+      'Pet passports & monthly reports',
+      'Unlimited health records',
+      'Advanced reminders & full timeline',
+      'PetCare Score & basic AI',
+      'Family sharing (2 members)',
+    ],
+  },
+  {
+    id: 'pro',
     name: 'Pro',
-    description: 'Unlock AI tools, unlimited pets, and deeper insights.',
-    monthlyPrice: PRO_MONTHLY_PRICE_INR,
-    yearlyPrice: PRO_MONTHLY_PRICE_INR,
-    priceDisplay: `${PRO_MONTHLY_PRICE_DISPLAY}/month`,
+    description: 'Advanced insights, priority support, and up to 10 pets.',
+    monthlyPrice: PRO_MONTHLY_INR,
+    yearlyPrice: PRO_ANNUAL_INR,
+    priceDisplay: formatInr(PRO_MONTHLY_INR),
     highlighted: true,
     features: [
-      'Unlimited pets',
-      'Unlimited reminders',
-      'Unlimited health records',
-      'Vet Bill Decoder (AI)',
-      'Advanced AI health insights',
-      'Full timeline history',
-      'Unlimited monthly report exports',
-      'Advanced PetCare Score',
+      `Up to ${PET_LIMITS.pro} pets`,
+      'Everything in Plus',
+      'Advanced AI & PetCare Score',
       'Priority support',
+      'Launching Soon features included',
+    ],
+  },
+  {
+    id: 'enterprise',
+    name: 'Enterprise',
+    description: 'Clinic-grade tools and custom solutions for 10+ pets.',
+    monthlyPrice: 0,
+    yearlyPrice: 0,
+    priceDisplay: 'Custom',
+    contactOnly: true,
+    features: [
+      'More than 10 pets',
+      'Clinic dashboard & staff accounts',
+      'Organization management',
+      'Dedicated account manager',
+      `Contact ${CUSTOM_LIMITS_EMAIL}`,
     ],
   },
 ];

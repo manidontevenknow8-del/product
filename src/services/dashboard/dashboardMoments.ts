@@ -1,5 +1,6 @@
 import type { ActivityLogEntry } from '@/services/activity/activityLogService';
 import type { ActivityItem } from '@/types/dashboard';
+import { partitionByHistoryWindow } from '@/utils/timelineHistoryWindow';
 
 export type DashboardMoment = {
   id: string;
@@ -7,6 +8,8 @@ export type DashboardMoment = {
   title: string;
   description: string;
   when: string;
+  /** ISO timestamp for tier-based history filtering */
+  occurredAt: string;
 };
 
 function kindFromType(type: ActivityItem['type']): DashboardMoment['kind'] {
@@ -26,13 +29,25 @@ function kindFromType(type: ActivityItem['type']): DashboardMoment['kind'] {
   }
 }
 
+export function partitionMomentsByHistoryWindow(moments: DashboardMoment[]): {
+  recentMoments: DashboardMoment[];
+  historicalMoments: DashboardMoment[];
+} {
+  const { recentItems, historicalItems } = partitionByHistoryWindow(
+    moments,
+    (moment) => moment.occurredAt,
+  );
+  return { recentMoments: recentItems, historicalMoments: historicalItems };
+}
+
 export function activityToMoments(entries: ActivityLogEntry[]): DashboardMoment[] {
-  return entries.slice(0, 5).map((entry) => ({
+  return entries.map((entry) => ({
     id: entry.id,
     kind: kindFromType(entry.type),
     title: entry.title,
     description: entry.description,
     when: entry.timestamp,
+    occurredAt: entry.createdAt,
   }));
 }
 

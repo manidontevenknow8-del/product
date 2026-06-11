@@ -25,6 +25,7 @@ import { exportNodeToPng, downloadBlob } from '@/utils/imageExport';
 import { eventTracker } from '@/analytics/EventTracker';
 import { ROUTES } from '@/routes/paths';
 import styles from './MonthlyReportPage.module.css';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 function currentMonthKey(): string {
   const now = new Date();
@@ -40,7 +41,8 @@ export function MonthlyReportPage() {
   const { documents, isLoading: docsLoading } = useDocuments();
   const { data: scoreData, isLoading: scoreLoading } = usePetCareScore();
   const { checkIns } = useDailyCheckIn();
-  const { isPremium } = useSubscription();
+  const { canAccess, currentPlan } = useSubscription();
+  const canExport = canAccess('monthlyReportExport');
 
   const [monthKey, setMonthKey] = useState(currentMonthKey());
   const [upgradeOpen, setUpgradeOpen] = useState(false);
@@ -84,7 +86,7 @@ export function MonthlyReportPage() {
 
   const handleDownload = async () => {
     if (!report || !reportRef.current) return;
-    if (!isPremium) {
+    if (!canExport) {
       setUpgradeOpen(true);
       return;
     }
@@ -95,7 +97,7 @@ export function MonthlyReportPage() {
       await downloadBlob(blob, `petclues-${report.petName}-${report.monthKey}.png`);
       eventTracker.track('monthly_report_downloaded', { monthKey: report.monthKey, petId: report.petId });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Download failed');
+      setError(getUserFacingError(err, 'export', 'Download failed'));
     } finally {
       setIsDownloading(false);
     }
@@ -132,7 +134,7 @@ export function MonthlyReportPage() {
       setSaved(true);
       eventTracker.track('monthly_report_saved', { monthKey: report.monthKey, petId: report.petId });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Save failed');
+      setError(getUserFacingError(err, 'generic', 'Save failed'));
     } finally {
       setIsSaving(false);
     }
@@ -214,16 +216,21 @@ export function MonthlyReportPage() {
                 title="Your pet's life report"
                 description="Scroll through every chapter below - download captures the full report when you're ready to share."
               />
-              <MonthlyReportDocument ref={reportRef} report={report} />
+              <MonthlyReportDocument
+                ref={reportRef}
+                report={report}
+                showWatermark={currentPlan === 'free'}
+              />
               <p className={styles.caption}>
                 Download captures the full report above - scroll through every chapter before exporting.
               </p>
             </div>
 
             <aside className={styles.sideCol} aria-label="Report actions">
-              {!isPremium && (
+              {!canExport && (
                 <PremiumUpgradePrompt
-                  feature="unlimitedMonthlyReports"
+                  feature="monthlyReportExport"
+                  currentPlan={currentPlan}
                   onUpgrade={() => setUpgradeOpen(true)}
                 />
               )}
@@ -234,7 +241,7 @@ export function MonthlyReportPage() {
                 isDownloading={isDownloading}
                 isSaving={isSaving}
                 saved={saved}
-                isPremium={isPremium}
+                isPremium={canExport}
               />
               <Card variant="flat" className={styles.archiveCard}>
                 <h3 className={styles.archiveTitle}>Archive</h3>

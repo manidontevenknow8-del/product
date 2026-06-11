@@ -1,6 +1,7 @@
 import type { SupabaseClient } from 'npm:@supabase/supabase-js@2.49.1';
 import { appUrls, deliverTransactionalEmail } from '../email/sendTransactional.ts';
-import { PRO_MONTHLY_PLAN } from './client.ts';
+import { isRazorpayPlan, type BillingInterval, type RazorpayPlanId } from './client.ts';
+import { planToLegacyTier } from '../subscription/entitlements.ts';
 
 export async function paymentAlreadyProcessed(
   admin: SupabaseClient,
@@ -14,22 +15,30 @@ export async function paymentAlreadyProcessed(
   return Boolean(data);
 }
 
-export async function activateProSubscription(
+export async function activatePaidSubscription(
   admin: SupabaseClient,
   input: {
     userId: string;
     orderId: string;
     paymentId: string;
+    plan: RazorpayPlanId;
+    interval?: BillingInterval;
   },
 ): Promise<void> {
+  const billingInterval: BillingInterval = input.interval ?? 'monthly';
   const startedAt = new Date();
   const expiresAt = new Date(startedAt);
-  expiresAt.setDate(expiresAt.getDate() + 30);
+  if (billingInterval === 'yearly') {
+    expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+  } else {
+    expiresAt.setDate(expiresAt.getDate() + 30);
+  }
 
   const { error: subError } = await admin.from('subscriptions').insert({
     user_id: input.userId,
-    plan: PRO_MONTHLY_PLAN,
+    plan: input.plan,
     status: 'active',
+    billing_interval: billingInterval,
     razorpay_order_id: input.orderId,
     razorpay_payment_id: input.paymentId,
     started_at: startedAt.toISOString(),
@@ -38,12 +47,14 @@ export async function activateProSubscription(
 
   if (subError) throw new Error(subError.message);
 
+  const legacyTier = planToLegacyTier(input.plan === 'plus' ? 'plus' : 'pro');
+
   const { error: profileError } = await admin
     .from('profiles')
     .update({
-      subscription_plan: PRO_MONTHLY_PLAN,
+      subscription_plan: input.plan,
       subscription_status: 'active',
-      subscription_tier: 'premium',
+      subscription_tier: legacyTier,
     })
     .eq('user_id', input.userId);
 
@@ -80,7 +91,7 @@ export async function activateProSubscription(
           subject: '',
           payload: {
             ownerName: profile.name ?? '',
-            interval: 'monthly',
+            interval: billingInterval,
             billingUrl: urls.billingUrl,
             dashboardUrl: urls.dashboardUrl,
           },
@@ -92,13 +103,22 @@ export async function activateProSubscription(
   }
 }
 
+/** @deprecated Use activatePaidSubscription */
+export async function activateProSubscription(
+  admin: SupabaseClient,
+  input: { userId: string; orderId: string; paymentId: string },
+): Promise<void> {
+  return activatePaidSubscription(admin, { ...input, plan: 'pro' });
+}
+
 export async function markPaymentFailed(
   admin: SupabaseClient,
-  input: { userId: string; orderId: string; paymentId?: string },
+  input: { userId: string; orderId: string; paymentId?: string; plan?: string },
 ): Promise<void> {
+  const plan = input.plan && isRazorpayPlan(input.plan) ? input.plan : 'pro';
   const { error } = await admin.from('subscriptions').insert({
     user_id: input.userId,
-    plan: PRO_MONTHLY_PLAN,
+    plan,
     status: 'failed',
     razorpay_order_id: input.orderId,
     razorpay_payment_id: input.paymentId ?? null,

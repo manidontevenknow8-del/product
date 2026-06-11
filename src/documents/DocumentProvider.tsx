@@ -9,6 +9,8 @@ import {
 } from 'react';
 import { useAuth } from '@/auth/AuthProvider';
 import { usePets } from '@/pets';
+import { useSubscription } from '@/subscription/SubscriptionProvider';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import {
   getDocumentService,
   validateDocumentFile,
@@ -16,6 +18,7 @@ import {
   type PetDocumentRecord,
 } from '@/services/documents/documentService';
 import { appendActivityLogEntry } from '@/services/activity/activityLogService';
+import { getUserFacingError } from '@/utils/userFacingErrors';
 
 export type UploadState = 'idle' | 'uploading' | 'success' | 'error';
 
@@ -33,6 +36,9 @@ type DocumentContextValue = {
   resetUploadState: () => void;
 };
 
+export const DOCUMENT_VAULT_LIMIT_MESSAGE =
+  'Document Vault Limit Reached. Upgrade to Plus to unlock unlimited secure medical document storage.';
+
 const DocumentContext = createContext<DocumentContextValue | null>(null);
 
 type DocumentProviderProps = {
@@ -46,6 +52,8 @@ export function DocumentProvider({
 }: DocumentProviderProps) {
   const { user, isAuthenticated } = useAuth();
   const { activePet } = usePets();
+  const { refresh: refreshSubscription } = useSubscription();
+  const documentAccess = useFeatureAccess('documents');
   const [documents, setDocuments] = useState<PetDocumentRecord[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [uploadState, setUploadState] = useState<UploadState>('idle');
@@ -99,6 +107,12 @@ export function DocumentProvider({
         throw new Error(validationError);
       }
 
+      if (!documentAccess.isAllowed) {
+        setUploadState('error');
+        setUploadError(DOCUMENT_VAULT_LIMIT_MESSAGE);
+        throw new Error(DOCUMENT_VAULT_LIMIT_MESSAGE);
+      }
+
       setUploadState('uploading');
       setUploadProgress(0);
       setUploadError(null);
@@ -117,15 +131,16 @@ export function DocumentProvider({
           title: document.fileName,
           description: 'Document uploaded to your pet vault.',
         });
+        void refreshSubscription();
         return document;
       } catch (err) {
-        const message = err instanceof Error ? err.message : 'Upload failed.';
+        const message = getUserFacingError(err, 'upload', 'Upload failed.');
         setUploadState('error');
         setUploadError(message);
         throw err;
       }
     },
-    [service, user?.id, activePet?.id],
+    [service, user?.id, activePet?.id, documentAccess.isAllowed, refreshSubscription],
   );
 
   const deleteDocument = useCallback(
@@ -133,8 +148,9 @@ export function DocumentProvider({
       if (!user?.id) throw new Error('Not authenticated');
       await service.delete(user.id, documentId);
       setDocuments((prev) => prev.filter((doc) => doc.id !== documentId));
+      void refreshSubscription();
     },
-    [service, user?.id],
+    [service, user?.id, refreshSubscription],
   );
 
   const getDocumentUrl = useCallback(

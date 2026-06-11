@@ -124,6 +124,7 @@ export type SubscriptionRow = {
   user_id: string;
   plan: string;
   status: string;
+  billing_interval: string;
   razorpay_order_id: string | null;
   razorpay_payment_id: string | null;
   started_at: string | null;
@@ -497,6 +498,7 @@ export type Database = {
           user_id: string;
           plan: string;
           status: string;
+          billing_interval?: string;
           razorpay_order_id?: string | null;
           razorpay_payment_id?: string | null;
           started_at?: string | null;
@@ -509,6 +511,7 @@ export type Database = {
           user_id?: string;
           plan?: string;
           status?: string;
+          billing_interval?: string;
           razorpay_order_id?: string | null;
           razorpay_payment_id?: string | null;
           started_at?: string | null;

@@ -175,12 +175,13 @@ drop policy if exists "Users can delete own pet document files" on storage.objec
 create policy "Users can read own pet document files"
   on storage.objects
   for select
+  to authenticated
   using (
     bucket_id = 'pet-documents'
-    and (storage.foldername(name))[1] = auth.uid()::text
+    and (storage.foldername(storage.objects.name))[1] = auth.uid()::text
     and exists (
       select 1 from public.pets
-      where pets.id::text = (storage.foldername(name))[2]
+      where pets.id::text = (storage.foldername(storage.objects.name))[2]
         and pets.owner_id = auth.uid()
     )
   );
@@ -188,12 +189,13 @@ create policy "Users can read own pet document files"
 create policy "Users can upload own pet document files"
   on storage.objects
   for insert
+  to authenticated
   with check (
     bucket_id = 'pet-documents'
-    and (storage.foldername(name))[1] = auth.uid()::text
+    and (storage.foldername(storage.objects.name))[1] = auth.uid()::text
     and exists (
       select 1 from public.pets
-      where pets.id::text = (storage.foldername(name))[2]
+      where pets.id::text = (storage.foldername(storage.objects.name))[2]
         and pets.owner_id = auth.uid()
     )
   );
@@ -201,12 +203,13 @@ create policy "Users can upload own pet document files"
 create policy "Users can delete own pet document files"
   on storage.objects
   for delete
+  to authenticated
   using (
     bucket_id = 'pet-documents'
-    and (storage.foldername(name))[1] = auth.uid()::text
+    and (storage.foldername(storage.objects.name))[1] = auth.uid()::text
     and exists (
       select 1 from public.pets
-      where pets.id::text = (storage.foldername(name))[2]
+      where pets.id::text = (storage.foldername(storage.objects.name))[2]
         and pets.owner_id = auth.uid()
     )
   );

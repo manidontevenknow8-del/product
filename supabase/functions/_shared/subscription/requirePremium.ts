@@ -1,17 +1,22 @@
 import type { SupabaseClient } from 'npm:@supabase/supabase-js@2.49.1';
+import {
+  planMeetsMinimum,
+  resolveEffectivePlan,
+  type CommercialPlan,
+} from './entitlements.ts';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
 
-export async function requirePremiumTier(
+export async function getUserPlan(
   supabase: SupabaseClient,
   userId: string,
-): Promise<Response | null> {
+): Promise<{ plan: CommercialPlan } | Response> {
   const { data: profile, error } = await supabase
     .from('profiles')
-    .select('subscription_tier, subscription_status')
+    .select('subscription_plan, subscription_tier, subscription_status')
     .eq('user_id', userId)
     .single();
 
@@ -22,15 +27,31 @@ export async function requirePremiumTier(
     });
   }
 
-  const isPremium =
-    profile.subscription_status === 'active' ||
-    ['premium', 'family'].includes(profile.subscription_tier);
+  return {
+    plan: resolveEffectivePlan({
+      subscriptionPlan: profile.subscription_plan,
+      subscriptionTier: profile.subscription_tier,
+      subscriptionStatus: profile.subscription_status,
+    }),
+  };
+}
 
-  if (!isPremium) {
+export async function requirePlanTier(
+  supabase: SupabaseClient,
+  userId: string,
+  minimumPlan: CommercialPlan,
+  featureLabel = 'This feature',
+): Promise<Response | null> {
+  const result = await getUserPlan(supabase, userId);
+  if (result instanceof Response) return result;
+
+  if (!planMeetsMinimum(result.plan, minimumPlan)) {
+    const tierName = minimumPlan.charAt(0).toUpperCase() + minimumPlan.slice(1);
     return new Response(
       JSON.stringify({
-        error: 'Vet Bill Decoder requires Pro. Upgrade to unlock AI document decoding.',
-        code: 'premium_required',
+        error: `${featureLabel} requires ${tierName} or above. Upgrade to unlock.`,
+        code: 'plan_required',
+        requiredPlan: minimumPlan,
       }),
       {
         status: 403,
@@ -40,4 +61,12 @@ export async function requirePremiumTier(
   }
 
   return null;
+}
+
+/** @deprecated Use requirePlanTier(supabase, userId, 'plus', 'Vet Bill Decoder') */
+export async function requirePremiumTier(
+  supabase: SupabaseClient,
+  userId: string,
+): Promise<Response | null> {
+  return requirePlanTier(supabase, userId, 'plus', 'Vet Bill Decoder');
 }
