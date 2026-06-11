@@ -1,3 +1,4 @@
+import { normalizePhotoUrlFromDb } from './petPhotoService';
 import type { OnboardingPetData } from '@/types/onboarding';
 import type { Pet } from '@/types';
 import type { PetProfile } from '@/types/profile';
@@ -146,7 +147,7 @@ export function petRecordToPet(record: PetRecord): Pet & { photo: string | null 
     age: formatPetAge(record.birthDate),
     weight: record.weight ?? 'Not recorded',
     avatarInitials: getAvatarInitials(record.name),
-    photo: record.photoUrl,
+    photo: normalizePhotoUrlFromDb(record.photoUrl),
   };
 }
 
@@ -164,7 +165,7 @@ export function petRecordToPetProfile(record: PetRecord): PetProfile {
     dateOfBirth: formatBirthDateDisplay(record.birthDate),
     color: 'Not recorded',
     conditionsNotes: 'Not recorded',
-    photo: record.photoUrl,
+    photo: normalizePhotoUrlFromDb(record.photoUrl),
   };
 }
 
@@ -175,7 +176,7 @@ export function petRecordToPassportMeta(record: PetRecord): PassportMeta {
     breed: pet.breed || 'Breed not set',
     age: pet.age,
     avatarInitials: pet.avatarInitials,
-    photo: record.photoUrl,
+    photo: normalizePhotoUrlFromDb(record.photoUrl),
     lastUpdated: formatPassportUpdatedAt(record.updatedAt),
     secureLink: `https://petclues.app/passport/${record.id}`,
   };
@@ -203,7 +204,7 @@ export function mapPetRow(row: {
     birthDate: row.birth_date,
     weight: row.weight,
     gender: (row.gender as PetRecord['gender']) ?? null,
-    photoUrl: row.photo_url,
+    photoUrl: normalizePhotoUrlFromDb(row.photo_url),
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };

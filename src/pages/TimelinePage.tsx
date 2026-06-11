@@ -18,6 +18,7 @@ import { usePets } from '@/pets';
 import { PetSwitcherHero } from '@/components/pets';
 import { useTimelineData } from '@/hooks/useTimelineData';
 import { buildLifeStorySummary } from '@/data/timelineData';
+import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import { getAvatarInitials } from '@/services/pets/petUtils';
 import { ROUTES } from '@/routes/paths';
 import {
@@ -169,7 +170,7 @@ export function TimelinePage() {
           title={`${petName}'s timeline`}
           subtitle={heroSubtitle}
           avatar={{
-            src: activePet.photoUrl,
+            src: normalizePhotoUrlFromDb(activePet.photoUrl),
             initials: getAvatarInitials(petName),
           }}
           topActions={

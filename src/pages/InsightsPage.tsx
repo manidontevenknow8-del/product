@@ -11,6 +11,7 @@ import { useHealthRecords } from '@/healthRecords';
 import { usePetCareScore } from '@/petCareScore';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { formatHealthRecordDate } from '@/services/healthRecords/healthRecordMappers';
+import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import { ROUTES } from '@/routes/paths';
 import hero from '@/styles/EditorialHero.module.css';
 import styles from './InsightsPage.module.css';
@@ -184,7 +185,7 @@ export function InsightsPage() {
   }
 
   const score = scoreData?.snapshot.score ?? null;
-  const petPhoto = activePet.photoUrl;
+  const petPhoto = normalizePhotoUrlFromDb(activePet.photoUrl);
 
   return (
     <AppLayout flushContent>

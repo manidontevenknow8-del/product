@@ -6,6 +6,7 @@ import type { IPetService } from './petTypes';
 export type { IPetService, PetRecord, CreatePetInput, UpdatePetInput, EditPetForm, PetSpecies, PetGender } from './petTypes';
 export { mockPetService } from './mockPetService';
 export { supabasePetService } from './supabasePetService';
+export { normalizePhotoUrlFromDb, resolvePetPhotoUrl } from './petPhotoService';
 export {
   petRecordToPet,
   petRecordToPetProfile,

@@ -1,7 +1,17 @@
 import { getSupabaseClient } from '@/services/supabase/client';
 import { INPUT_LIMITS, trimField, validateRequiredText } from '@/utils/inputValidation';
+import { normalizePhotoUrlFromDb } from './petPhotoService';
 import type { CreatePetInput, IPetService, PetSpecies, UpdatePetInput } from './petTypes';
 import { mapPetRow, petInputToRow, petUpdateToRow } from './petUtils';
+
+function sanitizeStoredPhotoUrl(
+  url: string | null | undefined,
+): string | null | undefined {
+  if (url === undefined) return undefined;
+  const normalized = normalizePhotoUrlFromDb(url);
+  if (!normalized) return null;
+  return trimField(normalized, 2048) || null;
+}
 
 const SPECIES: PetSpecies[] = ['dog', 'cat', 'other'];
 
@@ -15,7 +25,7 @@ function sanitizePetInput(input: CreatePetInput): CreatePetInput {
     name: trimField(input.name, INPUT_LIMITS.name),
     breed: input.breed ? trimField(input.breed, INPUT_LIMITS.breed) : input.breed,
     weight: input.weight ? trimField(input.weight, 40) : input.weight,
-    photoUrl: input.photoUrl ? trimField(input.photoUrl, 2048) : input.photoUrl,
+    photoUrl: sanitizeStoredPhotoUrl(input.photoUrl) ?? null,
   };
 }
 
@@ -31,7 +41,7 @@ function sanitizePetUpdate(input: UpdatePetInput): UpdatePetInput {
   }
   if (input.breed != null) next.breed = trimField(input.breed, INPUT_LIMITS.breed);
   if (input.weight != null) next.weight = trimField(input.weight, 40);
-  if (input.photoUrl != null) next.photoUrl = trimField(input.photoUrl, 2048);
+  if (input.photoUrl !== undefined) next.photoUrl = sanitizeStoredPhotoUrl(input.photoUrl) ?? null;
   return next;
 }
 

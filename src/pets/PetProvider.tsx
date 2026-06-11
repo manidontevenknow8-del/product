@@ -19,6 +19,7 @@ import {
   type PetRecord,
   type UpdatePetInput,
 } from '@/services/pets/petService';
+import { resolvePetPhotoUrl } from '@/services/pets/petPhotoService';
 import type { OnboardingPetData } from '@/types/onboarding';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 
@@ -116,7 +117,16 @@ export function PetProvider({ children, petService: service = getPetService() }:
       if (!canAddPetForUser(pets.length)) {
         throw new Error(getLimitMessage('pets'));
       }
-      const pet = await service.createPet(user.id, input);
+      const { photoUrl, ...rest } = input;
+      let pet = await service.createPet(user.id, { ...rest, photoUrl: null });
+
+      if (photoUrl) {
+        const resolved = await resolvePetPhotoUrl(user.id, pet.id, photoUrl);
+        if (resolved) {
+          pet = await service.updatePet(user.id, pet.id, { photoUrl: resolved });
+        }
+      }
+
       eventTracker.track('pet_created', { species: pet.species });
       capturePostHogEvent('pet_created', { species: pet.species });
       await refreshPets();
@@ -134,7 +144,11 @@ export function PetProvider({ children, petService: service = getPetService() }:
   const updatePet = useCallback(
     async (petId: string, input: UpdatePetInput) => {
       if (!user?.id) throw new Error('Not authenticated');
-      const updated = await service.updatePet(user.id, petId, input);
+      const patch = { ...input };
+      if (input.photoUrl !== undefined) {
+        patch.photoUrl = await resolvePetPhotoUrl(user.id, petId, input.photoUrl);
+      }
+      const updated = await service.updatePet(user.id, petId, patch);
       eventTracker.track('pet_updated', { species: updated.species });
       setPets((prev) => prev.map((pet) => (pet.id === petId ? updated : pet)));
       return updated;
