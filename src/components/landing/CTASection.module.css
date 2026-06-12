@@ -4,6 +4,7 @@
 
 .banner {
   position: relative;
+  isolation: isolate;
   overflow: hidden;
   min-height: 380px;
   display: flex;
@@ -14,39 +15,56 @@
 .bannerImg {
   position: absolute;
   inset: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
 }
 
 .bannerScrim {
   position: absolute;
   inset: 0;
+  z-index: 1;
   background: linear-gradient(
-    to right,
-    rgba(26, 31, 28, 0.88) 0%,
-    rgba(26, 31, 28, 0.65) 50%,
-    rgba(26, 31, 28, 0.5) 100%
+    100deg,
+    rgba(26, 31, 28, 0.92) 0%,
+    rgba(26, 31, 28, 0.78) 40%,
+    rgba(26, 31, 28, 0.55) 100%
   );
+  pointer-events: none;
 }
 
-.banner .container {
+.inner {
   position: relative;
-  z-index: 1;
-  padding-top: var(--space-16);
-  padding-bottom: var(--space-16);
+  z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-16) var(--space-6);
+  box-sizing: border-box;
 }
 
 .card {
   max-width: 36rem;
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  background: rgba(26, 31, 28, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: var(--color-text-inverse);
 }
 
 .eyebrow {
-  display: block;
+  display: inline-block;
   margin-bottom: var(--space-4);
-  color: var(--color-accent-light);
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-accent-light) !important;
 }
 
 .title {
@@ -55,6 +73,7 @@
   font-weight: 500;
   margin: 0 0 var(--space-4);
   letter-spacing: -0.01em;
+  color: var(--color-text-inverse);
 }
 
 .subtitle {

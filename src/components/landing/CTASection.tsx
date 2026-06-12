@@ -6,7 +6,11 @@ import styles from './CTASection.module.css';
 
 export function CTASection() {
   return (
-    <section id="get-started" className={styles.section}>
+    <section
+      id="get-started"
+      className={styles.section}
+      aria-labelledby="landing-cta-title"
+    >
       <div className={styles.banner}>
         <img
           className={styles.bannerImg}
@@ -16,10 +20,12 @@ export function CTASection() {
           loading="lazy"
         />
         <div className={styles.bannerScrim} aria-hidden />
-        <div className="container">
+        <div className={styles.inner}>
           <div className={styles.card}>
-            <span className={`label ${styles.eyebrow}`}>Get started</span>
-            <h2 className={styles.title}>Ready to care with clarity?</h2>
+            <span className={styles.eyebrow}>Get started</span>
+            <h2 id="landing-cta-title" className={styles.title}>
+              Ready to care with clarity?
+            </h2>
             <p className={styles.subtitle}>
               Create a free account in minutes. Organize pet health records, vaccination reminders,
               daily check-ins, and your emergency pet passport - no credit card required.
