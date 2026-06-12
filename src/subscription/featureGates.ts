@@ -1,5 +1,5 @@
 /**
- * Thin compatibility layer — delegates to entitlements.ts.
+ * Thin compatibility layer - delegates to entitlements.ts.
  * Do not add new gate logic here.
  */
 import type { PlanTier } from '@/types/subscription';

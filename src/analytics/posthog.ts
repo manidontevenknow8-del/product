@@ -31,7 +31,7 @@ export function initPostHog(): boolean {
   debug('PostHog host loaded', host ?? 'undefined');
 
   if (!key || !host) {
-    debug('PostHog NOT initialized — VITE_POSTHOG_KEY or VITE_POSTHOG_HOST is missing');
+    debug('PostHog NOT initialized - VITE_POSTHOG_KEY or VITE_POSTHOG_HOST is missing');
     return false;
   }
 
@@ -65,7 +65,7 @@ export function capturePostHogEvent(
   properties?: Record<string, string | number | boolean>,
 ): void {
   if (!initialized) {
-    debug('Event skipped — PostHog not initialized', event);
+    debug('Event skipped - PostHog not initialized', event);
     return;
   }
   posthog.capture(event, properties, { send_instantly: true });
@@ -77,7 +77,7 @@ export function identifyPostHogUser(
   traits?: Record<string, string | number | boolean>,
 ): void {
   if (!initialized) {
-    debug('Identify skipped — PostHog not initialized', userId);
+    debug('Identify skipped - PostHog not initialized', userId);
     return;
   }
   posthog.identify(userId, traits);

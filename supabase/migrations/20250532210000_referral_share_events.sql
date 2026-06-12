@@ -1,4 +1,4 @@
--- Referral share analytics (optional table — edge function degrades gracefully if missing)
+-- Referral share analytics (optional table - edge function degrades gracefully if missing)
 
 create table if not exists public.referral_share_events (
   id uuid primary key default gen_random_uuid(),

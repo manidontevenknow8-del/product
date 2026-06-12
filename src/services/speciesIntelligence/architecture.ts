@@ -1,5 +1,5 @@
 /**
- * Species Intelligence architecture (infrastructure only — no chatbot/companion UI)
+ * Species Intelligence architecture (infrastructure only - no chatbot/companion UI)
  *
  * Data layer (Supabase):
  *   species → breeds → care_guidelines (JSONB care fields)

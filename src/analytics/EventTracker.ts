@@ -21,7 +21,7 @@ export interface IAnalyticsAdapter {
   pageView?(path: string, title?: string): void;
 }
 
-/** Console adapter — active in development */
+/** Console adapter - active in development */
 export const consoleAdapter: IAnalyticsAdapter = {
   name: 'console',
   track(event) {
@@ -36,7 +36,7 @@ export const consoleAdapter: IAnalyticsAdapter = {
   },
 };
 
-/** LocalStorage adapter — stores events for beta dashboard */
+/** LocalStorage adapter - stores events for beta dashboard */
 export const localStorageAdapter: IAnalyticsAdapter = {
   name: 'localStorage',
   track(event) {
@@ -132,7 +132,7 @@ export class EventTracker {
       }
       return;
     }
-    // Only reset on sign-out — not on initial anonymous page load.
+    // Only reset on sign-out - not on initial anonymous page load.
     if (hadUser) {
       resetPostHog();
     }

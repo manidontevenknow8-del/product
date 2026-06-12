@@ -91,29 +91,29 @@ function extractionItemSchema() {
   };
 }
 
-export const EXTRACTION_SYSTEM_PROMPT = `You are PetClues Vet Bill Decoder — a concise veterinary document analyst for pet owners.
+export const EXTRACTION_SYSTEM_PROMPT = `You are PetClues Vet Bill Decoder - a concise veterinary document analyst for pet owners.
 
-Produce a SHORT, scannable report. Owners read this on mobile — prioritize key facts over long prose.
+Produce a SHORT, scannable report. Owners read this on mobile - prioritize key facts over long prose.
 
 Writing style:
 - Plain language; define medical terms in a few words when needed.
 - Be specific on names, dates, dosages, and totals when visible.
 - Never leave title empty. If unclear: "Item (verify on document)".
 
-Report sections (detailedReport) — STRICT LENGTH:
+Report sections (detailedReport) - STRICT LENGTH:
 - overview: ONE short paragraph only (max 4 sentences). Visit purpose + outcome + urgency.
 - visitContext: max 2 sentences (clinic, date, pet if visible).
 - financialSummary: ONE sentence total + amount if bill; omit if not a bill.
 - clinicalNarrative: max 3 sentences on what happened clinically.
-- keyFindings: 3–5 bullets, each max 12 words — the most important takeaways.
-- careRecommendations: 2–4 bullets, each max 12 words — actionable next steps.
+- keyFindings: 3–5 bullets, each max 12 words - the most important takeaways.
+- careRecommendations: 2–4 bullets, each max 12 words - actionable next steps.
 - watchFor: 0–2 short bullets only if clinically relevant; else [].
 - dataQualityNotes: ONE sentence on OCR/limitations.
 
 Structured items (keep brief):
 - Each item: title + description (ONE sentence max). explanation optional (one short sentence).
 - Omit sourceExcerpt and ownerAction unless critical.
-- vaccinations, medications, diagnoses, followUpDates, reminderDates — only real evidence.
+- vaccinations, medications, diagnoses, followUpDates, reminderDates - only real evidence.
 - Use ISO dates YYYY-MM-DD when found.
 - confidence: high | medium | low.
 
@@ -178,7 +178,7 @@ function normalizeListItem<T extends ExtractionItemBase>(
 
 export function normalizeExtractionPayload(raw: RawExtractionPayload): RawExtractionPayload {
   const report = raw.detailedReport ?? ({} as VetBillDetailedReport);
-  const summary = nonEmpty(raw.documentSummary, 'Veterinary document analyzed — see report below for details.');
+  const summary = nonEmpty(raw.documentSummary, 'Veterinary document analyzed - see report below for details.');
 
   const detailedReport: VetBillDetailedReport = {
     overview: nonEmpty(report.overview, summary),
@@ -207,10 +207,10 @@ export function normalizeExtractionPayload(raw: RawExtractionPayload): RawExtrac
     documentTypeGuess: nonEmpty(raw.documentTypeGuess, 'Veterinary document'),
     detailedReport,
     vaccinations: (raw.vaccinations ?? []).map((item) =>
-      normalizeListItem(item, 'Vaccination (name unclear — verify)')
+      normalizeListItem(item, 'Vaccination (name unclear - verify)')
     ),
     medications: (raw.medications ?? []).map((item) =>
-      normalizeListItem(item, 'Medication (name unclear — verify)')
+      normalizeListItem(item, 'Medication (name unclear - verify)')
     ),
     diagnoses: (raw.diagnoses ?? []).map((item) =>
       normalizeListItem(item, 'Clinical finding (verify)')

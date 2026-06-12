@@ -53,7 +53,7 @@ export type PlanFeature =
   | 'basicPassport'
   | 'limitedAiInsight';
 
-/** @deprecated Use PlanFeature — kept for gradual migration */
+/** @deprecated Use PlanFeature - kept for gradual migration */
 export type PremiumFeature =
   | 'unlimitedPets'
   | 'unlimitedReminders'
@@ -75,7 +75,7 @@ export const PLAN_RANK: Record<CommercialPlan, number> = {
   enterprise: 3,
 };
 
-/** Derived from PLAN_LIMITS_MATRIX — kept for backward compatibility */
+/** Derived from PLAN_LIMITS_MATRIX - kept for backward compatibility */
 export const PET_LIMITS: Record<CommercialPlan, number> = {
   free: numericLimit(getQuotaLimits('free').pets) ?? 1,
   plus: numericLimit(getQuotaLimits('plus').pets) ?? 3,
@@ -170,7 +170,7 @@ export const UPGRADE_CTA: Record<CommercialPlan, string> = {
 
 export const UPGRADE_HEADLINE: Record<CommercialPlan, string> = {
   free: 'Unlock more pets, documents, and professional care tools with Plus.',
-  plus: 'Go deeper with Pro — AI insights, emergency mode, and up to 10 pets.',
+  plus: 'Go deeper with Pro - AI insights, emergency mode, and up to 10 pets.',
   pro: 'Need unlimited scale? Contact Enterprise for API access and custom domain.',
   enterprise: 'Need a custom deployment? Contact our team.',
 };

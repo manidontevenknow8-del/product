@@ -36,7 +36,7 @@ This pass:
 | Referrals | `/referrals` | `referral_codes` / `referrals` or mock | Premium months (rewards not issued yet) |
 | Pricing | `/pricing` | Static plans | Pro positioning (checkout when Stripe live) |
 | Legal | `/privacy`, `/terms`, `/cookies` | Static placeholders | Trust |
-| System Status | `/status` | Static labels (needs health API later) | — |
+| System Status | `/status` | Static labels (needs health API later) | - |
 
 ### Auth & onboarding
 
@@ -177,7 +177,7 @@ flowchart TB
 
 ---
 
-## 4. Dynamic vs mock — truth table
+## 4. Dynamic vs mock - truth table
 
 | Surface | Without Supabase env | With Supabase + migrations |
 |---------|----------------------|----------------------------|
@@ -193,9 +193,9 @@ flowchart TB
 
 **Demo flags (off by default):**
 
-- `VITE_DEMO_TIMELINE=true` — Luna mock timeline
-- `VITE_DEMO_DASHBOARD=true` — mock activity feed
-- `VITE_DEMO_PROFILE_DOCS=true` — reserved for profile docs demo
+- `VITE_DEMO_TIMELINE=true` - Luna mock timeline
+- `VITE_DEMO_DASHBOARD=true` - mock activity feed
+- `VITE_DEMO_PROFILE_DOCS=true` - reserved for profile docs demo
 
 ---
 
@@ -215,9 +215,9 @@ flowchart TB
    cd source-code && npx supabase db push
    ```
 
-3. **Supabase Auth** — enable email provider; set redirect URLs for `/auth/callback`.
+3. **Supabase Auth** - enable email provider; set redirect URLs for `/auth/callback`.
 
-4. **Storage bucket** — `pet-documents` (if not created by migration/policy scripts).
+4. **Storage bucket** - `pet-documents` (if not created by migration/policy scripts).
 
 ### Required for premium-adjacent features (not Stripe)
 
@@ -241,7 +241,7 @@ flowchart TB
 
 ### Explicitly deferred (your call)
 
-- **Stripe** — `STRIPE_*` secrets, webhook, checkout/portal functions
+- **Stripe** - `STRIPE_*` secrets, webhook, checkout/portal functions
 - Reward issuance for referrals
 
 ---

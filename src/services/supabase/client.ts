@@ -4,7 +4,7 @@ import type { Database } from './database.types';
 
 let client: SupabaseClient<Database> | null = null;
 
-/** Singleton Supabase client — only available when env vars are configured. */
+/** Singleton Supabase client - only available when env vars are configured. */
 export function getSupabaseClient(): SupabaseClient<Database> {
   if (!isSupabaseConfigured()) {
     throw new Error('Supabase is not configured. Set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY.');

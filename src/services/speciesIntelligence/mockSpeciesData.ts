@@ -3,11 +3,11 @@ import type { Breed, CareGuideline, Species } from '@/types/speciesIntelligence'
 const now = new Date().toISOString();
 
 export const MOCK_SPECIES: Species[] = [
-  { id: 'sp-dog', slug: 'dog', name: 'Dog', description: 'Domestic dogs — highly variable by breed; preventive care and vaccination cadence are essential.', createdAt: now, updatedAt: now },
-  { id: 'sp-cat', slug: 'cat', name: 'Cat', description: 'Domestic cats — independent companions with species-specific nutrition and litter-related health needs.', createdAt: now, updatedAt: now },
-  { id: 'sp-bird', slug: 'bird', name: 'Bird', description: 'Companion birds — sensitive respiratory systems; weight and environment monitoring matter.', createdAt: now, updatedAt: now },
-  { id: 'sp-rabbit', slug: 'rabbit', name: 'Rabbit', description: 'Domestic rabbits — herbivores with dental and GI health as primary concerns.', createdAt: now, updatedAt: now },
-  { id: 'sp-reptile', slug: 'reptile', name: 'Reptile', description: 'Common pet reptiles — habitat parameters (temperature, humidity, UVB) directly affect health.', createdAt: now, updatedAt: now },
+  { id: 'sp-dog', slug: 'dog', name: 'Dog', description: 'Domestic dogs - highly variable by breed; preventive care and vaccination cadence are essential.', createdAt: now, updatedAt: now },
+  { id: 'sp-cat', slug: 'cat', name: 'Cat', description: 'Domestic cats - independent companions with species-specific nutrition and litter-related health needs.', createdAt: now, updatedAt: now },
+  { id: 'sp-bird', slug: 'bird', name: 'Bird', description: 'Companion birds - sensitive respiratory systems; weight and environment monitoring matter.', createdAt: now, updatedAt: now },
+  { id: 'sp-rabbit', slug: 'rabbit', name: 'Rabbit', description: 'Domestic rabbits - herbivores with dental and GI health as primary concerns.', createdAt: now, updatedAt: now },
+  { id: 'sp-reptile', slug: 'reptile', name: 'Reptile', description: 'Common pet reptiles - habitat parameters (temperature, humidity, UVB) directly affect health.', createdAt: now, updatedAt: now },
 ];
 
 export const MOCK_BREEDS: Breed[] = [

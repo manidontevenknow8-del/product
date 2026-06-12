@@ -6,7 +6,7 @@ import { supabaseSettingsService } from './supabaseSettingsService';
 const STORAGE_KEY = 'petclues_user_settings';
 
 /**
- * Settings service — persists notification preferences to Supabase profiles when configured.
+ * Settings service - persists notification preferences to Supabase profiles when configured.
  *
  * Email delivery reads `notification_preferences` from the same profile row
  * via the `process-email-jobs` edge function (Resend).

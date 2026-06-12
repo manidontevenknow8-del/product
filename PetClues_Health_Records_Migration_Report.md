@@ -14,7 +14,7 @@ PetClues now stores **real health records** in Supabase (or localStorage fallbac
 
 ---
 
-## Phase 1 — Database
+## Phase 1 - Database
 
 **File:** `supabase/migrations/20250531400000_create_health_records.sql`
 
@@ -46,7 +46,7 @@ PetClues now stores **real health records** in Supabase (or localStorage fallbac
 
 ### Trigger
 
-- `health_records_set_updated_at` — sets `updated_at = now()` on row update
+- `health_records_set_updated_at` - sets `updated_at = now()` on row update
 
 ---
 
@@ -65,7 +65,7 @@ Document FK is optional; inserts/updates with `source_document_id` must still pa
 
 ---
 
-## Phase 2 — Service Layer
+## Phase 2 - Service Layer
 
 ### Files created
 
@@ -93,7 +93,7 @@ Supabase queries join `pet_documents(file_name, uploaded_at)` for source documen
 
 ---
 
-## Phase 3 — UI Hydration
+## Phase 3 - UI Hydration
 
 | Component | File | Behavior |
 |-----------|------|----------|
@@ -115,7 +115,7 @@ HealthRecordModal submit
 
 ---
 
-## Phase 4 — Document Linking
+## Phase 4 - Document Linking
 
 Records may set optional `source_document_id`:
 
@@ -125,7 +125,7 @@ Records may set optional `source_document_id`:
 
 ---
 
-## Phase 5 — Empty States
+## Phase 5 - Empty States
 
 **Component:** `EmptyHealthRecordsState.tsx`
 
@@ -211,12 +211,12 @@ Or apply `20250531400000_create_health_records.sql` manually.
 
 1. Open **Pet Profile** with an active pet.
 2. Confirm empty state shows **"No health records yet"** with **Add record** CTA.
-3. Create a vaccination record — verify Health Records, Medical History, and At a Glance update.
-4. Link an uploaded vault document — verify source document name and date display.
-5. Edit and delete a record — confirm all sections refresh.
-6. Add allergy and weight records — verify summary fields update.
-7. Refresh browser — records persist via Supabase.
-8. Without Supabase env — confirm localStorage mock path works.
+3. Create a vaccination record - verify Health Records, Medical History, and At a Glance update.
+4. Link an uploaded vault document - verify source document name and date display.
+5. Edit and delete a record - confirm all sections refresh.
+6. Add allergy and weight records - verify summary fields update.
+7. Refresh browser - records persist via Supabase.
+8. Without Supabase env - confirm localStorage mock path works.
 
 ---
 
@@ -230,4 +230,4 @@ Or apply `20250531400000_create_health_records.sql` manually.
 
 ---
 
-*Generated as part of the Pet Identity / Reminder / Document Storage follow-up — health records migration.*
+*Generated as part of the Pet Identity / Reminder / Document Storage follow-up - health records migration.*

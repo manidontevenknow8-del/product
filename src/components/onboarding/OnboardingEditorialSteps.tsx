@@ -48,7 +48,7 @@ export function PortraitStep({ data, onChange }: StepProps) {
     <div className={styles.stepCentered}>
       <h1 className={styles.title}>Let&apos;s begin with a portrait</h1>
       <p className={styles.subtitle}>
-        A face for their journal — you can always change this later.
+        A face for their journal - you can always change this later.
       </p>
 
       <button
@@ -163,7 +163,7 @@ export function AgeStep({ data, onChange }: StepProps) {
     <div className={styles.step}>
       <h1 className={styles.title}>How old are they?</h1>
       <p className={styles.subtitle}>
-        Approximate is perfectly fine — we use this for life-stage care cues.
+        Approximate is perfectly fine - we use this for life-stage care cues.
       </p>
       <input
         type="text"

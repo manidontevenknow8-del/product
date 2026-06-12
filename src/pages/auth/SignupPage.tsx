@@ -65,7 +65,7 @@ export function SignupPage() {
         <h1 className={styles.title}>Create your account</h1>
         <p className={styles.subtitle}>
           {fromPetMatch
-            ? 'Your breed matches are waiting — create a free journal for your future companion.'
+            ? 'Your breed matches are waiting - create a free journal for your future companion.'
             : 'Start caring for your companion with clarity'}
         </p>
       </div>

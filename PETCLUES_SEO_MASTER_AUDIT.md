@@ -5,7 +5,7 @@ Production URL: https://petclues.com
 
 ---
 
-## 1. Metadata Status — ✅ Complete
+## 1. Metadata Status - ✅ Complete
 
 | Field | Value |
 |-------|-------|
@@ -18,7 +18,7 @@ Production URL: https://petclues.com
 | OG image | https://petclues.com/logo.png |
 | Twitter card | summary_large_image |
 
-## 2. Structured Data Status — ✅ Complete
+## 2. Structured Data Status - ✅ Complete
 
 | Schema | Location | Status |
 |--------|----------|--------|
@@ -28,18 +28,18 @@ Production URL: https://petclues.com
 | FAQPage | Landing JSON-LD graph | ✅ Landing FAQ items |
 | BlogPosting | Each blog article | ✅ Full article schema |
 
-## 3. Sitemap Status — ✅ 41 URLs
+## 3. Sitemap Status - ✅ 41 URLs
 
 See [SITEMAP_AUDIT.md](./SITEMAP_AUDIT.md)
 
-## 4. Robots Status — ✅
+## 4. Robots Status - ✅
 
 - Allows indexing of public pages
 - Blocks auth, dashboard, internal beta routes
 - Sitemap: `https://petclues.com/sitemap.xml`
 - No localhost or staging references
 
-## 5. Logo & Brand Assets — ✅
+## 5. Logo & Brand Assets - ✅
 
 | Asset | URL |
 |-------|-----|
@@ -51,7 +51,7 @@ See [SITEMAP_AUDIT.md](./SITEMAP_AUDIT.md)
 | icon-512.png | https://petclues.com/icon-512.png |
 | manifest.json | https://petclues.com/manifest.json |
 
-## 6. Rich Results Readiness — ✅
+## 6. Rich Results Readiness - ✅
 
 - Organization logo (ImageObject 512×512) for Google logo recognition
 - WebSite + SearchAction for sitelinks search box eligibility
@@ -61,7 +61,7 @@ See [SITEMAP_AUDIT.md](./SITEMAP_AUDIT.md)
 
 Validate: https://search.google.com/test/rich-results?url=https%3A%2F%2Fpetclues.com
 
-## 7. Google Search Console Readiness — ✅
+## 7. Google Search Console Readiness - ✅
 
 See [GOOGLE_SEARCH_CONSOLE_READINESS.md](./GOOGLE_SEARCH_CONSOLE_READINESS.md)
 
@@ -100,7 +100,7 @@ Factors: domain age, prior parking history, backlink profile, crawl frequency.
 - https://petclues.com/terms
 - https://petclues.com/faq
 
-**Blog articles:** 26 URLs in sitemap — submit top 10–20 via GSC URL Inspection.
+**Blog articles:** 26 URLs in sitemap - submit top 10–20 via GSC URL Inspection.
 
 ---
 
@@ -114,11 +114,11 @@ Factors: domain age, prior parking history, backlink profile, crawl frequency.
 
 ## Production Verification (2026-06-08)
 
-**Status: ⚠️ Changes built locally — not yet live on petclues.com**
+**Status: ⚠️ Changes built locally - not yet live on petclues.com**
 
 | Check | Local Build | Production (live) |
 |-------|-------------|-------------------|
-| Homepage title | `PetClues \| AI-Powered Pet Health & Life Management` | Old: `PetClues — Pet Health Records App \| Vaccination Reminders...` |
+| Homepage title | `PetClues \| AI-Powered Pet Health & Life Management` | Old: `PetClues - Pet Health Records App \| Vaccination Reminders...` |
 | OG image | `logo.png` | Old: `images/landing/landing-hero.png` |
 | `logo.png` | ✅ Present in `public/` | ❌ HTTP 404 |
 | `manifest.json` | ✅ Present | ❌ HTTP 404 |

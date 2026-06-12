@@ -83,7 +83,7 @@ function collectMilestones(args: {
     milestones.push({
       id: milestoneId('docs', monthKey, 'vault_builder'),
       title: 'Vault builder',
-      description: `Uploaded ${documentsUploaded.length} documents — your pet's story is getting richer.`,
+      description: `Uploaded ${documentsUploaded.length} documents - your pet's story is getting richer.`,
     });
   }
 
@@ -101,7 +101,7 @@ function collectMilestones(args: {
     milestones.push({
       id: milestoneId('health', monthKey, 'weight'),
       title: 'Weight check milestone',
-      description: `Logged ${weightRecords} weight update${weightRecords === 1 ? '' : 's'} — consistency matters.`,
+      description: `Logged ${weightRecords} weight update${weightRecords === 1 ? '' : 's'} - consistency matters.`,
     });
   }
 
@@ -109,7 +109,7 @@ function collectMilestones(args: {
     milestones.push({
       id: milestoneId('reminders', monthKey, 'streak'),
       title: 'Routine streak',
-      description: `Completed ${remindersCompleted.length} reminders — small moments, big impact.`,
+      description: `Completed ${remindersCompleted.length} reminders - small moments, big impact.`,
     });
   }
 
@@ -123,7 +123,7 @@ function collectMilestones(args: {
     milestones.push({
       id: milestoneId('score', monthKey, 'down'),
       title: 'A gentle reset',
-      description: `Your score dipped by ${Math.abs(scoreDelta)} points — next month is a fresh start.`,
+      description: `Your score dipped by ${Math.abs(scoreDelta)} points - next month is a fresh start.`,
     });
   }
 
@@ -154,10 +154,10 @@ function buildHighlights(args: {
 
   if (remindersCompletedCount > 0) {
     highlights.push(
-      `You completed ${remindersCompletedCount} reminders — a steady routine builds confidence.`,
+      `You completed ${remindersCompletedCount} reminders - a steady routine builds confidence.`,
     );
   } else {
-    highlights.push('No reminders were completed this month — next month is a clean slate.');
+    highlights.push('No reminders were completed this month - next month is a clean slate.');
   }
 
   if (healthRecordsAddedCount > 0) {
@@ -174,14 +174,14 @@ function buildHighlights(args: {
 
   if (dailyCheckInsCount > 0) {
     highlights.push(
-      `You logged ${dailyCheckInsCount} daily check-in${dailyCheckInsCount === 1 ? '' : 's'} — feeding and walks on record.`,
+      `You logged ${dailyCheckInsCount} daily check-in${dailyCheckInsCount === 1 ? '' : 's'} - feeding and walks on record.`,
     );
   }
 
   if (scoreDelta != null) {
     if (scoreDelta > 0) highlights.push(`PetCare Score moved up by +${scoreDelta}.`);
     else if (scoreDelta < 0) highlights.push(`PetCare Score moved down by ${scoreDelta}.`);
-    else highlights.push('PetCare Score held steady — consistency is a win.');
+    else highlights.push('PetCare Score held steady - consistency is a win.');
   }
 
   return highlights.slice(0, 6);
@@ -210,7 +210,7 @@ function buildMetrics(args: {
 
   const scoreValue =
     scoreDelta == null
-      ? '—'
+      ? '-'
       : scoreStart != null && scoreEnd != null
         ? `${scoreStart} → ${scoreEnd} (${scoreDelta >= 0 ? '+' : ''}${scoreDelta})`
         : `${scoreDelta >= 0 ? '+' : ''}${scoreDelta}`;
@@ -222,7 +222,7 @@ function buildMetrics(args: {
     { label: 'Documents uploaded', value: String(documentsUploaded), hint: 'Saved to your vault' },
     {
       label: 'Walk distance',
-      value: totalWalkKm > 0 ? `${totalWalkKm} km` : '—',
+      value: totalWalkKm > 0 ? `${totalWalkKm} km` : '-',
       hint: 'Total logged this month',
     },
     {
@@ -240,9 +240,9 @@ function buildNarrativeIntro(
 ): string {
   const activity = totals.reminders + totals.health + totals.docs;
   if (activity === 0) {
-    return `${monthLabel} was a quieter chapter for ${petName} — a good time to plan gentle routines, log a wellness note, or scan a recent vet visit so next month's story has more to celebrate.`;
+    return `${monthLabel} was a quieter chapter for ${petName} - a good time to plan gentle routines, log a wellness note, or scan a recent vet visit so next month's story has more to celebrate.`;
   }
-  return `This is ${petName}'s PetClues life report for ${monthLabel} — a visual recap of the care you showed through reminders, health records, documents, and your PetCare Score journey. Every entry below is drawn from your real activity in the app.`;
+  return `This is ${petName}'s PetClues life report for ${monthLabel} - a visual recap of the care you showed through reminders, health records, documents, and your PetCare Score journey. Every entry below is drawn from your real activity in the app.`;
 }
 
 function buildCareScoreNarrative(
@@ -250,15 +250,15 @@ function buildCareScoreNarrative(
   score: { start: number | null; end: number | null; delta: number | null },
 ): string {
   if (score.start == null || score.end == null || score.delta == null) {
-    return `We don't have enough PetCare Score snapshots for ${petName} this month yet. Keep using reminders and logging health updates — the score will start reflecting your rhythm.`;
+    return `We don't have enough PetCare Score snapshots for ${petName} this month yet. Keep using reminders and logging health updates - the score will start reflecting your rhythm.`;
   }
   if (score.delta > 0) {
-    return `${petName}'s PetCare Score grew from ${score.start} to ${score.end} (+${score.delta}) — proof that small, steady actions compound into confidence.`;
+    return `${petName}'s PetCare Score grew from ${score.start} to ${score.end} (+${score.delta}) - proof that small, steady actions compound into confidence.`;
   }
   if (score.delta < 0) {
     return `${petName}'s PetCare Score moved from ${score.start} to ${score.end} (${score.delta}). Life gets busy; use next month to rebuild one habit at a time.`;
   }
-  return `${petName}'s PetCare Score held at ${score.end} all month — stability is its own kind of win.`;
+  return `${petName}'s PetCare Score held at ${score.end} all month - stability is its own kind of win.`;
 }
 
 function buildActivityItems(args: {
@@ -381,7 +381,7 @@ function buildStorySections(args: {
       body:
         monthCheckIns.length > 0
           ? `${petName}'s daily rhythm shows up in ${monthCheckIns.length} check-in${monthCheckIns.length === 1 ? '' : 's'}${totalWalkKm > 0 ? ` and ${totalWalkKm} km of walks logged` : ''}.`
-          : `No daily check-ins in ${monthLabel} yet — log feeding and walks from your dashboard to enrich next month's story.`,
+          : `No daily check-ins in ${monthLabel} yet - log feeding and walks from your dashboard to enrich next month's story.`,
       image: MONTHLY_REPORT_IMG.checkIn,
       imageAlt: 'Daily feeding and walk check-in',
       bullets: checkInBullets.length > 0 ? checkInBullets : undefined,
@@ -392,7 +392,7 @@ function buildStorySections(args: {
       intro: 'The rhythm of daily care',
       body:
         remindersCompleted.length > 0
-          ? `You closed ${remindersCompleted.length} reminder${remindersCompleted.length === 1 ? '' : 's'} this month — each one a small promise kept for ${petName}.`
+          ? `You closed ${remindersCompleted.length} reminder${remindersCompleted.length === 1 ? '' : 's'} this month - each one a small promise kept for ${petName}.`
           : `No reminders were marked complete in ${monthLabel}. Consider setting gentle nudges for meds, grooming, or vet follow-ups.`,
       image: MONTHLY_REPORT_IMG.reminders,
       imageAlt: 'Reminders and routines',
@@ -404,7 +404,7 @@ function buildStorySections(args: {
       intro: 'Records that tell the truth',
       body:
         healthRecordsAdded.length > 0
-          ? `${healthRecordsAdded.length} new health ${healthRecordsAdded.length === 1 ? 'entry' : 'entries'} joined ${petName}'s profile — vaccinations, weights, diagnoses, and notes that clinics will thank you for.`
+          ? `${healthRecordsAdded.length} new health ${healthRecordsAdded.length === 1 ? 'entry' : 'entries'} joined ${petName}'s profile - vaccinations, weights, diagnoses, and notes that clinics will thank you for.`
           : `No new health records were added in ${monthLabel}. Scan a vet bill or add a quick wellness note to enrich next month's report.`,
       image: MONTHLY_REPORT_IMG.health,
       imageAlt: 'Health records',
@@ -416,7 +416,7 @@ function buildStorySections(args: {
       intro: 'Paper trails, preserved',
       body:
         documentsUploaded.length > 0
-          ? `You archived ${documentsUploaded.length} document${documentsUploaded.length === 1 ? '' : 's'} — bills, labels, and reports that stay searchable when you need them.`
+          ? `You archived ${documentsUploaded.length} document${documentsUploaded.length === 1 ? '' : 's'} - bills, labels, and reports that stay searchable when you need them.`
           : `The vault stayed quiet this month. Upload a vaccine certificate or insurance letter anytime from Scan.`,
       image: MONTHLY_REPORT_IMG.vault,
       imageAlt: 'Document vault',
@@ -436,7 +436,7 @@ function buildStorySections(args: {
               `Month close: ${score.end}`,
               score.delta != null
                 ? `Net change: ${score.delta >= 0 ? '+' : ''}${score.delta}`
-                : 'Net change: —',
+                : 'Net change: -',
             ]
           : undefined,
     },

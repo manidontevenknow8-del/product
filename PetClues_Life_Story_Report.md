@@ -13,7 +13,7 @@ The new version focuses on emotional storytelling, milestone celebration, and a 
 
 ---
 
-## Phase 1 — Timeline Audit
+## Phase 1 - Timeline Audit
 
 ### What existed
 - Demo-backed timeline with grouped month feed.
@@ -28,7 +28,7 @@ The new version focuses on emotional storytelling, milestone celebration, and a 
 
 ---
 
-## Phase 2 — New Event Types
+## Phase 2 - New Event Types
 
 Updated `src/types/timeline.ts` to the requested event model:
 
@@ -47,7 +47,7 @@ Mock data in `src/data/timelineData.ts` now uses the new types with emotional ev
 
 ---
 
-## Phase 3 — Premium Memory-Focused Cards
+## Phase 3 - Premium Memory-Focused Cards
 
 Timeline cards were upgraded to feel premium and memory-driven:
 
@@ -62,7 +62,7 @@ Enhancements:
 
 ---
 
-## Phase 4 — Empty State
+## Phase 4 - Empty State
 
 Updated empty state to the requested message and tone:
 
@@ -75,7 +75,7 @@ Updated description encourages starting the first chapter instead of simply logg
 
 ---
 
-## Phase 5 — Life Story Summary Generation
+## Phase 5 - Life Story Summary Generation
 
 Implemented generated summary from timeline events:
 

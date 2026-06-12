@@ -12,9 +12,9 @@
 
 | Area | Status before | Status after fix |
 |------|---------------|------------------|
-| Favicon / site icon | **Critical** — `/favicon-32x32.png` returned SPA HTML (200) | **Fixed** — real PNG assets deployed |
-| Organization schema `sameAs` | **Wrong URLs** (`instagram.com/petclues`, `facebook.com/petclues`) | **Fixed** — official profiles |
-| OG / Twitter metadata | **Partial** — short tagline, not brand title/description | **Fixed** — aligned with homepage |
+| Favicon / site icon | **Critical** - `/favicon-32x32.png` returned SPA HTML (200) | **Fixed** - real PNG assets deployed |
+| Organization schema `sameAs` | **Wrong URLs** (`instagram.com/petclues`, `facebook.com/petclues`) | **Fixed** - official profiles |
+| OG / Twitter metadata | **Partial** - short tagline, not brand title/description | **Fixed** - aligned with homepage |
 | `logo.png` | **OK** (512×512 PNG, 200) | **OK** |
 | robots.txt / sitemap | **OK** | **OK** |
 | HTTPS / www redirect | **OK** | **OK** |
@@ -24,20 +24,20 @@
 
 ---
 
-## Task 1 — Favicon audit
+## Task 1 - Favicon audit
 
 ### Production verification (before fix)
 
 | Asset | HTTP | Content-Type | Notes |
 |-------|------|--------------|-------|
-| `/favicon.ico` | 200 | `image/vnd.microsoft.icon` | OK — 48×48 ICO |
-| `/favicon.png` | 200 | `image/png` | OK — 32×32 |
+| `/favicon.ico` | 200 | `image/vnd.microsoft.icon` | OK - 48×48 ICO |
+| `/favicon.png` | 200 | `image/png` | OK - 32×32 |
 | `/favicon-48.png` | 200 | `image/png` | OK |
 | `/favicon-96.png` | 200 | `image/png` | OK |
 | `/favicon-16x16.png` | 200 | `text/html` | **Missing file → SPA fallback** |
 | `/favicon-32x32.png` | 200 | `text/html` | **Missing file → SPA fallback** |
-| `/apple-touch-icon.png` | 200 | `image/png` | OK — 180×180 |
-| `/logo.png` | 200 | `image/png` | OK — 512×512 |
+| `/apple-touch-icon.png` | 200 | `image/png` | OK - 180×180 |
+| `/logo.png` | 200 | `image/png` | OK - 512×512 |
 | `/icon-192.png` | 200 | `image/png` | OK |
 | `/icon-512.png` | 200 | `image/png` | OK |
 | `/manifest.json` | 200 | `application/json` | OK |
@@ -48,9 +48,9 @@
 
 | File | Change |
 |------|--------|
-| `public/favicon-16x16.png` | **Created** — 16×16 PNG from `logo.png` |
-| `public/favicon-32x32.png` | **Created** — 32×32 PNG (canonical Google crawl path) |
-| `public/site.webmanifest` | **Created** — PWA manifest (Android/Chrome) |
+| `public/favicon-16x16.png` | **Created** - 16×16 PNG from `logo.png` |
+| `public/favicon-32x32.png` | **Created** - 32×32 PNG (canonical Google crawl path) |
+| `public/site.webmanifest` | **Created** - PWA manifest (Android/Chrome) |
 | `index.html` | Full favicon `<link>` set: ico, svg, 16/32/48/96, apple-touch, manifest |
 | `vercel.json` | Rewrite only non-extension paths; cache headers for brand assets |
 | `scripts/generate-favicons.mjs` | Regenerate all sizes from `logo.png` |
@@ -77,7 +77,7 @@
 
 ---
 
-## Task 2 — Google Search metadata
+## Task 2 - Google Search metadata
 
 | Tag | Required | Status |
 |-----|----------|--------|
@@ -96,7 +96,7 @@
 
 ---
 
-## Task 3 — Social profile integration
+## Task 3 - Social profile integration
 
 ### Organization `sameAs` (final JSON-LD)
 
@@ -129,17 +129,17 @@
 ```
 
 **Files updated:**
-- `src/data/socialProfiles.ts` — single source of truth
-- `src/data/seoConfig.ts` — re-exports `ORGANIZATION_SAME_AS`
-- `index.html` — static JSON-LD for non-JS crawlers
-- `src/seo/structuredDataSchemas.ts` — runtime schema + landing `@graph`
-- `src/components/layout/SiteFooter.tsx` — Instagram + Facebook links with `rel="me"`
+- `src/data/socialProfiles.ts` - single source of truth
+- `src/data/seoConfig.ts` - re-exports `ORGANIZATION_SAME_AS`
+- `index.html` - static JSON-LD for non-JS crawlers
+- `src/seo/structuredDataSchemas.ts` - runtime schema + landing `@graph`
+- `src/components/layout/SiteFooter.tsx` - Instagram + Facebook links with `rel="me"`
 
 **Validation:** Test at https://search.google.com/test/rich-results after deploy.
 
 ---
 
-## Task 4 — Knowledge Graph preparation
+## Task 4 - Knowledge Graph preparation
 
 | Field | Value |
 |-------|-------|
@@ -158,19 +158,19 @@ Organization is emitted in:
 
 ---
 
-## Task 5 — Open Graph image audit
+## Task 5 - Open Graph image audit
 
 | URL | Status | Dimensions |
 |-----|--------|------------|
 | https://petclues.com/logo.png | ✅ 200 | 512×512 PNG |
-| https://petclues.com/og-image.png | ✅ 200 (exists, ~1MB) | 1200×630 — optional alternate |
+| https://petclues.com/og-image.png | ✅ 200 (exists, ~1MB) | 1200×630 - optional alternate |
 
 **Current policy:** `og:image` and `twitter:image` → `logo.png` per brand spec.  
 `og-image.png` remains available for future 1200×630 social campaigns.
 
 ---
 
-## Task 6 — Search Console readiness
+## Task 6 - Search Console readiness
 
 ### robots.txt
 
@@ -201,7 +201,7 @@ Organization is emitted in:
 
 ---
 
-## Task 7 — Social preview simulation
+## Task 7 - Social preview simulation
 
 After deploy, verify with:
 
@@ -218,20 +218,20 @@ After deploy, verify with:
 
 ---
 
-## Task 8 — Deployment audit
+## Task 8 - Deployment audit
 
 | Check | Result |
 |-------|--------|
 | Favicons in `public/` | ✅ Committed |
 | Copied to `dist/` on build | ✅ Verified |
-| `vercel.json` SPA rewrite | ✅ Tightened — no HTML masquerading as PNG |
+| `vercel.json` SPA rewrite | ✅ Tightened - no HTML masquerading as PNG |
 | `index.html` in build output | ✅ 4.5KB with full meta |
 
 **Cause of Google generic icon:** Missing `/favicon-32x32.png` + catch-all rewrite returning `index.html` with `content-type: text/html` and HTTP 200.
 
 ---
 
-## Task 9 — Remaining manual steps for Google
+## Task 9 - Remaining manual steps for Google
 
 1. **Deploy** this commit to Vercel production.
 2. **Verify assets post-deploy:**
@@ -243,13 +243,13 @@ After deploy, verify with:
    - Confirm property: `https://petclues.com`
    - Submit sitemap: `https://petclues.com/sitemap.xml`
    - URL Inspection → Request indexing for `https://petclues.com/`
-4. **Rich Results Test** — paste homepage URL; confirm Organization schema valid.
-5. **Facebook Debugger** — Scrape Again on homepage (refreshes OG cache).
+4. **Rich Results Test** - paste homepage URL; confirm Organization schema valid.
+5. **Facebook Debugger** - Scrape Again on homepage (refreshes OG cache).
 6. **Favicon timeline in Google Search**
    - Recrawl: typically **3 days – 4 weeks** after fix
    - Force refresh: Search Console URL inspection + sitemap resubmit
    - Google uses `/favicon.ico` and linked icons; ensure ICO stays valid
-7. **Knowledge Graph** — not guaranteed; consistent `sameAs`, logo, and Search Console ownership improve eligibility over months.
+7. **Knowledge Graph** - not guaranteed; consistent `sameAs`, logo, and Search Console ownership improve eligibility over months.
 
 ---
 

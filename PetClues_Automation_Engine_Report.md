@@ -1,7 +1,7 @@
 # PetClues Automation Engine Report
 
 **Date:** May 31, 2026  
-**Scope:** Rule-based automation — create reminders from health records  
+**Scope:** Rule-based automation - create reminders from health records  
 **Build status:** `npm run build` passes (599 modules)
 
 **Constraints honored:** No AI, no GPT. Pure rule engine only.
@@ -14,7 +14,7 @@
 
 ---
 
-## Phase 1 — Automation services
+## Phase 1 - Automation services
 
 ### Location
 
@@ -32,7 +32,7 @@
 | `medication_end` | `record_type = medication` AND `next_due_date` set (end date) | Category `medication`, no repeat |
 | `wellness_followup` | `record_type = wellness` AND `next_due_date` set (follow-up) | Category `vet_visits`, no repeat |
 
-All three rules read from the shared `next_due_date` column on `health_records`. The health record form labels this field **"Next due date"** — for medications it represents the end date; for wellness it represents the follow-up date.
+All three rules read from the shared `next_due_date` column on `health_records`. The health record form labels this field **"Next due date"** - for medications it represents the end date; for wellness it represents the follow-up date.
 
 ### Reminder payload
 
@@ -45,7 +45,7 @@ Each automated reminder includes:
 
 ---
 
-## Phase 2 — Trigger on health record events
+## Phase 2 - Trigger on health record events
 
 **File:** `src/healthRecords/HealthRecordProvider.tsx`
 
@@ -65,7 +65,7 @@ ReminderProvider → HealthRecordProvider → … → PetCareScoreProvider
 
 ---
 
-## Phase 3 — Duplicate prevention
+## Phase 3 - Duplicate prevention
 
 ### Database
 
@@ -98,7 +98,7 @@ At most **one automated reminder per health record**.
 
 ---
 
-## Phase 4 — Activity log
+## Phase 4 - Activity log
 
 ### Service
 
@@ -182,10 +182,10 @@ User saves health record (vaccination + next due date)
 
 | File | Change |
 |------|--------|
-| `src/services/automation/automationRules.ts` | **New** — rule definitions |
-| `src/services/automation/automationEngine.ts` | **New** — engine orchestration |
-| `src/services/automation/index.ts` | **New** — exports |
-| `src/services/activity/activityLogService.ts` | **New** — activity log |
+| `src/services/automation/automationRules.ts` | **New** - rule definitions |
+| `src/services/automation/automationEngine.ts` | **New** - engine orchestration |
+| `src/services/automation/index.ts` | **New** - exports |
+| `src/services/activity/activityLogService.ts` | **New** - activity log |
 | `src/healthRecords/HealthRecordProvider.tsx` | Automation trigger on create/update |
 | `src/main.tsx` | Provider reorder |
 | `src/types/reminder.ts` | `sourceHealthRecordId` |
@@ -194,4 +194,4 @@ User saves health record (vaccination + next due date)
 | `src/services/reminders/*` | Mapper + service support for source link |
 | `src/services/supabase/database.types.ts` | Updated reminder schema |
 | `src/pages/DashboardPage.tsx` | Real activity feed |
-| `supabase/migrations/20250531500000_add_reminder_automation_source.sql` | **New** — dedup column |
+| `supabase/migrations/20250531500000_add_reminder_automation_source.sql` | **New** - dedup column |

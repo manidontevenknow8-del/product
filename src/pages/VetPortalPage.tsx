@@ -46,7 +46,7 @@ function VetReadOnlyDashboard({
         <p className={styles.eyebrow}>Clinician view · read-only</p>
         <h2 className={styles.title}>{petName}&apos;s structured history</h2>
         <p className={styles.lead}>
-          Secure link preview — chronological medical events, documents, and care notes as your
+          Secure link preview - chronological medical events, documents, and care notes as your
           veterinary team would see them.
         </p>
         <dl className={styles.stats}>
@@ -69,7 +69,7 @@ function VetReadOnlyDashboard({
         <h3 className={styles.timelineTitle}>Chronological timeline</h3>
         {sorted.length === 0 ? (
           <p className={styles.timelineEmpty}>
-            No health records yet — add vaccinations, medications, and visit notes to populate this
+            No health records yet - add vaccinations, medications, and visit notes to populate this
             view.
           </p>
         ) : (

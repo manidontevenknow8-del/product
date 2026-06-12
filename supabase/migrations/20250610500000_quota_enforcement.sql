@@ -51,7 +51,7 @@ end;
 $$;
 
 -- ---------------------------------------------------------------------------
--- Pet limit (ensure Pro = 10 — idempotent with 20250610400000)
+-- Pet limit (ensure Pro = 10 - idempotent with 20250610400000)
 -- ---------------------------------------------------------------------------
 
 create or replace function public.enforce_pet_limit()

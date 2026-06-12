@@ -91,7 +91,7 @@ function buildLeaderboard(
 }
 
 /**
- * Growth service — swap for Supabase + edge functions for production.
+ * Growth service - swap for Supabase + edge functions for production.
  */
 export interface IGrowthService {
   getCurrentMember(): Promise<WaitlistMember | null>;

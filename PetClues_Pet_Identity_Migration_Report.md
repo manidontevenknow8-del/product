@@ -78,7 +78,7 @@ PetClues now stores **real user-owned pets** in Supabase (or localStorage fallba
 
 ### Trigger
 
-- `pets_set_updated_at` — maintains `updated_at` on row changes
+- `pets_set_updated_at` - maintains `updated_at` on row changes
 
 ---
 
@@ -110,9 +110,9 @@ PetClues now stores **real user-owned pets** in Supabase (or localStorage fallba
 
 | Page | Behavior |
 |------|----------|
-| Dashboard | `EmptyDashboardState` — "Add your first pet" → onboarding |
-| Pet Profile | `EmptyPetProfileState` — same CTA |
-| Emergency Passport | `EmptyPetProfileState` — same CTA |
+| Dashboard | `EmptyDashboardState` - "Add your first pet" → onboarding |
+| Pet Profile | `EmptyPetProfileState` - same CTA |
+| Emergency Passport | `EmptyPetProfileState` - same CTA |
 
 ---
 
@@ -203,11 +203,11 @@ These areas **still reference mock/Luna data** and are **out of scope** for this
 
 ### Recommended next migration
 
-1. **Profile edit persist** — wire `EditProfileModal` to `updatePet()`
-2. **Age translator** — hydrate from `activePet.birthDate`
-3. **Lost pet** — use `activePet` for case activation
-4. **Reminders** — link to real `pet_id`
-5. **Photo uploads** — replace base64 `photo_url` with Supabase Storage
+1. **Profile edit persist** - wire `EditProfileModal` to `updatePet()`
+2. **Age translator** - hydrate from `activePet.birthDate`
+3. **Lost pet** - use `activePet` for case activation
+4. **Reminders** - link to real `pet_id`
+5. **Photo uploads** - replace base64 `photo_url` with Supabase Storage
 
 ---
 
@@ -227,4 +227,4 @@ Consistent with auth layer pattern established in Supabase Foundation pass.
 
 ---
 
-*End of report — PetClues Pet Identity Migration*
+*End of report - PetClues Pet Identity Migration*

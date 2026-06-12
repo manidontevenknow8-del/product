@@ -1,4 +1,4 @@
-/** Free-tier visible history window — shared across Dashboard & Scan */
+/** Free-tier visible history window - shared across Dashboard & Scan */
 export const TIMELINE_HISTORY_DAYS = 30;
 
 export function partitionByHistoryWindow<T>(

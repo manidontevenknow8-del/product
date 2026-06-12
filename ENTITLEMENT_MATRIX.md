@@ -33,19 +33,19 @@
 | `limitedHealthRecords` | ✓ (3) | ✓ | ✓ | ✓ |
 | `reportPreview` | ✓ | ✓ | ✓ | ✓ |
 | `limitedAiInsight` | ✓ | ✓ | ✓ | ✓ |
-| `vetBillDecoder` | — | ✓ | ✓ | ✓ |
-| `familySharing` | — | ✓ | ✓ | ✓ |
-| `monthlyReportExport` | — | ✓ | ✓ | ✓ |
-| `careAutomation` | — | ✓ | ✓ | ✓ |
-| `premiumTimeline` | — | ✓ | ✓ | ✓ |
-| `advancedAiInsights` | — | — | ✓ | ✓ |
-| `advancedPetCareScore` | — | — | ✓ | ✓ |
-| `richMonthlyReports` | — | — | ✓ | ✓ |
-| `richTimeline` | — | — | ✓ | ✓ |
-| `advancedAutomation` | — | — | ✓ | ✓ |
-| `prioritySupport` | — | — | ✓ | ✓ |
-| `enterprisePetVolume` | — | — | — | ✓ |
-| `customLimitsSupport` | — | — | — | ✓ |
+| `vetBillDecoder` | - | ✓ | ✓ | ✓ |
+| `familySharing` | - | ✓ | ✓ | ✓ |
+| `monthlyReportExport` | - | ✓ | ✓ | ✓ |
+| `careAutomation` | - | ✓ | ✓ | ✓ |
+| `premiumTimeline` | - | ✓ | ✓ | ✓ |
+| `advancedAiInsights` | - | - | ✓ | ✓ |
+| `advancedPetCareScore` | - | - | ✓ | ✓ |
+| `richMonthlyReports` | - | - | ✓ | ✓ |
+| `richTimeline` | - | - | ✓ | ✓ |
+| `advancedAutomation` | - | - | ✓ | ✓ |
+| `prioritySupport` | - | - | ✓ | ✓ |
+| `enterprisePetVolume` | - | - | - | ✓ |
+| `customLimitsSupport` | - | - | - | ✓ |
 
 ## Upgrade CTAs
 

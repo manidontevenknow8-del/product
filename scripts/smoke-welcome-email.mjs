@@ -130,8 +130,8 @@ async function main() {
   if (!logRow) {
     throw new Error(
       invokeData?.status === 'skipped'
-        ? 'Dedup skipped send but no log row — unexpected'
-        : 'No welcome row in email_send_log — email likely NOT sent',
+        ? 'Dedup skipped send but no log row - unexpected'
+        : 'No welcome row in email_send_log - email likely NOT sent',
     );
   }
 
@@ -167,7 +167,7 @@ async function main() {
     logRow.resend_id;
 
   if (!logRow.resend_id) {
-    console.error('\nFAIL: email_send_log has no resend_id — Resend may have rejected the send.');
+    console.error('\nFAIL: email_send_log has no resend_id - Resend may have rejected the send.');
     process.exit(1);
   }
 

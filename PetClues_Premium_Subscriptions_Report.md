@@ -4,7 +4,7 @@
 **Scope:** Stripe billing, subscription state, feature gates, billing UI  
 **Build status:** `npm run build` passes (613 modules)
 
-**Principle:** Monetize only after value exists — free tier keeps core care tools; Premium unlocks AI and advanced intelligence.
+**Principle:** Monetize only after value exists - free tier keeps core care tools; Premium unlocks AI and advanced intelligence.
 
 ---
 
@@ -41,7 +41,7 @@ Billing UI, upgrade modals, and server-side enforcement are wired. Mock/localSto
 
 ---
 
-## Phase 1 — Stripe integration
+## Phase 1 - Stripe integration
 
 ### Edge functions
 
@@ -92,7 +92,7 @@ npx supabase functions deploy decode-vet-document   # includes premium gate
 
 ---
 
-## Phase 2 — Subscription tables
+## Phase 2 - Subscription tables
 
 **Migration:** `supabase/migrations/20250531900000_premium_subscriptions.sql`
 
@@ -117,7 +117,7 @@ Function `sync_profile_subscription_tier(user_id)` sets tier to `premium` when s
 
 ---
 
-## Phase 3 — Feature gates
+## Phase 3 - Feature gates
 
 ### Gate definitions
 
@@ -155,7 +155,7 @@ Function `sync_profile_subscription_tier(user_id)` sets tier to `premium` when s
 
 ---
 
-## Phase 4 — Billing UI & upgrade flow
+## Phase 4 - Billing UI & upgrade flow
 
 ### Pages
 
@@ -233,7 +233,7 @@ Feature request (e.g. decode-vet-document)
 
 | File | Change |
 |------|--------|
-| `supabase/migrations/20250531900000_premium_subscriptions.sql` | **New** — tables, triggers, RLS |
+| `supabase/migrations/20250531900000_premium_subscriptions.sql` | **New** - tables, triggers, RLS |
 | `supabase/functions/create-checkout-session/index.ts` | **New** |
 | `supabase/functions/create-portal-session/index.ts` | **New** |
 | `supabase/functions/stripe-webhook/index.ts` | **New** |
@@ -274,4 +274,4 @@ Feature request (e.g. decode-vet-document)
 
 ## Local dev (no Stripe)
 
-When `VITE_SUPABASE_*` is unset, `mockSubscriptionService` activates Premium instantly via localStorage — same pattern as before. Feature gates still work for UI testing.
+When `VITE_SUPABASE_*` is unset, `mockSubscriptionService` activates Premium instantly via localStorage - same pattern as before. Feature gates still work for UI testing.

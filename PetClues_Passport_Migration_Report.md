@@ -14,7 +14,7 @@ The **Emergency Passport** is now a real pet emergency record. Identity comes fr
 
 ---
 
-## Phase 1 — Data Hydration
+## Phase 1 - Data Hydration
 
 ### Sources
 
@@ -35,7 +35,7 @@ activePet + records + documents
 
 ---
 
-## Phase 2 — Passport Sections
+## Phase 2 - Passport Sections
 
 | Section | Component | Data source |
 |---------|-----------|-------------|
@@ -54,7 +54,7 @@ Each record entry displays **title**, **date recorded**, **description**, **next
 
 ---
 
-## Phase 3 — PassportSummaryService
+## Phase 3 - PassportSummaryService
 
 **Location:** `src/services/passport/passportSummaryService.ts`
 
@@ -88,7 +88,7 @@ Max timestamp across pet `updated_at`, health record `updated_at`, and document 
 
 ---
 
-## Phase 4 — Export Placeholder
+## Phase 4 - Export Placeholder
 
 **Component:** `PassportExportPlaceholder`
 
@@ -161,7 +161,7 @@ Legacy components remain in codebase (deprecated exports) but are **not rendered
 | `passportData.ts` | Mock exports unused by passport page |
 | `EmergencySummaryCard`, `MedicalInfoCard` | Deprecated; kept for reference |
 | `VetContactCard`, `OwnerContactCard` | No vet/owner contact tables yet |
-| PDF export | Placeholder only — not implemented |
+| PDF export | Placeholder only - not implemented |
 | Secure link | Static URL pattern; no public share route yet |
 | Owner profile on passport | Auth `profiles` not surfaced on passport |
 | Blood type | Not in schema; omitted from passport |
@@ -171,13 +171,13 @@ Legacy components remain in codebase (deprecated exports) but are **not rendered
 
 ## Testing Checklist
 
-1. Open **Emergency Passport** with an active pet and no health records — verify empty section messages.
-2. Add vaccination, allergy, medication, and diagnosis records on **Pet Profile** — confirm passport sections update.
-3. Link a record to an uploaded document — verify source document name and date on passport.
+1. Open **Emergency Passport** with an active pet and no health records - verify empty section messages.
+2. Add vaccination, allergy, medication, and diagnosis records on **Pet Profile** - confirm passport sections update.
+3. Link a record to an uploaded document - verify source document name and date on passport.
 4. Confirm **summary bar** shows correct counts and latest vaccination.
-5. Add wellness + high-severity records — verify **Emergency notes** content.
+5. Add wellness + high-severity records - verify **Emergency notes** content.
 6. Confirm **Export passport** shows disabled PDF with coming soon badge.
-7. Refresh page — data persists from Supabase.
+7. Refresh page - data persists from Supabase.
 
 ---
 
@@ -191,4 +191,4 @@ Legacy components remain in codebase (deprecated exports) but are **not rendered
 
 ---
 
-*Generated as part of the Health Records Migration follow-up — Emergency Passport migration.*
+*Generated as part of the Health Records Migration follow-up - Emergency Passport migration.*

@@ -1,4 +1,4 @@
--- PetClues Vet Bill Decoder — extraction history (AI, user-reviewed)
+-- PetClues Vet Bill Decoder - extraction history (AI, user-reviewed)
 create table if not exists public.vet_bill_extractions (
   id uuid primary key default gen_random_uuid(),
   user_id uuid not null references auth.users (id) on delete cascade,

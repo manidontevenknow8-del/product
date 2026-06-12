@@ -1,7 +1,7 @@
 <wizard-report>
 # PostHog post-wizard report
 
-The wizard has completed a deep integration of PostHog into PetClues. The project uses a React/Vite frontend with an existing analytics adapter pattern. Rather than replacing that system, the integration wires PostHog (`posthog-js`) into it as a new adapter. A new `src/analytics/posthog.ts` module initializes the PostHog client from environment variables, and the existing `posthogAdapter` stub in `EventTracker.ts` was fully implemented and enabled. All existing `eventTracker.track()` calls throughout the codebase — covering pet creation, health records, reminders, vet bill decoding, subscription events, and errors — now flow to PostHog automatically. Three new tracking calls were added for events that were defined but not yet instrumented: `signup_completed`, `login_completed`, and `waitlist_joined`. User identification is handled automatically: `AnalyticsProvider` calls `tracker.setUserId()` whenever the authenticated user changes, which triggers `posthog.identify()` via the adapter.
+The wizard has completed a deep integration of PostHog into PetClues. The project uses a React/Vite frontend with an existing analytics adapter pattern. Rather than replacing that system, the integration wires PostHog (`posthog-js`) into it as a new adapter. A new `src/analytics/posthog.ts` module initializes the PostHog client from environment variables, and the existing `posthogAdapter` stub in `EventTracker.ts` was fully implemented and enabled. All existing `eventTracker.track()` calls throughout the codebase - covering pet creation, health records, reminders, vet bill decoding, subscription events, and errors - now flow to PostHog automatically. Three new tracking calls were added for events that were defined but not yet instrumented: `signup_completed`, `login_completed`, and `waitlist_joined`. User identification is handled automatically: `AnalyticsProvider` calls `tracker.setUserId()` whenever the authenticated user changes, which triggers `posthog.identify()` via the adapter.
 
 | Event | Description | File |
 |---|---|---|
@@ -29,12 +29,12 @@ The wizard has completed a deep integration of PostHog into PetClues. The projec
 
 We've built some insights and a dashboard for you to keep an eye on user behavior, based on the events we just instrumented:
 
-- [Analytics basics (wizard) — Dashboard](https://us.posthog.com/project/458817/dashboard/1681771)
-- [New signups & logins](https://us.posthog.com/project/458817/insights/hxVhNRFk) — Daily signup and login trend
-- [Signup → pet created funnel](https://us.posthog.com/project/458817/insights/Tr0fclYu) — Core onboarding conversion funnel
-- [Premium conversions](https://us.posthog.com/project/458817/insights/sGs4SP9i) — Total premium_started count
-- [Core feature engagement](https://us.posthog.com/project/458817/insights/L5NTiyIr) — Weekly reminders, health records, check-ins
-- [Vet bill decoder usage](https://us.posthog.com/project/458817/insights/fo1iq1TU) — Upload → decode → approve funnel
+- [Analytics basics (wizard) - Dashboard](https://us.posthog.com/project/458817/dashboard/1681771)
+- [New signups & logins](https://us.posthog.com/project/458817/insights/hxVhNRFk) - Daily signup and login trend
+- [Signup → pet created funnel](https://us.posthog.com/project/458817/insights/Tr0fclYu) - Core onboarding conversion funnel
+- [Premium conversions](https://us.posthog.com/project/458817/insights/sGs4SP9i) - Total premium_started count
+- [Core feature engagement](https://us.posthog.com/project/458817/insights/L5NTiyIr) - Weekly reminders, health records, check-ins
+- [Vet bill decoder usage](https://us.posthog.com/project/458817/insights/fo1iq1TU) - Upload → decode → approve funnel
 
 ### Agent skill
 

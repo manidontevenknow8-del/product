@@ -12,9 +12,9 @@ export { PassportHero } from './PassportHero';
 export { PassportShareActions } from './PassportShareActions';
 export { PassportQRCode } from './PassportQRCode';
 
-/** @deprecated Legacy mock cards — replaced by PassportRecordSection */
+/** @deprecated Legacy mock cards - replaced by PassportRecordSection */
 export { EmergencySummaryCard } from './EmergencySummaryCard';
-/** @deprecated Legacy mock cards — replaced by PassportRecordSection */
+/** @deprecated Legacy mock cards - replaced by PassportRecordSection */
 export { MedicalInfoCard } from './MedicalInfoCard';
 /** @deprecated No contact table yet */
 export { VetContactCard } from './VetContactCard';

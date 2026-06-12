@@ -38,7 +38,7 @@ function saveSightings(sightings: Sighting[]): void {
 }
 
 /**
- * Lost pet service — swap for Supabase + edge functions in production.
+ * Lost pet service - swap for Supabase + edge functions in production.
  *
  * Backend requirements:
  * - lost_pet_cases table with status workflow

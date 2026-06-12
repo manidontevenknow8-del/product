@@ -195,20 +195,20 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: var(--space-6);
+  padding: var(--space-8) var(--space-7);
 }
 
 .tierCardPro .tierBody {
-  padding: var(--space-7) var(--space-6) var(--space-8);
+  padding: var(--space-9) var(--space-8) var(--space-10);
 }
 
 @media (min-width: 768px) {
   .tierBody {
-    padding: var(--space-7);
+    padding: var(--space-9) var(--space-8);
   }
 
   .tierCardPro .tierBody {
-    padding: var(--space-8) var(--space-7) var(--space-9);
+    padding: var(--space-10) var(--space-9) var(--space-11);
   }
 }
 

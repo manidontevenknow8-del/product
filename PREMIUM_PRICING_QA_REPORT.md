@@ -1,4 +1,4 @@
-# Premium Pricing Restructure — QA Report
+# Premium Pricing Restructure - QA Report
 
 Generated: 2026-06-08
 
@@ -18,7 +18,7 @@ Generated: 2026-06-08
 | Free | ₹0/month |
 | Plus | ₹2,999/month |
 | Pro | ₹4,999/month |
-| Enterprise | Custom — support@petclues.com |
+| Enterprise | Custom - support@petclues.com |
 
 ### Annual pricing (2 months free)
 
@@ -119,9 +119,9 @@ Data source: `src/data/pricingMatrix.ts`
 | Timeline | `premiumTimeline` (6 mo free) | Plus |
 | PetCare Score | `petCareScore` / `advancedPetCareScore` | Plus / Pro |
 | Monthly Report | `monthlyReportExport` | Plus |
-| Referrals | No premium gate | — |
-| Settings | No premium gate | — |
-| Billing | Display only | — |
+| Referrals | No premium gate | - |
+| Settings | No premium gate | - |
+| Billing | Display only | - |
 
 **Backend enforcement:**
 - Pet insert: `enforce_pet_limit()` trigger (updated Pro=10)

@@ -1,4 +1,4 @@
--- Pet profile avatars — public read, owner-scoped write
+-- Pet profile avatars - public read, owner-scoped write
 -- Path format: {owner_id}/{pet_id}/avatar.{ext}
 
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)

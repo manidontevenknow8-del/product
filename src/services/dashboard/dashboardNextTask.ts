@@ -45,7 +45,7 @@ export function pickDashboardNextTask(params: {
     return {
       id: `reminder-${r.id}`,
       title: r.title,
-      description: 'Due today — one small action keeps the week calm.',
+      description: 'Due today - one small action keeps the week calm.',
       urgency: 'today',
       dueLabel: 'Due today',
       ctaLabel: 'Open reminders',

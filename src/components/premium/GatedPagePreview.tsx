@@ -7,7 +7,7 @@ type GatedPagePreviewProps = {
   subtitle: string;
 };
 
-/** Decorative blurred backdrop for full-page PremiumGate — no user data */
+/** Decorative blurred backdrop for full-page PremiumGate - no user data */
 export function GatedPagePreview({
   imageUrl,
   eyebrow,

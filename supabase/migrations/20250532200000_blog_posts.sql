@@ -1,4 +1,4 @@
--- Blog & SEO infrastructure — blog_posts table
+-- Blog & SEO infrastructure - blog_posts table
 
 create table if not exists public.blog_posts (
   id uuid primary key default gen_random_uuid(),
@@ -69,7 +69,7 @@ insert into public.blog_posts (
 (
   'How to Build a Vaccination Schedule Your Dog Will Actually Follow',
   'dog-vaccination-schedule-guide',
-  E'## Why schedules fail\n\nMost pet parents start strong, then life gets busy. The fix is not more willpower — it is a system that lives where you already look.\n\n## The calm approach\n\n1. List core vaccines from your vet\n2. Add each due date as a reminder with a 7-day early window\n3. Store the clinic receipt in your pet document vault\n\n## What to track\n\n- Vaccine name and lot number\n- Date administered\n- Next due date\n- Any reaction notes\n\nPetClues ties reminders to health records so nothing lives in three different places.',
+  E'## Why schedules fail\n\nMost pet parents start strong, then life gets busy. The fix is not more willpower - it is a system that lives where you already look.\n\n## The calm approach\n\n1. List core vaccines from your vet\n2. Add each due date as a reminder with a 7-day early window\n3. Store the clinic receipt in your pet document vault\n\n## What to track\n\n- Vaccine name and lot number\n- Date administered\n- Next due date\n- Any reaction notes\n\nPetClues ties reminders to health records so nothing lives in three different places.',
   'A practical guide to building a dog vaccination schedule with reminders, records, and vet receipts in one place.',
   'dog-health',
   array['vaccination', 'dog', 'reminders'],
@@ -81,7 +81,7 @@ insert into public.blog_posts (
 (
   'Cat Health Records: What to Save After Every Vet Visit',
   'cat-health-records-checklist',
-  E'## The five-minute habit\n\nAfter each visit, save three things: the summary PDF, medication changes, and the next follow-up date.\n\n## Why it matters\n\nCats hide discomfort. A clear record history helps you spot patterns early — appetite shifts, weight trends, recurring symptoms.\n\n## Starter checklist\n\n- Wellness exam notes\n- Vaccination history\n- Lab results\n- Dental assessments\n- Prescription updates\n\nOrganized records turn anxiety into confidence.',
+  E'## The five-minute habit\n\nAfter each visit, save three things: the summary PDF, medication changes, and the next follow-up date.\n\n## Why it matters\n\nCats hide discomfort. A clear record history helps you spot patterns early - appetite shifts, weight trends, recurring symptoms.\n\n## Starter checklist\n\n- Wellness exam notes\n- Vaccination history\n- Lab results\n- Dental assessments\n- Prescription updates\n\nOrganized records turn anxiety into confidence.',
   'What to save after every vet visit so your cat''s health story stays complete and easy to share.',
   'cat-health',
   array['records', 'cat', 'vet-visit'],
@@ -105,7 +105,7 @@ insert into public.blog_posts (
 (
   'Exotic Pet Records: What Reptile and Small Mammal Owners Should Track',
   'exotic-pet-records-guide',
-  E'## Exotics need precision\n\nTemperature logs, shedding cycles, appetite notes, and enclosure changes all influence health.\n\n## What belongs in your vault\n\n- Habitat parameters (temp / humidity)\n- Feeding schedule changes\n- Shed dates and quality notes\n- Parasite prevention history\n\n## Shareable summaries\n\nWhen you can export a clean timeline, sitters and vets stay aligned — especially for species with specialized care needs.',
+  E'## Exotics need precision\n\nTemperature logs, shedding cycles, appetite notes, and enclosure changes all influence health.\n\n## What belongs in your vault\n\n- Habitat parameters (temp / humidity)\n- Feeding schedule changes\n- Shed dates and quality notes\n- Parasite prevention history\n\n## Shareable summaries\n\nWhen you can export a clean timeline, sitters and vets stay aligned - especially for species with specialized care needs.',
   'A practical guide to health records for reptiles and small mammals, built for precision and peace of mind.',
   'exotic-pets',
   array['exotic', 'reptile', 'records'],
@@ -117,7 +117,7 @@ insert into public.blog_posts (
 (
   'Pet Records 101: Turn Chaos Into a Calm Care Timeline',
   'pet-records-101-care-timeline',
-  E'## Records are a story\n\nVaccines, bills, prescriptions, and notes are not clutter — they are chapters in your pet''s life.\n\n## From folders to timeline\n\nWhen documents become dated events, patterns emerge: seasonal allergies, medication responses, weight trends.\n\n## Start this week\n\nUpload your latest vet document, confirm extracted dates, and set one reminder for the next due item. Small steps create lasting clarity.',
+  E'## Records are a story\n\nVaccines, bills, prescriptions, and notes are not clutter - they are chapters in your pet''s life.\n\n## From folders to timeline\n\nWhen documents become dated events, patterns emerge: seasonal allergies, medication responses, weight trends.\n\n## Start this week\n\nUpload your latest vet document, confirm extracted dates, and set one reminder for the next due item. Small steps create lasting clarity.',
   'Learn how organized pet records become a calm timeline that improves everyday care decisions.',
   'pet-records',
   array['records', 'timeline', 'organization'],
@@ -129,7 +129,7 @@ insert into public.blog_posts (
 (
   'PetClues Guides: Choosing the Right Care Tools for Your Pet''s Life Stage',
   'petclues-guides-life-stage-care-tools',
-  E'## Puppies and kittens\n\nFocus on vaccination cadence, socialization notes, and growth tracking.\n\n## Adult pets\n\nPrioritize preventive care, dental follow-ups, and medication adherence.\n\n## Senior companions\n\nTrack mobility, appetite, lab trends, and comfort-focused reminders.\n\n## How PetClues helps\n\nReminders, document vault, emergency passport, and PetCare Score work together — so you spend less time searching and more time caring.',
+  E'## Puppies and kittens\n\nFocus on vaccination cadence, socialization notes, and growth tracking.\n\n## Adult pets\n\nPrioritize preventive care, dental follow-ups, and medication adherence.\n\n## Senior companions\n\nTrack mobility, appetite, lab trends, and comfort-focused reminders.\n\n## How PetClues helps\n\nReminders, document vault, emergency passport, and PetCare Score work together - so you spend less time searching and more time caring.',
   'A PetClues guide to choosing the right care tools for puppies, adults, and senior pets.',
   'petclues-guides',
   array['petclues', 'guides', 'life-stage'],

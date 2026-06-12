@@ -1,5 +1,5 @@
 /**
- * Auth service interface — implemented by mock and Supabase services.
+ * Auth service interface - implemented by mock and Supabase services.
  */
 
 import type {

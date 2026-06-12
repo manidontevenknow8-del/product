@@ -1,4 +1,4 @@
-/** Shared input limits — keep in sync with supabase/functions/_shared/security/validation.ts */
+/** Shared input limits - keep in sync with supabase/functions/_shared/security/validation.ts */
 
 export const INPUT_LIMITS = {
   email: 254,

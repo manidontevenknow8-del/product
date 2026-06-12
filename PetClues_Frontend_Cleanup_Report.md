@@ -21,10 +21,10 @@ This pass addressed **18 frontend issues** across routing, UX hierarchy, dead co
 | UX / User Flow | 82 | 88 | +6 |
 | Mobile | 86 | 89 | +3 |
 | Design Consistency | 84 | 87 | +3 |
-| Product Completeness | 78 | 78 | — |
+| Product Completeness | 78 | 78 | - |
 | **Overall** | **84** | **88** | **+4** |
 
-Product Completeness is unchanged — mock data and backend gaps remain by design until Supabase integration.
+Product Completeness is unchanged - mock data and backend gaps remain by design until Supabase integration.
 
 ---
 
@@ -82,16 +82,16 @@ Product Completeness is unchanged — mock data and backend gaps remain by desig
 
 ## 2. Issues Fixed
 
-### Phase 1 — Routing Cleanup
+### Phase 1 - Routing Cleanup
 
 | Audit ID | Issue | Resolution |
 |----------|-------|------------|
 | H6 | Dev routes in user sidebar | Removed `/launch-readiness`, `/beta-release` from `SECONDARY_NAV`. Routes remain registered for direct access. `/analytics` was already unlinked. |
-| H3 | `/status` used `AppLayout` on public route | Converted to `PublicLayout` — public header/footer only, no app chrome |
+| H3 | `/status` used `AppLayout` on public route | Converted to `PublicLayout` - public header/footer only, no app chrome |
 | M2 | `/settings/profile` query param ignored | `SettingsPage` reads `?section=` on load and updates URL on nav change |
 | Low | `/settings/account` redirect incomplete | Now redirects to `/settings?section=account` |
 
-### Phase 2 — UX Cleanup
+### Phase 2 - UX Cleanup
 
 | Audit ID | Issue | Resolution |
 |----------|-------|------------|
@@ -99,27 +99,27 @@ Product Completeness is unchanged — mock data and backend gaps remain by desig
 | M4 | Dashboard cognitive overload | Reordered into primary (overdue → upcoming → score/insight → activity) and secondary (family → invite → quick actions) sections |
 | N6 | Duplicate insight cards | Removed `WeeklyInsightWidget` from dashboard layout; `ImportantInsightCard` now sources PetCare Score weekly insight with mock fallback |
 
-### Phase 3 — Component Cleanup
+### Phase 3 - Component Cleanup
 
 | Audit ID | Issue | Resolution |
 |----------|-------|------------|
 | M6 | Legacy dead components | Deleted unused dashboard `PetCareScoreCard`, `AccountSettings`, `ProfileSettings` and their styles |
 
-### Phase 4 — Empty State Consistency
+### Phase 4 - Empty State Consistency
 
 | Audit ID | Issue | Resolution |
 |----------|-------|------------|
 | M3 | Inconsistent empty vs mock data | Added `src/data/demoData.ts` with centralized flags. Timeline defaults to empty state; set `VITE_DEMO_TIMELINE=true` to preview mock events. Dashboard activity gated by `dashboardActivity` flag. |
 | N7 | `appState.hasActivePet` static | Onboarding sets `petclues_has_active_pet` in localStorage; dashboard reads via `getHasActivePet()` |
 
-### Phase 5 — Mobile Improvements
+### Phase 5 - Mobile Improvements
 
 | Audit ID | Issue | Resolution |
 |----------|-------|------------|
 | Mobile #1 | Bottom nav density | Shorter labels (Home, Remind, Pet, Scan, Story, ID); larger icons (22px); tighter gap control; 380px breakpoint tuning |
 | Mobile #2 | Dashboard long scroll | Primary/secondary split reduces perceived clutter; tighter mobile gaps (`space-4`) |
 
-### Phase 6 — Polish
+### Phase 6 - Polish
 
 | Audit ID | Issue | Resolution |
 |----------|-------|------------|
@@ -158,7 +158,7 @@ These were **intentionally not addressed** per scope:
 | Scan document storage | **High** | Upload UI exists; no persistent storage |
 | Analytics provider | **Medium** | Local tracker only; PostHog/Plausible at deploy |
 | Error monitoring | **Medium** | Sentry or equivalent |
-| Bundle code-splitting | **Medium** | 549KB JS — performance optimization |
+| Bundle code-splitting | **Medium** | 549KB JS - performance optimization |
 | Env-gated dev routes | **Low** | Routes hidden from nav; consider `VITE_SHOW_DEV_ROUTES` for admin |
 
 ### Frontend-only items still open (non-blocking for beta)
@@ -185,19 +185,19 @@ Requires Supabase integration, legal review, real auth verification, payment pro
 
 ### Recommended next steps (in order)
 
-1. **Supabase Auth** — replace `mockAuthService`, remove demo email skip
-2. **Pets table** — onboarding → pet creation; replace mock data layer
-3. **Reminders + notifications** — first real-data modules (interfaces ready)
-4. **Legal counsel review** — privacy, terms, cookies
-5. **Stripe** — billing flow
-6. **Deploy** — env config, OG images, sitemap, analytics provider
+1. **Supabase Auth** - replace `mockAuthService`, remove demo email skip
+2. **Pets table** - onboarding → pet creation; replace mock data layer
+3. **Reminders + notifications** - first real-data modules (interfaces ready)
+4. **Legal counsel review** - privacy, terms, cookies
+5. **Stripe** - billing flow
+6. **Deploy** - env config, OG images, sitemap, analytics provider
 
 ---
 
 ## Appendix: Demo Data Configuration
 
 ```env
-# Optional — preview timeline mock events locally
+# Optional - preview timeline mock events locally
 VITE_DEMO_TIMELINE=true
 ```
 
@@ -211,4 +211,4 @@ Local pet setup flag: `petclues_has_active_pet` in localStorage, set `true` on o
 
 ---
 
-*End of report — PetClues Frontend Cleanup Pass*
+*End of report - PetClues Frontend Cleanup Pass*

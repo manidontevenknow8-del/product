@@ -21,7 +21,7 @@ export const PLANS: SubscriptionPlan[] = [
   {
     id: 'free',
     name: 'Free',
-    description: 'Professional organization for one companion — start your pet care journey.',
+    description: 'Professional organization for one companion - start your pet care journey.',
     monthlyPrice: 0,
     yearlyPrice: 0,
     priceDisplay: '₹0',

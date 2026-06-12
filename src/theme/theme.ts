@@ -22,7 +22,7 @@ export const theme = {
   breakpoints,
 } as const;
 
-/** Typography scale — maps to CSS utility classes in typography.css */
+/** Typography scale - maps to CSS utility classes in typography.css */
 export const typography = {
   display: 'type-display',
   heading: 'type-heading',

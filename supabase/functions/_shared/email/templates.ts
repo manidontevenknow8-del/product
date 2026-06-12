@@ -42,7 +42,7 @@ function buildUpcomingReminderEmail(payload: UpcomingReminderPayload) {
     </p>`;
 
   const html = renderEmailLayout({
-    preheader: `${payload.reminderTitle} for ${payload.petName} — ${payload.dueLabel}`,
+    preheader: `${payload.reminderTitle} for ${payload.petName} - ${payload.dueLabel}`,
     title: 'Upcoming care reminder',
     bodyHtml,
     ctaLabel: 'View reminders',
@@ -77,7 +77,7 @@ function buildOverdueReminderEmail(payload: OverdueReminderPayload) {
         renderDetailRow('Category', payload.category),
     )}
     <p style="margin: 16px 0 0; font-size: 15px; line-height: 1.6; color: #6B6560;">
-      Complete or reschedule when you can — small steps keep care on track.
+      Complete or reschedule when you can - small steps keep care on track.
     </p>`;
 
   const html = renderEmailLayout({
@@ -130,7 +130,7 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
     </table>`;
 
   const html = renderEmailLayout({
-    preheader: `Your weekly pet care summary — ${payload.weekLabel}`,
+    preheader: `Your weekly pet care summary - ${payload.weekLabel}`,
     title: 'Weekly pet summary',
     bodyHtml,
     ctaLabel: 'Open dashboard',
@@ -140,7 +140,7 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
   });
 
   const text = [
-    `Weekly pet summary — ${payload.weekLabel}`,
+    `Weekly pet summary - ${payload.weekLabel}`,
     '',
     ...payload.pets.map(
       (pet) =>
@@ -168,7 +168,7 @@ function buildWelcomeEmail(payload: WelcomeEmailPayload) {
     </p>`;
 
   const html = renderEmailLayout({
-    preheader: 'Welcome to PetClues — your pet care, organized.',
+    preheader: 'Welcome to PetClues - your pet care, organized.',
     title: 'Welcome to PetClues',
     bodyHtml,
     ctaLabel: 'Open your dashboard',
@@ -266,7 +266,7 @@ export function subjectForEmail(input: SendEmailInput): string {
     case 'overdue_reminder':
       return `Overdue: ${input.payload.reminderTitle} for ${input.payload.petName}`;
     case 'weekly_pet_summary':
-      return `Weekly pet summary — ${input.payload.weekLabel}`;
+      return `Weekly pet summary - ${input.payload.weekLabel}`;
     case 'welcome':
       return 'Welcome to PetClues';
     case 'founding_member_confirmation':

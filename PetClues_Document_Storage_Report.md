@@ -14,7 +14,7 @@ PetClues now supports **real document uploads** (PDF, JPG, PNG) stored in a priv
 
 ---
 
-## Phase 1 — Storage Bucket
+## Phase 1 - Storage Bucket
 
 **File:** `supabase/migrations/20250531300000_create_pet_documents.sql`
 
@@ -45,7 +45,7 @@ Example: `a1b2-uuid/pet-uuid/doc-uuid/vaccination_record.pdf`
 
 ---
 
-## Phase 2 — Database Migration
+## Phase 2 - Database Migration
 
 ### Table: `public.pet_documents`
 
@@ -76,7 +76,7 @@ All policies verify pet ownership via `EXISTS` subquery on `public.pets`:
 
 ---
 
-## Phase 3 — Service Layer
+## Phase 3 - Service Layer
 
 ### Files created
 
@@ -109,7 +109,7 @@ getDocumentService()
 
 ---
 
-## Phase 4 — Upload Flow (Scan Page)
+## Phase 4 - Upload Flow (Scan Page)
 
 ```
 User selects PDF/JPG/PNG
@@ -128,12 +128,12 @@ User selects PDF/JPG/PNG
 - Removed mock `buildExtractionFromFile` / OCR simulation
 - Added `UploadSuccessCard` (storage confirmation, no AI badge)
 - `UploadZone` supports uploading, error, and progress states
-- `ScanHero` copy updated — no Luna/AI extraction references
+- `ScanHero` copy updated - no Luna/AI extraction references
 - Requires active pet before upload
 
 ---
 
-## Phase 5 — Vault Hydration
+## Phase 5 - Vault Hydration
 
 **Component:** `PetDocumentsVault` (Profile page)
 
@@ -144,18 +144,18 @@ User selects PDF/JPG/PNG
 
 ---
 
-## Phase 6 — Passport Integration
+## Phase 6 - Passport Integration
 
 **Component:** `PassportDocumentsCard` (new)
 
 - Added to `EmergencyPassportPage` below `MedicalInfoCard`
 - Lists uploaded documents for active pet (name, type, date)
-- **Passport identity** (`PassportHeader`) unchanged — still from `activePet`
+- **Passport identity** (`PassportHeader`) unchanged - still from `activePet`
 - **Medical text fields** (`MedicalInfoCard`) remain mock until health data migration
 
 ---
 
-## Phase 7 — Error Handling
+## Phase 7 - Error Handling
 
 | State | UI |
 |-------|-----|
@@ -237,14 +237,14 @@ Or apply `20250531300000_create_pet_documents.sql` manually.
 ## Testing Checklist
 
 1. Ensure a pet exists and Supabase env is configured.
-2. **Scan page:** Upload PDF — verify progress, success card, recent list entry.
-3. **Scan page:** Upload JPG/PNG — verify storage.
-4. **Scan page:** Upload invalid type or >10 MB — verify error message.
+2. **Scan page:** Upload PDF - verify progress, success card, recent list entry.
+3. **Scan page:** Upload JPG/PNG - verify storage.
+4. **Scan page:** Upload invalid type or >10 MB - verify error message.
 5. **Profile vault:** Confirm documents appear with name, date, type.
-6. **Profile vault:** Upload from vault area — verify persistence.
+6. **Profile vault:** Upload from vault area - verify persistence.
 7. **Passport:** Confirm uploaded documents list appears below medical info.
-8. Refresh browser — documents persist across sessions.
-9. Without Supabase env — confirm localStorage mock path works.
+8. Refresh browser - documents persist across sessions.
+9. Without Supabase env - confirm localStorage mock path works.
 
 ---
 
@@ -259,4 +259,4 @@ Or apply `20250531300000_create_pet_documents.sql` manually.
 
 ---
 
-*Generated as part of the Pet Identity Migration follow-up — document storage foundation.*
+*Generated as part of the Pet Identity Migration follow-up - document storage foundation.*

@@ -34,7 +34,7 @@ export const EDITORIAL_NAV: NavItem[] = [
   },
 ];
 
-/** @deprecated Use EDITORIAL_NAV — kept for mobile legacy references */
+/** @deprecated Use EDITORIAL_NAV - kept for mobile legacy references */
 export const PRIMARY_NAV: NavItem[] = [
   { label: 'Dashboard', shortLabel: 'Home', path: ROUTES.DASHBOARD, icon: 'dashboard' },
   { label: 'Reminders', shortLabel: 'Remind', path: ROUTES.REMINDERS, icon: 'reminders' },

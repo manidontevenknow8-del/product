@@ -5,7 +5,7 @@
   color: var(--color-text);
 }
 
-/* Article intro — content before the first section heading */
+/* Article intro - content before the first section heading */
 .body :global(.blog-intro) {
   margin-bottom: 0.5rem;
   padding: 1.35rem 1.5rem;

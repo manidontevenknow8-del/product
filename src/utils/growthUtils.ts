@@ -59,7 +59,7 @@ export function getCountdownParts(target: Date, now = new Date()) {
 }
 
 export function buildShareMessage(_member: WaitlistMember, url: string): string {
-  return `I've been using PetClues to organize my pet's health — daily check-ins, reminders, and an emergency passport. Create a free account with my link: ${url}`;
+  return `I've been using PetClues to organize my pet's health - daily check-ins, reminders, and an emergency passport. Create a free account with my link: ${url}`;
 }
 
 export function buildShareUrls(_url: string, message: string) {
@@ -67,7 +67,7 @@ export function buildShareUrls(_url: string, message: string) {
   return {
     whatsapp: `https://wa.me/?text=${encodedMessage}`,
     twitter: `https://twitter.com/intent/tweet?text=${encodedMessage}`,
-    email: `mailto:?subject=${encodeURIComponent('Try PetClues — pet health made calm')}&body=${encodedMessage}`,
+    email: `mailto:?subject=${encodeURIComponent('Try PetClues - pet health made calm')}&body=${encodedMessage}`,
     instagram: null as string | null,
   };
 }

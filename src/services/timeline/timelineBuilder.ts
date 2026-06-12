@@ -119,7 +119,7 @@ function reminderToEvent(reminder: Reminder): TimelineEventItem | null {
 
 function adoptionEvent(pet: PetRecord): TimelineEventItem {
   const date = pet.birthDate ?? pet.createdAt.slice(0, 10);
-  const breedPart = pet.breed ? ` — ${pet.breed}` : '';
+  const breedPart = pet.breed ? ` - ${pet.breed}` : '';
 
   return {
     id: `adoption-${pet.id}`,
@@ -158,7 +158,7 @@ function scoreMilestoneEvents(petId: string, petName: string): TimelineEventItem
       monthGroup: formatMonthGroup(curr.date),
       title: `PetCare Score reached ${curr.score}`,
       description: crossed86
-        ? `${petName}'s care organization hit ${curr.score} — records, reminders, and documents are aligned.`
+        ? `${petName}'s care organization hit ${curr.score} - records, reminders, and documents are aligned.`
         : `${petName}'s PetCare Score climbed to ${curr.score} as your care rhythm improved.`,
       sourceKind: 'score',
       meta: `Score ${curr.score}`,

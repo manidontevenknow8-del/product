@@ -220,7 +220,7 @@ export function BillingPage() {
               <div className={styles.invoiceEmpty}>
                 {currentPlan !== 'free'
                   ? 'No payment records yet.'
-                  : 'No payments yet — upgrade to see billing history here.'}
+                  : 'No payments yet - upgrade to see billing history here.'}
               </div>
             ) : (
               <div className={styles.invoiceList}>

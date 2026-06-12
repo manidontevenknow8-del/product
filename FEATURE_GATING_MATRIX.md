@@ -1,6 +1,6 @@
 # Feature Gating Matrix
 
-All gates use `useSubscription().canAccess(feature)` or entitlements helpers — **no hardcoded plan checks in components**.
+All gates use `useSubscription().canAccess(feature)` or entitlements helpers - **no hardcoded plan checks in components**.
 
 ## Pages
 
@@ -15,13 +15,13 @@ All gates use `useSubscription().canAccess(feature)` or entitlements helpers —
 | **Passport** | Basic view | Export | Export | Export | Plus gate on export |
 | **Scan / Decoder** | Locked | 5 decodes/mo | 30 decodes/mo | Unlimited | `PremiumGate` + upgrade modal |
 | **PetCare Score** | Basic score | Basic | Advanced breakdown | Advanced | Pro gate |
-| **Pet Match** | Available | Available | Available | Available | — |
+| **Pet Match** | Available | Available | Available | Available | - |
 | **Family sharing** | Locked | Unlocked | Unlocked | Unlocked | Plus gate |
-| **Referrals** | Available | Available | Available | Available | — |
-| **Founding members** | Available | Available | Available | Available | — |
-| **Settings** | Full | Full | Full | Full | — |
+| **Referrals** | Available | Available | Available | Available | - |
+| **Founding members** | Available | Available | Available | Available | - |
+| **Settings** | Full | Full | Full | Full | - |
 | **Billing** | Upgrade CTAs | Upgrade to Pro | Upgrade to Enterprise | Contact support | Tier-aware |
-| **Pricing** | 4-tier comparison | 4-tier comparison | 4-tier comparison | Contact CTA | — |
+| **Pricing** | 4-tier comparison | 4-tier comparison | 4-tier comparison | Contact CTA | - |
 
 ## Components
 
@@ -37,5 +37,5 @@ All gates use `useSubscription().canAccess(feature)` or entitlements helpers —
 
 - Subtle lock overlay via `PremiumGate`
 - Badge shows required tier (Plus / Pro / Enterprise)
-- Single CTA button — no aggressive popups
+- Single CTA button - no aggressive popups
 - Calm upgrade copy from `planUpgradeCopy.ts`

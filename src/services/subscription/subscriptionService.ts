@@ -1,5 +1,5 @@
 /**
- * Subscription service — Supabase + Razorpay checkout.
+ * Subscription service - Supabase + Razorpay checkout.
  */
 
 import { isSupabaseConfigured } from '@/services/supabase/config';

@@ -34,17 +34,17 @@ Generated: 2026-06-08
 
 ## Potential Indexing Issues
 
-1. **SPA client-side rendering** — Initial HTML includes correct meta tags; JSON-LD injected client-side. Googlebot renders JS, but verify with URL Inspection.
-2. **Old GoDaddy SERP snippet** — Cached from pre-PetClues domain parking. Re-index after deploy; may take 2–8 weeks.
-3. **No dedicated /disclaimer** — Not blocking; legal content exists in Terms/FAQ.
-4. **Square logo for OG** — `logo.png` is 512×512 per spec; social previews may crop differently than 1200×630 banners.
+1. **SPA client-side rendering** - Initial HTML includes correct meta tags; JSON-LD injected client-side. Googlebot renders JS, but verify with URL Inspection.
+2. **Old GoDaddy SERP snippet** - Cached from pre-PetClues domain parking. Re-index after deploy; may take 2–8 weeks.
+3. **No dedicated /disclaimer** - Not blocking; legal content exists in Terms/FAQ.
+4. **Square logo for OG** - `logo.png` is 512×512 per spec; social previews may crop differently than 1200×630 banners.
 
 ## GSC Actions (Post-Deploy)
 
 1. **Sitemaps** → Submit `sitemap.xml`
 2. **URL Inspection** → Test `https://petclues.com` → Request indexing
 3. **Settings → Branding** → Verify logo appears after re-crawl
-4. **Enhancements → Unparsable structured data** — Monitor after deploy
+4. **Enhancements → Unparsable structured data** - Monitor after deploy
 
 ## URLs to Submit for Indexing
 

@@ -1,7 +1,7 @@
 # PetClues Vet Bill Decoder Report
 
 **Date:** May 31, 2026  
-**Scope:** First AI feature — extract structured care data from uploaded vet documents  
+**Scope:** First AI feature - extract structured care data from uploaded vet documents  
 **Build status:** `npm run build` passes (607 modules)
 
 **Constraints honored:** Extraction only via AI (no chat UI). User must approve before anything saves.
@@ -14,7 +14,7 @@
 
 ---
 
-## Phase 1 — Extraction pipeline
+## Phase 1 - Extraction pipeline
 
 ### Architecture
 
@@ -35,7 +35,7 @@ Upload (Scan page)
 | `supabase/functions/_shared/vetBillDecoder/extract.ts` | OpenRouter client (images + PDF) |
 | `supabase/functions/_shared/vetBillDecoder/schema.ts` | JSON schema + prompt + ID assignment |
 
-### AI provider — OpenRouter (single API key)
+### AI provider - OpenRouter (single API key)
 
 All extraction runs through [OpenRouter](https://openrouter.ai/) using the OpenAI-compatible API. One key routes to any supported model.
 
@@ -46,7 +46,7 @@ All extraction runs through [OpenRouter](https://openrouter.ai/) using the OpenA
 
 **Required secret:** `OPENROUTER_API_KEY`
 
-You can swap models without code changes — e.g. `anthropic/claude-3.5-haiku`, `google/gemini-2.0-flash-001`, etc. See [openrouter.ai/models](https://openrouter.ai/models).
+You can swap models without code changes - e.g. `anthropic/claude-3.5-haiku`, `google/gemini-2.0-flash-001`, etc. See [openrouter.ai/models](https://openrouter.ai/models).
 
 ### Extraction output categories
 
@@ -70,7 +70,7 @@ Each item includes `confidence` (`high` / `medium` / `low`).
 
 ---
 
-## Phase 2 — User review (nothing auto-saves)
+## Phase 2 - User review (nothing auto-saves)
 
 ### UI
 
@@ -88,7 +88,7 @@ Review rules:
 
 ---
 
-## Phase 3 — Approved items → records + reminders
+## Phase 3 - Approved items → records + reminders
 
 **File:** `applyApprovedExtraction()` in `vetBillDecoderService.ts`
 
@@ -104,13 +104,13 @@ Health record creation triggers the **Automation Engine** (reminders from due da
 
 Review status after save:
 
-- `approved` — all items checked  
-- `partially_approved` — some checked  
-- `rejected` — dismiss or none checked  
+- `approved` - all items checked  
+- `partially_approved` - some checked  
+- `rejected` - dismiss or none checked  
 
 ---
 
-## Phase 4 — Extraction history
+## Phase 4 - Extraction history
 
 ### Database
 
@@ -126,7 +126,7 @@ Review status after save:
 
 ### UI
 
-`VetBillDecoderHistory.tsx` on Scan page — last 8 extractions per pet with status and model.
+`VetBillDecoderHistory.tsx` on Scan page - last 8 extractions per pet with status and model.
 
 ---
 

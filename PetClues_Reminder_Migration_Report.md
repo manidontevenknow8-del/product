@@ -10,11 +10,11 @@
 
 ## Executive Summary
 
-PetClues now stores **real pet-linked reminders** in Supabase (or localStorage fallback when Supabase is not configured). Reminders reference `pets.id` via foreign key and RLS ensures users only access reminders for pets they own. The full reminder UI — list, calendar, create/edit modals, and dashboard widgets — reads from `ReminderProvider`, which uses `getReminderService()` following the same pattern as pets.
+PetClues now stores **real pet-linked reminders** in Supabase (or localStorage fallback when Supabase is not configured). Reminders reference `pets.id` via foreign key and RLS ensures users only access reminders for pets they own. The full reminder UI - list, calendar, create/edit modals, and dashboard widgets - reads from `ReminderProvider`, which uses `getReminderService()` following the same pattern as pets.
 
 ---
 
-## Phase 1 — Database Migration
+## Phase 1 - Database Migration
 
 **File:** `supabase/migrations/20250531200000_create_reminders.sql`
 
@@ -42,7 +42,7 @@ PetClues now stores **real pet-linked reminders** in Supabase (or localStorage f
 
 ### Trigger
 
-- `reminders_set_updated_at` — sets `updated_at = now()` on row update
+- `reminders_set_updated_at` - sets `updated_at = now()` on row update
 
 ---
 
@@ -59,7 +59,7 @@ All policies use an `EXISTS` subquery against `public.pets` to verify the remind
 
 ---
 
-## Phase 2 — Service Layer
+## Phase 2 - Service Layer
 
 ### Files Created
 
@@ -95,7 +95,7 @@ getReminderService()
 | `completed_at` | `completedAt` |
 | `due_date` | `dueDate` |
 
-`userId` is not stored in the DB — populated from the authenticated user in the service layer for UI compatibility.
+`userId` is not stored in the DB - populated from the authenticated user in the service layer for UI compatibility.
 
 ### Recurring Completion
 
@@ -105,7 +105,7 @@ When a reminder with `recurring !== 'none'` is completed:
 
 ---
 
-## Phase 3 — UI Hydration
+## Phase 3 - UI Hydration
 
 All reminder surfaces consume `useReminders()` from `ReminderProvider`, which loads via `getReminderService()`:
 
@@ -121,7 +121,7 @@ All reminder surfaces consume `useReminders()` from `ReminderProvider`, which lo
 
 ---
 
-## Phase 4 — Reminder CRUD
+## Phase 4 - Reminder CRUD
 
 | Action | Provider method | Service method |
 |--------|-----------------|----------------|
@@ -139,7 +139,7 @@ All reminder surfaces consume `useReminders()` from `ReminderProvider`, which lo
 
 ---
 
-## Phase 5 — Dashboard Integration
+## Phase 5 - Dashboard Integration
 
 | Widget | File | Hydrated data |
 |--------|------|---------------|
@@ -150,11 +150,11 @@ Both widgets use real reminder data from `ReminderProvider`. Complete and resche
 
 ---
 
-## Phase 6 — Empty States
+## Phase 6 - Empty States
 
 | Location | Behavior |
 |----------|----------|
-| **Reminders Page** (list view) | `EmptyRemindersState` — "No reminders yet" + Create reminder CTA |
+| **Reminders Page** (list view) | `EmptyRemindersState` - "No reminders yet" + Create reminder CTA |
 | **Reminders Page** (upcoming/overdue/calendar) | Context-specific empty messages |
 | **Dashboard Upcoming widget** | `EmptyRemindersState` compact + Create reminder navigates to `/reminders?create=true` |
 | **Overdue widget** | Returns null when no overdue (no empty block needed) |
@@ -211,7 +211,7 @@ These still reference mock/hardcoded reminder data and are **out of scope**:
 
 | Area | Mock source | Notes |
 |------|-------------|-------|
-| Demo seed data | `src/data/reminderData.ts` — `getSeedReminders()` | No longer auto-seeded; kept for optional demo use |
+| Demo seed data | `src/data/reminderData.ts` - `getSeedReminders()` | No longer auto-seeded; kept for optional demo use |
 | Legacy default input | `reminderData.defaultCreateReminderInput` | Superseded by `reminderMappers.defaultCreateReminderInput` |
 | Dashboard legacy card | `mockNextReminder` in `dashboardData.ts` | Unused `NextReminderCard` leftover |
 | Dashboard activity | `mockRecentActivity` | Includes static reminder activity item |
@@ -238,14 +238,14 @@ Or apply `20250531200000_create_reminders.sql` manually after the pets migration
 ## Testing Checklist
 
 1. Ensure at least one pet exists (onboarding or profile).
-2. Open **Reminders → New reminder** — verify pet picker shows real pets.
-3. Create a reminder — confirm it appears in list, calendar, and dashboard upcoming widget.
-4. Edit title/due date — confirm persistence after refresh.
-5. Mark complete — confirm stats update; recurring reminders spawn next occurrence.
-6. Delete — confirm removal from all views.
-7. Create overdue reminder (past due date) — confirm **Needs attention** widget appears.
-8. With empty account — confirm premium empty states on page and dashboard.
-9. Without Supabase env — confirm localStorage mock path works.
+2. Open **Reminders → New reminder** - verify pet picker shows real pets.
+3. Create a reminder - confirm it appears in list, calendar, and dashboard upcoming widget.
+4. Edit title/due date - confirm persistence after refresh.
+5. Mark complete - confirm stats update; recurring reminders spawn next occurrence.
+6. Delete - confirm removal from all views.
+7. Create overdue reminder (past due date) - confirm **Needs attention** widget appears.
+8. With empty account - confirm premium empty states on page and dashboard.
+9. Without Supabase env - confirm localStorage mock path works.
 
 ---
 
@@ -259,4 +259,4 @@ Or apply `20250531200000_create_reminders.sql` manually after the pets migration
 
 ---
 
-*Generated as part of the Pet Identity Migration follow-up — reminder backend migration.*
+*Generated as part of the Pet Identity Migration follow-up - reminder backend migration.*

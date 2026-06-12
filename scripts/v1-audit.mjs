@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * V1 static audit — verifies routes, no fake growth data, and production build.
+ * V1 static audit - verifies routes, no fake growth data, and production build.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';

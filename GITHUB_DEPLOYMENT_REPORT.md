@@ -41,7 +41,7 @@ https://github.com/founderpetclues/product.git
 
 ## 5. Push status
 
-**BLOCKED** — remote repository does not exist or current GitHub account lacks org permissions.
+**BLOCKED** - remote repository does not exist or current GitHub account lacks org permissions.
 
 ```
 remote: Repository not found.
@@ -59,7 +59,7 @@ gh repo create founderpetclues/product → shashankk-ns cannot create a reposito
 git push -u origin main
 ```
 
-Commit is ready locally — no re-commit needed.
+Commit is ready locally - no re-commit needed.
 
 ---
 
@@ -89,7 +89,7 @@ Includes: `src/`, `public/`, `supabase/`, `scripts/`, `package.json`, audit repo
 
 ## 8. Secret scan result
 
-**PASS** — see `SECRET_SCAN_REPORT.md`
+**PASS** - see `SECRET_SCAN_REPORT.md`
 
 No API keys, service-role keys, or `.env.local` in the commit.
 
@@ -97,7 +97,7 @@ No API keys, service-role keys, or `.env.local` in the commit.
 
 ## 9. Build status
 
-**PASS** — `npm run build` succeeded before commit.
+**PASS** - `npm run build` succeeded before commit.
 
 ---
 
@@ -117,7 +117,7 @@ No code or security blockers for push once GitHub access is resolved.
 
 ## 11. Ready for Vercel?
 
-**Yes** — after GitHub push completes.
+**Yes** - after GitHub push completes.
 
 Recommended Vercel settings:
 

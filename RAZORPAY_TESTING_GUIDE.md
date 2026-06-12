@@ -13,7 +13,7 @@
 2. Go to **Billing** → **Upgrade to Pro**
 3. Razorpay Checkout opens for **₹299**
 4. Complete test payment (Razorpay test mode card)
-5. Verify redirect/state refresh — plan shows **Pro / Active**
+5. Verify redirect/state refresh - plan shows **Pro / Active**
 
 ## 2. Success Scenario
 
@@ -49,8 +49,8 @@
 
 | Feature | Test |
 |---------|------|
-| Vet Bill Decoder | Upload vet bill on Scan — decode runs |
-| Second pet | Add 2nd pet — succeeds on Pro |
+| Vet Bill Decoder | Upload vet bill on Scan - decode runs |
+| Second pet | Add 2nd pet - succeeds on Pro |
 | Monthly report PNG | Download enabled |
 | Free user | All above blocked with upgrade prompt |
 

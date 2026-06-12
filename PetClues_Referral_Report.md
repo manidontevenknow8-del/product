@@ -19,7 +19,7 @@ Rewards are modeled as architecture only:
 
 ---
 
-## Phase 1 — `referrals` table
+## Phase 1 - `referrals` table
 
 **Migration:** `supabase/migrations/20250532100000_referrals_v1.sql`
 
@@ -48,7 +48,7 @@ RLS:
 
 ---
 
-## Phase 2 — Generate referral codes
+## Phase 2 - Generate referral codes
 
 Edge function:
 - `supabase/functions/get-referral-code/index.ts` (JWT required)
@@ -62,7 +62,7 @@ Shared helper:
 
 ---
 
-## Phase 3 — Tracking invitations, signups, conversions
+## Phase 3 - Tracking invitations, signups, conversions
 
 ### Invitations
 Edge function:
@@ -92,7 +92,7 @@ Conversion is recorded when an invitee becomes **Premium**:
 
 ---
 
-## Phase 4 — Rewards architecture (no issuing)
+## Phase 4 - Rewards architecture (no issuing)
 
 V1 supports reward **eligibility calculation**:
 - Each `converted` referral counts as **1 eligible Premium month**

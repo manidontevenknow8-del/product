@@ -12,7 +12,7 @@ export { buildSearchCorpus, searchKnowledgeEntries } from './knowledgeSearch';
 
 /**
  * Species Intelligence retrieval entry point.
- * Future AI pipelines call `retrieveKnowledgeContext` — no chatbot UI in V1.
+ * Future AI pipelines call `retrieveKnowledgeContext` - no chatbot UI in V1.
  */
 export function getSpeciesKnowledgeRepository(): SpeciesKnowledgeRepository {
   return isSupabaseConfigured()

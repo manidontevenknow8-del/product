@@ -61,7 +61,7 @@ create table if not exists public.webhook_events (
 
 alter table public.webhook_events enable row level security;
 
--- Service role only — no user policies
+-- Service role only - no user policies
 
 -- ---------------------------------------------------------------------------
 -- Triggers & profile sync
@@ -121,7 +121,7 @@ begin
 end;
 $$;
 
--- Free tier: max 1 pet (unchanged — uses subscription_tier)
+-- Free tier: max 1 pet (unchanged - uses subscription_tier)
 -- Vet bill RLS: allow active Razorpay subscribers
 drop policy if exists "Premium users insert vet bill extractions" on public.vet_bill_extractions;
 

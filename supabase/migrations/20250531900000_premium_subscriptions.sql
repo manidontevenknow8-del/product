@@ -64,7 +64,7 @@ create table if not exists public.stripe_webhook_events (
 
 alter table public.stripe_webhook_events enable row level security;
 
--- No user policies — service role only
+-- No user policies - service role only
 
 -- ---------------------------------------------------------------------------
 

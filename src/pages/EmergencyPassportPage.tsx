@@ -82,7 +82,7 @@ function PassportRecordBlock({
   );
 }
 
-/** Placeholder medical blocks inside PremiumGate — no real user health data */
+/** Placeholder medical blocks inside PremiumGate - no real user health data */
 function PassportMedicalGatePreview() {
   return (
     <div className="space-y-10">
@@ -90,7 +90,7 @@ function PassportMedicalGatePreview() {
         <PassportRecordBlock
           title="Critical allergies"
           records={[]}
-          emptyMessage="No allergies on file — add known reactions for safer care."
+          emptyMessage="No allergies on file - add known reactions for safer care."
           variant="critical"
         />
         <PassportRecordBlock
@@ -358,7 +358,7 @@ export function EmergencyPassportPage() {
         <PassportRecordBlock
           title="Critical allergies"
           records={passport.allergies}
-          emptyMessage="No allergies on file — add known reactions for safer care."
+          emptyMessage="No allergies on file - add known reactions for safer care."
           variant="critical"
           onAdd={() => openAdd('allergy')}
           onEdit={openEdit}

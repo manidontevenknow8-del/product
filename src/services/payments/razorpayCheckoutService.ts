@@ -131,7 +131,7 @@ export const razorpayCheckoutService = {
         currency: order.currency,
         order_id: order.orderId,
         name: 'PetClues',
-        description: `PetClues ${PLAN_LABELS[input.plan]} — ${priceDisplay}${periodLabel}`,
+        description: `PetClues ${PLAN_LABELS[input.plan]} - ${priceDisplay}${periodLabel}`,
         image: '/logo.png',
         prefill: {
           email: input.prefill.email,

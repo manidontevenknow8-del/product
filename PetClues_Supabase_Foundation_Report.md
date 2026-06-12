@@ -1,7 +1,7 @@
 # PetClues Supabase Foundation Report
 
 **Date:** May 31, 2026  
-**Scope:** Supabase foundation layer only — auth, profiles, configuration  
+**Scope:** Supabase foundation layer only - auth, profiles, configuration  
 **Build status:** `npm run build` passes (555 modules)
 
 **Constraints honored:** No pet/reminder/timeline/upload/billing migration. Mock data layers remain active for all feature domains except authentication.
@@ -46,7 +46,7 @@ When `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are set, the app uses **re
 | `src/types/auth.ts` | Extended `AuthResult` for pending email verification |
 | `src/auth/AuthProvider.tsx` | Real auth listener, `refreshSession`, `resendVerificationEmail`, `updatePassword`, pending verification state |
 | `src/auth/GuestRoute.tsx` | Redirects unverified users to verify email |
-| `src/auth/ProtectedRoute.tsx` | Unchanged behavior — still uses real auth state via provider |
+| `src/auth/ProtectedRoute.tsx` | Unchanged behavior - still uses real auth state via provider |
 | `src/pages/auth/SignupPage.tsx` | Handles pending verification signup flow |
 | `src/pages/auth/LoginPage.tsx` | Redirects unverified users to verify email |
 | `src/pages/auth/VerifyEmailPage.tsx` | Removed demo skip; added resend + verification check |
@@ -117,7 +117,7 @@ export function getAuthService(): IAuthService {
 1. User clicks link in email → redirects to `/auth/callback`
 2. Supabase processes token; session refreshed
 3. Verified users → onboarding or dashboard
-4. **Demo skip removed** — "Continue to setup" checks real `email_confirmed_at`
+4. **Demo skip removed** - "Continue to setup" checks real `email_confirmed_at`
 5. **Resend verification** via `supabase.auth.resend()`
 
 ### Forgot / reset password
@@ -133,7 +133,7 @@ export function getAuthService(): IAuthService {
 
 ### Onboarding completion
 
-- Updates `profiles.onboarding_completed = true` (not pets table — pets migration deferred)
+- Updates `profiles.onboarding_completed = true` (not pets table - pets migration deferred)
 - `setHasActivePet(true)` in frontend still runs for empty-state logic
 
 ### Auth state listener
@@ -151,9 +151,9 @@ export function getAuthService(): IAuthService {
 | Column | Type | Default | Notes |
 |--------|------|---------|-------|
 | `id` | uuid | `gen_random_uuid()` | Primary key |
-| `user_id` | uuid | — | FK → `auth.users`, unique |
+| `user_id` | uuid | - | FK → `auth.users`, unique |
 | `name` | text | null | From signup metadata |
-| `email` | text | — | From auth user |
+| `email` | text | - | From auth user |
 | `avatar_url` | text | null | Future use |
 | `onboarding_completed` | boolean | `false` | Drives onboarding guard |
 | `subscription_tier` | text | `'free'` | Check: free/premium/family |
@@ -168,8 +168,8 @@ export function getAuthService(): IAuthService {
 
 ### Triggers & functions
 
-- `handle_new_user()` — auto-creates profile on `auth.users` insert
-- `set_profiles_updated_at()` — maintains `updated_at`
+- `handle_new_user()` - auto-creates profile on `auth.users` insert
+- `set_profiles_updated_at()` - maintains `updated_at`
 
 ### Migration file
 
@@ -228,7 +228,7 @@ These services **still use localStorage/mock data** and were **not migrated**:
 
 ### Auth fallback
 
-When Supabase env vars are **not** set, `mockAuthService` is used automatically. Mock auth still allows email verification via the UI flow (local state only) — useful for offline development.
+When Supabase env vars are **not** set, `mockAuthService` is used automatically. Mock auth still allows email verification via the UI flow (local state only) - useful for offline development.
 
 ---
 
@@ -258,4 +258,4 @@ When Supabase env vars are **not** set, `mockAuthService` is used automatically.
 
 ---
 
-*End of report — PetClues Supabase Foundation Layer*
+*End of report - PetClues Supabase Foundation Layer*

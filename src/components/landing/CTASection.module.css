@@ -91,6 +91,18 @@
   margin-bottom: var(--space-4);
 }
 
+.quizBtn {
+  background: #fff !important;
+  color: var(--color-text) !important;
+  border-color: #fff !important;
+}
+
+.quizBtn:hover {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(255, 255, 255, 0.92) !important;
+  color: var(--color-text) !important;
+}
+
 .ghostBtn {
   color: rgba(250, 249, 247, 0.9) !important;
 }

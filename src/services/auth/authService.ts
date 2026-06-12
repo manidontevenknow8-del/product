@@ -1,5 +1,5 @@
 /**
- * Auth service entry point — selects Supabase when configured, otherwise mock.
+ * Auth service entry point - selects Supabase when configured, otherwise mock.
  */
 
 import { isSupabaseConfigured } from '@/services/supabase/config';

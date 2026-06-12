@@ -2,7 +2,7 @@
 
 ## Active provider
 
-**Razorpay only** — no Stripe implementation.
+**Razorpay only** - no Stripe implementation.
 
 ## Checkout flow
 

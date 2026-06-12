@@ -35,7 +35,7 @@ export const ROUTES = {
   SETTINGS_ACCOUNT: '/settings/account',
   SETTINGS_PROFILE: '/settings/profile',
 
-  /** Deferred after V1 — routes kept for redirects only */
+  /** Deferred after V1 - routes kept for redirects only */
   LOST_PET: '/lost-pet',
   LOST_PET_REPORT: '/lost-pet/report',
   AGE_TRANSLATOR: '/age-translator',

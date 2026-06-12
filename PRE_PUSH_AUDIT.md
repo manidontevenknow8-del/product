@@ -50,7 +50,7 @@
 | Check | Status |
 |-------|--------|
 | `.env.example` present | Yes (placeholders only) |
-| `.env.local` gitignored | Yes — not staged |
+| `.env.local` gitignored | Yes - not staged |
 | `dist/` gitignored | Yes |
 | `node_modules/` gitignored | Yes |
 | `supabase/.temp/` gitignored | Yes |
@@ -76,4 +76,4 @@
 
 ## Verdict
 
-**READY TO PUSH** — build passes, no secrets in staged files, `.gitignore` correct.
+**READY TO PUSH** - build passes, no secrets in staged files, `.gitignore` correct.

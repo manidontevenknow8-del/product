@@ -59,7 +59,7 @@ function parseOpenRouterError(status: number, body: unknown): string {
     const err = (body as { error?: { message?: string; metadata?: { raw?: string } } }).error;
     const parts = [err?.message, err?.metadata?.raw].filter(Boolean);
     if (parts.length) {
-      return `OpenRouter ${status}: ${parts.join(' — ')}`;
+      return `OpenRouter ${status}: ${parts.join(' - ')}`;
     }
   }
   return `OpenRouter ${status}: Provider returned error`;

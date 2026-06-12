@@ -104,7 +104,7 @@ const replacements = [
   {
     file: 'src/data/seoConfig.ts',
     before: 'Generic pet health keywords',
-    after: 'HOME_KEYWORDS — 10 target keywords from audit spec',
+    after: 'HOME_KEYWORDS - 10 target keywords from audit spec',
   },
 ];
 
@@ -118,7 +118,7 @@ Generated: ${BUILD_DATE}
 
 **No GoDaddy, domain auction, or domain-investing references exist in the PetClues codebase.**
 
-Google still showing GoDaddy metadata is caused by **external DNS/parking cache** from the domain's prior registrar period — not application source code.
+Google still showing GoDaddy metadata is caused by **external DNS/parking cache** from the domain's prior registrar period - not application source code.
 
 ## Codebase Scan Results
 
@@ -134,7 +134,7 @@ ${replacements.map((r) => `| ${r.file} | ${r.before} | ${r.after} |`).join('\n')
 
 ## Notes
 
-- Form input \`placeholder\` attributes (e.g. "Enter pet name") are UI hints — not SEO metadata.
+- Form input \`placeholder\` attributes (e.g. "Enter pet name") are UI hints - not SEO metadata.
 - Production \`index.html\` now ships PetClues-branded title, description, OG, and Twitter tags before React hydration.
 - Submit \`https://petclues.com\` for re-indexing in Google Search Console after deploy.
 `,
@@ -189,7 +189,7 @@ ${staticExpected.map((p) => `- ✅ \`${SITE}${p === '/' ? '' : p}\``).join('\n')
 
 ## Blog URLs (${blogPosts.length})
 
-${blogPosts.map((p) => `- \`${SITE}/blog/${p.slug}\` — priority 0.8, changefreq monthly`).join('\n')}
+${blogPosts.map((p) => `- \`${SITE}/blog/${p.slug}\` - priority 0.8, changefreq monthly`).join('\n')}
 
 ## Sitemap Fields
 
@@ -236,15 +236,15 @@ Generated: ${BUILD_DATE}
 
 Each published blog article uses \`BlogPostSEO\` which renders:
 
-- \`MetaTags\` — title, description, canonical, keywords, robots
-- \`OpenGraph\` — og:title, og:description, og:type=article, og:image, Twitter card
+- \`MetaTags\` - title, description, canonical, keywords, robots
+- \`OpenGraph\` - og:title, og:description, og:type=article, og:image, Twitter card
 - JSON-LD \`BlogPosting\` schema via \`getBlogPostingStructuredData\`
 
 ## Article Inventory (${blogRows.length} published)
 
 | Slug | Title | Canonical | OG | Schema | Author | Published | Modified | Issues |
 |------|-------|-----------|----|--------|--------|-----------|----------|--------|
-${blogRows.map((r) => `| ${r.slug} | ${r.title.slice(0, 40)}… | ✅ | ✅ | ✅ | ${r.hasAuthor ? '✅' : '❌'} | ${r.hasPublished ? '✅' : '❌'} | ${r.hasModified ? '✅' : '❌'} | ${r.issues.length ? r.issues.join(', ') : '—'} |`).join('\n')}
+${blogRows.map((r) => `| ${r.slug} | ${r.title.slice(0, 40)}… | ✅ | ✅ | ✅ | ${r.hasAuthor ? '✅' : '❌'} | ${r.hasPublished ? '✅' : '❌'} | ${r.hasModified ? '✅' : '❌'} | ${r.issues.length ? r.issues.join(', ') : '-'} |`).join('\n')}
 
 ## Structured Data Fields (BlogPosting)
 
@@ -258,7 +258,7 @@ ${blogRows.map((r) => `| ${r.slug} | ${r.title.slice(0, 40)}… | ✅ | ✅ | �
 
 ## Recommendations
 
-1. Add \`article:modified_time\` OG tag — ✅ implemented in \`MetaTags.tsx\`
+1. Add \`article:modified_time\` OG tag - ✅ implemented in \`MetaTags.tsx\`
 2. Validate each article URL in [Rich Results Test](https://search.google.com/test/rich-results)
 3. Ensure featured images exist under \`/public/images/blog/\` for richer social previews
 `,
@@ -310,17 +310,17 @@ ${Object.entries(assets).map(([k, v]) => `- \`${k}\`: ${v.exists ? `✅ (${v.byt
 
 ## Potential Indexing Issues
 
-1. **SPA client-side rendering** — Initial HTML includes correct meta tags; JSON-LD injected client-side. Googlebot renders JS, but verify with URL Inspection.
-2. **Old GoDaddy SERP snippet** — Cached from pre-PetClues domain parking. Re-index after deploy; may take 2–8 weeks.
-3. **No dedicated /disclaimer** — Not blocking; legal content exists in Terms/FAQ.
-4. **Square logo for OG** — \`logo.png\` is 512×512 per spec; social previews may crop differently than 1200×630 banners.
+1. **SPA client-side rendering** - Initial HTML includes correct meta tags; JSON-LD injected client-side. Googlebot renders JS, but verify with URL Inspection.
+2. **Old GoDaddy SERP snippet** - Cached from pre-PetClues domain parking. Re-index after deploy; may take 2–8 weeks.
+3. **No dedicated /disclaimer** - Not blocking; legal content exists in Terms/FAQ.
+4. **Square logo for OG** - \`logo.png\` is 512×512 per spec; social previews may crop differently than 1200×630 banners.
 
 ## GSC Actions (Post-Deploy)
 
 1. **Sitemaps** → Submit \`sitemap.xml\`
 2. **URL Inspection** → Test \`https://petclues.com\` → Request indexing
 3. **Settings → Branding** → Verify logo appears after re-crawl
-4. **Enhancements → Unparsable structured data** — Monitor after deploy
+4. **Enhancements → Unparsable structured data** - Monitor after deploy
 
 ## URLs to Submit for Indexing
 
@@ -355,19 +355,19 @@ Static analysis of build output and known performance factors. Run Lighthouse in
 
 | Asset | Size | Notes |
 |-------|------|-------|
-| favicon.ico | ${assets['favicon.ico'].bytes ?? '—'} bytes | Large ICO — consider optimizing |
-| logo.png | ${assets['logo.png'].bytes ?? '—'} bytes | 512×512 brand logo |
-| icon-192.png | ${assets['icon-192.png'].bytes ?? '—'} bytes | PWA icon |
-| icon-512.png | ${assets['icon-512.png'].bytes ?? '—'} bytes | PWA icon |
+| favicon.ico | ${assets['favicon.ico'].bytes ?? '-'} bytes | Large ICO - consider optimizing |
+| logo.png | ${assets['logo.png'].bytes ?? '-'} bytes | 512×512 brand logo |
+| icon-192.png | ${assets['icon-192.png'].bytes ?? '-'} bytes | PWA icon |
+| icon-512.png | ${assets['icon-512.png'].bytes ?? '-'} bytes | PWA icon |
 
 ## Known Factors
 
 ### Largest Contentful Paint (LCP)
-- Landing hero and fonts from Google Fonts (\`Cormorant Garamond\`, \`Inter\`) — preconnect hints present in \`index.html\`
+- Landing hero and fonts from Google Fonts (\`Cormorant Garamond\`, \`Inter\`) - preconnect hints present in \`index.html\`
 - **Recommendation:** Self-host fonts or use \`font-display: swap\` subset to reduce LCP
 
 ### Cumulative Layout Shift (CLS)
-- React SPA — layout shifts possible during hydration
+- React SPA - layout shifts possible during hydration
 - **Recommendation:** Reserve space for hero images and blog cards
 
 ### Interaction to Next Paint (INP)
@@ -379,7 +379,7 @@ Static analysis of build output and known performance factors. Run Lighthouse in
 - Vite bundles JS as ES modules (deferred by default)
 
 ### Image Optimization
-- Blog featured images in \`/public/images/blog/\` — verify WebP/AVIF variants for large images
+- Blog featured images in \`/public/images/blog/\` - verify WebP/AVIF variants for large images
 - \`og-image.png\` retained but no longer default OG image
 
 ## Build Verification
@@ -407,7 +407,7 @@ Production URL: ${SITE}
 
 ---
 
-## 1. Metadata Status — ✅ Complete
+## 1. Metadata Status - ✅ Complete
 
 | Field | Value |
 |-------|-------|
@@ -420,7 +420,7 @@ Production URL: ${SITE}
 | OG image | ${SITE}/logo.png |
 | Twitter card | summary_large_image |
 
-## 2. Structured Data Status — ✅ Complete
+## 2. Structured Data Status - ✅ Complete
 
 | Schema | Location | Status |
 |--------|----------|--------|
@@ -430,18 +430,18 @@ Production URL: ${SITE}
 | FAQPage | Landing JSON-LD graph | ✅ Landing FAQ items |
 | BlogPosting | Each blog article | ✅ Full article schema |
 
-## 3. Sitemap Status — ✅ ${sitemapUrls.length} URLs
+## 3. Sitemap Status - ✅ ${sitemapUrls.length} URLs
 
 See [SITEMAP_AUDIT.md](./SITEMAP_AUDIT.md)
 
-## 4. Robots Status — ✅
+## 4. Robots Status - ✅
 
 - Allows indexing of public pages
 - Blocks auth, dashboard, internal beta routes
 - Sitemap: \`${SITE}/sitemap.xml\`
 - No localhost or staging references
 
-## 5. Logo & Brand Assets — ✅
+## 5. Logo & Brand Assets - ✅
 
 | Asset | URL |
 |-------|-----|
@@ -453,7 +453,7 @@ See [SITEMAP_AUDIT.md](./SITEMAP_AUDIT.md)
 | icon-512.png | ${SITE}/icon-512.png |
 | manifest.json | ${SITE}/manifest.json |
 
-## 6. Rich Results Readiness — ✅
+## 6. Rich Results Readiness - ✅
 
 - Organization logo (ImageObject 512×512) for Google logo recognition
 - WebSite + SearchAction for sitelinks search box eligibility
@@ -463,7 +463,7 @@ See [SITEMAP_AUDIT.md](./SITEMAP_AUDIT.md)
 
 Validate: https://search.google.com/test/rich-results?url=${encodeURIComponent(SITE)}
 
-## 7. Google Search Console Readiness — ✅
+## 7. Google Search Console Readiness - ✅
 
 See [GOOGLE_SEARCH_CONSOLE_READINESS.md](./GOOGLE_SEARCH_CONSOLE_READINESS.md)
 
@@ -502,7 +502,7 @@ Factors: domain age, prior parking history, backlink profile, crawl frequency.
 - ${SITE}/terms
 - ${SITE}/faq
 
-**Blog articles:** ${blogPosts.length} URLs in sitemap — submit top 10–20 via GSC URL Inspection.
+**Blog articles:** ${blogPosts.length} URLs in sitemap - submit top 10–20 via GSC URL Inspection.
 
 ---
 

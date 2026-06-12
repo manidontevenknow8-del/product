@@ -75,7 +75,7 @@ Internal / ops (protected, not in primary user IA)
     └── /settings/profile → /settings?section=account ⚠ query ignored
 
 Public ops ⚠ layout mismatch
-└── System Status (/status) — uses AppLayout but route is public
+└── System Status (/status) - uses AppLayout but route is public
 
 Catch-all
 └── 404 (*)
@@ -114,12 +114,12 @@ Catch-all
 | `/launch-readiness` | Protected | Secondary nav | ✅ Dev tool | Hide from prod nav |
 | `/beta-release` | Protected | Secondary nav, status page | ✅ Dev tool | Hide from prod nav |
 | `/analytics` | Protected | **None** | ⚠ Orphan | Add to dev nav or remove |
-| `/settings/account` | Protected | — | ✅ Redirects to `/settings` | — |
-| `/settings/profile` | Protected | — | ⚠ Redirect broken | Query param not read |
-| `*` 404 | Public | Unknown URLs | ✅ Working | — |
+| `/settings/account` | Protected | - | ✅ Redirects to `/settings` | - |
+| `/settings/profile` | Protected | - | ⚠ Redirect broken | Query param not read |
+| `*` 404 | Public | Unknown URLs | ✅ Working | - |
 
 \* `requireOnboardingComplete={false}` for verify/onboarding  
-† Visible in authenticated sidebar — odd for logged-in users  
+† Visible in authenticated sidebar - odd for logged-in users  
 ‡ Public route renders `AppLayout` (sidebar, bottom nav) without auth
 
 ### Routing Issues Found
@@ -127,13 +127,13 @@ Catch-all
 | Severity | Issue |
 |----------|-------|
 | **Medium** | `/analytics` registered but not linked anywhere in navigation |
-| **Medium** | `/status` is public but uses `AppLayout` — unauthenticated visitors see app chrome and protected nav links |
+| **Medium** | `/status` is public but uses `AppLayout` - unauthenticated visitors see app chrome and protected nav links |
 | **Low** | `/settings/profile` redirects with `?section=account` but `SettingsPage` ignores URL params |
-| **Low** | Duplicate route aliases (`/settings/account`, `/settings/profile`) — redirects work but add noise |
+| **Low** | Duplicate route aliases (`/settings/account`, `/settings/profile`) - redirects work but add noise |
 | **Low** | Internal audit routes (`/launch-readiness`, `/beta-release`) exposed in production secondary nav |
 | **None** | No circular routing detected |
 | **None** | No duplicate route paths |
-| **None** | No broken footer/legal links (previously `#privacy` — now fixed) |
+| **None** | No broken footer/legal links (previously `#privacy` - now fixed) |
 
 ---
 
@@ -177,12 +177,12 @@ Landing → Signup → Verify Email → Onboarding → Dashboard
 
 | Severity | Issue | Impact |
 |----------|-------|--------|
-| **High** | Onboarding collects pet name/species/health but **does not persist** to app state — dashboard always shows mock "Luna" | User confusion post-setup |
-| **Medium** | Timeline "Add event" button calls `onAddEvent={() => {}}` — dead action | User gets stuck expecting modal |
-| **Medium** | Scan page shows **empty** recent scans until upload; Timeline/Profile show **mock** data — inconsistent first-run experience | Uneven empty-state behavior |
-| **Medium** | Verify email has "Skip for now (demo)" — acceptable for beta but bypasses security gate | Must remove for production |
-| **Low** | 8 quick actions on dashboard — high choice density on mobile (2×4 grid) | Mild cognitive load |
-| **Low** | "Profile" in primary nav = **pet profile**, not user settings — naming could confuse | Terminology |
+| **High** | Onboarding collects pet name/species/health but **does not persist** to app state - dashboard always shows mock "Luna" | User confusion post-setup |
+| **Medium** | Timeline "Add event" button calls `onAddEvent={() => {}}` - dead action | User gets stuck expecting modal |
+| **Medium** | Scan page shows **empty** recent scans until upload; Timeline/Profile show **mock** data - inconsistent first-run experience | Uneven empty-state behavior |
+| **Medium** | Verify email has "Skip for now (demo)" - acceptable for beta but bypasses security gate | Must remove for production |
+| **Low** | 8 quick actions on dashboard - high choice density on mobile (2×4 grid) | Mild cognitive load |
+| **Low** | "Profile" in primary nav = **pet profile**, not user settings - naming could confuse | Terminology |
 | **Low** | Referrals/Waitlist in sidebar for authenticated users | Growth pages in app nav feel out of place |
 
 ### Auth Flow Edge Cases
@@ -240,18 +240,18 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 
 ### Design System Usage
 
-**Shared UI (`components/ui/`):** Button, Card, Input, Textarea, Badge, Avatar, EmptyState, PageContainer, SectionHeader — used consistently across pages.
+**Shared UI (`components/ui/`):** Button, Card, Input, Textarea, Badge, Avatar, EmptyState, PageContainer, SectionHeader - used consistently across pages.
 
 ### Violations / Duplicates
 
 | Issue | Files | Severity |
 |-------|-------|----------|
-| **Legacy PetCareScoreCard** (dashboard) superseded by `pet-care-score/PetCareScoreCard` | `components/dashboard/PetCareScoreCard.tsx` still exported | Low — dead code |
-| **Legacy AccountSettings / ProfileSettings** superseded by Settings cards | `components/user/AccountSettings.tsx`, `ProfileSettings.tsx` — orphaned | Low — dead code |
+| **Legacy PetCareScoreCard** (dashboard) superseded by `pet-care-score/PetCareScoreCard` | `components/dashboard/PetCareScoreCard.tsx` still exported | Low - dead code |
+| **Legacy AccountSettings / ProfileSettings** superseded by Settings cards | `components/user/AccountSettings.tsx`, `ProfileSettings.tsx` - orphaned | Low - dead code |
 | **Custom toggle in AccountSettings** vs **SettingsToggle** | Duplicate toggle implementations | Low |
-| **Header `variant="app"`** never used | `components/layout/Header.tsx` — app nav dead branch | Low |
-| **Modal patterns** — 9 modals, mostly consistent bottom-sheet on mobile | All use overlay + escape + body lock ✅ | None |
-| **Card styling** — mix of CSS module cards vs `ui/Card` component | Many feature cards use custom `.card` classes instead of `Card` | Low — visual consistency maintained via tokens |
+| **Header `variant="app"`** never used | `components/layout/Header.tsx` - app nav dead branch | Low |
+| **Modal patterns** - 9 modals, mostly consistent bottom-sheet on mobile | All use overlay + escape + body lock ✅ | None |
+| **Card styling** - mix of CSS module cards vs `ui/Card` component | Many feature cards use custom `.card` classes instead of `Card` | Low - visual consistency maintained via tokens |
 
 ### Component Health
 
@@ -273,20 +273,20 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 
 | Criterion | Assessment |
 |-----------|------------|
-| Information hierarchy | ⚠️ Score row → family → overdue → invite → reminders → quick actions — **many competing sections** |
+| Information hierarchy | ⚠️ Score row → family → overdue → invite → reminders → quick actions - **many competing sections** |
 | Visual balance | Good on desktop; mobile stacks cleanly |
 | Card consistency | ✅ Shared tokens; widgets match |
 | Mobile responsiveness | ✅ 2-col → 1-col at 768px |
 | CTA placement | ✅ Quick actions at bottom; widgets link to features |
 | Weak sections | InviteFriendsCard may feel promotional mid-dashboard |
-| Overcrowding | **8 quick actions + 9 dashboard sections** — consider prioritization |
+| Overcrowding | **8 quick actions + 9 dashboard sections** - consider prioritization |
 
 ### Pet Profile
 
 | Criterion | Assessment |
 |-----------|------------|
 | Hierarchy | ✅ Header → feature links → summary → details → records → vault |
-| Feature links | ✅ Score, age translator, lost pet — good cross-linking |
+| Feature links | ✅ Score, age translator, lost pet - good cross-linking |
 | Mobile | ✅ Feature links stack at 640px |
 
 ### Scan
@@ -303,13 +303,13 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 |-----------|------------|
 | Filters | ✅ Working with empty filtered state |
 | Add event | ❌ **No-op handler** |
-| Content | Mock events always present — empty state rarely shown |
+| Content | Mock events always present - empty state rarely shown |
 
 ### Passport
 
 | Criterion | Assessment |
 |-----------|------------|
-| Layout | ✅ Single-column card stack — mobile-friendly |
+| Layout | ✅ Single-column card stack - mobile-friendly |
 | Lost pet integration | ✅ CTA when inactive/active |
 | QR reveal | ✅ Toggle works |
 
@@ -336,7 +336,7 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 
 | Check | iPhone | Android | Tablet |
 |-------|--------|---------|--------|
-| Bottom navigation | ✅ 6 items tight but functional | ✅ Same | Hidden — sidebar shown |
+| Bottom navigation | ✅ 6 items tight but functional | ✅ Same | Hidden - sidebar shown |
 | Hamburger menu | ✅ Full secondary nav | ✅ | N/A |
 | Card stacking | ✅ | ✅ | ✅ 2-col where designed |
 | Horizontal scroll | ✅ Prevented globally | ✅ | ✅ |
@@ -349,10 +349,10 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 
 | # | Issue | Severity |
 |---|-------|----------|
-| 1 | Bottom nav has **6 items** — labels truncate on narrow screens | Medium |
+| 1 | Bottom nav has **6 items** - labels truncate on narrow screens | Medium |
 | 2 | Dashboard is **long scroll** with 9+ sections on mobile | Medium |
 | 3 | Analytics table requires horizontal scroll on mobile | Low (dev page) |
-| 4 | Settings nav horizontal scroll on mobile — works but easy to miss sections | Low |
+| 4 | Settings nav horizontal scroll on mobile - works but easy to miss sections | Low |
 | 5 | `/status` public page shows full app chrome on mobile without login | Medium |
 
 ---
@@ -377,20 +377,20 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 | Inline styles on SystemStatusPage link | Minor |
 | GuestRoute loading returns `null` (blank flash) vs ProtectedRoute "Loading…" | Minor inconsistency |
 | `ProtectedRoute` loading uses inline styles instead of shared component | Minor |
-| Referral/waitlist pages use `PublicLayout` — slightly different from landing footer/header | Acceptable |
+| Referral/waitlist pages use `PublicLayout` - slightly different from landing footer/header | Acceptable |
 
 **Overall:** Design language is cohesive and premium. No major visual breaks detected.
 
 ---
 
-## PART 8: LAUNCH READINESS — ISSUE REGISTER
+## PART 8: LAUNCH READINESS - ISSUE REGISTER
 
 ### Critical Issues (must fix before production GA)
 
 | # | Issue | Area |
 |---|-------|------|
-| C1 | All core data is **mock/localStorage** — no Supabase connection | Backend |
-| C2 | Onboarding pet data **not persisted** — user sees unrelated mock pet | UX/Data |
+| C1 | All core data is **mock/localStorage** - no Supabase connection | Backend |
+| C2 | Onboarding pet data **not persisted** - user sees unrelated mock pet | UX/Data |
 | C3 | Legal pages are **placeholders** requiring counsel review | Legal |
 | C4 | Email verification is **bypassable** via demo skip | Auth |
 
@@ -412,11 +412,11 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 | M1 | `/analytics` orphan route | Routing |
 | M2 | `/settings/profile` redirect query param ignored | Routing |
 | M3 | Inconsistent empty vs mock data (scan empty, timeline full) | UX |
-| M4 | Dashboard section density — cognitive overload | UX |
+| M4 | Dashboard section density - cognitive overload | UX |
 | M5 | Waitlist/referrals in authenticated secondary nav | IA |
 | M6 | Legacy dead components still in codebase | Maintenance |
-| M7 | No skeleton loading states — text-only "Loading…" | Polish |
-| M8 | Bundle size 547KB — needs code splitting | Performance |
+| M7 | No skeleton loading states - text-only "Loading…" | Polish |
+| M8 | Bundle size 547KB - needs code splitting | Performance |
 
 ### Nice-to-Have Improvements
 
@@ -435,7 +435,7 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 
 ## RECOMMENDED FIXES (Pre-Supabase Priority Order)
 
-### Phase 1 — Before backend integration (frontend-only, ~1–2 days)
+### Phase 1 - Before backend integration (frontend-only, ~1–2 days)
 
 1. Remove or env-gate dev routes from `SECONDARY_NAV` (launch-readiness, beta-release, analytics)
 2. Fix `/status` to use `PublicLayout` instead of `AppLayout`
@@ -444,7 +444,7 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 5. Delete or deprecate legacy duplicate components
 6. Connect `appState.hasActivePet` to onboarding completion locally
 
-### Phase 2 — Backend integration (Supabase)
+### Phase 2 - Backend integration (Supabase)
 
 1. Replace `mockAuthService` → Supabase Auth
 2. Create `pets` table; wire onboarding → pet creation
@@ -452,7 +452,7 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 4. File storage bucket for scan documents
 5. Real email verification (remove demo skip)
 
-### Phase 3 — Beta launch
+### Phase 3 - Beta launch
 
 1. Legal counsel review
 2. Enable analytics provider (PostHog/Plausible)
@@ -482,4 +482,4 @@ No lorem ipsum detected. Copy is on-brand, calm, and pet-focused throughout.
 
 ---
 
-*End of report — PetClues V1 Product Audit*
+*End of report - PetClues V1 Product Audit*

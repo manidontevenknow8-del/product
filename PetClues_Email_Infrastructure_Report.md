@@ -12,17 +12,17 @@
 
 PetClues now has a **Resend email infrastructure** with three email types, branded mobile-friendly HTML templates, a future-proof scheduling architecture (cron + job queue), and integration with notification preferences stored on user profiles.
 
-Delivery runs server-side via Supabase Edge Functions — the Resend API key never touches the frontend.
+Delivery runs server-side via Supabase Edge Functions - the Resend API key never touches the frontend.
 
 ---
 
-## Phase 1 — Resend integration
+## Phase 1 - Resend integration
 
 ### Client email service
 
 | File | Purpose |
 |------|---------|
-| `src/services/email/resendEmailService.ts` | `IEmailService` — invokes edge functions |
+| `src/services/email/resendEmailService.ts` | `IEmailService` - invokes edge functions |
 | `src/services/email/emailTypes.ts` | Shared types for payloads and jobs |
 | `src/services/email/index.ts` | Public exports |
 
@@ -46,7 +46,7 @@ Documented in `.env.example` (secrets are **not** frontend env vars).
 
 ---
 
-## Phase 2 — Email templates
+## Phase 2 - Email templates
 
 ### Location
 
@@ -54,13 +54,13 @@ Documented in `.env.example` (secrets are **not** frontend env vars).
 
 | File | Purpose |
 |------|---------|
-| `layout.ts` | Branded wrapper — PetClues colors, serif logo, mobile viewport |
+| `layout.ts` | Branded wrapper - PetClues colors, serif logo, mobile viewport |
 | `templates.ts` | Template builders + plain-text fallbacks |
 
 ### Design
 
 - Warm neutral palette (`#FAF8F5` background, `#C4A882` accent)
-- Single-column 560px max width — mobile-friendly
+- Single-column 560px max width - mobile-friendly
 - Inline CSS for email client compatibility
 - Preheader text for inbox previews
 - Primary CTA button per email type
@@ -71,11 +71,11 @@ Documented in `.env.example` (secrets are **not** frontend env vars).
 |------|-----------------|---------|
 | **Upcoming Reminder** | `Upcoming: {title} for {pet}` | Task details, due label, link to `/reminders` |
 | **Overdue Reminder** | `Overdue: {title} for {pet}` | Days overdue, original due date, link to `/reminders` |
-| **Weekly Pet Summary** | `Weekly pet summary — {date}` | Per-pet upcoming/overdue counts, next task, link to `/dashboard` |
+| **Weekly Pet Summary** | `Weekly pet summary - {date}` | Per-pet upcoming/overdue counts, next task, link to `/dashboard` |
 
 ---
 
-## Phase 3 — Scheduling architecture
+## Phase 3 - Scheduling architecture
 
 ### Three-layer design (future-proof)
 
@@ -140,7 +140,7 @@ schedule = "0 8 * * *"
 
 ---
 
-## Phase 4 — Notification preferences
+## Phase 4 - Notification preferences
 
 ### New preference keys
 
@@ -166,10 +166,10 @@ Edge function mirrors the same rules in `_shared/email/preferences.ts`.
 
 | File | Change |
 |------|--------|
-| `src/services/settings/supabaseSettingsService.ts` | **New** — syncs preferences to `profiles.notification_preferences` |
+| `src/services/settings/supabaseSettingsService.ts` | **New** - syncs preferences to `profiles.notification_preferences` |
 | `src/services/settings/settingsService.ts` | `getSettingsService()` selects Supabase or mock |
 | `src/components/settings/NotificationSettingsCard.tsx` | In-app vs Email (Resend) sections |
-| `src/components/notifications/NotificationPreferences.tsx` | Updated copy — email via Resend, no push |
+| `src/components/notifications/NotificationPreferences.tsx` | Updated copy - email via Resend, no push |
 
 ---
 
@@ -241,13 +241,13 @@ Future: enqueue exact-time jobs
 
 | File | Change |
 |------|--------|
-| `src/services/email/*` | **New** — client email layer |
-| `supabase/functions/send-email/index.ts` | **New** — on-demand send |
-| `supabase/functions/process-email-jobs/index.ts` | **New** — cron processor |
-| `supabase/functions/_shared/email/*` | **New** — templates + Resend |
-| `supabase/migrations/20250531600000_email_infrastructure.sql` | **New** — schema |
-| `supabase/config.toml` | **New** — cron schedule |
-| `src/services/settings/supabaseSettingsService.ts` | **New** — preference sync |
+| `src/services/email/*` | **New** - client email layer |
+| `supabase/functions/send-email/index.ts` | **New** - on-demand send |
+| `supabase/functions/process-email-jobs/index.ts` | **New** - cron processor |
+| `supabase/functions/_shared/email/*` | **New** - templates + Resend |
+| `supabase/migrations/20250531600000_email_infrastructure.sql` | **New** - schema |
+| `supabase/config.toml` | **New** - cron schedule |
+| `src/services/settings/supabaseSettingsService.ts` | **New** - preference sync |
 | `src/types/settings.ts` | Email preference keys |
 | `src/data/settingsData.ts` | Labels + defaults |
 | `src/components/settings/NotificationSettingsCard.tsx` | Email section UI |

@@ -39,7 +39,7 @@ export const USER_FACING_ERRORS = {
   server: 'Our servers are having trouble. Please try again in a few minutes.',
 } as const;
 
-/** Messages already written for users — safe to show as-is. */
+/** Messages already written for users - safe to show as-is. */
 const SAFE_MESSAGE_PATTERNS: RegExp[] = [
   /^please sign in/i,
   /^select a pet/i,
@@ -170,7 +170,7 @@ export function isTechnicalError(message: string): boolean {
   return TECHNICAL_PATTERNS.some(({ pattern }) => pattern.test(trimmed));
 }
 
-/** Returns a safe string for UI — never leaks DB/schema/internal details. */
+/** Returns a safe string for UI - never leaks DB/schema/internal details. */
 export function sanitizeUserFacingError(
   message: string | null | undefined,
   context: UserErrorContext = 'generic',

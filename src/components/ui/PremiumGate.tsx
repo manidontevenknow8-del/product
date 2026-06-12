@@ -5,7 +5,7 @@ import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { ROUTES } from '@/routes/paths';
 import styles from './PremiumGate.module.css';
 
-/** Warm editorial placeholder — peaceful resting pet (Unsplash) */
+/** Warm editorial placeholder - peaceful resting pet (Unsplash) */
 const EDITORIAL_IMAGE_URL =
   'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=800&q=80';
 

@@ -1,4 +1,4 @@
-/** Server-side entitlement mirror — keep in sync with src/subscription/entitlements.ts */
+/** Server-side entitlement mirror - keep in sync with src/subscription/entitlements.ts */
 
 export type CommercialPlan = 'free' | 'plus' | 'pro' | 'enterprise';
 

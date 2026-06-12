@@ -1,4 +1,4 @@
-/** @deprecated Import from pricingConfig.ts — kept for backward compatibility */
+/** @deprecated Import from pricingConfig.ts - kept for backward compatibility */
 export {
   CUSTOM_LIMITS_EMAIL,
   PLUS_MONTHLY_INR as PLUS_MONTHLY_PRICE_INR,

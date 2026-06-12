@@ -11,7 +11,7 @@ export type PassportIdentity = {
   secureLink: string;
 };
 
-/** @deprecated Legacy mock shape — use PassportIdentity + PassportData */
+/** @deprecated Legacy mock shape - use PassportIdentity + PassportData */
 export type PassportMeta = {
   petName: string;
   breed: string;

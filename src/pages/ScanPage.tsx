@@ -354,7 +354,7 @@ export function ScanPage() {
 
         {decoderMockMode && (
           <p className={styles.mockBanner} role="status">
-            Local preview — Vet Bill Decoder uses sample extraction data until Supabase is
+            Local preview - Vet Bill Decoder uses sample extraction data until Supabase is
             configured.
           </p>
         )}

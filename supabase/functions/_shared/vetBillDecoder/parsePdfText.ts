@@ -12,7 +12,7 @@ export type ParsedPdfText = {
   quality: 'good' | 'sparse';
 };
 
-/** Try to extract text; never throws — returns null if PDF.js cannot read the file. */
+/** Try to extract text; never throws - returns null if PDF.js cannot read the file. */
 export async function tryParsePdfText(bytes: Uint8Array): Promise<ParsedPdfText | null> {
   try {
     const pdf = await getDocumentProxy(bytes);

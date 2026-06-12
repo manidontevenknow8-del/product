@@ -18,7 +18,7 @@ This includes:
 
 ---
 
-## Phase 1 — MonthlyReportEngine
+## Phase 1 - MonthlyReportEngine
 
 ### Engine
 **File:** `src/services/monthlyReport/MonthlyReportEngine.ts`
@@ -46,7 +46,7 @@ Key outputs:
 
 ---
 
-## Phase 2 — Included signals
+## Phase 2 - Included signals
 
 Monthly reports include the requested inputs:
 
@@ -58,7 +58,7 @@ Monthly reports include the requested inputs:
 
 ---
 
-## Phase 3 — Instagram-ready report card (mobile-first)
+## Phase 3 - Instagram-ready report card (mobile-first)
 
 **Component:** `src/components/monthly-report/MonthlyReportCard.tsx`  
 **Styles:** `src/components/monthly-report/MonthlyReportCard.module.css`
@@ -70,7 +70,7 @@ Design characteristics:
 
 ---
 
-## Phase 4 — Share / Download / Save
+## Phase 4 - Share / Download / Save
 
 ### Actions UI
 **Component:** `src/components/monthly-report/MonthlyReportActions.tsx`
@@ -88,7 +88,7 @@ Saves reports to localStorage-based archive:
 
 ---
 
-## Phase 5 — Archive page
+## Phase 5 - Archive page
 
 **Route:** `/monthly-report/archive`  
 **Page:** `src/pages/MonthlyReportArchivePage.tsx`

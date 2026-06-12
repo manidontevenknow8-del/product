@@ -1,4 +1,4 @@
-/** Passport section art — topic-matched scan/reminder assets */
+/** Passport section art - topic-matched scan/reminder assets */
 export const PASSPORT_IMG = {
   highlight: '/images/landing/landing-passport.png',
   vaccinations: '/images/scan/scan-doc-vaccine.png',

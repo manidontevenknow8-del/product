@@ -20,7 +20,7 @@ export function getFromAddress(): string {
   return Deno.env.get('RESEND_FROM_EMAIL') ?? 'PetClues <reminders@petclues.app>';
 }
 
-/** Production site — used for all transactional email links. */
+/** Production site - used for all transactional email links. */
 export const PRODUCTION_APP_URL = 'https://petclues.com';
 
 export function getAppBaseUrl(): string {

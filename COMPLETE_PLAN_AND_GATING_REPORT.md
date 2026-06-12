@@ -4,7 +4,7 @@
 
 | Tier | Pets | Price | Checkout |
 |------|------|-------|----------|
-| **Free** | 1 | ₹0 | — |
+| **Free** | 1 | ₹0 | - |
 | **Plus** | 3 | ₹799/mo | Razorpay |
 | **Pro** | 7 | ₹1,999/mo (₹1,899 founding) | Razorpay |
 | **Enterprise** | 100 | Custom | support@petclues.com |

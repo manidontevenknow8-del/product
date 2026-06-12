@@ -31,8 +31,8 @@ Generated: 2026-06-08
 
 | File | Note |
 |------|------|
-| `supabase/migrations/20250531900000_premium_subscriptions.sql` | Original Stripe schema — superseded by `20250608100000_razorpay_subscriptions.sql` |
-| `PetClues_Premium_Subscriptions_Report.md` | Legacy documentation — not runtime code |
+| `supabase/migrations/20250531900000_premium_subscriptions.sql` | Original Stripe schema - superseded by `20250608100000_razorpay_subscriptions.sql` |
+| `PetClues_Premium_Subscriptions_Report.md` | Legacy documentation - not runtime code |
 
 **No Stripe imports remain in `src/` or active edge functions.**
 
@@ -53,7 +53,7 @@ Generated: 2026-06-08
 
 | File | Role |
 |------|------|
-| `src/pages/subscription/PricingPage.tsx` | Public/authenticated pricing — Pro ₹299/month |
+| `src/pages/subscription/PricingPage.tsx` | Public/authenticated pricing - Pro ₹299/month |
 | `src/pages/subscription/BillingPage.tsx` | Plan status, usage, payment history, upgrade |
 | `src/components/subscription/UpgradeModal.tsx` | Razorpay checkout modal |
 | `src/components/subscription/PremiumFeatureGuard.tsx` | `subscription_status` gate |
@@ -65,5 +65,5 @@ Generated: 2026-06-08
 
 | Plan | Backend | Frontend |
 |------|---------|----------|
-| Pro monthly | ₹299 (29900 paise) — server-only | `PRO_MONTHLY_PRICE_DISPLAY` |
+| Pro monthly | ₹299 (29900 paise) - server-only | `PRO_MONTHLY_PRICE_DISPLAY` |
 | Yearly | **Not offered V1** | Removed from pricing UI |

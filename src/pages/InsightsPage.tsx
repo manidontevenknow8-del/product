@@ -83,7 +83,7 @@ function PredictiveForesightSection({
         <h3 className={styles.synthesisTitle}>Pattern confidence rising</h3>
         <p className={styles.synthesisText}>
           Pro models cross-reference weight velocity, vaccine due windows, and recurring symptom
-          language to surface early-care prompts — weeks before a crisis visit.
+          language to surface early-care prompts - weeks before a crisis visit.
         </p>
       </article>
     </div>
@@ -173,7 +173,7 @@ export function InsightsPage() {
               imageUrl={HERO_IMAGE}
               eyebrow="Health Foresight"
               title="Predictive care journal"
-              subtitle="A living health journal — curated from records, check-ins, and care signals."
+              subtitle="A living health journal - curated from records, check-ins, and care signals."
             />
           </PremiumGate>
           <div className={hero.divider}>
@@ -200,7 +200,7 @@ export function InsightsPage() {
             <p className={hero.eyebrow}>{activePet.name}</p>
             <h1 className={hero.title}>Health Foresight &amp; Predictive Trends</h1>
             <p className={hero.lead}>
-              A living health journal — curated from records, check-ins, and care signals.
+              A living health journal - curated from records, check-ins, and care signals.
             </p>
           </div>
         </header>
@@ -233,7 +233,7 @@ export function InsightsPage() {
             <p className={styles.sectionEyebrow}>Journal</p>
             <h2 className={styles.sectionTitle}>Predictive analysis</h2>
             <p className={styles.sectionLead}>
-              Deep historical modeling — weight curves, vaccine cadence, and symptom recurrence.
+              Deep historical modeling - weight curves, vaccine cadence, and symptom recurrence.
             </p>
           </section>
 

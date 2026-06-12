@@ -1,4 +1,4 @@
-/** Central imagery registry for app pages — reuse landing/profile assets when topic matches. */
+/** Central imagery registry for app pages - reuse landing/profile assets when topic matches. */
 export const PAGE_IMG = {
   auth: {
     login: '/images/auth/auth-login.png',

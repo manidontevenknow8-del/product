@@ -29,7 +29,7 @@
   gap: var(--space-3);
 }
 
-/* Wide layout — used on full-width reminders page */
+/* Wide layout - used on full-width reminders page */
 .listWide .group {
   gap: var(--space-4);
 }

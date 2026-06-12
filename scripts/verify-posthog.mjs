@@ -112,7 +112,7 @@ console.log(`2. posthog_test_app_loaded fires:  ${testEventLog ? 'PASS' : 'FAIL'
 console.log(`3. Requests to us.i.posthog.com:   ${responses.length > 0 ? `PASS (${responses.length})` : 'FAIL'}`);
 const eventResponses = responses.filter((r) => /\/(e|batch|capture)\//.test(r.url));
 console.log(`4. HTTP 200 responses:             ${okResponses.length > 0 ? `PASS (${okResponses.length})` : 'FAIL'}`);
-console.log(`5. Event ingest (/e|/batch|/capture): ${eventResponses.length > 0 ? `PASS (${eventResponses.length})` : 'WARN — only flags/decide seen; events may use beacon'}`);
+console.log(`5. Event ingest (/e|/batch|/capture): ${eventResponses.length > 0 ? `PASS (${eventResponses.length})` : 'WARN - only flags/decide seen; events may use beacon'}`);
 
 await browser.close();
 const pass =

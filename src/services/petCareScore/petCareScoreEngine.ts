@@ -417,9 +417,9 @@ function buildSummary(score: number, helpingCount: number, improvingCount: numbe
     return `${helpingCount} areas are strong${improvingCount > 0 ? ` · ${improvingCount} ready to improve` : '.'}`;
   }
   if (score >= 60) {
-    return 'Solid foundation — targeted updates will lift your score quickly.';
+    return 'Solid foundation - targeted updates will lift your score quickly.';
   }
-  return 'Getting started — add profile details, records, and reminders to build momentum.';
+  return 'Getting started - add profile details, records, and reminders to build momentum.';
 }
 
 /** Convenience wrapper when passport is not pre-built. */

@@ -1,4 +1,4 @@
-/** Build and release metadata — populate via CI in production */
+/** Build and release metadata - populate via CI in production */
 export const BUILD_INFO = {
   version: '0.1.0-beta',
   releaseChannel: 'beta' as const,

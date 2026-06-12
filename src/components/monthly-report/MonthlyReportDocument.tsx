@@ -11,7 +11,7 @@ import styles from './MonthlyReportDocument.module.css';
 
 type MonthlyReportDocumentProps = {
   report: MonthlyPetLifeReport;
-  /** Free tier viral watermark — included in exports */
+  /** Free tier viral watermark - included in exports */
   showWatermark?: boolean;
 };
 
@@ -168,7 +168,7 @@ export const MonthlyReportDocument = forwardRef<HTMLDivElement, MonthlyReportDoc
         {showWatermark && (
           <div className={styles.watermark} aria-label="PetClues branding">
             <p className={styles.watermarkText}>
-              Powered by PetClues — Build your pet&apos;s life story.
+              Powered by PetClues - Build your pet&apos;s life story.
             </p>
           </div>
         )}

@@ -18,7 +18,7 @@ The experience is designed to feel premium with:
 
 ---
 
-## Phase 1 — Route, Page, Components
+## Phase 1 - Route, Page, Components
 
 ### Route
 - Added `ROUTES.PET_MATCH = '/pet-match'` in `src/routes/paths.ts`
@@ -41,7 +41,7 @@ The experience is designed to feel premium with:
 
 ---
 
-## Phase 2 — Questionnaire
+## Phase 2 - Questionnaire
 
 Created a typed questionnaire schema in:
 - `src/types/petMatch.ts`
@@ -63,7 +63,7 @@ The questionnaire is step-based with progress and back navigation.
 
 ---
 
-## Phase 3 — Rule-Based Scoring Engine
+## Phase 3 - Rule-Based Scoring Engine
 
 Created deterministic engine in:
 - `src/services/petMatch/petMatchEngine.ts`
@@ -91,7 +91,7 @@ Output includes:
 
 ---
 
-## Phase 4 — Premium Results Experience
+## Phase 4 - Premium Results Experience
 
 Results UI in `PetMatchResultCard` presents:
 - Headline compatibility score
@@ -108,7 +108,7 @@ This keeps the output explainable and actionable.
 
 ---
 
-## Phase 5 — Lead Generation
+## Phase 5 - Lead Generation
 
 Lead actions implemented:
 

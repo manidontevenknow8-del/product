@@ -14,20 +14,20 @@ Users can now edit their pet from **Pet Profile → Edit profile** and have chan
 
 ---
 
-## Phase 1 — Audit (Before Implementation)
+## Phase 1 - Audit (Before Implementation)
 
 | Component | Prior behavior |
 |-----------|----------------|
 | `EditProfileModal` | Local-only save via `onSave(updated: PetProfile)`; included non-persisted fields (diet, vaccination, allergies, microchip, conditions) |
 | `PetProfilePage` | Derived profile from `activePet` but `onSave={setProfile}` bypassed Supabase and `PetProvider` |
-| `PetProvider` | Exposed `createPet`, `refreshPets`, `setActivePet` — **no `updatePet`** |
+| `PetProvider` | Exposed `createPet`, `refreshPets`, `setActivePet` - **no `updatePet`** |
 | `petService` | `updatePet()` already implemented in both `supabasePetService` and `mockPetService` |
 
 **Gap:** Service layer was ready; UI and context were not wired.
 
 ---
 
-## Phase 2 — Implementation
+## Phase 2 - Implementation
 
 ### Persistence flow
 
@@ -53,11 +53,11 @@ EditProfileModal
 | Gender | `gender` | `male` / `female` / `unknown` / null |
 | Photo | `photo_url` | Base64 data URL (same pattern as onboarding; no upload service) |
 
-Non-persisted profile fields (diet, vaccination, allergies, microchip, conditions) were **removed from the edit modal** — they remain display-only placeholders in `petRecordToPetProfile()` until future health-record migrations.
+Non-persisted profile fields (diet, vaccination, allergies, microchip, conditions) were **removed from the edit modal** - they remain display-only placeholders in `petRecordToPetProfile()` until future health-record migrations.
 
 ---
 
-## Phase 3 — Hydration Verification
+## Phase 3 - Hydration Verification
 
 All surfaces read from `usePets().activePet` (or derived mappers). After `updatePet()` updates the `pets` array, these re-render automatically:
 
@@ -69,11 +69,11 @@ All surfaces read from `usePets().activePet` (or derived mappers). After `update
 | **Timeline header** | `activePet?.name` | Pet name in header copy |
 | **PetCare Score** | `activePet.id` in `PetCareScoreProvider` | Score keyed by pet id (unchanged on edit); provider stays in sync with active pet |
 
-No additional refresh call is needed — local state patch avoids a loading flash from `refreshPets()`.
+No additional refresh call is needed - local state patch avoids a loading flash from `refreshPets()`.
 
 ---
 
-## Phase 4 — Error Handling & UX
+## Phase 4 - Error Handling & UX
 
 `EditProfileModal` now implements:
 
@@ -141,13 +141,13 @@ These still use hardcoded or mock data and are **out of scope** for this task:
 ## Testing Checklist
 
 1. Sign in and open **Pet Profile → Edit profile**.
-2. Change name, breed, weight, gender, age — save.
+2. Change name, breed, weight, gender, age - save.
 3. Confirm **Dashboard** header shows updated name/photo.
 4. Confirm **Profile** details grid reflects changes.
 5. Confirm **Emergency Passport** identity section updates (including "Last updated").
 6. Confirm **Timeline** header uses new pet name.
-7. Force an error (e.g. disconnect network) — verify error banner and retry.
-8. Without Supabase env vars — confirm localStorage mock path still updates via `mockPetService`.
+7. Force an error (e.g. disconnect network) - verify error banner and retry.
+8. Without Supabase env vars - confirm localStorage mock path still updates via `mockPetService`.
 
 ---
 
@@ -160,4 +160,4 @@ These still use hardcoded or mock data and are **out of scope** for this task:
 
 ---
 
-*Generated as part of the Pet Identity Migration follow-up — pet edit persistence.*
+*Generated as part of the Pet Identity Migration follow-up - pet edit persistence.*

@@ -8,7 +8,7 @@ import { buildMockCaretakers, mockSharedPets } from '@/data/familySharingData';
 const STORAGE_KEY = 'petclues_caretakers';
 
 /**
- * Family sharing service — swap for Supabase invitations + RLS policies.
+ * Family sharing service - swap for Supabase invitations + RLS policies.
  *
  * Backend requirements:
  * - Invitation emails with secure accept tokens

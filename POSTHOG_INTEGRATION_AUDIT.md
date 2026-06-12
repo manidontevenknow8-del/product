@@ -9,31 +9,31 @@
 
 PostHog was **installed** and partially wired, but events were not reaching the dashboard because:
 
-1. **Initialization was lazy** — `posthog.ts` was only loaded via dynamic `import()` inside `EventTracker`, so `posthog.init()` did not run at application startup.
-2. **Production env vars** — `VITE_POSTHOG_KEY` and `VITE_POSTHOG_HOST` must be set in **Vercel** (not Supabase secrets). Vite inlines them at **build time**. If missing during deploy, the production bundle silently skips PostHog.
+1. **Initialization was lazy** - `posthog.ts` was only loaded via dynamic `import()` inside `EventTracker`, so `posthog.init()` did not run at application startup.
+2. **Production env vars** - `VITE_POSTHOG_KEY` and `VITE_POSTHOG_HOST` must be set in **Vercel** (not Supabase secrets). Vite inlines them at **build time**. If missing during deploy, the production bundle silently skips PostHog.
 
 These issues are now fixed. Local verification confirms the API key is valid and events are accepted by PostHog's ingest endpoint.
 
 ---
 
-## Phase 1 — Installation verification
+## Phase 1 - Installation verification
 
 | Check | Result |
 |-------|--------|
 | `posthog-js` installed | ✅ `package.json` → `posthog-js@^1.382.0` |
-| PostHog provider | ✅ `AnalyticsProvider` (`src/analytics/AnalyticsProvider.tsx`) — app-level analytics context; no separate `posthog-js/react` provider (not required) |
-| PostHog initialized | ✅ **Fixed** — `initPostHog()` called once in `src/main.tsx` before React render |
+| PostHog provider | ✅ `AnalyticsProvider` (`src/analytics/AnalyticsProvider.tsx`) - app-level analytics context; no separate `posthog-js/react` provider (not required) |
+| PostHog initialized | ✅ **Fixed** - `initPostHog()` called once in `src/main.tsx` before React render |
 | Mounted at startup | ✅ `main.tsx` line: `initPostHog()` |
 | `VITE_POSTHOG_KEY` read | ✅ From `import.meta.env.VITE_POSTHOG_KEY` in `src/analytics/posthog.ts` |
 | `VITE_POSTHOG_HOST` read | ✅ From `import.meta.env.VITE_POSTHOG_HOST` in `src/analytics/posthog.ts` |
 
 ### Previous root cause
 
-Before this fix, `posthog.init()` only ran when the first analytics event triggered a dynamic import of `posthog.ts`. On a cold visit with no routed analytics activity, PostHog never initialized — matching the dashboard symptom **"Waiting for events"**.
+Before this fix, `posthog.init()` only ran when the first analytics event triggered a dynamic import of `posthog.ts`. On a cold visit with no routed analytics activity, PostHog never initialized - matching the dashboard symptom **"Waiting for events"**.
 
 ---
 
-## Phase 2 — Initialization (current setup)
+## Phase 2 - Initialization (current setup)
 
 **File:** `src/analytics/posthog.ts`  
 **Startup call:** `src/main.tsx` → `initPostHog()`
@@ -50,13 +50,13 @@ posthog.init(VITE_POSTHOG_KEY, {
 });
 ```
 
-- Keys are **never hardcoded** — env vars only.
+- Keys are **never hardcoded** - env vars only.
 - Init runs **exactly once** at startup.
 - `initialized` flag is set in the `loaded` callback (SDK fully ready).
 
 ---
 
-## Phase 3 — Environment variables
+## Phase 3 - Environment variables
 
 ### Local (`.env.local`)
 
@@ -65,9 +65,9 @@ VITE_POSTHOG_KEY=phc_…   ✅ present
 VITE_POSTHOG_HOST=https://us.i.posthog.com   ✅ present
 ```
 
-Verified via Vite `loadEnv()` — both values load in development and production modes.
+Verified via Vite `loadEnv()` - both values load in development and production modes.
 
-### Production (Vercel) — action required
+### Production (Vercel) - action required
 
 Add these to **Vercel → Project → Settings → Environment Variables**:
 
@@ -82,7 +82,7 @@ Then **redeploy**. Without redeploy, the old bundle still has no PostHog config.
 
 ---
 
-## Phase 4 — Verification events added
+## Phase 4 - Verification events added
 
 | Event | When fired | File |
 |-------|------------|------|
@@ -97,7 +97,7 @@ All custom events also flow through `eventTracker` → `posthogAdapter` where ap
 
 ---
 
-## Phase 5 — User identification
+## Phase 5 - User identification
 
 **File:** `src/analytics/AnalyticsProvider.tsx`
 
@@ -112,11 +112,11 @@ posthog.identify(user.id, {
 
 On sign-out: `posthog.reset()` via `resetPostHog()` in `EventTracker.setUserId(undefined)`.
 
-Event properties are sanitized (`src/analytics/sanitizeProperties.ts`) — passwords, tokens, etc. are stripped from **event** payloads. Identify traits intentionally include `email` and `plan` per product analytics requirements.
+Event properties are sanitized (`src/analytics/sanitizeProperties.ts`) - passwords, tokens, etc. are stripped from **event** payloads. Identify traits intentionally include `email` and `plan` per product analytics requirements.
 
 ---
 
-## Phase 6 — Debug logging
+## Phase 6 - Debug logging
 
 All logs use the prefix **`[POSTHOG DEBUG]`**:
 
@@ -124,7 +124,7 @@ All logs use the prefix **`[POSTHOG DEBUG]`**:
 - PostHog host loaded
 - PostHog initialized
 - Event successfully fired (`<event name>`)
-- Event skipped — PostHog not initialized
+- Event skipped - PostHog not initialized
 - User identified
 - PostHog session reset
 
@@ -132,7 +132,7 @@ Open browser DevTools → Console on any page after load.
 
 ---
 
-## Phase 7 — Verification utility
+## Phase 7 - Verification utility
 
 **Page:** `/status` (System Status)  
 **Component:** `PostHogVerification`
@@ -146,9 +146,9 @@ Shows:
 ### How to verify in PostHog
 
 1. Open the app (local or production after Vercel redeploy).
-2. Open browser console — confirm `[POSTHOG DEBUG] PostHog initialized` and `Event successfully fired posthog_test_app_loaded`.
+2. Open browser console - confirm `[POSTHOG DEBUG] PostHog initialized` and `Event successfully fired posthog_test_app_loaded`.
 3. In PostHog → **Activity** (or Live events), filter for `posthog_test_app_loaded`.
-4. Visit `/status` and click **Send test event** — look for `posthog_manual_verification_click`.
+4. Visit `/status` and click **Send test event** - look for `posthog_manual_verification_click`.
 5. Sign in → `user_logged_in`; open dashboard → `dashboard_viewed`; create pet → `pet_created`.
 
 ### API verification (performed during audit)
@@ -163,7 +163,7 @@ This confirms the project key and host are valid.
 
 ---
 
-## Phase 8 — Session replay
+## Phase 8 - Session replay
 
 **Client:** enabled (`disable_session_recording: false`, inputs masked).
 
@@ -200,7 +200,7 @@ Replay appears after pageviews/events from real browser sessions (may take a few
 | PostHog Activity shows events | ✅ API accepts events; confirm in UI after redeploy |
 | Session Replay | ⚠️ Enable in PostHog project settings + visit site from non-blocked browser |
 | Funnels | ✅ Available once Activity receives `$pageview` and custom events |
-| Remove debug logs later | Optional — search `[POSTHOG DEBUG]` before GA launch |
+| Remove debug logs later | Optional - search `[POSTHOG DEBUG]` before GA launch |
 
 ---
 
@@ -211,4 +211,4 @@ Replay appears after pageviews/events from real browser sessions (may take a few
 3. Open production URL → DevTools console → `[POSTHOG DEBUG]`.
 4. PostHog → Activity → search `posthog_test_app_loaded`.
 
-If console shows `missing VITE_POSTHOG_KEY` — the deploy was built without env vars.
+If console shows `missing VITE_POSTHOG_KEY` - the deploy was built without env vars.

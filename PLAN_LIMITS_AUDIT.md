@@ -21,7 +21,7 @@
 |-------|----------|---------|
 | Pet count | `PetProvider`, `AddAnotherPetButton`, `useSubscription().canAddPet` | `enforce_pet_limit` trigger on `pets` INSERT |
 | Vet Bill Decoder access | `PremiumGate`, `ScanPage`, `canAccess('vetBillDecoder')` | `requirePlanTier('plus')` + monthly count in `decode-vet-document` |
-| Vet Bill Decoder RLS | — | `Paid plans insert vet bill extractions` policy |
+| Vet Bill Decoder RLS | - | `Paid plans insert vet bill extractions` policy |
 | Reminders | `RemindersPage`, `canCreateReminder` | Client-only (no DB trigger) |
 | Health records | `PetProfilePage`, `canCreateHealthRecord` | Client-only |
 | Timeline months | `TimelinePage`, `partitionTimelineEvents` | Client-only |
@@ -37,6 +37,6 @@
 
 ## Gaps / manual review
 
-- **Enterprise provisioning** is manual (email support@petclues.com) — no Razorpay SKU
+- **Enterprise provisioning** is manual (email support@petclues.com) - no Razorpay SKU
 - **Reminder/health record limits** rely on UI gates; consider DB triggers if abuse is observed
 - **Decoder monthly count** uses calendar month on server; client usage display is lifetime count (cosmetic mismatch)

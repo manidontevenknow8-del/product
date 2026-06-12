@@ -235,7 +235,7 @@ export function TimelinePage() {
                   <PremiumUpgradePrompt
                     feature="premiumTimeline"
                     onUpgrade={() => setUpgradeOpen(true)}
-                    emotionalOverride={`Your older memories are saved — Free shows the last ${FREE_TIMELINE_DAYS} days. Upgrade to Plus to see ${petName}'s complete timeline.`}
+                    emotionalOverride={`Your older memories are saved - Free shows the last ${FREE_TIMELINE_DAYS} days. Upgrade to Plus to see ${petName}'s complete timeline.`}
                   />
                 </div>
               ) : (

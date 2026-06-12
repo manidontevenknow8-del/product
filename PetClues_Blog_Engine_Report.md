@@ -18,7 +18,7 @@ Implemented a **Blog & SEO infrastructure** to support long-term organic traffic
 
 ---
 
-## Phase 1 — Routes
+## Phase 1 - Routes
 
 | Route | Page | Access |
 |-------|------|--------|
@@ -29,13 +29,13 @@ Implemented a **Blog & SEO infrastructure** to support long-term organic traffic
 
 - `src/pages/blog/BlogIndexPage.tsx`
 - `src/pages/blog/BlogPostPage.tsx`
-- `src/App.tsx` — route registration
-- `src/routes/paths.ts` — `ROUTES.BLOG`
-- `src/components/layout/Footer.tsx` — Resources → Blog link
+- `src/App.tsx` - route registration
+- `src/routes/paths.ts` - `ROUTES.BLOG`
+- `src/components/layout/Footer.tsx` - Resources → Blog link
 
 ---
 
-## Phase 2 — `blog_posts` table
+## Phase 2 - `blog_posts` table
 
 **Migration:** `supabase/migrations/20250532200000_blog_posts.sql`
 
@@ -60,7 +60,7 @@ Implemented a **Blog & SEO infrastructure** to support long-term organic traffic
 
 ---
 
-## Phase 3 — SEO
+## Phase 3 - SEO
 
 ### Global stack (extended)
 
@@ -79,18 +79,18 @@ Implemented a **Blog & SEO infrastructure** to support long-term organic traffic
 
 ### Article pages (`/blog/:slug`)
 
-- Config: `getBlogPostSEO(post)` — `ogType: article`, featured image, keywords
+- Config: `getBlogPostSEO(post)` - `ogType: article`, featured image, keywords
 - Canonical: `{VITE_SITE_URL}/blog/{slug}`
 - Structured data: `BlogPosting` schema.org JSON-LD
 - `SEOProvider` skips global meta on all `/blog*` routes so article SEO wins
 
 ### Environment
 
-- `VITE_SITE_URL` — canonical + OG base (defaults to `https://petclues.com` in `seoConfig.ts`)
+- `VITE_SITE_URL` - canonical + OG base (defaults to `https://petclues.com` in `seoConfig.ts`)
 
 ---
 
-## Phase 4 — Categories
+## Phase 4 - Categories
 
 Defined in `src/data/blogCategories.ts`:
 
@@ -108,7 +108,7 @@ Defined in `src/data/blogCategories.ts`:
 
 ---
 
-## Phase 5 — CMS architecture
+## Phase 5 - CMS architecture
 
 **Pattern:** Repository interface + adapters
 
@@ -150,11 +150,11 @@ Meta and JSON-LD are applied client-side via `useEffect` (consistent with existi
 
 ## Test plan
 
-- [ ] Visit `/blog` — six posts, category chips filter
-- [ ] Open `/blog/dog-vaccination-schedule-guide` — article layout + OG meta in devtools
-- [ ] View page source / Elements — canonical link, `BlogPosting` JSON-LD
-- [ ] Offline (no Supabase env) — mock posts still load
-- [ ] With Supabase — seed posts from migration appear
+- [ ] Visit `/blog` - six posts, category chips filter
+- [ ] Open `/blog/dog-vaccination-schedule-guide` - article layout + OG meta in devtools
+- [ ] View page source / Elements - canonical link, `BlogPosting` JSON-LD
+- [ ] Offline (no Supabase env) - mock posts still load
+- [ ] With Supabase - seed posts from migration appear
 - [ ] Footer → Blog link works
 
 ---

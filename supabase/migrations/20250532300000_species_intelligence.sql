@@ -1,4 +1,4 @@
--- Species Intelligence Foundation — knowledge layer for future AI features
+-- Species Intelligence Foundation - knowledge layer for future AI features
 
 -- ---------------------------------------------------------------------------
 -- Phase 1: species
@@ -71,7 +71,7 @@ create index if not exists care_guidelines_breed_id_idx on public.care_guideline
 create index if not exists care_guidelines_status_idx on public.care_guidelines (status);
 
 -- ---------------------------------------------------------------------------
--- RLS — reference knowledge; public read for published guidelines
+-- RLS - reference knowledge; public read for published guidelines
 
 alter table public.species enable row level security;
 alter table public.breeds enable row level security;
@@ -138,11 +138,11 @@ create trigger care_guidelines_set_updated_at
 -- Seed: species
 
 insert into public.species (slug, name, description) values
-  ('dog', 'Dog', 'Domestic dogs — highly variable by breed; preventive care and vaccination cadence are essential.'),
-  ('cat', 'Cat', 'Domestic cats — independent companions with species-specific nutrition and litter-related health needs.'),
-  ('bird', 'Bird', 'Companion birds — sensitive respiratory systems; weight and environment monitoring matter.'),
-  ('rabbit', 'Rabbit', 'Domestic rabbits — herbivores with dental and GI health as primary concerns.'),
-  ('reptile', 'Reptile', 'Common pet reptiles — habitat parameters (temperature, humidity, UVB) directly affect health.')
+  ('dog', 'Dog', 'Domestic dogs - highly variable by breed; preventive care and vaccination cadence are essential.'),
+  ('cat', 'Cat', 'Domestic cats - independent companions with species-specific nutrition and litter-related health needs.'),
+  ('bird', 'Bird', 'Companion birds - sensitive respiratory systems; weight and environment monitoring matter.'),
+  ('rabbit', 'Rabbit', 'Domestic rabbits - herbivores with dental and GI health as primary concerns.'),
+  ('reptile', 'Reptile', 'Common pet reptiles - habitat parameters (temperature, humidity, UVB) directly affect health.')
 on conflict (slug) do nothing;
 
 -- ---------------------------------------------------------------------------
@@ -211,7 +211,7 @@ cross join (values
   ),
   ('rabbit',
     '{"min_years":8,"max_years":12,"notes":"Spayed/neutered rabbits often live longer."}',
-    '{"summary":"Unlimited timothy hay; limited pellets; leafy greens daily.","feeding_frequency":"Hay always available; measured pellets.","restrictions":["Iceberg lettuce","High-starch treats","Avocado"],"notes":"GI stasis is an emergency — appetite loss needs same-day vet care."}',
+    '{"summary":"Unlimited timothy hay; limited pellets; leafy greens daily.","feeding_frequency":"Hay always available; measured pellets.","restrictions":["Iceberg lettuce","High-starch treats","Avocado"],"notes":"GI stasis is an emergency - appetite loss needs same-day vet care."}',
     '{"level":"moderate","minutes_per_day":30,"activities":["Hop space","Tunnel play","Chew toys"],"notes":"Need safe flooring; avoid wire-only cages."}',
     '[{"name":"Dental malocclusion","description":"Teeth grow continuously; hay wear is critical.","prevalence":"common"},{"name":"GI stasis","description":"Slow gut motility; painful and life-threatening.","prevalence":"common"},{"name":"E. cuniculi","description":"Neurologic and kidney parasite; discuss testing.","prevalence":"occasional"}]',
     '{"core":["RHDV2 where endemic"],"optional":[],"schedule_notes":"RHDV2 vaccination per regional vet guidance; no routine dog/cat vaccines.","booster_notes":"Annual wellness including teeth and weight."}',
@@ -272,7 +272,7 @@ from (values
   ('reptile', 'bearded-dragon',
     '{"min_years":8,"max_years":12,"notes":null}',
     '{"summary":"Gut-loaded insects + salad greens; calcium dusting schedule per age.","feeding_frequency":"Juveniles: insects daily; adults: insects 2–3x/week + daily greens.","restrictions":["Fireflies (toxic)","Wild insects"],"notes":"UVB 10–12 hours; replace bulbs on schedule."}',
-    '{"level":"low","minutes_per_day":10,"activities":["Hand-walk in safe area","Climbing branches"],"notes":"Brumation may reduce appetite seasonally — confirm with vet."}',
+    '{"level":"low","minutes_per_day":10,"activities":["Hand-walk in safe area","Climbing branches"],"notes":"Brumation may reduce appetite seasonally - confirm with vet."}',
     '[{"name":"Impaction","description":"Loose substrate risk; use tile/paper or supervised loose substrate.","prevalence":"common"},{"name":"MBD","description":"Weak jaw/legs if UVB/calcium insufficient.","prevalence":"common"}]',
     '{"core":[],"optional":[],"schedule_notes":"Fecal parasite exam annually.","booster_notes":null}',
     '[{"season":"winter","title":"Brumation awareness","considerations":["Appetite drop may be normal","Weigh weekly","Vet check if lethargy is prolonged"]}]'

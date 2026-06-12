@@ -6,8 +6,8 @@ Generated: 2026-06-08
 
 Each published blog article uses `BlogPostSEO` which renders:
 
-- `MetaTags` — title, description, canonical, keywords, robots
-- `OpenGraph` — og:title, og:description, og:type=article, og:image, Twitter card
+- `MetaTags` - title, description, canonical, keywords, robots
+- `OpenGraph` - og:title, og:description, og:type=article, og:image, Twitter card
 - JSON-LD `BlogPosting` schema via `getBlogPostingStructuredData`
 
 ## Article Inventory (26 published)
@@ -53,6 +53,6 @@ Each published blog article uses `BlogPostSEO` which renders:
 
 ## Recommendations
 
-1. Add `article:modified_time` OG tag — ✅ implemented in `MetaTags.tsx`
+1. Add `article:modified_time` OG tag - ✅ implemented in `MetaTags.tsx`
 2. Validate each article URL in [Rich Results Test](https://search.google.com/test/rich-results)
 3. Ensure featured images exist under `/public/images/blog/` for richer social previews

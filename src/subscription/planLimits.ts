@@ -1,5 +1,5 @@
 /**
- * Strict plan limits & feature-access matrix — single source of truth.
+ * Strict plan limits & feature-access matrix - single source of truth.
  * Pricing display lives in `pricingConfig.ts`; quotas & gates live here.
  */
 
@@ -148,7 +148,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
   },
 };
 
-/** Keys for `useFeatureAccess` — quota + gated features */
+/** Keys for `useFeatureAccess` - quota + gated features */
 export type FeatureKey =
   | 'pets'
   | 'timeline'

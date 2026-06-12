@@ -16,7 +16,7 @@ create index if not exists rate_limit_windows_window_idx
 
 alter table public.rate_limit_windows enable row level security;
 
--- No client policies — service role only
+-- No client policies - service role only
 
 create or replace function public.check_rate_limit(
   p_key text,
@@ -54,14 +54,14 @@ revoke all on function public.check_rate_limit(text, integer, integer) from publ
 grant execute on function public.check_rate_limit(text, integer, integer) to service_role;
 
 -- ---------------------------------------------------------------------------
--- Concurrency: vet bill extractions — one row per document
+-- Concurrency: vet bill extractions - one row per document
 -- ---------------------------------------------------------------------------
 
 create unique index if not exists vet_bill_extractions_document_id_unique
   on public.vet_bill_extractions (document_id);
 
 -- ---------------------------------------------------------------------------
--- Concurrency: referrals — one conversion row per invitee user
+-- Concurrency: referrals - one conversion row per invitee user
 -- ---------------------------------------------------------------------------
 
 create unique index if not exists referrals_invitee_user_id_unique
@@ -77,7 +77,7 @@ create unique index if not exists email_send_log_anon_dedup_unique
   where user_id is null;
 
 -- ---------------------------------------------------------------------------
--- Concurrency: free pet limit — lock profile row during insert
+-- Concurrency: free pet limit - lock profile row during insert
 -- ---------------------------------------------------------------------------
 
 create or replace function public.enforce_free_pet_limit()
@@ -113,13 +113,13 @@ end;
 $$;
 
 -- ---------------------------------------------------------------------------
--- RLS: founding signups — edge function only (service role), no public insert
+-- RLS: founding signups - edge function only (service role), no public insert
 -- ---------------------------------------------------------------------------
 
 drop policy if exists "Public can submit founding signup" on public.founding_member_signups;
 
 -- ---------------------------------------------------------------------------
--- RLS: vet bill extractions — premium + pet ownership on insert/update
+-- RLS: vet bill extractions - premium + pet ownership on insert/update
 -- ---------------------------------------------------------------------------
 
 drop policy if exists "Premium users insert vet bill extractions" on public.vet_bill_extractions;

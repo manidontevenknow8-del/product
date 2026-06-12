@@ -18,7 +18,7 @@ This includes:
 
 ---
 
-## Phase 1 — `/founding-members` landing page
+## Phase 1 - `/founding-members` landing page
 
 **Route:** `ROUTES.FOUNDING_MEMBERS` → `/founding-members`  
 **Page:** `src/pages/FoundingMembersPage.tsx`  
@@ -32,7 +32,7 @@ The page is optimized for acquisition:
 
 ---
 
-## Phase 2 — Benefits
+## Phase 2 - Benefits
 
 The landing page communicates the requested program benefits:
 - Early access
@@ -43,7 +43,7 @@ The landing page communicates the requested program benefits:
 
 ---
 
-## Phase 3 — Signup flow + storage
+## Phase 3 - Signup flow + storage
 
 ### Database
 **Migration:** `supabase/migrations/20250532000000_founding_members.sql`
@@ -82,7 +82,7 @@ Frontend fallback:
 
 ---
 
-## Phase 4 — Dashboard badge (“Founding Member”)
+## Phase 4 - Dashboard badge (“Founding Member”)
 
 ### User session mapping
 Added `foundingMember` to the frontend `User` type and populated it from `profiles.founding_member`:

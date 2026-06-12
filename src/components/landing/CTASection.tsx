@@ -38,7 +38,7 @@ export function CTASection() {
                 </Button>
               </Link>
               <Link to={ROUTES.PET_MATCH}>
-                <Button variant="secondary" size="md">
+                <Button variant="secondary" size="md" className={styles.quizBtn}>
                   Pet match quiz
                 </Button>
               </Link>

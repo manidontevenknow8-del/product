@@ -16,7 +16,7 @@ The PetCare Score page, dashboard widget, weekly insight card, and important ins
 
 ---
 
-## Phase 1 — PetCareScoreEngine
+## Phase 1 - PetCareScoreEngine
 
 ### Location
 
@@ -66,7 +66,7 @@ Overall score = weighted average via `computeOverallFromFactors()`.
 
 ---
 
-## Phase 2 — UI Hydration
+## Phase 2 - UI Hydration
 
 ### Provider refactor
 
@@ -90,7 +90,7 @@ Existing insight cards (`HealthInsightsCard`, `CareRecommendationsCard`, `Positi
 
 ---
 
-## Phase 3 — Score change explanations
+## Phase 3 - Score change explanations
 
 ### Breakdown extensions
 
@@ -108,10 +108,10 @@ Existing insight cards (`HealthInsightsCard`, `CareRecommendationsCard`, `Positi
 
 **File:** `src/components/pet-care-score/ScoreBreakdownCard.tsx`
 
-- **Why your score increased** — lists `increasedBecause`
-- **Why your score decreased** — lists `decreasedBecause`
-- **What's helping** / **Room to grow** — unchanged sections, now driven by real factor status
-- **Suggested next steps** — from engine suggestions
+- **Why your score increased** - lists `increasedBecause`
+- **Why your score decreased** - lists `decreasedBecause`
+- **What's helping** / **Room to grow** - unchanged sections, now driven by real factor status
+- **Suggested next steps** - from engine suggestions
 
 ### Recommendations
 
@@ -128,11 +128,11 @@ Existing insight cards (`HealthInsightsCard`, `CareRecommendationsCard`, `Positi
 
 ### Weekly insight generation
 
-Deterministic copy from trend direction and weakest factor — no AI:
+Deterministic copy from trend direction and weakest factor - no AI:
 
-- **Score moving up** — cites first `increasedBecause` reason
-- **A few areas slipped** — cites first `decreasedBecause` reason + weakest factor suggestion
-- **Steady care** — highlights top improvement opportunity or general encouragement
+- **Score moving up** - cites first `increasedBecause` reason
+- **A few areas slipped** - cites first `decreasedBecause` reason + weakest factor suggestion
+- **Steady care** - highlights top improvement opportunity or general encouragement
 
 ### Score history chart
 
@@ -212,8 +212,8 @@ PetProvider → DocumentProvider → HealthRecordProvider → ReminderProvider �
 
 | File | Change |
 |------|--------|
-| `src/services/petCareScore/petCareScoreEngine.ts` | **New** — scoring engine |
-| `src/services/petCareScore/petCareScoreTypes.ts` | **New** — input types |
+| `src/services/petCareScore/petCareScoreEngine.ts` | **New** - scoring engine |
+| `src/services/petCareScore/petCareScoreTypes.ts` | **New** - input types |
 | `src/services/petCareScore/petCareScoreService.ts` | Re-exports engine |
 | `src/petCareScore/PetCareScoreProvider.tsx` | Real-data hydration |
 | `src/types/petCareScore.ts` | New factor IDs + breakdown fields |

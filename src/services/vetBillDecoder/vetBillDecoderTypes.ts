@@ -78,7 +78,7 @@ export type VetBillExtractionStatus =
   | 'partially_approved'
   | 'rejected';
 
-/** Legacy DB value — treated as saved in the app */
+/** Legacy DB value - treated as saved in the app */
 export type LegacyVetBillExtractionStatus = VetBillExtractionStatus | 'pending_review';
 
 const KNOWN_STATUSES: VetBillExtractionStatus[] = [

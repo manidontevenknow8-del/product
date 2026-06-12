@@ -25,19 +25,19 @@
 
 ## Manual test plan
 
-1. **Free user** — create 1 pet OK, 2nd pet blocked with upgrade message
-2. **Plus checkout** — Razorpay ₹799, profile shows `subscription_plan: plus`
-3. **Plus user** — 3 pets OK, decoder works up to 5/month
-4. **Pro checkout** — ₹1,999 (or ₹1,899 founding), advanced score unlocked
-5. **Pro user** — 7 pets OK, monthly report download works
-6. **Enterprise** — contact email link on pricing/billing
+1. **Free user** - create 1 pet OK, 2nd pet blocked with upgrade message
+2. **Plus checkout** - Razorpay ₹799, profile shows `subscription_plan: plus`
+3. **Plus user** - 3 pets OK, decoder works up to 5/month
+4. **Pro checkout** - ₹1,999 (or ₹1,899 founding), advanced score unlocked
+5. **Pro user** - 7 pets OK, monthly report download works
+6. **Enterprise** - contact email link on pricing/billing
 
 ## Known items for manual review
 
-- Plus price (₹799) not specified in original brief — confirm with product
+- Plus price (₹799) not specified in original brief - confirm with product
 - Enterprise must be provisioned manually in Supabase profiles
 - Some components still use legacy `PremiumFeature` keys (mapped via `LEGACY_FEATURE_MAP`)
-- `DailyCheckInCard` still uses `isPremium` for 7-day trends — maps to any paid plan (acceptable)
+- `DailyCheckInCard` still uses `isPremium` for 7-day trends - maps to any paid plan (acceptable)
 
 ## Dead code / contradictions
 

@@ -153,7 +153,7 @@ export const supabaseAuthService: IAuthService = {
     };
 
     const buildFromSession = (session: NonNullable<Awaited<ReturnType<typeof supabase.auth.getSession>>['data']['session']>) => {
-      // Defer async work — awaiting inside onAuthStateChange can deadlock getSession()
+      // Defer async work - awaiting inside onAuthStateChange can deadlock getSession()
       setTimeout(() => {
         void fetchProfile(session.user.id)
           .then((profile) => notify(mapToAuthSession(session, profile)))

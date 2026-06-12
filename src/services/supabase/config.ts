@@ -17,7 +17,7 @@ export function isSupabaseConfigured(): boolean {
   return Boolean(url && anonKey);
 }
 
-/** Returns validated config or throws — use when Supabase is required. */
+/** Returns validated config or throws - use when Supabase is required. */
 export function getSupabaseConfig(): SupabaseConfig {
   const url = import.meta.env.VITE_SUPABASE_URL?.trim();
   const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY?.trim();

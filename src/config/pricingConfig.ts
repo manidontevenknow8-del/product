@@ -1,5 +1,5 @@
 /**
- * Premium pricing — single source of truth for UI and Razorpay.
+ * Premium pricing - single source of truth for UI and Razorpay.
  * All amounts in INR (display) and paise (checkout).
  */
 

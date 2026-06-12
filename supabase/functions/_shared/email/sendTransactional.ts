@@ -3,7 +3,7 @@ import { getAppBaseUrl, sendViaResend } from './resendClient.ts';
 import { subjectForEmail } from './templates.ts';
 import type { EmailType, SendEmailInput } from './types.ts';
 
-/** Claim dedup slot before sending — prevents concurrent duplicate sends. */
+/** Claim dedup slot before sending - prevents concurrent duplicate sends. */
 async function claimDedupSlot(
   supabase: SupabaseClient,
   userId: string | null,

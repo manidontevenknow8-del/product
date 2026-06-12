@@ -45,7 +45,7 @@ flowchart TD
 
 | File | Change |
 |------|--------|
-| `src/services/payments/razorpayCheckoutService.ts` | **New** — Checkout.js flow |
+| `src/services/payments/razorpayCheckoutService.ts` | **New** - Checkout.js flow |
 | `src/services/subscription/supabaseSubscriptionService.ts` | Razorpay integration |
 | `src/subscription/featureGates.ts` | Extended features + `hasPremiumAccess()` |
 | `src/components/subscription/PremiumFeatureGuard.tsx` | **New** |
@@ -75,7 +75,7 @@ See [PAYMENT_SECURITY_AUDIT.md](./PAYMENT_SECURITY_AUDIT.md)
 ## Build Status
 
 ```
-npm run build — ✅ PASS
+npm run build - ✅ PASS
 ```
 
 ## Remaining Manual Steps

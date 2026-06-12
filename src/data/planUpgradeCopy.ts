@@ -18,27 +18,27 @@ export type PlanUpgradeCopy = {
 const FEATURE_COPY: Partial<Record<PlanFeature, Omit<PlanUpgradeCopy, 'badge' | 'cta'>>> = {
   addPet: {
     headline: 'Every pet deserves their own story',
-    emotional: 'Your current plan has a pet limit. Upgrade to add more companions — each with their own timeline, reminders, and health records.',
+    emotional: 'Your current plan has a pet limit. Upgrade to add more companions - each with their own timeline, reminders, and health records.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   petPassport: {
     headline: 'Professional pet passports',
-    emotional: 'Create and share emergency pet passports — a trusted summary for vets, sitters, and travel. Available on Plus and above.',
+    emotional: 'Create and share emergency pet passports - a trusted summary for vets, sitters, and travel. Available on Plus and above.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   vetBillDecoder: {
     headline: 'Decode vet bills in seconds',
-    emotional: 'Upload a bill and get plain-language breakdowns of charges and line items — available on Plus and above.',
+    emotional: 'Upload a bill and get plain-language breakdowns of charges and line items - available on Plus and above.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   basicAi: {
     headline: 'AI-powered care insights',
-    emotional: 'Get basic AI assistance for organizing care and understanding health patterns — included with Plus.',
+    emotional: 'Get basic AI assistance for organizing care and understanding health patterns - included with Plus.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   advancedAiInsights: {
     headline: 'Advanced AI for deeper care',
-    emotional: 'Unlock advanced AI health insights, pattern analysis, and personalized recommendations — a Pro feature.',
+    emotional: 'Unlock advanced AI health insights, pattern analysis, and personalized recommendations - a Pro feature.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   monthlyReportExport: {
@@ -53,7 +53,7 @@ const FEATURE_COPY: Partial<Record<PlanFeature, Omit<PlanUpgradeCopy, 'badge' | 
   },
   petCareScore: {
     headline: 'Track your care with PetCare Score',
-    emotional: 'See how consistently you\'re meeting your pet\'s care needs — available on Plus and above.',
+    emotional: 'See how consistently you\'re meeting your pet\'s care needs - available on Plus and above.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   advancedPetCareScore: {
@@ -63,17 +63,17 @@ const FEATURE_COPY: Partial<Record<PlanFeature, Omit<PlanUpgradeCopy, 'badge' | 
   },
   familySharing: {
     headline: 'Share care with your household',
-    emotional: 'Invite partners and sitters with scoped access — Plus includes 2 members, Pro is unlimited.',
+    emotional: 'Invite partners and sitters with scoped access - Plus includes 2 members, Pro is unlimited.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   prioritySupport: {
     headline: 'Priority support',
-    emotional: 'Get faster help when something urgent comes up for your pet — included with Pro.',
+    emotional: 'Get faster help when something urgent comes up for your pet - included with Pro.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   comingSoonFeatures: {
     headline: 'Launching Soon features',
-    emotional: 'Medical Timeline Intelligence, AI Health Summary Reports, and more — included with Pro and Enterprise.',
+    emotional: 'Medical Timeline Intelligence, AI Health Summary Reports, and more - included with Pro and Enterprise.',
     disclaimer: HEALTH_DISCLAIMER,
   },
   enterprisePetVolume: {
@@ -83,7 +83,7 @@ const FEATURE_COPY: Partial<Record<PlanFeature, Omit<PlanUpgradeCopy, 'badge' | 
   },
   enterpriseExclusive: {
     headline: 'Enterprise clinic tools',
-    emotional: 'Clinic dashboards, staff accounts, and organization management — contact our team for a custom solution.',
+    emotional: 'Clinic dashboards, staff accounts, and organization management - contact our team for a custom solution.',
     disclaimer: HEALTH_DISCLAIMER,
   },
 };

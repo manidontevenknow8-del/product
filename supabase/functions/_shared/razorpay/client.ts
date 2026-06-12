@@ -1,4 +1,4 @@
-/** Razorpay REST + signature helpers — keep in sync with src/config/pricingConfig.ts */
+/** Razorpay REST + signature helpers - keep in sync with src/config/pricingConfig.ts */
 
 export const PLUS_MONTHLY_PLAN = 'plus' as const;
 export const PRO_MONTHLY_PLAN = 'pro' as const;

@@ -11,7 +11,7 @@ import { mockPetProfile } from '@/data/profileData';
 import { parseAgeString } from '@/utils/ageTranslatorUtils';
 
 /**
- * Age translator service — swap for AI/breed intelligence API in production.
+ * Age translator service - swap for AI/breed intelligence API in production.
  *
  * Future integrations:
  * - Breed-specific longevity databases

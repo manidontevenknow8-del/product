@@ -3,7 +3,7 @@ import type { FeedbackInput, FeedbackType } from '@/types/feedback';
 const STORAGE_KEY = 'petclues_feedback';
 
 /**
- * Feedback service — swap for Supabase, Intercom, or Linear integration.
+ * Feedback service - swap for Supabase, Intercom, or Linear integration.
  */
 export interface IFeedbackService {
   submit(input: FeedbackInput): Promise<{ success: boolean; id: string }>;

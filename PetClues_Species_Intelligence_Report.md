@@ -8,7 +8,7 @@
 
 ## Executive Summary
 
-Implemented the **Species Intelligence Foundation** — a structured PetClues knowledge layer that future AI features can query for grounded care context:
+Implemented the **Species Intelligence Foundation** - a structured PetClues knowledge layer that future AI features can query for grounded care context:
 
 - Three relational tables with public read access
 - Six care dimensions stored as typed JSONB (lifespan, diet, exercise, conditions, vaccines, seasonal)
@@ -20,7 +20,7 @@ Implemented the **Species Intelligence Foundation** — a structured PetClues kn
 
 ---
 
-## Phase 1 — `species` table
+## Phase 1 - `species` table
 
 **Migration:** `supabase/migrations/20250532300000_species_intelligence.sql`
 
@@ -34,7 +34,7 @@ Implemented the **Species Intelligence Foundation** — a structured PetClues kn
 
 ---
 
-## Phase 2 — `breeds` table
+## Phase 2 - `breeds` table
 
 | Column | Type | Notes |
 |--------|------|-------|
@@ -47,12 +47,12 @@ Implemented the **Species Intelligence Foundation** — a structured PetClues kn
 
 ---
 
-## Phase 3 — `care_guidelines` table
+## Phase 3 - `care_guidelines` table
 
 | Column | Type | Notes |
 |--------|------|-------|
 | `species_id` | uuid FK | Required |
-| `breed_id` | uuid FK | Optional — `null` = species default |
+| `breed_id` | uuid FK | Optional - `null` = species default |
 | `lifespan` | jsonb | Phase 4 |
 | `diet` | jsonb | Phase 4 |
 | `exercise_needs` | jsonb | Phase 4 |
@@ -62,13 +62,13 @@ Implemented the **Species Intelligence Foundation** — a structured PetClues kn
 | `version` | int | Schema versioning |
 | `status` | text | `draft` \| `published` |
 
-**Uniqueness:** Partial unique indexes — one species-default row per species, one row per breed.
+**Uniqueness:** Partial unique indexes - one species-default row per species, one row per breed.
 
 **RLS:** Public read on `species`, `breeds`, and published `care_guidelines`.
 
 ---
 
-## Phase 4 — Care knowledge fields
+## Phase 4 - Care knowledge fields
 
 TypeScript models: `src/types/speciesIntelligence.ts`
 
@@ -85,7 +85,7 @@ TypeScript models: `src/types/speciesIntelligence.ts`
 
 ---
 
-## Phase 5 — Retrieval services
+## Phase 5 - Retrieval services
 
 **Entry point:** `getSpeciesKnowledgeRepository()` in `src/services/speciesIntelligence/index.ts`
 
@@ -115,14 +115,14 @@ if (ctx) {
 
 **Helpers:**
 
-- `knowledgeContextBuilder.ts` — markdown-style `contextText`
-- `knowledgeSearch.ts` — term scoring (replace with pgvector later)
-- `knowledgeMappers.ts` — DB JSONB → typed models
+- `knowledgeContextBuilder.ts` - markdown-style `contextText`
+- `knowledgeSearch.ts` - term scoring (replace with pgvector later)
+- `knowledgeMappers.ts` - DB JSONB → typed models
 
 **Adapters:**
 
-- `supabaseSpeciesKnowledgeRepository.ts` — production
-- `mockSpeciesKnowledgeRepository.ts` — offline parity
+- `supabaseSpeciesKnowledgeRepository.ts` - production
+- `mockSpeciesKnowledgeRepository.ts` - offline parity
 
 ---
 
@@ -162,7 +162,7 @@ flowchart TB
 
 ## Deploy checklist
 
-1. `npx supabase db push` — apply `20250532300000_species_intelligence.sql`
+1. `npx supabase db push` - apply `20250532300000_species_intelligence.sql`
 2. Verify seed: 5 species, 9 breeds, 8 care guidelines
 3. Future: edge function `retrieve-species-knowledge` for server-side AI (optional)
 

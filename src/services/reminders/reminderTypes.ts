@@ -26,7 +26,7 @@ export type ReminderRowWithPet = ReminderRow & {
 };
 
 /**
- * Reminder service interface — swap mock for Supabase + cron/edge functions.
+ * Reminder service interface - swap mock for Supabase + cron/edge functions.
  *
  * Future notification integration points:
  * - create/update/complete/reschedule → call notification scheduler

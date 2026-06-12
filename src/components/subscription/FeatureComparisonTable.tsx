@@ -18,7 +18,7 @@ function CellValue({ value }: { value: MatrixCell }) {
     );
   }
   if (value === false) {
-    return <span className={styles.dash} aria-label="Not included">—</span>;
+    return <span className={styles.dash} aria-label="Not included">-</span>;
   }
   if (value === 'launching') {
     return <span className={styles.launching}>Included</span>;
@@ -36,7 +36,7 @@ export function FeatureComparisonTable() {
         Complete feature comparison
       </h2>
       <p className={styles.subtitle}>
-        Professional pet care management — compare every plan in detail.
+        Professional pet care management - compare every plan in detail.
       </p>
 
       {/* Desktop table */}

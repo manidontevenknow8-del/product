@@ -37,7 +37,7 @@ export function PetMatchSaveMatchesPanel({
           <div className={styles.copy}>
             <h3 className={styles.title}>Matches saved to your account</h3>
             <p className={styles.description}>
-              When you&apos;re ready, start their digital journal — vaccines, vet visits, and
+              When you&apos;re ready, start their digital journal - vaccines, vet visits, and
               milestones in one calm place.
             </p>
             <div className={styles.actions}>
@@ -81,7 +81,7 @@ export function PetMatchSaveMatchesPanel({
           )}
           {saveSuccess && (
             <p className={styles.status} role="status">
-              Saved locally — create an account to keep them permanently.
+              Saved locally - create an account to keep them permanently.
             </p>
           )}
         </div>

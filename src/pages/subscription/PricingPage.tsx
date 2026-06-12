@@ -213,7 +213,7 @@ export function PricingPage() {
         <p className={styles.eyebrow}>Membership</p>
         <h1 className={styles.title}>Care, elevated.</h1>
         <p className={styles.lead}>
-          A concierge approach to pet health — start free, then grow into the household and
+          A concierge approach to pet health - start free, then grow into the household and
           foresight tiers as your family expands.
         </p>
         <div className={styles.toggleWrap}>

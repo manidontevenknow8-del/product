@@ -43,7 +43,7 @@ function mapRow(row: VetBillExtractionRow): VetBillExtractionRecord {
   };
 }
 
-/** Edge function returns camelCase JSON — normalize status before UI. */
+/** Edge function returns camelCase JSON - normalize status before UI. */
 function mapApiRecord(raw: Record<string, unknown>): VetBillExtractionRecord {
   const status = String(raw.status ?? 'saved');
   return {

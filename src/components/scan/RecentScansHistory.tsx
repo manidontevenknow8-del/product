@@ -117,7 +117,7 @@ export function RecentScansHistory({
           </div>
         </header>
         <p className={styles.emptyText}>
-          Your decoded reports will appear here — reopen any scan without running AI again.
+          Your decoded reports will appear here - reopen any scan without running AI again.
         </p>
       </section>
     );

@@ -1,6 +1,6 @@
 # PetClues
 
-Premium pet health intelligence — frontend scaffold.
+Premium pet health intelligence - frontend scaffold.
 
 ## Getting started
 
