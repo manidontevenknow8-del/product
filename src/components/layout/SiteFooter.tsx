@@ -8,6 +8,7 @@ import {
   FOOTER_LEGAL_LINKS,
   FOOTER_RESOURCE_LINKS,
 } from '@/data/footerLinks';
+import { SOCIAL_PROFILES } from '@/data/socialProfiles';
 import styles from './SiteFooter.module.css';
 
 export function SiteFooter() {
@@ -26,6 +27,24 @@ export function SiteFooter() {
             <a href={`mailto:${LEGAL_CONTACT.support}`} className={styles.supportLink}>
               {LEGAL_CONTACT.support}
             </a>
+            <div className={styles.social} aria-label="PetClues on social media">
+              <a
+                href={SOCIAL_PROFILES.instagram}
+                className={styles.socialLink}
+                rel="me noopener noreferrer"
+                target="_blank"
+              >
+                Instagram
+              </a>
+              <a
+                href={SOCIAL_PROFILES.facebook}
+                className={styles.socialLink}
+                rel="me noopener noreferrer"
+                target="_blank"
+              >
+                Facebook
+              </a>
+            </div>
           </div>
 
           <nav className={styles.groups} aria-label="Footer">

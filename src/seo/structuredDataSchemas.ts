@@ -94,6 +94,7 @@ export function buildLandingGraphSchema(faqItems: readonly FaqItem[]) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      buildOrganizationSchema(),
       buildWebSiteSchema(),
       buildSoftwareApplicationSchema(),
       buildFaqPageSchema(faqItems),

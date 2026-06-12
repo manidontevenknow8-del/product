@@ -1,3 +1,4 @@
+import { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 import { ROUTES, PROTECTED_ROUTES, AUTH_ROUTES } from '@/routes/paths';
 
 export type SEOConfig = {
@@ -24,8 +25,8 @@ export const HOME_DESCRIPTION =
   'Track health records, reminders, vaccinations, life stories, monthly reports, pet passports, and AI-powered pet insights in one place.';
 export const HOME_KEYWORDS =
   'pet health tracker, pet passport, pet reminders, pet vaccinations, pet records, pet care app, pet health management, AI pet care, dog health tracker, cat health tracker, exotic pet care';
-export const HOME_OG_TITLE = 'PetClues';
-export const HOME_OG_DESCRIPTION = 'Everything your pet needs. Remembered.';
+export const HOME_OG_TITLE = HOME_TITLE;
+export const HOME_OG_DESCRIPTION = HOME_DESCRIPTION;
 export const BRAND_THEME_COLOR = '#2C3E35';
 export const BRAND_BG_COLOR = '#F7F4EF';
 
@@ -298,13 +299,7 @@ export function getPageSEO(pathname: string): SEOConfig {
   return merged;
 }
 
-/** Official social profiles for Organization schema `sameAs` (Google Search). */
-export const ORGANIZATION_SAME_AS = [
-  'https://www.instagram.com/petclues',
-  'https://www.facebook.com/petclues',
-  'https://www.linkedin.com/company/petclues',
-  'https://twitter.com/petclues',
-] as const;
+export { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 
 export const SITE_META = {
   siteName: 'PetClues',
