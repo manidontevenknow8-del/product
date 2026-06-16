@@ -4,74 +4,92 @@ import type {
   EditorialQuizAnswers,
   EditorialQuizQuestion,
 } from '@/types/petMatchEditorial';
+import { PET_MATCH_QUIZ_IMG } from '@/data/petMatchQuizImages';
 
 export const EDITORIAL_PET_MATCH_QUESTIONS: EditorialQuizQuestion<keyof EditorialQuizAnswers>[] = [
   {
     key: 'livingSpace',
     prompt: 'Describe your sanctuary.',
+    subtitle: 'Where your companion will eat, sleep, and feel at home.',
+    heroImageUrl: PET_MATCH_QUIZ_IMG.heroes.livingSpace,
     options: [
       {
         value: 'apartment',
         label: 'City apartment',
         hint: 'Compact, vertical living with shared walls',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.apartment,
       },
       {
         value: 'house_yard',
         label: 'House with yard',
         hint: 'Room to roam, garden, and breathe',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.house_yard,
       },
     ],
   },
   {
     key: 'experience',
     prompt: 'Have you shared your home with a pet before?',
+    subtitle: 'We calibrate guidance to your comfort level.',
+    heroImageUrl: PET_MATCH_QUIZ_IMG.heroes.experience,
     options: [
       {
         value: 'first_time',
         label: 'First-time parent',
         hint: 'Ready to learn with gentle guidance',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.first_time,
       },
       {
         value: 'experienced',
         label: 'Experienced caregiver',
         hint: 'Comfortable with routines and nuance',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.experienced,
       },
     ],
   },
   {
     key: 'activity',
     prompt: 'How much time can you dedicate to activity?',
+    subtitle: 'Energy alignment matters as much as square footage.',
+    heroImageUrl: PET_MATCH_QUIZ_IMG.heroes.activity,
     options: [
       {
         value: 'couch',
         label: 'Couch potato',
         hint: 'Quiet evenings, short strolls, calm companionship',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.couch,
       },
       {
         value: 'marathon',
         label: 'Marathon runner',
         hint: 'Daily movement, trails, and high energy',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.marathon,
       },
     ],
   },
   {
     key: 'budget',
     prompt: 'What monthly care budget feels sustainable?',
+    subtitle: 'Food, vet visits, grooming, and the unexpected.',
+    heroImageUrl: PET_MATCH_QUIZ_IMG.heroes.budget,
     options: [
       {
         value: 'lean',
         label: 'Mindful & lean',
         hint: 'Under ₹8,000 / month',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.lean,
       },
       {
         value: 'balanced',
         label: 'Balanced comfort',
-        hint: '₹8,000 – ₹15,000 / month',
+        hint: '₹8,000 - ₹15,000 / month',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.balanced,
       },
       {
         value: 'generous',
         label: 'Generous care',
         hint: '₹15,000+ / month',
+        imageUrl: PET_MATCH_QUIZ_IMG.options.generous,
       },
     ],
   },

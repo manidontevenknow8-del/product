@@ -14,11 +14,14 @@ export type EditorialQuizOption<T extends string> = {
   value: T;
   label: string;
   hint?: string;
+  imageUrl: string;
 };
 
 export type EditorialQuizQuestion<T extends keyof EditorialQuizAnswers> = {
   key: T;
   prompt: string;
+  subtitle?: string;
+  heroImageUrl: string;
   options: EditorialQuizOption<EditorialQuizAnswers[T]>[];
 };
 

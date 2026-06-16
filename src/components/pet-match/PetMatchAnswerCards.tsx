@@ -4,6 +4,7 @@ type AnswerOption = {
   value: string;
   label: string;
   hint?: string;
+  imageUrl: string;
 };
 
 type PetMatchAnswerCardsProps = {
@@ -13,8 +14,11 @@ type PetMatchAnswerCardsProps = {
 };
 
 export function PetMatchAnswerCards({ options, selected, onSelect }: PetMatchAnswerCardsProps) {
+  const isTriple = options.length === 3;
+  const gridClass = isTriple ? styles.gridTriple : styles.grid;
+
   return (
-    <div className={styles.grid}>
+    <div className={gridClass}>
       {options.map((option) => {
         const isSelected = selected === option.value;
         return (
@@ -24,8 +28,25 @@ export function PetMatchAnswerCards({ options, selected, onSelect }: PetMatchAns
             onClick={() => onSelect(option.value)}
             className={`${styles.card} ${isSelected ? styles.cardSelected : ''}`}
           >
-            <span className={styles.label}>{option.label}</span>
-            {option.hint && <span className={styles.hint}>{option.hint}</span>}
+            <div className={styles.imageWrap}>
+              <img
+                src={option.imageUrl}
+                alt=""
+                className={styles.image}
+                loading="lazy"
+                aria-hidden
+              />
+              <div className={styles.imageScrim} aria-hidden />
+              {isSelected && (
+                <span className={styles.selectedBadge} aria-hidden>
+                  Selected
+                </span>
+              )}
+            </div>
+            <div className={styles.body}>
+              <span className={styles.label}>{option.label}</span>
+              {option.hint && <span className={styles.hint}>{option.hint}</span>}
+            </div>
           </button>
         );
       })}
