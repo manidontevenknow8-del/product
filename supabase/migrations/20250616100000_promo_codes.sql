@@ -51,7 +51,7 @@ create policy "Users read own promo redemptions"
 
 -- ---------------------------------------------------------------------------
 -- Seed: 1-month Pro trial promo (valid 6 months from launch)
--- Code: PETCLUES-6QDZ-LC4A
+-- Code: 6QDZ-LC4A
 -- ---------------------------------------------------------------------------
 
 insert into public.promo_codes (
@@ -65,7 +65,7 @@ insert into public.promo_codes (
   active
 )
 values (
-  'PETCLUES-6QDZ-LC4A',
+  '6QDZ-LC4A',
   '1 month free Pro trial — marketing promo',
   'pro',
   30,

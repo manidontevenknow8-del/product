@@ -63,7 +63,7 @@ export function PromoCodeForm({ disabled = false, onSuccess, onRedeemed }: Promo
             type="text"
             value={code}
             onChange={(event) => setCode(event.target.value.toUpperCase())}
-            placeholder="PETCLUES-XXXX-XXXX"
+            placeholder="6QDZ-LC4A"
             className={styles.input}
             autoComplete="off"
             spellCheck={false}
