@@ -6,11 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-sitemap.mjs && tsc -b && vite build",
-    "preview": "vite preview",
-    "audit:v1": "node scripts/v1-audit.mjs",
-    "smoke:welcome-email": "node scripts/smoke-welcome-email.mjs",
-    "create:razorpay-test-user": "node scripts/create-razorpay-test-user.mjs",
-    "seo:audit": "node scripts/seo-audit.mjs"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
@@ -25,7 +21,6 @@
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react": "^4.5.2",
-    "playwright": "^1.52.0",
     "tailwindcss": "^4.3.0",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"

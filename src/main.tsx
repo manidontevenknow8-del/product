@@ -9,13 +9,9 @@ import { HealthRecordProvider } from '@/healthRecords';
 import { SubscriptionProvider } from '@/subscription';
 import { ReminderProvider } from '@/reminders';
 import { GrowthProvider } from '@/growth';
-import { LostPetProvider } from '@/lostPet';
-import { AgeTranslatorProvider } from '@/ageTranslator';
 import { DailyCheckInProvider } from '@/dailyCheckIn';
 import { PetCareScoreProvider } from '@/petCareScore';
 import { SettingsProvider } from '@/settings';
-import { NotificationProvider } from '@/notifications';
-import { FamilySharingProvider } from '@/familySharing';
 import { AnalyticsProvider } from '@/analytics';
 import { SEOProvider } from '@/seo';
 import { ErrorBoundary } from '@/components/errors';
@@ -31,33 +27,25 @@ createRoot(document.getElementById('root')!).render(
         <AuthProvider>
           <SubscriptionProvider>
             <PetProvider>
-            <DocumentProvider>
-              <ReminderProvider>
-                <HealthRecordProvider>
-                <GrowthProvider>
-                  <LostPetProvider>
-                    <AgeTranslatorProvider>
+              <DocumentProvider>
+                <ReminderProvider>
+                  <HealthRecordProvider>
+                    <GrowthProvider>
                       <PetCareScoreProvider>
                         <DailyCheckInProvider>
-                        <SettingsProvider>
-                          <NotificationProvider>
-                            <FamilySharingProvider>
-                              <AnalyticsProvider>
-                                <SEOProvider>
-                                  <App />
-                                </SEOProvider>
-                              </AnalyticsProvider>
-                            </FamilySharingProvider>
-                          </NotificationProvider>
-                        </SettingsProvider>
+                          <SettingsProvider>
+                            <AnalyticsProvider>
+                              <SEOProvider>
+                                <App />
+                              </SEOProvider>
+                            </AnalyticsProvider>
+                          </SettingsProvider>
                         </DailyCheckInProvider>
                       </PetCareScoreProvider>
-                    </AgeTranslatorProvider>
-                  </LostPetProvider>
-                </GrowthProvider>
-                </HealthRecordProvider>
-              </ReminderProvider>
-            </DocumentProvider>
+                    </GrowthProvider>
+                  </HealthRecordProvider>
+                </ReminderProvider>
+              </DocumentProvider>
             </PetProvider>
           </SubscriptionProvider>
         </AuthProvider>

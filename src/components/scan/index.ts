@@ -8,8 +8,6 @@ export type { ScanMagicDropzoneHandle } from './ScanMagicDropzone';
 export { UploadSuccessCard } from './UploadSuccessCard';
 export type { UploadZoneHandle, UploadZoneStatus } from './UploadZone';
 export { ScanEmptyState } from './ScanEmptyState';
-export { SupportedDocuments } from './SupportedDocuments';
 export { ScanResultsCard } from './ScanResultsCard';
 export { VetBillDecoderReview } from './VetBillDecoderReview';
-export { SavedReportsGrid } from './SavedReportsGrid';
 export { ReportVisualDashboard } from './ReportVisualDashboard';
