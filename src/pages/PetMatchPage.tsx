@@ -14,6 +14,7 @@ import {
 } from '@/data/petMatchEditorialQuiz';
 import type { EditorialQuizAnswers } from '@/types/petMatchEditorial';
 import { ROUTES } from '@/routes/paths';
+import styles from './PetMatchPage.module.css';
 
 const TOTAL_STEPS = EDITORIAL_PET_MATCH_QUESTIONS.length;
 const ANALYZING_MS = 2200;
@@ -69,22 +70,17 @@ export function PetMatchPage() {
   const progressPct = phase === 'results' ? 100 : ((stepIndex + 1) / TOTAL_STEPS) * 100;
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#FAFAFA] text-stone-900">
-      <header className="sticky top-0 z-20 border-b border-stone-200/50 bg-[#FAFAFA]/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4 sm:px-8">
-          <Link
-            to={ROUTES.LANDING}
-            className="font-serif text-xl tracking-tight text-stone-900 sm:text-2xl"
-          >
+    <div className={styles.page}>
+      <header className={styles.header}>
+        <div className={styles.headerInner}>
+          <Link to={ROUTES.LANDING} className={styles.logo}>
             PetClues
           </Link>
-          <p className="font-sans text-[10px] uppercase tracking-[0.22em] text-stone-400">
-            Pet Match
-          </p>
+          <p className={styles.headerLabel}>Pet Match</p>
         </div>
-        <div className="h-px w-full bg-stone-200/60">
+        <div className={styles.progressTrack}>
           <div
-            className="h-full bg-stone-800 transition-all duration-500 ease-out"
+            className={styles.progressFill}
             style={{ width: `${progressPct}%` }}
             role="progressbar"
             aria-valuenow={Math.round(progressPct)}
@@ -95,7 +91,7 @@ export function PetMatchPage() {
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-5 py-10 sm:px-8 sm:py-16">
+      <main className={styles.main}>
         {phase === 'quiz' && currentQuestion && (
           <PetMatchQuizStep
             question={currentQuestion}
@@ -109,18 +105,14 @@ export function PetMatchPage() {
         {phase === 'analyzing' && <PetMatchAnalyzingState />}
 
         {phase === 'results' && result && (
-          <div className="space-y-12 sm:space-y-16">
+          <div className={styles.resultsStack}>
             <PetMatchPortraitResults matches={result.matches} />
             <PetMatchSaveMatchesPanel
               isAuthenticated={isAuthenticated}
               topMatchBreed={result.matches[0]?.breed}
             />
-            <div className="text-center">
-              <button
-                type="button"
-                onClick={handleRestart}
-                className="font-sans text-xs uppercase tracking-[0.18em] text-stone-400 transition-colors hover:text-stone-700"
-              >
+            <div className={styles.restartWrap}>
+              <button type="button" onClick={handleRestart} className={styles.restartBtn}>
                 Retake the interview
               </button>
             </div>
@@ -128,10 +120,10 @@ export function PetMatchPage() {
         )}
       </main>
 
-      <footer className="border-t border-stone-200/40 px-5 py-8 text-center sm:px-8">
-        <p className="font-sans text-xs text-stone-400">
+      <footer className={styles.footer}>
+        <p className={styles.footerText}>
           Pet Match is guidance, not veterinary advice.{' '}
-          <Link to={ROUTES.ABOUT} className="underline-offset-2 hover:underline">
+          <Link to={ROUTES.ABOUT} className={styles.footerLink}>
             Our story
           </Link>
         </p>

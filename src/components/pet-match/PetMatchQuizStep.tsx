@@ -1,5 +1,6 @@
 import type { EditorialQuizQuestion, EditorialQuizAnswers } from '@/types/petMatchEditorial';
 import { PetMatchAnswerCards } from './PetMatchAnswerCards';
+import styles from './PetMatchQuizStep.module.css';
 
 type PetMatchQuizStepProps<T extends keyof EditorialQuizAnswers> = {
   question: EditorialQuizQuestion<T>;
@@ -17,13 +18,11 @@ export function PetMatchQuizStep<T extends keyof EditorialQuizAnswers>({
   onSelect,
 }: PetMatchQuizStepProps<T>) {
   return (
-    <div className="mx-auto w-full max-w-3xl">
-      <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-stone-400">
+    <div className={styles.wrap}>
+      <p className={styles.stepLabel}>
         Question {stepNumber} of {totalSteps}
       </p>
-      <h1 className="mt-6 font-serif text-4xl font-light leading-tight text-stone-900 sm:text-5xl md:text-6xl">
-        {question.prompt}
-      </h1>
+      <h1 className={styles.prompt}>{question.prompt}</h1>
       <PetMatchAnswerCards
         options={question.options}
         selected={selected}

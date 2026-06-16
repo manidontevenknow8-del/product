@@ -1,4 +1,5 @@
 import type { EditorialBreedMatch } from '@/types/petMatchEditorial';
+import styles from './PetMatchPortraitResults.module.css';
 
 type PetMatchPortraitResultsProps = {
   matches: EditorialBreedMatch[];
@@ -6,58 +7,42 @@ type PetMatchPortraitResultsProps = {
 
 export function PetMatchPortraitResults({ matches }: PetMatchPortraitResultsProps) {
   return (
-    <div className="space-y-8 sm:space-y-10">
-      <header className="text-center">
-        <p className="font-sans text-[11px] uppercase tracking-[0.28em] text-stone-400">
-          Your matches
-        </p>
-        <h2 className="mt-4 font-serif text-4xl font-light text-stone-900 sm:text-5xl">
-          Three companions worth meeting
-        </h2>
+    <div className={styles.wrap}>
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Your matches</p>
+        <h2 className={styles.title}>Three companions worth meeting</h2>
       </header>
 
-      <div className="grid gap-8 lg:grid-cols-3">
+      <div className={styles.grid}>
         {matches.map((match, index) => (
-          <article
-            key={match.id}
-            className="group overflow-hidden border border-stone-200/70 bg-white/50"
-          >
-            <div className="relative aspect-[3/4] overflow-hidden bg-stone-100">
+          <article key={match.id} className={styles.card}>
+            <div className={styles.imageWrap}>
               <img
                 src={match.imageUrl}
                 alt={match.breed}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                className={styles.image}
                 loading="lazy"
               />
-              <div
-                className="absolute inset-0 bg-gradient-to-t from-stone-950/75 via-stone-950/10 to-transparent"
-                aria-hidden
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
-                <p className="font-sans text-[10px] uppercase tracking-[0.2em] text-stone-300">
+              <div className={styles.imageScrim} aria-hidden />
+              <div className={styles.imageCaption}>
+                <p className={styles.matchMeta}>
                   Match #{index + 1} · {match.matchScore}% fit
                 </p>
-                <h3 className="mt-1 font-serif text-2xl text-white sm:text-3xl">{match.breed}</h3>
+                <h3 className={styles.breedName}>{match.breed}</h3>
               </div>
             </div>
-            <div className="space-y-4 p-5 sm:p-6">
-              <dl className="grid grid-cols-2 gap-4 border-b border-stone-100 pb-4">
+            <div className={styles.body}>
+              <dl className={styles.stats}>
                 <div>
-                  <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-stone-400">
-                    Care difficulty
-                  </dt>
-                  <dd className="mt-1 font-sans text-sm text-stone-800">{match.careDifficulty}</dd>
+                  <dt className={styles.statLabel}>Care difficulty</dt>
+                  <dd className={styles.statValue}>{match.careDifficulty}</dd>
                 </div>
                 <div>
-                  <dt className="font-sans text-[10px] uppercase tracking-[0.16em] text-stone-400">
-                    Est. monthly
-                  </dt>
-                  <dd className="mt-1 font-sans text-sm text-stone-800">
-                    {match.monthlyCostLabel}
-                  </dd>
+                  <dt className={styles.statLabel}>Est. monthly</dt>
+                  <dd className={styles.statValue}>{match.monthlyCostLabel}</dd>
                 </div>
               </dl>
-              <p className="font-sans text-sm leading-relaxed text-stone-600">{match.matchReason}</p>
+              <p className={styles.reason}>{match.matchReason}</p>
             </div>
           </article>
         ))}
