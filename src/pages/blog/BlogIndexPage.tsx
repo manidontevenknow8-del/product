@@ -8,6 +8,8 @@ import { PAGE_IMG } from '@/data/pageImages';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogCategoryNav } from '@/components/blog/BlogCategoryNav';
 import { BlogIndexSEO } from '@/seo/blogSeo';
+import { getBlogIndexBreadcrumbs } from '@/seo/pageBreadcrumbs';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { getBlogRepository } from '@/services/blog';
 import { BLOG_CATEGORIES, type BlogCategoryId } from '@/data/blogCategories';
 import type { BlogPostListItem } from '@/types/blog';
@@ -21,9 +23,10 @@ function parseCategory(value: string | null): BlogCategoryId | undefined {
 }
 
 export function BlogIndexPage() {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const category = parseCategory(searchParams.get('category'));
   const tag = searchParams.get('tag') ?? undefined;
+  const search = searchParams.get('q') ?? undefined;
   const [posts, setPosts] = useState<BlogPostListItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -42,6 +45,7 @@ export function BlogIndexPage() {
       .listPublished({
         ...(category ? { category } : {}),
         ...(tag ? { tag } : {}),
+        ...(search ? { search } : {}),
       })
       .then((data) => {
         if (!cancelled) setPosts(data);
@@ -58,7 +62,7 @@ export function BlogIndexPage() {
     return () => {
       cancelled = true;
     };
-  }, [category, tag]);
+  }, [category, tag, search]);
 
   const heroTitle = activeCategory
     ? activeCategory.label
@@ -70,13 +74,16 @@ export function BlogIndexPage() {
 
   const countMeta =
     !loading && posts.length > 0
-      ? `${posts.length} ${posts.length === 1 ? 'article' : 'articles'}${tag ? ` tagged “${tag}”` : ''}`
+      ? `${posts.length} ${posts.length === 1 ? 'article' : 'articles'}${tag ? ` tagged “${tag}”` : ''}${search ? ` matching “${search}”` : ''}`
       : undefined;
+
+  const breadcrumbItems = getBlogIndexBreadcrumbs(activeCategory?.label);
 
   return (
     <PublicLayout>
-      <BlogIndexSEO posts={posts} />
+      <BlogIndexSEO posts={posts} category={category} tag={tag} search={search} />
       <div className={styles.page}>
+        <Breadcrumbs items={breadcrumbItems} />
         <PageHeroBand
           image={PAGE_IMG.app.trust}
           imageAlt=""
@@ -94,6 +101,42 @@ export function BlogIndexPage() {
           />
 
           <BlogCategoryNav />
+
+          <form
+            className={styles.search}
+            role="search"
+            onSubmit={(event) => {
+              event.preventDefault();
+              const form = event.currentTarget;
+              const input = form.elements.namedItem('q') as HTMLInputElement;
+              const next = new URLSearchParams(searchParams);
+              const value = input.value.trim();
+              if (value) {
+                next.set('q', value);
+              } else {
+                next.delete('q');
+              }
+              next.delete('tag');
+              setSearchParams(next);
+            }}
+          >
+            <label className={styles.searchLabel} htmlFor="blog-search">
+              Search guides
+            </label>
+            <div className={styles.searchRow}>
+              <input
+                id="blog-search"
+                name="q"
+                type="search"
+                defaultValue={search ?? ''}
+                placeholder="Vaccination schedule, reminders, vet bills…"
+                className={styles.searchInput}
+              />
+              <Button type="submit" variant="secondary">
+                Search
+              </Button>
+            </div>
+          </form>
 
           {loading && (
             <div className={styles.stateWrap}>

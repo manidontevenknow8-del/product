@@ -26,6 +26,7 @@ export type BlogPostListItem = Pick<
 export type BlogListFilters = {
   category?: BlogCategoryId;
   tag?: string;
+  search?: string;
   limit?: number;
 };
 

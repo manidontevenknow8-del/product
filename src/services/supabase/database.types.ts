@@ -77,6 +77,7 @@ export type ProfileRow = {
   subscription_status: string;
   founding_member: boolean;
   founding_trial_ends_at: string | null;
+  promo_trial_ends_at: string | null;
   founding_lifetime_discount: boolean;
   notification_preferences: Record<string, boolean> | null;
   created_at: string;
@@ -209,6 +210,7 @@ export type Database = {
           subscription_status?: string;
           founding_member?: boolean;
           founding_trial_ends_at?: string | null;
+          promo_trial_ends_at?: string | null;
           founding_lifetime_discount?: boolean;
           notification_preferences?: Record<string, boolean> | null;
           created_at?: string;
@@ -226,6 +228,7 @@ export type Database = {
           subscription_status?: string;
           founding_member?: boolean;
           founding_trial_ends_at?: string | null;
+          promo_trial_ends_at?: string | null;
           founding_lifetime_discount?: boolean;
           notification_preferences?: Record<string, boolean> | null;
           created_at?: string;
@@ -769,6 +772,10 @@ export type Database = {
       expire_founding_trials: {
         Args: Record<string, never>;
         Returns: undefined;
+      };
+      redeem_promo_code: {
+        Args: { p_code: string };
+        Returns: Record<string, unknown>;
       };
     };
     Enums: Record<string, never>;

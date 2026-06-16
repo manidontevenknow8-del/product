@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { PageHeroBand } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
 import { HEALTH_DISCLAIMER, LEGAL_CONTACT } from '@/data/legalConfig';
 import { ROUTES } from '@/routes/paths';
+import { getStaticPageBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import styles from './LegalPage.module.css';
 
 type LegalPageLayoutProps = {
@@ -27,6 +29,9 @@ export function LegalPageLayout({
   children,
   showHealthDisclaimer = true,
 }: LegalPageLayoutProps) {
+  const { pathname } = useLocation();
+  const breadcrumbs = getStaticPageBreadcrumbs(pathname);
+
   return (
     <>
       <Header variant="landing" />
@@ -39,6 +44,11 @@ export function LegalPageLayout({
           title={title}
           meta={effectiveDate ? `Effective date: ${effectiveDate}` : undefined}
         />
+        {breadcrumbs.length > 0 && (
+          <div className={styles.topBar}>
+            <Breadcrumbs items={breadcrumbs} />
+          </div>
+        )}
         <div className={styles.topBar}>
           <Link to={ROUTES.LANDING} className={styles.back}>
             ← Back to PetClues

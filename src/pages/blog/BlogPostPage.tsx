@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { PublicLayout } from '@/layouts/PublicLayout';
 import { Button, Badge, LoadingState } from '@/components/ui';
 import { EmptyFallback } from '@/components/errors/EmptyFallback';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { BlogPostBody } from '@/components/blog/BlogPostBody';
+import { RelatedArticles } from '@/components/blog/RelatedArticles';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { BlogArticleNotFoundSEO, BlogPostSEO } from '@/seo/blogSeo';
+import { getBlogPostBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { getBlogRepository } from '@/services/blog';
 import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
-import type { BlogPost } from '@/types/blog';
+import type { BlogPost, BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
+import { getRelatedBlogPosts } from '@/utils/blogRelatedPosts';
 import styles from './BlogPostPage.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 
@@ -31,6 +35,7 @@ function estimateReadMinutes(content: string): number {
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
+  const [allPosts, setAllPosts] = useState<BlogPostListItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -40,10 +45,14 @@ export function BlogPostPage() {
     setLoading(true);
     setError(null);
 
-    getBlogRepository()
-      .getPublishedBySlug(slug)
-      .then((data) => {
-        if (!cancelled) setPost(data);
+    const repo = getBlogRepository();
+
+    Promise.all([repo.getPublishedBySlug(slug), repo.listPublished()])
+      .then(([data, posts]) => {
+        if (!cancelled) {
+          setPost(data);
+          setAllPosts(posts);
+        }
       })
       .catch((err: unknown) => {
         if (!cancelled) {
@@ -60,15 +69,18 @@ export function BlogPostPage() {
   }, [slug]);
 
   const heroImage = post ? resolveBlogFeaturedImage(post.slug, post.featuredImage) : null;
+  const breadcrumbs = post ? getBlogPostBreadcrumbs(post.title, post.slug) : [];
+  const relatedPosts = useMemo(
+    () => (post ? getRelatedBlogPosts(post, allPosts) : []),
+    [post, allPosts],
+  );
 
   return (
     <PublicLayout>
       {post && <BlogPostSEO post={post} />}
       {!loading && !post && slug && <BlogArticleNotFoundSEO slug={slug} />}
       <div className={styles.page}>
-        <Link to={ROUTES.BLOG} className={styles.back}>
-          ← Back to blog
-        </Link>
+        {breadcrumbs.length > 0 && <Breadcrumbs items={breadcrumbs} />}
 
         {loading && (
           <div className={styles.stateWrap}>
@@ -106,7 +118,15 @@ export function BlogPostPage() {
             <header className={`${styles.header} ${heroImage ? styles.headerWithImage : ''}`}>
               {heroImage && (
                 <div className={styles.headerMedia}>
-                  <img src={heroImage} alt="" className={styles.headerBg} aria-hidden />
+                  <img
+                    src={heroImage}
+                    alt=""
+                    className={styles.headerBg}
+                    aria-hidden
+                    width={1200}
+                    height={630}
+                    decoding="async"
+                  />
                   <div className={styles.headerScrim} aria-hidden />
                 </div>
               )}
@@ -135,6 +155,8 @@ export function BlogPostPage() {
             <div className={styles.prose}>
               <BlogPostBody content={post.content} />
             </div>
+
+            <RelatedArticles posts={relatedPosts} />
 
             <footer className={styles.footer}>
               <p>

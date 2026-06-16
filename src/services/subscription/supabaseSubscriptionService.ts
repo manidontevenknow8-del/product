@@ -88,7 +88,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
         .from('subscriptions')
         .select('status, plan, expires_at, started_at, billing_interval')
         .eq('user_id', userId)
-        .eq('status', 'active')
+        .in('status', ['active', 'trialing'])
         .order('started_at', { ascending: false })
         .limit(1)
         .maybeSingle(),

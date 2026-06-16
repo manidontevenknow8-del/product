@@ -9,19 +9,35 @@ const blogDir = join(root, 'src/services/blog');
 const SITE = process.env.VITE_SITE_URL ?? 'https://petclues.com';
 const BUILD_DATE = new Date().toISOString().slice(0, 10);
 
-/** Extract published blog slugs from blog source files (single source of truth). */
-function extractBlogSlugs() {
-  const files = ['seoBlogPosts.ts', 'seoBlogPostsExtra.ts', 'mockBlogPosts.ts'];
-  const slugs = new Set();
+const BLOG_FILES = ['seoBlogPosts.ts', 'seoBlogPostsExtra.ts', 'mockBlogPosts.ts'];
 
-  for (const file of files) {
+/** Extract slug + lastmod from blog source files. */
+function extractBlogEntries() {
+  const entries = new Map();
+
+  for (const file of BLOG_FILES) {
     const content = readFileSync(join(blogDir, file), 'utf8');
-    for (const match of content.matchAll(/slug:\s*['"]([^'"]+)['"]/g)) {
-      slugs.add(match[1]);
+    const blocks = content.split(/\{\s*id:\s*'/);
+
+    for (const block of blocks.slice(1)) {
+      const slugMatch = block.match(/slug:\s*['"]([^'"]+)['"]/);
+      const updatedMatch = block.match(/updatedAt:\s*['"]([^'"]+)['"]/);
+      const publishedMatch = block.match(/publishedAt:\s*['"]([^'"]+)['"]/);
+
+      if (!slugMatch) continue;
+
+      const rawDate = updatedMatch?.[1] ?? publishedMatch?.[1] ?? BUILD_DATE;
+      const lastmod = rawDate.slice(0, 10);
+      const existing = entries.get(slugMatch[1]);
+      if (!existing || lastmod > existing) {
+        entries.set(slugMatch[1], lastmod);
+      }
     }
   }
 
-  return [...slugs].sort();
+  return [...entries.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([slug, lastmod]) => ({ slug, lastmod }));
 }
 
 const STATIC = [
@@ -41,7 +57,16 @@ const STATIC = [
   { loc: '/faq', priority: '0.5', changefreq: 'monthly' },
 ];
 
-const blogSlugs = extractBlogSlugs();
+const BLOG_CATEGORIES = [
+  'dog-health',
+  'cat-health',
+  'bird-care',
+  'exotic-pets',
+  'pet-records',
+  'petclues-guides',
+];
+
+const blogEntries = extractBlogEntries();
 
 const urls = [
   ...STATIC.map((u) => ({
@@ -49,11 +74,17 @@ const urls = [
     loc: `${SITE}${u.loc}`,
     lastmod: BUILD_DATE,
   })),
-  ...blogSlugs.map((slug) => ({
+  ...BLOG_CATEGORIES.map((category) => ({
+    loc: `${SITE}/blog?category=${category}`,
+    priority: '0.75',
+    changefreq: 'weekly',
+    lastmod: BUILD_DATE,
+  })),
+  ...blogEntries.map(({ slug, lastmod }) => ({
     loc: `${SITE}/blog/${slug}`,
     priority: '0.8',
     changefreq: 'monthly',
-    lastmod: BUILD_DATE,
+    lastmod,
   })),
 ];
 
@@ -73,4 +104,6 @@ ${urls
 `;
 
 writeFileSync(join(root, 'public', 'sitemap.xml'), xml);
-console.log(`Wrote sitemap with ${urls.length} URLs (${blogSlugs.length} blog posts)`);
+console.log(
+  `Wrote sitemap with ${urls.length} URLs (${blogEntries.length} blog posts, ${BLOG_CATEGORIES.length} categories)`,
+);

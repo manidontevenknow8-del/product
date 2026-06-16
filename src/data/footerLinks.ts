@@ -20,6 +20,12 @@ export const FOOTER_COMPANY_LINKS: FooterLink[] = [
   { label: 'Contact', to: ROUTES.CONTACT },
 ];
 
+export const FOOTER_PRODUCT_LINKS: FooterLink[] = [
+  { label: 'Pricing', to: ROUTES.PRICING },
+  { label: 'Pet Match Quiz', to: ROUTES.PET_MATCH },
+  { label: 'Founding Members', to: ROUTES.FOUNDING_MEMBERS },
+];
+
 export const FOOTER_RESOURCE_LINKS: FooterLink[] = [
   { label: 'Blog', to: ROUTES.BLOG },
   { label: 'FAQ', to: ROUTES.FAQ },
@@ -27,6 +33,7 @@ export const FOOTER_RESOURCE_LINKS: FooterLink[] = [
 
 /** Flat list for audits and sitemap cross-checks. */
 export const FOOTER_LAUNCH_LINKS: FooterLink[] = [
+  ...FOOTER_PRODUCT_LINKS,
   ...FOOTER_LEGAL_LINKS,
   ...FOOTER_COMPANY_LINKS,
   ...FOOTER_RESOURCE_LINKS,

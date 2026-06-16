@@ -36,6 +36,17 @@ export const mockBlogRepository: BlogRepository = {
       const tag = filters.tag.toLowerCase();
       posts = posts.filter((p) => p.tags.some((t) => t.toLowerCase() === tag));
     }
+    if (filters?.search) {
+      const query = filters.search.trim().toLowerCase();
+      if (query) {
+        posts = posts.filter(
+          (p) =>
+            p.title.toLowerCase().includes(query) ||
+            p.excerpt.toLowerCase().includes(query) ||
+            p.tags.some((t) => t.toLowerCase().includes(query)),
+        );
+      }
+    }
     if (filters?.limit) {
       posts = posts.slice(0, filters.limit);
     }

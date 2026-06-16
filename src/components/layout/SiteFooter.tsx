@@ -6,6 +6,7 @@ import { HEALTH_DISCLAIMER, LEGAL_CONTACT } from '@/data/legalConfig';
 import {
   FOOTER_COMPANY_LINKS,
   FOOTER_LEGAL_LINKS,
+  FOOTER_PRODUCT_LINKS,
   FOOTER_RESOURCE_LINKS,
 } from '@/data/footerLinks';
 import { SOCIAL_PROFILES } from '@/data/socialProfiles';
@@ -48,6 +49,14 @@ export function SiteFooter() {
           </div>
 
           <nav className={styles.groups} aria-label="Footer">
+            <div className={styles.group}>
+              <span className={styles.groupTitle}>Product</span>
+              {FOOTER_PRODUCT_LINKS.map((link) => (
+                <Link key={link.to} to={link.to} className={styles.link}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
             <div className={styles.group}>
               <span className={styles.groupTitle}>Legal</span>
               {FOOTER_LEGAL_LINKS.map((link) => (

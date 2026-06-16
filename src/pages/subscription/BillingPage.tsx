@@ -9,7 +9,7 @@ import {
   PRO_MONTHLY_PRICE_DISPLAY,
 } from '@/config/razorpayConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
-import { UpgradeModal } from '@/components/subscription';
+import { UpgradeModal, PromoCodeForm } from '@/components/subscription';
 import { useAuth } from '@/auth/AuthProvider';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import {
@@ -166,6 +166,15 @@ export function BillingPage() {
               </div>
             )}
           </div>
+
+          {currentPlan === 'free' && (
+            <PromoCodeForm
+              onSuccess={setBanner}
+              onRedeemed={() => {
+                void refresh();
+              }}
+            />
+          )}
 
           {currentPlan !== 'free' && (
             <section className={styles.support}>

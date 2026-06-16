@@ -85,6 +85,42 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://petclues.com/blog?category=dog-health</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://petclues.com/blog?category=cat-health</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://petclues.com/blog?category=bird-care</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://petclues.com/blog?category=exotic-pets</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://petclues.com/blog?category=pet-records</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://petclues.com/blog?category=petclues-guides</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://petclues.com/blog/best-pet-health-tracker-app-2026</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>

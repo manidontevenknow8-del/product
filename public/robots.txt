@@ -10,6 +10,7 @@ Disallow: /timeline
 Disallow: /reminders
 Disallow: /emergency-passport
 Disallow: /pet-care-score
+Disallow: /vet-portal
 Disallow: /monthly-report
 Disallow: /settings
 Disallow: /billing
