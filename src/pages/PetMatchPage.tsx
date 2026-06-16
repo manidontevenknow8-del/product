@@ -14,6 +14,7 @@ import {
 } from '@/data/petMatchEditorialQuiz';
 import type { EditorialQuizAnswers } from '@/types/petMatchEditorial';
 import { ROUTES } from '@/routes/paths';
+import { PetCluesLogo } from '@/components/brand';
 import styles from './PetMatchPage.module.css';
 
 const TOTAL_STEPS = EDITORIAL_PET_MATCH_QUESTIONS.length;
@@ -73,8 +74,8 @@ export function PetMatchPage() {
     <div className={styles.page}>
       <header className={styles.header}>
         <div className={styles.headerInner}>
-          <Link to={ROUTES.LANDING} className={styles.logo}>
-            PetClues
+          <Link to={ROUTES.LANDING} className={styles.logoLink} aria-label="PetClues home">
+            <PetCluesLogo size="lg" />
           </Link>
           <p className={styles.headerLabel}>Pet Match</p>
         </div>
