@@ -16,13 +16,13 @@
     <meta name="theme-color" content="#2C3E35" />
     <link rel="canonical" href="https://petclues.com/" />
 
-    <!-- Favicons - static files in /public (required for Google Search site icon) -->
+    <!-- Favicons (generated from /logo.png via npm run generate:favicons) -->
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
@@ -36,12 +36,12 @@
       content="Track health records, reminders, vaccinations, life stories, monthly reports, pet passports, and AI-powered pet insights in one place."
     />
     <meta property="og:url" content="https://petclues.com/" />
-    <meta property="og:image" content="https://petclues.com/logo.png" />
-    <meta property="og:image:secure_url" content="https://petclues.com/logo.png" />
+    <meta property="og:image" content="https://petclues.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://petclues.com/og-image.png" />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="512" />
-    <meta property="og:image:height" content="512" />
-    <meta property="og:image:alt" content="PetClues logo" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PetClues - AI-powered pet health management" />
 
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -51,8 +51,8 @@
       name="twitter:description"
       content="Track health records, reminders, vaccinations, life stories, monthly reports, pet passports, and AI-powered pet insights in one place."
     />
-    <meta name="twitter:image" content="https://petclues.com/logo.png" />
-    <meta name="twitter:image:alt" content="PetClues logo" />
+    <meta name="twitter:image" content="https://petclues.com/og-image.png" />
+    <meta name="twitter:image:alt" content="PetClues - AI-powered pet health management" />
 
     <!-- Organization - crawlers without JS (Google Knowledge Graph) -->
     <script type="application/ld+json">
@@ -80,6 +80,19 @@
           "email": "support@petclues.com",
           "availableLanguage": "English"
         }
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://petclues.com/#website",
+        "url": "https://petclues.com",
+        "name": "PetClues",
+        "description": "AI-powered pet health and life management platform.",
+        "publisher": { "@id": "https://petclues.com/#organization" },
+        "inLanguage": "en-US"
       }
     </script>
 

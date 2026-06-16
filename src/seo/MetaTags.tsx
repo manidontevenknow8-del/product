@@ -89,9 +89,9 @@ export function OpenGraph({ config }: OpenGraphProps) {
     setMetaTag('og:image', image, 'property');
     setMetaTag('og:image:secure_url', image, 'property');
     setMetaTag('og:image:alt', imageAlt, 'property');
-    const isSquareLogo = image.endsWith('/logo.png');
-    setMetaTag('og:image:width', isSquareLogo ? '512' : '1200', 'property');
-    setMetaTag('og:image:height', isSquareLogo ? '512' : '630', 'property');
+    const isSquareBrandLogo = image.endsWith('/logo.png');
+    setMetaTag('og:image:width', isSquareBrandLogo ? '512' : '1200', 'property');
+    setMetaTag('og:image:height', isSquareBrandLogo ? '512' : '630', 'property');
 
     setMetaTag('twitter:card', 'summary_large_image');
     setMetaTag('twitter:site', SITE_META.twitterHandle);

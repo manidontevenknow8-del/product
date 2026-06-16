@@ -30,9 +30,10 @@ export const HOME_OG_DESCRIPTION = HOME_DESCRIPTION;
 export const BRAND_THEME_COLOR = '#2C3E35';
 export const BRAND_BG_COLOR = '#F7F4EF';
 
-/** Square brand logo - used for OG, Twitter, Organization schema, and PWA icons. */
-export const DEFAULT_OG_IMAGE = `${SITE_URL}/logo.png`;
-const OG_IMAGE_ALT = 'PetClues logo';
+/** Social share image (1200x630). Square logo: /logo.png for schema & favicons. */
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+export const BRAND_LOGO_URL = `${SITE_URL}/logo.png`;
+const OG_IMAGE_ALT = 'PetClues - AI-powered pet health management';
 
 const DEFAULT: SEOConfig = {
   title: HOME_TITLE,
@@ -304,7 +305,7 @@ export { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 export const SITE_META = {
   siteName: 'PetClues',
   siteUrl: SITE_URL,
-  logoUrl: `${SITE_URL}/logo.png`,
+  logoUrl: BRAND_LOGO_URL,
   sameAs: ORGANIZATION_SAME_AS,
   twitterHandle: '@petclues',
   locale: 'en_US',
