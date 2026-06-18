@@ -39,9 +39,19 @@ import { AboutPage } from '@/pages/legal/AboutPage';
 import { SecurityPage } from '@/pages/legal/SecurityPage';
 import { DataDeletionPage } from '@/pages/legal/DataDeletionPage';
 import { DataExportPage } from '@/pages/legal/DataExportPage';
-import { FaqPage } from '@/pages/legal/FaqPage';
+import { FaqHubPage } from '@/pages/faq/FaqHubPage';
+import { FaqItemPage } from '@/pages/faq/FaqItemPage';
 import { BlogIndexPage } from '@/pages/blog/BlogIndexPage';
 import { BlogPostPage } from '@/pages/blog/BlogPostPage';
+import { CompareIndexPage } from '@/pages/compare/CompareIndexPage';
+import { ComparePage } from '@/pages/compare/ComparePage';
+import { BestIndexPage } from '@/pages/best/BestIndexPage';
+import { BestIntentPage } from '@/pages/best/BestIntentPage';
+import { GuidesHubPage } from '@/pages/guides/GuidesHubPage';
+import { GuidesCollectionPage } from '@/pages/guides/GuidesCollectionPage';
+import { GuidesDetailPage } from '@/pages/guides/GuidesDetailPage';
+import { LearnIndexPage } from '@/pages/learn/LearnIndexPage';
+import { LearnArticlePage } from '@/pages/learn/LearnArticlePage';
 
 export function App() {
   return (
@@ -52,6 +62,15 @@ export function App() {
       <Route path={ROUTES.PET_MATCH} element={<PetMatchPage />} />
       <Route path={ROUTES.BLOG} element={<BlogIndexPage />} />
       <Route path={`${ROUTES.BLOG}/:slug`} element={<BlogPostPage />} />
+      <Route path={ROUTES.COMPARE} element={<CompareIndexPage />} />
+      <Route path={`${ROUTES.COMPARE}/:slug`} element={<ComparePage />} />
+      <Route path={ROUTES.BEST} element={<BestIndexPage />} />
+      <Route path={`${ROUTES.BEST}/:slug`} element={<BestIntentPage />} />
+      <Route path={ROUTES.GUIDES} element={<GuidesHubPage />} />
+      <Route path={`${ROUTES.GUIDES}/:collection`} element={<GuidesCollectionPage />} />
+      <Route path={`${ROUTES.GUIDES}/:collection/:slug`} element={<GuidesDetailPage />} />
+      <Route path={ROUTES.LEARN} element={<LearnIndexPage />} />
+      <Route path={`${ROUTES.LEARN}/:slug`} element={<LearnArticlePage />} />
       <Route path={ROUTES.REFERRALS} element={<ProtectedRoute><ReferralsPage /></ProtectedRoute>} />
       <Route path={ROUTES.PRIVACY} element={<PrivacyPolicyPage />} />
       <Route path={ROUTES.TERMS} element={<TermsOfServicePage />} />
@@ -61,7 +80,8 @@ export function App() {
       <Route path={ROUTES.SECURITY} element={<SecurityPage />} />
       <Route path={ROUTES.DATA_DELETION} element={<DataDeletionPage />} />
       <Route path={ROUTES.DATA_EXPORT} element={<DataExportPage />} />
-      <Route path={ROUTES.FAQ} element={<FaqPage />} />
+      <Route path={ROUTES.FAQ} element={<FaqHubPage />} />
+      <Route path={`${ROUTES.FAQ}/:slug`} element={<FaqItemPage />} />
 
       {/* Deferred public routes → landing */}
       <Route path={ROUTES.FOUNDING_MEMBERS} element={<FoundingMembersPage />} />

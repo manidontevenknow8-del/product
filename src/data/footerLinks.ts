@@ -27,7 +27,11 @@ export const FOOTER_PRODUCT_LINKS: FooterLink[] = [
 ];
 
 export const FOOTER_RESOURCE_LINKS: FooterLink[] = [
+  { label: 'Learn', to: ROUTES.LEARN },
+  { label: 'Guides', to: ROUTES.GUIDES },
+  { label: 'Best', to: ROUTES.BEST },
   { label: 'Blog', to: ROUTES.BLOG },
+  { label: 'Compare', to: ROUTES.COMPARE },
   { label: 'FAQ', to: ROUTES.FAQ },
 ];
 

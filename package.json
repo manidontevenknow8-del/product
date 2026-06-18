@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.mjs && tsc -b && vite build",
+    "build": "node scripts/generate-sitemap.mjs && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && tsc -b && vite build",
+    "generate:blog-images": "node scripts/generate-blog-images.mjs",
     "preview": "vite preview",
-    "generate:favicons": "node scripts/generate-favicons.mjs"
+    "generate:favicons": "node scripts/generate-favicons.mjs",
+    "validate:schema": "node scripts/validate-schema-coverage.mjs",
+    "validate:links": "node scripts/validate-internal-linking.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",

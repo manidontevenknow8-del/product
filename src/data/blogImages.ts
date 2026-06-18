@@ -1,4 +1,6 @@
 /** One unique featured image per blog slug */
+import { EXPANDED_BLOG_IMAGE_FILE } from './blogImageMappings';
+
 export const BLOG_IMAGE_BY_SLUG: Record<string, string> = {
   'puppy-vaccination-schedule-2026': '/images/blog/blog-puppy-vaccination.png',
   'organize-pet-medical-records-online': '/images/blog/blog-pet-records.png',
@@ -26,6 +28,9 @@ export const BLOG_IMAGE_BY_SLUG: Record<string, string> = {
   'exotic-pet-records-guide': '/images/blog/blog-exotic-pet-records.png',
   'pet-records-101-care-timeline': '/images/blog/blog-pet-records-timeline.png',
   'petclues-guides-life-stage-care-tools': '/images/blog/blog-life-stage-care.png',
+  ...Object.fromEntries(
+    Object.entries(EXPANDED_BLOG_IMAGE_FILE).map(([slug, file]) => [slug, `/images/blog/${file}`]),
+  ),
 };
 
 export function getBlogImageForSlug(slug: string): string {

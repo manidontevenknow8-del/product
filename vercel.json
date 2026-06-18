@@ -9,6 +9,11 @@
       "source": "/lost-pet/report",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/compare/best-pet-health-record-app",
+      "destination": "/best/best-pet-health-record-app",
+      "permanent": true
     }
   ],
   "rewrites": [

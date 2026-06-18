@@ -53,6 +53,10 @@ export const INDEXABLE_PUBLIC_ROUTES = [
   ROUTES.PET_MATCH,
   ROUTES.FOUNDING_MEMBERS,
   ROUTES.BLOG,
+  ROUTES.COMPARE,
+  ROUTES.BEST,
+  ROUTES.GUIDES,
+  ROUTES.LEARN,
   ROUTES.PRIVACY,
   ROUTES.TERMS,
   ROUTES.COOKIES,
@@ -134,6 +138,42 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues pet health blog',
   },
+  [ROUTES.COMPARE]: {
+    title: 'PetClues Comparisons - Pet Health Apps vs Spreadsheets & Alternatives | PetClues',
+    description:
+      'Compare PetClues with Google Drive, Excel, Notion, PetDesk, paper records, and 45+ alternatives for pet health records and vaccination reminders.',
+    keywords:
+      'petclues vs, best pet health record app, alternative to spreadsheets pet records, pet health app comparison',
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues comparison guides',
+  },
+  [ROUTES.BEST]: {
+    title: 'Best Pet Health Apps & Tools (2026) – Intent Guides | PetClues',
+    description:
+      'Authoritative guides for the best pet health record apps, vaccination trackers, reminder apps, digital passports, and pet care platforms.',
+    keywords:
+      'best pet health record app, best pet reminder app, pet vaccination tracker, digital pet passport, pet medical record organizer',
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues best pet health app guides',
+  },
+  [ROUTES.GUIDES]: {
+    title: 'Pet Care Guides & Templates – Vaccines, Travel, Emergency | PetClues',
+    description:
+      'Programmatic pet care guides: dog and cat vaccination schedules by breed, travel checklists by country, emergency checklists, and health record templates.',
+    keywords:
+      'dog vaccination schedule by breed, cat vaccination schedule, pet travel checklist, pet emergency checklist, pet health record template',
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues programmatic pet care guides',
+  },
+  [ROUTES.LEARN]: {
+    title: 'PetClues Learn - Pet Health Records, Vaccines & Care Guides',
+    description:
+      '50+ expert guides on pet health records, vaccinations, emergency passports, travel documents, medication tracking, and everyday pet organization.',
+    keywords:
+      'pet health guides, pet vaccination help, pet emergency passport, organize pet records, pet medication tracking',
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues Learn knowledge base',
+  },
   [ROUTES.PRIVACY]: {
     title: 'Privacy Policy - PetClues',
     description: 'How PetClues collects, uses, and protects your pet health data.',
@@ -183,10 +223,13 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: 'Export your PetClues data',
   },
   [ROUTES.FAQ]: {
-    title: 'FAQ - PetClues',
-    description: 'Frequently asked questions about PetClues pet care organization.',
+    title: 'Pet Health FAQ - Records, Vaccines, Travel & Emergency Prep | PetClues',
+    description:
+      '200+ searchable answers on organizing pet records, vaccination storage, pet passports, travel documents, medications, and emergencies.',
+    keywords:
+      'pet health faq, organize pet records, vaccination records, pet passport, travel with pet',
     ogImage: DEFAULT_OG_IMAGE,
-    ogImageAlt: 'PetClues frequently asked questions',
+    ogImageAlt: 'PetClues pet health FAQ center',
   },
   [ROUTES.WAITLIST]: {
     title: 'Join the Waitlist - PetClues',
@@ -258,9 +301,62 @@ export function isBlogArticlePath(pathname: string): boolean {
   return pathname.startsWith('/blog/') && pathname.length > '/blog/'.length;
 }
 
+export function isCompareArticlePath(pathname: string): boolean {
+  return pathname.startsWith('/compare/') && pathname.length > '/compare/'.length;
+}
+
+export function isComparePath(pathname: string): boolean {
+  return pathname === ROUTES.COMPARE || isCompareArticlePath(pathname);
+}
+
+export function isBestArticlePath(pathname: string): boolean {
+  return pathname.startsWith('/best/') && pathname.length > '/best/'.length;
+}
+
+export function isBestPath(pathname: string): boolean {
+  return pathname === ROUTES.BEST || isBestArticlePath(pathname);
+}
+
+export function isGuidesCollectionPath(pathname: string): boolean {
+  if (!pathname.startsWith(`${ROUTES.GUIDES}/`)) return false;
+  const rest = pathname.slice(`${ROUTES.GUIDES}/`.length);
+  return rest.length > 0 && !rest.includes('/');
+}
+
+export function isGuidesDetailPath(pathname: string): boolean {
+  if (!pathname.startsWith(`${ROUTES.GUIDES}/`)) return false;
+  const rest = pathname.slice(`${ROUTES.GUIDES}/`.length);
+  return rest.includes('/');
+}
+
+export function isGuidesPath(pathname: string): boolean {
+  return pathname === ROUTES.GUIDES || pathname.startsWith(`${ROUTES.GUIDES}/`);
+}
+
+export function isLearnArticlePath(pathname: string): boolean {
+  return pathname.startsWith('/learn/') && pathname.length > '/learn/'.length;
+}
+
+export function isLearnPath(pathname: string): boolean {
+  return pathname === ROUTES.LEARN || isLearnArticlePath(pathname);
+}
+
+export function isFaqArticlePath(pathname: string): boolean {
+  return pathname.startsWith('/faq/') && pathname.length > '/faq/'.length;
+}
+
+export function isFaqPath(pathname: string): boolean {
+  return pathname === ROUTES.FAQ || isFaqArticlePath(pathname);
+}
+
 export function isIndexablePublicPath(pathname: string): boolean {
   if (pathname === ROUTES.LANDING) return true;
   if (isBlogArticlePath(pathname)) return true;
+  if (isCompareArticlePath(pathname)) return true;
+  if (isBestArticlePath(pathname)) return true;
+  if (isGuidesDetailPath(pathname) || isGuidesCollectionPath(pathname)) return true;
+  if (isLearnArticlePath(pathname)) return true;
+  if (isFaqArticlePath(pathname)) return true;
   return INDEXABLE_SET.has(pathname);
 }
 
@@ -283,6 +379,39 @@ export function getPageSEO(pathname: string): SEOConfig {
       ...DEFAULT,
       title: 'PetClues Blog',
       description: 'Pet health guides and care tips from PetClues.',
+      canonical: buildCanonical(pathname),
+      ogType: 'article',
+      noIndex: false,
+    };
+  }
+
+  if (isCompareArticlePath(pathname)) {
+    return {
+      ...DEFAULT,
+      title: 'PetClues Comparison',
+      description: 'Compare PetClues with alternatives for pet health records and reminders.',
+      canonical: buildCanonical(pathname),
+      ogType: 'article',
+      noIndex: false,
+    };
+  }
+
+  if (isLearnArticlePath(pathname)) {
+    return {
+      ...DEFAULT,
+      title: 'PetClues Learn',
+      description: 'Pet health knowledge base guides from PetClues.',
+      canonical: buildCanonical(pathname),
+      ogType: 'article',
+      noIndex: false,
+    };
+  }
+
+  if (isFaqArticlePath(pathname)) {
+    return {
+      ...DEFAULT,
+      title: 'PetClues FAQ',
+      description: 'Pet health questions answered by PetClues.',
       canonical: buildCanonical(pathname),
       ogType: 'article',
       noIndex: false,

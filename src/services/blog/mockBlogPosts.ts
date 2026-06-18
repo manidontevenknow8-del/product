@@ -1,6 +1,9 @@
 import type { BlogPost } from '@/types/blog';
+import { buildSiteLinkGraph } from '@/data/internalLinking/siteLinkGraph';
+import { resolveBlogInternalLinks } from '@/data/internalLinking/resolveBlogInternalLinks';
 import { SEO_BLOG_POSTS } from './seoBlogPosts';
 import { SEO_BLOG_POSTS_EXTRA } from './seoBlogPostsExtra';
+import { EXPANDED_BLOG_POSTS } from './expandedBlogPosts';
 import { applyLongFormToPosts } from './applyLongFormContent';
 
 /** Offline / demo posts - mirrors migration seed for consistent UX without Supabase */
@@ -189,4 +192,34 @@ export const MOCK_BLOG_POSTS: BlogPost[] = applyLongFormToPosts([
   ...SEO_BLOG_POSTS,
   ...SEO_BLOG_POSTS_EXTRA,
   ...LEGACY_MOCK_BLOG_POSTS,
+  ...EXPANDED_BLOG_POSTS,
 ]);
+
+if (MOCK_BLOG_POSTS.length !== 100) {
+  throw new Error(`Expected 100 blog posts, got ${MOCK_BLOG_POSTS.length}`);
+}
+
+const BLOG_LINK_CANDIDATES = MOCK_BLOG_POSTS.map((post) => ({
+  slug: post.slug,
+  title: post.title,
+  category: post.category,
+  tags: post.tags,
+}));
+
+for (const post of BLOG_LINK_CANDIDATES) {
+  const plan = resolveBlogInternalLinks(post, BLOG_LINK_CANDIDATES);
+  if (plan.blogs.length < 3) {
+    throw new Error(`Blog ${post.slug} has only ${plan.blogs.length} related blog links`);
+  }
+}
+
+const linkGraph = buildSiteLinkGraph(BLOG_LINK_CANDIDATES);
+if (linkGraph.orphans.length > 0) {
+  const sample = linkGraph.orphans
+    .slice(0, 10)
+    .map((node) => node.path)
+    .join(', ');
+  throw new Error(
+    `Internal linking audit found ${linkGraph.orphans.length} orphan pages (e.g. ${sample})`,
+  );
+}

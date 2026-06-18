@@ -5,16 +5,16 @@ import { Button, Badge, LoadingState } from '@/components/ui';
 import { EmptyFallback } from '@/components/errors/EmptyFallback';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { BlogPostBody } from '@/components/blog/BlogPostBody';
-import { RelatedArticles } from '@/components/blog/RelatedArticles';
+import { BlogInternalLinks } from '@/components/blog/BlogInternalLinks';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { BlogArticleNotFoundSEO, BlogPostSEO } from '@/seo/blogSeo';
 import { getBlogPostBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { getBlogRepository } from '@/services/blog';
 import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
+import { resolveBlogInternalLinks } from '@/data/internalLinking';
 import type { BlogPost, BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
-import { getRelatedBlogPosts } from '@/utils/blogRelatedPosts';
 import styles from './BlogPostPage.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 
@@ -70,10 +70,16 @@ export function BlogPostPage() {
 
   const heroImage = post ? resolveBlogFeaturedImage(post.slug, post.featuredImage) : null;
   const breadcrumbs = post ? getBlogPostBreadcrumbs(post.title, post.slug) : [];
-  const relatedPosts = useMemo(
-    () => (post ? getRelatedBlogPosts(post, allPosts) : []),
-    [post, allPosts],
-  );
+  const linkPlan = useMemo(() => {
+    if (!post || allPosts.length === 0) return null;
+    const candidates = allPosts.map((item) => ({
+      slug: item.slug,
+      title: item.title,
+      category: item.category,
+      tags: item.tags,
+    }));
+    return resolveBlogInternalLinks(post, candidates);
+  }, [post, allPosts]);
 
   return (
     <PublicLayout>
@@ -156,7 +162,7 @@ export function BlogPostPage() {
               <BlogPostBody content={post.content} />
             </div>
 
-            <RelatedArticles posts={relatedPosts} />
+            {linkPlan && <BlogInternalLinks plan={linkPlan} />}
 
             <footer className={styles.footer}>
               <p>

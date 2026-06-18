@@ -1,0 +1,303 @@
+{
+  "validatedAt": "2026-06-18T12:52:54.165Z",
+  "routeFamilies": 17,
+  "indexedPageTemplates": 518,
+  "builders": [
+    {
+      "builder": "buildOrganizationSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildWebSiteSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildSoftwareApplicationSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildSearchActionSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildFaqPageSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildBreadcrumbListSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildBlogPostingSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildArticleSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildProfilePageSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildWebPageSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildCollectionPageSchema",
+      "pass": true
+    }
+  ],
+  "routes": [
+    {
+      "id": "landing",
+      "handler": "StructuredData.tsx / buildLandingGraphSchema",
+      "path": "/",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication",
+        "FAQPage",
+        "SearchAction"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "static-product",
+      "handler": "staticPageSeo.tsx",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "static-about",
+      "handler": "staticPageSeo.tsx",
+      "path": "/about",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "ProfilePage",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "static-legal",
+      "handler": "staticPageSeo.tsx",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "blog-index",
+      "handler": "blogSeo.tsx",
+      "path": "/blog",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "Blog",
+        "CollectionPage",
+        "BreadcrumbList",
+        "SearchAction"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "blog-post",
+      "handler": "blogSeo.tsx",
+      "path": "/blog/:slug",
+      "pageCount": 100,
+      "present": [
+        "Organization",
+        "WebSite",
+        "BlogPosting",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "learn-index",
+      "handler": "learnSeo.tsx",
+      "path": "/learn",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "learn-article",
+      "handler": "learnSeo.tsx",
+      "path": "/learn/:slug",
+      "pageCount": 50,
+      "present": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "faq-index",
+      "handler": "faqHubSeo.tsx",
+      "path": "/faq",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "FAQPage",
+        "CollectionPage",
+        "BreadcrumbList",
+        "SearchAction"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "faq-item",
+      "handler": "faqHubSeo.tsx",
+      "path": "/faq/:slug",
+      "pageCount": 200,
+      "present": [
+        "Organization",
+        "WebSite",
+        "FAQPage",
+        "QAPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "compare-index",
+      "handler": "compareSeo.tsx",
+      "path": "/compare",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "compare-page",
+      "handler": "compareSeo.tsx",
+      "path": "/compare/:slug",
+      "pageCount": 50,
+      "present": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "SoftwareApplication",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "best-index",
+      "handler": "intentSeo.tsx",
+      "path": "/best",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "best-page",
+      "handler": "intentSeo.tsx",
+      "path": "/best/:slug",
+      "pageCount": 10,
+      "present": [
+        "Organization",
+        "WebSite",
+        "WebPage",
+        "SoftwareApplication",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "guides-hub",
+      "handler": "programmaticSeo.tsx",
+      "path": "/guides",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "guides-collection",
+      "handler": "programmaticSeo.tsx",
+      "path": "/guides/:collection",
+      "pageCount": 7,
+      "present": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "guides-detail",
+      "handler": "programmaticSeo.tsx",
+      "path": "/guides/:collection/:slug",
+      "pageCount": 91,
+      "present": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "FAQPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    }
+  ],
+  "pass": true
+}

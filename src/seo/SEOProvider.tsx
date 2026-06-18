@@ -1,57 +1,38 @@
 import { useLocation } from 'react-router-dom';
-import { FAQ_PAGE_SCHEMA_ITEMS } from '@/data/faqSchemaItems';
-import { getPageSEO, isBlogArticlePath, isIndexablePublicPath } from '@/data/seoConfig';
+import { getPageSEO, isBestPath, isBlogArticlePath, isComparePath, isFaqPath, isGuidesPath, isLearnPath, isIndexablePublicPath } from '@/data/seoConfig';
 import { ROUTES } from '@/routes/paths';
 import { MetaTags, OpenGraph } from './MetaTags';
-import { buildBreadcrumbListSchema } from './breadcrumbSchema';
-import { getStaticPageBreadcrumbs } from './pageBreadcrumbs';
-import { useJsonLd } from './useJsonLd';
+import { StaticPageStructuredData } from './staticPageSeo';
 import {
-  FaqStructuredData,
   LandingStructuredData,
-  OrganizationStructuredData,
-  WebSiteStructuredData,
 } from './StructuredData';
 
 type SEOProviderProps = {
   children: React.ReactNode;
 };
 
-function PageBreadcrumbStructuredData({ pathname }: { pathname: string }) {
-  const schema = buildBreadcrumbListSchema(getStaticPageBreadcrumbs(pathname));
-  useJsonLd(
-    `breadcrumbs-${pathname}`,
-    schema ?? { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [] },
-  );
-  return null;
-}
-
 export function SEOProvider({ children }: SEOProviderProps) {
   const { pathname } = useLocation();
   const config = getPageSEO(pathname);
   const isBlogRoute = pathname === ROUTES.BLOG || isBlogArticlePath(pathname);
+  const isCompareRoute = isComparePath(pathname);
+  const isBestRoute = isBestPath(pathname);
+  const isGuidesRoute = isGuidesPath(pathname);
+  const isLearnRoute = isLearnPath(pathname);
+  const isFaqRoute = isFaqPath(pathname);
   const isLanding = pathname === ROUTES.LANDING;
-  const isFaq = pathname === ROUTES.FAQ;
-  const showGlobalSchemas =
-    isIndexablePublicPath(pathname) && !isBlogRoute && !isLanding;
-  const showBreadcrumbs =
-    isIndexablePublicPath(pathname) && !isBlogRoute && pathname !== ROUTES.LANDING;
+  const dedicatedSeoRoute = isBlogRoute || isCompareRoute || isBestRoute || isGuidesRoute || isLearnRoute || isFaqRoute;
+  const showStaticPageSchema =
+    isIndexablePublicPath(pathname) && !dedicatedSeoRoute && !isLanding;
 
   return (
     <>
-      {!isBlogRoute && <MetaTags config={config} />}
-      {!isBlogRoute && <OpenGraph config={config} />}
+      {!dedicatedSeoRoute && <MetaTags config={config} />}
+      {!dedicatedSeoRoute && <OpenGraph config={config} />}
       {isLanding && <LandingStructuredData />}
-      {showGlobalSchemas && (
-        <>
-          <OrganizationStructuredData />
-          <WebSiteStructuredData />
-        </>
+      {showStaticPageSchema && (
+        <StaticPageStructuredData pathname={pathname} config={config} />
       )}
-      {showBreadcrumbs && getStaticPageBreadcrumbs(pathname).length > 0 && (
-        <PageBreadcrumbStructuredData pathname={pathname} />
-      )}
-      {isFaq && <FaqStructuredData items={FAQ_PAGE_SCHEMA_ITEMS} />}
       {children}
     </>
   );

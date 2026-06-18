@@ -3,6 +3,7 @@ import {
   buildFaqPageSchema,
   buildLandingGraphSchema,
   buildOrganizationSchema,
+  buildSoftwareApplicationSchema,
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
@@ -14,6 +15,11 @@ export function OrganizationStructuredData() {
 
 export function WebSiteStructuredData() {
   useJsonLd('website', buildWebSiteSchema());
+  return null;
+}
+
+export function SoftwareApplicationStructuredData() {
+  useJsonLd('software-application', buildSoftwareApplicationSchema());
   return null;
 }
 

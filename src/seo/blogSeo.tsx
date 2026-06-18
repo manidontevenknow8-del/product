@@ -4,10 +4,18 @@ import type { BlogCategoryId } from '@/data/blogCategories';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
 import type { BlogPost, BlogPostListItem } from '@/types/blog';
 import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
+import { extractBlogFaqs } from '@/services/blog/extractBlogFaqs';
 import { ROUTES } from '@/routes/paths';
 import { MetaTags, OpenGraph } from './MetaTags';
 import { buildBreadcrumbListSchema } from './breadcrumbSchema';
-import { buildOrganizationSchema } from './structuredDataSchemas';
+import {
+  buildBlogPostingSchema,
+  buildCollectionPageSchema,
+  buildFaqPageSchema,
+  buildOrganizationSchema,
+  buildSchemaGraph,
+  buildWebSiteSchema,
+} from './structuredDataSchemas';
 import { getBlogIndexBreadcrumbs, getBlogPostBreadcrumbs } from './pageBreadcrumbs';
 import { useJsonLd } from './useJsonLd';
 
@@ -80,40 +88,29 @@ export function getBlogPostingStructuredData(post: BlogPost) {
   const url = `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`;
   const categoryLabel = getBlogCategoryLabel(post.category);
   const breadcrumbs = buildBreadcrumbListSchema(getBlogPostBreadcrumbs(post.title, post.slug));
+  const faqs = extractBlogFaqs(post.content);
+  const image = (() => {
+    const img = resolveBlogFeaturedImage(post.slug, post.featuredImage);
+    return img ? [`${SITE_META.siteUrl}${img}`] : undefined;
+  })();
 
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      {
-        '@type': 'BlogPosting',
-        headline: post.title,
-        description: post.excerpt,
-        image: (() => {
-          const img = resolveBlogFeaturedImage(post.slug, post.featuredImage);
-          return img ? [`${SITE_META.siteUrl}${img}`] : undefined;
-        })(),
-        author: {
-          '@type': 'Organization',
-          name: post.author,
-        },
-        publisher: {
-          '@type': 'Organization',
-          name: SITE_META.siteName,
-          url: SITE_META.siteUrl,
-          logo: {
-            '@type': 'ImageObject',
-            url: SITE_META.logoUrl,
-          },
-        },
-        datePublished: post.publishedAt ?? undefined,
-        dateModified: post.updatedAt,
-        mainEntityOfPage: url,
-        articleSection: categoryLabel,
-        keywords: post.tags.join(', '),
-      },
-      ...(breadcrumbs ? [breadcrumbs] : []),
-    ],
-  };
+  return buildSchemaGraph(
+    buildOrganizationSchema(),
+    buildWebSiteSchema(),
+    buildBlogPostingSchema({
+      url,
+      headline: post.title,
+      description: post.excerpt,
+      image,
+      authorName: post.author,
+      datePublished: post.publishedAt ?? undefined,
+      dateModified: post.updatedAt,
+      articleSection: categoryLabel,
+      keywords: post.tags.join(', '),
+    }),
+    faqs.length > 0 ? buildFaqPageSchema(faqs, `${url}#faq`) : null,
+    breadcrumbs,
+  );
 }
 
 export function getBlogIndexStructuredData(
@@ -121,51 +118,33 @@ export function getBlogIndexStructuredData(
 ) {
   const blogUrl = `${SITE_META.siteUrl}${ROUTES.BLOG}`;
 
-  return {
-    '@context': 'https://schema.org',
-    '@graph': [
-      buildOrganizationSchema(),
-      {
-        '@type': 'Blog',
-        '@id': `${blogUrl}#blog`,
-        name: 'PetClues Pet Health Blog',
-        url: blogUrl,
-        publisher: {
-          '@type': 'Organization',
-          name: SITE_META.siteName,
-          url: SITE_META.siteUrl,
-        },
-        blogPost: posts.slice(0, 20).map((post) => ({
-          '@type': 'BlogPosting',
-          headline: post.title,
-          url: `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`,
-          datePublished: post.publishedAt ?? undefined,
-        })),
-      },
-      {
-        '@type': 'CollectionPage',
-        '@id': `${blogUrl}#collection`,
-        name: 'PetClues Pet Health Blog',
-        url: blogUrl,
-        description:
-          'Pet health guides on vaccinations, medical records, medication reminders, and emergency care.',
-        isPartOf: {
-          '@type': 'WebSite',
-          name: SITE_META.siteName,
-          url: SITE_META.siteUrl,
-        },
-        mainEntity: {
-          '@type': 'ItemList',
-          itemListElement: posts.map((post, index) => ({
-            '@type': 'ListItem',
-            position: index + 1,
-            url: `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`,
-            name: post.title,
-          })),
-        },
-      },
-    ],
-  };
+  return buildSchemaGraph(
+    buildOrganizationSchema(),
+    buildWebSiteSchema(),
+    {
+      '@type': 'Blog',
+      '@id': `${blogUrl}#blog`,
+      name: 'PetClues Pet Health Blog',
+      url: blogUrl,
+      publisher: { '@id': `${SITE_META.siteUrl}/#organization` },
+      blogPost: posts.slice(0, 20).map((post) => ({
+        '@type': 'BlogPosting',
+        headline: post.title,
+        url: `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`,
+        datePublished: post.publishedAt ?? undefined,
+      })),
+    },
+    buildCollectionPageSchema({
+      url: blogUrl,
+      name: 'PetClues Pet Health Blog',
+      description:
+        'Pet health guides on vaccinations, medical records, medication reminders, and emergency care.',
+      items: posts.map((post) => ({
+        url: `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`,
+        name: post.title,
+      })),
+    }),
+  );
 }
 
 type BlogIndexSEOProps = {
@@ -180,13 +159,10 @@ export function BlogIndexSEO({ posts, category, tag, search }: BlogIndexSEOProps
   const categoryLabel = category ? getBlogCategoryLabel(category) : undefined;
   const breadcrumbSchema = buildBreadcrumbListSchema(getBlogIndexBreadcrumbs(categoryLabel));
 
-  useJsonLd('blog-index', {
-    '@context': 'https://schema.org',
-    '@graph': [
-      ...getBlogIndexStructuredData(posts)['@graph'],
-      ...(breadcrumbSchema ? [breadcrumbSchema] : []),
-    ],
-  });
+  useJsonLd('blog-index', buildSchemaGraph(
+    ...getBlogIndexStructuredData(posts)['@graph'],
+    breadcrumbSchema,
+  ));
 
   return (
     <>
