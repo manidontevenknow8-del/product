@@ -1,7 +1,10 @@
-const CACHE_NAME = 'petclues-static-v2';
+const CACHE_NAME = 'petclues-static-v3';
 const PRECACHE_URLS = [
   '/favicon.ico',
+  '/favicon.svg',
   '/favicon.png',
+  '/favicon-48.png',
+  '/favicon-96.png',
   '/favicon-32x32.png',
   '/logo.png',
   '/icon-192.png',

@@ -4,7 +4,7 @@
   "description": "Track health records, reminders, vaccinations, life stories, monthly reports, pet passports, and AI-powered pet insights in one place.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FFFFFF",
+  "background_color": "#F7F4EF",
   "theme_color": "#2C3E35",
   "lang": "en-US",
   "icons": [
@@ -21,7 +21,7 @@
       "purpose": "any"
     },
     {
-      "src": "/icon-512-maskable.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
