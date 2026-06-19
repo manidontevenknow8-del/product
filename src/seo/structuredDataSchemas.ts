@@ -1,11 +1,101 @@
 import { HOME_OG_DESCRIPTION, SITE_META } from '@/data/seoConfig';
 import { ROUTES } from '@/routes/paths';
 
-type FaqItem = { question: string; answer: string };
-
 export const ORGANIZATION_ID = `${SITE_META.siteUrl}/#organization`;
 export const WEBSITE_ID = `${SITE_META.siteUrl}/#website`;
 export const SOFTWARE_ID = `${SITE_META.siteUrl}/#software`;
+
+type FaqSchemaItem = {
+  question: string;
+  answer: string;
+  datePublished?: string;
+  url?: string;
+  upvoteCount?: number;
+};
+
+/** Fallback when callers omit per-item dates (e.g. landing FAQ). */
+const FAQ_SCHEMA_DEFAULT_DATE = '2026-06-18';
+
+/**
+ * Stable placeholder upvote count per question (derived from URL or question text).
+ * Not shown in the UI — schema-only until real helpful-vote tracking ships.
+ */
+export function deriveFaqUpvoteCount(seed: string): number {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i += 1) {
+    hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+  return 12 + (hash % 184);
+}
+
+export function buildSchemaAuthor() {
+  return {
+    '@type': 'Organization' as const,
+    '@id': ORGANIZATION_ID,
+    name: SITE_META.siteName,
+  };
+}
+
+export function buildAnswerSchema(item: FaqSchemaItem) {
+  const datePublished = item.datePublished ?? FAQ_SCHEMA_DEFAULT_DATE;
+
+  return {
+    '@type': 'Answer',
+    text: item.answer,
+    ...(item.url ? { url: item.url } : {}),
+    author: buildSchemaAuthor(),
+    datePublished,
+    upvoteCount: item.upvoteCount ?? deriveFaqUpvoteCount(item.url ?? item.question),
+  };
+}
+
+export function buildQuestionSchema(
+  item: FaqSchemaItem,
+  options?: { text?: string; answerCount?: number },
+) {
+  const datePublished = item.datePublished ?? FAQ_SCHEMA_DEFAULT_DATE;
+
+  return {
+    '@type': 'Question',
+    name: item.question,
+    ...(options?.text ? { text: options.text } : {}),
+    ...(options?.answerCount != null ? { answerCount: options.answerCount } : {}),
+    datePublished,
+    author: buildSchemaAuthor(),
+    acceptedAnswer: buildAnswerSchema({ ...item, datePublished }),
+  };
+}
+
+export function buildFaqPageSchema(items: readonly FaqSchemaItem[], id?: string) {
+  return {
+    '@type': 'FAQPage',
+    ...(id ? { '@id': id } : {}),
+    mainEntity: items.map((item) => buildQuestionSchema(item)),
+  };
+}
+
+export function buildQAPageSchema(options: {
+  url: string;
+  question: string;
+  answer: string;
+  datePublished: string;
+  upvoteCount?: number;
+}) {
+  return {
+    '@type': 'QAPage',
+    '@id': `${options.url}#qa`,
+    mainEntity: buildQuestionSchema(
+      {
+        question: options.question,
+        answer: options.answer,
+        datePublished: options.datePublished,
+        url: options.url,
+        upvoteCount: options.upvoteCount,
+      },
+      { text: options.question, answerCount: 1 },
+    ),
+  };
+}
 
 export function buildSchemaGraph(...nodes: readonly (object | null | undefined)[]) {
   const graph = nodes.filter((node): node is object => node != null);
@@ -89,21 +179,6 @@ export function buildSoftwareApplicationSchema() {
       description: 'Free plan available',
     },
     publisher: { '@id': ORGANIZATION_ID },
-  };
-}
-
-export function buildFaqPageSchema(items: readonly FaqItem[], id?: string) {
-  return {
-    '@type': 'FAQPage',
-    ...(id ? { '@id': id } : {}),
-    mainEntity: items.map((item) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
   };
 }
 
@@ -240,7 +315,7 @@ export function buildCollectionPageSchema(options: {
   };
 }
 
-export function buildLandingGraphSchema(faqItems: readonly FaqItem[]) {
+export function buildLandingGraphSchema(faqItems: readonly FaqSchemaItem[]) {
   return buildSchemaGraph(
     buildOrganizationSchema(),
     buildWebSiteSchema(),

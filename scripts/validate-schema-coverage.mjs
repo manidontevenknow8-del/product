@@ -17,6 +17,9 @@ const SCHEMA_BUILDERS = [
   'buildSoftwareApplicationSchema',
   'buildSearchActionSchema',
   'buildFaqPageSchema',
+  'buildQuestionSchema',
+  'buildAnswerSchema',
+  'buildQAPageSchema',
   'buildBreadcrumbListSchema',
   'buildBlogPostingSchema',
   'buildArticleSchema',
@@ -221,8 +224,25 @@ function validateBuilders() {
   }));
 }
 
+function validateFaqSchemaFields() {
+  const core = readSeoFile('structuredDataSchemas.ts');
+  const requiredSnippets = [
+    'author: buildSchemaAuthor()',
+    'datePublished',
+    'upvoteCount: item.upvoteCount ?? deriveFaqUpvoteCount',
+    'export function buildQAPageSchema',
+  ];
+  const missing = requiredSnippets.filter((snippet) => !core.includes(snippet));
+  return {
+    id: 'faq-schema-fields',
+    pass: missing.length === 0,
+    missing,
+  };
+}
+
 const builderResults = validateBuilders();
 const routeResults = ROUTE_COVERAGE.map(validateRouteFamily);
+const faqFieldResult = validateFaqSchemaFields();
 
 const builderFails = builderResults.filter((r) => !r.pass);
 const routeFails = routeResults.filter((r) => !r.pass);
@@ -244,6 +264,12 @@ for (const result of routeResults) {
   }
 }
 
+const faqFieldStatus = faqFieldResult.pass ? 'PASS' : 'FAIL';
+console.log(`[${faqFieldStatus}] faq-schema-fields (Question/Answer author, datePublished, upvoteCount)`);
+if (!faqFieldResult.pass) {
+  console.log(`       Missing snippets: ${faqFieldResult.missing.join(', ')}`);
+}
+
 if (builderFails.length > 0) {
   console.log('\nMissing builders:');
   for (const fail of builderFails) {
@@ -257,7 +283,8 @@ const report = {
   indexedPageTemplates: totalIndexedPages,
   builders: builderResults,
   routes: routeResults,
-  pass: builderFails.length === 0 && routeFails.length === 0,
+  faqSchemaFields: faqFieldResult,
+  pass: builderFails.length === 0 && routeFails.length === 0 && faqFieldResult.pass,
 };
 
 const outPath = join(root, 'SCHEMA_AUDIT_REPORT.json');

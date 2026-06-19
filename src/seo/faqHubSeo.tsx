@@ -11,6 +11,7 @@ import {
   buildCollectionPageSchema,
   buildFaqPageSchema,
   buildOrganizationSchema,
+  buildQAPageSchema,
   buildSchemaGraph,
   buildWebSiteSchema,
 } from './structuredDataSchemas';
@@ -99,6 +100,20 @@ function getFaqBreadcrumbs(item?: FaqHubItem, categoryLabel?: string): Breadcrum
   return items;
 }
 
+function stripFaqAnswerMarkdown(answer: string): string {
+  return answer.replace(/\[[^\]]+\]\([^)]+\)/g, '').replace(/\*\*/g, '').trim();
+}
+
+function toFaqSchemaItem(item: FaqHubItem, answer: string) {
+  const url = `${SITE_META.siteUrl}${ROUTES.FAQ}/${item.slug}`;
+  return {
+    question: item.question,
+    answer,
+    datePublished: item.updatedAt,
+    url,
+  };
+}
+
 export function getFaqIndexStructuredData(items: FaqHubItem[]) {
   const faqUrl = `${SITE_META.siteUrl}${ROUTES.FAQ}`;
   const breadcrumbs = buildBreadcrumbListSchema(getFaqBreadcrumbs(undefined));
@@ -107,7 +122,7 @@ export function getFaqIndexStructuredData(items: FaqHubItem[]) {
     buildOrganizationSchema(),
     buildWebSiteSchema(),
     buildFaqPageSchema(
-      items.map((item) => ({ question: item.question, answer: item.shortAnswer })),
+      items.map((item) => toFaqSchemaItem(item, item.shortAnswer)),
       `${faqUrl}#faq`,
     ),
     buildCollectionPageSchema({
@@ -126,34 +141,19 @@ export function getFaqIndexStructuredData(items: FaqHubItem[]) {
 export function getFaqItemStructuredData(item: FaqHubItem) {
   const url = `${SITE_META.siteUrl}${ROUTES.FAQ}/${item.slug}`;
   const breadcrumbs = buildBreadcrumbListSchema(getFaqBreadcrumbs(item));
+  const plainAnswer = stripFaqAnswerMarkdown(item.answer);
+  const schemaItem = toFaqSchemaItem(item, `${item.shortAnswer} ${plainAnswer}`);
 
   return buildSchemaGraph(
     buildOrganizationSchema(),
     buildWebSiteSchema(),
-    buildFaqPageSchema(
-      [
-        {
-          question: item.question,
-          answer: `${item.shortAnswer} ${item.answer.replace(/\[[^\]]+\]\([^)]+\)/g, '').replace(/\*\*/g, '')}`,
-        },
-      ],
-      `${url}#faq`,
-    ),
-    {
-      '@type': 'QAPage',
-      '@id': `${url}#qa`,
-      mainEntity: {
-        '@type': 'Question',
-        name: item.question,
-        text: item.question,
-        answerCount: 1,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: item.answer.replace(/\[[^\]]+\]\([^)]+\)/g, '').replace(/\*\*/g, ''),
-          url,
-        },
-      },
-    },
+    buildFaqPageSchema([schemaItem], `${url}#faq`),
+    buildQAPageSchema({
+      url,
+      question: item.question,
+      answer: plainAnswer,
+      datePublished: item.updatedAt,
+    }),
     breadcrumbs,
   );
 }
