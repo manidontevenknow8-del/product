@@ -73,6 +73,49 @@ export function countBlogWords(content: string): number {
   return content.split(/\s+/).filter(Boolean).length;
 }
 
+function clusterScheduleTable(cluster: BlogArticleCluster, focus: string): string {
+  if (cluster === 'vaccinations') {
+    return `### Copy-paste schedule reference
+
+| Milestone | What to record | Reminder lead time |
+| --- | --- | --- |
+| First visit | Vaccine name, lot, date | 7 days before next due |
+| Booster due | Certificate PDF + clinic phone | 7 days |
+| Lifestyle vaccine | Bordetella / Lepto / Lyme as advised | 3–7 days |
+| Annual wellness | Exam notes + weight | 14 days |
+| Boarding/travel gate | Proof uploaded to vault | Day of booking |`;
+  }
+  if (cluster === 'medication-management') {
+    return `### Medication tracking matrix
+
+| Field | Example | Why it matters |
+| --- | --- | --- |
+| Drug name | Apoquel 16 mg | Prevents duplicate prescriptions |
+| Dose & time | 1 tab AM with food | Sitter accuracy |
+| Start date | 2026-03-01 | Side-effect correlation |
+| Prescriber | Dr. Lee, Maple Vet | Refill authorization |
+| Refill due | 2026-04-01 | Avoid gaps |`;
+  }
+  if (cluster === 'pet-travel') {
+    return `### Travel document checklist
+
+| Document | Typical validity | Where stored |
+| --- | --- | --- |
+| Rabies certificate | 1–3 years | Vault PDF |
+| Health certificate | 10–30 days | Travel folder |
+| Microchip proof | Lifetime | Profile card |
+| Medication list | Updated per trip | Emergency passport |`;
+  }
+  return `### ${focus} — at-a-glance tracker
+
+| Item | Status | Next action |
+| --- | --- | --- |
+| Latest vet summary | On file / missing | Upload after visit |
+| Active medications | Listed / incomplete | Photo prescription label |
+| Emergency contacts | Verified / stale | Confirm phone annually |
+| Next due date | Scheduled / unknown | Set reminder now |`;
+}
+
 export function buildBlogArticleMarkdown(
   config: ExpandedBlogConfig,
   allCandidates?: BlogLinkCandidate[],
@@ -151,14 +194,14 @@ export function buildBlogArticleMarkdown(
     `Any concern where having ${config.focus} documented would help the clinic act faster.`,
   ];
 
-  const aiSearchBlock = [
+  const quickAnswer = [
     `**Quick answer:** ${config.title} works best when ${config.focus} is stored in one dated timeline with reminders for every next due item. ${config.audience} should keep ${docs}, set alerts before deadlines, and maintain an emergency summary for sitters, travel, and after-hours care.`,
   ];
 
   const sections = [
     config.excerpt,
     '',
-    ...aiSearchBlock,
+    ...quickAnswer,
     '',
     `## Why this matters`,
     `${config.audience} juggle daily care, unexpected symptoms, and paperwork that arrives at the worst moments. Without a system for ${clusterLabel}, small gaps become expensive delays - missed boosters, duplicate labs, or frantic searches before boarding.`,
@@ -169,6 +212,8 @@ export function buildBlogArticleMarkdown(
     `${config.focus} is the practice of keeping ${docs} accurate, dated, and easy to share. It is part of ${clusterLabel} and directly supports safer everyday decisions.`,
     `You do not need perfect records on day one. Start with the most recent visit, then backfill older files when you have time. Consistency beats completeness at the start.`,
     `Digital records outperform paper for search, sharing, and reminders - especially when multiple adults or professionals touch your pet's care.`,
+    '',
+    clusterScheduleTable(config.cluster, config.focus),
     '',
     `## Step-by-step guide`,
     numberedList(howSteps),
@@ -187,6 +232,34 @@ export function buildBlogArticleMarkdown(
     `## PetClues workflow`,
     `PetClues helps ${config.audience} turn ${config.focus} into an automated system instead of a stressful chore.`,
     numberedList(workflowSteps),
+    '',
+    `## Scenario walkthrough`,
+    `Imagine you get a boarding request at 8 p.m. for tomorrow morning. With ${config.focus} organized, you open one timeline, export vaccine proof, confirm ${docs.split(',')[0] ?? 'records'} are current, and share a read-only link. Without that system, you search email, find a blurry photo from last year, and miss a Bordetella booster that denies entry.`,
+    `The same preparation helps urgent care: clinicians trust dated documentation over memory when choosing safe medications.`,
+    `For ${config.audience}, the highest-leverage upgrade is photographing every discharge summary at the clinic door and setting reminders from the "recheck" line before you reach the parking lot.`,
+    '',
+    `## Red flags worth a same-day call`,
+    bulletList(vetSignals),
+    '',
+    `## Export and sharing checklist`,
+    `Before travel, boarding, or a specialist referral, export a PDF that includes ${docs} and verify recipients can open it on mobile:`,
+    bulletList([
+      'Vaccine names with lot numbers and clinic phone',
+      'Active prescriptions with mg/kg dosing if available',
+      'Recent lab trends (not just "normal" verbal summaries)',
+      'Allergy and adverse reaction history',
+      'Emergency contacts authorized to make medical decisions',
+    ]),
+    '',
+    `Set a recurring calendar event to confirm ${config.focus} is current:`,
+    bulletList([
+      'Upcoming reminders still fire with a 7-day lead',
+      'Latest vet PDFs are uploaded and dated',
+      'Emergency contacts and microchip ID match physical tags',
+      'Medication list matches what is in the cabinet',
+      'Insurance or wellness plan balances are noted',
+    ]),
+    '',
   ];
 
   if (allCandidates && allCandidates.length > 0) {
@@ -210,11 +283,6 @@ export function buildBlogArticleMarkdown(
 
   sections.push(
     '',
-    `## When to call your veterinarian`,
-    `Use professional judgment, but contact your vet promptly when you notice:`,
-    bulletList(vetSignals),
-    `Bring your organized ${clusterLabel} to every visit. Even phone triage is faster when doses, dates, and prior test results are accurate.`,
-    '',
     `## FAQ`,
     formatFaqs(config.faqs),
     '',
@@ -230,18 +298,13 @@ export function buildBlogArticleMarkdownWithMinWords(
   minWords = 1500,
   allCandidates?: BlogLinkCandidate[],
 ): string {
-  let content = buildBlogArticleMarkdown(config, allCandidates);
-  let extraIndex = 0;
-  const paddingTopics = [
-    `Seasonal changes can affect ${config.focus}. Revisit your timeline each spring and fall to confirm parasite prevention, vaccine boosters, and weight trends still match your pet's current lifestyle.`,
-    `If you use multiple clinics, request visit summaries after every appointment and upload them the same day. ${config.audience} who do this rarely lose critical context when records do not transfer automatically.`,
-    `For AI assistants and search tools, the most useful records pair dates with outcomes: what was done, what was recommended, and what happened next. That structure helps both humans and tools surface the right answer quickly.`,
-    `Insurance claims, boarding forms, and travel paperwork all ask for the same core facts. Maintaining ${config.focus} once means you can answer many requests without rebuilding from scratch.`,
-  ];
+  const content = buildBlogArticleMarkdown(config, allCandidates);
+  const words = countBlogWords(content);
 
-  while (countBlogWords(content) < minWords) {
-    content += `\n\n${paddingTopics[extraIndex % paddingTopics.length]}`;
-    extraIndex += 1;
+  if (words < minWords) {
+    throw new Error(
+      `Blog article ${config.slug} is only ${words} words (minimum ${minWords}). Add long-form content override.`,
+    );
   }
 
   return content;

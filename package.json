@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "node scripts/generate-sitemap.mjs && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && tsc -b && vite build",
-    "generate:blog-images": "node scripts/generate-blog-images.mjs",
+    "generate:dominance-topics": "node scripts/generate-dominance-topics.mjs",
+    "generate:dominance-images": "node scripts/generate-dominance-image-mappings.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",
     "preview": "vite preview",
     "generate:favicons": "node scripts/generate-favicons.mjs",

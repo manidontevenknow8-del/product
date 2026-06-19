@@ -62,6 +62,11 @@ const CATEGORY_TO_LEARN: Record<BlogCategoryId, LearnCategoryId> = {
   'exotic-pets': 'pet-documentation',
   'pet-records': 'health-records',
   'petclues-guides': 'pet-organization',
+  'vet-finance': 'health-records',
+  'breed-lifestyle': 'health-records',
+  'symptom-triage': 'pet-emergencies',
+  'pet-travel': 'pet-travel',
+  'pet-tech': 'pet-organization',
 };
 
 const CATEGORY_TO_FAQ: Record<BlogCategoryId, FaqCategoryId> = {
@@ -71,6 +76,11 @@ const CATEGORY_TO_FAQ: Record<BlogCategoryId, FaqCategoryId> = {
   'exotic-pets': 'exotic-specialty-care',
   'pet-records': 'pet-records',
   'petclues-guides': 'petclues-app',
+  'vet-finance': 'pet-records',
+  'breed-lifestyle': 'pet-records',
+  'symptom-triage': 'emergency-preparedness',
+  'pet-travel': 'pet-travel',
+  'pet-tech': 'petclues-app',
 };
 
 export function inferBlogCluster(
@@ -107,6 +117,21 @@ export function inferBlogCluster(
     return 'health-records';
   }
   if (category === 'petclues-guides') {
+    return 'pet-organization';
+  }
+  if (category === 'vet-finance') {
+    return 'health-records';
+  }
+  if (category === 'breed-lifestyle') {
+    return 'breed-specific-care';
+  }
+  if (category === 'symptom-triage') {
+    return 'emergency-preparedness';
+  }
+  if (category === 'pet-travel') {
+    return 'pet-travel';
+  }
+  if (category === 'pet-tech') {
     return 'pet-organization';
   }
 

@@ -1,6 +1,6 @@
 import styles from './PetCluesLogo.module.css';
 
-export const PETCLUES_LOGO_SRC = '/images/petclues-logo.png';
+export const PETCLUES_LOGO_SRC = '/images/petclues-logo.webp';
 
 type PetCluesLogoProps = {
   size?: 'sm' | 'md' | 'lg' | 'xl';

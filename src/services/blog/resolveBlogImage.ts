@@ -1,9 +1,10 @@
-import { getBlogImageForSlug } from '@/data/blogImages';
-
-/** Each article has a dedicated local hero image keyed by slug */
+/** Each article uses featuredImage when set; otherwise resolves from slug metadata. */
 export function resolveBlogFeaturedImage(
-  slug: string,
-  _featuredImage: string | null,
+  _slug: string,
+  featuredImage: string | null,
 ): string {
-  return getBlogImageForSlug(slug);
+  if (featuredImage) {
+    return featuredImage;
+  }
+  return `/images/blog/blog-pet-records.webp`;
 }

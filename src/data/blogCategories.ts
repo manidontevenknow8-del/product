@@ -4,7 +4,12 @@ export type BlogCategoryId =
   | 'bird-care'
   | 'exotic-pets'
   | 'pet-records'
-  | 'petclues-guides';
+  | 'petclues-guides'
+  | 'vet-finance'
+  | 'breed-lifestyle'
+  | 'symptom-triage'
+  | 'pet-travel'
+  | 'pet-tech';
 
 export type BlogCategory = {
   id: BlogCategoryId;
@@ -42,6 +47,31 @@ export const BLOG_CATEGORIES: BlogCategory[] = [
     id: 'petclues-guides',
     label: 'PetClues Guides',
     description: 'Product guides and best practices from the PetClues team.',
+  },
+  {
+    id: 'vet-finance',
+    label: 'Vet Costs & Finance',
+    description: 'Invoice breakdowns, price benchmarks, and billing clarity for pet parents.',
+  },
+  {
+    id: 'breed-lifestyle',
+    label: 'Breeds & Lifestyle',
+    description: 'Breed fit, lifetime costs, and lifestyle matching for new and experienced owners.',
+  },
+  {
+    id: 'symptom-triage',
+    label: 'Symptom Triage',
+    description: 'When to wait, when to call the vet, and what symptoms mean in plain language.',
+  },
+  {
+    id: 'pet-travel',
+    label: 'Pet Travel & Passports',
+    description: 'Airline rules, health certificates, emergency handoffs, and digital passports.',
+  },
+  {
+    id: 'pet-tech',
+    label: 'Pet Tech & Longevity',
+    description: 'Trackers, telehealth, supplements, and the tools reshaping preventive care.',
   },
 ];
 

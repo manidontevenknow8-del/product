@@ -4,6 +4,7 @@ import { resolveBlogInternalLinks } from '@/data/internalLinking/resolveBlogInte
 import { SEO_BLOG_POSTS } from './seoBlogPosts';
 import { SEO_BLOG_POSTS_EXTRA } from './seoBlogPostsExtra';
 import { EXPANDED_BLOG_POSTS } from './expandedBlogPosts';
+import { DOMINANCE_BLOG_POSTS } from './dominanceBlogPosts';
 import { applyLongFormToPosts } from './applyLongFormContent';
 
 /** Offline / demo posts - mirrors migration seed for consistent UX without Supabase */
@@ -193,10 +194,11 @@ export const MOCK_BLOG_POSTS: BlogPost[] = applyLongFormToPosts([
   ...SEO_BLOG_POSTS_EXTRA,
   ...LEGACY_MOCK_BLOG_POSTS,
   ...EXPANDED_BLOG_POSTS,
+  ...DOMINANCE_BLOG_POSTS,
 ]);
 
-if (MOCK_BLOG_POSTS.length !== 100) {
-  throw new Error(`Expected 100 blog posts, got ${MOCK_BLOG_POSTS.length}`);
+if (MOCK_BLOG_POSTS.length !== 250) {
+  throw new Error(`Expected 250 blog posts, got ${MOCK_BLOG_POSTS.length}`);
 }
 
 const BLOG_LINK_CANDIDATES = MOCK_BLOG_POSTS.map((post) => ({

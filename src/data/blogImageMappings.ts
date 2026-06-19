@@ -14,50 +14,50 @@ export const EXPANDED_BLOG_IMAGE_FILE: Record<string, string> = {
 
   // Health records
   'digital-pet-health-record-template-guide': 'blog-pet-records.webp',
-  'pet-lab-results-tracking-normal-ranges': 'blog-pet-records.webp',
+  'pet-lab-results-tracking-normal-ranges': 'blog-vet-bill-organizer.webp',
   'chronic-condition-pet-record-system': 'blog-pet-records-timeline.webp',
-  'multi-pet-household-health-records-setup': 'blog-pet-records.webp',
+  'multi-pet-household-health-records-setup': 'blog-daily-checkin.webp',
   'pet-imaging-reports-mri-xray-storage': 'blog-pet-records.webp',
   'pet-dental-records-cleaning-history-guide': 'blog-dog-dental-care.webp',
-  'transferring-pet-records-between-vets': 'blog-pet-records.webp',
+  'transferring-pet-records-between-vets': 'blog-pet-records-timeline.webp',
 
   // Medical history
   'building-complete-pet-medical-history-timeline': 'blog-pet-records-timeline.webp',
-  'pet-surgery-history-documentation-guide': 'blog-pet-records.webp',
+  'pet-surgery-history-documentation-guide': 'blog-emergency-passport.webp',
   'allergy-and-reaction-history-for-pets': 'blog-pet-allergy-tracker.webp',
   'hereditary-conditions-family-pet-history': 'blog-pet-records.webp',
   'rescue-pet-unknown-medical-history-guide': 'blog-puppy-checklist.webp',
-  'second-opinion-vet-medical-history-prep': 'blog-pet-records.webp',
+  'second-opinion-vet-medical-history-prep': 'blog-vet-bill-organizer.webp',
 
   // Pet passports
   'printable-pet-passport-template-emergency': 'blog-emergency-passport.webp',
   'pet-passport-for-groomers-and-trainers': 'blog-pet-sitter-instructions.webp',
-  'pet-passport-allergy-medication-summary': 'blog-emergency-passport.webp',
-  'multi-pet-passport-household-system': 'blog-emergency-passport.webp',
+  'pet-passport-allergy-medication-summary': 'blog-medication-reminder.webp',
+  'multi-pet-passport-household-system': 'blog-pet-records-timeline.webp',
   'pet-passport-for-relatives-and-neighbors': 'blog-pet-sitter-instructions.webp',
-  'updating-pet-passport-after-vet-visit': 'blog-emergency-passport.webp',
+  'updating-pet-passport-after-vet-visit': 'blog-daily-checkin.webp',
 
   // Pet travel
   'international-pet-travel-health-certificate-guide': 'blog-travel-pets.webp',
   'flying-with-cats-health-documents-checklist': 'blog-flying-with-cats.webp',
-  'cross-country-move-pet-records-guide': 'blog-travel-pets.webp',
+  'cross-country-move-pet-records-guide': 'blog-microchip-registration.webp',
   'pet-friendly-hotel-documentation-requirements': 'blog-travel-pets.webp',
-  'rv-travel-pet-medical-emergency-prep': 'blog-travel-pets.webp',
+  'rv-travel-pet-medical-emergency-prep': 'blog-emergency-passport.webp',
 
   // Medication management
   'split-dose-pet-medication-schedule-guide': 'blog-medication-reminder.webp',
-  'pet-prescription-refill-tracking-system': 'blog-medication-reminder.webp',
-  'compounded-pet-medication-label-guide': 'blog-medication-reminder.webp',
+  'pet-prescription-refill-tracking-system': 'blog-daily-checkin.webp',
+  'compounded-pet-medication-label-guide': 'blog-pet-records.webp',
   'antibiotic-course-completion-tracking-pets': 'blog-medication-reminder.webp',
-  'pain-management-log-for-recovering-pets': 'blog-medication-reminder.webp',
+  'pain-management-log-for-recovering-pets': 'blog-senior-dog.webp',
 
   // Emergency preparedness
   'pet-first-aid-kit-records-checklist': 'blog-emergency-passport.webp',
-  'natural-disaster-pet-evacuation-records': 'blog-emergency-passport.webp',
+  'natural-disaster-pet-evacuation-records': 'blog-travel-pets.webp',
   'pet-poison-control-information-card-guide': 'blog-emergency-passport.webp',
-  'after-hours-emergency-vet-information-sheet': 'blog-emergency-passport.webp',
+  'after-hours-emergency-vet-information-sheet': 'blog-vet-bill-organizer.webp',
   'lost-pet-search-medical-summary-template': 'blog-microchip-registration.webp',
-  'household-fire-safety-pet-records-plan': 'blog-emergency-passport.webp',
+  'household-fire-safety-pet-records-plan': 'blog-pet-sitter-instructions.webp',
 
   // Pet organization
   'monthly-pet-care-admin-routine-guide': 'blog-daily-checkin.webp',
@@ -79,11 +79,11 @@ export const EXPANDED_BLOG_IMAGE_FILE: Record<string, string> = {
   // Senior pet care
   'senior-cat-medication-and-lab-tracking-guide': 'blog-senior-cat-care.webp',
   'senior-pet-mobility-pain-journal-template': 'blog-senior-dog.webp',
-  'end-of-life-pet-comfort-care-documentation': 'blog-senior-dog.webp',
-  'senior-pet-cognitive-decline-behavior-log': 'blog-senior-dog.webp',
-  'arthritis-management-records-senior-dogs': 'blog-senior-dog.webp',
+  'end-of-life-pet-comfort-care-documentation': 'blog-pet-records-timeline.webp',
+  'senior-pet-cognitive-decline-behavior-log': 'blog-daily-checkin.webp',
+  'arthritis-management-records-senior-dogs': 'blog-labrador-joint-care.webp',
   'senior-pet-nutrition-and-weight-trends': 'blog-dog-weight-tracker.webp',
-  'hospice-vet-coordination-records-guide': 'blog-senior-dog.webp',
+  'hospice-vet-coordination-records-guide': 'blog-medication-reminder.webp',
 
   // New pet owner guides
   'first-30-days-new-dog-owner-records-guide': 'blog-puppy-checklist.webp',

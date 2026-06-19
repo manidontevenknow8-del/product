@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Button, OptimizedImage } from '@/components/ui';
+import { resolveBlogHeroImagePath } from '@/data/blogHeroImageResolver';
 import { LANDING_BLOG_PREVIEW } from '@/data/landingBlogPreview';
-import { getBlogImageForSlug } from '@/data/blogImages';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
 import { ROUTES } from '@/routes/paths';
 import styles from './LandingBlogPreview.module.css';
@@ -23,7 +23,7 @@ export function LandingBlogPreview() {
 
         <div className={styles.grid}>
           {LANDING_BLOG_PREVIEW.map((post) => {
-            const imageSrc = getBlogImageForSlug(post.slug);
+            const imageSrc = resolveBlogHeroImagePath(post.slug, post.title, [], post.category);
             return (
               <article key={post.slug} className={styles.card}>
                 <Link

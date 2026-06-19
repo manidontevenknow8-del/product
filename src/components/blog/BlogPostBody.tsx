@@ -1,4 +1,5 @@
 import { renderBlogMarkdown } from '@/services/blog/blogContentRenderer';
+import { sanitizeBlogTypography } from '@/services/blog/sanitizeBlogTypography';
 import styles from './BlogPostBody.module.css';
 
 type BlogPostBodyProps = {
@@ -6,7 +7,7 @@ type BlogPostBodyProps = {
 };
 
 export function BlogPostBody({ content }: BlogPostBodyProps) {
-  const html = renderBlogMarkdown(content);
+  const html = renderBlogMarkdown(sanitizeBlogTypography(content));
 
   return (
     <div

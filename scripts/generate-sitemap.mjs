@@ -14,6 +14,7 @@ const BLOG_FILES = [
   'seoBlogPostsExtra.ts',
   'mockBlogPosts.ts',
   'expandedBlogConfigs.ts',
+  'dominance/topics.generated.ts',
 ];
 
 /** Extract slug + lastmod from blog source files. */
@@ -23,12 +24,19 @@ function extractBlogEntries() {
   for (const file of BLOG_FILES) {
     const content = readFileSync(join(blogDir, file), 'utf8');
 
-    if (file === 'expandedBlogConfigs.ts') {
-      for (const match of content.matchAll(/slug:\s*'([^']+)'/g)) {
+    if (file === 'expandedBlogConfigs.ts' || file === 'dominance/topics.generated.ts') {
+      for (const match of content.matchAll(/"slug":\s*"([^"]+)"/g)) {
         const slug = match[1];
-        if (slug === 'string') continue;
         if (!slug.includes('-')) continue;
         entries.set(slug, BUILD_DATE);
+      }
+      if (file === 'expandedBlogConfigs.ts') {
+        for (const match of content.matchAll(/slug:\s*'([^']+)'/g)) {
+          const slug = match[1];
+          if (slug === 'string') continue;
+          if (!slug.includes('-')) continue;
+          entries.set(slug, BUILD_DATE);
+        }
       }
       continue;
     }
@@ -84,6 +92,11 @@ const BLOG_CATEGORIES = [
   'exotic-pets',
   'pet-records',
   'petclues-guides',
+  'vet-finance',
+  'breed-lifestyle',
+  'symptom-triage',
+  'pet-travel',
+  'pet-tech',
 ];
 
 const blogEntries = extractBlogEntries();

@@ -97,13 +97,46 @@ type OrderedItem = {
   children: string[];
 };
 
+function isBlockquoteLine(line: string): boolean {
+  return line.trim().startsWith('>');
+}
+
+function parseTableRow(line: string): string[] | null {
+  const trimmed = line.trim();
+  if (!trimmed.startsWith('|') || !trimmed.endsWith('|')) return null;
+  const cells = trimmed
+    .slice(1, -1)
+    .split('|')
+    .map((cell) => cell.trim());
+  if (cells.length < 2) return null;
+  return cells;
+}
+
+function isTableSeparator(cells: string[]): boolean {
+  return cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+}
+
+function parseImageLine(line: string): { alt: string; src: string; caption?: string } | null {
+  const match = line.trim().match(/^!\[([^\]]*)\]\(([^)]+)\)(.*)$/);
+  if (!match) return null;
+  const captionRaw = match[3].trim();
+  return {
+    alt: match[1],
+    src: match[2].trim(),
+    caption: captionRaw.startsWith('*') && captionRaw.endsWith('*') ? captionRaw.slice(1, -1) : undefined,
+  };
+}
+
 type ContentBlock =
   | { type: 'h2'; text: string }
   | { type: 'h3'; text: string }
   | { type: 'p'; text: string }
   | { type: 'ul'; items: string[] }
   | { type: 'ol'; items: OrderedItem[] }
-  | { type: 'faq'; question: string; answer: string };
+  | { type: 'faq'; question: string; answer: string }
+  | { type: 'table'; headers: string[]; rows: string[][] }
+  | { type: 'figure'; alt: string; src: string; caption?: string }
+  | { type: 'cta'; lines: string[] };
 
 /** Parse long-form markdown that uses single newlines between blocks */
 function parseContentBlocks(content: string): ContentBlock[] {
@@ -123,6 +156,46 @@ function parseContentBlocks(content: string): ContentBlock[] {
     if (trimmed.startsWith('### ')) {
       blocks.push({ type: 'h3', text: trimmed.slice(4) });
       i++;
+      continue;
+    }
+
+    if (isBlockquoteLine(line)) {
+      const quoteLines: string[] = [];
+      while (i < lines.length && isBlockquoteLine(lines[i])) {
+        quoteLines.push(lines[i].trim().replace(/^>\s?/, ''));
+        i++;
+      }
+      blocks.push({ type: 'cta', lines: quoteLines.filter(Boolean) });
+      continue;
+    }
+
+    const image = parseImageLine(line);
+    if (image && isSafeHref(image.src)) {
+      blocks.push({ type: 'figure', ...image });
+      i++;
+      continue;
+    }
+
+    const tableRow = parseTableRow(line);
+    if (tableRow) {
+      const headers = tableRow;
+      i++;
+      if (i < lines.length) {
+        const sep = parseTableRow(lines[i]);
+        if (sep && isTableSeparator(sep)) {
+          i++;
+          const rows: string[][] = [];
+          while (i < lines.length) {
+            const row = parseTableRow(lines[i]);
+            if (!row || isTableSeparator(row)) break;
+            rows.push(row);
+            i++;
+          }
+          blocks.push({ type: 'table', headers, rows });
+          continue;
+        }
+      }
+      blocks.push({ type: 'p', text: trimmed });
       continue;
     }
 
@@ -206,7 +279,10 @@ function parseContentBlocks(content: string): ContentBlock[] {
         currentTrimmed.startsWith('## ') ||
         currentTrimmed.startsWith('# ') ||
         isOrderedLine(current) ||
-        isTopLevelBulletLine(current)
+        isTopLevelBulletLine(current) ||
+        isBlockquoteLine(current) ||
+        parseImageLine(current) ||
+        parseTableRow(current)
       ) {
         break;
       }
@@ -257,6 +333,29 @@ function closeOpenWrappers(
   }
 }
 
+function renderTable(headers: string[], rows: string[][]): string {
+  const thead = `<thead><tr>${headers.map((h) => `<th scope="col">${inlineFormat(h)}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${rows
+    .map(
+      (row) =>
+        `<tr>${row.map((cell) => `<td>${inlineFormat(cell)}</td>`).join('')}</tr>`,
+    )
+    .join('')}</tbody>`;
+  return `<div class="blog-table-wrap"><table class="blog-table">${thead}${tbody}</table></div>`;
+}
+
+function renderFigure(alt: string, src: string, caption?: string): string {
+  const cap = caption
+    ? `<figcaption class="blog-figure-caption">${inlineFormat(caption)}</figcaption>`
+    : '';
+  return `<figure class="blog-figure"><img src="${escapeAttr(src)}" alt="${escapeAttr(alt)}" loading="lazy" decoding="async" />${cap}</figure>`;
+}
+
+function renderCta(lines: string[]): string {
+  const inner = lines.map((line) => `<p class="blog-cta-line">${inlineFormat(line)}</p>`).join('');
+  return `<aside class="blog-cta" role="note">${inner}</aside>`;
+}
+
 export function renderBlogMarkdown(content: string): string {
   const blocks = parseContentBlocks(content);
   const html: string[] = [];
@@ -299,6 +398,25 @@ export function renderBlogMarkdown(content: string): string {
         state.introOpen = true;
       }
       html.push(renderUnorderedList(block.items));
+      continue;
+    }
+
+    if (block.type === 'table') {
+      if (!seenFirstH2 && !state.introOpen) {
+        html.push('<div class="blog-intro">');
+        state.introOpen = true;
+      }
+      html.push(renderTable(block.headers, block.rows));
+      continue;
+    }
+
+    if (block.type === 'figure') {
+      html.push(renderFigure(block.alt, block.src, block.caption));
+      continue;
+    }
+
+    if (block.type === 'cta') {
+      html.push(renderCta(block.lines));
       continue;
     }
 
