@@ -2,6 +2,7 @@ import { useState, useEffect, type FormEvent } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { AuthLayout } from '@/layouts/AuthLayout';
 import { Button, Input, LoadingState } from '@/components/ui';
+import { AuthDivider, GoogleSignInButton } from '@/components/auth/GoogleSignInButton';
 import { useAuth } from '@/auth/AuthProvider';
 import { getPostAuthPath } from '@/auth/postAuthRedirect';
 import { useAnalytics } from '@/analytics';
@@ -15,7 +16,7 @@ const LOGIN_VISUAL = {
 } as const;
 
 export function LoginPage() {
-  const { signIn, signOut, isAuthenticated, user, isLoading } = useAuth();
+  const { signIn, signInWithGoogle, signOut, isAuthenticated, user, isLoading } = useAuth();
   const { track } = useAnalytics();
   const navigate = useNavigate();
   const location = useLocation();
@@ -25,6 +26,7 @@ export function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   // Only skip the login form when redirected here from a protected route
   useEffect(() => {
@@ -46,6 +48,27 @@ export function LoginPage() {
       return;
     }
     track('login_completed');
+
+    if (result.emailVerified === false) {
+      navigate(ROUTES.VERIFY_EMAIL, { replace: true });
+      return;
+    }
+
+    navigate(result.needsOnboarding ? ROUTES.ONBOARDING : from, { replace: true });
+  };
+
+  const handleGoogleSignIn = async () => {
+    setError('');
+    setGoogleLoading(true);
+    const result = await signInWithGoogle();
+    setGoogleLoading(false);
+
+    if (result.error) {
+      setError(result.error);
+      return;
+    }
+
+    if (result.emailVerified === undefined) return;
 
     if (result.emailVerified === false) {
       navigate(ROUTES.VERIFY_EMAIL, { replace: true });
@@ -131,6 +154,8 @@ export function LoginPage() {
 
       <form className={styles.form} onSubmit={handleSubmit}>
         {error && <div className={styles.error}>{error}</div>}
+        <GoogleSignInButton onClick={handleGoogleSignIn} loading={googleLoading} disabled={loading} />
+        <AuthDivider />
         <Input
           label="Email"
           type="email"
@@ -152,7 +177,7 @@ export function LoginPage() {
         <div className={styles.forgot}>
           <Link to={ROUTES.FORGOT_PASSWORD}>Forgot password?</Link>
         </div>
-        <Button variant="primary" size="lg" fullWidth type="submit" disabled={loading}>
+        <Button variant="primary" size="lg" fullWidth type="submit" disabled={loading || googleLoading}>
           {loading ? 'Signing in…' : 'Sign in'}
         </Button>
       </form>

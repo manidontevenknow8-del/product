@@ -23,7 +23,20 @@ export async function ensureProfile(
   name: string,
 ): Promise<ProfileRow | null> {
   const existing = await fetchProfile(userId);
-  if (existing) return existing;
+  if (existing) {
+    if (!existing.name?.trim() && name.trim()) {
+      const supabase = getSupabaseClient();
+      const { data, error } = await supabase
+        .from('profiles')
+        .update({ name: name.trim() })
+        .eq('user_id', userId)
+        .select('*')
+        .single();
+
+      if (!error && data) return data;
+    }
+    return existing;
+  }
 
   const supabase = getSupabaseClient();
   const { data, error } = await supabase

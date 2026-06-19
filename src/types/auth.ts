@@ -32,6 +32,15 @@ export type SignInInput = {
   password: string;
 };
 
+export type SignInWithGoogleOptions = {
+  referralCode?: string;
+  fromPetMatch?: boolean;
+};
+
+export type OAuthSignInResult =
+  | { success: true; session?: AuthSession }
+  | { success: false; error: AuthError };
+
 export type AuthError = {
   code: string;
   message: string;

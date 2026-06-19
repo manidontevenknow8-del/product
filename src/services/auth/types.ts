@@ -5,13 +5,16 @@
 import type {
   AuthResult,
   AuthSession,
+  OAuthSignInResult,
   SignInInput,
+  SignInWithGoogleOptions,
   SignUpInput,
 } from '@/types/auth';
 
 export interface IAuthService {
   signUp(input: SignUpInput): Promise<AuthResult>;
   signIn(input: SignInInput): Promise<AuthResult>;
+  signInWithGoogle(options?: SignInWithGoogleOptions): Promise<OAuthSignInResult>;
   signOut(): Promise<void>;
   resetPassword(email: string): Promise<{ success: boolean; error?: string }>;
   getSession(): Promise<AuthSession | null>;

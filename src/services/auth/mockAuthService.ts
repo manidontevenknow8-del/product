@@ -96,6 +96,35 @@ export const mockAuthService: IAuthService = {
     return { success: true, session };
   },
 
+  async signInWithGoogle() {
+    const users = loadUsers();
+    const email = 'google.demo@petclues.com';
+    let found = users.find((u) => u.email === email);
+
+    if (!found) {
+      found = {
+        id: crypto.randomUUID(),
+        name: 'Google Demo User',
+        email,
+        password: '',
+        emailVerified: true,
+        needsOnboarding: true,
+        subscriptionTier: 'free',
+        subscriptionPlan: 'free',
+        subscriptionStatus: 'inactive',
+        createdAt: new Date().toISOString(),
+      };
+      users.push(found);
+      saveUsers(users);
+    }
+
+    const { password: _, ...safeUser } = found;
+    const session = createSession({ ...safeUser, emailVerified: true });
+    saveSession(session);
+    notifyListeners(session);
+    return { success: true, session };
+  },
+
   async signOut() {
     saveSession(null);
     notifyListeners(null);

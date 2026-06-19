@@ -1,6 +1,7 @@
 import type { Session, User as SupabaseUser } from '@supabase/supabase-js';
 import type { AuthSession, User } from '@/types/auth';
 import type { ProfileRow } from '@/services/supabase/database.types';
+import { extractDisplayName } from './extractDisplayName';
 
 export function mapToAuthSession(
   session: Session,
@@ -37,14 +38,11 @@ export function mapToUser(
   profile: ProfileRow | null,
   options?: { hasActiveSession?: boolean },
 ): User {
-  const metadataName =
-    typeof supabaseUser.user_metadata?.name === 'string'
-      ? supabaseUser.user_metadata.name
-      : '';
+  const metadataName = extractDisplayName(supabaseUser);
 
   return {
     id: supabaseUser.id,
-    name: profile?.name ?? metadataName,
+    name: profile?.name?.trim() ? profile.name : metadataName,
     email: supabaseUser.email ?? profile?.email ?? '',
     emailVerified: isEmailVerified(supabaseUser, options?.hasActiveSession ?? false),
     needsOnboarding: !(profile?.onboarding_completed ?? false),

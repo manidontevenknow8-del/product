@@ -5,6 +5,7 @@ export type AnalyticsEventName =
   | 'onboarding_started'
   | 'onboarding_completed'
   | 'login_completed'
+  | 'google_oauth_started'
   | 'pet_created'
   | 'pet_updated'
   | 'reminder_created'

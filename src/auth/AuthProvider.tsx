@@ -11,7 +11,7 @@ import {
 import { eventTracker } from '@/analytics/EventTracker';
 import { authService, type IAuthService } from '@/services/auth/authService';
 import { queueWelcomeEmail } from '@/services/email/queueWelcomeEmail';
-import type { AuthSession, SignInInput, SignUpInput, User } from '@/types/auth';
+import type { AuthSession, SignInInput, SignInWithGoogleOptions, SignUpInput, User } from '@/types/auth';
 
 type SignUpResult = {
   error?: string;
@@ -26,6 +26,12 @@ type SignInResult = {
   needsOnboarding?: boolean;
 };
 
+type GoogleSignInResult = {
+  error?: string;
+  emailVerified?: boolean;
+  needsOnboarding?: boolean;
+};
+
 type AuthContextValue = {
   user: User | null;
   session: AuthSession | null;
@@ -34,6 +40,7 @@ type AuthContextValue = {
   pendingVerificationEmail: string | null;
   signUp: (input: SignUpInput) => Promise<SignUpResult>;
   signIn: (input: SignInInput) => Promise<SignInResult>;
+  signInWithGoogle: (options?: SignInWithGoogleOptions) => Promise<GoogleSignInResult>;
   signOut: () => Promise<void>;
   resetPassword: (email: string) => Promise<{ error?: string }>;
   updatePassword: (password: string) => Promise<{ error?: string }>;
@@ -152,6 +159,34 @@ export function AuthProvider({
     [service],
   );
 
+  const signInWithGoogle = useCallback(
+    async (options?: SignInWithGoogleOptions): Promise<GoogleSignInResult> => {
+      const result = await service.signInWithGoogle(options);
+      if (!result.success) {
+        return { error: result.error.message };
+      }
+
+      if (result.session) {
+        setSession(result.session);
+        setPendingVerificationEmail(null);
+        eventTracker.track('login_completed', {
+          provider: 'google',
+          email_verified: result.session.user.emailVerified,
+          needs_onboarding: result.session.user.needsOnboarding,
+        });
+        void queueWelcomeEmail();
+        return {
+          emailVerified: result.session.user.emailVerified,
+          needsOnboarding: result.session.user.needsOnboarding,
+        };
+      }
+
+      eventTracker.track('google_oauth_started');
+      return {};
+    },
+    [service],
+  );
+
   const signOut = useCallback(async () => {
     await service.signOut();
     setSession(null);
@@ -216,6 +251,7 @@ export function AuthProvider({
       pendingVerificationEmail,
       signUp,
       signIn,
+      signInWithGoogle,
       signOut,
       resetPassword,
       updatePassword,
@@ -230,6 +266,7 @@ export function AuthProvider({
       pendingVerificationEmail,
       signUp,
       signIn,
+      signInWithGoogle,
       signOut,
       resetPassword,
       updatePassword,
