@@ -29,9 +29,9 @@ import type { Reminder, ReminderFilters as ReminderFiltersState } from '@/types/
 import styles from './RemindersPage.module.css';
 
 const IMG = {
-  hero: '/images/reminders/reminders-hero.png',
-  notify: '/images/reminders/reminders-notify.png',
-  vet: '/images/reminders/reminders-vet.png',
+  hero: '/images/reminders/reminders-hero.webp',
+  notify: '/images/reminders/reminders-notify.webp',
+  vet: '/images/reminders/reminders-vet.webp',
 } as const;
 
 const WEEKDAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-06-18T12:52:54.165Z",
+  "validatedAt": "2026-06-19T08:30:12.782Z",
   "routeFamilies": 17,
   "indexedPageTemplates": 518,
   "builders": [
@@ -21,6 +21,18 @@
     },
     {
       "builder": "buildFaqPageSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildQuestionSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildAnswerSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildQAPageSchema",
       "pass": true
     },
     {
@@ -299,5 +311,10 @@
       "pass": true
     }
   ],
+  "faqSchemaFields": {
+    "id": "faq-schema-fields",
+    "pass": true,
+    "missing": []
+  },
   "pass": true
 }

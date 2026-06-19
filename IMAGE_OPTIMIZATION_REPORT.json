@@ -1,0 +1,513 @@
+{
+  "generatedAt": "2026-06-19T08:17:20.638Z",
+  "imageCount": 84,
+  "totalBeforeMb": "152.74",
+  "totalAfterMb": "5.04",
+  "totalSavedMb": "147.70",
+  "images": [
+    {
+      "image": "public/images/blog/blog-pet-records-timeline.webp",
+      "beforeKb": 3059,
+      "afterKb": 86,
+      "savedKb": 2974
+    },
+    {
+      "image": "public/images/profile/profile-hero.webp",
+      "beforeKb": 2661,
+      "afterKb": 120,
+      "savedKb": 2540
+    },
+    {
+      "image": "public/images/blog/blog-flea-tick-prevention.webp",
+      "beforeKb": 2596,
+      "afterKb": 60,
+      "savedKb": 2536
+    },
+    {
+      "image": "public/images/blog/blog-life-stage-care.webp",
+      "beforeKb": 2561,
+      "afterKb": 50,
+      "savedKb": 2511
+    },
+    {
+      "image": "public/images/scan/scan-thumb-2.webp",
+      "beforeKb": 2592,
+      "afterKb": 110,
+      "savedKb": 2481
+    },
+    {
+      "image": "public/images/blog/blog-pet-allergy-tracker.webp",
+      "beforeKb": 2538,
+      "afterKb": 62,
+      "savedKb": 2476
+    },
+    {
+      "image": "public/images/landing/landing-passport.webp",
+      "beforeKb": 2592,
+      "afterKb": 144,
+      "savedKb": 2448
+    },
+    {
+      "image": "public/images/blog/blog-best-pet-health-app.webp",
+      "beforeKb": 2484,
+      "afterKb": 56,
+      "savedKb": 2428
+    },
+    {
+      "image": "public/images/blog/blog-puppy-checklist.webp",
+      "beforeKb": 2467,
+      "afterKb": 45,
+      "savedKb": 2422
+    },
+    {
+      "image": "public/images/blog/blog-dog-dental-care.webp",
+      "beforeKb": 2467,
+      "afterKb": 60,
+      "savedKb": 2407
+    },
+    {
+      "image": "public/images/blog/blog-exotic-pet-records.webp",
+      "beforeKb": 2474,
+      "afterKb": 69,
+      "savedKb": 2405
+    },
+    {
+      "image": "public/images/landing/landing-age.webp",
+      "beforeKb": 2513,
+      "afterKb": 142,
+      "savedKb": 2371
+    },
+    {
+      "image": "public/images/scan/scan-report.webp",
+      "beforeKb": 2471,
+      "afterKb": 107,
+      "savedKb": 2364
+    },
+    {
+      "image": "public/images/blog/blog-daily-checkin.webp",
+      "beforeKb": 2398,
+      "afterKb": 59,
+      "savedKb": 2338
+    },
+    {
+      "image": "public/images/blog/blog-pet-records.webp",
+      "beforeKb": 2363,
+      "afterKb": 44,
+      "savedKb": 2319
+    },
+    {
+      "image": "public/images/blog/blog-medication-reminder.webp",
+      "beforeKb": 2337,
+      "afterKb": 42,
+      "savedKb": 2295
+    },
+    {
+      "image": "public/images/blog/blog-cat-health-records.webp",
+      "beforeKb": 2334,
+      "afterKb": 46,
+      "savedKb": 2288
+    },
+    {
+      "image": "public/images/blog/blog-travel-pets.webp",
+      "beforeKb": 2329,
+      "afterKb": 41,
+      "savedKb": 2288
+    },
+    {
+      "image": "public/images/blog/blog-emergency-passport.webp",
+      "beforeKb": 2329,
+      "afterKb": 48,
+      "savedKb": 2281
+    },
+    {
+      "image": "public/images/scan/scan-thumb-4.webp",
+      "beforeKb": 2384,
+      "afterKb": 104,
+      "savedKb": 2281
+    },
+    {
+      "image": "public/images/blog/blog-pet-boarding.webp",
+      "beforeKb": 2320,
+      "afterKb": 48,
+      "savedKb": 2272
+    },
+    {
+      "image": "public/images/auth/auth-login.webp",
+      "beforeKb": 2357,
+      "afterKb": 87,
+      "savedKb": 2270
+    },
+    {
+      "image": "public/images/landing/landing-how.webp",
+      "beforeKb": 2384,
+      "afterKb": 121,
+      "savedKb": 2263
+    },
+    {
+      "image": "public/images/blog/blog-dog-vaccination-guide.webp",
+      "beforeKb": 2310,
+      "afterKb": 52,
+      "savedKb": 2258
+    },
+    {
+      "image": "public/images/landing/landing-score.webp",
+      "beforeKb": 2384,
+      "afterKb": 130,
+      "savedKb": 2255
+    },
+    {
+      "image": "public/images/app/dashboard-welcome.webp",
+      "beforeKb": 2338,
+      "afterKb": 94,
+      "savedKb": 2244
+    },
+    {
+      "image": "public/images/blog/blog-microchip-registration.webp",
+      "beforeKb": 2285,
+      "afterKb": 42,
+      "savedKb": 2243
+    },
+    {
+      "image": "public/images/blog/blog-pet-sitter-instructions.webp",
+      "beforeKb": 2272,
+      "afterKb": 43,
+      "savedKb": 2229
+    },
+    {
+      "image": "public/images/blog/blog-cat-vaccination.webp",
+      "beforeKb": 2253,
+      "afterKb": 42,
+      "savedKb": 2211
+    },
+    {
+      "image": "public/images/app/pet-match-hero.webp",
+      "beforeKb": 2289,
+      "afterKb": 90,
+      "savedKb": 2199
+    },
+    {
+      "image": "public/images/auth/auth-signup.webp",
+      "beforeKb": 2269,
+      "afterKb": 77,
+      "savedKb": 2193
+    },
+    {
+      "image": "public/images/landing/landing-cta.webp",
+      "beforeKb": 2311,
+      "afterKb": 120,
+      "savedKb": 2190
+    },
+    {
+      "image": "public/images/app/billing-hero.webp",
+      "beforeKb": 2264,
+      "afterKb": 85,
+      "savedKb": 2179
+    },
+    {
+      "image": "public/images/blog/blog-bird-care.webp",
+      "beforeKb": 2236,
+      "afterKb": 58,
+      "savedKb": 2178
+    },
+    {
+      "image": "public/images/auth/auth-recovery.webp",
+      "beforeKb": 2258,
+      "afterKb": 84,
+      "savedKb": 2173
+    },
+    {
+      "image": "public/images/blog/blog-puppy-vaccination.webp",
+      "beforeKb": 2171,
+      "afterKb": 33,
+      "savedKb": 2138
+    },
+    {
+      "image": "public/images/scan/scan-doc-vaccine.webp",
+      "beforeKb": 2207,
+      "afterKb": 72,
+      "savedKb": 2135
+    },
+    {
+      "image": "public/images/app/onboarding-welcome.webp",
+      "beforeKb": 2217,
+      "afterKb": 87,
+      "savedKb": 2131
+    },
+    {
+      "image": "public/images/scan/scan-thumb-3.webp",
+      "beforeKb": 2202,
+      "afterKb": 78,
+      "savedKb": 2125
+    },
+    {
+      "image": "public/images/landing/landing-timeline.webp",
+      "beforeKb": 2202,
+      "afterKb": 94,
+      "savedKb": 2108
+    },
+    {
+      "image": "public/images/app/referrals-hero.webp",
+      "beforeKb": 2196,
+      "afterKb": 90,
+      "savedKb": 2106
+    },
+    {
+      "image": "public/images/app/settings-hero.webp",
+      "beforeKb": 2183,
+      "afterKb": 78,
+      "savedKb": 2105
+    },
+    {
+      "image": "public/images/scan/scan-thumb-1.webp",
+      "beforeKb": 2137,
+      "afterKb": 66,
+      "savedKb": 2071
+    },
+    {
+      "image": "public/images/blog/blog-senior-dog.webp",
+      "beforeKb": 2103,
+      "afterKb": 33,
+      "savedKb": 2070
+    },
+    {
+      "image": "public/images/scan/scan-docs.webp",
+      "beforeKb": 2155,
+      "afterKb": 85,
+      "savedKb": 2070
+    },
+    {
+      "image": "public/images/scan/scan-thumb-6.webp",
+      "beforeKb": 2155,
+      "afterKb": 85,
+      "savedKb": 2070
+    },
+    {
+      "image": "public/images/landing/landing-hero.webp",
+      "beforeKb": 2156,
+      "afterKb": 91,
+      "savedKb": 2066
+    },
+    {
+      "image": "public/images/landing/landing-scan.webp",
+      "beforeKb": 2137,
+      "afterKb": 85,
+      "savedKb": 2052
+    },
+    {
+      "image": "public/images/reminders/reminders-hero.webp",
+      "beforeKb": 2112,
+      "afterKb": 60,
+      "savedKb": 2052
+    },
+    {
+      "image": "public/images/blog/blog-vet-bill-organizer.webp",
+      "beforeKb": 2081,
+      "afterKb": 36,
+      "savedKb": 2046
+    },
+    {
+      "image": "public/images/reminders/reminders-vet.webp",
+      "beforeKb": 2115,
+      "afterKb": 73,
+      "savedKb": 2042
+    },
+    {
+      "image": "public/images/blog/blog-new-kitten-checklist.webp",
+      "beforeKb": 2074,
+      "afterKb": 32,
+      "savedKb": 2041
+    },
+    {
+      "image": "public/images/app/monthly-report-hero.webp",
+      "beforeKb": 2112,
+      "afterKb": 77,
+      "savedKb": 2035
+    },
+    {
+      "image": "public/images/scan/scan-doc-rx.webp",
+      "beforeKb": 2089,
+      "afterKb": 59,
+      "savedKb": 2030
+    },
+    {
+      "image": "public/images/scan/scan-doc-bill.webp",
+      "beforeKb": 2083,
+      "afterKb": 56,
+      "savedKb": 2026
+    },
+    {
+      "image": "public/images/scan/scan-doc-insurance.webp",
+      "beforeKb": 2070,
+      "afterKb": 53,
+      "savedKb": 2017
+    },
+    {
+      "image": "public/images/landing/landing-reminders.webp",
+      "beforeKb": 2109,
+      "afterKb": 94,
+      "savedKb": 2015
+    },
+    {
+      "image": "public/images/blog/blog-heartworm-prevention.webp",
+      "beforeKb": 2049,
+      "afterKb": 35,
+      "savedKb": 2014
+    },
+    {
+      "image": "public/images/blog/blog-dog-weight-tracker.webp",
+      "beforeKb": 2032,
+      "afterKb": 39,
+      "savedKb": 1992
+    },
+    {
+      "image": "public/images/scan/scan-doc-medical.webp",
+      "beforeKb": 2046,
+      "afterKb": 65,
+      "savedKb": 1981
+    },
+    {
+      "image": "public/images/landing/landing-trust.webp",
+      "beforeKb": 2062,
+      "afterKb": 84,
+      "savedKb": 1978
+    },
+    {
+      "image": "public/images/reminders/reminders-notify.webp",
+      "beforeKb": 2039,
+      "afterKb": 62,
+      "savedKb": 1977
+    },
+    {
+      "image": "public/images/profile/profile-vault.webp",
+      "beforeKb": 1934,
+      "afterKb": 48,
+      "savedKb": 1887
+    },
+    {
+      "image": "public/images/app/notfound-hero.webp",
+      "beforeKb": 1820,
+      "afterKb": 36,
+      "savedKb": 1784
+    },
+    {
+      "image": "public/images/scan/scan-doc-label.webp",
+      "beforeKb": 1692,
+      "afterKb": 31,
+      "savedKb": 1661
+    },
+    {
+      "image": "public/images/scan/scan-hero.webp",
+      "beforeKb": 1628,
+      "afterKb": 41,
+      "savedKb": 1588
+    },
+    {
+      "image": "public/images/scan/scan-thumb-5.webp",
+      "beforeKb": 1628,
+      "afterKb": 41,
+      "savedKb": 1588
+    },
+    {
+      "image": "public/images/profile/profile-health.webp",
+      "beforeKb": 1479,
+      "afterKb": 34,
+      "savedKb": 1445
+    },
+    {
+      "image": "public/images/blog/blog-flying-with-cats.webp",
+      "beforeKb": 393,
+      "afterKb": 46,
+      "savedKb": 347
+    },
+    {
+      "image": "public/images/blog/blog-maine-coon-health.webp",
+      "beforeKb": 380,
+      "afterKb": 38,
+      "savedKb": 341
+    },
+    {
+      "image": "public/images/blog/blog-senior-cat-care.webp",
+      "beforeKb": 380,
+      "afterKb": 39,
+      "savedKb": 341
+    },
+    {
+      "image": "public/images/blog/blog-dachshund-mobility.webp",
+      "beforeKb": 367,
+      "afterKb": 35,
+      "savedKb": 331
+    },
+    {
+      "image": "public/images/blog/blog-snake-care.webp",
+      "beforeKb": 374,
+      "afterKb": 54,
+      "savedKb": 320
+    },
+    {
+      "image": "public/images/blog/blog-guinea-pig-wellness.webp",
+      "beforeKb": 344,
+      "afterKb": 40,
+      "savedKb": 304
+    },
+    {
+      "image": "public/images/blog/blog-rabbit-care.webp",
+      "beforeKb": 329,
+      "afterKb": 32,
+      "savedKb": 298
+    },
+    {
+      "image": "public/images/blog/blog-german-shepherd-hip.webp",
+      "beforeKb": 325,
+      "afterKb": 35,
+      "savedKb": 290
+    },
+    {
+      "image": "public/images/blog/blog-poodle-grooming-health.webp",
+      "beforeKb": 317,
+      "afterKb": 29,
+      "savedKb": 288
+    },
+    {
+      "image": "public/images/blog/blog-siamese-cat-wellness.webp",
+      "beforeKb": 306,
+      "afterKb": 19,
+      "savedKb": 288
+    },
+    {
+      "image": "public/images/blog/blog-french-bulldog-health.webp",
+      "beforeKb": 298,
+      "afterKb": 23,
+      "savedKb": 275
+    },
+    {
+      "image": "public/images/blog/blog-labrador-joint-care.webp",
+      "beforeKb": 281,
+      "afterKb": 21,
+      "savedKb": 260
+    },
+    {
+      "image": "public/images/blog/blog-ferret-care.webp",
+      "beforeKb": 284,
+      "afterKb": 27,
+      "savedKb": 257
+    },
+    {
+      "image": "public/images/petclues-logo.webp",
+      "beforeKb": 50,
+      "afterKb": 11,
+      "savedKb": 39
+    },
+    {
+      "image": "public/images/petclues-icon-square.webp",
+      "beforeKb": 14,
+      "afterKb": 5,
+      "savedKb": 10
+    },
+    {
+      "image": "public/images/petclues-icon.webp",
+      "beforeKb": 1,
+      "afterKb": 1,
+      "savedKb": 1
+    }
+  ]
+}

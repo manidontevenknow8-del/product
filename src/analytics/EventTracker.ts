@@ -4,15 +4,20 @@ import type {
   AnalyticsEventName,
 } from '@/types/analytics';
 import { sanitizeEventProperties } from './sanitizeProperties';
-import {
-  capturePostHogEvent,
-  identifyPostHogUser,
-  isPostHogEnabled,
-  resetPostHog,
-} from './posthog';
 
 const STORAGE_KEY = 'petclues_analytics_events';
 const MAX_STORED_EVENTS = 200;
+
+async function withPostHog(
+  run: (api: typeof import('./posthog')) => void | Promise<void>,
+): Promise<void> {
+  try {
+    const api = await import('./posthog');
+    await run(api);
+  } catch {
+    // Analytics must never block UI.
+  }
+}
 
 export interface IAnalyticsAdapter {
   name: AnalyticsAdapterName;
@@ -57,23 +62,29 @@ export const localStorageAdapter: IAnalyticsAdapter = {
 export const posthogAdapter: IAnalyticsAdapter = {
   name: 'posthog',
   track(event) {
-    if (!isPostHogEnabled()) return;
-    const properties = event.properties
-      ? (Object.fromEntries(
-          Object.entries(event.properties).filter(([, value]) => value !== null),
-        ) as Record<string, string | number | boolean>)
-      : undefined;
-    capturePostHogEvent(event.name, properties);
+    void withPostHog(({ isPostHogEnabled, capturePostHogEvent }) => {
+      if (!isPostHogEnabled()) return;
+      const properties = event.properties
+        ? (Object.fromEntries(
+            Object.entries(event.properties).filter(([, value]) => value !== null),
+          ) as Record<string, string | number | boolean>)
+        : undefined;
+      capturePostHogEvent(event.name, properties);
+    });
   },
   identify(userId, traits) {
-    if (!isPostHogEnabled()) return;
-    identifyPostHogUser(userId, traits);
+    void withPostHog(({ isPostHogEnabled, identifyPostHogUser }) => {
+      if (!isPostHogEnabled()) return;
+      identifyPostHogUser(userId, traits);
+    });
   },
   pageView(path, title) {
-    if (!isPostHogEnabled()) return;
-    capturePostHogEvent('$pageview', {
-      path,
-      title: title ?? path,
+    void withPostHog(({ isPostHogEnabled, capturePostHogEvent }) => {
+      if (!isPostHogEnabled()) return;
+      capturePostHogEvent('$pageview', {
+        path,
+        title: title ?? path,
+      });
     });
   },
 };
@@ -134,7 +145,7 @@ export class EventTracker {
     }
     // Only reset on sign-out - not on initial anonymous page load.
     if (hadUser) {
-      resetPostHog();
+      void withPostHog(({ resetPostHog }) => resetPostHog());
     }
   }
 

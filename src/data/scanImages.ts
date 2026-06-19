@@ -1,24 +1,24 @@
 /** Public paths for scan page imagery */
 export const SCAN_IMG = {
-  hero: '/images/scan/scan-hero.png',
-  docs: '/images/scan/scan-docs.png',
-  report: '/images/scan/scan-report.png',
-  docBill: '/images/scan/scan-doc-bill.png',
-  docVaccine: '/images/scan/scan-doc-vaccine.png',
-  docRx: '/images/scan/scan-doc-rx.png',
-  docMedical: '/images/scan/scan-doc-medical.png',
-  docInsurance: '/images/scan/scan-doc-insurance.png',
-  docLabel: '/images/scan/scan-doc-label.png',
+  hero: '/images/scan/scan-hero.webp',
+  docs: '/images/scan/scan-docs.webp',
+  report: '/images/scan/scan-report.webp',
+  docBill: '/images/scan/scan-doc-bill.webp',
+  docVaccine: '/images/scan/scan-doc-vaccine.webp',
+  docRx: '/images/scan/scan-doc-rx.webp',
+  docMedical: '/images/scan/scan-doc-medical.webp',
+  docInsurance: '/images/scan/scan-doc-insurance.webp',
+  docLabel: '/images/scan/scan-doc-label.webp',
 } as const;
 
 /** Rotating thumbnails for saved report cards */
 export const REPORT_THUMB_IMAGES = [
-  '/images/scan/scan-thumb-1.png',
-  '/images/scan/scan-thumb-2.png',
-  '/images/scan/scan-thumb-3.png',
-  '/images/scan/scan-thumb-4.png',
-  '/images/scan/scan-thumb-5.png',
-  '/images/scan/scan-thumb-6.png',
+  '/images/scan/scan-thumb-1.webp',
+  '/images/scan/scan-thumb-2.webp',
+  '/images/scan/scan-thumb-3.webp',
+  '/images/scan/scan-thumb-4.webp',
+  '/images/scan/scan-thumb-5.webp',
+  '/images/scan/scan-thumb-6.webp',
   SCAN_IMG.report,
   SCAN_IMG.docs,
 ] as const;

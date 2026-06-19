@@ -4,7 +4,7 @@ import { savePendingPetMatch } from '@/data/petMatchStorage';
 import { ROUTES } from '@/routes/paths';
 import styles from './PetMatchSaveMatchesPanel.module.css';
 
-const EDITORIAL_IMAGE_URL = '/images/app/pet-match-hero.png';
+const EDITORIAL_IMAGE_URL = '/images/app/pet-match-hero.webp';
 
 type PetMatchSaveMatchesPanelProps = {
   isAuthenticated: boolean;

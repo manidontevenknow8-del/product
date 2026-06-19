@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button, Badge } from '@/components/ui';
+import { Button, Badge, OptimizedImage } from '@/components/ui';
 import { LANDING_IMG } from '@/data/landingImages';
 import { ROUTES } from '@/routes/paths';
 import styles from './HeroSection.module.css';
@@ -11,12 +11,12 @@ export function HeroSection() {
 
   return (
     <section className={styles.hero} aria-label="PetClues introduction">
-      <img
+      <OptimizedImage
         className={styles.heroImg}
         src={LANDING_IMG.hero}
         alt=""
-        aria-hidden
-        fetchPriority="high"
+        priority
+        sizes="100vw"
       />
       <div className={styles.heroScrim} aria-hidden />
 

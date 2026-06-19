@@ -1,0 +1,431 @@
+{
+  "generatedAt": "2026-06-19T08:17:20.631Z",
+  "images": {
+    "/images/app/billing-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/dashboard-welcome.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/monthly-report-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/notfound-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/onboarding-welcome.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/pet-match-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/referrals-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/app/settings-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/auth/auth-login.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/auth/auth-recovery.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/auth/auth-signup.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/blog/blog-best-pet-health-app.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-bird-care.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-cat-health-records.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-cat-vaccination.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-dachshund-mobility.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-daily-checkin.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-dog-dental-care.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-dog-vaccination-guide.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-dog-weight-tracker.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-emergency-passport.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-exotic-pet-records.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-ferret-care.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-flea-tick-prevention.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-flying-with-cats.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-french-bulldog-health.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-german-shepherd-hip.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-guinea-pig-wellness.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-heartworm-prevention.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-labrador-joint-care.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-life-stage-care.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-maine-coon-health.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-medication-reminder.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-microchip-registration.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-new-kitten-checklist.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-pet-allergy-tracker.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-pet-boarding.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-pet-records-timeline.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-pet-records.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-pet-sitter-instructions.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-poodle-grooming-health.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-puppy-checklist.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-puppy-vaccination.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-rabbit-care.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-senior-cat-care.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-senior-dog.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-siamese-cat-wellness.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-snake-care.webp": {
+      "width": 800,
+      "height": 420,
+      "variants": {}
+    },
+    "/images/blog/blog-travel-pets.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/blog/blog-vet-bill-organizer.webp": {
+      "width": 800,
+      "height": 533,
+      "variants": {}
+    },
+    "/images/landing/landing-age.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-cta.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-hero.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {
+        "640": "/images/landing/landing-hero-640w.webp",
+        "1024": "/images/landing/landing-hero-1024w.webp",
+        "1920": "/images/landing/landing-hero-1920w.webp"
+      },
+      "sizes": "100vw",
+      "srcSet": "/images/landing/landing-hero-640w.webp 640w, /images/landing/landing-hero-1024w.webp 1024w, /images/landing/landing-hero-1920w.webp 1920w"
+    },
+    "/images/landing/landing-how.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-passport.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-reminders.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-scan.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-score.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-timeline.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/landing/landing-trust.webp": {
+      "width": 1400,
+      "height": 933,
+      "variants": {}
+    },
+    "/images/petclues-icon-square.webp": {
+      "width": 193,
+      "height": 193,
+      "variants": {}
+    },
+    "/images/petclues-icon.webp": {
+      "width": 32,
+      "height": 32,
+      "variants": {}
+    },
+    "/images/petclues-logo.webp": {
+      "width": 600,
+      "height": 193,
+      "variants": {}
+    },
+    "/images/profile/profile-health.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/profile/profile-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/profile/profile-vault.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/reminders/reminders-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/reminders/reminders-notify.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/reminders/reminders-vet.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-doc-bill.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-doc-insurance.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-doc-label.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-doc-medical.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-doc-rx.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-doc-vaccine.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-docs.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-hero.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-report.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-thumb-1.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-thumb-2.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-thumb-3.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-thumb-4.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-thumb-5.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    },
+    "/images/scan/scan-thumb-6.webp": {
+      "width": 1200,
+      "height": 800,
+      "variants": {}
+    }
+  }
+}

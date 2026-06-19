@@ -1,4 +1,5 @@
 import { LANDING_IMG } from '@/data/landingImages';
+import { OptimizedImage } from '@/components/ui';
 import styles from './HowItWorks.module.css';
 
 const steps = [
@@ -34,11 +35,10 @@ export function HowItWorks() {
       <div className="container">
         <div className={styles.layout}>
           <div className={styles.visual}>
-            <img
+            <OptimizedImage
               src={LANDING_IMG.how}
               alt="Couple relaxing at home with their dog and cat"
               className={styles.visualImg}
-              loading="lazy"
             />
           </div>
 

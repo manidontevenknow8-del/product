@@ -7,12 +7,15 @@
     "dev": "vite",
     "build": "node scripts/generate-sitemap.mjs && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && tsc -b && vite build",
     "generate:blog-images": "node scripts/generate-blog-images.mjs",
+    "optimize:images": "node scripts/optimize-images.mjs",
     "preview": "vite preview",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "validate:schema": "node scripts/validate-schema-coverage.mjs",
     "validate:links": "node scripts/validate-internal-linking.mjs"
   },
   "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.11",
+    "@fontsource/inter": "^5.2.8",
     "@supabase/supabase-js": "^2.106.2",
     "html-to-image": "^1.11.13",
     "posthog-js": "^1.382.0",

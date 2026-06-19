@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui';
-import { SEO_BLOG_POSTS } from '@/services/blog/seoBlogPosts';
-import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
+import { Button, OptimizedImage } from '@/components/ui';
+import { LANDING_BLOG_PREVIEW } from '@/data/landingBlogPreview';
+import { getBlogImageForSlug } from '@/data/blogImages';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
 import { ROUTES } from '@/routes/paths';
 import styles from './LandingBlogPreview.module.css';
-
-const PREVIEW_POSTS = SEO_BLOG_POSTS.slice(0, 3);
 
 export function LandingBlogPreview() {
   return (
@@ -24,32 +22,33 @@ export function LandingBlogPreview() {
         </div>
 
         <div className={styles.grid}>
-          {PREVIEW_POSTS.map((post) => {
-            const imageSrc = resolveBlogFeaturedImage(post.slug, post.featuredImage);
+          {LANDING_BLOG_PREVIEW.map((post) => {
+            const imageSrc = getBlogImageForSlug(post.slug);
             return (
-            <article key={post.slug} className={styles.card}>
-              {imageSrc && (
-                <Link to={`${ROUTES.BLOG}/${post.slug}`} className={styles.mediaLink}>
-                  <img
-                    src={imageSrc}
-                    alt={post.title}
-                    className={styles.image}
-                    loading="lazy"
-                  />
+              <article key={post.slug} className={styles.card}>
+                <Link
+                  to={`${ROUTES.BLOG}/${post.slug}`}
+                  className={styles.mediaLink}
+                  aria-label={`Read guide: ${post.title}`}
+                >
+                  <OptimizedImage src={imageSrc} alt="" className={styles.image} />
                 </Link>
-              )}
-              <div className={styles.body}>
-                <span className={styles.category}>{getBlogCategoryLabel(post.category)}</span>
-                <h3 className={styles.cardTitle}>
-                  <Link to={`${ROUTES.BLOG}/${post.slug}`}>{post.title}</Link>
-                </h3>
-                <p className={styles.excerpt}>{post.excerpt}</p>
-                <Link to={`${ROUTES.BLOG}/${post.slug}`} className={styles.readMore}>
-                  Read guide →
-                </Link>
-              </div>
-            </article>
-          );
+                <div className={styles.body}>
+                  <span className={styles.category}>{getBlogCategoryLabel(post.category)}</span>
+                  <h3 className={styles.cardTitle}>
+                    <Link to={`${ROUTES.BLOG}/${post.slug}`}>{post.title}</Link>
+                  </h3>
+                  <p className={styles.excerpt}>{post.excerpt}</p>
+                  <Link
+                    to={`${ROUTES.BLOG}/${post.slug}`}
+                    className={styles.readMore}
+                    aria-label={`Read guide: ${post.title}`}
+                  >
+                    Read guide →
+                  </Link>
+                </div>
+              </article>
+            );
           })}
         </div>
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
+import { MarketingHeader } from '@/components/layout/MarketingHeader';
 import { scrollToLandingSectionWhenReady } from '@/utils/landingSectionScroll';
 import {
   HeroSection,
@@ -13,7 +14,7 @@ import {
 } from '@/components/landing';
 import styles from './LandingPage.module.css';
 
-export function LandingPage() {
+export function LandingPage({ marketingShell = false }: { marketingShell?: boolean }) {
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -23,7 +24,7 @@ export function LandingPage() {
 
   return (
     <div className={styles.page}>
-      <Header variant="landing" />
+      {marketingShell ? <MarketingHeader /> : <Header variant="landing" />}
       <main className={styles.main}>
         <HeroSection />
         <FeatureHighlights />

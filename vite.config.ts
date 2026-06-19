@@ -14,8 +14,28 @@ export default defineConfig({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
+            return 'vendor-react';
+          }
+          if (id.includes('node_modules/react-router')) {
+            return 'vendor-router';
+          }
+          if (id.includes('node_modules/posthog-js')) {
+            return 'vendor-posthog';
+          }
+          if (id.includes('node_modules/@supabase')) {
+            return 'vendor-supabase';
+          }
+          if (id.includes('expandedBlogPosts') || id.includes('mockBlogPosts') || id.includes('seoBlogPosts')) {
+            return 'data-blog';
+          }
+          if (id.includes('/data/faq/') || id.includes('faqQuestionBank')) {
+            return 'data-faq';
+          }
+          if (id.includes('/data/programmatic/') || id.includes('/data/learn/')) {
+            return 'data-seo';
+          }
         },
       },
     },

@@ -27,9 +27,9 @@ import { ROUTES } from '@/routes/paths';
 import styles from './PetProfilePage.module.css';
 
 const IMG = {
-  hero: '/images/profile/profile-hero.png',
-  health: '/images/profile/profile-health.png',
-  vault: '/images/profile/profile-vault.png',
+  hero: '/images/profile/profile-hero.webp',
+  health: '/images/profile/profile-health.webp',
+  vault: '/images/profile/profile-vault.webp',
 } as const;
 
 const speciesLabel: Record<string, string> = {

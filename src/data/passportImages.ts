@@ -1,11 +1,11 @@
 /** Passport section art - topic-matched scan/reminder assets */
 export const PASSPORT_IMG = {
-  highlight: '/images/landing/landing-passport.png',
-  vaccinations: '/images/scan/scan-doc-vaccine.png',
-  allergies: '/images/scan/scan-doc-label.png',
-  medications: '/images/scan/scan-doc-rx.png',
-  conditions: '/images/scan/scan-doc-medical.png',
-  emergencyNotes: '/images/reminders/reminders-vet.png',
+  highlight: '/images/landing/landing-passport.webp',
+  vaccinations: '/images/scan/scan-doc-vaccine.webp',
+  allergies: '/images/scan/scan-doc-label.webp',
+  medications: '/images/scan/scan-doc-rx.webp',
+  conditions: '/images/scan/scan-doc-medical.webp',
+  emergencyNotes: '/images/reminders/reminders-vet.webp',
 } as const;
 
 /** Absolute URL for off-screen export capture (html-to-image) */

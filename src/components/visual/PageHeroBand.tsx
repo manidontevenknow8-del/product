@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from 'react';
+import { OptimizedImage } from '@/components/ui';
 import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import styles from './PageHeroBand.module.css';
 
@@ -41,7 +42,12 @@ export function PageHeroBand({
       className={`${styles.hero} ${compact ? styles.heroCompact : ''}`}
       aria-labelledby="page-hero-title"
     >
-      <img src={image} alt={imageAlt} className={styles.heroImg} aria-hidden={!imageAlt} />
+      <OptimizedImage
+        src={image}
+        alt={imageAlt}
+        className={styles.heroImg}
+        priority={!compact}
+      />
       <div className={styles.scrim} aria-hidden />
 
       {topActions}

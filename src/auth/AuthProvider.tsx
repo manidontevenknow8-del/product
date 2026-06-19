@@ -9,7 +9,6 @@ import {
   type ReactNode,
 } from 'react';
 import { eventTracker } from '@/analytics/EventTracker';
-import { capturePostHogEvent } from '@/analytics/posthog';
 import { authService, type IAuthService } from '@/services/auth/authService';
 import { queueWelcomeEmail } from '@/services/email/queueWelcomeEmail';
 import type { AuthSession, SignInInput, SignUpInput, User } from '@/types/auth';
@@ -139,9 +138,11 @@ export function AuthProvider({
         email_verified: result.session.user.emailVerified,
         needs_onboarding: result.session.user.needsOnboarding,
       });
-      capturePostHogEvent('user_logged_in', {
-        email_verified: result.session.user.emailVerified,
-        needs_onboarding: result.session.user.needsOnboarding,
+      void import('@/analytics/posthog').then(({ capturePostHogEvent }) => {
+        capturePostHogEvent('user_logged_in', {
+          email_verified: result.session.user.emailVerified,
+          needs_onboarding: result.session.user.needsOnboarding,
+        });
       });
       return {
         emailVerified: result.session.user.emailVerified,

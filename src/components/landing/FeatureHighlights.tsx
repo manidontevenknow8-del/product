@@ -1,4 +1,5 @@
 import { LANDING_IMG } from '@/data/landingImages';
+import { OptimizedImage } from '@/components/ui';
 import styles from './FeatureHighlights.module.css';
 
 type FeatureSpan = 'wide' | 'trio' | 'full';
@@ -86,7 +87,7 @@ export function FeatureHighlights() {
               className={`${styles.feature} ${SPAN_CLASS[feature.span]}`}
             >
               <div className={styles.media}>
-                <img src={feature.image} alt={feature.alt} className={styles.image} loading="lazy" />
+                <OptimizedImage src={feature.image} alt={feature.alt} className={styles.image} />
               </div>
               <div className={styles.copy}>
                 <h3 className={styles.featureTitle}>{feature.title}</h3>

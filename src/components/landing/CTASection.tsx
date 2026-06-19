@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui';
+import { Button, OptimizedImage } from '@/components/ui';
 import { LANDING_IMG } from '@/data/landingImages';
 import { ROUTES } from '@/routes/paths';
 import styles from './CTASection.module.css';
@@ -12,12 +12,10 @@ export function CTASection() {
       aria-labelledby="landing-cta-title"
     >
       <div className={styles.banner}>
-        <img
+        <OptimizedImage
           className={styles.bannerImg}
           src={LANDING_IMG.cta}
           alt=""
-          aria-hidden
-          loading="lazy"
         />
         <div className={styles.bannerScrim} aria-hidden />
         <div className={styles.inner}>

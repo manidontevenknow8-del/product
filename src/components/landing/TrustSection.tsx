@@ -1,4 +1,5 @@
 import { LANDING_IMG } from '@/data/landingImages';
+import { OptimizedImage } from '@/components/ui';
 import styles from './TrustSection.module.css';
 
 const trustPoints = [
@@ -30,11 +31,10 @@ export function TrustSection() {
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.visual}>
-            <img
+            <OptimizedImage
               src={LANDING_IMG.trust}
               alt="Trusted pet care items including stethoscope and resting cat"
               className={styles.visualImg}
-              loading="lazy"
             />
           </div>
 
