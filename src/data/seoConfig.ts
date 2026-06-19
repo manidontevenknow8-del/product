@@ -30,7 +30,7 @@ export const HOME_OG_DESCRIPTION = HOME_DESCRIPTION;
 export const BRAND_THEME_COLOR = '#2C3E35';
 export const BRAND_BG_COLOR = '#F7F4EF';
 
-/** Social share image (1200x630). Square logo: /logo.png for schema & favicons. */
+/** Social share image (1200x630). Square brand mark: /logo.png (from /logo-source.png). */
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const BRAND_LOGO_URL = `${SITE_URL}/logo.png`;
 const OG_IMAGE_ALT = 'PetClues - AI-powered pet health management';
