@@ -26,15 +26,15 @@ export function FullProviders({ children }: FullProvidersProps) {
             <ReminderProvider>
               <HealthRecordProvider>
                 <GrowthProvider>
-                  <PetCareScoreProvider>
-                    <DailyCheckInProvider>
+                  <DailyCheckInProvider>
+                    <PetCareScoreProvider>
                       <SettingsProvider>
                         <AnalyticsProvider>
                           <SEOProvider>{children}</SEOProvider>
                         </AnalyticsProvider>
                       </SettingsProvider>
-                    </DailyCheckInProvider>
-                  </PetCareScoreProvider>
+                    </PetCareScoreProvider>
+                  </DailyCheckInProvider>
                 </GrowthProvider>
               </HealthRecordProvider>
             </ReminderProvider>

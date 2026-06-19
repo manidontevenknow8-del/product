@@ -5,3 +5,4 @@ export {
   summarizeCheckInWeek,
   checkInsInMonth,
 } from './dailyCheckInService';
+export { formatCheckInWeightLabel, syncCheckInWeightRecord } from './syncCheckInWeightRecord';

@@ -4,6 +4,7 @@ export type DailyCheckIn = {
   checkInDate: string;
   feeding: string;
   walkDistanceKm: number | null;
+  weightKg: number | null;
   notes: string | null;
   createdAt: string;
   updatedAt: string;
@@ -14,6 +15,7 @@ export type UpsertDailyCheckInInput = {
   checkInDate: string;
   feeding: string;
   walkDistanceKm?: number | null;
+  weightKg?: number | null;
   notes?: string | null;
 };
 

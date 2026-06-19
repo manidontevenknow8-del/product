@@ -4,6 +4,10 @@ import type { PetRecord } from '@/services/pets/petTypes';
 import { formatPetAge, formatPassportUpdatedAt, getAvatarInitials } from '@/services/pets/petUtils';
 import { formatHealthRecordDate } from '@/services/healthRecords/healthRecordMappers';
 import { ROUTES } from '@/routes/paths';
+import type { DailyCheckIn } from '@/types/dailyCheckIn';
+import { buildPassportCareContext, type PassportCareContext } from './passportCareContext';
+
+export type { PassportCareContext, PassportDailyCareEntry, PassportWeightEntry } from './passportCareContext';
 
 function passportShareUrl(): string {
   const origin =
@@ -38,10 +42,12 @@ export type PassportSummaryStats = {
 export type PassportData = {
   identity: PassportIdentity;
   stats: PassportSummaryStats;
+  careContext: PassportCareContext;
   vaccinations: HealthRecord[];
   allergies: HealthRecord[];
   medications: HealthRecord[];
   conditions: HealthRecord[];
+  weightRecords: HealthRecord[];
   emergencyNotes: string;
   documents: PetDocumentRecord[];
 };
@@ -124,6 +130,7 @@ export function buildPassportSummary(
   pet: PetRecord,
   records: HealthRecord[],
   documents: PetDocumentRecord[],
+  dailyCheckIns: DailyCheckIn[] = [],
 ): PassportData {
   const vaccinations = sortByDateDesc(records.filter((r) => r.recordType === 'vaccination'));
   const allergies = sortByDateDesc(records.filter((r) => r.recordType === 'allergy'));
@@ -131,9 +138,12 @@ export function buildPassportSummary(
   const conditions = sortByDateDesc(
     records.filter((r) => r.recordType === 'diagnosis' || r.recordType === 'surgery'),
   );
+  const weightRecords = sortByDateDesc(records.filter((r) => r.recordType === 'weight'));
+  const careContext = buildPassportCareContext(pet, records, dailyCheckIns);
 
   const identity: PassportIdentity = {
     ...buildPassportIdentity(pet),
+    weight: careContext.latestWeight,
     lastUpdated: resolveLastUpdated(pet, records, documents),
   };
 
@@ -146,10 +156,12 @@ export function buildPassportSummary(
       latestVaccination: vaccinations[0] ?? null,
       documentCount: documents.length,
     },
+    careContext,
     vaccinations,
     allergies,
     medications,
     conditions,
+    weightRecords,
     emergencyNotes: buildEmergencyNotes(records),
     documents,
   };

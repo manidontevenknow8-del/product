@@ -3,12 +3,14 @@ import type { HealthRecord } from '@/services/healthRecords/healthRecordTypes';
 import type { PassportData } from '@/services/passport/passportSummaryService';
 import type { PetRecord } from '@/services/pets/petTypes';
 import type { Reminder } from '@/types/reminder';
+import type { DailyCheckIn } from '@/types/dailyCheckIn';
 
 export type PetCareScoreInput = {
   pet: PetRecord;
   healthRecords: HealthRecord[];
   documents: PetDocumentRecord[];
   reminders: Reminder[];
+  dailyCheckIns: DailyCheckIn[];
   passport: PassportData;
   previousFactorScores?: Partial<Record<string, number>>;
   previousOverallScore?: number;

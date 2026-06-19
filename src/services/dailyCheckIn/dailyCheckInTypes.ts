@@ -16,6 +16,7 @@ export function mapDailyCheckInRow(row: DailyCheckInRow): DailyCheckIn {
     checkInDate: row.check_in_date,
     feeding: row.feeding,
     walkDistanceKm: row.walk_distance_km,
+    weightKg: row.weight_kg ?? null,
     notes: row.notes,
     createdAt: row.created_at,
     updatedAt: row.updated_at,

@@ -92,12 +92,14 @@ function scoreReminderCompletionRate(reminders: Reminder[]): number {
 
 function scorePassportCompleteness(passport: PetCareScoreInput['passport']): number {
   let points = 0;
-  if (passport.vaccinations.length > 0) points += 25;
-  if (passport.allergies.length > 0) points += 15;
-  if (passport.medications.length > 0) points += 20;
-  if (passport.conditions.length > 0) points += 15;
-  if (passport.emergencyNotes !== 'No emergency notes recorded.') points += 10;
-  if (passport.documents.length > 0) points += 15;
+  if (passport.vaccinations.length > 0) points += 22;
+  if (passport.allergies.length > 0) points += 12;
+  if (passport.medications.length > 0) points += 18;
+  if (passport.conditions.length > 0) points += 12;
+  if (passport.emergencyNotes !== 'No emergency notes recorded.') points += 8;
+  if (passport.documents.length > 0) points += 13;
+  if (passport.weightRecords.length > 0 || passport.careContext.latestWeight) points += 8;
+  if (passport.careContext.recentDailyCare.length > 0) points += 7;
   return Math.min(100, points);
 }
 
@@ -311,9 +313,11 @@ export function computePetCareScore(input: PetCareScoreInput): PetCareScoreData 
       passportScore,
       passportScore >= 85
         ? 'Emergency passport sections are well populated.'
-        : 'Passport is missing key emergency details.',
+        : input.passport.careContext.recentDailyCare.length === 0
+          ? 'Passport is missing key emergency details and recent daily care logs.'
+          : 'Passport is missing key emergency details.',
       passportScore < 85
-        ? 'Fill vaccinations, allergies, medications, and notes on the passport.'
+        ? 'Fill vaccinations, allergies, medications, daily check-ins, and weight on the passport.'
         : undefined,
     ),
   ];
@@ -426,7 +430,13 @@ function buildSummary(score: number, helpingCount: number, improvingCount: numbe
 export function computePetCareScoreFromSources(
   input: Omit<PetCareScoreInput, 'passport'>,
 ): PetCareScoreData {
-  const passport = buildPassportSummary(input.pet, input.healthRecords, input.documents);
+  const petCheckIns = input.dailyCheckIns.filter((checkIn) => checkIn.petId === input.pet.id);
+  const passport = buildPassportSummary(
+    input.pet,
+    input.healthRecords,
+    input.documents,
+    petCheckIns,
+  );
   return computePetCareScore({ ...input, passport });
 }
 

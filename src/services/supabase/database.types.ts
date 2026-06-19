@@ -46,6 +46,7 @@ export type DailyCheckInRow = {
   check_in_date: string;
   feeding: string;
   walk_distance_km: number | null;
+  weight_kg: number | null;
   notes: string | null;
   created_at: string;
   updated_at: string;
@@ -350,6 +351,7 @@ export type Database = {
           check_in_date: string;
           feeding: string;
           walk_distance_km?: number | null;
+          weight_kg?: number | null;
           notes?: string | null;
           created_at?: string;
           updated_at?: string;
@@ -360,6 +362,7 @@ export type Database = {
           check_in_date?: string;
           feeding?: string;
           walk_distance_km?: number | null;
+          weight_kg?: number | null;
           notes?: string | null;
           created_at?: string;
           updated_at?: string;

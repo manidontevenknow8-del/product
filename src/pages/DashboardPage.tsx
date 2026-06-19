@@ -126,10 +126,16 @@ function StatsStrip({
   upcoming,
   overdue,
   score,
+  weight,
+  todayFed,
+  weekWalkKm,
 }: {
   upcoming: number;
   overdue: number;
   score: number | null;
+  weight: string | null;
+  todayFed: string | null;
+  weekWalkKm: number;
 }) {
   return (
     <div className={styles.statsStrip} aria-label="Care summary">
@@ -144,6 +150,20 @@ function StatsStrip({
       <div className={styles.statPill}>
         <span className={styles.statValue}>{score ?? '-'}</span>
         <span className={styles.statLabel}>care score</span>
+      </div>
+      <div className={styles.statPill}>
+        <span className={styles.statValue}>{weight ?? '-'}</span>
+        <span className={styles.statLabel}>weight</span>
+      </div>
+      <div className={styles.statPill}>
+        <span className={styles.statValue}>{weekWalkKm > 0 ? weekWalkKm : '-'}</span>
+        <span className={styles.statLabel}>km this week</span>
+      </div>
+      <div className={styles.statPill}>
+        <span className={styles.statValue} title={todayFed ?? undefined}>
+          {todayFed ? (todayFed.length > 18 ? `${todayFed.slice(0, 18)}…` : todayFed) : '-'}
+        </span>
+        <span className={styles.statLabel}>fed today</span>
       </div>
     </div>
   );
@@ -480,10 +500,10 @@ export function DashboardPage() {
   }, []);
 
   const { reminders, stats: reminderStats } = useReminders();
-  const { records } = useHealthRecords();
+  const { records, healthSummary } = useHealthRecords();
   const { documents } = useDocuments();
   const { data: scoreData, isLoading: scoreLoading } = usePetCareScore();
-  const { checkIns } = useDailyCheckIn();
+  const { checkIns, todayCheckIn, weekSummary } = useDailyCheckIn();
   const { canAccess, currentPlan } = useSubscription();
   const timelineAccess = useFeatureAccess('timelineHistory');
   const aiAccess = useFeatureAccess('aiHealthInsights');
@@ -577,7 +597,12 @@ export function DashboardPage() {
   }
 
   const display = petRecordToPet(activePet);
-  const meta = [display.breed, display.age !== 'Age not set' ? display.age : null, display.species]
+  const meta = [
+    display.breed,
+    display.age !== 'Age not set' ? display.age : null,
+    display.species,
+    healthSummary.latestWeight ?? activePet.weight,
+  ]
     .filter(Boolean)
     .join(' · ');
 
@@ -666,7 +691,18 @@ export function DashboardPage() {
           </div>
         </header>
 
-        <StatsStrip upcoming={upcomingCount} overdue={overdueCount} score={score} />
+        <StatsStrip
+          upcoming={upcomingCount}
+          overdue={overdueCount}
+          score={score}
+          weight={
+            todayCheckIn?.weightKg != null
+              ? `${todayCheckIn.weightKg} kg`
+              : healthSummary.latestWeight ?? activePet.weight
+          }
+          todayFed={todayCheckIn?.feeding ?? null}
+          weekWalkKm={weekSummary.totalWalkKm}
+        />
 
         <div className={styles.body}>
           <SectionIntro

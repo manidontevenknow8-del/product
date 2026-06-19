@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
 import { useDailyCheckIn } from '@/dailyCheckIn';
+import { useHealthRecords } from '@/healthRecords';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { ROUTES } from '@/routes/paths';
 import styles from './DailyCheckInCard.module.css';
@@ -22,14 +23,19 @@ type DailyCheckInCardProps = {
 
 export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
   const { todayCheckIn, streak, weekSummary, isLoading, saveCheckIn } = useDailyCheckIn();
+  const { healthSummary } = useHealthRecords();
   const { isPremium } = useSubscription();
   const [feeding, setFeeding] = useState('');
   const [walkKm, setWalkKm] = useState('');
+  const [weightKg, setWeightKg] = useState('');
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [editing, setEditing] = useState(false);
 
   const showForm = !todayCheckIn || editing;
+  const weightPlaceholder = healthSummary.latestWeight
+    ? `Optional - last recorded ${healthSummary.latestWeight}`
+    : 'Optional - e.g. 12.4';
 
   const handlePreset = (preset: string) => {
     setFeeding(preset);
@@ -49,12 +55,19 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
       return;
     }
 
+    const weightValue = weightKg.trim() === '' ? null : Number.parseFloat(weightKg);
+    if (weightKg.trim() !== '' && (!Number.isFinite(weightValue) || weightValue! <= 0)) {
+      setError('Enter a valid weight in kg.');
+      return;
+    }
+
     setSaving(true);
     setError(null);
     try {
       await saveCheckIn({
         feeding: trimmed,
         walkDistanceKm: walkValue,
+        weightKg: weightValue,
       });
       setEditing(false);
     } catch (err) {
@@ -73,7 +86,8 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             Daily check-in
           </h2>
           <p className={styles.subtitle}>
-            Log what {petName} ate and how far you walked - builds streaks and monthly stories.
+            Log what {petName} ate, how far you walked, and today&apos;s weight - builds streaks,
+            health records, and monthly stories.
           </p>
         </div>
         {streak > 0 && (
@@ -127,6 +141,20 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             />
           </label>
 
+          <label className={styles.field}>
+            <span className={styles.label}>Weight (kg)</span>
+            <input
+              className={styles.input}
+              type="number"
+              min="0"
+              step="0.1"
+              inputMode="decimal"
+              value={weightKg}
+              onChange={(e) => setWeightKg(e.target.value)}
+              placeholder={weightPlaceholder}
+            />
+          </label>
+
           {error && (
             <p className={styles.error} role="alert">
               {error}
@@ -160,11 +188,22 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
                   : 'Not recorded'}
               </dd>
             </div>
+            <div>
+              <dt>Weight</dt>
+              <dd>
+                {todayCheckIn.weightKg != null
+                  ? `${todayCheckIn.weightKg} kg`
+                  : 'Not recorded'}
+              </dd>
+            </div>
           </dl>
           <Button type="button" variant="secondary" size="sm" onClick={() => {
             setFeeding(todayCheckIn.feeding);
             setWalkKm(
               todayCheckIn.walkDistanceKm != null ? String(todayCheckIn.walkDistanceKm) : '',
+            );
+            setWeightKg(
+              todayCheckIn.weightKg != null ? String(todayCheckIn.weightKg) : '',
             );
             setEditing(true);
           }}>

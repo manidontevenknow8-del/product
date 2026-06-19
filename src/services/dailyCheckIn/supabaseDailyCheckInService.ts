@@ -3,7 +3,8 @@ import type { UpsertDailyCheckInInput } from '@/types/dailyCheckIn';
 import type { DailyCheckInRow, IDailyCheckInService } from './dailyCheckInTypes';
 import { mapDailyCheckInRow } from './dailyCheckInTypes';
 
-const SELECT = 'id, pet_id, check_in_date, feeding, walk_distance_km, notes, created_at, updated_at';
+const SELECT =
+  'id, pet_id, check_in_date, feeding, walk_distance_km, weight_kg, notes, created_at, updated_at';
 
 export const supabaseDailyCheckInService: IDailyCheckInService = {
   async getCheckInsByPet(_ownerId, petId) {
@@ -25,6 +26,7 @@ export const supabaseDailyCheckInService: IDailyCheckInService = {
       check_in_date: input.checkInDate,
       feeding: input.feeding.trim(),
       walk_distance_km: input.walkDistanceKm ?? null,
+      weight_kg: input.weightKg ?? null,
       notes: input.notes?.trim() || null,
       updated_at: new Date().toISOString(),
     };

@@ -11,6 +11,7 @@ import { usePets } from '@/pets';
 import { useHealthRecords } from '@/healthRecords';
 import { useDocuments } from '@/documents';
 import { useReminders } from '@/reminders';
+import { useDailyCheckIn } from '@/dailyCheckIn';
 import { computePetCareScoreFromSources } from '@/services/petCareScore/petCareScoreEngine';
 import type { PetCareScoreData } from '@/types/petCareScore';
 import { getUserFacingError } from '@/utils/userFacingErrors';
@@ -35,6 +36,7 @@ export function PetCareScoreProvider({ children }: PetCareScoreProviderProps) {
   const { records, isLoading: healthLoading, refreshRecords } = useHealthRecords();
   const { documents, isLoading: docsLoading, refreshDocuments } = useDocuments();
   const { reminders, isLoading: remindersLoading, refresh: refreshReminders } = useReminders();
+  const { checkIns } = useDailyCheckIn();
 
   const isLoading =
     petsLoading || healthLoading || docsLoading || remindersLoading;
@@ -51,8 +53,9 @@ export function PetCareScoreProvider({ children }: PetCareScoreProviderProps) {
       healthRecords: records,
       documents,
       reminders: petReminders,
+      dailyCheckIns: checkIns,
     });
-  }, [isAuthenticated, activePet, records, documents, petReminders]);
+  }, [isAuthenticated, activePet, records, documents, petReminders, checkIns]);
 
   const error = petsError ?? refreshError;
 

@@ -193,6 +193,8 @@ function buildMetrics(args: {
   documentsUploaded: number;
   dailyCheckIns: number;
   totalWalkKm: number;
+  latestWeight: string | null;
+  weightRecordsThisMonth: number;
   scoreDelta: number | null;
   scoreStart: number | null;
   scoreEnd: number | null;
@@ -203,6 +205,8 @@ function buildMetrics(args: {
     documentsUploaded,
     dailyCheckIns,
     totalWalkKm,
+    latestWeight,
+    weightRecordsThisMonth,
     scoreDelta,
     scoreStart,
     scoreEnd,
@@ -224,6 +228,14 @@ function buildMetrics(args: {
       label: 'Walk distance',
       value: totalWalkKm > 0 ? `${totalWalkKm} km` : '-',
       hint: 'Total logged this month',
+    },
+    {
+      label: 'Latest weight',
+      value: latestWeight ?? '-',
+      hint:
+        weightRecordsThisMonth > 0
+          ? `${weightRecordsThisMonth} weigh-in${weightRecordsThisMonth === 1 ? '' : 's'} this month`
+          : 'From health records on file',
     },
     {
       label: 'PetCare Score',
@@ -304,12 +316,12 @@ function buildActivityItems(args: {
   }
 
   for (const c of args.dailyCheckIns) {
-    const walk =
-      c.walkDistanceKm != null ? ` · ${c.walkDistanceKm} km walk` : '';
+    const walk = c.walkDistanceKm != null ? ` · ${c.walkDistanceKm} km walk` : '';
+    const weight = c.weightKg != null ? ` · ${c.weightKg} kg` : '';
     items.push({
       id: `checkin-${c.id}`,
       title: c.feeding,
-      detail: `Daily check-in${walk}`,
+      detail: `Daily check-in${walk}${weight}`,
       dateLabel: formatShortDate(c.checkInDate),
       category: 'checkin',
       sort: new Date(`${c.checkInDate}T12:00:00`).getTime(),
@@ -322,6 +334,11 @@ function buildActivityItems(args: {
     .map(({ sort: _s, ...rest }) => rest);
 }
 
+function formatWeightRecord(record: HealthRecord): string {
+  const detail = record.description?.trim();
+  return detail || record.title;
+}
+
 function buildStorySections(args: {
   petName: string;
   monthLabel: string;
@@ -329,6 +346,7 @@ function buildStorySections(args: {
   healthRecordsAdded: HealthRecord[];
   documentsUploaded: PetDocumentRecord[];
   monthCheckIns: DailyCheckIn[];
+  weightRecordsOnFile: HealthRecord[];
   totalWalkKm: number;
   score: { start: number | null; end: number | null; delta: number | null };
   highlights: string[];
@@ -340,6 +358,7 @@ function buildStorySections(args: {
     healthRecordsAdded,
     documentsUploaded,
     monthCheckIns,
+    weightRecordsOnFile,
     totalWalkKm,
     score,
     highlights,
@@ -361,8 +380,17 @@ function buildStorySections(args: {
 
   const checkInBullets = monthCheckIns.slice(0, 6).map((c) => {
     const walk = c.walkDistanceKm != null ? ` · ${c.walkDistanceKm} km` : '';
-    return `${formatShortDate(c.checkInDate)} · ${c.feeding}${walk}`;
+    const weight = c.weightKg != null ? ` · ${c.weightKg} kg` : '';
+    return `${formatShortDate(c.checkInDate)} · ${c.feeding}${walk}${weight}`;
   });
+
+  const weightAddedThisMonth = healthRecordsAdded.filter((r) => r.recordType === 'weight');
+  const weightBullets = weightRecordsOnFile.slice(0, 6).map((w) => {
+    const value = formatWeightRecord(w);
+    return `${formatHealthRecordDate(w.dateRecorded)} · ${value}`;
+  });
+
+  const latestWeight = weightRecordsOnFile[0] ? formatWeightRecord(weightRecordsOnFile[0]) : null;
 
   const sections: MonthlyReportStorySection[] = [
     {
@@ -385,6 +413,20 @@ function buildStorySections(args: {
       image: MONTHLY_REPORT_IMG.checkIn,
       imageAlt: 'Daily feeding and walk check-in',
       bullets: checkInBullets.length > 0 ? checkInBullets : undefined,
+    },
+    {
+      id: 'weight',
+      title: 'Weight tracking',
+      intro: 'Body condition on record',
+      body:
+        weightAddedThisMonth.length > 0
+          ? `${weightAddedThisMonth.length} weight update${weightAddedThisMonth.length === 1 ? '' : 's'} logged in ${monthLabel}${latestWeight ? ` - latest on file: ${latestWeight}` : ''}.`
+          : latestWeight
+            ? `Latest weight on file: ${latestWeight}. Add monthly weigh-ins to spot trends early.`
+            : `No weight records yet for ${petName}. Log weigh-ins from the pet profile so vets and monthly reports stay accurate.`,
+      image: MONTHLY_REPORT_IMG.health,
+      imageAlt: 'Weight and wellness tracking',
+      bullets: weightBullets.length > 0 ? weightBullets : undefined,
     },
     {
       id: 'reminders',
@@ -474,6 +516,11 @@ export function MonthlyReportEngine(input: MonthlyReportEngineInput): MonthlyPet
     input.dailyCheckIns.filter((c) => c.petId === input.petId),
     input.monthKey,
   );
+  const weightRecordsOnFile = input.healthRecords
+    .filter((r) => r.petId === input.petId && r.recordType === 'weight')
+    .sort((a, b) => b.dateRecorded.localeCompare(a.dateRecorded));
+  const latestWeight = weightRecordsOnFile[0] ? formatWeightRecord(weightRecordsOnFile[0]) : null;
+  const weightRecordsThisMonth = healthRecordsAdded.filter((r) => r.recordType === 'weight').length;
   const totalWalkKm = Math.round(
     monthCheckIns
       .map((c) => c.walkDistanceKm)
@@ -497,6 +544,8 @@ export function MonthlyReportEngine(input: MonthlyReportEngineInput): MonthlyPet
     documentsUploaded: documentsUploaded.length,
     dailyCheckIns: monthCheckIns.length,
     totalWalkKm,
+    latestWeight,
+    weightRecordsThisMonth,
     scoreDelta: score.delta,
     scoreStart: score.start,
     scoreEnd: score.end,
@@ -524,6 +573,7 @@ export function MonthlyReportEngine(input: MonthlyReportEngineInput): MonthlyPet
     healthRecordsAdded,
     documentsUploaded,
     monthCheckIns,
+    weightRecordsOnFile,
     totalWalkKm,
     score,
     highlights,

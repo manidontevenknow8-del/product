@@ -24,38 +24,40 @@ export function HeroSection() {
         <div className="container">
           <div className={styles.content}>
             <Badge variant="accent" className={styles.eyebrow}>
-              Free pet health records app
+              The Ultimate Biological Archive
             </Badge>
 
             <h1 className={styles.title}>
-              Pet health records, vaccination reminders &amp; emergency info - organized
+              The standard of care has evolved. Your pet&apos;s living archive, beautifully
+              organized.
             </h1>
 
             <p className={styles.subtitle}>
-              The pet health app for dog and cat parents - store vet bills, set medication
-              reminders, log daily check-ins, and share an emergency pet passport in one calm
-              place.
+              The premium infrastructure for pet parents. Store veterinary history, map symptom
+              progressions, and secure your companion&apos;s emergency passport in one pristine
+              digital vault.
             </p>
 
             <div className={styles.actions}>
               <Link to={ROUTES.SIGNUP}>
                 <Button variant="primary" size="lg">
-                  Start free
+                  Begin Your Archive
                 </Button>
               </Link>
-              <Link to={ROUTES.PET_MATCH}>
-                <Button variant="secondary" size="lg" className={styles.lightBtn}>
-                  Pet match quiz
-                </Button>
-              </Link>
+              <Button
+                variant="secondary"
+                size="lg"
+                className={styles.lightBtn}
+                onClick={() => scrollTo('features')}
+              >
+                Explore the Infrastructure
+              </Button>
               <Button variant="ghost" size="lg" className={styles.ghostBtn} onClick={() => scrollTo('how-it-works')}>
                 See how it works
               </Button>
             </div>
 
-            <p className={styles.proof}>
-              Pet vaccination reminders · Medical records vault · Daily check-ins · Free for one pet
-            </p>
+            <p className={styles.proof}>Concierge-level pet care. Secured.</p>
           </div>
         </div>
       </div>

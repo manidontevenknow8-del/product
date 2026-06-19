@@ -10,6 +10,7 @@ import {
 import { eventTracker } from '@/analytics/EventTracker';
 import { useAuth } from '@/auth/AuthProvider';
 import { usePets } from '@/pets';
+import { useHealthRecords } from '@/healthRecords';
 import { appendActivityLogEntry } from '@/services/activity/activityLogService';
 import {
   computeCheckInStreak,
@@ -17,6 +18,11 @@ import {
   summarizeCheckInWeek,
   todayDateKey,
 } from '@/services/dailyCheckIn';
+import { getHealthRecordService } from '@/services/healthRecords/healthRecordService';
+import {
+  formatCheckInWeightLabel,
+  syncCheckInWeightRecord,
+} from '@/services/dailyCheckIn/syncCheckInWeightRecord';
 import type { IDailyCheckInService } from '@/services/dailyCheckIn/dailyCheckInTypes';
 import type { DailyCheckIn, DailyCheckInWeekSummary, UpsertDailyCheckInInput } from '@/types/dailyCheckIn';
 
@@ -43,6 +49,7 @@ export function DailyCheckInProvider({
 }: DailyCheckInProviderProps) {
   const { user, isAuthenticated } = useAuth();
   const { activePet } = usePets();
+  const { records, refreshRecords } = useHealthRecords();
   const [checkIns, setCheckIns] = useState<DailyCheckIn[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -86,21 +93,33 @@ export function DailyCheckInProvider({
         ...input,
       });
 
-      await refresh();
+      await syncCheckInWeightRecord({
+        ownerId: user.id,
+        petId: activePet.id,
+        checkInDate: dateKey,
+        weightKg: input.weightKg,
+        existingRecords: records,
+        healthRecordService: getHealthRecordService(),
+      });
+
+      await Promise.all([refresh(), refreshRecords()]);
 
       if (!hadToday) {
+        const summaryParts = [saved.feeding];
+        if (saved.walkDistanceKm != null) summaryParts.push(`${saved.walkDistanceKm} km walk`);
+        if (saved.weightKg != null) summaryParts.push(formatCheckInWeightLabel(saved.weightKg));
         appendActivityLogEntry({
           petId: activePet.id,
           type: 'note',
           title: 'Daily check-in logged',
-          description: `${saved.feeding}${saved.walkDistanceKm != null ? ` · ${saved.walkDistanceKm} km walk` : ''}`,
+          description: summaryParts.join(' · '),
         });
         eventTracker.track('daily_check_in_logged', { petId: activePet.id });
       }
 
       return saved;
     },
-    [user?.id, activePet?.id, checkIns, service, refresh],
+    [user?.id, activePet?.id, checkIns, records, service, refresh, refreshRecords],
   );
 
   const todayKey = todayDateKey();

@@ -13,6 +13,7 @@ import { usePets } from '@/pets';
 import { PetSwitcherHero } from '@/components/pets';
 import { useHealthRecords } from '@/healthRecords';
 import { useDocuments } from '@/documents';
+import { useDailyCheckIn } from '@/dailyCheckIn';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { buildPassportSummary, formatPassportRecordLine } from '@/services/passport/passportService';
 import type { CreateHealthRecordInput } from '@/services/healthRecords/healthRecordService';
@@ -127,6 +128,80 @@ function PassportMedicalGatePreview() {
         </div>
       </div>
     </div>
+  );
+}
+
+function PassportDailyCareBlock({
+  passport,
+}: {
+  passport: ReturnType<typeof buildPassportSummary>;
+}) {
+  const { careContext } = passport;
+
+  return (
+    <section className="mb-10 border border-stone-200/70 bg-white/50 p-5 sm:p-6">
+      <h3 className="font-serif text-xl text-stone-900">Recent feeding &amp; activity</h3>
+      <p className="mt-2 font-sans text-sm text-stone-500">
+        Last 14 days · {careContext.weekSummary.totalWalkKm} km walked this week ·{' '}
+        {careContext.weekSummary.daysLogged} day
+        {careContext.weekSummary.daysLogged === 1 ? '' : 's'} logged this week
+      </p>
+      {careContext.recentDailyCare.length === 0 ? (
+        <p className="mt-4 font-sans text-sm text-stone-400">
+          No daily check-ins yet - log feeding and walks from your dashboard so vets see recent
+          routines in an emergency.
+        </p>
+      ) : (
+        <div className="mt-4 overflow-x-auto">
+          <table className="w-full min-w-[20rem] border-collapse font-sans text-sm">
+            <thead>
+              <tr className="border-b border-stone-200 text-left text-[11px] uppercase tracking-[0.14em] text-stone-400">
+                <th className="py-2 pr-4 font-medium">Date</th>
+                <th className="py-2 pr-4 font-medium">Fed</th>
+                <th className="py-2 pr-4 font-medium">Walk</th>
+                <th className="py-2 font-medium">Weight</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-stone-100">
+              {careContext.recentDailyCare.map((entry) => (
+                <tr key={entry.id}>
+                  <td className="py-3 pr-4 whitespace-nowrap text-stone-500">{entry.dateLabel}</td>
+                  <td className="py-3 pr-4 text-stone-800">{entry.feeding}</td>
+                  <td className="py-3 pr-4 text-stone-800">{entry.walkLabel}</td>
+                  <td className="py-3 text-stone-800">{entry.weightLabel ?? 'Not recorded'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </section>
+  );
+}
+
+function PassportWeightBlock({
+  passport,
+  onAdd,
+  onEdit,
+}: {
+  passport: ReturnType<typeof buildPassportSummary>;
+  onAdd?: () => void;
+  onEdit?: (record: HealthRecord) => void;
+}) {
+  const { careContext, weightRecords } = passport;
+
+  return (
+    <PassportRecordBlock
+      title="Weight history"
+      records={weightRecords}
+      emptyMessage={
+        careContext.profileWeight
+          ? `Profile weight: ${careContext.profileWeight} - add dated weigh-ins for trend tracking.`
+          : 'No weight records - log weigh-ins from the pet profile for emergency context.'
+      }
+      onAdd={onAdd}
+      onEdit={onEdit}
+    />
   );
 }
 
@@ -256,6 +331,7 @@ export function EmergencyPassportPage() {
   const { records, isLoading: recordsLoading, createRecord, updateRecord, deleteRecord } =
     useHealthRecords();
   const { documents, isLoading: documentsLoading } = useDocuments();
+  const { checkIns } = useDailyCheckIn();
   const [healthModalOpen, setHealthModalOpen] = useState(false);
   const [editingRecord, setEditingRecord] = useState<HealthRecord | null>(null);
   const [defaultRecordType, setDefaultRecordType] = useState<HealthRecordType | undefined>();
@@ -264,8 +340,16 @@ export function EmergencyPassportPage() {
   const exportRef = useRef<HTMLDivElement>(null);
 
   const passport = useMemo(
-    () => (activePet ? buildPassportSummary(activePet, records, documents) : null),
-    [activePet, records, documents],
+    () =>
+      activePet
+        ? buildPassportSummary(
+            activePet,
+            records.filter((r) => r.petId === activePet.id),
+            documents.filter((d) => d.petId === activePet.id),
+            checkIns.filter((c) => c.petId === activePet.id),
+          )
+        : null,
+    [activePet, records, documents, checkIns],
   );
 
   useEffect(() => {
@@ -354,6 +438,15 @@ export function EmergencyPassportPage() {
 
   const medicalAndToolsContent = (
     <>
+      <div className="mb-10 grid gap-5 sm:grid-cols-2">
+        <PassportWeightBlock
+          passport={passport}
+          onAdd={() => openAdd('weight')}
+          onEdit={openEdit}
+        />
+        <PassportDailyCareBlock passport={passport} />
+      </div>
+
       <div className="mb-10 grid gap-5 sm:grid-cols-2">
         <PassportRecordBlock
           title="Critical allergies"

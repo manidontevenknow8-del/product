@@ -37,6 +37,7 @@ export const mockDailyCheckInService: IDailyCheckInService = {
         ...rows[index]!,
         feeding: input.feeding.trim(),
         walk_distance_km: input.walkDistanceKm ?? null,
+        weight_kg: input.weightKg ?? null,
         notes: input.notes?.trim() || null,
         updated_at: now,
       };
@@ -51,6 +52,7 @@ export const mockDailyCheckInService: IDailyCheckInService = {
       check_in_date: input.checkInDate,
       feeding: input.feeding.trim(),
       walk_distance_km: input.walkDistanceKm ?? null,
+      weight_kg: input.weightKg ?? null,
       notes: input.notes?.trim() || null,
       created_at: now,
       updated_at: now,
