@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-06-19T13:04:01.127Z",
+  "validatedAt": "2026-06-20T06:47:37.693Z",
   "routeFamilies": 17,
   "indexedPageTemplates": 518,
   "builders": [
@@ -315,6 +315,12 @@
     "id": "faq-schema-fields",
     "pass": true,
     "missing": []
+  },
+  "schemaDateTime": {
+    "id": "schema-datetime-normalization",
+    "pass": true,
+    "missing": [],
+    "failedSamples": []
   },
   "pass": true
 }

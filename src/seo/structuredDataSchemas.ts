@@ -1,5 +1,6 @@
 import { HOME_OG_DESCRIPTION, SITE_META } from '@/data/seoConfig';
 import { ROUTES } from '@/routes/paths';
+import { normalizeSchemaDateTime, SCHEMA_DATETIME_FALLBACK } from '@/seo/schemaDateTime';
 
 export const ORGANIZATION_ID = `${SITE_META.siteUrl}/#organization`;
 export const WEBSITE_ID = `${SITE_META.siteUrl}/#website`;
@@ -14,7 +15,7 @@ type FaqSchemaItem = {
 };
 
 /** Fallback when callers omit per-item dates (e.g. landing FAQ). */
-const FAQ_SCHEMA_DEFAULT_DATE = '2026-06-18';
+const FAQ_SCHEMA_DEFAULT_DATE = SCHEMA_DATETIME_FALLBACK;
 
 /**
  * Stable placeholder upvote count per question (derived from URL or question text).
@@ -37,7 +38,7 @@ export function buildSchemaAuthor() {
 }
 
 export function buildAnswerSchema(item: FaqSchemaItem) {
-  const datePublished = item.datePublished ?? FAQ_SCHEMA_DEFAULT_DATE;
+  const datePublished = normalizeSchemaDateTime(item.datePublished ?? FAQ_SCHEMA_DEFAULT_DATE);
 
   return {
     '@type': 'Answer',
@@ -53,7 +54,7 @@ export function buildQuestionSchema(
   item: FaqSchemaItem,
   options?: { text?: string; answerCount?: number },
 ) {
-  const datePublished = item.datePublished ?? FAQ_SCHEMA_DEFAULT_DATE;
+  const datePublished = normalizeSchemaDateTime(item.datePublished ?? FAQ_SCHEMA_DEFAULT_DATE);
 
   return {
     '@type': 'Question',
@@ -196,7 +197,9 @@ export function buildWebPageSchema(options: {
     description: options.description,
     isPartOf: { '@id': WEBSITE_ID },
     publisher: { '@id': ORGANIZATION_ID },
-    ...(options.dateModified ? { dateModified: options.dateModified } : {}),
+    ...(options.dateModified
+      ? { dateModified: normalizeSchemaDateTime(options.dateModified) }
+      : {}),
   };
 }
 
@@ -213,8 +216,8 @@ export function buildArticleSchema(options: {
     '@id': `${options.url}#article`,
     headline: options.headline,
     description: options.description,
-    datePublished: options.datePublished,
-    dateModified: options.dateModified,
+    datePublished: normalizeSchemaDateTime(options.datePublished),
+    dateModified: normalizeSchemaDateTime(options.dateModified),
     author: { '@type': 'Organization', '@id': ORGANIZATION_ID },
     publisher: {
       '@type': 'Organization',
@@ -256,8 +259,10 @@ export function buildBlogPostingSchema(options: {
       name: SITE_META.siteName,
       logo: { '@type': 'ImageObject', url: SITE_META.logoUrl },
     },
-    datePublished: options.datePublished,
-    dateModified: options.dateModified,
+    ...(options.datePublished
+      ? { datePublished: normalizeSchemaDateTime(options.datePublished) }
+      : {}),
+    dateModified: normalizeSchemaDateTime(options.dateModified),
     mainEntityOfPage: options.url,
     isPartOf: { '@id': WEBSITE_ID },
     ...(options.articleSection ? { articleSection: options.articleSection } : {}),

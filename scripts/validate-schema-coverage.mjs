@@ -228,7 +228,7 @@ function validateFaqSchemaFields() {
   const core = readSeoFile('structuredDataSchemas.ts');
   const requiredSnippets = [
     'author: buildSchemaAuthor()',
-    'datePublished',
+    'normalizeSchemaDateTime',
     'upvoteCount: item.upvoteCount ?? deriveFaqUpvoteCount',
     'export function buildQAPageSchema',
   ];
@@ -240,9 +240,65 @@ function validateFaqSchemaFields() {
   };
 }
 
+function validateSchemaDateTimeNormalization() {
+  const core = readSeoFile('structuredDataSchemas.ts');
+  const dateTimeModule = readSeoFile('schemaDateTime.ts');
+  const ISO_DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
+  const ISO_DATETIME_NO_TZ = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?$/;
+  const ISO_DATETIME_WITH_TZ =
+    /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{1,3})?(?:Z|[+-]\d{2}:\d{2})$/;
+  const FALLBACK = '2026-06-18T00:00:00Z';
+
+  function normalizeSchemaDateTime(value) {
+    if (!value?.trim()) return FALLBACK;
+    const trimmed = value.trim();
+    if (ISO_DATE_ONLY.test(trimmed)) return `${trimmed}T00:00:00Z`;
+    if (ISO_DATETIME_NO_TZ.test(trimmed)) return `${trimmed}Z`;
+    if (ISO_DATETIME_WITH_TZ.test(trimmed)) {
+      return trimmed.endsWith('z') ? trimmed.replace(/z$/, 'Z') : trimmed;
+    }
+    const parsed = Date.parse(trimmed);
+    if (!Number.isNaN(parsed)) return new Date(parsed).toISOString();
+    return FALLBACK;
+  }
+
+  const requiredModuleSnippets = [
+    'export function normalizeSchemaDateTime',
+    'export function isValidSchemaDateTime',
+  ];
+  const missingModule = requiredModuleSnippets.filter((snippet) => !dateTimeModule.includes(snippet));
+  const missingUsage = ['normalizeSchemaDateTime(item.datePublished', 'normalizeSchemaDateTime(options.datePublished']
+    .filter((snippet) => !core.includes(snippet));
+
+  const samples = [
+    ['2026-06-18', '2026-06-18T00:00:00Z'],
+    ['2026-06-18T00:00:00', '2026-06-18T00:00:00Z'],
+    ['2026-06-18T00:00:00Z', '2026-06-18T00:00:00Z'],
+    ['2026-06-18T12:00:00+00:00', '2026-06-18T12:00:00+00:00'],
+  ];
+  const failedSamples = samples.filter(
+    ([input, expected]) => normalizeSchemaDateTime(input) !== expected,
+  );
+
+  const question = normalizeSchemaDateTime('2026-06-18');
+  const invalidOutputs = [question].filter((value) => !ISO_DATETIME_WITH_TZ.test(value));
+
+  return {
+    id: 'schema-datetime-normalization',
+    pass:
+      missingModule.length === 0 &&
+      missingUsage.length === 0 &&
+      failedSamples.length === 0 &&
+      invalidOutputs.length === 0,
+    missing: [...missingModule, ...missingUsage],
+    failedSamples,
+  };
+}
+
 const builderResults = validateBuilders();
 const routeResults = ROUTE_COVERAGE.map(validateRouteFamily);
 const faqFieldResult = validateFaqSchemaFields();
+const dateTimeResult = validateSchemaDateTimeNormalization();
 
 const builderFails = builderResults.filter((r) => !r.pass);
 const routeFails = routeResults.filter((r) => !r.pass);
@@ -270,6 +326,17 @@ if (!faqFieldResult.pass) {
   console.log(`       Missing snippets: ${faqFieldResult.missing.join(', ')}`);
 }
 
+const dateTimeStatus = dateTimeResult.pass ? 'PASS' : 'FAIL';
+console.log(`[${dateTimeStatus}] schema-datetime-normalization (ISO 8601 with timezone)`);
+if (!dateTimeResult.pass) {
+  if (dateTimeResult.missing.length > 0) {
+    console.log(`       Missing snippets: ${dateTimeResult.missing.join(', ')}`);
+  }
+  if (dateTimeResult.failedSamples.length > 0) {
+    console.log(`       Failed samples: ${JSON.stringify(dateTimeResult.failedSamples)}`);
+  }
+}
+
 if (builderFails.length > 0) {
   console.log('\nMissing builders:');
   for (const fail of builderFails) {
@@ -284,7 +351,12 @@ const report = {
   builders: builderResults,
   routes: routeResults,
   faqSchemaFields: faqFieldResult,
-  pass: builderFails.length === 0 && routeFails.length === 0 && faqFieldResult.pass,
+  schemaDateTime: dateTimeResult,
+  pass:
+    builderFails.length === 0 &&
+    routeFails.length === 0 &&
+    faqFieldResult.pass &&
+    dateTimeResult.pass,
 };
 
 const outPath = join(root, 'SCHEMA_AUDIT_REPORT.json');
