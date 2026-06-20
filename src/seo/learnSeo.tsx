@@ -15,6 +15,7 @@ import {
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
+import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 
 export function getLearnIndexSEO(category?: LearnCategoryId): SEOConfig {
   const base = `${SITE_META.siteUrl}${ROUTES.LEARN}`;
@@ -22,8 +23,11 @@ export function getLearnIndexSEO(category?: LearnCategoryId): SEOConfig {
 
   if (categoryLabel) {
     return {
-      title: `${categoryLabel} Guides for Pet Parents | PetClues Learn`,
-      description: `Expert ${categoryLabel.toLowerCase()} guides: what to track, why it matters, step-by-step how-tos, and how PetClues keeps your pet's care organized.`,
+      title: formatPageTitle(`${categoryLabel} Guides for Pet Parents`),
+      description: formatMetaDescription(
+        `Expert ${categoryLabel.toLowerCase()} guides: what to track, why it matters, step-by-step how-tos, and how PetClues keeps your pet's care organized.`,
+        categoryLabel,
+      ),
       keywords: `pet ${categoryLabel.toLowerCase()}, pet health guides, petclues learn`,
       canonical: `${base}?category=${category}`,
       ogType: 'website',
@@ -34,9 +38,10 @@ export function getLearnIndexSEO(category?: LearnCategoryId): SEOConfig {
   }
 
   return {
-    title: 'PetClues Learn - Pet Health Records, Vaccines & Care Guides',
-    description:
+    title: formatPageTitle('Pet Health Records, Vaccines & Care Guides'),
+    description: formatMetaDescription(
       '50+ expert guides on pet health records, vaccinations, emergency passports, travel documents, medication tracking, and everyday pet organization.',
+    ),
     keywords:
       'pet health guides, pet vaccination help, pet emergency passport, organize pet records, pet medication tracking',
     canonical: base,
@@ -49,8 +54,8 @@ export function getLearnIndexSEO(category?: LearnCategoryId): SEOConfig {
 
 export function getLearnArticleSEO(article: LearnArticle): SEOConfig {
   return {
-    title: article.title,
-    description: article.metaDescription,
+    title: formatPageTitle(article.title),
+    description: formatMetaDescription(article.metaDescription, article.title),
     keywords: article.keywords.join(', '),
     canonical: `${SITE_META.siteUrl}${ROUTES.LEARN}/${article.slug}`,
     ogType: 'article',

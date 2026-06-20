@@ -14,6 +14,7 @@ import {
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
+import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 
 function collectionPath(collectionId: ProgrammaticCollectionId): string {
   return `${ROUTES.GUIDES}/${collectionId}`;
@@ -25,9 +26,10 @@ function pagePath(page: ProgrammaticPage): string {
 
 export function getProgrammaticHubSEO(): SEOConfig {
   return {
-    title: 'Pet Care Guides & Templates – Vaccines, Travel, Emergency | PetClues',
-    description:
+    title: formatPageTitle('Pet Care Guides & Templates - Vaccines, Travel, Emergency'),
+    description: formatMetaDescription(
       '91+ programmatic pet care guides: dog and cat vaccination schedules by breed, travel checklists by country, emergency checklists by species, and health record templates.',
+    ),
     keywords:
       'dog vaccination schedule by breed, cat vaccination schedule, pet travel checklist, pet emergency checklist, pet health record template',
     canonical: `${SITE_META.siteUrl}${ROUTES.GUIDES}`,
@@ -42,8 +44,8 @@ export function getProgrammaticCollectionSEO(collectionId: ProgrammaticCollectio
   const collection = getProgrammaticCollection(collectionId);
 
   return {
-    title: `${collection.label} | PetClues Guides`,
-    description: collection.description,
+    title: formatPageTitle(collection.label),
+    description: formatMetaDescription(collection.description, collection.label),
     keywords: collection.label.toLowerCase(),
     canonical: `${SITE_META.siteUrl}${collectionPath(collectionId)}`,
     ogType: 'website',
@@ -55,8 +57,8 @@ export function getProgrammaticCollectionSEO(collectionId: ProgrammaticCollectio
 
 export function getProgrammaticPageSEO(page: ProgrammaticPage): SEOConfig {
   return {
-    title: page.title,
-    description: page.metaDescription,
+    title: formatPageTitle(page.title),
+    description: formatMetaDescription(page.metaDescription, page.title),
     keywords: page.keywords.join(', '),
     canonical: `${SITE_META.siteUrl}${pagePath(page)}`,
     ogType: 'article',

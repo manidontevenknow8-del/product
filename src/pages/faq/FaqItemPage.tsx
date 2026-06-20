@@ -7,6 +7,7 @@ import { BlogPostBody } from '@/components/blog/BlogPostBody';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { getFaqCategoryLabel } from '@/data/faq/categories';
 import { getFaqItemBySlug, getRelatedFaqItems } from '@/data/faq';
+import { MOCK_BLOG_POSTS } from '@/services/blog/mockBlogPosts';
 import { FaqItemSEO, getFaqIndexBreadcrumbs } from '@/seo/faqHubSeo';
 import { ROUTES } from '@/routes/paths';
 import styles from './FaqItemPage.module.css';
@@ -62,11 +63,16 @@ export function FaqItemPage() {
                 <section className={styles.related}>
                   <h2 className={styles.relatedTitle}>Related guides</h2>
                   <ul className={styles.relatedList}>
-                    {item.relatedBlogSlugs.map((blogSlug) => (
-                      <li key={blogSlug}>
-                        <Link to={`${ROUTES.BLOG}/${blogSlug}`}>{blogSlug.replace(/-/g, ' ')}</Link>
-                      </li>
-                    ))}
+                    {item.relatedBlogSlugs.map((blogSlug) => {
+                      const post = MOCK_BLOG_POSTS.find((candidate) => candidate.slug === blogSlug);
+                      return (
+                        <li key={blogSlug}>
+                          <Link to={`${ROUTES.BLOG}/${blogSlug}`}>
+                            {post?.title ?? blogSlug.replace(/-/g, ' ')}
+                          </Link>
+                        </li>
+                      );
+                    })}
                     {item.relatedLearnSlugs.map((learnSlug) => (
                       <li key={learnSlug}>
                         <Link to={`${ROUTES.LEARN}/${learnSlug}`}>{learnSlug.replace(/-/g, ' ')}</Link>

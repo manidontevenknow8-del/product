@@ -1,5 +1,6 @@
 import { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 import { ROUTES, PROTECTED_ROUTES, AUTH_ROUTES } from '@/routes/paths';
+import { formatMetaDescription, formatPageTitle } from '@/seo/seoFormatters';
 
 export type SEOConfig = {
   title: string;
@@ -104,34 +105,38 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: OG_IMAGE_ALT,
   },
   [ROUTES.PRICING]: {
-    title: 'PetClues Pricing - Free Pet Health App & Premium Plans',
-    description:
+    title: formatPageTitle('PetClues Pricing - Free Pet Health App & Premium Plans'),
+    description: formatMetaDescription(
       'Free pet health records, reminders, and emergency passport for one pet. Premium adds Vet Bill Decoder AI, unlimited pets, and monthly report exports.',
+    ),
     keywords: 'pet health app pricing, free pet records app, pet care subscription',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues pricing - free and premium pet health plans',
   },
   [ROUTES.PET_MATCH]: {
-    title: 'Pet Match Quiz - Find Your Ideal Companion | PetClues',
-    description:
-      'Take the free PetClues pet match quiz to discover dog and cat breeds that fit your lifestyle - then organize their health records in one app.',
+    title: formatPageTitle('Pet Match Quiz - Find Your Ideal Companion'),
+    description: formatMetaDescription(
+      'Take the free PetClues pet match quiz to discover dog and cat breeds that fit your lifestyle, then organize their health records in one app.',
+    ),
     keywords: 'pet match quiz, best dog breed for me, cat breed quiz',
     ogType: 'website',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues pet match quiz',
   },
   [ROUTES.FOUNDING_MEMBERS]: {
-    title: 'Founding Members - Early Access to PetClues',
-    description:
+    title: formatPageTitle('Founding Members - Early Access to PetClues'),
+    description: formatMetaDescription(
       'Join PetClues founding members for early access, premium trial benefits, and a permanent founding badge. Help shape the future of pet care organization.',
+    ),
     keywords: 'petclues founding members, early access pet health app',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues founding members program',
   },
   [ROUTES.BLOG]: {
-    title: 'Pet Health Blog - Vaccination Guides, Records & Care Tips | PetClues',
-    description:
-      'Free pet health guides: puppy & cat vaccination schedules, medication reminders, vet bill organization, emergency pet information, and daily care habits.',
+    title: formatPageTitle('Pet Health Blog - Vaccination Guides, Records & Care Tips'),
+    description: formatMetaDescription(
+      'Free pet health guides: puppy and cat vaccination schedules, medication reminders, vet bill organization, emergency pet information, and daily care habits.',
+    ),
     keywords:
       'pet health blog, puppy vaccination schedule, cat vaccination schedule, organize pet medical records, pet medication reminder',
     ogType: 'website',
@@ -175,57 +180,74 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: 'PetClues Learn knowledge base',
   },
   [ROUTES.PRIVACY]: {
-    title: 'Privacy Policy - PetClues',
-    description: 'How PetClues collects, uses, and protects your pet health data.',
+    title: formatPageTitle('Privacy Policy'),
+    description: formatMetaDescription(
+      'How PetClues collects, uses, stores, and protects your pet health data, account information, uploaded documents, and AI-assisted features.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues privacy policy',
   },
   [ROUTES.TERMS]: {
-    title: 'Terms of Service - PetClues',
-    description: 'Terms and conditions for using PetClues.',
+    title: formatPageTitle('Terms of Service'),
+    description: formatMetaDescription(
+      'Terms and conditions for using PetClues, including accounts, subscriptions, pet health records, AI features, and acceptable use of the platform.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues terms of service',
   },
   [ROUTES.COOKIES]: {
-    title: 'Cookie Policy - PetClues',
-    description: 'How PetClues uses cookies and similar technologies.',
+    title: formatPageTitle('Cookie Policy'),
+    description: formatMetaDescription(
+      'How PetClues uses cookies and similar technologies for authentication, analytics, preferences, and improving your pet care organization experience.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues cookie policy',
   },
   [ROUTES.CONTACT]: {
-    title: 'Contact - PetClues',
-    description: 'Get in touch with PetClues support for account help, feedback, and data requests.',
+    title: formatPageTitle('Contact'),
+    description: formatMetaDescription(
+      'Contact PetClues support for account help, billing questions, data requests, feedback, and partnership inquiries. We respond as quickly as we can.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'Contact PetClues support',
   },
   [ROUTES.ABOUT]: {
-    title: 'About Us - PetClues',
-    description: 'Why PetClues exists - calm, premium pet care organization for modern pet parents.',
+    title: formatPageTitle('About Us'),
+    description: formatMetaDescription(
+      'Why PetClues exists: calm, premium pet care organization for modern pet parents. Learn our mission, values, and approach to health records and reminders.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'About PetClues',
   },
   [ROUTES.SECURITY]: {
-    title: 'Security - PetClues',
-    description: 'How PetClues protects your account and pet data with access controls and safeguards.',
+    title: formatPageTitle('Security'),
+    description: formatMetaDescription(
+      'How PetClues protects your account and pet data with access controls, encryption in transit, secure storage practices, and ongoing security safeguards.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues security practices',
   },
   [ROUTES.DATA_DELETION]: {
-    title: 'Delete Your Data - PetClues',
-    description: 'Request deletion of your PetClues account and associated pet data.',
+    title: formatPageTitle('Delete Your Data'),
+    description: formatMetaDescription(
+      'Request deletion of your PetClues account and associated pet health records, documents, reminders, and profile data. Step-by-step instructions included.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'Delete your PetClues data',
   },
   [ROUTES.DATA_EXPORT]: {
-    title: 'Export Your Data - PetClues',
-    description: 'Request a copy of your PetClues account and pet records.',
+    title: formatPageTitle('Export Your Data'),
+    description: formatMetaDescription(
+      'Request a copy of your PetClues account data, pet profiles, health records, documents, and reminders. Export instructions for pet parents and clinics.',
+    ),
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'Export your PetClues data',
   },
   [ROUTES.FAQ]: {
-    title: 'Pet Health FAQ - Records, Vaccines, Travel & Emergency Prep | PetClues',
-    description:
+    title: formatPageTitle('Pet Health FAQ - Records, Vaccines, Travel & Emergency Prep'),
+    description: formatMetaDescription(
       '200+ searchable answers on organizing pet records, vaccination storage, pet passports, travel documents, medications, and emergencies.',
+    ),
     keywords:
       'pet health faq, organize pet records, vaccination records, pet passport, travel with pet',
     ogImage: DEFAULT_OG_IMAGE,
@@ -373,49 +395,110 @@ function shouldNoIndex(pathname: string, explicit?: boolean): boolean {
   return true;
 }
 
+function finalizeSEO(config: SEOConfig, pathname?: string): SEOConfig {
+  const title =
+    pathname === ROUTES.LANDING || config.title === HOME_TITLE
+      ? config.title
+      : formatPageTitle(config.title);
+
+  return {
+    ...config,
+    title,
+    description: formatMetaDescription(config.description, title),
+    ogTitle: config.ogTitle
+      ? pathname === ROUTES.LANDING
+        ? config.ogTitle
+        : formatPageTitle(config.ogTitle)
+      : undefined,
+    ogDescription: config.ogDescription
+      ? formatMetaDescription(config.ogDescription, title)
+      : undefined,
+  };
+}
+
 export function getPageSEO(pathname: string): SEOConfig {
   if (isBlogArticlePath(pathname)) {
-    return {
-      ...DEFAULT,
-      title: 'PetClues Blog',
-      description: 'Pet health guides and care tips from PetClues.',
-      canonical: buildCanonical(pathname),
-      ogType: 'article',
-      noIndex: false,
-    };
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'PetClues Blog',
+        description: 'Pet health guides and care tips from PetClues.',
+        canonical: buildCanonical(pathname),
+        ogType: 'article',
+        noIndex: false,
+      },
+      pathname,
+    );
   }
 
   if (isCompareArticlePath(pathname)) {
-    return {
-      ...DEFAULT,
-      title: 'PetClues Comparison',
-      description: 'Compare PetClues with alternatives for pet health records and reminders.',
-      canonical: buildCanonical(pathname),
-      ogType: 'article',
-      noIndex: false,
-    };
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'PetClues Comparison',
+        description: 'Compare PetClues with alternatives for pet health records and reminders.',
+        canonical: buildCanonical(pathname),
+        ogType: 'article',
+        noIndex: false,
+      },
+      pathname,
+    );
+  }
+
+  if (isBestArticlePath(pathname)) {
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'Best Pet Health App Guide',
+        description: 'Authoritative guide comparing pet health record apps, reminders, and care tools.',
+        canonical: buildCanonical(pathname),
+        ogType: 'article',
+        noIndex: false,
+      },
+      pathname,
+    );
+  }
+
+  if (isGuidesDetailPath(pathname) || isGuidesCollectionPath(pathname)) {
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'Pet Care Guide',
+        description: 'Programmatic pet care guide for vaccinations, travel, emergency prep, and health records.',
+        canonical: buildCanonical(pathname),
+        ogType: 'article',
+        noIndex: false,
+      },
+      pathname,
+    );
   }
 
   if (isLearnArticlePath(pathname)) {
-    return {
-      ...DEFAULT,
-      title: 'PetClues Learn',
-      description: 'Pet health knowledge base guides from PetClues.',
-      canonical: buildCanonical(pathname),
-      ogType: 'article',
-      noIndex: false,
-    };
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'PetClues Learn',
+        description: 'Pet health knowledge base guides from PetClues.',
+        canonical: buildCanonical(pathname),
+        ogType: 'article',
+        noIndex: false,
+      },
+      pathname,
+    );
   }
 
   if (isFaqArticlePath(pathname)) {
-    return {
-      ...DEFAULT,
-      title: 'PetClues FAQ',
-      description: 'Pet health questions answered by PetClues.',
-      canonical: buildCanonical(pathname),
-      ogType: 'article',
-      noIndex: false,
-    };
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'PetClues FAQ',
+        description: 'Pet health questions answered by PetClues.',
+        canonical: buildCanonical(pathname),
+        ogType: 'article',
+        noIndex: false,
+      },
+      pathname,
+    );
   }
 
   const pageConfig = SEO_PAGES[pathname];
@@ -426,7 +509,7 @@ export function getPageSEO(pathname: string): SEOConfig {
     noIndex: shouldNoIndex(pathname, pageConfig?.noIndex),
   };
 
-  return merged;
+  return finalizeSEO(merged, pathname);
 }
 
 export { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';

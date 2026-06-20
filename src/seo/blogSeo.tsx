@@ -17,6 +17,7 @@ import {
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { getBlogIndexBreadcrumbs, getBlogPostBreadcrumbs } from './pageBreadcrumbs';
+import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 import { useJsonLd } from './useJsonLd';
 
 type BlogIndexSEOOptions = {
@@ -31,19 +32,29 @@ export function getBlogIndexSEO(options: BlogIndexSEOOptions = {}): SEOConfig {
   const baseCanonical = `${SITE_META.siteUrl}${ROUTES.BLOG}`;
   const hasFilters = Boolean(tag || search);
 
-  let title = 'Pet Health Blog - Vaccination Guides, Records & Care Tips | PetClues';
-  let description =
-    'Free pet health guides: puppy & cat vaccination schedules, medication reminders, vet bill organization, emergency pet information, and daily care habits.';
+  let title = formatPageTitle('Pet Health Blog - Vaccination Guides, Records & Care Tips');
+  let description = formatMetaDescription(
+    'Free pet health guides: puppy and cat vaccination schedules, medication reminders, vet bill organization, emergency pet information, and daily care habits.',
+  );
 
   if (categoryLabel) {
-    title = `${categoryLabel} Guides - Pet Health Blog | PetClues`;
-    description = `Expert ${categoryLabel.toLowerCase()} guides on vaccinations, records, reminders, and everyday care from PetClues.`;
+    title = formatPageTitle(`${categoryLabel} Guides - Pet Health Blog`);
+    description = formatMetaDescription(
+      `Expert ${categoryLabel.toLowerCase()} guides on vaccinations, records, reminders, and everyday care from PetClues.`,
+      categoryLabel,
+    );
   } else if (tag) {
-    title = `Articles tagged “${tag}” | PetClues Blog`;
-    description = `Pet health articles tagged “${tag}” on the PetClues blog.`;
+    title = formatPageTitle(`Articles tagged "${tag}"`);
+    description = formatMetaDescription(
+      `Pet health articles tagged "${tag}" on the PetClues blog - vaccination schedules, records, reminders, and emergency prep.`,
+      tag,
+    );
   } else if (search) {
-    title = `Search results for “${search}” | PetClues Blog`;
-    description = `Search results for “${search}” across PetClues pet health guides.`;
+    title = formatPageTitle(`Search results for "${search}"`);
+    description = formatMetaDescription(
+      `Search results for "${search}" across PetClues pet health guides, vaccination schedules, and care organization tips.`,
+      search,
+    );
   }
 
   return {
@@ -61,7 +72,7 @@ export function getBlogIndexSEO(options: BlogIndexSEOOptions = {}): SEOConfig {
 
 export function getBlogPostSEO(post: BlogPost): SEOConfig {
   const categoryLabel = getBlogCategoryLabel(post.category);
-  const title = `${post.title} - PetClues`;
+  const title = formatPageTitle(post.title);
   const canonical = `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`;
   const image = (() => {
     const img = resolveBlogFeaturedImage(post.slug, post.featuredImage);
@@ -70,7 +81,7 @@ export function getBlogPostSEO(post: BlogPost): SEOConfig {
 
   return {
     title,
-    description: post.excerpt,
+    description: formatMetaDescription(post.excerpt, post.title),
     canonical,
     ogType: 'article',
     ogImage: image,

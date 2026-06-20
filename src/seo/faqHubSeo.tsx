@@ -16,6 +16,7 @@ import {
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
+import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 
 type FaqIndexSEOOptions = {
   category?: FaqCategoryId;
@@ -29,8 +30,11 @@ export function getFaqIndexSEO(options: FaqIndexSEOOptions = {}): SEOConfig {
 
   if (categoryLabel) {
     return {
-      title: `${categoryLabel} FAQ - Pet Health Questions Answered | PetClues`,
-      description: `Answers to ${categoryLabel.toLowerCase()} questions about pet records, vaccines, travel, medications, and emergency prep.`,
+      title: formatPageTitle(`${categoryLabel} FAQ - Pet Health Questions Answered`),
+      description: formatMetaDescription(
+        `Answers to ${categoryLabel.toLowerCase()} questions about pet records, vaccines, travel, medications, and emergency prep.`,
+        categoryLabel,
+      ),
       keywords: `pet ${categoryLabel.toLowerCase()} faq, pet health questions, petclues faq`,
       canonical: `${baseCanonical}?category=${category}`,
       ogType: 'website',
@@ -42,8 +46,11 @@ export function getFaqIndexSEO(options: FaqIndexSEOOptions = {}): SEOConfig {
 
   if (search) {
     return {
-      title: `FAQ search: “${search}” | PetClues`,
-      description: `Search results for “${search}” across ${FAQ_HUB_COUNT} pet health FAQs.`,
+      title: formatPageTitle(`FAQ search: "${search}"`),
+      description: formatMetaDescription(
+        `Search results for "${search}" across ${FAQ_HUB_COUNT} pet health FAQs on records, vaccines, travel, and emergency prep.`,
+        search,
+      ),
       canonical: baseCanonical,
       ogImage: DEFAULT_OG_IMAGE,
       ogImageAlt: 'PetClues FAQ search',
@@ -52,8 +59,10 @@ export function getFaqIndexSEO(options: FaqIndexSEOOptions = {}): SEOConfig {
   }
 
   return {
-    title: 'Pet Health FAQ - Records, Vaccines, Travel & Emergency Prep | PetClues',
-    description: `${FAQ_HUB_COUNT}+ answers on organizing pet records, vaccination storage, pet passports, travel documents, medications, and emergencies.`,
+    title: formatPageTitle('Pet Health FAQ - Records, Vaccines, Travel & Emergency Prep'),
+    description: formatMetaDescription(
+      `${FAQ_HUB_COUNT}+ answers on organizing pet records, vaccination storage, pet passports, travel documents, medications, and emergencies.`,
+    ),
     keywords:
       'pet health faq, organize pet records, vaccination records, pet passport, travel with pet, pet medication reminder',
     canonical: baseCanonical,
@@ -66,8 +75,8 @@ export function getFaqIndexSEO(options: FaqIndexSEOOptions = {}): SEOConfig {
 
 export function getFaqItemSEO(item: FaqHubItem): SEOConfig {
   return {
-    title: `${item.question} | PetClues FAQ`,
-    description: item.shortAnswer,
+    title: formatPageTitle(item.question),
+    description: formatMetaDescription(item.shortAnswer, item.question),
     keywords: item.keywords.join(', '),
     canonical: `${SITE_META.siteUrl}${ROUTES.FAQ}/${item.slug}`,
     ogType: 'article',

@@ -14,12 +14,14 @@ import {
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
+import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 
 export function getIntentIndexSEO(): SEOConfig {
   return {
-    title: 'Best Pet Health Apps & Tools (2026) – Intent Guides | PetClues',
-    description:
-      'Authoritative guides for the best pet health record apps, vaccination trackers, reminder apps, digital passports, and pet care platforms — with comparisons, FAQs, and citations.',
+    title: formatPageTitle('Best Pet Health Apps & Tools (2026)'),
+    description: formatMetaDescription(
+      'Authoritative guides for the best pet health record apps, vaccination trackers, reminder apps, digital passports, and pet care platforms with comparisons and FAQs.',
+    ),
     keywords:
       'best pet health record app, best pet reminder app, pet vaccination tracker, digital pet passport, pet medical record organizer',
     canonical: `${SITE_META.siteUrl}${ROUTES.BEST}`,
@@ -32,8 +34,8 @@ export function getIntentIndexSEO(): SEOConfig {
 
 export function getIntentPageSEO(page: IntentPage): SEOConfig {
   return {
-    title: page.title,
-    description: page.metaDescription,
+    title: formatPageTitle(page.title),
+    description: formatMetaDescription(page.metaDescription, page.title),
     keywords: page.keywords.join(', '),
     canonical: `${SITE_META.siteUrl}${ROUTES.BEST}/${page.slug}`,
     ogType: 'article',

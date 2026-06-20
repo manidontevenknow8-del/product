@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.mjs && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && tsc -b && vite build",
+    "build": "node scripts/generate-sitemap.mjs && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && node scripts/audit-seo.mjs && tsc -b && vite build",
+    "validate:seo": "node scripts/audit-seo.mjs",
     "generate:dominance-topics": "node scripts/generate-dominance-topics.mjs",
     "generate:dominance-images": "node scripts/generate-dominance-image-mappings.mjs",
     "optimize:images": "node scripts/optimize-images.mjs",

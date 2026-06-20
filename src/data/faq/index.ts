@@ -145,7 +145,7 @@ export function getFaqItemBySlug(slug: string): FaqHubItem | null {
   return FAQ_ITEMS.find((item) => item.slug === slug) ?? null;
 }
 
-export function getRelatedFaqItems(item: FaqHubItem, limit = 4): FaqHubItem[] {
+export function getRelatedFaqItems(item: FaqHubItem, limit = 5): FaqHubItem[] {
   const related = new Set(item.relatedSlugs);
   return FAQ_ITEMS.filter((candidate) => related.has(candidate.slug) || candidate.categoryId === item.categoryId)
     .filter((candidate) => candidate.slug !== item.slug)

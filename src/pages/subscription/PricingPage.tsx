@@ -27,6 +27,7 @@ import { LANDING_IMG } from '@/data/landingImages';
 import type { CommercialPlan } from '@/subscription/entitlements';
 import type { BillingInterval, CheckoutPlan } from '@/types/subscription';
 import { ROUTES } from '@/routes/paths';
+import { FeaturePageLinks } from '@/components/seo/FeaturePageLinks';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 import styles from './PricingPage.module.css';
 
@@ -626,6 +627,8 @@ export function PricingPage() {
               Contact {CUSTOM_LIMITS_EMAIL}
             </button>
           </section>
+
+          <FeaturePageLinks />
 
           <p className={styles.footnote}>
             Plus from {formatInrDisplay(PLUS_MONTHLY_INR)}/mo · Pro from{' '}

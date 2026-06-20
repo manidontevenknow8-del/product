@@ -14,12 +14,14 @@ import {
   buildWebSiteSchema,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
+import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 
 export function getCompareIndexSEO(): SEOConfig {
   return {
-    title: 'PetClues Comparisons - Pet Health Apps vs Spreadsheets & Alternatives | PetClues',
-    description:
-      'Compare PetClues with Google Drive, Excel, Notion, PetDesk, paper records, and 45+ alternatives for pet health records, vaccination reminders, and emergency pet info.',
+    title: formatPageTitle('Pet Health App Comparisons - Spreadsheets & Alternatives'),
+    description: formatMetaDescription(
+      'Compare PetClues with Google Drive, Excel, Notion, PetDesk, paper records, and 45+ alternatives for pet health records, vaccination reminders, and emergency info.',
+    ),
     keywords:
       'petclues vs, best pet health record app, alternative to spreadsheets pet records, pet health app comparison',
     canonical: `${SITE_META.siteUrl}${ROUTES.COMPARE}`,
@@ -32,8 +34,8 @@ export function getCompareIndexSEO(): SEOConfig {
 
 export function getComparePageSEO(page: ComparisonPage): SEOConfig {
   return {
-    title: page.title,
-    description: page.metaDescription,
+    title: formatPageTitle(page.title),
+    description: formatMetaDescription(page.metaDescription, page.title),
     keywords: page.keywords.join(', '),
     canonical: `${SITE_META.siteUrl}${ROUTES.COMPARE}/${page.slug}`,
     ogType: 'article',
