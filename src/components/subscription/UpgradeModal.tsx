@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui';
 import {
-  getAnnualMembershipDisplay,
-  getFoundingDiscountedDisplay,
-} from '@/config/razorpayConfig';
+  ANNUAL_BILLING_LABEL,
+  getAnnualPriceParts,
+} from '@/config/pricingConfig';
+import { getFoundingDiscountedDisplay } from '@/config/razorpayConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { useAuth } from '@/auth/AuthProvider';
@@ -43,10 +44,12 @@ export function UpgradeModal({
 
   const paymentsLive = isPaymentsLive();
   const planLabel = PLAN_LABELS[targetPlan];
-  const priceDisplay =
-    targetPlan === 'pro' && user?.foundingLifetimeDiscount
-      ? `${getFoundingDiscountedDisplay(currency)} / year`
-      : getAnnualMembershipDisplay(targetPlan, currency);
+  const foundingDiscount = Boolean(user?.foundingLifetimeDiscount);
+  const { amount, period } = getAnnualPriceParts(targetPlan, currency, foundingDiscount);
+  const priceAmount =
+    targetPlan === 'pro' && foundingDiscount
+      ? getFoundingDiscountedDisplay(currency)
+      : amount;
 
   const handleUpgrade = async () => {
     setLoading(true);
@@ -78,8 +81,11 @@ export function UpgradeModal({
         </div>
 
         <div className={styles.priceDisplay}>
-          <div className={styles.priceAmount}>{priceDisplay}</div>
-          <div className={styles.priceNote}>Billed annually · Secure Razorpay checkout</div>
+          <div className={styles.priceRow}>
+            <span className={styles.priceAmount}>{priceAmount}</span>
+            <span className={styles.pricePeriod}>{period}</span>
+          </div>
+          <div className={styles.priceNote}>{ANNUAL_BILLING_LABEL} · Secure Razorpay checkout</div>
         </div>
 
         {error && (

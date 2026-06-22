@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
-import { getAnnualPriceDisplay } from '@/config/pricingConfig';
+import { getAnnualPriceParts } from '@/config/pricingConfig';
 import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { PET_LIMITS } from '@/subscription/entitlements';
 import { ROUTES } from '@/routes/paths';
@@ -24,7 +24,7 @@ export function PlanComparisonSection() {
     {
       id: 'plus',
       name: 'Plus',
-      price: isLoading ? '…' : getAnnualPriceDisplay('plus', currency).replace(' / year', ''),
+      price: isLoading ? '…' : getAnnualPriceParts('plus', currency).amount,
       period: '/year',
       petLimit: `${PET_LIMITS.plus} Pets`,
       features: ['Passports', 'Reports', 'Family Sharing'],
@@ -35,7 +35,7 @@ export function PlanComparisonSection() {
     {
       id: 'pro',
       name: 'Pro',
-      price: isLoading ? '…' : getAnnualPriceDisplay('pro', currency).replace(' / year', ''),
+      price: isLoading ? '…' : getAnnualPriceParts('pro', currency).amount,
       period: '/year',
       petLimit: `${PET_LIMITS.pro} Pets`,
       features: ['Everything in Plus', 'Priority Support', 'Advanced AI', 'Future Premium Features'],

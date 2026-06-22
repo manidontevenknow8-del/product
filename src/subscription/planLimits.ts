@@ -39,7 +39,7 @@ export interface PlanFeatureAccess {
 }
 
 export interface PlanPricingMeta {
-  monthlyInr: number | null;
+  annualInr: number | null;
   displayLabel: string;
   contactSales: boolean;
 }
@@ -56,7 +56,7 @@ const UNLIMITED = 'unlimited' as const;
 export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> = {
   free: {
     plan: 'free',
-    pricing: { monthlyInr: 0, displayLabel: '₹0', contactSales: false },
+    pricing: { annualInr: 0, displayLabel: '₹0', contactSales: false },
     quotas: {
       pets: 1,
       timelineHistoryDays: 30,
@@ -79,7 +79,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
   },
   plus: {
     plan: 'plus',
-    pricing: { monthlyInr: 2_999, displayLabel: '₹2,999/month', contactSales: false },
+    pricing: { annualInr: 1_999, displayLabel: '₹1,999 / year', contactSales: false },
     quotas: {
       pets: 3,
       timelineHistoryDays: UNLIMITED,
@@ -102,7 +102,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
   },
   pro: {
     plan: 'pro',
-    pricing: { monthlyInr: 4_999, displayLabel: '₹4,999/month', contactSales: false },
+    pricing: { annualInr: 4_999, displayLabel: '₹4,999 / year', contactSales: false },
     quotas: {
       pets: 10,
       timelineHistoryDays: UNLIMITED,
@@ -125,7 +125,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
   },
   enterprise: {
     plan: 'enterprise',
-    pricing: { monthlyInr: null, displayLabel: 'Contact Sales', contactSales: true },
+    pricing: { annualInr: null, displayLabel: 'Contact Sales', contactSales: true },
     quotas: {
       pets: UNLIMITED,
       timelineHistoryDays: UNLIMITED,

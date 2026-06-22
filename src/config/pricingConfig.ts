@@ -12,6 +12,7 @@ export type CheckoutPlan = 'plus' | 'pro';
 export type BillingCycle = 'annual';
 
 export const BILLING_CYCLE: BillingCycle = 'annual';
+export const ANNUAL_BILLING_LABEL = 'Billed annually';
 
 export const PLUS_ANNUAL_INR = 1_999;
 export const PRO_ANNUAL_INR = 4_999;
@@ -71,20 +72,6 @@ export function getAnnualPrice(
   return currency === 'INR' ? PRO_ANNUAL_INR : PRO_ANNUAL_USD;
 }
 
-export function getCheckoutAmountMinor(
-  plan: CheckoutPlan,
-  currency: BillingCurrency,
-  foundingDiscount = false,
-): number {
-  if (plan === 'plus') {
-    return currency === 'INR' ? PLUS_ANNUAL_INR_MINOR : PLUS_ANNUAL_USD_MINOR;
-  }
-  if (foundingDiscount) {
-    return currency === 'INR' ? PRO_ANNUAL_FOUNDING_INR_MINOR : PRO_ANNUAL_FOUNDING_USD_MINOR;
-  }
-  return currency === 'INR' ? PRO_ANNUAL_INR_MINOR : PRO_ANNUAL_USD_MINOR;
-}
-
 export function getPlanPriceLabel(
   plan: CommercialPlan,
   currency: BillingCurrency = 'INR',
@@ -104,10 +91,13 @@ export function getPlanPriceLabel(
   }
 }
 
-export function getAnnualPriceDisplay(
+export function getAnnualPriceParts(
   plan: CheckoutPlan,
   currency: BillingCurrency,
   foundingDiscount = false,
-): string {
-  return `${formatPrice(getAnnualPrice(plan, currency, foundingDiscount), currency)} / year`;
+): { amount: string; period: string } {
+  return {
+    amount: formatPrice(getAnnualPrice(plan, currency, foundingDiscount), currency),
+    period: '/ year',
+  };
 }

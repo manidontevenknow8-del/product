@@ -46,10 +46,9 @@ export function TermsOfServicePage() {
           advanced reports, and AI-assisted document tools.
         </LegalParagraph>
         <LegalParagraph>
-          Premium access may require payment through our available payment provider when billing is
-          enabled. Online checkout is coming soon; during early access, premium may be granted
-          manually. Pricing and plan details are shown on our pricing page and may change with
-          notice.
+          Premium access is billed annually through Razorpay. Pricing and plan details are shown on
+          our pricing page and may change with notice. Memberships renew each year unless canceled
+          before the renewal date.
         </LegalParagraph>
       </LegalSection>
 

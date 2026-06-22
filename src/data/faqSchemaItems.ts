@@ -23,7 +23,7 @@ export const FAQ_PAGE_SCHEMA_ITEMS = [
   {
     question: 'Is PetClues free?',
     answer:
-      'PetClues offers a free plan with core organization features. Premium plans with additional capabilities are described on the pricing page. Online billing is coming soon.',
+      'PetClues offers a free plan with core organization features. Annual Plus and Pro memberships unlock additional capabilities — see the pricing page for details.',
   },
   {
     question: 'How do I contact support?',

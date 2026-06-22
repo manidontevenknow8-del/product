@@ -15,7 +15,9 @@ interface RazorpayOptions {
   prefill?: {
     email?: string;
     name?: string;
+    contact?: string;
   };
+  notes?: Record<string, string>;
   theme?: {
     color?: string;
   };

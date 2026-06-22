@@ -8,7 +8,7 @@ import {
   FOUNDING_DISCOUNT_PERCENT,
   getFoundingDiscountedDisplay,
 } from '@/config/razorpayConfig';
-import { getAnnualPriceDisplay } from '@/config/pricingConfig';
+import { ANNUAL_BILLING_LABEL, getAnnualPriceParts } from '@/config/pricingConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { UpgradeModal, PromoCodeForm } from '@/components/subscription';
@@ -55,11 +55,11 @@ export function BillingPage() {
   const membershipCurrency = subscription?.currency ?? currency;
   const priceNote =
     currentPlan === 'plus'
-      ? getAnnualPriceDisplay('plus', membershipCurrency)
+      ? `${getAnnualPriceParts('plus', membershipCurrency).amount} / year`
       : currentPlan === 'pro'
         ? user?.foundingLifetimeDiscount
-          ? getFoundingDiscountedDisplay(membershipCurrency) + ' / year'
-          : getAnnualPriceDisplay('pro', membershipCurrency)
+          ? `${getFoundingDiscountedDisplay(membershipCurrency)} / year`
+          : `${getAnnualPriceParts('pro', membershipCurrency).amount} / year`
         : null;
 
   return (
@@ -108,7 +108,7 @@ export function BillingPage() {
               </div>
               <p className={styles.planMeta}>
                 {currentPlan !== 'free' && subscription?.renewalDate
-                  ? `Renews ${subscription.renewalDate}`
+                  ? `Renews ${subscription.renewalDate} · ${ANNUAL_BILLING_LABEL}`
                   : currentPlan !== 'free' && priceNote
                     ? `${planLabel} — ${priceNote}`
                     : 'No active membership'}

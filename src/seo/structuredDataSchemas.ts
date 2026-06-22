@@ -207,7 +207,7 @@ export function buildPricingPageSchema() {
     '@id': `${SITE_META.siteUrl}/pricing#webpage`,
     name: 'PetClues Annual Membership',
     description:
-      'Annual memberships for pet health records, reminders, documents, and AI insights. India pricing in INR; international pricing in USD.',
+      'Annual memberships for pet health records, reminders, documents, and AI insights.',
     mainEntity: {
       '@type': 'ItemList',
       itemListElement: [

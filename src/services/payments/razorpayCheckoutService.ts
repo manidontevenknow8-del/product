@@ -1,11 +1,12 @@
 import { eventTracker } from '@/analytics/EventTracker';
 import {
   getAnnualPrice,
-  getAnnualPriceDisplay,
+  getAnnualPriceParts,
   type BillingCurrency,
   type CheckoutPlan,
 } from '@/config/pricingConfig';
 import { getRazorpayKeyId } from '@/config/razorpayConfig';
+import { buildRazorpayPrefill } from '@/services/payments/checkoutPrefill';
 import { getSupabaseClient } from '@/services/supabase/client';
 import { parseFunctionInvokeError } from '@/services/supabase/parseFunctionInvokeError';
 import { getUserFacingError, sanitizeUserFacingError } from '@/utils/userFacingErrors';
@@ -125,11 +126,13 @@ export const razorpayCheckoutService = {
       throw new Error('Razorpay is not configured. Missing checkout key from server or VITE_RAZORPAY_KEY_ID.');
     }
 
-    const priceDisplay = getAnnualPriceDisplay(
+    const foundingDiscount = order.foundingDiscount ?? input.foundingDiscount;
+    const { amount: priceAmount, period } = getAnnualPriceParts(
       input.plan,
       input.currency,
-      order.foundingDiscount ?? input.foundingDiscount,
+      foundingDiscount,
     );
+    const prefill = buildRazorpayPrefill(input.prefill, order.currency);
 
     return new Promise((resolve, reject) => {
       const checkout = new Razorpay({
@@ -138,11 +141,14 @@ export const razorpayCheckoutService = {
         currency: order.currency,
         order_id: order.orderId,
         name: 'PetClues',
-        description: `PetClues ${PLAN_LABELS[input.plan]} — ${priceDisplay}`,
+        description: `PetClues ${PLAN_LABELS[input.plan]} — ${priceAmount} ${period}`,
         image: '/logo.png',
-        prefill: {
-          email: input.prefill.email,
-          name: input.prefill.name,
+        prefill,
+        notes: {
+          user_id: input.userId,
+          user_email: prefill.email,
+          plan: input.plan,
+          billing_cycle: 'annual',
         },
         theme: { color: '#1a1a1a' },
         handler: async (response) => {

@@ -1,9 +1,7 @@
 import type { SubscriptionPlan } from '@/types/subscription';
 import {
   PLUS_ANNUAL_INR,
-  PLUS_ANNUAL_USD,
   PRO_ANNUAL_INR,
-  PRO_ANNUAL_USD,
   formatPrice,
   CUSTOM_LIMITS_EMAIL,
 } from '@/config/pricingConfig';
@@ -81,9 +79,4 @@ export const PLANS: SubscriptionPlan[] = [
       `Contact ${CUSTOM_LIMITS_EMAIL}`,
     ],
   },
-];
-
-export const PLANS_USD: Pick<SubscriptionPlan, 'id' | 'annualPrice' | 'priceDisplay'>[] = [
-  { id: 'plus', annualPrice: PLUS_ANNUAL_USD, priceDisplay: `${formatPrice(PLUS_ANNUAL_USD, 'USD')} / year` },
-  { id: 'pro', annualPrice: PRO_ANNUAL_USD, priceDisplay: `${formatPrice(PRO_ANNUAL_USD, 'USD')} / year` },
 ];

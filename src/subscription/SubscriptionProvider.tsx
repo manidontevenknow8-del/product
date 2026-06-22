@@ -37,6 +37,7 @@ import {
   type PlanFeature,
   type PremiumFeature,
 } from '@/subscription/entitlements';
+import { buildCheckoutIdentity } from '@/services/payments/checkoutPrefill';
 import type {
   CheckoutPlan,
   Invoice,
@@ -171,10 +172,10 @@ export function SubscriptionProvider({
       if (!isPaymentsLive()) {
         throw new Error(PAYMENTS_COMING_SOON_MESSAGE);
       }
-      await subscriptionService.startCheckout(user.id, plan, currency, {
-        email: user.email,
-        name: user.name,
-      }, {
+      await subscriptionService.startCheckout(user.id, plan, currency, buildCheckoutIdentity({
+        email: user.email ?? '',
+        name: user.name ?? '',
+      }), {
         countryCode: options?.countryCode,
         foundingDiscount: user.foundingLifetimeDiscount,
       });

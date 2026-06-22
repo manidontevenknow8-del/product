@@ -7,10 +7,10 @@ import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { useAnalytics } from '@/analytics';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
 import {
+  ANNUAL_BILLING_LABEL,
   CUSTOM_LIMITS_EMAIL,
   FOUNDING_DISCOUNT_PERCENT,
-  getAnnualPriceDisplay,
-  getPlanPriceLabel,
+  getAnnualPriceParts,
 } from '@/config/pricingConfig';
 import { useBillingRegion } from '@/hooks/useBillingRegion';
 import type { CommercialPlan } from '@/subscription/entitlements';
@@ -40,18 +40,20 @@ const PRO_FEATURES = [
   'Future premium features',
 ] as const;
 
+const TRUST_POINTS = [
+  'Secure payments',
+  'Cancel anytime',
+  'International cards accepted',
+] as const;
+
 const PRICING_FAQ = [
   {
-    q: 'Is this a subscription?',
-    a: 'PetClues memberships are billed once per year. One payment, twelve months of access — no monthly billing.',
+    q: 'How does membership work?',
+    a: 'PetClues memberships are billed once per year. One payment gives you twelve months of full access.',
   },
   {
     q: 'Can I start free and upgrade later?',
     a: 'Yes. Every account begins on Free with one pet. Upgrade to Plus or Pro anytime — your records and timeline come with you.',
-  },
-  {
-    q: 'What currency will I be charged in?',
-    a: 'Members in India are charged in INR. Members everywhere else are charged in USD. Pricing is shown automatically for your region.',
   },
   {
     q: 'Can I cancel?',
@@ -186,11 +188,6 @@ export function PricingPage() {
             Health records, medical history, reminders, documents, boarding readiness, travel
             records, and life&apos;s most important moments — beautifully organized in one place.
           </p>
-          {!regionLoading && (
-            <p className={styles.regionNote}>
-              {currency === 'INR' ? 'Pricing in INR for India' : 'Pricing in USD'}
-            </p>
-          )}
         </div>
       </section>
 
@@ -212,7 +209,7 @@ export function PricingPage() {
             {MEMBERSHIP_PLANS.map((plan) => {
               const isCurrent = isAuthenticated && currentPlan === plan.id;
               const isHighlighted = highlightedPlan === plan.id || plan.highlighted;
-              const price = getAnnualPriceDisplay(
+              const { amount, period } = getAnnualPriceParts(
                 plan.id,
                 currency,
                 plan.id === 'pro' && foundingDiscount,
@@ -228,11 +225,24 @@ export function PricingPage() {
                   className={`${styles.planCard} ${isHighlighted ? styles.planCardHighlighted : ''}`}
                 >
                   {plan.highlighted && <span className={styles.planBadge}>Recommended</span>}
+
+                  <div className={styles.priceBlock}>
+                    <div className={styles.priceRow}>
+                      <span className={styles.planPriceAmount}>
+                        {regionLoading ? '…' : amount}
+                      </span>
+                      {!regionLoading && (
+                        <span className={styles.planPricePeriod}>{period}</span>
+                      )}
+                    </div>
+                    <p className={styles.planBillingNote}>{ANNUAL_BILLING_LABEL}</p>
+                  </div>
+
                   <div className={styles.planHeader}>
                     <h2 className={styles.planName}>{plan.name}</h2>
                     <p className={styles.planTagline}>{plan.tagline}</p>
                   </div>
-                  <p className={styles.planPrice}>{regionLoading ? '…' : price}</p>
+
                   <ul className={styles.featureList}>
                     {features.map((feature) => (
                       <li key={feature}>
@@ -241,6 +251,7 @@ export function PricingPage() {
                       </li>
                     ))}
                   </ul>
+
                   <button
                     type="button"
                     className={plan.highlighted ? styles.planCtaPrimary : styles.planCtaSecondary}
@@ -253,6 +264,15 @@ export function PricingPage() {
               );
             })}
           </div>
+
+          <ul className={styles.trustRow} aria-label="Membership assurances">
+            {TRUST_POINTS.map((point) => (
+              <li key={point}>
+                <CheckIcon />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
 
           <p className={styles.freeNote}>
             Not ready yet?{' '}
@@ -301,11 +321,6 @@ export function PricingPage() {
           </section>
 
           <FeaturePageLinks />
-
-          <p className={styles.footnote}>
-            Plus {getPlanPriceLabel('plus', currency)}/year · Pro{' '}
-            {getPlanPriceLabel('pro', currency, foundingDiscount)}/year · Annual membership only
-          </p>
         </div>
       </div>
     </div>
