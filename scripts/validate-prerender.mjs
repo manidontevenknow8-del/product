@@ -51,6 +51,12 @@ const samples = [
     titleIncludes: 'Pet Health Records',
     bodyIncludes: 'health records',
   },
+  {
+    label: 'digital pet passport',
+    file: 'digital-pet-passport/index.html',
+    titleIncludes: 'Digital Pet Passport',
+    bodyIncludes: 'passport',
+  },
 ];
 
 function extractRootInnerHtml(html) {
@@ -81,6 +87,8 @@ function assertCrawlSafe(label, filePath, titleIncludes, bodyIncludes) {
   const ogTitle = html.match(/<meta property="og:title" content="([^"]*)"/i)?.[1] ?? '';
   const twitterTitle = html.match(/<meta name="twitter:title" content="([^"]*)"/i)?.[1] ?? '';
   const jsonLdCount = (html.match(/type="application\/ld\+json"/g) ?? []).length;
+  const robots = html.match(/<meta name="robots" content="([^"]*)"/i)?.[1] ?? '';
+  const robotsTagCount = (html.match(/<meta name="robots"/gi) ?? []).length;
   const rootBody = extractRootInnerHtml(html);
 
   if (!title.toLowerCase().includes(titleIncludes.toLowerCase())) {
@@ -88,6 +96,13 @@ function assertCrawlSafe(label, filePath, titleIncludes, bodyIncludes) {
   }
   if (!description) throw new Error(`[${label}] missing meta description`);
   if (!canonical.startsWith(site)) throw new Error(`[${label}] missing canonical (${canonical})`);
+  if (!robots) throw new Error(`[${label}] missing robots meta tag`);
+  if (/noindex/i.test(robots)) {
+    throw new Error(`[${label}] robots meta must be indexable, got: ${robots}`);
+  }
+  if (robotsTagCount !== 1) {
+    throw new Error(`[${label}] expected exactly one robots meta tag, found ${robotsTagCount}`);
+  }
   if (!ogTitle) throw new Error(`[${label}] missing og:title`);
   if (!twitterTitle) throw new Error(`[${label}] missing twitter:title`);
   if (jsonLdCount < 1) throw new Error(`[${label}] missing JSON-LD scripts`);

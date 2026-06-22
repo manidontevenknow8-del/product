@@ -1,6 +1,10 @@
+import { getCommercialPageByPath, isCommercialPath } from '@/data/commercial';
 import { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 import { ROUTES, PROTECTED_ROUTES, AUTH_ROUTES } from '@/routes/paths';
 import { formatMetaDescription, formatPageTitle } from '@/seo/seoFormatters';
+
+export const ROBOTS_INDEX = 'index, follow';
+export const ROBOTS_NOINDEX = 'noindex, nofollow';
 
 export type SEOConfig = {
   title: string;
@@ -381,6 +385,7 @@ export function isFaqPath(pathname: string): boolean {
 
 export function isIndexablePublicPath(pathname: string): boolean {
   if (pathname === ROUTES.LANDING) return true;
+  if (isCommercialPath(pathname)) return true;
   if (isBlogArticlePath(pathname)) return true;
   if (isCompareArticlePath(pathname)) return true;
   if (isBestArticlePath(pathname)) return true;
@@ -398,9 +403,29 @@ function buildCanonical(pathname: string): string {
 function shouldNoIndex(pathname: string, explicit?: boolean): boolean {
   if (explicit === true) return true;
   if (explicit === false) return false;
+  if (isCommercialPath(pathname)) return false;
   if (FORCE_NOINDEX_ROUTES.has(pathname)) return true;
   if (isIndexablePublicPath(pathname)) return false;
   return true;
+}
+
+function getCommercialPageSEO(pathname: string): SEOConfig | null {
+  const page = getCommercialPageByPath(pathname);
+  if (!page) return null;
+
+  return finalizeSEO(
+    {
+      title: page.title,
+      description: page.metaDescription,
+      keywords: [page.primaryKeyword, ...page.secondaryKeywords].join(', '),
+      canonical: buildCanonical(pathname),
+      ogType: 'website',
+      ogImage: DEFAULT_OG_IMAGE,
+      ogImageAlt: page.heroImageAlt,
+      noIndex: false,
+    },
+    pathname,
+  );
 }
 
 function finalizeSEO(config: SEOConfig, pathname?: string): SEOConfig {
@@ -425,6 +450,9 @@ function finalizeSEO(config: SEOConfig, pathname?: string): SEOConfig {
 }
 
 export function getPageSEO(pathname: string): SEOConfig {
+  const commercialSeo = getCommercialPageSEO(pathname);
+  if (commercialSeo) return commercialSeo;
+
   if (isBlogArticlePath(pathname)) {
     return finalizeSEO(
       {

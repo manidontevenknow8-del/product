@@ -12,27 +12,12 @@ function injectHead(html: string, fragment: string): string {
   return html.replace(pattern, `${PRERENDER_SEO_START}\n${fragment}\n    ${PRERENDER_SEO_END}`);
 }
 
-function hasBlockedBlogQuery(url: URL): boolean {
-  return url.searchParams.has('tag') || url.searchParams.has('q');
-}
-
 export default async function middleware(request: Request): Promise<Response | undefined> {
   if (request.headers.get('x-prerender-middleware') === '1') {
     return undefined;
   }
 
   const url = new URL(request.url);
-
-  if (url.pathname === '/blog' && hasBlockedBlogQuery(url)) {
-    const response = await fetch(request);
-    const headers = new Headers(response.headers);
-    headers.set('X-Robots-Tag', 'noindex, nofollow');
-    return new Response(response.body, {
-      status: response.status,
-      statusText: response.statusText,
-      headers,
-    });
-  }
 
   const routeKey = `${url.pathname}${url.search}`;
   const fragment = queryMeta[routeKey];

@@ -1,5 +1,5 @@
 import type { SEOConfig } from '@/data/seoConfig';
-import { SITE_META } from '@/data/seoConfig';
+import { ROBOTS_INDEX, ROBOTS_NOINDEX, SITE_META } from '@/data/seoConfig';
 import { formatMetaDescription } from '@/seo/seoFormatters';
 
 export const PRERENDER_SEO_START = '<!-- PETCLUES_SEO_START -->';
@@ -57,7 +57,7 @@ export function buildSeoHeadFragment(doc: PrerenderDocument): string {
     `    <title>${escapeHtml(config.title)}</title>`,
     metaName('description', description),
     linkTag('canonical', config.canonical ?? SITE_META.siteUrl),
-    metaName('robots', config.noIndex ? 'noindex, nofollow' : 'index, follow'),
+    metaName('robots', config.noIndex ? ROBOTS_NOINDEX : ROBOTS_INDEX),
   ];
 
   if (config.keywords) {

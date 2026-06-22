@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import type { SEOConfig } from '@/data/seoConfig';
-import { SITE_META } from '@/data/seoConfig';
+import { ROBOTS_INDEX, ROBOTS_NOINDEX, SITE_META } from '@/data/seoConfig';
 import { formatMetaDescription } from '@/seo/seoFormatters';
 
 const ARTICLE_META_KEYS = [
@@ -49,11 +49,11 @@ export function MetaTags({ config }: MetaTagsProps) {
       setLinkTag('canonical', config.canonical);
     }
 
-    if (config.noIndex) {
-      setMetaTag('robots', 'noindex, nofollow');
-    } else {
-      setMetaTag('robots', 'index, follow');
-    }
+    document.querySelectorAll('meta[name="robots"]').forEach((node, index) => {
+      if (index > 0) node.remove();
+    });
+
+    setMetaTag('robots', config.noIndex ? ROBOTS_NOINDEX : ROBOTS_INDEX);
 
     if (config.keywords) {
       setMetaTag('keywords', config.keywords);
