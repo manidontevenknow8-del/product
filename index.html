@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PETCLUES_SEO_START -->
     <title>PetClues | AI-Powered Pet Health &amp; Life Management</title>
     <meta
       name="description"
@@ -59,28 +60,79 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://petclues.com/#organization",
-        "name": "PetClues",
-        "url": "https://petclues.com",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://petclues.com/logo.png",
-          "width": 512,
-          "height": 512
-        },
-        "image": "https://petclues.com/logo.png",
-        "description": "AI-powered pet health and life management platform.",
-        "sameAs": [
-          "https://instagram.com/thepetclues",
-          "https://facebook.com/profile.php?id=61590826104670"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "support@petclues.com",
-          "availableLanguage": "English"
-        }
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://petclues.com/#organization",
+            "name": "PetClues",
+            "url": "https://petclues.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://petclues.com/logo.png",
+              "width": 512,
+              "height": 512
+            },
+            "image": "https://petclues.com/logo.png",
+            "description": "Premium digital biological archive and concierge medical records management for pets.",
+            "sameAs": [
+              "https://instagram.com/thepetclues",
+              "https://facebook.com/profile.php?id=61590826104670",
+              "https://www.linkedin.com/company/petclues"
+            ],
+            "knowsAbout": [
+              {
+                "@type": "Thing",
+                "name": "Electronic health record",
+                "sameAs": "https://www.wikidata.org/wiki/Q5243859"
+              },
+              {
+                "@type": "Thing",
+                "name": "Pet passport",
+                "sameAs": "https://www.wikidata.org/wiki/Q2043684"
+              },
+              {
+                "@type": "Thing",
+                "name": "Vaccination",
+                "sameAs": "https://www.wikidata.org/wiki/Q134808"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "email": "support@petclues.com",
+              "availableLanguage": "English"
+            }
+          },
+          {
+            "@type": "SoftwareApplication",
+            "@id": "https://petclues.com/#software",
+            "name": "PetClues",
+            "url": "https://petclues.com",
+            "applicationCategory": "HealthApplication",
+            "applicationSubCategory": "Pet data management",
+            "operatingSystem": "Web",
+            "description": "Pet data management software for health records, vaccination tracking, digital pet passports, reminders, and concierge document extraction.",
+            "publisher": { "@id": "https://petclues.com/#organization" },
+            "provider": { "@id": "https://petclues.com/#organization" },
+            "knowsAbout": [
+              {
+                "@type": "Thing",
+                "name": "Electronic health record",
+                "sameAs": "https://www.wikidata.org/wiki/Q5243859"
+              },
+              {
+                "@type": "Thing",
+                "name": "Pet passport",
+                "sameAs": "https://www.wikidata.org/wiki/Q2043684"
+              },
+              {
+                "@type": "Thing",
+                "name": "Vaccination",
+                "sameAs": "https://www.wikidata.org/wiki/Q134808"
+              }
+            ]
+          }
+        ]
       }
     </script>
 
@@ -104,6 +156,9 @@
         }
       }
     </script>
+    <!-- PETCLUES_SEO_END -->
+
+    <!-- Meta Pixel: initialized client-side from src/analytics/metaPixel.ts (VITE_META_PIXEL_ID) -->
 
     <link
       rel="preload"

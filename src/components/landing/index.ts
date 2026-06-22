@@ -4,5 +4,6 @@ export { FeatureHighlights } from './FeatureHighlights';
 export { HowItWorks } from './HowItWorks';
 export { TrustSection } from './TrustSection';
 export { CTASection } from './CTASection';
+export { LandingExploreSection } from './LandingExploreSection';
 export { Footer } from './Footer';
 export { LandingBlogPreview } from './LandingBlogPreview';

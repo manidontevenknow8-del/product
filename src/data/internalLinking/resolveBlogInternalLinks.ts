@@ -10,6 +10,8 @@ import {
   inferBlogCluster,
   learnCategoryForBlog,
 } from './mappings';
+import { commercialLinkForCluster } from './commercialMappings';
+import { hubPoolForCluster } from './hubMappings';
 import type { BlogInternalLinkPlan, BlogLinkCandidate, InternalLink } from './types';
 
 function stableHash(input: string): number {
@@ -139,6 +141,8 @@ export function resolveBlogInternalLinks(
   const faqSlug = pickAt(faqPool.sort(), post.slug, 'faq');
 
   const homepageSection = pickAt([...LANDING_SECTIONS], post.slug, 'home');
+  const commercial = commercialLinkForCluster(cluster);
+  const hubTarget = pickAt(hubPoolForCluster(cluster), post.slug, 'hub');
 
   return {
     slug: post.slug,
@@ -149,6 +153,16 @@ export function resolveBlogInternalLinks(
       kind: 'pricing',
       label: 'PetClues pricing',
       href: ROUTES.PRICING,
+    },
+    commercial: {
+      kind: 'commercial',
+      label: commercial.label,
+      href: commercial.href,
+    },
+    hub: {
+      kind: 'hub',
+      label: hubTarget.label,
+      href: hubTarget.href,
     },
     homepage: {
       kind: 'homepage',
@@ -171,7 +185,11 @@ export function formatBlogInternalLinksMarkdown(plan: BlogInternalLinkPlan): str
     '**FAQ**',
     `- [${plan.faq.label}](${plan.faq.href})`,
     '',
+    '**Guides & tools**',
+    `- [${plan.hub.label}](${plan.hub.href})`,
+    '',
     '**Product**',
+    `- [${plan.commercial.label}](${plan.commercial.href})`,
     `- [${plan.pricing.label}](${plan.pricing.href})`,
     `- [${plan.homepage.label}](${plan.homepage.href})`,
   ];

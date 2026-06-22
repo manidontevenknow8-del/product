@@ -3,24 +3,27 @@ import {
   buildFaqPageSchema,
   buildLandingGraphSchema,
   buildOrganizationSchema,
+  buildSchemaGraph,
   buildSoftwareApplicationSchema,
   buildWebSiteSchema,
 } from './structuredDataSchemas';
-import { useJsonLd } from './useJsonLd';
+import { JsonLd } from './JsonLd';
 
 export function OrganizationStructuredData() {
-  useJsonLd('organization', buildOrganizationSchema());
-  return null;
+  return (
+    <JsonLd
+      id="organization"
+      data={buildSchemaGraph(buildOrganizationSchema(), buildSoftwareApplicationSchema())}
+    />
+  );
 }
 
 export function WebSiteStructuredData() {
-  useJsonLd('website', buildWebSiteSchema());
-  return null;
+  return <JsonLd id="website" data={buildWebSiteSchema()} />;
 }
 
 export function SoftwareApplicationStructuredData() {
-  useJsonLd('software-application', buildSoftwareApplicationSchema());
-  return null;
+  return <JsonLd id="software-application" data={buildSoftwareApplicationSchema()} />;
 }
 
 type FaqStructuredDataProps = {
@@ -28,13 +31,11 @@ type FaqStructuredDataProps = {
 };
 
 export function FaqStructuredData({ items }: FaqStructuredDataProps) {
-  useJsonLd('faq-page', buildFaqPageSchema(items));
-  return null;
+  return <JsonLd id="faq-page" data={buildFaqPageSchema(items)} />;
 }
 
 export function LandingStructuredData() {
-  useJsonLd('landing-graph', buildLandingGraphSchema(LANDING_FAQ_SCHEMA_ITEMS));
-  return null;
+  return <JsonLd id="landing-graph" data={buildLandingGraphSchema(LANDING_FAQ_SCHEMA_ITEMS)} />;
 }
 
 type StructuredDataProps = {

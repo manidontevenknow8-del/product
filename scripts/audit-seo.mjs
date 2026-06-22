@@ -1,10 +1,11 @@
 /**
- * SEO audit — validates unique titles, meta descriptions, canonicals, and sitemap coverage.
- * Writes SEO_AUDIT_REPORT.md and fails the build on duplicate indexable titles.
+ * SEO audit — validates titles, descriptions, canonicals, robots, and schema coverage
+ * for every URL in public/sitemap.xml. Fails the build on critical gaps.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { readSitemapUrls } from './lib/readSitemapUrls.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -14,6 +15,83 @@ const META_DESC_MIN = 140;
 const META_DESC_MAX = 160;
 const BRAND_SUFFIX = 'PetClues';
 const BRAND_SUFFIX_RE = /\s*(\||-)\s*PetClues(\s+\w+)?\s*$/i;
+
+const COMPARE_SITEMAP_EXCLUDED = new Set(['best-pet-health-record-app']);
+
+const SCHEMA_FAMILIES = {
+  landing: {
+    handler: 'src/seo/StructuredData.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'FAQPage'],
+  },
+  'static-product': {
+    handler: 'src/seo/staticPageSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage', 'BreadcrumbList'],
+  },
+  'static-about': {
+    handler: 'src/seo/staticPageSeo.tsx',
+    required: ['Organization', 'WebSite', 'ProfilePage', 'WebPage', 'BreadcrumbList'],
+  },
+  'static-legal': {
+    handler: 'src/seo/staticPageSeo.tsx',
+    required: ['Organization', 'WebPage', 'BreadcrumbList'],
+  },
+  'blog-index': {
+    handler: 'src/seo/blogSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+  },
+  'blog-post': {
+    handler: 'src/seo/blogSeo.tsx',
+    required: ['Organization', 'WebSite', 'BlogPosting', 'BreadcrumbList'],
+  },
+  'compare-index': {
+    handler: 'src/seo/compareSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList', 'SoftwareApplication'],
+  },
+  'compare-page': {
+    handler: 'src/seo/compareSeo.tsx',
+    required: ['Organization', 'WebSite', 'WebPage', 'FAQPage', 'BreadcrumbList', 'SoftwareApplication'],
+  },
+  'best-index': {
+    handler: 'src/seo/intentSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList', 'SoftwareApplication'],
+  },
+  'best-page': {
+    handler: 'src/seo/intentSeo.tsx',
+    required: ['Organization', 'WebSite', 'WebPage', 'FAQPage', 'BreadcrumbList', 'SoftwareApplication'],
+  },
+  'guides-hub': {
+    handler: 'src/seo/programmaticSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+  },
+  'guides-collection': {
+    handler: 'src/seo/programmaticSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+  },
+  'guides-page': {
+    handler: 'src/seo/programmaticSeo.tsx',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+  },
+  'learn-index': {
+    handler: 'src/seo/learnSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+  },
+  'learn-page': {
+    handler: 'src/seo/learnSeo.tsx',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+  },
+  'faq-index': {
+    handler: 'src/seo/faqHubSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+  },
+  'faq-page': {
+    handler: 'src/seo/faqHubSeo.tsx',
+    required: ['Organization', 'WebSite', 'QAPage', 'BreadcrumbList'],
+  },
+  'commercial-page': {
+    handler: 'src/seo/commercialSeo.tsx',
+    required: ['Organization', 'WebSite', 'WebPage', 'FAQPage', 'BreadcrumbList', 'SoftwareApplication'],
+  },
+};
 
 function read(relPath) {
   return readFileSync(join(root, relPath), 'utf8');
@@ -30,7 +108,7 @@ function formatPageTitle(pageTitle) {
 }
 
 function formatMetaDescription(text, contextHint = '') {
-  const normalized = text.replace(/\s+/g, ' ').trim();
+  const normalized = (text ?? '').replace(/\s+/g, ' ').trim();
   if (!normalized) return normalized;
   if (normalized.length >= META_DESC_MIN && normalized.length <= META_DESC_MAX) return normalized;
   if (normalized.length > META_DESC_MAX) {
@@ -41,6 +119,9 @@ function formatMetaDescription(text, contextHint = '') {
   }
   let expanded = normalized.endsWith('.') ? normalized : `${normalized}.`;
   expanded += ' Free pet health records, reminders, and emergency passport tools from PetClues.';
+  if (contextHint && expanded.length < META_DESC_MIN) {
+    expanded = `${expanded} ${contextHint}.`.replace(/\s+/g, ' ').trim();
+  }
   return expanded.slice(0, META_DESC_MAX);
 }
 
@@ -50,24 +131,65 @@ function descStatus(len) {
   return 'LONG';
 }
 
-/** @type {{ url: string, title: string, description: string, indexable: boolean, source: string }[]} */
-const pages = [];
+function slugifyFaqQuestion(question) {
+  return question
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-')
+    .slice(0, 90);
+}
 
-function addPage(url, title, description, indexable, source) {
-  pages.push({
-    url,
-    title: formatPageTitle(title),
+function extractCategoryLabels(filePath, idPattern = /id:\s*'([^']+)',\s*\n\s*label:\s*'([^']+)'/g) {
+  const content = read(filePath);
+  const labels = new Map();
+  for (const match of content.matchAll(idPattern)) {
+    labels.set(match[1], match[2]);
+  }
+  return labels;
+}
+
+function extractConfigBlocks(content, startMarker) {
+  const blocks = [];
+  const parts = content.split(startMarker).slice(1);
+  for (const part of parts) {
+    const end = part.search(/\n  \},?\n  \{/);
+    blocks.push(end === -1 ? part : part.slice(0, end));
+  }
+  return blocks;
+}
+
+function field(block, name) {
+  const match =
+    block.match(new RegExp(`${name}:\\s*'([^']*)'`)) ??
+    block.match(new RegExp(`${name}:\\s*"([^"]*)"`)) ??
+    block.match(new RegExp(`${name}:\\s*\\n\\s*'([^']*)'`));
+  return match?.[1]?.trim() ?? '';
+}
+
+/** @type {Map<string, { title: string, description: string, canonical: string, indexable: boolean, schemaFamily: string, source: string }>} */
+const registry = new Map();
+
+function shouldUseRawTitle(title) {
+  const trimmed = title.trim();
+  return /\|\s*PetClues\s*$/i.test(trimmed) || /^PetClues\s*\|/i.test(trimmed);
+}
+
+function register(url, { title, description, canonical, indexable, schemaFamily, source }) {
+  const resolvedTitle = shouldUseRawTitle(title) ? title.trim() : formatPageTitle(title);
+  registry.set(url, {
+    title: resolvedTitle,
     description: formatMetaDescription(description, title),
-    indexable,
+    canonical: canonical ?? url,
+    indexable: indexable !== false,
+    schemaFamily,
     source,
   });
 }
 
-// Static routes from seoConfig.ts
-const seoConfig = read('src/data/seoConfig.ts');
-for (const match of seoConfig.matchAll(/\[ROUTES\.(\w+)\]:\s*\{[^}]*title:\s*(?:formatPageTitle\(\s*)?['"`]([^'"`]+)['"`]/gs)) {
-  const routeKey = match[1];
-  const title = match[2];
+function registerStaticPages() {
+  const seoConfig = read('src/data/seoConfig.ts');
   const routePaths = {
     LANDING: '/',
     PRICING: '/pricing',
@@ -88,49 +210,414 @@ for (const match of seoConfig.matchAll(/\[ROUTES\.(\w+)\]:\s*\{[^}]*title:\s*(?:
     DATA_EXPORT: '/data-export',
     FAQ: '/faq',
   };
-  const path = routePaths[routeKey];
-  if (!path) continue;
-  const noIndex = seoConfig.includes(`[ROUTES.${routeKey}]`) &&
-    /noIndex:\s*true/.test(seoConfig.slice(seoConfig.indexOf(`[ROUTES.${routeKey}]`), seoConfig.indexOf(`[ROUTES.${routeKey}]`) + 400));
-  addPage(`${SITE}${path}`, title, title, !noIndex && routeKey !== 'LOGIN', `seoConfig:${routeKey}`);
-}
 
-// Blog posts
-const blogContent = [
-  read('src/services/blog/seoBlogPosts.ts'),
-  read('src/services/blog/seoBlogPostsExtra.ts'),
-  read('src/services/blog/mockBlogPosts.ts'),
-].join('\n');
+  const schemaByRoute = {
+    LANDING: 'landing',
+    PRICING: 'static-product',
+    PET_MATCH: 'static-product',
+    FOUNDING_MEMBERS: 'static-product',
+    BLOG: 'blog-index',
+    COMPARE: 'compare-index',
+    BEST: 'best-index',
+    GUIDES: 'guides-hub',
+    LEARN: 'learn-index',
+    ABOUT: 'static-about',
+    PRIVACY: 'static-legal',
+    TERMS: 'static-legal',
+    COOKIES: 'static-legal',
+    CONTACT: 'static-legal',
+    SECURITY: 'static-legal',
+    DATA_DELETION: 'static-legal',
+    DATA_EXPORT: 'static-legal',
+    FAQ: 'faq-index',
+  };
 
-for (const block of blogContent.split(/\{\s*id:\s*'/).slice(1)) {
-  const slug = block.match(/slug:\s*['"]([^'"]+)['"]/)?.[1];
-  const title = block.match(/title:\s*['"]([^'"]+)['"]/)?.[1];
-  const excerpt = block.match(/excerpt:\s*\n?\s*['"]([^'"]+)['"]/)?.[1];
-  if (slug && title) {
-    addPage(`${SITE}/blog/${slug}`, title, excerpt ?? title, true, 'blog');
+  for (const [routeKey, path] of Object.entries(routePaths)) {
+    const blockStart = seoConfig.indexOf(`[ROUTES.${routeKey}]`);
+    if (blockStart === -1) continue;
+    const blockEnd = seoConfig.indexOf('[ROUTES.', blockStart + 1);
+    const block = seoConfig.slice(blockStart, blockEnd === -1 ? blockStart + 600 : blockEnd);
+    const title =
+      block.match(/title:\s*(?:formatPageTitle\(\s*)?['"`]([^'"`]+)['"`]/)?.[1] ??
+      (block.match(/title:\s*HOME_TITLE/)
+        ? 'PetClues | AI-Powered Pet Health & Life Management'
+        : '');
+    const description =
+      block.match(/description:\s*(?:formatMetaDescription\(\s*)?['"`]([^'"`]+)['"`]/)?.[1] ??
+      (block.match(/description:\s*HOME_DESCRIPTION/)
+        ? 'Track health records, reminders, vaccinations, life stories, monthly reports, pet passports, and AI-powered pet insights in one place.'
+        : title);
+    const noIndex = /noIndex:\s*true/.test(block);
+    register(`${SITE}${path}`, {
+      title,
+      description,
+      canonical: `${SITE}${path}`,
+      indexable: !noIndex,
+      schemaFamily: schemaByRoute[routeKey] ?? 'static-legal',
+      source: `seoConfig:${routeKey}`,
+    });
   }
 }
 
-// FAQ questions
-const faqBank = read('src/data/faq/faqQuestionBank.ts');
-for (const match of faqBank.matchAll(/question:\s*['"]([^'"]+)['"]/g)) {
-  const question = match[1];
-  const slug = question
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-')
-    .slice(0, 90);
-  addPage(`${SITE}/faq/${slug}`, question, question, true, 'faq');
+function registerBlogPosts() {
+  const legacyFiles = [
+    'src/services/blog/seoBlogPosts.ts',
+    'src/services/blog/seoBlogPostsExtra.ts',
+    'src/services/blog/mockBlogPosts.ts',
+  ];
+
+  for (const file of legacyFiles) {
+    const content = read(file);
+    for (const block of content.split(/\{\s*id:\s*'/).slice(1)) {
+      const slug = field(block, 'slug');
+      const title = field(block, 'title');
+      const excerpt = field(block, 'excerpt');
+      if (!slug || !title) continue;
+      register(`${SITE}/blog/${slug}`, {
+        title,
+        description: excerpt || title,
+        canonical: `${SITE}/blog/${slug}`,
+        schemaFamily: 'blog-post',
+        source: file,
+      });
+    }
+  }
+
+  const dominance = read('src/services/blog/dominance/topics.generated.ts');
+  for (const block of dominance.split(/\n  \{\n    "num":/).slice(1)) {
+    const slug = block.match(/"slug":\s*"([^"]+)"/)?.[1];
+    const title = block.match(/"title":\s*"([^"]+)"/)?.[1];
+    const excerpt = block.match(/"excerpt":\s*"([^"]+)"/)?.[1];
+    if (!slug || !title) continue;
+    register(`${SITE}/blog/${slug}`, {
+      title,
+      description: excerpt || title,
+      canonical: `${SITE}/blog/${slug}`,
+      schemaFamily: 'blog-post',
+      source: 'dominance/topics.generated.ts',
+    });
+  }
+
+  const expanded = read('src/services/blog/expandedBlogConfigs.ts');
+  for (const block of expanded.split(/\{\s*\n\s*slug:\s*'/).slice(1)) {
+    const slug = block.match(/^([^']+)'/)?.[1];
+    const title = block.match(/title:\s*'([^']+)'/)?.[1];
+    const excerpt = block.match(/excerpt:\s*\n?\s*'([^']+)'/)?.[1];
+    if (!slug || !title) continue;
+    register(`${SITE}/blog/${slug}`, {
+      title,
+      description: excerpt || title,
+      canonical: `${SITE}/blog/${slug}`,
+      schemaFamily: 'blog-post',
+      source: 'expandedBlogConfigs.ts',
+    });
+  }
+
+  const blogLabels = extractCategoryLabels('src/data/blogCategories.ts');
+  for (const [category, label] of blogLabels) {
+    register(`${SITE}/blog?category=${category}`, {
+      title: `${label} Guides - Pet Health Blog`,
+      description: `Expert ${label.toLowerCase()} guides on vaccinations, records, reminders, and everyday care from PetClues.`,
+      canonical: `${SITE}/blog?category=${category}`,
+      schemaFamily: 'blog-index',
+      source: `blogCategory:${category}`,
+    });
+  }
 }
 
-// Sitemap URLs
-const sitemap = read('public/sitemap.xml');
-const sitemapUrls = new Set([...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]));
+function registerComparePages() {
+  const content = read('src/data/comparisons/competitorConfigs.ts');
+  for (const block of content.split(/\n    slug: '/).slice(1)) {
+    const slug = block.match(/^([^']+)'/)?.[1];
+    if (!slug || COMPARE_SITEMAP_EXCLUDED.has(slug)) continue;
+    const competitorName = block.match(/competitorName: '([^']+)'/)?.[1] ?? '';
+    const category = block.match(/category: '([^']+)'/)?.[1] ?? '';
+    const problemHeadline = block.match(/problemHeadline: '([^']+)'/)?.[1] ?? '';
+    const problemParagraph = block.match(/problemParagraphs:\s*\[\s*\n\s*'([^']+)'/)?.[1] ?? '';
+    const title =
+      category === 'hub'
+        ? problemHeadline
+        : `PetClues vs ${competitorName} for Pet Health Records`;
+    const description =
+      category === 'hub'
+        ? problemParagraph
+        : `Compare PetClues and ${competitorName} for pet health records, vaccination reminders, vet bills, and emergency info. See pros, cons, and which option fits your household.`;
+    register(`${SITE}/compare/${slug}`, {
+      title,
+      description,
+      canonical: `${SITE}/compare/${slug}`,
+      schemaFamily: 'compare-page',
+      source: `compare:${slug}`,
+    });
+  }
+}
 
-// Duplicate titles among indexable pages
-const indexable = pages.filter((p) => p.indexable);
+function registerIntentPages() {
+  const content = read('src/data/intent/intentConfigs.ts');
+  for (const block of content.split(/\n    slug: '/).slice(1)) {
+    const slug = block.match(/^([^']+)'/)?.[1];
+    const title = block.match(/title: '([^']+)'/)?.[1] ?? '';
+    const description = block.match(/metaDescription:\s*\n\s*'([^']+)'/)?.[1] ?? '';
+    if (!slug || !title) continue;
+    register(`${SITE}/best/${slug}`, {
+      title,
+      description,
+      canonical: `${SITE}/best/${slug}`,
+      schemaFamily: 'best-page',
+      source: `intent:${slug}`,
+    });
+  }
+}
+
+function registerLearnPages() {
+  const content = read('src/data/learn/articleConfigs.ts');
+  for (const block of content.split(/\{\s*\n    slug: '/).slice(1)) {
+    const slug = block.match(/^([^']+)'/)?.[1];
+    const title = block.match(/title:\s*\n?\s*'([^']+)'/)?.[1] ?? '';
+    const excerpt =
+      block.match(/excerpt:\s*\n\s*'([^']+)'/)?.[1] ??
+      block.match(/excerpt: '([^']+)'/)?.[1] ??
+      '';
+    const description =
+      block.match(/metaDescription:\s*\n\s*'([^']+)'/)?.[1] ??
+      block.match(/metaDescription: '([^']+)'/)?.[1] ??
+      excerpt;
+    if (!slug || !title) continue;
+    register(`${SITE}/learn/${slug}`, {
+      title: `${title} | PetClues Learn`,
+      description,
+      canonical: `${SITE}/learn/${slug}`,
+      schemaFamily: 'learn-page',
+      source: `learn:${slug}`,
+    });
+  }
+
+  const learnLabels = extractCategoryLabels('src/data/learn/categories.ts');
+  for (const [category, label] of learnLabels) {
+    register(`${SITE}/learn?category=${category}`, {
+      title: `${label} Guides for Pet Parents`,
+      description: `Expert ${label.toLowerCase()} guides: what to track, why it matters, step-by-step how-tos, and how PetClues keeps your pet's care organized.`,
+      canonical: `${SITE}/learn?category=${category}`,
+      schemaFamily: 'learn-index',
+      source: `learnCategory:${category}`,
+    });
+  }
+}
+
+function registerFaqPages() {
+  const faqBank = read('src/data/faq/faqQuestionBank.ts');
+  for (const match of faqBank.matchAll(/'([^']+\?)'/g)) {
+    const question = match[1];
+    const slug = slugifyFaqQuestion(question);
+    register(`${SITE}/faq/${slug}`, {
+      title: question,
+      description: question,
+      canonical: `${SITE}/faq/${slug}`,
+      schemaFamily: 'faq-page',
+      source: 'faqQuestionBank',
+    });
+  }
+
+  const faqLabels = extractCategoryLabels('src/data/faq/categories.ts');
+  for (const [category, label] of faqLabels) {
+    register(`${SITE}/faq?category=${category}`, {
+      title: `${label} FAQ - Pet Health Questions Answered`,
+      description: `Answers to ${label.toLowerCase()} questions about pet records, vaccines, travel, medications, and emergency prep.`,
+      canonical: `${SITE}/faq?category=${category}`,
+      schemaFamily: 'faq-index',
+      source: `faqCategory:${category}`,
+    });
+  }
+}
+
+function registerProgrammaticPages() {
+  const collections = read('src/data/programmatic/collections.ts');
+  for (const match of collections.matchAll(
+    /id:\s*'([^']+)',\s*\n\s*label:\s*'([^']+)',\s*\n\s*description:\s*\n\s*'([^']+)'/g,
+  )) {
+    register(`${SITE}/guides/${match[1]}`, {
+      title: match[2],
+      description: match[3],
+      canonical: `${SITE}/guides/${match[1]}`,
+      schemaFamily: 'guides-collection',
+      source: `guidesCollection:${match[1]}`,
+    });
+  }
+
+  const dogBreeds = read('src/data/programmatic/seeds/dogBreeds.ts');
+  for (const match of dogBreeds.matchAll(/slug:\s*'([^']+)',\s*name:\s*'([^']+)'/g)) {
+    const name = match[2];
+    register(`${SITE}/guides/dog-vaccination-schedule/${match[1]}`, {
+      title: `${name} Vaccination Schedule | PetClues Guides`,
+      description: `Complete ${name} vaccination schedule: puppy shot timeline, core vaccines (DHPP, rabies), boosters, and breed-specific wellness notes.`,
+      canonical: `${SITE}/guides/dog-vaccination-schedule/${match[1]}`,
+      schemaFamily: 'guides-page',
+      source: 'dogBreeds',
+    });
+  }
+
+  const catBreeds = read('src/data/programmatic/seeds/catBreeds.ts');
+  for (const match of catBreeds.matchAll(/slug:\s*'([^']+)',\s*name:\s*'([^']+)'/g)) {
+    const name = match[2];
+    register(`${SITE}/guides/cat-vaccination-schedule/${match[1]}`, {
+      title: `${name} Vaccination Schedule | PetClues Guides`,
+      description: `Complete ${name} vaccination schedule: FVRCP kitten series, rabies timing, FeLV considerations, and adult boosters.`,
+      canonical: `${SITE}/guides/cat-vaccination-schedule/${match[1]}`,
+      schemaFamily: 'guides-page',
+      source: 'catBreeds',
+    });
+  }
+
+  const countries = read('src/data/programmatic/seeds/countries.ts');
+  for (const match of countries.matchAll(/slug:\s*'([^']+)',\s*name:\s*'([^']+)'/g)) {
+    const name = match[2];
+    register(`${SITE}/guides/pet-travel-checklist/${match[1]}`, {
+      title: `${name} Pet Travel Checklist | PetClues Guides`,
+      description: `Step-by-step pet travel checklist for ${name}: rabies rules, microchip requirements, health certificates, and pre-trip milestones.`,
+      canonical: `${SITE}/guides/pet-travel-checklist/${match[1]}`,
+      schemaFamily: 'guides-page',
+      source: 'countries',
+    });
+  }
+
+  const species = read('src/data/programmatic/seeds/emergencySpecies.ts');
+  for (const match of species.matchAll(/slug:\s*'([^']+)',\s*name:\s*'([^']+)'/g)) {
+    const name = match[2];
+    register(`${SITE}/guides/pet-emergency-checklist/${match[1]}`, {
+      title: `${name} Emergency Checklist | PetClues Guides`,
+      description: `Species-specific ${name.toLowerCase()} emergency checklist: normal vitals, first-aid kit items, and when to seek urgent veterinary care.`,
+      canonical: `${SITE}/guides/pet-emergency-checklist/${match[1]}`,
+      schemaFamily: 'guides-page',
+      source: 'emergencySpecies',
+    });
+  }
+
+  const templates = read('src/data/programmatic/seeds/templates.ts');
+  const templateCollections = [
+    ['MEDICATION_TEMPLATE_SEEDS', 'medication-tracking-template'],
+    ['HEALTH_RECORD_TEMPLATE_SEEDS', 'health-record-template'],
+    ['CARE_CHECKLIST_TEMPLATE_SEEDS', 'pet-care-checklist'],
+  ];
+
+  for (const [exportName, collectionId] of templateCollections) {
+    const block = templates.split(`export const ${exportName}`)[1]?.split('export const ')[0] ?? '';
+    for (const match of block.matchAll(
+      /\{\s*slug:\s*'([^']+)',\s*name:\s*'([^']+)',\s*audience:\s*'([^']+)',\s*focus:\s*'([^']+)'\s*\}/g,
+    )) {
+      register(`${SITE}/guides/${collectionId}/${match[1]}`, {
+        title: `${match[2]} | PetClues Guides`,
+        description: `Use this ${match[2].toLowerCase()} for ${match[3].toLowerCase()}. Track ${match[4]} digitally in PetClues or print for your binder.`,
+        canonical: `${SITE}/guides/${collectionId}/${match[1]}`,
+        schemaFamily: 'guides-page',
+        source: `templates:${collectionId}`,
+      });
+    }
+  }
+}
+
+function registerCommercialPages() {
+  const pageFiles = [
+    'src/data/commercial/pages/petHealthRecords.ts',
+    'src/data/commercial/pages/digitalPetPassport.ts',
+    'src/data/commercial/pages/petVaccinationRecords.ts',
+    'src/data/commercial/pages/petMedicalHistory.ts',
+    'src/data/commercial/pages/petHealthTracker.ts',
+  ];
+
+  for (const file of pageFiles) {
+    const content = read(file);
+    const path = content.match(/path:\s*'([^']+)'/)?.[1];
+    const title = content.match(/title:\s*\n?\s*'([^']+)'/)?.[1] ?? '';
+    const description = content.match(/metaDescription:\s*\n?\s*'([^']+)'/)?.[1] ?? '';
+    if (!path || !title) continue;
+    register(`${SITE}${path}`, {
+      title,
+      description,
+      canonical: `${SITE}${path}`,
+      schemaFamily: 'commercial-page',
+      source: file,
+    });
+  }
+}
+
+registerStaticPages();
+registerBlogPosts();
+registerComparePages();
+registerIntentPages();
+registerLearnPages();
+registerFaqPages();
+registerProgrammaticPages();
+registerCommercialPages();
+
+const sitemapUrls = readSitemapUrls(join(root, 'public'));
+
+const handlerCache = new Map();
+const SCHEMA_TYPE_ALIASES = {
+  Article: ['buildArticleSchema', "'Article'", '"Article"'],
+  BlogPosting: ['buildBlogPostingSchema', "'BlogPosting'", '"BlogPosting"'],
+  QAPage: ['buildQAPageSchema', "'QAPage'", '"QAPage"'],
+  FAQPage: ['buildFaqPageSchema', "'FAQPage'", '"FAQPage"'],
+  CollectionPage: ['buildCollectionPageSchema', "'CollectionPage'", '"CollectionPage"'],
+  BreadcrumbList: ['buildBreadcrumbListSchema', "'BreadcrumbList'", '"BreadcrumbList"'],
+  Organization: ['buildOrganizationSchema', "'Organization'", '"Organization"'],
+  WebSite: ['buildWebSiteSchema', "'WebSite'", '"WebSite"'],
+  WebPage: ['buildWebPageSchema', "'WebPage'", '"WebPage"'],
+  SoftwareApplication: ['buildSoftwareApplicationSchema', "'SoftwareApplication'", '"SoftwareApplication"'],
+  ProfilePage: ['buildProfilePageSchema', "'ProfilePage'", '"ProfilePage"'],
+  SearchAction: ['buildSearchActionSchema', "'SearchAction'", '"SearchAction"'],
+};
+
+function handlerHasSchema(family) {
+  const config = SCHEMA_FAMILIES[family];
+  if (!config) return false;
+  if (!handlerCache.has(config.handler)) {
+    handlerCache.set(config.handler, read(config.handler));
+  }
+  if (!handlerCache.has('schemas')) {
+    handlerCache.set('schemas', read('src/seo/structuredDataSchemas.ts'));
+  }
+  const source = handlerCache.get(config.handler) + handlerCache.get('schemas');
+  return config.required.every((type) => {
+    const aliases = SCHEMA_TYPE_ALIASES[type] ?? [`'${type}'`, `"${type}"`];
+    return aliases.some((needle) => source.includes(needle));
+  });
+}
+
+const audited = [];
+const criticalFailures = [];
+const schemaFailures = [];
+const missingRegistry = [];
+const redirectInSitemap = [];
+
+for (const url of sitemapUrls) {
+  if (url.includes('/compare/best-pet-health-record-app')) {
+    redirectInSitemap.push(url);
+    continue;
+  }
+
+  const meta = registry.get(url);
+  if (!meta) {
+    missingRegistry.push(url);
+    continue;
+  }
+
+  const issues = [];
+  if (!meta.title?.trim()) issues.push('missing title');
+  if (!meta.description?.trim()) issues.push('missing description');
+  if (meta.canonical !== url) issues.push(`canonical mismatch (${meta.canonical})`);
+  if (!meta.indexable) issues.push('marked noindex');
+  if (!handlerHasSchema(meta.schemaFamily)) {
+    schemaFailures.push({ url, family: meta.schemaFamily });
+    issues.push(`schema family ${meta.schemaFamily} incomplete`);
+  }
+
+  audited.push({ url, ...meta, issues });
+  if (issues.length > 0) {
+    criticalFailures.push({ url, issues, source: meta.source });
+  }
+}
+
+const indexable = audited.filter((p) => p.indexable);
 const titleMap = new Map();
 const duplicates = [];
 
@@ -146,13 +633,19 @@ for (const [title, urls] of titleMap) {
 
 const shortDesc = indexable.filter((p) => p.description.length < META_DESC_MIN);
 const longDesc = indexable.filter((p) => p.description.length > META_DESC_MAX);
-const missingSitemap = indexable.filter((p) => !sitemapUrls.has(p.url));
+const registryOnly = [...registry.keys()].filter((url) => !sitemapUrls.includes(url));
 
-const scoreBefore = 62;
-const dupPenalty = duplicates.length * 8;
-const descPenalty = Math.min(20, shortDesc.length + longDesc.length);
-const sitemapPenalty = Math.min(10, missingSitemap.length);
-const scoreAfter = Math.max(0, Math.min(100, 95 - dupPenalty - descPenalty - sitemapPenalty));
+const scoreAfter = Math.max(
+  0,
+  Math.min(
+    100,
+    95 -
+      duplicates.length * 8 -
+      Math.min(20, shortDesc.length + longDesc.length) -
+      Math.min(15, criticalFailures.length) -
+      missingRegistry.length,
+  ),
+);
 
 const report = `# SEO Audit Report
 
@@ -160,33 +653,39 @@ Generated: ${new Date().toISOString()}
 
 ## Scorecard
 
-| Metric | Before | After |
-|--------|--------|-------|
-| Overall SEO readiness | ${scoreBefore}/100 | ${scoreAfter}/100 |
-| Indexable pages audited | — | ${indexable.length} |
-| Duplicate titles | unknown | ${duplicates.length} |
-| Short descriptions (<${META_DESC_MIN}) | unknown | ${shortDesc.length} |
-| Long descriptions (>${META_DESC_MAX}) | unknown | ${longDesc.length} |
-| Missing from sitemap | unknown | ${missingSitemap.length} |
+| Metric | Value |
+|--------|-------|
+| Sitemap URLs | ${sitemapUrls.length} |
+| URLs audited from registry | ${audited.length} |
+| Indexable pages audited | ${indexable.length} |
+| Duplicate titles | ${duplicates.length} |
+| Critical field failures | ${criticalFailures.length} |
+| Missing registry entries | ${missingRegistry.length} |
+| Redirect URLs in sitemap | ${redirectInSitemap.length} |
+| Overall SEO readiness | ${scoreAfter}/100 |
 
-## Fixes implemented
+## Full sitemap coverage
 
-- Central \`formatPageTitle()\` — every page uses \`{Headline} | PetClues\`
-- Central \`formatMetaDescription()\` — normalizes to ${META_DESC_MIN}–${META_DESC_MAX} characters
-- FAQ items: unique question-based titles (removed duplicate generic FAQ title)
-- Blog posts: hyphen titles converted to pipe format; \`publishedAt\` / \`updatedAt\` normalized
-- Legal pages: expanded meta descriptions and consistent titles
-- MetaTags: stale \`article:*\` tags removed when leaving article pages
-- OpenGraph/Twitter: descriptions synced with meta description formatter
-- FAQ related questions: up to 5 per page with human-readable blog titles
-- Pricing page: internal links to FAQ, About, Blog
-- BreadcrumbList schema: already on blog, FAQ, pricing (via staticPageSeo), compare, best, guides, learn
+- Every URL in \`public/sitemap.xml\` is checked for title, description, canonical, indexability, and schema handler coverage.
+- Build fails if any indexable sitemap URL is missing critical SEO fields or has duplicate titles.
 
 ## Duplicate titles (${duplicates.length})
 
-${duplicates.length === 0 ? 'None — all indexable pages have unique titles.' : duplicates.map((d) => `- **${d.title}**\n  ${d.urls.map((u) => `  - ${u}`).join('\n')}`).join('\n\n')}
+${duplicates.length === 0 ? 'None — all indexable pages have unique titles.' : duplicates.slice(0, 20).map((d) => `- **${d.title}**\n  ${d.urls.map((u) => `  - ${u}`).join('\n')}`).join('\n\n')}
 
-## Description length issues
+## Critical failures (${criticalFailures.length})
+
+${criticalFailures.length === 0 ? 'None.' : criticalFailures.slice(0, 30).map((f) => `- ${f.url}: ${f.issues.join(', ')} (${f.source})`).join('\n')}
+
+## Missing registry (${missingRegistry.length})
+
+${missingRegistry.length === 0 ? 'None — all sitemap URLs mapped to content sources.' : missingRegistry.slice(0, 30).map((u) => `- ${u}`).join('\n')}
+
+## Redirect URLs still in sitemap (${redirectInSitemap.length})
+
+${redirectInSitemap.length === 0 ? 'None.' : redirectInSitemap.map((u) => `- ${u}`).join('\n')}
+
+## Description length (post-formatter)
 
 ### Too short (${shortDesc.length})
 ${shortDesc.length === 0 ? 'None.' : shortDesc.slice(0, 15).map((p) => `- ${p.url} (${p.description.length} chars)`).join('\n')}
@@ -194,43 +693,44 @@ ${shortDesc.length === 0 ? 'None.' : shortDesc.slice(0, 15).map((p) => `- ${p.ur
 ### Too long (${longDesc.length})
 ${longDesc.length === 0 ? 'None.' : longDesc.slice(0, 15).map((p) => `- ${p.url} (${p.description.length} chars)`).join('\n')}
 
-## Sitemap gaps (${missingSitemap.length})
+## Registry URLs not in sitemap (${registryOnly.length})
 
-${missingSitemap.length === 0 ? 'All audited indexable URLs appear in sitemap.xml.' : missingSitemap.slice(0, 20).map((p) => `- ${p.url}`).join('\n')}
+${registryOnly.length === 0 ? 'None.' : registryOnly.slice(0, 15).map((u) => `- ${u}`).join('\n')}
 
-## Sample route audit (first 30 indexable)
+## Remaining audit gaps
 
-| Route | Title | Description | Status |
-|-------|-------|-------------|--------|
-${indexable.slice(0, 30).map((p) => `| ${p.url.replace(SITE, '')} | ${p.title.slice(0, 50)}${p.title.length > 50 ? '…' : ''} | ${p.description.length} chars | ${descStatus(p.description.length)} |`).join('\n')}
-
-## Rich results eligibility
-
-| Schema | Status |
-|--------|--------|
-| FAQPage | Valid — Question/Answer with ISO datetime (see validate-schema-coverage.mjs) |
-| BlogPosting | Valid — headline, dates, author, publisher logo |
-| SoftwareApplication | Valid — on product/compare/best pages |
-| BreadcrumbList | Valid — all content route handlers |
-
-## Crawl budget recommendations
-
-- **www vs non-www:** Canonicals use \`${SITE}\` — ensure DNS redirect is configured at host level
-- **Trailing slashes:** App routes use no trailing slash; sitemap matches
-- **Query filters:** Blog tag/search and FAQ search are \`noindex\` — not in sitemap (correct)
-- **CSR meta flash:** Homepage meta in index.html until React hydrates — acceptable for SPA; consider SSR/prerender for critical landing URLs if needed
-
-## Remaining recommendations
-
-1. Add prerender or SSR for top 50 organic URLs if LCP/indexing speed becomes a bottleneck
-2. Monitor Search Console for FAQ rich result impressions after datetime schema deploy
-3. Refresh blog \`updatedAt\` when content materially changes (editorial workflow)
-4. Submit updated sitemap after deploy: \`${SITE}/sitemap.xml\`
+1. **CSR meta delivery** — titles/descriptions are applied client-side; audit validates source configs, not rendered HTML.
+2. **Rendered canonical/robots** — no headless fetch; assumes React SEO handlers match registry.
+3. **Per-URL JSON-LD instance validation** — schema families checked at handler level, not per-page graph output.
+4. **Compare redirect slug** — \`/compare/best-pet-health-record-app\` kept as 301 only; excluded from sitemap and internal compare links resolve to \`/best/\`.
+5. **Prerender/SSR** — not in scope; homepage still hydrates meta from React after first paint.
 `;
 
 writeFileSync(join(root, 'SEO_AUDIT_REPORT.md'), report, 'utf8');
-console.log(`SEO audit complete — ${indexable.length} indexable pages, ${duplicates.length} duplicate titles`);
-console.log(`Report written to SEO_AUDIT_REPORT.md`);
+console.log(
+  `SEO audit complete — sitemap ${sitemapUrls.length} URLs, ${indexable.length} indexable audited, ${criticalFailures.length} critical failures, ${duplicates.length} duplicate titles`,
+);
+console.log('Report written to SEO_AUDIT_REPORT.md');
+
+if (redirectInSitemap.length > 0) {
+  console.error('\nRedirecting URLs must not appear in sitemap:');
+  for (const url of redirectInSitemap) console.error(`  ${url}`);
+  process.exit(1);
+}
+
+if (missingRegistry.length > 0) {
+  console.error(`\n${missingRegistry.length} sitemap URL(s) missing from SEO registry:`);
+  for (const url of missingRegistry.slice(0, 20)) console.error(`  ${url}`);
+  process.exit(1);
+}
+
+if (criticalFailures.length > 0) {
+  console.error(`\n${criticalFailures.length} indexable URL(s) failed critical SEO checks:`);
+  for (const failure of criticalFailures.slice(0, 20)) {
+    console.error(`  ${failure.url}: ${failure.issues.join(', ')}`);
+  }
+  process.exit(1);
+}
 
 if (duplicates.length > 0) {
   console.error('\nDuplicate indexable titles detected:');
@@ -238,10 +738,6 @@ if (duplicates.length > 0) {
     console.error(`  "${dup.title}" → ${dup.urls.join(', ')}`);
   }
   process.exit(1);
-}
-
-if (shortDesc.length > 0) {
-  console.warn(`\nWarning: ${shortDesc.length} pages have short descriptions in audit sample (runtime formatter pads these).`);
 }
 
 console.log('\nSEO validation PASSED');

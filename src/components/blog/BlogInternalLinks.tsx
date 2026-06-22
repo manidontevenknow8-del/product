@@ -50,8 +50,24 @@ export function BlogInternalLinks({ plan }: BlogInternalLinksProps) {
         </div>
 
         <div className={styles.group}>
+          <h3 className={styles.groupTitle}>Guides &amp; tools</h3>
+          <ul className={styles.list}>
+            <li>
+              <Link to={plan.hub.href} className={styles.link}>
+                {plan.hub.label}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className={styles.group}>
           <h3 className={styles.groupTitle}>Product</h3>
           <ul className={styles.list}>
+            <li>
+              <Link to={plan.commercial.href} className={styles.link}>
+                {plan.commercial.label}
+              </Link>
+            </li>
             <li>
               <Link to={plan.pricing.href} className={styles.link}>
                 {plan.pricing.label}

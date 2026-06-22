@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { COMPARISON_FEATURES, ratingLabel } from '@/data/comparisons/features';
+import { resolveCompareHref } from '@/data/comparisons/compareRedirects';
 import type { ComparisonPage, ComparisonRating } from '@/types/comparison';
 import styles from './ComparisonTable.module.css';
 
@@ -65,7 +66,7 @@ export function RelatedComparisons({ pages }: RelatedComparisonsProps) {
       <ul className={styles.relatedList}>
         {pages.map((item) => (
           <li key={item.slug}>
-            <Link to={`/compare/${item.slug}`} className={styles.relatedLink}>
+            <Link to={resolveCompareHref(item.slug)} className={styles.relatedLink}>
               {item.title.replace(' | PetClues', '')}
             </Link>
           </li>

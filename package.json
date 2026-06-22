@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.mjs && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && node scripts/audit-seo.mjs && tsc -b && vite build",
+    "build": "tsx scripts/generate-sitemaps.ts && node scripts/validate-schema-coverage.mjs && node scripts/validate-internal-linking.mjs && node scripts/audit-seo.mjs && tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && tsx scripts/prerender-html.ts && node scripts/validate-prerender.mjs",
     "validate:seo": "node scripts/audit-seo.mjs",
     "generate:dominance-topics": "node scripts/generate-dominance-topics.mjs",
     "generate:dominance-images": "node scripts/generate-dominance-image-mappings.mjs",
@@ -13,12 +13,14 @@
     "preview": "vite preview",
     "generate:favicons": "node scripts/generate-favicons.mjs",
     "validate:schema": "node scripts/validate-schema-coverage.mjs",
-    "validate:links": "node scripts/validate-internal-linking.mjs"
+    "validate:links": "node scripts/validate-internal-linking.mjs",
+    "generate:sitemaps": "tsx scripts/generate-sitemaps.ts"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.11",
     "@fontsource/inter": "^5.2.8",
     "@supabase/supabase-js": "^2.106.2",
+    "framer-motion": "^12.40.0",
     "html-to-image": "^1.11.13",
     "posthog-js": "^1.382.0",
     "react": "^19.1.0",
@@ -33,6 +35,7 @@
     "png-to-ico": "^3.0.1",
     "sharp": "^0.35.1",
     "tailwindcss": "^4.3.0",
+    "tsx": "^4.22.4",
     "typescript": "~5.8.3",
     "vite": "^6.3.5"
   }

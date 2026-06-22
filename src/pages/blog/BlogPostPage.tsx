@@ -17,6 +17,22 @@ import type { BlogPost, BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
 import styles from './BlogPostPage.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
+import {
+  readHydrationPrerenderData,
+  usePrerenderRouteData,
+} from '@/prerender/PrerenderDataContext';
+
+function getInitialBlogPostState(slug: string | undefined) {
+  const hydration = readHydrationPrerenderData();
+  const prerenderPost =
+    hydration?.blogPost?.slug === slug ? hydration?.blogPost : undefined;
+
+  return {
+    post: prerenderPost?.post ?? null,
+    allPosts: prerenderPost?.allPosts ?? [],
+    hasSeed: Boolean(prerenderPost),
+  };
+}
 
 function formatDate(iso: string | null): string {
   if (!iso) return '';
@@ -34,13 +50,23 @@ function estimateReadMinutes(content: string): number {
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [allPosts, setAllPosts] = useState<BlogPostListItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const prerenderData = usePrerenderRouteData();
+  const prerenderPost =
+    prerenderData?.blogPost?.slug === slug ? prerenderData?.blogPost : undefined;
+  const initialState = prerenderPost
+    ? {
+        post: prerenderPost.post,
+        allPosts: prerenderPost.allPosts,
+        hasSeed: true,
+      }
+    : getInitialBlogPostState(slug);
+  const [post, setPost] = useState<BlogPost | null>(initialState.post);
+  const [allPosts, setAllPosts] = useState<BlogPostListItem[]>(initialState.allPosts);
+  const [loading, setLoading] = useState(!initialState.hasSeed);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!slug) return;
+    if (!slug || prerenderPost) return;
     let cancelled = false;
     setLoading(true);
     setError(null);
@@ -66,7 +92,7 @@ export function BlogPostPage() {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, prerenderPost]);
 
   const heroImage = post ? resolveBlogFeaturedImage(post.slug, post.featuredImage) : null;
   const breadcrumbs = post ? getBlogPostBreadcrumbs(post.title, post.slug) : [];

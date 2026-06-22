@@ -10,12 +10,28 @@ import { BlogCategoryNav } from '@/components/blog/BlogCategoryNav';
 import { BlogIndexSEO } from '@/seo/blogSeo';
 import { getBlogIndexBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { HubIndexResources } from '@/components/seo/HubIndexResources';
+import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { getBlogRepository } from '@/services/blog';
 import { BLOG_CATEGORIES, type BlogCategoryId } from '@/data/blogCategories';
 import type { BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
 import styles from './BlogIndexPage.module.css';
+import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
+import {
+  readHydrationPrerenderData,
+  usePrerenderRouteData,
+} from '@/prerender/PrerenderDataContext';
+
+function getInitialBlogIndexState() {
+  const hydration = readHydrationPrerenderData();
+  const posts = hydration?.blogIndex?.posts;
+  return {
+    posts: posts ?? [],
+    hasSeed: Boolean(posts),
+  };
+}
 
 function parseCategory(value: string | null): BlogCategoryId | undefined {
   if (!value) return undefined;
@@ -27,8 +43,13 @@ export function BlogIndexPage() {
   const category = parseCategory(searchParams.get('category'));
   const tag = searchParams.get('tag') ?? undefined;
   const search = searchParams.get('q') ?? undefined;
-  const [posts, setPosts] = useState<BlogPostListItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const prerenderData = usePrerenderRouteData();
+  const prerenderIndex = prerenderData?.blogIndex;
+  const initialState = prerenderIndex
+    ? { posts: prerenderIndex.posts, hasSeed: true }
+    : getInitialBlogIndexState();
+  const [posts, setPosts] = useState<BlogPostListItem[]>(initialState.posts);
+  const [loading, setLoading] = useState(!initialState.hasSeed);
   const [error, setError] = useState<string | null>(null);
 
   const activeCategory = useMemo(
@@ -37,6 +58,7 @@ export function BlogIndexPage() {
   );
 
   useEffect(() => {
+    if (prerenderIndex) return;
     let cancelled = false;
     setLoading(true);
     setError(null);
@@ -62,7 +84,7 @@ export function BlogIndexPage() {
     return () => {
       cancelled = true;
     };
-  }, [category, tag, search]);
+  }, [category, tag, search, prerenderIndex]);
 
   const heroTitle = activeCategory
     ? activeCategory.label
@@ -94,13 +116,17 @@ export function BlogIndexPage() {
         />
 
         <div className={styles.body}>
-          <SectionIntro
-            eyebrow="Browse"
-            title={activeCategory ? `Articles in ${activeCategory.label}` : 'Latest guides'}
-            description="Practical advice for pet parents - from first vaccines to emergency preparedness."
-          />
+          <div className={hubStyles.hubLayout}>
+            <div>
+              <SectionIntro
+                eyebrow="Browse"
+                title={activeCategory ? `Articles in ${activeCategory.label}` : 'Latest guides'}
+                description="Practical advice for pet parents - from first vaccines to emergency preparedness."
+              />
 
-          <BlogCategoryNav />
+              {!activeCategory && !search && !tag && <FeaturedBlogLinks />}
+
+              <BlogCategoryNav />
 
           <form
             className={styles.search}
@@ -192,6 +218,15 @@ export function BlogIndexPage() {
               </Link>
             </div>
           </section>
+            </div>
+
+            {!activeCategory && !search && (
+              <HubIndexResources
+                intro="Editorial guides meet product pages — records, passports, vaccines, and tracking."
+                showCommercial
+              />
+            )}
+          </div>
         </div>
       </div>
     </PublicLayout>

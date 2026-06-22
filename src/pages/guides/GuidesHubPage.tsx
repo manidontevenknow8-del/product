@@ -3,9 +3,12 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { listProgrammaticCollections } from '@/data/programmatic/collections';
+import { HubIndexResources } from '@/components/seo/HubIndexResources';
+import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { listProgrammaticPages, PROGRAMMATIC_PAGE_COUNT } from '@/data/programmatic';
 import { ProgrammaticHubSEO, getProgrammaticHubBreadcrumbs } from '@/seo/programmaticSeo';
 import { ROUTES } from '@/routes/paths';
+import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import styles from './GuidesPages.module.css';
 
 export function GuidesHubPage() {
@@ -24,16 +27,20 @@ export function GuidesHubPage() {
         <div className={styles.inner}>
           <Breadcrumbs items={getProgrammaticHubBreadcrumbs()} />
 
-          <header className={styles.hero}>
-            <h1 className={styles.title}>Pet care guides & templates</h1>
-            <p className={styles.lead}>
-              {PROGRAMMATIC_PAGE_COUNT} programmatic guides across {collections.length} collections —
-              vaccination schedules by breed, travel checklists by country, emergency prep by species,
-              and downloadable-style templates for medications, health records, and daily care.
-            </p>
-          </header>
+          <div className={hubStyles.hubLayout}>
+            <div>
+              <header className={styles.hero}>
+                <h1 className={styles.title}>Pet care guides &amp; templates</h1>
+                <p className={styles.lead}>
+                  {PROGRAMMATIC_PAGE_COUNT} programmatic guides across {collections.length}{' '}
+                  collections — vaccination schedules by breed, travel checklists by country,
+                  emergency prep by species, and templates for medications and health records.
+                </p>
+              </header>
 
-          <div className={styles.grid}>
+              <FeaturedBlogLinks title="Editorial guides" />
+
+              <div className={styles.grid}>
             {collections.map((collection) => (
               <Link
                 key={collection.id}
@@ -48,6 +55,10 @@ export function GuidesHubPage() {
                 <span className={styles.cardLink}>Browse collection →</span>
               </Link>
             ))}
+              </div>
+            </div>
+
+            <HubIndexResources showCommercial />
           </div>
         </div>
       </div>

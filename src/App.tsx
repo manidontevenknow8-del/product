@@ -55,6 +55,10 @@ const GuidesCollectionPage = lazyRoute(() => import('@/pages/guides/GuidesCollec
 const GuidesDetailPage = lazyRoute(() => import('@/pages/guides/GuidesDetailPage'), 'GuidesDetailPage');
 const LearnIndexPage = lazyRoute(() => import('@/pages/learn/LearnIndexPage'), 'LearnIndexPage');
 const LearnArticlePage = lazyRoute(() => import('@/pages/learn/LearnArticlePage'), 'LearnArticlePage');
+const CommercialLandingPage = lazyRoute(
+  () => import('@/pages/commercial/CommercialLandingPage'),
+  'CommercialLandingPage',
+);
 
 export function App() {
   return (
@@ -88,6 +92,11 @@ export function App() {
         <Route path={`${ROUTES.FAQ}/:slug`} element={<FaqItemPage />} />
 
         <Route path={ROUTES.FOUNDING_MEMBERS} element={<FoundingMembersPage />} />
+        <Route path={ROUTES.PET_HEALTH_RECORDS} element={<CommercialLandingPage />} />
+        <Route path={ROUTES.DIGITAL_PET_PASSPORT} element={<CommercialLandingPage />} />
+        <Route path={ROUTES.PET_VACCINATION_RECORDS} element={<CommercialLandingPage />} />
+        <Route path={ROUTES.PET_MEDICAL_HISTORY} element={<CommercialLandingPage />} />
+        <Route path={ROUTES.PET_HEALTH_TRACKER} element={<CommercialLandingPage />} />
         <Route path={ROUTES.WAITLIST} element={<DeferredRedirect to={ROUTES.SIGNUP} />} />
         <Route path={ROUTES.LOST_PET_REPORT} element={<DeferredRedirect to={ROUTES.LANDING} />} />
 

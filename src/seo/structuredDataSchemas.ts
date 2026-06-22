@@ -6,6 +6,33 @@ export const ORGANIZATION_ID = `${SITE_META.siteUrl}/#organization`;
 export const WEBSITE_ID = `${SITE_META.siteUrl}/#website`;
 export const SOFTWARE_ID = `${SITE_META.siteUrl}/#software`;
 
+/** Wikidata-anchored Thing entities for Knowledge Graph disambiguation. */
+export const WIKIDATA_ENTITIES = {
+  electronicHealthRecord: {
+    '@type': 'Thing' as const,
+    name: 'Electronic health record',
+    sameAs: 'https://www.wikidata.org/wiki/Q5243859',
+  },
+  petPassport: {
+    '@type': 'Thing' as const,
+    name: 'Pet passport',
+    sameAs: 'https://www.wikidata.org/wiki/Q2043684',
+  },
+  vaccination: {
+    '@type': 'Thing' as const,
+    name: 'Vaccination',
+    sameAs: 'https://www.wikidata.org/wiki/Q134808',
+  },
+} as const;
+
+export type WikidataThing = (typeof WIKIDATA_ENTITIES)[keyof typeof WIKIDATA_ENTITIES];
+
+export const ORGANIZATION_KNOWS_ABOUT: readonly WikidataThing[] = [
+  WIKIDATA_ENTITIES.electronicHealthRecord,
+  WIKIDATA_ENTITIES.petPassport,
+  WIKIDATA_ENTITIES.vaccination,
+];
+
 type FaqSchemaItem = {
   question: string;
   answer: string;
@@ -123,6 +150,7 @@ export function buildOrganizationSchema(
     image: SITE_META.logoUrl,
     description: SITE_META.organizationDescription,
     sameAs: [...sameAs],
+    knowsAbout: ORGANIZATION_KNOWS_ABOUT.map((thing) => ({ ...thing })),
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer support',
@@ -171,8 +199,10 @@ export function buildSoftwareApplicationSchema() {
     name: SITE_META.siteName,
     url: SITE_META.siteUrl,
     applicationCategory: 'HealthApplication',
+    applicationSubCategory: 'Pet data management',
     operatingSystem: 'Web',
     description: SITE_META.softwareDescription,
+    knowsAbout: ORGANIZATION_KNOWS_ABOUT.map((thing) => ({ ...thing })),
     offers: [
       {
         '@type': 'Offer',
@@ -198,6 +228,7 @@ export function buildSoftwareApplicationSchema() {
       },
     ],
     publisher: { '@id': ORGANIZATION_ID },
+    provider: { '@id': ORGANIZATION_ID },
   };
 }
 
@@ -265,6 +296,8 @@ export function buildWebPageSchema(options: {
   name: string;
   description: string;
   dateModified?: string;
+  mainEntityId?: string;
+  about?: readonly WikidataThing[];
 }) {
   return {
     '@type': 'WebPage',
@@ -274,6 +307,8 @@ export function buildWebPageSchema(options: {
     description: options.description,
     isPartOf: { '@id': WEBSITE_ID },
     publisher: { '@id': ORGANIZATION_ID },
+    ...(options.mainEntityId ? { mainEntity: { '@id': options.mainEntityId } } : {}),
+    ...(options.about?.length ? { about: options.about.map((thing) => ({ ...thing })) } : {}),
     ...(options.dateModified
       ? { dateModified: normalizeSchemaDateTime(options.dateModified) }
       : {}),

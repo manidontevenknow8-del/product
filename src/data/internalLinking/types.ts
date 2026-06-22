@@ -1,6 +1,13 @@
 import type { BlogCategoryId } from '@/data/blogCategories';
 
-export type InternalLinkKind = 'blog' | 'learn' | 'faq' | 'pricing' | 'homepage';
+export type InternalLinkKind =
+  | 'blog'
+  | 'learn'
+  | 'faq'
+  | 'pricing'
+  | 'homepage'
+  | 'commercial'
+  | 'hub';
 
 export type InternalLink = {
   kind: InternalLinkKind;
@@ -14,6 +21,8 @@ export type BlogInternalLinkPlan = {
   learn: InternalLink;
   faq: InternalLink;
   pricing: InternalLink;
+  commercial: InternalLink;
+  hub: InternalLink;
   homepage: InternalLink;
 };
 

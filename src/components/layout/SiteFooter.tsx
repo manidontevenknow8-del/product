@@ -7,6 +7,7 @@ import {
   FOOTER_LEGAL_LINKS,
   FOOTER_PRODUCT_LINKS,
   FOOTER_RESOURCE_LINKS,
+  FOOTER_SOLUTION_LINKS,
 } from '@/data/footerLinks';
 import { SOCIAL_PROFILES } from '@/data/socialProfiles';
 import styles from './SiteFooter.module.css';
@@ -69,6 +70,14 @@ export function SiteFooter() {
             <div className={styles.group}>
               <span className={styles.groupTitle}>Company</span>
               {FOOTER_COMPANY_LINKS.map((link) => (
+                <Link key={link.to} to={link.to} className={styles.link}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className={styles.group}>
+              <span className={styles.groupTitle}>Solutions</span>
+              {FOOTER_SOLUTION_LINKS.map((link) => (
                 <Link key={link.to} to={link.to} className={styles.link}>
                   {link.label}
                 </Link>

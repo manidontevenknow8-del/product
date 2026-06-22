@@ -2,9 +2,12 @@ import { Link } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { HubIndexResources } from '@/components/seo/HubIndexResources';
+import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { listIntentPages, INTENT_PAGE_COUNT } from '@/data/intent';
 import { IntentIndexSEO, getIntentIndexBreadcrumbs } from '@/seo/intentSeo';
 import { ROUTES } from '@/routes/paths';
+import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import styles from './BestIndexPage.module.css';
 
 export function BestIndexPage() {
@@ -18,16 +21,21 @@ export function BestIndexPage() {
         <div className={styles.inner}>
           <Breadcrumbs items={getIntentIndexBreadcrumbs()} />
 
-          <header className={styles.hero}>
-            <h1 className={styles.title}>Best pet health apps & tools</h1>
-            <p className={styles.lead}>
-              {INTENT_PAGE_COUNT} intent-focused guides for pet owners searching for the best health
-              record apps, vaccination trackers, reminder tools, digital passports, and all-in-one
-              care platforms — with comparisons, authoritative citations, and FAQs.
-            </p>
-          </header>
+          <div className={hubStyles.hubLayout}>
+            <div>
+              <header className={styles.hero}>
+                <h1 className={styles.title}>Best pet health apps &amp; tools</h1>
+                <p className={styles.lead}>
+                  {INTENT_PAGE_COUNT} intent-focused guides for pet owners searching for the best
+                  health record apps, vaccination trackers, reminder tools, and digital passports —
+                  with comparisons, citations, and FAQs. Head-to-head alternatives live in{' '}
+                  <Link to={ROUTES.COMPARE}>comparisons</Link>.
+                </p>
+              </header>
 
-          <div className={styles.grid}>
+              <FeaturedBlogLinks />
+
+              <div className={styles.grid}>
             {pages.map((page) => (
               <Link key={page.slug} to={`${ROUTES.BEST}/${page.slug}`} className={styles.card}>
                 <h2 className={styles.cardTitle}>{page.intentLabel}</h2>
@@ -35,6 +43,13 @@ export function BestIndexPage() {
                 <span className={styles.cardLink}>Read guide →</span>
               </Link>
             ))}
+              </div>
+            </div>
+
+            <HubIndexResources
+              intro="Canonical best-of guides. Product pages below put records, passports, and tracking into practice."
+              showCommercial
+            />
           </div>
         </div>
       </div>

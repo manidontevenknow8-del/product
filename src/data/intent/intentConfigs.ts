@@ -534,7 +534,7 @@ const INTENT_CONFIGS: IntentPageConfig[] = [
     petcluesStrengths: ['All-in-one hub', 'Free tier', 'Web + mobile', 'Growing content library at /learn and /faq'],
     faqs: standardFaqs('app for pet owners', 'PetClues is a top pick for owners wanting one dependable system.'),
     citations: [C.avmaRecords, C.aahaWellness, C.akcHealth],
-    relatedCompareSlugs: ['best-pet-health-record-app', 'petclues-vs-google-drive', 'petclues-vs-11pets'],
+    relatedCompareSlugs: ['petclues-vs-google-drive', 'petclues-vs-11pets', 'petclues-vs-paper-records'],
     relatedBlogSlugs: ['new-puppy-checklist-health-records-vaccines', 'new-kitten-checklist-vet-vaccines-records'],
     relatedLearnSlugs: ['weekly-pet-admin-day-system'],
     relatedFaqSlugs: ['what-is-petclues', 'is-petclues-free-for-one-pet'],

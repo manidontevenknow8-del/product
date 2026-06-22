@@ -1,8 +1,12 @@
 import type { BlogCategoryId } from '@/data/blogCategories';
 import { getComparisonBySlug, listComparisonPages } from '@/data/comparisons';
+import { COMPARE_SITEMAP_EXCLUDED_SLUGS, resolveCompareHref } from '@/data/comparisons/compareRedirects';
 import { listFaqItems } from '@/data/faq';
+import { listCommercialPages } from '@/data/commercial';
+import { ALL_COMMERCIAL_LINKS } from './commercialMappings';
+import { FEATURED_BLOG_SLUGS, PRIMARY_HUB_LINKS } from './hubMappings';
 import { getLearnArticleBySlug, listLearnArticles } from '@/data/learn';
-import { listIntentPages } from '@/data/intent';
+import { getIntentPageBySlug, listIntentPages } from '@/data/intent';
 import { listProgrammaticPages } from '@/data/programmatic';
 import { listProgrammaticCollections } from '@/data/programmatic/collections';
 import { FOOTER_LAUNCH_LINKS } from '@/data/footerLinks';
@@ -53,6 +57,13 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
   register(ROUTES.COMPARE, 'Compare index', 'compare');
   register(ROUTES.BEST, 'Best index', 'best');
   register(ROUTES.GUIDES, 'Guides hub', 'guides');
+  register(ROUTES.SIGNUP, 'Signup', 'core');
+  register(ROUTES.FOUNDING_MEMBERS, 'Founding members', 'core');
+  register(ROUTES.PET_MATCH, 'Pet match', 'core');
+
+  for (const page of listCommercialPages()) {
+    register(page.path, page.heroTitle, 'commercial');
+  }
 
   for (const link of FOOTER_LAUNCH_LINKS) {
     register(link.to, link.label, 'footer');
@@ -71,6 +82,7 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
   }
 
   for (const page of listComparisonPages()) {
+    if (COMPARE_SITEMAP_EXCLUDED_SLUGS.has(page.slug)) continue;
     register(`${ROUTES.COMPARE}/${page.slug}`, page.title, 'compare');
   }
 
@@ -108,6 +120,8 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
     connect(from, plan.learn.href);
     connect(from, plan.faq.href);
     connect(from, plan.pricing.href);
+    connect(from, plan.commercial.href);
+    connect(from, plan.hub.href);
     connect(from, plan.homepage.href);
   }
 
@@ -128,7 +142,7 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
       connect(from, `${ROUTES.BLOG}/${slug}`);
     }
     for (const slug of full.relatedCompareSlugs) {
-      connect(from, `${ROUTES.COMPARE}/${slug}`);
+      connect(from, resolveCompareHref(slug));
     }
   }
 
@@ -144,6 +158,7 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
   }
 
   for (const page of listComparisonPages()) {
+    if (COMPARE_SITEMAP_EXCLUDED_SLUGS.has(page.slug)) continue;
     const from = `${ROUTES.COMPARE}/${page.slug}`;
     connect(ROUTES.COMPARE, from);
     const full = getComparisonBySlug(page.slug);
@@ -151,10 +166,6 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
     for (const slug of full.relatedBlogSlugs) {
       connect(from, `${ROUTES.BLOG}/${slug}`);
     }
-  }
-
-  for (const page of listIntentPages()) {
-    connect(ROUTES.BEST, `${ROUTES.BEST}/${page.slug}`);
   }
 
   for (const collection of listProgrammaticCollections()) {
@@ -167,6 +178,63 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
 
   for (const link of FOOTER_LAUNCH_LINKS) {
     connect(ROUTES.LANDING, link.to);
+  }
+
+  for (const link of ALL_COMMERCIAL_LINKS) {
+    connect(ROUTES.LANDING, link.href);
+  }
+
+  for (const hub of PRIMARY_HUB_LINKS) {
+    connect(ROUTES.LANDING, hub.href);
+  }
+
+  for (const slug of FEATURED_BLOG_SLUGS) {
+    connect(ROUTES.BLOG, `${ROUTES.BLOG}/${slug}`);
+    for (const hub of PRIMARY_HUB_LINKS) {
+      connect(ROUTES.BLOG, hub.href);
+    }
+    for (const commercial of ALL_COMMERCIAL_LINKS) {
+      connect(ROUTES.BLOG, commercial.href);
+    }
+  }
+
+  for (const hub of PRIMARY_HUB_LINKS) {
+    connect(hub.href, ROUTES.LANDING);
+    for (const other of PRIMARY_HUB_LINKS) {
+      if (other.href !== hub.href) connect(hub.href, other.href);
+    }
+    for (const commercial of ALL_COMMERCIAL_LINKS) {
+      connect(hub.href, commercial.href);
+    }
+    connect(hub.href, ROUTES.PRICING);
+  }
+
+  for (const page of listCommercialPages()) {
+    const from = page.path;
+    for (const link of page.relatedLinks) {
+      connect(from, link.href);
+    }
+    connect(from, ROUTES.PRICING);
+    connect(from, ROUTES.SIGNUP);
+  }
+
+  for (const page of listIntentPages()) {
+    const from = `${ROUTES.BEST}/${page.slug}`;
+    connect(ROUTES.BEST, from);
+    const full = getIntentPageBySlug(page.slug);
+    if (!full) continue;
+    for (const relatedSlug of full.relatedIntentSlugs) {
+      connect(from, `${ROUTES.BEST}/${relatedSlug}`);
+    }
+    for (const blogSlug of full.relatedBlogSlugs) {
+      connect(from, `${ROUTES.BLOG}/${blogSlug}`);
+    }
+    for (const learnSlug of full.relatedLearnSlugs) {
+      connect(from, `${ROUTES.LEARN}/${learnSlug}`);
+    }
+    for (const commercial of ALL_COMMERCIAL_LINKS) {
+      connect(from, commercial.href);
+    }
   }
 
   const orphans = nodes.filter((node) => (inbound.get(node.path) ?? 0) === 0);

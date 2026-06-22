@@ -19,7 +19,10 @@ export type SEOConfig = {
   articleSection?: string;
 };
 
-const SITE_URL = import.meta.env.VITE_SITE_URL ?? 'https://petclues.com';
+const SITE_URL =
+  import.meta.env.VITE_SITE_URL ||
+  (typeof process !== 'undefined' ? process.env.VITE_SITE_URL : undefined) ||
+  'https://petclues.com';
 
 export const HOME_TITLE = 'PetClues | AI-Powered Pet Health & Life Management';
 export const HOME_DESCRIPTION =
@@ -67,6 +70,11 @@ export const INDEXABLE_PUBLIC_ROUTES = [
   ROUTES.DATA_DELETION,
   ROUTES.DATA_EXPORT,
   ROUTES.FAQ,
+  ROUTES.PET_HEALTH_RECORDS,
+  ROUTES.DIGITAL_PET_PASSPORT,
+  ROUTES.PET_VACCINATION_RECORDS,
+  ROUTES.PET_MEDICAL_HISTORY,
+  ROUTES.PET_HEALTH_TRACKER,
 ] as const;
 
 const INDEXABLE_SET = new Set<string>(INDEXABLE_PUBLIC_ROUTES);
@@ -509,6 +517,13 @@ export function getPageSEO(pathname: string): SEOConfig {
     noIndex: shouldNoIndex(pathname, pageConfig?.noIndex),
   };
 
+  if (pageConfig && pageConfig.ogTitle === undefined) {
+    merged.ogTitle = undefined;
+  }
+  if (pageConfig && pageConfig.ogDescription === undefined) {
+    merged.ogDescription = undefined;
+  }
+
   return finalizeSEO(merged, pathname);
 }
 
@@ -525,7 +540,8 @@ export const SITE_META = {
   defaultOgImageAlt: OG_IMAGE_ALT,
   themeColor: BRAND_THEME_COLOR,
   backgroundColor: BRAND_BG_COLOR,
-  organizationDescription: 'AI-powered pet health and life management platform.',
+  organizationDescription:
+    'Premium digital biological archive and concierge medical records management for pets.',
   softwareDescription:
-    'Pet health records, reminders, passports, AI insights, monthly reports, and life story management.',
+    'Pet data management software for health records, vaccination tracking, digital pet passports, reminders, and concierge document extraction.',
 };

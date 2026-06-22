@@ -1,6 +1,7 @@
 import type { ComparisonListItem, ComparisonPage } from '@/types/comparison';
 import { buildComparisonPage } from './buildPage';
 import { COMPETITOR_CONFIGS } from './competitorConfigs';
+import { COMPARE_SITEMAP_EXCLUDED_SLUGS } from './compareRedirects';
 
 const COMPARISON_PAGES: ComparisonPage[] = COMPETITOR_CONFIGS.map(buildComparisonPage);
 
@@ -14,6 +15,11 @@ export function listComparisonPages(): ComparisonListItem[] {
     metaDescription: page.metaDescription,
     updatedAt: page.updatedAt,
   }));
+}
+
+/** Compare pages that should appear in indexes and internal links (excludes 301→/best/ slugs). */
+export function listIndexableComparisonPages(): ComparisonListItem[] {
+  return listComparisonPages().filter((page) => !COMPARE_SITEMAP_EXCLUDED_SLUGS.has(page.slug));
 }
 
 export function getComparisonBySlug(slug: string): ComparisonPage | null {

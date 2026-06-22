@@ -1,5 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { getPageSEO, isBestPath, isBlogArticlePath, isComparePath, isFaqPath, isGuidesPath, isLearnPath, isIndexablePublicPath } from '@/data/seoConfig';
+import { isCommercialPath } from '@/data/commercial';
 import { ROUTES } from '@/routes/paths';
 import { MetaTags, OpenGraph } from './MetaTags';
 import { StaticPageStructuredData } from './staticPageSeo';
@@ -20,8 +21,16 @@ export function SEOProvider({ children }: SEOProviderProps) {
   const isGuidesRoute = isGuidesPath(pathname);
   const isLearnRoute = isLearnPath(pathname);
   const isFaqRoute = isFaqPath(pathname);
+  const isCommercialRoute = isCommercialPath(pathname);
   const isLanding = pathname === ROUTES.LANDING;
-  const dedicatedSeoRoute = isBlogRoute || isCompareRoute || isBestRoute || isGuidesRoute || isLearnRoute || isFaqRoute;
+  const dedicatedSeoRoute =
+    isBlogRoute ||
+    isCompareRoute ||
+    isBestRoute ||
+    isGuidesRoute ||
+    isLearnRoute ||
+    isFaqRoute ||
+    isCommercialRoute;
   const showStaticPageSchema =
     isIndexablePublicPath(pathname) && !dedicatedSeoRoute && !isLanding;
 

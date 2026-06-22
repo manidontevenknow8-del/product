@@ -1,4 +1,5 @@
 import { useLocation } from 'react-router-dom';
+import { MetaPixelRouteTracker } from '@/analytics/MetaPixelRouteTracker';
 import { LandingPage } from '@/pages/LandingPage';
 import { SEOProvider } from '@/seo';
 import { ROUTES } from '@/routes/paths';
@@ -12,14 +13,18 @@ export function RootRouter() {
 
   if (isLanding) {
     return (
-      <SEOProvider>
-        <LandingPage marketingShell />
-      </SEOProvider>
+      <>
+        <MetaPixelRouteTracker />
+        <SEOProvider>
+          <LandingPage marketingShell />
+        </SEOProvider>
+      </>
     );
   }
 
   return (
     <RouteFallback>
+      <MetaPixelRouteTracker />
       <AppShell />
     </RouteFallback>
   );

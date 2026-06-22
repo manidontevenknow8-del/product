@@ -736,7 +736,7 @@ export const COMPETITOR_CONFIGS: CompetitorConfig[] = [
           'Yes, especially if you value an integrated emergency passport, AI bill support, and a calmer record-first experience for busy households.',
       },
     ],
-    relatedSlugs: ['petclues-vs-pawprint', 'petclues-vs-vitusvet', 'best-pet-health-record-app'],
+    relatedSlugs: ['petclues-vs-pawprint', 'petclues-vs-vitusvet', 'petclues-vs-11pets'],
     relatedBlogSlugs: [BLOGS.organize, BLOGS.meds, BLOGS.bills],
   },
   {
@@ -786,7 +786,7 @@ export const COMPETITOR_CONFIGS: CompetitorConfig[] = [
           'It may for simpler households, but more complex medical histories usually benefit from a broader record system.',
       },
     ],
-    relatedSlugs: ['petclues-vs-pet-vault', 'petclues-vs-vitusvet', 'best-pet-health-record-app'],
+    relatedSlugs: ['petclues-vs-pet-vault', 'petclues-vs-vitusvet', 'petclues-vs-11pets'],
     relatedBlogSlugs: [BLOGS.organize, BLOGS.puppy, BLOGS.cat],
   },
   {
@@ -1740,7 +1740,7 @@ export const COMPETITOR_CONFIGS: CompetitorConfig[] = [
           'Busy multi-pet households and anyone coordinating ongoing treatments usually benefit most from a more active system.',
       },
     ],
-    relatedSlugs: ['petclues-vs-pawprint', 'petclues-vs-vitusvet', 'best-pet-health-record-app'],
+    relatedSlugs: ['petclues-vs-pawprint', 'petclues-vs-vitusvet', 'petclues-vs-11pets'],
     relatedBlogSlugs: [BLOGS.organize, BLOGS.bills, BLOGS.cat],
   },
   {
@@ -1839,7 +1839,7 @@ export const COMPETITOR_CONFIGS: CompetitorConfig[] = [
           'Yes, many families use support services separately while keeping the official record system in a dedicated organizer they control.',
       },
     ],
-    relatedSlugs: ['petclues-vs-airvet', 'petclues-vs-pumpkin-care', 'best-pet-health-record-app'],
+    relatedSlugs: ['petclues-vs-airvet', 'petclues-vs-pumpkin-care', 'petclues-vs-11pets'],
     relatedBlogSlugs: [BLOGS.organize, BLOGS.meds, BLOGS.cat],
   },
   {

@@ -55,7 +55,35 @@
       ]
     },
     {
-      "source": "/(favicon|logo|icon|apple-touch|og-image|robots|sitemap|manifest|site)(.*)",
+      "source": "/(.*)",
+      "has": [{ "type": "query", "key": "tag" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "query", "key": "q" }],
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }]
+    },
+    {
+      "source": "/sitemap-(.*)\\.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/(favicon|logo|icon|apple-touch|og-image|robots|manifest|site)(.*)",
       "headers": [
         {
           "key": "Cache-Control",

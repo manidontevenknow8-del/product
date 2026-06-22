@@ -9,6 +9,7 @@ import {
   HowItWorks,
   TrustSection,
   LandingBlogPreview,
+  LandingExploreSection,
   CTASection,
   Footer,
 } from '@/components/landing';
@@ -30,6 +31,7 @@ export function LandingPage({ marketingShell = false }: { marketingShell?: boole
         <FeatureHighlights />
         <HowItWorks />
         <TrustSection />
+        <LandingExploreSection />
         <LandingBlogPreview />
         <CTASection />
       </main>

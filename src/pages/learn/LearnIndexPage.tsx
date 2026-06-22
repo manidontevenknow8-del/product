@@ -3,9 +3,12 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { LEARN_CATEGORIES, type LearnCategoryId } from '@/data/learn/categories';
+import { HubIndexResources } from '@/components/seo/HubIndexResources';
+import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { LEARN_ARTICLE_COUNT, listLearnArticles } from '@/data/learn';
 import { LearnIndexSEO, getLearnIndexBreadcrumbs } from '@/seo/learnSeo';
 import { ROUTES } from '@/routes/paths';
+import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import styles from './LearnIndexPage.module.css';
 
 function parseCategory(value: string | null): LearnCategoryId | undefined {
@@ -30,18 +33,22 @@ export function LearnIndexPage() {
         <div className={styles.inner}>
           <Breadcrumbs items={getLearnIndexBreadcrumbs(activeCategory?.label)} />
 
-          <header className={styles.hero}>
-            <h1 className={styles.title}>
-              {activeCategory ? `${activeCategory.label} guides` : 'PetClues Learn'}
-            </h1>
-            <p className={styles.lead}>
-              {activeCategory
-                ? activeCategory.description
-                : `${LEARN_ARTICLE_COUNT} expert guides covering what to do, why it matters, how to execute, and how PetClues keeps your pet's care organized.`}
-            </p>
-          </header>
+          <div className={hubStyles.hubLayout}>
+            <div>
+              <header className={styles.hero}>
+                <h1 className={styles.title}>
+                  {activeCategory ? `${activeCategory.label} guides` : 'PetClues Learn'}
+                </h1>
+                <p className={styles.lead}>
+                  {activeCategory
+                    ? activeCategory.description
+                    : `${LEARN_ARTICLE_COUNT} expert guides covering what to do, why it matters, how to execute, and how PetClues keeps your pet's care organized.`}
+                </p>
+              </header>
 
-          <nav className={styles.categories} aria-label="Learn categories">
+              {!activeCategory && <FeaturedBlogLinks title="Related blog guides" />}
+
+              <nav className={styles.categories} aria-label="Learn categories">
             <Link
               to={ROUTES.LEARN}
               className={`${styles.categoryChip} ${!category ? styles.categoryChipActive : ''}`}
@@ -78,6 +85,10 @@ export function LearnIndexPage() {
                 </span>
               </Link>
             ))}
+              </div>
+            </div>
+
+            <HubIndexResources showCommercial />
           </div>
         </div>
       </div>

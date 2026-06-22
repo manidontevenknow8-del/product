@@ -55,14 +55,17 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 type AuthProviderProps = {
   children: ReactNode;
   authService?: IAuthService;
+  /** Skip client session bootstrap for build-time SSR. */
+  ssrMode?: boolean;
 };
 
 export function AuthProvider({
   children,
   authService: service = authService,
+  ssrMode = false,
 }: AuthProviderProps) {
   const [session, setSession] = useState<AuthSession | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(!ssrMode);
   const [pendingVerificationEmail, setPendingVerificationEmail] = useState<string | null>(null);
   const emailVerifiedTracked = useRef(false);
   const previousEmailVerified = useRef<boolean | null>(null);

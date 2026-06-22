@@ -35,9 +35,18 @@ export const FOOTER_RESOURCE_LINKS: FooterLink[] = [
   { label: 'FAQ', to: ROUTES.FAQ },
 ];
 
+export const FOOTER_SOLUTION_LINKS: FooterLink[] = [
+  { label: 'Pet health records', to: ROUTES.PET_HEALTH_RECORDS },
+  { label: 'Digital pet passport', to: ROUTES.DIGITAL_PET_PASSPORT },
+  { label: 'Vaccination records', to: ROUTES.PET_VACCINATION_RECORDS },
+  { label: 'Medical history', to: ROUTES.PET_MEDICAL_HISTORY },
+  { label: 'Health tracker', to: ROUTES.PET_HEALTH_TRACKER },
+];
+
 /** Flat list for audits and sitemap cross-checks. */
 export const FOOTER_LAUNCH_LINKS: FooterLink[] = [
   ...FOOTER_PRODUCT_LINKS,
+  ...FOOTER_SOLUTION_LINKS,
   ...FOOTER_LEGAL_LINKS,
   ...FOOTER_COMPANY_LINKS,
   ...FOOTER_RESOURCE_LINKS,

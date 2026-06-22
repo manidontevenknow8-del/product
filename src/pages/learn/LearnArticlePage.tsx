@@ -13,6 +13,7 @@ import {
   getLearnArticleBreadcrumbs,
 } from '@/seo/learnSeo';
 import { ROUTES } from '@/routes/paths';
+import { resolveCompareHref } from '@/data/comparisons/compareRedirects';
 import styles from './LearnArticlePage.module.css';
 
 export function LearnArticlePage() {
@@ -171,7 +172,7 @@ export function LearnArticlePage() {
                       <ul className={styles.linkList}>
                         {article.relatedCompareSlugs.map((compareSlug) => (
                           <li key={compareSlug}>
-                            <Link to={`${ROUTES.COMPARE}/${compareSlug}`}>
+                            <Link to={resolveCompareHref(compareSlug)}>
                               {compareSlug.replace(/-/g, ' ')}
                             </Link>
                           </li>

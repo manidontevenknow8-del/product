@@ -18,7 +18,24 @@ function schedulePostHogInit() {
   window.addEventListener('load', () => window.setTimeout(run, 2000), { once: true });
 }
 
+function scheduleMetaPixelInit() {
+  const run = () => {
+    void import('@/analytics/metaPixel').then(async ({ initMetaPixel, trackMetaPageView }) => {
+      const ready = await initMetaPixel();
+      if (ready) trackMetaPageView();
+    });
+  };
+
+  if (typeof window.requestIdleCallback === 'function') {
+    window.requestIdleCallback(run, { timeout: 3000 });
+    return;
+  }
+
+  window.addEventListener('load', () => window.setTimeout(run, 1000), { once: true });
+}
+
 schedulePostHogInit();
+scheduleMetaPixelInit();
 
 if (import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {

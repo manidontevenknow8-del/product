@@ -5,6 +5,7 @@ import { Button } from '@/components/ui';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { IntentComparisonTable, RelatedIntentPages } from '@/components/intent/IntentComparisonTable';
 import { getComparisonBySlug } from '@/data/comparisons';
+import { resolveCompareHref } from '@/data/comparisons/compareRedirects';
 import { getFaqItemBySlug } from '@/data/faq';
 import { getIntentPageBySlug, getRelatedIntentPages } from '@/data/intent';
 import { getLearnArticleBySlug } from '@/data/learn';
@@ -145,7 +146,7 @@ export function BestIntentPage() {
                             const comparison = getComparisonBySlug(compareSlug);
                             return (
                               <li key={compareSlug}>
-                                <Link to={`${ROUTES.COMPARE}/${compareSlug}`}>
+                                <Link to={resolveCompareHref(compareSlug)}>
                                   {comparison?.competitorName
                                     ? `PetClues vs ${comparison.competitorName}`
                                     : compareSlug.replace(/-/g, ' ')}

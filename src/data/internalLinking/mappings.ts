@@ -19,7 +19,7 @@ export type InferredBlogCluster =
 export const LANDING_SECTIONS = [
   { id: 'features', label: 'Explore PetClues features', path: '/#features' },
   { id: 'how-it-works', label: 'See how PetClues works', path: '/#how-it-works' },
-  { id: 'plans', label: 'Compare plans on the homepage', path: '/#plans' },
+  { id: 'plans', label: 'Compare membership plans', path: '/pricing' },
   { id: 'pet-health-guides', label: 'Browse pet health guides', path: '/#pet-health-guides' },
   { id: 'trust', label: 'Security & trust at PetClues', path: '/#trust' },
   { id: 'get-started', label: 'Get started with PetClues', path: '/#get-started' },

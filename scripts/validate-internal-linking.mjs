@@ -28,12 +28,20 @@ const checks = [
     pass: engine.includes('pickRelatedBlogs') && engine.includes('limit = 3'),
   },
   {
-    name: 'Engine includes learn, faq, pricing, homepage',
+    name: 'Engine includes learn, faq, pricing, commercial, hub, homepage',
     pass:
       engine.includes("kind: 'learn'") &&
       engine.includes("kind: 'faq'") &&
       engine.includes("kind: 'pricing'") &&
+      engine.includes("kind: 'commercial'") &&
+      engine.includes("kind: 'hub'") &&
       engine.includes("kind: 'homepage'"),
+  },
+  {
+    name: 'Homepage links to commercial and hub pages',
+    pass:
+      read('src/components/landing/LandingExploreSection.tsx').includes('ALL_COMMERCIAL_LINKS') &&
+      read('src/data/footerLinks.ts').includes('FOOTER_SOLUTION_LINKS'),
   },
   {
     name: 'Build-time orphan audit in mockBlogPosts',
