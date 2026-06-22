@@ -13,7 +13,7 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders });
   }
 
-  if (!isServiceRoleRequest(req)) {
+  if (!isServiceRoleRequest(req, true)) {
     return new Response(
       JSON.stringify({ success: false, error: 'Server authorization required' }),
       { status: 403, headers: { ...corsHeaders, 'Content-Type': 'application/json' } },

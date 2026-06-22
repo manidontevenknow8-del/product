@@ -23,6 +23,7 @@ export type NotificationPreferences = {
 
 export type UpcomingReminderPayload = {
   petName: string;
+  petPhotoUrl?: string | null;
   reminderTitle: string;
   dueDate: string;
   dueLabel: string;
@@ -32,6 +33,7 @@ export type UpcomingReminderPayload = {
 
 export type OverdueReminderPayload = {
   petName: string;
+  petPhotoUrl?: string | null;
   reminderTitle: string;
   dueDate: string;
   daysOverdue: number;
@@ -39,17 +41,35 @@ export type OverdueReminderPayload = {
   remindersUrl: string;
 };
 
+export type WeeklyPetSummary = {
+  id: string;
+  name: string;
+  speciesLabel: string;
+  photoUrl: string | null;
+  avatarInitials: string;
+  upcomingCount: number;
+  overdueCount: number;
+  checkInsThisWeek: number;
+  upcomingReminders: Array<{ title: string; dueLabel: string; category: string }>;
+  overdueReminders: Array<{ title: string; dueLabel: string; category: string }>;
+  nextReminderTitle?: string;
+  nextReminderDue?: string;
+  profileUrl: string;
+};
+
 export type WeeklySummaryPayload = {
   ownerName: string;
   weekLabel: string;
-  pets: Array<{
-    name: string;
-    upcomingCount: number;
-    overdueCount: number;
-    nextReminderTitle?: string;
-    nextReminderDue?: string;
-  }>;
+  pets: WeeklyPetSummary[];
+  totals: {
+    upcoming: number;
+    overdue: number;
+    checkIns: number;
+    petCount: number;
+  };
   dashboardUrl: string;
+  remindersUrl: string;
+  settingsUrl: string;
 };
 
 export type WelcomeEmailPayload = {

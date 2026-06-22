@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PetCluesLogo } from '@/components/brand';
 import { ROUTES } from '@/routes/paths';
-import { BUILD_INFO } from '@/data/buildInfo';
 import { HEALTH_DISCLAIMER, LEGAL_CONTACT } from '@/data/legalConfig';
 import {
   FOOTER_COMPANY_LINKS,
@@ -20,15 +19,16 @@ export function SiteFooter() {
         <div className={styles.top}>
           <div className={styles.brandCol}>
             <Link to={ROUTES.LANDING} className={styles.brand} aria-label="PetClues home">
-              <PetCluesLogo size="lg" className={styles.footerLogo} />
+              <PetCluesLogo size="md" className={styles.footerLogo} />
             </Link>
             <p className={styles.tagline}>
               Calm, organized pet care for dog and cat parents.
             </p>
-            <a href={`mailto:${LEGAL_CONTACT.support}`} className={styles.supportLink}>
-              {LEGAL_CONTACT.support}
-            </a>
-            <div className={styles.social} aria-label="PetClues on social media">
+            <div className={styles.brandMeta}>
+              <a href={`mailto:${LEGAL_CONTACT.support}`} className={styles.supportLink}>
+                {LEGAL_CONTACT.support}
+              </a>
+              <span className={styles.metaDivider} aria-hidden>·</span>
               <a
                 href={SOCIAL_PROFILES.instagram}
                 className={styles.socialLink}
@@ -37,6 +37,7 @@ export function SiteFooter() {
               >
                 Instagram
               </a>
+              <span className={styles.metaDivider} aria-hidden>·</span>
               <a
                 href={SOCIAL_PROFILES.facebook}
                 className={styles.socialLink}
@@ -84,12 +85,13 @@ export function SiteFooter() {
           </nav>
         </div>
 
-        <p className={styles.disclaimer}>{HEALTH_DISCLAIMER}</p>
-
         <div className={styles.bottom}>
-          <span className={styles.copyright}>
-            © {new Date().getFullYear()} PetClues · v{BUILD_INFO.version}
-          </span>
+          <div className={styles.bottomLeft}>
+            <p className={styles.disclaimer}>{HEALTH_DISCLAIMER}</p>
+            <span className={styles.copyright}>
+              © {new Date().getFullYear()} PetClues
+            </span>
+          </div>
           <Link to={ROUTES.SIGNUP} className={styles.ctaLink}>
             Get started free
           </Link>

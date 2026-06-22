@@ -4,4 +4,4 @@ export function isPaymentsLive(): boolean {
 }
 
 export const PAYMENTS_COMING_SOON_MESSAGE =
-  'Payments are coming soon. Premium access can be granted manually during beta - email founder@petclues.com.';
+  'Online checkout is not available in your region yet. Contact support@petclues.com if you need help with your plan.';

@@ -4,6 +4,12 @@ import { canSendEmailType, mergeNotificationPreferences } from '../_shared/email
 import { getAppBaseUrl, sendViaResend } from '../_shared/email/resendClient.ts';
 import { subjectForEmail } from '../_shared/email/templates.ts';
 import type { EmailType, SendEmailInput } from '../_shared/email/types.ts';
+import {
+  buildWeeklyPetSummaries,
+  daysUntilDue,
+  formatDueLabel,
+  summarizeWeeklyTotals,
+} from '../_shared/email/weeklySummaryData.ts';
 
 /** Send upcoming emails on these days-before-due (UTC). Each fires once per reminder. */
 const UPCOMING_REMINDER_DAYS = [7, 3, 1, 0] as const;
@@ -41,21 +47,6 @@ function parseDate(iso: string): Date {
   return new Date(Date.UTC(y, m - 1, d));
 }
 
-function daysUntilDue(dueDate: string, today: Date): number {
-  const due = parseDate(dueDate);
-  const t = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
-  const d = Date.UTC(due.getUTCFullYear(), due.getUTCMonth(), due.getUTCDate());
-  return Math.round((d - t) / 86_400_000);
-}
-
-function formatDueLabel(dueDate: string, today: Date): string {
-  const diff = daysUntilDue(dueDate, today);
-  if (diff === 0) return 'Due today';
-  if (diff === 1) return 'Tomorrow';
-  if (diff > 1 && diff <= 7) return `In ${diff} days`;
-  return dueDate;
-}
-
 function formatDisplayDate(iso: string): string {
   const d = parseDate(iso);
   return d.toLocaleDateString('en-US', {
@@ -64,6 +55,14 @@ function formatDisplayDate(iso: string): string {
     day: 'numeric',
     timeZone: 'UTC',
   });
+}
+
+function normalizePhotoUrlForEmail(url: string | null | undefined): string | null {
+  if (!url?.trim()) return null;
+  const trimmed = url.trim();
+  if (trimmed.startsWith('data:')) return null;
+  if (trimmed.startsWith('https://')) return trimmed;
+  return null;
 }
 
 async function alreadySent(
@@ -218,13 +217,16 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
 
     const { data: pets } = await supabase
       .from('pets')
-      .select('id, name')
+      .select('id, name, species, breed, photo_url')
       .eq('owner_id', userId);
 
     if (!pets?.length) continue;
 
     const petIds = pets.map((p) => p.id);
     const petNameById = Object.fromEntries(pets.map((p) => [p.id, p.name]));
+    const petPhotoById = Object.fromEntries(
+      pets.map((p) => [p.id, normalizePhotoUrlForEmail(p.photo_url)]),
+    );
 
     const { data: reminders } = await supabase
       .from('reminders')
@@ -254,6 +256,7 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
             subject: '',
             payload: {
               petName,
+              petPhotoUrl: petPhotoById[reminder.pet_id] ?? null,
               reminderTitle: reminder.title,
               dueDate: reminder.due_date,
               dueLabel: formatDueLabel(reminder.due_date, today),
@@ -288,6 +291,7 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
             subject: '',
             payload: {
               petName,
+              petPhotoUrl: petPhotoById[reminder.pet_id] ?? null,
               reminderTitle: reminder.title,
               dueDate: formatDisplayDate(reminder.due_date),
               daysOverdue: Math.abs(days),
@@ -313,31 +317,30 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
       const dedupKey = `weekly:${weekStart}`;
 
       if (!(await alreadySent(supabase, userId, 'weekly_pet_summary', dedupKey))) {
-        const petSummaries = pets.map((pet) => {
-          const petReminders = (reminders ?? []).filter((r) => r.pet_id === pet.id);
-          let upcomingCount = 0;
-          let overdueCount = 0;
-          let nextReminder: ReminderRow | undefined;
+        const weekAgo = new Date(today);
+        weekAgo.setUTCDate(weekAgo.getUTCDate() - 7);
+        const weekAgoIso = weekAgo.toISOString().slice(0, 10);
 
-          for (const r of petReminders) {
-            const d = daysUntilDue(r.due_date, today);
-            if (d < 0) overdueCount += 1;
-            else upcomingCount += 1;
-            if (!nextReminder || r.due_date < nextReminder.due_date) {
-              nextReminder = r;
-            }
-          }
+        const { data: checkIns } = await supabase
+          .from('daily_check_ins')
+          .select('pet_id, check_in_date')
+          .in('pet_id', petIds)
+          .gte('check_in_date', weekAgoIso);
 
-          return {
-            name: pet.name,
-            upcomingCount,
-            overdueCount,
-            nextReminderTitle: nextReminder?.title,
-            nextReminderDue: nextReminder
-              ? formatDueLabel(nextReminder.due_date, today)
-              : undefined,
-          };
+        const petSummaries = buildWeeklyPetSummaries({
+          pets,
+          reminders: (reminders ?? []).map((r) => ({
+            id: r.id,
+            pet_id: r.pet_id,
+            title: r.title,
+            category: r.category,
+            due_date: r.due_date,
+          })),
+          checkIns: checkIns ?? [],
+          today,
+          baseUrl,
         });
+        const totals = summarizeWeeklyTotals(petSummaries);
 
         const weekLabel = today.toLocaleDateString('en-US', {
           month: 'long',
@@ -358,7 +361,10 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
               ownerName: profile.name ?? 'there',
               weekLabel,
               pets: petSummaries,
+              totals,
               dashboardUrl: `${baseUrl}/dashboard`,
+              remindersUrl: `${baseUrl}/reminders`,
+              settingsUrl: `${baseUrl}/settings`,
             },
           },
           dedupKey,

@@ -7,6 +7,7 @@ export type EmailJobStatus = 'pending' | 'processing' | 'sent' | 'failed' | 'can
 
 export type UpcomingReminderEmailPayload = {
   petName: string;
+  petPhotoUrl?: string | null;
   reminderTitle: string;
   dueDate: string;
   dueLabel: string;
@@ -16,6 +17,7 @@ export type UpcomingReminderEmailPayload = {
 
 export type OverdueReminderEmailPayload = {
   petName: string;
+  petPhotoUrl?: string | null;
   reminderTitle: string;
   dueDate: string;
   daysOverdue: number;
@@ -23,17 +25,35 @@ export type OverdueReminderEmailPayload = {
   remindersUrl: string;
 };
 
+export type WeeklyPetSummaryItem = {
+  id: string;
+  name: string;
+  speciesLabel: string;
+  photoUrl: string | null;
+  avatarInitials: string;
+  upcomingCount: number;
+  overdueCount: number;
+  checkInsThisWeek: number;
+  upcomingReminders: Array<{ title: string; dueLabel: string; category: string }>;
+  overdueReminders: Array<{ title: string; dueLabel: string; category: string }>;
+  nextReminderTitle?: string;
+  nextReminderDue?: string;
+  profileUrl: string;
+};
+
 export type WeeklyPetSummaryEmailPayload = {
   ownerName: string;
   weekLabel: string;
-  pets: Array<{
-    name: string;
-    upcomingCount: number;
-    overdueCount: number;
-    nextReminderTitle?: string;
-    nextReminderDue?: string;
-  }>;
+  pets: WeeklyPetSummaryItem[];
+  totals: {
+    upcoming: number;
+    overdue: number;
+    checkIns: number;
+    petCount: number;
+  };
   dashboardUrl: string;
+  remindersUrl: string;
+  settingsUrl: string;
 };
 
 export type EmailPayloadByType = {

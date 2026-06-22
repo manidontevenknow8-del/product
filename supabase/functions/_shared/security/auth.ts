@@ -14,11 +14,28 @@ export function bearerToken(req: Request): string | null {
   return match?.[1]?.trim() ?? null;
 }
 
-export function isServiceRoleRequest(req: Request): boolean {
+/** Read role claim from a Supabase JWT (signature must already be verified by the gateway). */
+function serviceRoleFromJwt(token: string): boolean {
+  try {
+    const parts = token.split('.');
+    if (parts.length !== 3) return false;
+    const b64 = parts[1].replace(/-/g, '+').replace(/_/g, '/');
+    const payload = JSON.parse(atob(b64)) as { role?: string; iss?: string };
+    return payload.role === 'service_role' && Boolean(payload.iss?.includes('supabase'));
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * @param jwtVerified When true, accept a verified service_role JWT (for functions with verify_jwt = true).
+ */
+export function isServiceRoleRequest(req: Request, jwtVerified = false): boolean {
   const serviceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
   const token = bearerToken(req);
-  if (!serviceKey || !token) return false;
-  return timingSafeEqual(token, serviceKey);
+  if (!token) return false;
+  if (serviceKey && timingSafeEqual(token, serviceKey)) return true;
+  return jwtVerified && serviceRoleFromJwt(token);
 }
 
 /** Cron jobs and internal callers must present CRON_SECRET or service role. */

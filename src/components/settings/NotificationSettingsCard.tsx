@@ -67,7 +67,7 @@ export function NotificationSettingsCard({ onSave }: NotificationSettingsCardPro
     <article className={styles.card}>
       <h2 className={styles.title}>Notification preferences</h2>
       <p className={styles.subtitle}>
-        Control in-app alerts and email delivery. Push notifications are not enabled in this version.
+        Control in-app alerts and email delivery. Push notifications are not available yet.
       </p>
 
       <div className={styles.section}>
