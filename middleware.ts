@@ -1,23 +1,22 @@
+import prerenderQueryMeta from './prerender-query-meta.json';
+
 const PRERENDER_SEO_START = '<!-- PETCLUES_SEO_START -->';
 const PRERENDER_SEO_END = '<!-- PETCLUES_SEO_END -->';
 
-/** @type {Record<string, string>} */
-// eslint-disable-next-line import/no-unresolved
-import prerenderQueryMeta from './prerender-query-meta.json' with { type: 'json' };
+const queryMeta = prerenderQueryMeta as Record<string, string>;
 
-function injectHead(html, fragment) {
+function injectHead(html: string, fragment: string): string {
   const pattern = new RegExp(
     `${PRERENDER_SEO_START.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}[\\s\\S]*?${PRERENDER_SEO_END.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`,
   );
   return html.replace(pattern, `${PRERENDER_SEO_START}\n${fragment}\n    ${PRERENDER_SEO_END}`);
 }
 
-function hasBlockedBlogQuery(url) {
+function hasBlockedBlogQuery(url: URL): boolean {
   return url.searchParams.has('tag') || url.searchParams.has('q');
 }
 
-/** @param {Request} request */
-export default async function middleware(request) {
+export default async function middleware(request: Request): Promise<Response | undefined> {
   if (request.headers.get('x-prerender-middleware') === '1') {
     return undefined;
   }
@@ -36,7 +35,7 @@ export default async function middleware(request) {
   }
 
   const routeKey = `${url.pathname}${url.search}`;
-  const fragment = prerenderQueryMeta[routeKey];
+  const fragment = queryMeta[routeKey];
   if (!fragment) return undefined;
 
   const indexUrl = new URL('/index.html', url.origin);
