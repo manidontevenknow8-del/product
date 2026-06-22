@@ -224,33 +224,33 @@ function buildFoundingMemberEmail(payload: FoundingMemberConfirmationPayload) {
 }
 
 function buildPremiumUpgradeEmail(payload: PremiumUpgradePayload) {
-  const intervalLabel = payload.interval === 'yearly' ? 'yearly' : 'monthly';
+  const cycleLabel = payload.billingCycle === 'annual' ? 'annual' : payload.billingCycle;
   const greeting = payload.ownerName ? `Hi ${payload.ownerName},` : 'Hi there,';
 
   const bodyHtml = `
     <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.6; color: #2C2C2C;">
-      ${greeting} your PetClues Premium plan is active.
+      ${greeting} your PetClues membership is active.
     </p>
     <p style="margin: 0 0 12px; font-size: 16px; line-height: 1.6; color: #2C2C2C;">
-      You now have access to Premium features on your ${intervalLabel} plan, including expanded tools for records, reports, and document assistance.
+      You now have access to Premium features on your ${cycleLabel} membership, including expanded tools for records, reports, and document assistance.
     </p>
     <p style="margin: 0; font-size: 15px; line-height: 1.6; color: #6B6560;">
       Manage billing anytime from your account settings.
     </p>`;
 
   const html = renderEmailLayout({
-    preheader: 'Your PetClues Premium plan is active.',
-    title: 'Premium is active',
+    preheader: 'Your PetClues membership is active.',
+    title: 'Membership is active',
     bodyHtml,
     ctaLabel: 'Open dashboard',
     ctaUrl: payload.dashboardUrl,
-    footerNote: 'You received this because your PetClues subscription was updated.',
+    footerNote: 'You received this because your PetClues membership was updated.',
   });
 
   const text = [
-    'Premium is active',
+    'Membership is active',
     '',
-    `${greeting} your PetClues Premium plan is active (${intervalLabel}).`,
+    `${greeting} your PetClues membership is active (${cycleLabel}).`,
     '',
     `Dashboard: ${payload.dashboardUrl}`,
     `Billing: ${payload.billingUrl}`,

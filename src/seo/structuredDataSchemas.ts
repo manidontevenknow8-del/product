@@ -173,13 +173,90 @@ export function buildSoftwareApplicationSchema() {
     applicationCategory: 'HealthApplication',
     operatingSystem: 'Web',
     description: SITE_META.softwareDescription,
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'USD',
-      description: 'Free plan available',
-    },
+    offers: [
+      {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'USD',
+        description: 'Free plan available',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Plus Annual Membership',
+        price: '99',
+        priceCurrency: 'USD',
+        priceValidUntil: '2027-12-31',
+        description: 'Annual Plus membership — international pricing',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Pro Annual Membership',
+        price: '299',
+        priceCurrency: 'USD',
+        priceValidUntil: '2027-12-31',
+        description: 'Annual Pro membership — international pricing',
+      },
+    ],
     publisher: { '@id': ORGANIZATION_ID },
+  };
+}
+
+export function buildPricingPageSchema() {
+  return {
+    '@type': 'WebPage',
+    '@id': `${SITE_META.siteUrl}/pricing#webpage`,
+    name: 'PetClues Annual Membership',
+    description:
+      'Annual memberships for pet health records, reminders, documents, and AI insights. India pricing in INR; international pricing in USD.',
+    mainEntity: {
+      '@type': 'ItemList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          item: {
+            '@type': 'Offer',
+            name: 'Plus Annual',
+            price: '1999',
+            priceCurrency: 'INR',
+            description: 'Annual Plus membership for India',
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          item: {
+            '@type': 'Offer',
+            name: 'Pro Annual',
+            price: '4999',
+            priceCurrency: 'INR',
+            description: 'Annual Pro membership for India',
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          item: {
+            '@type': 'Offer',
+            name: 'Plus Annual',
+            price: '99',
+            priceCurrency: 'USD',
+            description: 'Annual Plus membership — international',
+          },
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          item: {
+            '@type': 'Offer',
+            name: 'Pro Annual',
+            price: '299',
+            priceCurrency: 'USD',
+            description: 'Annual Pro membership — international',
+          },
+        },
+      ],
+    },
   };
 }
 

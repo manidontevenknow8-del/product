@@ -1,71 +1,102 @@
 /**
- * Premium pricing - single source of truth for UI and Razorpay.
- * All amounts in INR (display) and paise (checkout).
+ * Annual membership pricing — single source of truth for UI and Razorpay.
+ * India: INR (paise). International: USD (cents).
  */
 
 import type { CommercialPlan } from '@/subscription/planLimits';
-import type { BillingInterval } from '@/types/subscription';
 
 export const CUSTOM_LIMITS_EMAIL = 'support@petclues.com';
 
-export const PLUS_MONTHLY_INR = 2_999;
-export const PLUS_ANNUAL_INR = 29_990;
-export const PLUS_ANNUAL_SAVINGS_INR = 5_998;
+export type BillingCurrency = 'INR' | 'USD';
+export type CheckoutPlan = 'plus' | 'pro';
+export type BillingCycle = 'annual';
 
-export const PRO_MONTHLY_INR = 4_999;
-export const PRO_ANNUAL_INR = 49_990;
-export const PRO_ANNUAL_SAVINGS_INR = 9_998;
+export const BILLING_CYCLE: BillingCycle = 'annual';
 
-export const PLUS_MONTHLY_PAISE = PLUS_MONTHLY_INR * 100;
-export const PLUS_ANNUAL_PAISE = PLUS_ANNUAL_INR * 100;
-export const PRO_MONTHLY_PAISE = PRO_MONTHLY_INR * 100;
-export const PRO_ANNUAL_PAISE = PRO_ANNUAL_INR * 100;
+export const PLUS_ANNUAL_INR = 1_999;
+export const PRO_ANNUAL_INR = 4_999;
+export const PLUS_ANNUAL_USD = 99;
+export const PRO_ANNUAL_USD = 299;
+
+export const PLUS_ANNUAL_INR_MINOR = PLUS_ANNUAL_INR * 100;
+export const PRO_ANNUAL_INR_MINOR = PRO_ANNUAL_INR * 100;
+export const PLUS_ANNUAL_USD_MINOR = PLUS_ANNUAL_USD * 100;
+export const PRO_ANNUAL_USD_MINOR = PRO_ANNUAL_USD * 100;
 
 export const FOUNDING_DISCOUNT_PERCENT = 5;
-export const PRO_MONTHLY_FOUNDING_INR = Math.round(PRO_MONTHLY_INR * (1 - FOUNDING_DISCOUNT_PERCENT / 100));
-export const PRO_ANNUAL_FOUNDING_INR = Math.round(PRO_ANNUAL_INR * (1 - FOUNDING_DISCOUNT_PERCENT / 100));
-export const PRO_MONTHLY_FOUNDING_PAISE = PRO_MONTHLY_FOUNDING_INR * 100;
-export const PRO_ANNUAL_FOUNDING_PAISE = PRO_ANNUAL_FOUNDING_INR * 100;
+export const PRO_ANNUAL_FOUNDING_INR = Math.round(
+  PRO_ANNUAL_INR * (1 - FOUNDING_DISCOUNT_PERCENT / 100),
+);
+export const PRO_ANNUAL_FOUNDING_USD = Math.round(
+  PRO_ANNUAL_USD * (1 - FOUNDING_DISCOUNT_PERCENT / 100),
+);
+export const PRO_ANNUAL_FOUNDING_INR_MINOR = PRO_ANNUAL_FOUNDING_INR * 100;
+export const PRO_ANNUAL_FOUNDING_USD_MINOR = PRO_ANNUAL_FOUNDING_USD * 100;
 
-const INR = new Intl.NumberFormat('en-IN', {
+const INR_FORMATTER = new Intl.NumberFormat('en-IN', {
   style: 'currency',
   currency: 'INR',
   maximumFractionDigits: 0,
 });
 
+const USD_FORMATTER = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0,
+});
+
 export function formatInr(amount: number): string {
-  return INR.format(amount);
+  return INR_FORMATTER.format(amount);
 }
 
-export function getCheckoutAmountPaise(
-  plan: 'plus' | 'pro',
-  interval: BillingInterval,
+export function formatUsd(amount: number): string {
+  return USD_FORMATTER.format(amount);
+}
+
+export function formatPrice(amount: number, currency: BillingCurrency): string {
+  return currency === 'INR' ? formatInr(amount) : formatUsd(amount);
+}
+
+export function getAnnualPrice(
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
   foundingDiscount = false,
 ): number {
   if (plan === 'plus') {
-    return interval === 'yearly' ? PLUS_ANNUAL_PAISE : PLUS_MONTHLY_PAISE;
+    return currency === 'INR' ? PLUS_ANNUAL_INR : PLUS_ANNUAL_USD;
   }
   if (foundingDiscount) {
-    return interval === 'yearly' ? PRO_ANNUAL_FOUNDING_PAISE : PRO_MONTHLY_FOUNDING_PAISE;
+    return currency === 'INR' ? PRO_ANNUAL_FOUNDING_INR : PRO_ANNUAL_FOUNDING_USD;
   }
-  return interval === 'yearly' ? PRO_ANNUAL_PAISE : PRO_MONTHLY_PAISE;
+  return currency === 'INR' ? PRO_ANNUAL_INR : PRO_ANNUAL_USD;
+}
+
+export function getCheckoutAmountMinor(
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
+  foundingDiscount = false,
+): number {
+  if (plan === 'plus') {
+    return currency === 'INR' ? PLUS_ANNUAL_INR_MINOR : PLUS_ANNUAL_USD_MINOR;
+  }
+  if (foundingDiscount) {
+    return currency === 'INR' ? PRO_ANNUAL_FOUNDING_INR_MINOR : PRO_ANNUAL_FOUNDING_USD_MINOR;
+  }
+  return currency === 'INR' ? PRO_ANNUAL_INR_MINOR : PRO_ANNUAL_USD_MINOR;
 }
 
 export function getPlanPriceLabel(
   plan: CommercialPlan,
-  interval: BillingInterval = 'monthly',
+  currency: BillingCurrency = 'INR',
   foundingDiscount = false,
 ): string {
   switch (plan) {
     case 'free':
-      return '₹0';
+      return currency === 'INR' ? '₹0' : '$0';
     case 'plus':
-      return interval === 'yearly' ? formatInr(PLUS_ANNUAL_INR) : formatInr(PLUS_MONTHLY_INR);
+      return formatPrice(currency === 'INR' ? PLUS_ANNUAL_INR : PLUS_ANNUAL_USD, currency);
     case 'pro':
-      if (interval === 'yearly') {
-        return formatInr(foundingDiscount ? PRO_ANNUAL_FOUNDING_INR : PRO_ANNUAL_INR);
-      }
-      return formatInr(foundingDiscount ? PRO_MONTHLY_FOUNDING_INR : PRO_MONTHLY_INR);
+      return formatPrice(getAnnualPrice('pro', currency, foundingDiscount), currency);
     case 'enterprise':
       return 'Custom';
     default:
@@ -73,9 +104,10 @@ export function getPlanPriceLabel(
   }
 }
 
-export function getAnnualSavingsLabel(plan: 'plus' | 'pro'): string {
-  const savings = plan === 'plus' ? PLUS_ANNUAL_SAVINGS_INR : PRO_ANNUAL_SAVINGS_INR;
-  return `Save ${formatInr(savings)}/year`;
+export function getAnnualPriceDisplay(
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
+  foundingDiscount = false,
+): string {
+  return `${formatPrice(getAnnualPrice(plan, currency, foundingDiscount), currency)} / year`;
 }
-
-export const ANNUAL_BADGE = '2 Months Free';

@@ -1,6 +1,9 @@
 import { createClient } from 'npm:@supabase/supabase-js@2.49.1';
-import { verifyPaymentSignature } from '../_shared/razorpay/client.ts';
-import { isRazorpayPlan } from '../_shared/razorpay/client.ts';
+import {
+  isBillingCurrency,
+  isRazorpayPlan,
+  verifyPaymentSignature,
+} from '../_shared/razorpay/client.ts';
 import {
   activatePaidSubscription,
   paymentAlreadyProcessed,
@@ -49,7 +52,8 @@ Deno.serve(async (req) => {
       razorpay_payment_id?: string;
       razorpay_signature?: string;
       plan?: string;
-      interval?: string;
+      currency?: string;
+      amount?: number;
     };
 
     const orderId = body.razorpay_order_id?.trim();
@@ -95,14 +99,19 @@ Deno.serve(async (req) => {
     }
 
     const plan = body.plan && isRazorpayPlan(body.plan) ? body.plan : 'pro';
-    const interval = body.interval === 'yearly' || body.interval === 'annual' ? 'yearly' : 'monthly';
+    const currency =
+      body.currency && isBillingCurrency(body.currency.toUpperCase())
+        ? body.currency.toUpperCase()
+        : 'INR';
+    const amountPaid = typeof body.amount === 'number' && body.amount > 0 ? body.amount : null;
 
     await activatePaidSubscription(admin, {
       userId: userData.user.id,
       orderId,
       paymentId,
       plan,
-      interval,
+      currency,
+      amountPaid,
     });
 
     return new Response(JSON.stringify({ success: true }), {

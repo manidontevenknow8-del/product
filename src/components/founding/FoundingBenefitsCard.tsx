@@ -3,8 +3,9 @@ import { Badge, Button } from '@/components/ui';
 import { useAuth } from '@/auth/AuthProvider';
 import {
   FOUNDING_DISCOUNT_PERCENT,
-  FOUNDING_DISCOUNTED_PRICE_DISPLAY,
+  getFoundingDiscountedDisplay,
 } from '@/config/razorpayConfig';
+import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { FOUNDING_TRIAL_DAYS } from '@/data/foundingMemberBenefits';
 import { ROUTES } from '@/routes/paths';
 import { FoundingFeatureVoting } from './FoundingFeatureVoting';
@@ -12,6 +13,7 @@ import styles from './FoundingBenefitsCard.module.css';
 
 export function FoundingBenefitsCard() {
   const { user } = useAuth();
+  const { currency } = useBillingRegion();
 
   if (!user?.foundingMember) return null;
 
@@ -24,6 +26,7 @@ export function FoundingBenefitsCard() {
     : null;
 
   const onTrial = user.subscriptionStatus === 'trialing';
+  const foundingPrice = getFoundingDiscountedDisplay(currency);
 
   return (
     <section className={styles.card} aria-labelledby="founding-benefits-title">
@@ -49,7 +52,7 @@ export function FoundingBenefitsCard() {
             {onTrial && trialEnd
               ? `Active until ${trialEnd} (${FOUNDING_TRIAL_DAYS}-day trial)`
               : user.subscriptionStatus === 'active'
-                ? 'Trial complete - Pro is active'
+                ? 'Trial complete — Pro is active'
                 : `Your ${FOUNDING_TRIAL_DAYS}-day trial starts when you finish signup`}
           </span>
         </li>
@@ -57,7 +60,7 @@ export function FoundingBenefitsCard() {
           <span className={styles.perkLabel}>Lifetime discount</span>
           <span className={styles.perkValue}>
             {user.foundingLifetimeDiscount
-              ? `Pro at ${FOUNDING_DISCOUNTED_PRICE_DISPLAY}/mo forever (${FOUNDING_DISCOUNT_PERCENT}% off)`
+              ? `Pro at ${foundingPrice}/year forever (${FOUNDING_DISCOUNT_PERCENT}% off)`
               : 'Applied at checkout when you upgrade'}
           </span>
         </li>

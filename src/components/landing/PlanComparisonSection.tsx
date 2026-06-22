@@ -1,68 +1,67 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
-import {
-  formatInr,
-  PLUS_MONTHLY_INR,
-  PRO_MONTHLY_INR,
-} from '@/config/pricingConfig';
+import { getAnnualPriceDisplay } from '@/config/pricingConfig';
+import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { PET_LIMITS } from '@/subscription/entitlements';
 import { ROUTES } from '@/routes/paths';
 import styles from './PlanComparisonSection.module.css';
 
-const PLANS = [
-  {
-    id: 'free',
-    name: 'Free',
-    price: '₹0',
-    period: '',
-    petLimit: `${PET_LIMITS.free} Pet`,
-    features: ['Basic Records', 'Basic Reminders'],
-    cta: 'Get Started',
-    href: ROUTES.SIGNUP,
-    variant: 'minimal' as const,
-  },
-  {
-    id: 'plus',
-    name: 'Plus',
-    price: formatInr(PLUS_MONTHLY_INR),
-    period: '/mo',
-    petLimit: `${PET_LIMITS.plus} Pets`,
-    features: ['Passports', 'Reports', 'AI Features'],
-    cta: 'Upgrade to Plus',
-    href: ROUTES.PRICING,
-    variant: 'plus' as const,
-  },
-  {
-    id: 'pro',
-    name: 'Pro',
-    price: formatInr(PRO_MONTHLY_INR),
-    period: '/mo',
-    petLimit: `${PET_LIMITS.pro} Pets`,
-    features: ['Everything in Plus', 'Priority Support', 'Advanced AI', 'Coming Soon Features'],
-    cta: 'Upgrade to Pro',
-    href: ROUTES.PRICING,
-    variant: 'pro' as const,
-  },
-  {
-    id: 'enterprise',
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    petLimit: '10+ Pets',
-    features: ['Clinic Tools', 'Team Access', 'Custom Solutions'],
-    cta: 'Contact Sales',
-    href: 'mailto:support@petclues.com?subject=PetClues%20Enterprise',
-    variant: 'enterprise' as const,
-  },
-];
-
 export function PlanComparisonSection() {
+  const { currency, isLoading } = useBillingRegion();
+
+  const plans = [
+    {
+      id: 'free',
+      name: 'Free',
+      price: currency === 'INR' ? '₹0' : '$0',
+      period: '',
+      petLimit: `${PET_LIMITS.free} Pet`,
+      features: ['Basic Records', 'Basic Reminders'],
+      cta: 'Get Started',
+      href: ROUTES.SIGNUP,
+      variant: 'minimal' as const,
+    },
+    {
+      id: 'plus',
+      name: 'Plus',
+      price: isLoading ? '…' : getAnnualPriceDisplay('plus', currency).replace(' / year', ''),
+      period: '/year',
+      petLimit: `${PET_LIMITS.plus} Pets`,
+      features: ['Passports', 'Reports', 'Family Sharing'],
+      cta: 'Join Plus',
+      href: ROUTES.PRICING,
+      variant: 'plus' as const,
+    },
+    {
+      id: 'pro',
+      name: 'Pro',
+      price: isLoading ? '…' : getAnnualPriceDisplay('pro', currency).replace(' / year', ''),
+      period: '/year',
+      petLimit: `${PET_LIMITS.pro} Pets`,
+      features: ['Everything in Plus', 'Priority Support', 'Advanced AI', 'Future Premium Features'],
+      cta: 'Join Pro',
+      href: ROUTES.PRICING,
+      variant: 'pro' as const,
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise',
+      price: 'Custom',
+      period: '',
+      petLimit: '10+ Pets',
+      features: ['Clinic Tools', 'Team Access', 'Custom Solutions'],
+      cta: 'Contact Sales',
+      href: 'mailto:support@petclues.com?subject=PetClues%20Enterprise',
+      variant: 'enterprise' as const,
+    },
+  ];
+
   return (
     <section className={styles.section} id="plans" aria-labelledby="plan-comparison-title">
       <div className="container">
         <header className={styles.header}>
           <h2 id="plan-comparison-title" className={styles.title}>
-            Choose the plan that fits your pet&apos;s journey.
+            Choose the membership that fits your pet&apos;s journey.
           </h2>
           <p className={styles.subtitle}>
             Start free. Upgrade when you need more pets, deeper insights, and advanced care tools.
@@ -70,7 +69,7 @@ export function PlanComparisonSection() {
         </header>
 
         <div className={styles.grid}>
-          {PLANS.map((plan) => (
+          {plans.map((plan) => (
             <article
               key={plan.id}
               className={`${styles.card} ${styles[plan.variant]}`}

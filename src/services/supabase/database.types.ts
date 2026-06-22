@@ -127,6 +127,9 @@ export type SubscriptionRow = {
   plan: string;
   status: string;
   billing_interval: string;
+  billing_cycle: string;
+  currency: string | null;
+  amount_paid: number | null;
   razorpay_order_id: string | null;
   razorpay_payment_id: string | null;
   started_at: string | null;
@@ -505,6 +508,9 @@ export type Database = {
           plan: string;
           status: string;
           billing_interval?: string;
+          billing_cycle?: string;
+          currency?: string | null;
+          amount_paid?: number | null;
           razorpay_order_id?: string | null;
           razorpay_payment_id?: string | null;
           started_at?: string | null;
@@ -518,6 +524,9 @@ export type Database = {
           plan?: string;
           status?: string;
           billing_interval?: string;
+          billing_cycle?: string;
+          currency?: string | null;
+          amount_paid?: number | null;
           razorpay_order_id?: string | null;
           razorpay_payment_id?: string | null;
           started_at?: string | null;

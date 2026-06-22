@@ -1,36 +1,78 @@
-/** @deprecated Import from pricingConfig.ts - kept for backward compatibility */
+/** @deprecated Import from pricingConfig.ts — kept for backward compatibility */
 export {
   CUSTOM_LIMITS_EMAIL,
-  PLUS_MONTHLY_INR as PLUS_MONTHLY_PRICE_INR,
-  PLUS_MONTHLY_PAISE as PLUS_MONTHLY_AMOUNT_PAISE,
-  PRO_MONTHLY_INR as PRO_MONTHLY_PRICE_INR,
-  PRO_MONTHLY_PAISE as PRO_MONTHLY_AMOUNT_PAISE,
+  BILLING_CYCLE,
+  PLUS_ANNUAL_INR,
+  PRO_ANNUAL_INR,
+  PLUS_ANNUAL_USD,
+  PRO_ANNUAL_USD,
+  PLUS_ANNUAL_INR_MINOR as PLUS_ANNUAL_AMOUNT_MINOR_INR,
+  PRO_ANNUAL_INR_MINOR as PRO_ANNUAL_AMOUNT_MINOR_INR,
   FOUNDING_DISCOUNT_PERCENT,
-  PRO_MONTHLY_FOUNDING_INR as FOUNDING_DISCOUNTED_PRICE_INR,
-  PRO_MONTHLY_FOUNDING_PAISE as FOUNDING_DISCOUNT_AMOUNT_PAISE,
+  PRO_ANNUAL_FOUNDING_INR as FOUNDING_DISCOUNTED_PRICE_INR,
+  PRO_ANNUAL_FOUNDING_USD as FOUNDING_DISCOUNTED_PRICE_USD,
+  PRO_ANNUAL_FOUNDING_INR_MINOR as FOUNDING_DISCOUNT_AMOUNT_MINOR_INR,
   formatInr,
-  getCheckoutAmountPaise,
+  formatUsd,
+  formatPrice,
+  getAnnualPrice,
+  getCheckoutAmountMinor,
   getPlanPriceLabel,
+  getAnnualPriceDisplay,
+  type BillingCurrency,
+  type CheckoutPlan,
 } from './pricingConfig';
 
-import { formatInr, PRO_MONTHLY_INR, PRO_MONTHLY_FOUNDING_INR } from './pricingConfig';
+import {
+  formatPrice,
+  getAnnualPrice,
+  getAnnualPriceDisplay,
+  getPlanPriceLabel,
+  type BillingCurrency,
+  type CheckoutPlan,
+} from './pricingConfig';
 
-export type RazorpayCheckoutPlan = 'plus' | 'pro';
+export type RazorpayCheckoutPlan = CheckoutPlan;
 
 export function getRazorpayKeyId(): string {
   return import.meta.env.VITE_RAZORPAY_KEY_ID ?? '';
 }
 
-export const PLUS_MONTHLY_PRICE_DISPLAY = formatInr(2_999);
-export const PRO_MONTHLY_PRICE_DISPLAY = formatInr(PRO_MONTHLY_INR);
-export const FOUNDING_DISCOUNTED_PRICE_DISPLAY = formatInr(PRO_MONTHLY_FOUNDING_INR);
+export function getPlanPriceDisplay(
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
+  foundingDiscount = false,
+): string {
+  return getPlanPriceLabel(plan, currency, foundingDiscount);
+}
 
-export const PLAN_PRICING_DISPLAY: Record<RazorpayCheckoutPlan, string> = {
-  plus: PLUS_MONTHLY_PRICE_DISPLAY,
-  pro: PRO_MONTHLY_PRICE_DISPLAY,
+export function getAnnualMembershipDisplay(
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
+  foundingDiscount = false,
+): string {
+  return getAnnualPriceDisplay(plan, currency, foundingDiscount);
+}
+
+export const FOUNDING_DISCOUNTED_PRICE_DISPLAY_INR = formatPrice(
+  getAnnualPrice('pro', 'INR', true),
+  'INR',
+);
+export const FOUNDING_DISCOUNTED_PRICE_DISPLAY_USD = formatPrice(
+  getAnnualPrice('pro', 'USD', true),
+  'USD',
+);
+
+export function getFoundingDiscountedDisplay(currency: BillingCurrency): string {
+  return formatPrice(getAnnualPrice('pro', currency, true), currency);
+}
+
+export const PLAN_PRICING_DISPLAY_INR: Record<CheckoutPlan, string> = {
+  plus: formatPrice(getAnnualPrice('plus', 'INR'), 'INR'),
+  pro: formatPrice(getAnnualPrice('pro', 'INR'), 'INR'),
 };
 
-export function getPlanPriceDisplay(plan: RazorpayCheckoutPlan, foundingDiscount = false): string {
-  if (plan === 'pro' && foundingDiscount) return FOUNDING_DISCOUNTED_PRICE_DISPLAY;
-  return PLAN_PRICING_DISPLAY[plan];
-}
+export const PLAN_PRICING_DISPLAY_USD: Record<CheckoutPlan, string> = {
+  plus: formatPrice(getAnnualPrice('plus', 'USD'), 'USD'),
+  pro: formatPrice(getAnnualPrice('pro', 'USD'), 'USD'),
+};

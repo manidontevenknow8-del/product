@@ -1,9 +1,10 @@
-import { getSupabaseClient } from '@/services/supabase/client';
 import {
-  PLUS_MONTHLY_PRICE_DISPLAY,
-  PRO_MONTHLY_PRICE_DISPLAY,
-} from '@/config/razorpayConfig';
+  formatPrice,
+  getAnnualPrice,
+  type BillingCurrency,
+} from '@/config/pricingConfig';
 import { razorpayCheckoutService } from '@/services/payments/razorpayCheckoutService';
+import { getSupabaseClient } from '@/services/supabase/client';
 import {
   getDecoderLifetimeLimit,
   getDecoderMonthlyLimit,
@@ -28,6 +29,11 @@ function formatRenewalDate(iso: string | null): string | null {
   });
 }
 
+function parseCurrency(value: string | null | undefined): BillingCurrency | null {
+  if (value === 'INR' || value === 'USD') return value;
+  return null;
+}
+
 function mapSubscriptionRow(
   profile: {
     subscription_plan: string | null;
@@ -39,7 +45,8 @@ function mapSubscriptionRow(
     plan: string;
     expires_at: string | null;
     started_at: string | null;
-    billing_interval?: string | null;
+    currency?: string | null;
+    billing_cycle?: string | null;
   } | null,
 ): Subscription {
   const commercialPlan = resolveEffectivePlan({
@@ -53,7 +60,8 @@ function mapSubscriptionRow(
   return {
     commercialPlan,
     plan: isPaid ? 'premium' : 'free',
-    interval: row?.billing_interval === 'yearly' ? 'yearly' : 'monthly',
+    billingCycle: 'annual',
+    currency: parseCurrency(row?.currency),
     status: isPaid
       ? (profile?.subscription_status === 'trialing' ? 'trialing' : 'active')
       : 'inactive',
@@ -67,10 +75,21 @@ function mapSubscriptionRow(
   };
 }
 
-function priceDisplayForPlan(plan: string | null | undefined): string {
-  if (plan === 'plus') return PLUS_MONTHLY_PRICE_DISPLAY;
-  if (plan === 'pro') return PRO_MONTHLY_PRICE_DISPLAY;
-  return PRO_MONTHLY_PRICE_DISPLAY;
+function formatInvoiceAmount(
+  plan: string | null | undefined,
+  currency: BillingCurrency | null,
+  amountPaid: number | null | undefined,
+): string {
+  if (amountPaid != null && currency) {
+    return formatPrice(amountPaid / 100, currency);
+  }
+  if (plan === 'plus' && currency) {
+    return formatPrice(getAnnualPrice('plus', currency), currency);
+  }
+  if (plan === 'pro' && currency) {
+    return formatPrice(getAnnualPrice('pro', currency), currency);
+  }
+  return '—';
 }
 
 export const supabaseSubscriptionService: ISubscriptionService = {
@@ -86,7 +105,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
         .single(),
       supabase
         .from('subscriptions')
-        .select('status, plan, expires_at, started_at, billing_interval')
+        .select('status, plan, expires_at, started_at, currency, billing_cycle')
         .eq('user_id', userId)
         .in('status', ['active', 'trialing'])
         .order('started_at', { ascending: false })
@@ -205,7 +224,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     const supabase = getSupabaseClient();
     const { data, error } = await supabase
       .from('subscriptions')
-      .select('id, razorpay_payment_id, started_at, status, plan')
+      .select('id, razorpay_payment_id, started_at, status, plan, currency, amount_paid')
       .eq('user_id', userId)
       .not('razorpay_payment_id', 'is', null)
       .order('started_at', { ascending: false });
@@ -215,17 +234,20 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     return (data ?? []).map((row) => ({
       id: row.razorpay_payment_id ?? row.id,
       date: formatRenewalDate(row.started_at) ?? '-',
-      amount: priceDisplayForPlan(row.plan),
+      amount: formatInvoiceAmount(row.plan, parseCurrency(row.currency), row.amount_paid),
       plan: row.plan ?? 'pro',
+      currency: parseCurrency(row.currency) ?? undefined,
       status: row.status === 'active' || row.status === 'captured' ? 'paid' as const : 'pending' as const,
     }));
   },
 
-  async startCheckout(userId, plan, interval, prefill) {
+  async startCheckout(userId, plan, currency, prefill, options) {
     await razorpayCheckoutService.startCheckout({
       userId,
       plan,
-      interval,
+      currency,
+      countryCode: options?.countryCode,
+      foundingDiscount: options?.foundingDiscount,
       prefill,
     });
   },

@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui';
 import {
-  getPlanPriceDisplay,
-  PLUS_MONTHLY_PRICE_DISPLAY,
-  PRO_MONTHLY_PRICE_DISPLAY,
+  getAnnualMembershipDisplay,
+  getFoundingDiscountedDisplay,
 } from '@/config/razorpayConfig';
 import { isPaymentsLive, PAYMENTS_COMING_SOON_MESSAGE } from '@/config/paymentsConfig';
+import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { useAuth } from '@/auth/AuthProvider';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { PLAN_LABELS } from '@/subscription/entitlements';
@@ -27,6 +27,7 @@ export function UpgradeModal({
   targetPlan = 'pro',
 }: UpgradeModalProps) {
   const { user } = useAuth();
+  const { currency, countryCode } = useBillingRegion();
   const { startCheckout, refresh } = useSubscription();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -44,16 +45,14 @@ export function UpgradeModal({
   const planLabel = PLAN_LABELS[targetPlan];
   const priceDisplay =
     targetPlan === 'pro' && user?.foundingLifetimeDiscount
-      ? getPlanPriceDisplay('pro', true)
-      : targetPlan === 'plus'
-        ? PLUS_MONTHLY_PRICE_DISPLAY
-        : PRO_MONTHLY_PRICE_DISPLAY;
+      ? `${getFoundingDiscountedDisplay(currency)} / year`
+      : getAnnualMembershipDisplay(targetPlan, currency);
 
   const handleUpgrade = async () => {
     setLoading(true);
     setError(null);
     try {
-      await startCheckout(targetPlan);
+      await startCheckout(targetPlan, currency, { countryCode });
       await refresh();
       onSuccess?.();
       onClose();
@@ -70,17 +69,17 @@ export function UpgradeModal({
     <div className={styles.overlay} onClick={onClose} role="presentation">
       <div className={styles.modal} onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true">
         <div className={styles.header}>
-          <h2 className={styles.title}>Upgrade to PetClues {planLabel}</h2>
+          <h2 className={styles.title}>Join PetClues {planLabel}</h2>
           <p className={styles.subtitle}>
             {targetPlan === 'plus'
-              ? 'Unlock up to 3 pets, pet passports, monthly reports, PetCare Score, and basic AI.'
-              : 'Unlock advanced AI, up to 10 pets, priority support, and Launching Soon features.'}
+              ? 'Annual membership for organized pet parents — records, reminders, and family sharing.'
+              : 'Annual membership with AI insights, priority support, and future premium features.'}
           </p>
         </div>
 
         <div className={styles.priceDisplay}>
           <div className={styles.priceAmount}>{priceDisplay}</div>
-          <div className={styles.priceNote}>Billed monthly · 30-day access · Secure Razorpay checkout</div>
+          <div className={styles.priceNote}>Billed annually · Secure Razorpay checkout</div>
         </div>
 
         {error && (
@@ -106,7 +105,7 @@ export function UpgradeModal({
 
         <p className={styles.note}>
           {paymentsLive
-            ? 'Secure checkout powered by Razorpay. Manage your subscription from Billing.'
+            ? 'Secure checkout powered by Razorpay. Manage your membership from Billing.'
             : PAYMENTS_COMING_SOON_MESSAGE}
         </p>
       </div>

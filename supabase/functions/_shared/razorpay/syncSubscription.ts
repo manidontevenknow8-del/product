@@ -1,6 +1,11 @@
 import type { SupabaseClient } from 'npm:@supabase/supabase-js@2.49.1';
 import { appUrls, deliverTransactionalEmail } from '../email/sendTransactional.ts';
-import { isRazorpayPlan, type BillingInterval, type RazorpayPlanId } from './client.ts';
+import {
+  BILLING_CYCLE,
+  isRazorpayPlan,
+  type BillingCurrency,
+  type RazorpayPlanId,
+} from './client.ts';
 import { planToLegacyTier } from '../subscription/entitlements.ts';
 
 export async function paymentAlreadyProcessed(
@@ -22,23 +27,22 @@ export async function activatePaidSubscription(
     orderId: string;
     paymentId: string;
     plan: RazorpayPlanId;
-    interval?: BillingInterval;
+    currency: BillingCurrency;
+    amountPaid?: number | null;
   },
 ): Promise<void> {
-  const billingInterval: BillingInterval = input.interval ?? 'monthly';
   const startedAt = new Date();
   const expiresAt = new Date(startedAt);
-  if (billingInterval === 'yearly') {
-    expiresAt.setFullYear(expiresAt.getFullYear() + 1);
-  } else {
-    expiresAt.setDate(expiresAt.getDate() + 30);
-  }
+  expiresAt.setFullYear(expiresAt.getFullYear() + 1);
 
   const { error: subError } = await admin.from('subscriptions').insert({
     user_id: input.userId,
     plan: input.plan,
     status: 'active',
-    billing_interval: billingInterval,
+    billing_cycle: BILLING_CYCLE,
+    billing_interval: 'yearly',
+    currency: input.currency,
+    amount_paid: input.amountPaid,
     razorpay_order_id: input.orderId,
     razorpay_payment_id: input.paymentId,
     started_at: startedAt.toISOString(),
@@ -91,7 +95,8 @@ export async function activatePaidSubscription(
           subject: '',
           payload: {
             ownerName: profile.name ?? '',
-            interval: billingInterval,
+            billingCycle: BILLING_CYCLE,
+            currency: input.currency,
             billingUrl: urls.billingUrl,
             dashboardUrl: urls.dashboardUrl,
           },
@@ -108,7 +113,11 @@ export async function activateProSubscription(
   admin: SupabaseClient,
   input: { userId: string; orderId: string; paymentId: string },
 ): Promise<void> {
-  return activatePaidSubscription(admin, { ...input, plan: 'pro' });
+  return activatePaidSubscription(admin, {
+    ...input,
+    plan: 'pro',
+    currency: 'INR',
+  });
 }
 
 export async function markPaymentFailed(
@@ -120,6 +129,7 @@ export async function markPaymentFailed(
     user_id: input.userId,
     plan,
     status: 'failed',
+    billing_cycle: BILLING_CYCLE,
     razorpay_order_id: input.orderId,
     razorpay_payment_id: input.paymentId ?? null,
   });

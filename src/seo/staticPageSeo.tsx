@@ -5,6 +5,7 @@ import { buildBreadcrumbListSchema } from './breadcrumbSchema';
 import { getStaticPageBreadcrumbs } from './pageBreadcrumbs';
 import {
   buildOrganizationSchema,
+  buildPricingPageSchema,
   buildProductPageGraph,
   buildProfilePageSchema,
   buildSchemaGraph,
@@ -13,7 +14,7 @@ import {
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
 
-const PRODUCT_ROUTES = new Set<string>([ROUTES.PRICING, ROUTES.PET_MATCH, ROUTES.FOUNDING_MEMBERS]);
+const PRODUCT_ROUTES = new Set<string>([ROUTES.PET_MATCH, ROUTES.FOUNDING_MEMBERS]);
 
 export function getStaticPageStructuredData(pathname: string, config: SEOConfig) {
   const url = pathname === ROUTES.LANDING ? SITE_META.siteUrl : `${SITE_META.siteUrl}${pathname}`;
@@ -28,6 +29,20 @@ export function getStaticPageStructuredData(pathname: string, config: SEOConfig)
         name: config.title,
         description: config.description,
       }),
+      buildWebPageSchema({
+        url,
+        name: config.title,
+        description: config.description,
+      }),
+      breadcrumbs,
+    );
+  }
+
+  if (pathname === ROUTES.PRICING) {
+    return buildSchemaGraph(
+      buildOrganizationSchema(),
+      buildWebSiteSchema(),
+      buildPricingPageSchema(),
       buildWebPageSchema({
         url,
         name: config.title,

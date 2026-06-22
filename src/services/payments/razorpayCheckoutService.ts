@@ -1,25 +1,23 @@
 import { eventTracker } from '@/analytics/EventTracker';
 import {
-  getPlanPriceLabel,
-  getCheckoutAmountPaise,
+  getAnnualPrice,
+  getAnnualPriceDisplay,
+  type BillingCurrency,
+  type CheckoutPlan,
 } from '@/config/pricingConfig';
-import {
-  getRazorpayKeyId,
-  type RazorpayCheckoutPlan,
-} from '@/config/razorpayConfig';
+import { getRazorpayKeyId } from '@/config/razorpayConfig';
 import { getSupabaseClient } from '@/services/supabase/client';
 import { parseFunctionInvokeError } from '@/services/supabase/parseFunctionInvokeError';
 import { getUserFacingError, sanitizeUserFacingError } from '@/utils/userFacingErrors';
 import { PLAN_LABELS } from '@/subscription/entitlements';
-import type { BillingInterval } from '@/types/subscription';
 
 type CreateOrderResponse = {
   orderId: string;
   amount: number;
-  currency: string;
+  currency: BillingCurrency;
   razorpayKey: string;
-  plan: RazorpayCheckoutPlan;
-  interval?: BillingInterval;
+  plan: CheckoutPlan;
+  billingCycle: 'annual';
   foundingDiscount?: boolean;
 };
 
@@ -53,12 +51,12 @@ function loadRazorpayScript(): Promise<void> {
 }
 
 async function createOrder(
-  plan: RazorpayCheckoutPlan,
-  interval: BillingInterval,
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
 ): Promise<CreateOrderResponse> {
   const supabase = getSupabaseClient();
   const { data, error } = await supabase.functions.invoke('create-razorpay-order', {
-    body: { plan, interval },
+    body: { plan, currency },
   });
 
   if (error) throw new Error(await parseFunctionInvokeError(error, 'Checkout failed', 'payment'));
@@ -74,8 +72,9 @@ async function createOrder(
 
 async function verifyPayment(
   response: RazorpaySuccessResponse,
-  plan: RazorpayCheckoutPlan,
-  interval: BillingInterval,
+  plan: CheckoutPlan,
+  currency: BillingCurrency,
+  amount: number,
 ): Promise<void> {
   const supabase = getSupabaseClient();
   const { data, error } = await supabase.functions.invoke('verify-razorpay-payment', {
@@ -84,7 +83,8 @@ async function verifyPayment(
       razorpay_payment_id: response.razorpay_payment_id,
       razorpay_signature: response.razorpay_signature,
       plan,
-      interval,
+      currency,
+      amount,
     },
   });
 
@@ -98,31 +98,38 @@ async function verifyPayment(
 export const razorpayCheckoutService = {
   async startCheckout(input: {
     userId: string;
-    plan: RazorpayCheckoutPlan;
-    interval?: BillingInterval;
+    plan: CheckoutPlan;
+    currency: BillingCurrency;
+    countryCode?: string | null;
+    foundingDiscount?: boolean;
     prefill: CheckoutPrefill;
     onSuccess?: () => void;
     onDismiss?: () => void;
   }): Promise<void> {
-    const interval = input.interval ?? 'monthly';
-    const amountInr = getCheckoutAmountPaise(input.plan, interval) / 100;
-
-    eventTracker.track('premium_checkout_started', {
+    const displayAmount = getAnnualPrice(input.plan, input.currency, input.foundingDiscount);
+    const checkoutContext = {
       plan: input.plan,
-      interval,
-      amount: amountInr,
-      user_id: input.userId,
-    });
+      currency: input.currency,
+      country: input.countryCode ?? null,
+      amount: displayAmount,
+      billing_cycle: 'annual' as const,
+    };
+
+    eventTracker.track('checkout_started', checkoutContext);
+    eventTracker.track('premium_checkout_started', checkoutContext);
 
     await loadRazorpayScript();
-    const order = await createOrder(input.plan, interval);
+    const order = await createOrder(input.plan, input.currency);
     const checkoutKey = order.razorpayKey || getRazorpayKeyId();
     if (!checkoutKey) {
       throw new Error('Razorpay is not configured. Missing checkout key from server or VITE_RAZORPAY_KEY_ID.');
     }
 
-    const priceDisplay = getPlanPriceLabel(input.plan, interval, order.foundingDiscount);
-    const periodLabel = interval === 'yearly' ? '/year' : '/month';
+    const priceDisplay = getAnnualPriceDisplay(
+      input.plan,
+      input.currency,
+      order.foundingDiscount ?? input.foundingDiscount,
+    );
 
     return new Promise((resolve, reject) => {
       const checkout = new Razorpay({
@@ -131,7 +138,7 @@ export const razorpayCheckoutService = {
         currency: order.currency,
         order_id: order.orderId,
         name: 'PetClues',
-        description: `PetClues ${PLAN_LABELS[input.plan]} - ${priceDisplay}${periodLabel}`,
+        description: `PetClues ${PLAN_LABELS[input.plan]} — ${priceDisplay}`,
         image: '/logo.png',
         prefill: {
           email: input.prefill.email,
@@ -140,28 +147,16 @@ export const razorpayCheckoutService = {
         theme: { color: '#1a1a1a' },
         handler: async (response) => {
           try {
-            await verifyPayment(response, input.plan, interval);
-            eventTracker.track('premium_payment_success', {
-              plan: input.plan,
-              interval,
-              amount: amountInr,
-              user_id: input.userId,
-            });
-            eventTracker.track('premium_subscription_activated', {
-              plan: input.plan,
-              interval,
-              amount: amountInr,
-              user_id: input.userId,
-            });
+            await verifyPayment(response, input.plan, order.currency, order.amount);
+            eventTracker.track('checkout_completed', checkoutContext);
+            eventTracker.track('premium_payment_success', checkoutContext);
+            eventTracker.track('premium_subscription_activated', checkoutContext);
             input.onSuccess?.();
             resolve();
           } catch (err) {
             const message = getUserFacingError(err, 'payment', 'Payment verification failed');
             eventTracker.track('premium_payment_failed', {
-              plan: input.plan,
-              interval,
-              amount: amountInr,
-              user_id: input.userId,
+              ...checkoutContext,
               reason: message,
             });
             reject(new Error(message));
@@ -170,10 +165,7 @@ export const razorpayCheckoutService = {
         modal: {
           ondismiss: () => {
             eventTracker.track('premium_payment_failed', {
-              plan: input.plan,
-              interval,
-              amount: amountInr,
-              user_id: input.userId,
+              ...checkoutContext,
               reason: 'checkout_dismissed',
             });
             input.onDismiss?.();
@@ -184,25 +176,12 @@ export const razorpayCheckoutService = {
 
       checkout.on('payment.failed', () => {
         eventTracker.track('premium_payment_failed', {
-          plan: input.plan,
-          interval,
-          amount: amountInr,
-          user_id: input.userId,
+          ...checkoutContext,
           reason: 'payment_failed',
         });
       });
 
       checkout.open();
     });
-  },
-
-  /** @deprecated Use startCheckout({ plan: 'pro', ... }) */
-  async startProCheckout(input: {
-    userId: string;
-    prefill: CheckoutPrefill;
-    onSuccess?: () => void;
-    onDismiss?: () => void;
-  }): Promise<void> {
-    return this.startCheckout({ ...input, plan: 'pro' });
   },
 };

@@ -3,18 +3,19 @@ import type { CommercialPlan } from '@/subscription/entitlements';
 /** @deprecated Prefer CommercialPlan */
 export type PlanTier = 'free' | 'premium';
 
-export type BillingInterval = 'monthly' | 'yearly';
-
 /** Plans available for Razorpay checkout */
 export type CheckoutPlan = 'plus' | 'pro';
+
+export type BillingCurrency = 'INR' | 'USD';
+export type BillingCycle = 'annual';
 
 export type SubscriptionPlan = {
   id: CommercialPlan;
   name: string;
   description: string;
-  monthlyPrice: number;
-  yearlyPrice: number;
+  annualPrice: number;
   priceDisplay: string;
+  currency: BillingCurrency;
   features: string[];
   highlighted?: boolean;
   contactOnly?: boolean;
@@ -24,8 +25,9 @@ export type Subscription = {
   /** Normalized commercial plan */
   commercialPlan: CommercialPlan;
   /** @deprecated Legacy binary plan */
-  plan: PlanTier;
-  interval: BillingInterval;
+  plan: 'free' | 'premium';
+  billingCycle: BillingCycle;
+  currency: BillingCurrency | null;
   status: 'active' | 'inactive' | 'trialing' | 'canceled' | 'past_due' | 'failed';
   renewalDate: string | null;
   cancelAtPeriodEnd: boolean;
@@ -55,6 +57,7 @@ export type Invoice = {
   amount: string;
   status: 'paid' | 'pending';
   plan?: string;
+  currency?: BillingCurrency;
 };
 
 export type CheckoutPrefill = {

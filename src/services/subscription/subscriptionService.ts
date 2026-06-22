@@ -3,6 +3,7 @@
  */
 
 import { isSupabaseConfigured } from '@/services/supabase/config';
+import type { BillingCurrency } from '@/config/pricingConfig';
 import type { CommercialPlan } from '@/subscription/entitlements';
 import {
   getDecoderLifetimeLimit,
@@ -15,7 +16,6 @@ import {
   getTimelineDayLimit,
 } from '@/subscription/entitlements';
 import type {
-  BillingInterval,
   CheckoutPlan,
   CheckoutPrefill,
   Invoice,
@@ -31,8 +31,9 @@ export interface ISubscriptionService {
   startCheckout(
     userId: string,
     plan: CheckoutPlan,
-    interval: BillingInterval,
+    currency: BillingCurrency,
     prefill: CheckoutPrefill,
+    options?: { countryCode?: string | null; foundingDiscount?: boolean },
   ): Promise<void>;
   openBillingPortal(userId: string): Promise<void>;
 }
@@ -93,7 +94,8 @@ function defaultSubscription(): Subscription {
   return {
     commercialPlan: 'free',
     plan: 'free',
-    interval: 'monthly',
+    billingCycle: 'annual',
+    currency: null,
     status: 'inactive',
     renewalDate: null,
     cancelAtPeriodEnd: false,
@@ -147,16 +149,17 @@ export const mockSubscriptionService: ISubscriptionService = {
     return [];
   },
 
-  async startCheckout(userId, plan, interval, _prefill) {
+  async startCheckout(userId, plan, currency, _prefill, _options) {
     const subs = loadSubs();
     const renewal = new Date();
-    renewal.setMonth(renewal.getMonth() + (interval === 'yearly' ? 12 : 1));
+    renewal.setFullYear(renewal.getFullYear() + 1);
 
     const updated: StoredSub = {
       userId,
       commercialPlan: plan,
       plan: 'premium',
-      interval,
+      billingCycle: 'annual',
+      currency,
       status: 'active',
       renewalDate: renewal.toLocaleDateString('en-US', {
         month: 'long',

@@ -1,40 +1,60 @@
-/** Razorpay REST + signature helpers - keep in sync with src/config/pricingConfig.ts */
+/** Razorpay REST + signature helpers — keep in sync with src/config/pricingConfig.ts */
 
-export const PLUS_MONTHLY_PLAN = 'plus' as const;
-export const PRO_MONTHLY_PLAN = 'pro' as const;
+export const PLUS_PLAN = 'plus' as const;
+export const PRO_PLAN = 'pro' as const;
 
-export const PLUS_MONTHLY_AMOUNT_PAISE = 299_900;
-export const PLUS_ANNUAL_AMOUNT_PAISE = 2_999_000;
-export const PRO_MONTHLY_AMOUNT_PAISE = 499_900;
-export const PRO_ANNUAL_AMOUNT_PAISE = 4_999_000;
+export type BillingCurrency = 'INR' | 'USD';
+export type BillingCycle = 'annual';
+
+export const BILLING_CYCLE: BillingCycle = 'annual';
+
+export const PLUS_ANNUAL_INR_MINOR = 199_900;
+export const PRO_ANNUAL_INR_MINOR = 499_900;
+export const PLUS_ANNUAL_USD_MINOR = 9_900;
+export const PRO_ANNUAL_USD_MINOR = 29_900;
 
 export const FOUNDING_DISCOUNT_PERCENT = 5;
-export const PRO_MONTHLY_FOUNDING_PAISE = Math.round(PRO_MONTHLY_AMOUNT_PAISE * (1 - FOUNDING_DISCOUNT_PERCENT / 100));
-export const PRO_ANNUAL_FOUNDING_PAISE = Math.round(PRO_ANNUAL_AMOUNT_PAISE * (1 - FOUNDING_DISCOUNT_PERCENT / 100));
+export const PRO_ANNUAL_FOUNDING_INR_MINOR = Math.round(
+  PRO_ANNUAL_INR_MINOR * (1 - FOUNDING_DISCOUNT_PERCENT / 100),
+);
+export const PRO_ANNUAL_FOUNDING_USD_MINOR = Math.round(
+  PRO_ANNUAL_USD_MINOR * (1 - FOUNDING_DISCOUNT_PERCENT / 100),
+);
 
-export const PRO_MONTHLY_CURRENCY = 'INR';
-
-export type RazorpayPlanId = typeof PLUS_MONTHLY_PLAN | typeof PRO_MONTHLY_PLAN;
-export type BillingInterval = 'monthly' | 'yearly';
+export type RazorpayPlanId = typeof PLUS_PLAN | typeof PRO_PLAN;
 
 export function isRazorpayPlan(plan: string): plan is RazorpayPlanId {
-  return plan === PLUS_MONTHLY_PLAN || plan === PRO_MONTHLY_PLAN;
+  return plan === PLUS_PLAN || plan === PRO_PLAN;
+}
+
+export function isBillingCurrency(value: string): value is BillingCurrency {
+  return value === 'INR' || value === 'USD';
 }
 
 export function pricingForPlan(
   plan: RazorpayPlanId,
-  interval: BillingInterval = 'monthly',
+  currency: BillingCurrency,
   foundingDiscount = false,
-): { amount: number; currency: string } {
-  let amount: number;
-  if (plan === PLUS_MONTHLY_PLAN) {
-    amount = interval === 'yearly' ? PLUS_ANNUAL_AMOUNT_PAISE : PLUS_MONTHLY_AMOUNT_PAISE;
-  } else if (foundingDiscount) {
-    amount = interval === 'yearly' ? PRO_ANNUAL_FOUNDING_PAISE : PRO_MONTHLY_FOUNDING_PAISE;
-  } else {
-    amount = interval === 'yearly' ? PRO_ANNUAL_AMOUNT_PAISE : PRO_MONTHLY_AMOUNT_PAISE;
+): { amount: number; currency: BillingCurrency } {
+  if (plan === PLUS_PLAN) {
+    return {
+      amount: currency === 'INR' ? PLUS_ANNUAL_INR_MINOR : PLUS_ANNUAL_USD_MINOR,
+      currency,
+    };
   }
-  return { amount, currency: PRO_MONTHLY_CURRENCY };
+
+  if (foundingDiscount) {
+    return {
+      amount:
+        currency === 'INR' ? PRO_ANNUAL_FOUNDING_INR_MINOR : PRO_ANNUAL_FOUNDING_USD_MINOR,
+      currency,
+    };
+  }
+
+  return {
+    amount: currency === 'INR' ? PRO_ANNUAL_INR_MINOR : PRO_ANNUAL_USD_MINOR,
+    currency,
+  };
 }
 
 export function getRazorpayKeyId(): string {
@@ -71,14 +91,13 @@ export type RazorpayOrder = {
 export async function createRazorpayOrder(input: {
   userId: string;
   plan: RazorpayPlanId;
-  interval?: BillingInterval;
-  amountPaise?: number;
+  currency: BillingCurrency;
+  amountMinor?: number;
 }): Promise<RazorpayOrder> {
-  const interval = input.interval ?? 'monthly';
-  const pricing = pricingForPlan(input.plan, interval);
-  const amount = input.amountPaise ?? pricing.amount;
+  const pricing = pricingForPlan(input.plan, input.currency);
+  const amount = input.amountMinor ?? pricing.amount;
   const currency = pricing.currency;
-  const receipt = `${input.plan}_${interval}_${input.userId.slice(0, 8)}_${Date.now()}`;
+  const receipt = `${input.plan}_annual_${input.userId.slice(0, 8)}_${Date.now()}`;
 
   const response = await fetch('https://api.razorpay.com/v1/orders', {
     method: 'POST',
@@ -93,7 +112,8 @@ export async function createRazorpayOrder(input: {
       notes: {
         user_id: input.userId,
         plan: input.plan,
-        interval,
+        billing_cycle: BILLING_CYCLE,
+        currency,
       },
     }),
   });

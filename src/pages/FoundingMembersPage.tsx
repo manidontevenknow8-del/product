@@ -5,10 +5,11 @@ import { Button, Input } from '@/components/ui';
 import { PAGE_IMG } from '@/data/pageImages';
 import { FOUNDING_DISCOUNT_PERCENT } from '@/config/razorpayConfig';
 import {
-  FOUNDING_BENEFITS,
-  FOUNDING_DISCOUNTED_PRICE_DISPLAY,
+  buildFoundingBenefits,
   FOUNDING_TRIAL_DAYS,
 } from '@/data/foundingMemberBenefits';
+import { getFoundingDiscountedDisplay } from '@/config/razorpayConfig';
+import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { ROUTES } from '@/routes/paths';
 import { isSupabaseConfigured } from '@/services/supabase/config';
 import { getSupabaseClient } from '@/services/supabase/client';
@@ -47,27 +48,33 @@ async function submitSignup(email: string, referralSource: string | null) {
   }
 }
 
-const STEPS = [
-  {
-    step: '01',
-    title: 'Join the list',
-    body: 'Reserve your spot with the email you plan to use for PetClues.',
-  },
-  {
-    step: '02',
-    title: 'Create your account',
-    body: 'Sign up with the same email - your founding perks unlock automatically.',
-  },
-  {
-    step: '03',
-    title: 'Start with Pro',
-    body: `Enjoy a ${FOUNDING_TRIAL_DAYS}-day Pro trial, your badge, voting access, and ${FOUNDING_DISCOUNTED_PRICE_DISPLAY}/mo for life.`,
-  },
-] as const;
-
 export function FoundingMembersPage() {
   const location = useLocation();
+  const { currency } = useBillingRegion();
+  const foundingBenefits = useMemo(() => buildFoundingBenefits(currency), [currency]);
+  const foundingPriceDisplay = getFoundingDiscountedDisplay(currency);
   const referralSource = useMemo(() => readReferralSource(location.search), [location.search]);
+
+  const steps = useMemo(
+    () => [
+      {
+        step: '01',
+        title: 'Join the list',
+        body: 'Reserve your spot with the email you plan to use for PetClues.',
+      },
+      {
+        step: '02',
+        title: 'Create your account',
+        body: 'Sign up with the same email — your founding perks unlock automatically.',
+      },
+      {
+        step: '03',
+        title: 'Start with Pro',
+        body: `Enjoy a ${FOUNDING_TRIAL_DAYS}-day Pro trial, your badge, voting access, and ${foundingPriceDisplay}/year for life.`,
+      },
+    ],
+    [foundingPriceDisplay],
+  );
 
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
@@ -131,7 +138,7 @@ export function FoundingMembersPage() {
                 </p>
 
                 <ul className={styles.successPerks}>
-                  {FOUNDING_BENEFITS.map((benefit) => (
+                  {foundingBenefits.map((benefit) => (
                     <li key={benefit.id} className={styles.successPerk}>
                       <span className={styles.successPerkCheck} aria-hidden>
                         ✓
@@ -242,7 +249,7 @@ export function FoundingMembersPage() {
             </p>
 
             <div className={styles.benefitsGrid}>
-              {FOUNDING_BENEFITS.map((benefit, index) => (
+              {foundingBenefits.map((benefit, index) => (
                 <article
                   key={benefit.id}
                   className={`${styles.benefitCard} ${index % 2 === 1 ? styles.benefitCardAlt : ''}`}
@@ -270,7 +277,7 @@ export function FoundingMembersPage() {
             </h2>
 
             <div className={styles.stepsGrid}>
-              {STEPS.map((item) => (
+              {steps.map((item) => (
                 <article key={item.step} className={styles.stepCard}>
                   <span className={styles.stepNum}>{item.step}</span>
                   <h3 className={styles.stepTitle}>{item.title}</h3>

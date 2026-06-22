@@ -105,13 +105,13 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: OG_IMAGE_ALT,
   },
   [ROUTES.PRICING]: {
-    title: formatPageTitle('PetClues Pricing - Free Pet Health App & Premium Plans'),
+    title: formatPageTitle('PetClues Membership — Annual Pet Health Plans'),
     description: formatMetaDescription(
-      'Free pet health records, reminders, and emergency passport for one pet. Premium adds Vet Bill Decoder AI, unlimited pets, and monthly report exports.',
+      'Annual memberships for organized pet parents. Free tier for one pet. Plus and Pro include health records, reminders, passports, and AI insights — billed once per year.',
     ),
-    keywords: 'pet health app pricing, free pet records app, pet care subscription',
+    keywords: 'pet health app pricing, annual pet membership, pet care plans, pet records app',
     ogImage: DEFAULT_OG_IMAGE,
-    ogImageAlt: 'PetClues pricing - free and premium pet health plans',
+    ogImageAlt: 'PetClues annual membership plans',
   },
   [ROUTES.PET_MATCH]: {
     title: formatPageTitle('Pet Match Quiz - Find Your Ideal Companion'),

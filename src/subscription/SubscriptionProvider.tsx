@@ -10,6 +10,7 @@ import {
 } from 'react';
 import { eventTracker } from '@/analytics/EventTracker';
 import { useAuth } from '@/auth/AuthProvider';
+import type { BillingCurrency } from '@/config/pricingConfig';
 import {
   isPaymentsLive,
   PAYMENTS_COMING_SOON_MESSAGE,
@@ -37,7 +38,6 @@ import {
   type PremiumFeature,
 } from '@/subscription/entitlements';
 import type {
-  BillingInterval,
   CheckoutPlan,
   Invoice,
   Subscription,
@@ -63,7 +63,11 @@ type SubscriptionContextValue = {
   canCreateHealthRecord: (recordCount: number) => boolean;
   canUseDecoder: (monthlyDecodeCount: number) => boolean;
   getLimitMessage: (limitType: 'pets' | 'reminders' | 'healthRecords' | 'decoder' | 'documents') => string;
-  startCheckout: (plan: CheckoutPlan, interval?: BillingInterval) => Promise<void>;
+  startCheckout: (
+    plan: CheckoutPlan,
+    currency: BillingCurrency,
+    options?: { countryCode?: string | null },
+  ) => Promise<void>;
   openBillingPortal: () => Promise<void>;
   refresh: () => Promise<void>;
 };
@@ -136,7 +140,8 @@ export function SubscriptionProvider({
       if (isNowPaid && !wasPaid && !paidTracked.current) {
         paidTracked.current = true;
         eventTracker.track('premium_subscription_activated', {
-          interval: sub.interval ?? 'monthly',
+          billing_cycle: 'annual',
+          currency: sub.currency,
           plan: sub.subscriptionPlan,
           user_id: user.id,
         });
@@ -157,14 +162,21 @@ export function SubscriptionProvider({
   }, [isAuthenticated, user?.id, refresh]);
 
   const startCheckout = useCallback(
-    async (plan: CheckoutPlan, interval: BillingInterval = 'monthly') => {
+    async (
+      plan: CheckoutPlan,
+      currency: BillingCurrency,
+      options?: { countryCode?: string | null },
+    ) => {
       if (!user?.id) return;
       if (!isPaymentsLive()) {
         throw new Error(PAYMENTS_COMING_SOON_MESSAGE);
       }
-      await subscriptionService.startCheckout(user.id, plan, interval, {
+      await subscriptionService.startCheckout(user.id, plan, currency, {
         email: user.email,
         name: user.name,
+      }, {
+        countryCode: options?.countryCode,
+        foundingDiscount: user.foundingLifetimeDiscount,
       });
       await refresh();
     },

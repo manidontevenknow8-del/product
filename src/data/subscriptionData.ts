@@ -1,10 +1,10 @@
 import type { SubscriptionPlan } from '@/types/subscription';
 import {
   PLUS_ANNUAL_INR,
-  PLUS_MONTHLY_INR,
+  PLUS_ANNUAL_USD,
   PRO_ANNUAL_INR,
-  PRO_MONTHLY_INR,
-  formatInr,
+  PRO_ANNUAL_USD,
+  formatPrice,
   CUSTOM_LIMITS_EMAIL,
 } from '@/config/pricingConfig';
 import { PET_LIMITS } from '@/subscription/entitlements';
@@ -21,9 +21,9 @@ export const PLANS: SubscriptionPlan[] = [
   {
     id: 'free',
     name: 'Free',
-    description: 'Professional organization for one companion - start your pet care journey.',
-    monthlyPrice: 0,
-    yearlyPrice: 0,
+    description: 'Professional organization for one companion — start your pet care journey.',
+    annualPrice: 0,
+    currency: 'INR',
     priceDisplay: '₹0',
     features: [
       `${PET_LIMITS.free} pet profile`,
@@ -37,9 +37,9 @@ export const PLANS: SubscriptionPlan[] = [
     id: 'plus',
     name: 'Plus',
     description: 'Complete pet care management for households with up to 3 pets.',
-    monthlyPrice: PLUS_MONTHLY_INR,
-    yearlyPrice: PLUS_ANNUAL_INR,
-    priceDisplay: formatInr(PLUS_MONTHLY_INR),
+    annualPrice: PLUS_ANNUAL_INR,
+    currency: 'INR',
+    priceDisplay: `${formatPrice(PLUS_ANNUAL_INR, 'INR')} / year`,
     features: [
       `Up to ${PET_LIMITS.plus} pets`,
       'Pet passports & monthly reports',
@@ -53,9 +53,9 @@ export const PLANS: SubscriptionPlan[] = [
     id: 'pro',
     name: 'Pro',
     description: 'Advanced insights, priority support, and up to 10 pets.',
-    monthlyPrice: PRO_MONTHLY_INR,
-    yearlyPrice: PRO_ANNUAL_INR,
-    priceDisplay: formatInr(PRO_MONTHLY_INR),
+    annualPrice: PRO_ANNUAL_INR,
+    currency: 'INR',
+    priceDisplay: `${formatPrice(PRO_ANNUAL_INR, 'INR')} / year`,
     highlighted: true,
     features: [
       `Up to ${PET_LIMITS.pro} pets`,
@@ -69,8 +69,8 @@ export const PLANS: SubscriptionPlan[] = [
     id: 'enterprise',
     name: 'Enterprise',
     description: 'Clinic-grade tools and custom solutions for 10+ pets.',
-    monthlyPrice: 0,
-    yearlyPrice: 0,
+    annualPrice: 0,
+    currency: 'INR',
     priceDisplay: 'Custom',
     contactOnly: true,
     features: [
@@ -81,4 +81,9 @@ export const PLANS: SubscriptionPlan[] = [
       `Contact ${CUSTOM_LIMITS_EMAIL}`,
     ],
   },
+];
+
+export const PLANS_USD: Pick<SubscriptionPlan, 'id' | 'annualPrice' | 'priceDisplay'>[] = [
+  { id: 'plus', annualPrice: PLUS_ANNUAL_USD, priceDisplay: `${formatPrice(PLUS_ANNUAL_USD, 'USD')} / year` },
+  { id: 'pro', annualPrice: PRO_ANNUAL_USD, priceDisplay: `${formatPrice(PRO_ANNUAL_USD, 'USD')} / year` },
 ];

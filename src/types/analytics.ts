@@ -27,6 +27,8 @@ export type AnalyticsEventName =
   | 'pet_match_viewed'
   | 'pet_match_completed'
   | 'pricing_viewed'
+  | 'checkout_started'
+  | 'checkout_completed'
   | 'upgrade_clicked'
   | 'premium_started'
   | 'subscription_started'

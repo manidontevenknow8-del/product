@@ -1,6 +1,6 @@
 # SEO Audit Report
 
-Generated: 2026-06-20T07:02:43.670Z
+Generated: 2026-06-22T07:58:18.413Z
 
 ## Scorecard
 
@@ -33,7 +33,7 @@ None — all indexable pages have unique titles.
 ## Description length issues
 
 ### Too short (13)
-- https://petclues.com/pricing (135 chars)
+- https://petclues.com/pricing (126 chars)
 - https://petclues.com/pet-match (123 chars)
 - https://petclues.com/founding-members (124 chars)
 - https://petclues.com/blog (138 chars)
@@ -58,7 +58,7 @@ All audited indexable URLs appear in sitemap.xml.
 
 | Route | Title | Description | Status |
 |-------|-------|-------------|--------|
-| /pricing | PetClues Pricing - Free Pet Health App & Premium P… | 135 chars | SHORT |
+| /pricing | PetClues Membership — Annual Pet Health Plans | Pe… | 126 chars | SHORT |
 | /pet-match | Pet Match Quiz - Find Your Ideal Companion | PetCl… | 123 chars | SHORT |
 | /founding-members | Founding Members - Early Access to PetClues | PetC… | 124 chars | SHORT |
 | /blog | Pet Health Blog - Vaccination Guides, Records & Ca… | 138 chars | SHORT |

@@ -65,7 +65,8 @@ export type FoundingMemberConfirmationPayload = {
 
 export type PremiumUpgradePayload = {
   ownerName: string;
-  interval: string;
+  billingCycle: string;
+  currency?: string;
   billingUrl: string;
   dashboardUrl: string;
 };
