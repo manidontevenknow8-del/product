@@ -9,15 +9,15 @@ import {
   PetMatchSaveMatchesPanel,
 } from '@/components/pet-match';
 import {
-  EDITORIAL_PET_MATCH_QUESTIONS,
+  getEditorialPetMatchQuestions,
   runEditorialPetMatch,
 } from '@/data/petMatchEditorialQuiz';
+import { useBillingRegion } from '@/hooks/useBillingRegion';
 import type { EditorialQuizAnswers } from '@/types/petMatchEditorial';
 import { ROUTES } from '@/routes/paths';
 import { PetCluesLogo } from '@/components/brand';
 import styles from './PetMatchPage.module.css';
 
-const TOTAL_STEPS = EDITORIAL_PET_MATCH_QUESTIONS.length;
 const ANALYZING_MS = 2200;
 
 type QuizPhase = 'quiz' | 'analyzing' | 'results';
@@ -25,6 +25,7 @@ type QuizPhase = 'quiz' | 'analyzing' | 'results';
 export function PetMatchPage() {
   const { isAuthenticated } = useAuth();
   const { track } = useAnalytics();
+  const { currency } = useBillingRegion();
   const [phase, setPhase] = useState<QuizPhase>('quiz');
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<Partial<EditorialQuizAnswers>>({});
@@ -33,13 +34,19 @@ export function PetMatchPage() {
     track('pet_match_viewed');
   }, [track]);
 
-  const currentQuestion = EDITORIAL_PET_MATCH_QUESTIONS[stepIndex];
+  const questions = useMemo(
+    () => getEditorialPetMatchQuestions(currency),
+    [currency],
+  );
+  const totalSteps = questions.length;
+
+  const currentQuestion = questions[stepIndex];
 
   const result = useMemo(() => {
     if (phase !== 'results') return null;
     const complete = answers as EditorialQuizAnswers;
-    return runEditorialPetMatch(complete);
-  }, [answers, phase]);
+    return runEditorialPetMatch(complete, currency);
+  }, [answers, phase, currency]);
 
   const handleSelect = useCallback(
     (value: string) => {
@@ -47,7 +54,7 @@ export function PetMatchPage() {
       const nextAnswers = { ...answers, [key]: value } as Partial<EditorialQuizAnswers>;
       setAnswers(nextAnswers);
 
-      const isLast = stepIndex >= TOTAL_STEPS - 1;
+      const isLast = stepIndex >= totalSteps - 1;
       if (isLast) {
         setPhase('analyzing');
         track('pet_match_completed');
@@ -59,7 +66,7 @@ export function PetMatchPage() {
 
       setStepIndex((prev) => prev + 1);
     },
-    [answers, currentQuestion.key, stepIndex, track],
+    [answers, currentQuestion.key, stepIndex, totalSteps, track],
   );
 
   const handleRestart = () => {
@@ -68,7 +75,7 @@ export function PetMatchPage() {
     setPhase('quiz');
   };
 
-  const progressPct = phase === 'results' ? 100 : ((stepIndex + 1) / TOTAL_STEPS) * 100;
+  const progressPct = phase === 'results' ? 100 : ((stepIndex + 1) / totalSteps) * 100;
 
   return (
     <div className={styles.page}>
@@ -97,7 +104,7 @@ export function PetMatchPage() {
           <PetMatchQuizStep
             question={currentQuestion}
             stepNumber={stepIndex + 1}
-            totalSteps={TOTAL_STEPS}
+            totalSteps={totalSteps}
             selected={answers[currentQuestion.key]}
             onSelect={handleSelect}
           />

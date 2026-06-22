@@ -1,3 +1,10 @@
+import type { BillingCurrency } from '@/config/pricingConfig';
+import {
+  formatPetMatchBudgetHint,
+  PET_MATCH_BREED_MONTHLY_COSTS,
+  formatCostRange,
+} from '@/config/regionalCosts';
+
 import type {
   EditorialBreedMatch,
   EditorialMatchResult,
@@ -6,7 +13,7 @@ import type {
 } from '@/types/petMatchEditorial';
 import { PET_MATCH_QUIZ_IMG } from '@/data/petMatchQuizImages';
 
-export const EDITORIAL_PET_MATCH_QUESTIONS: EditorialQuizQuestion<keyof EditorialQuizAnswers>[] = [
+const EDITORIAL_PET_MATCH_QUESTION_BASE: EditorialQuizQuestion<keyof EditorialQuizAnswers>[] = [
   {
     key: 'livingSpace',
     prompt: 'Describe your sanctuary.',
@@ -76,26 +83,44 @@ export const EDITORIAL_PET_MATCH_QUESTIONS: EditorialQuizQuestion<keyof Editoria
       {
         value: 'lean',
         label: 'Mindful & lean',
-        hint: 'Under ₹8,000 / month',
+        hint: '',
         imageUrl: PET_MATCH_QUIZ_IMG.options.lean,
       },
       {
         value: 'balanced',
         label: 'Balanced comfort',
-        hint: '₹8,000 - ₹15,000 / month',
+        hint: '',
         imageUrl: PET_MATCH_QUIZ_IMG.options.balanced,
       },
       {
         value: 'generous',
         label: 'Generous care',
-        hint: '₹15,000+ / month',
+        hint: '',
         imageUrl: PET_MATCH_QUIZ_IMG.options.generous,
       },
     ],
   },
 ];
 
-type BreedProfile = Omit<EditorialBreedMatch, 'matchScore' | 'matchReason'> & {
+export function getEditorialPetMatchQuestions(
+  currency: BillingCurrency,
+): EditorialQuizQuestion<keyof EditorialQuizAnswers>[] {
+  return EDITORIAL_PET_MATCH_QUESTION_BASE.map((question) => {
+    if (question.key !== 'budget') return question;
+    return {
+      ...question,
+      options: question.options.map((option) => ({
+        ...option,
+        hint: formatPetMatchBudgetHint(option.value as 'lean' | 'balanced' | 'generous', currency),
+      })),
+    };
+  });
+}
+
+/** @deprecated Use getEditorialPetMatchQuestions(currency) */
+export const EDITORIAL_PET_MATCH_QUESTIONS = getEditorialPetMatchQuestions('INR');
+
+type BreedProfile = Omit<EditorialBreedMatch, 'matchScore' | 'matchReason' | 'monthlyCostLabel'> & {
   apartmentFit: number;
   houseFit: number;
   firstTimeFit: number;
@@ -115,7 +140,6 @@ const BREED_CATALOG: BreedProfile[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1633722715463-d30f4f325e24?auto=format&fit=crop&w=900&q=80',
     careDifficulty: 'Moderate',
-    monthlyCostLabel: '₹10,000 – ₹18,000',
     apartmentFit: 0.6,
     houseFit: 1,
     firstTimeFit: 0.85,
@@ -133,7 +157,6 @@ const BREED_CATALOG: BreedProfile[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=80',
     careDifficulty: 'Moderate',
-    monthlyCostLabel: '₹6,000 – ₹12,000',
     apartmentFit: 0.85,
     houseFit: 1,
     firstTimeFit: 0.9,
@@ -151,7 +174,6 @@ const BREED_CATALOG: BreedProfile[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=80',
     careDifficulty: 'Low',
-    monthlyCostLabel: '₹7,000 – ₹13,000',
     apartmentFit: 1,
     houseFit: 0.8,
     firstTimeFit: 0.8,
@@ -169,7 +191,6 @@ const BREED_CATALOG: BreedProfile[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=900&q=80',
     careDifficulty: 'Low',
-    monthlyCostLabel: '₹5,000 – ₹10,000',
     apartmentFit: 1,
     houseFit: 0.75,
     firstTimeFit: 1,
@@ -187,7 +208,6 @@ const BREED_CATALOG: BreedProfile[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80',
     careDifficulty: 'Moderate',
-    monthlyCostLabel: '₹9,000 – ₹16,000',
     apartmentFit: 0.55,
     houseFit: 1,
     firstTimeFit: 0.75,
@@ -205,7 +225,6 @@ const BREED_CATALOG: BreedProfile[] = [
     imageUrl:
       'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=900&q=80',
     careDifficulty: 'Low',
-    monthlyCostLabel: '₹5,500 – ₹11,000',
     apartmentFit: 1,
     houseFit: 0.85,
     firstTimeFit: 1,
@@ -237,7 +256,11 @@ function matchReason(answers: EditorialQuizAnswers, breed: string): string {
   return 'A thoughtful alignment of temperament, space, and the life you described.';
 }
 
-function scoreBreed(profile: BreedProfile, answers: EditorialQuizAnswers): EditorialBreedMatch {
+function scoreBreed(
+  profile: BreedProfile,
+  answers: EditorialQuizAnswers,
+  currency: BillingCurrency,
+): EditorialBreedMatch {
   let score = 0;
 
   score += answers.livingSpace === 'apartment' ? profile.apartmentFit : profile.houseFit;
@@ -250,20 +273,28 @@ function scoreBreed(profile: BreedProfile, answers: EditorialQuizAnswers): Edito
 
   const matchScore = Math.round((score / 4) * 100);
 
+  const costRange = PET_MATCH_BREED_MONTHLY_COSTS[profile.id];
+  const monthlyCostLabel = costRange
+    ? formatCostRange(costRange, currency)
+    : formatCostRange({ inr: [5_000, 10_000], usd: [60, 120] }, currency);
+
   return {
     id: profile.id,
     breed: profile.breed,
     species: profile.species,
     imageUrl: profile.imageUrl,
     careDifficulty: profile.careDifficulty,
-    monthlyCostLabel: profile.monthlyCostLabel,
+    monthlyCostLabel,
     matchReason: matchReason(answers, profile.breed),
     matchScore,
   };
 }
 
-export function runEditorialPetMatch(answers: EditorialQuizAnswers): EditorialMatchResult {
-  const matches = BREED_CATALOG.map((profile) => scoreBreed(profile, answers))
+export function runEditorialPetMatch(
+  answers: EditorialQuizAnswers,
+  currency: BillingCurrency = 'INR',
+): EditorialMatchResult {
+  const matches = BREED_CATALOG.map((profile) => scoreBreed(profile, answers, currency))
     .sort((a, b) => b.matchScore - a.matchScore)
     .slice(0, 3);
 

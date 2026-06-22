@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui';
-import { getAnnualPriceParts } from '@/config/pricingConfig';
+import { getAnnualPriceParts, getPlanPriceLabel } from '@/config/pricingConfig';
 import { useBillingRegion } from '@/hooks/useBillingRegion';
 import { PET_LIMITS } from '@/subscription/entitlements';
 import { ROUTES } from '@/routes/paths';
@@ -13,7 +13,7 @@ export function PlanComparisonSection() {
     {
       id: 'free',
       name: 'Free',
-      price: currency === 'INR' ? '₹0' : '$0',
+      price: isLoading ? '…' : getPlanPriceLabel('free', currency),
       period: '',
       petLimit: `${PET_LIMITS.free} Pet`,
       features: ['Basic Records', 'Basic Reminders'],

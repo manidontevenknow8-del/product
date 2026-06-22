@@ -101,3 +101,17 @@ export function getAnnualPriceParts(
     period: '/ year',
   };
 }
+
+/** Annual membership label for any commercial plan in the visitor's region. */
+export function getPlanAnnualDisplayLabel(
+  plan: CommercialPlan,
+  currency: BillingCurrency,
+  foundingDiscount = false,
+): string {
+  if (plan === 'enterprise') return 'Contact Sales';
+  if (plan === 'free') return getPlanPriceLabel('free', currency);
+  if (plan === 'plus' || plan === 'pro') {
+    return `${getPlanPriceLabel(plan, currency, foundingDiscount)} / year`;
+  }
+  return '';
+}

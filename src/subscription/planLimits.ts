@@ -40,6 +40,7 @@ export interface PlanFeatureAccess {
 
 export interface PlanPricingMeta {
   annualInr: number | null;
+  /** @deprecated Use getPlanAnnualDisplayLabel(plan, currency) from pricingConfig */
   displayLabel: string;
   contactSales: boolean;
 }

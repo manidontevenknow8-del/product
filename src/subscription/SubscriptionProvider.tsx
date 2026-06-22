@@ -38,6 +38,7 @@ import {
   type PremiumFeature,
 } from '@/subscription/entitlements';
 import { buildCheckoutIdentity } from '@/services/payments/checkoutPrefill';
+import { useBillingRegion } from '@/hooks/useBillingRegion';
 import type {
   CheckoutPlan,
   Invoice,
@@ -85,6 +86,7 @@ export function SubscriptionProvider({
   subscriptionService = getSubscriptionService(),
 }: SubscriptionProviderProps) {
   const { user, isAuthenticated, refreshSession } = useAuth();
+  const { currency } = useBillingRegion();
   const [subscription, setSubscription] = useState<Subscription | null>(null);
   const [usage, setUsage] = useState<UsageLimits | null>(null);
   const [invoices, setInvoices] = useState<Invoice[]>([]);
@@ -113,7 +115,10 @@ export function SubscriptionProvider({
     [accessInput],
   );
 
-  const entitlements = useMemo(() => resolveEntitlements(accessInput), [accessInput]);
+  const entitlements = useMemo(
+    () => resolveEntitlements(accessInput, currency),
+    [accessInput, currency],
+  );
 
   const refresh = useCallback(async () => {
     if (!user?.id) {

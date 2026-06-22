@@ -4,7 +4,6 @@
  */
 
 import {
-  getPlanProfile,
   getQuotaLimits,
   hasFeatureAccess,
   isUnlimited,
@@ -12,6 +11,7 @@ import {
   type CommercialPlan,
   type PlanFeatureAccess,
 } from '@/subscription/planLimits';
+import { getPlanAnnualDisplayLabel, type BillingCurrency } from '@/config/pricingConfig';
 
 export type { CommercialPlan, FeatureKey, PlanFeatureAccess, PlanQuotaLimits } from '@/subscription/planLimits';
 export { PLAN_LIMITS_MATRIX, FEATURE_UPGRADE_TIER } from '@/subscription/planLimits';
@@ -465,9 +465,11 @@ export function planToLegacyTier(plan: CommercialPlan): string {
   }
 }
 
-export function resolveEntitlements(input: EntitlementInput) {
+export function resolveEntitlements(
+  input: EntitlementInput,
+  currency: BillingCurrency = 'INR',
+) {
   const plan = resolveEffectivePlan(input);
-  const profile = getPlanProfile(plan);
   return {
     plan,
     planLabel: getPlanLabel(plan),
@@ -480,7 +482,7 @@ export function resolveEntitlements(input: EntitlementInput) {
     decoderMonthlyLimit: getDecoderMonthlyLimit(plan),
     decoderLifetimeLimit: getDecoderLifetimeLimit(plan),
     familySharingLimit: getFamilySharingLimit(plan),
-    pricingLabel: profile.pricing.displayLabel,
+    pricingLabel: getPlanAnnualDisplayLabel(plan, currency),
     nextUpgradePlan: getNextUpgradePlan(plan),
     upgradeCta: getUpgradeCta(plan),
     isPaid: isPaidPlan(plan),
