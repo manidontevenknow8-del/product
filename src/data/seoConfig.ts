@@ -20,7 +20,7 @@ export type SEOConfig = {
 };
 
 const SITE_URL =
-  import.meta.env.VITE_SITE_URL ||
+  import.meta.env?.VITE_SITE_URL ||
   (typeof process !== 'undefined' ? process.env.VITE_SITE_URL : undefined) ||
   'https://petclues.com';
 
