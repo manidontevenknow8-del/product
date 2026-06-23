@@ -10,14 +10,12 @@ import { BlogCategoryNav } from '@/components/blog/BlogCategoryNav';
 import { BlogIndexSEO } from '@/seo/blogSeo';
 import { getBlogIndexBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { HubIndexResources } from '@/components/seo/HubIndexResources';
 import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { getBlogRepository } from '@/services/blog';
 import { BLOG_CATEGORIES, type BlogCategoryId } from '@/data/blogCategories';
 import type { BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
 import styles from './BlogIndexPage.module.css';
-import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 import {
   readHydrationPrerenderData,
@@ -116,8 +114,7 @@ export function BlogIndexPage() {
         />
 
         <div className={styles.body}>
-          <div className={hubStyles.hubLayout}>
-            <div>
+          <div className={styles.main}>
               <SectionIntro
                 eyebrow="Browse"
                 title={activeCategory ? `Articles in ${activeCategory.label}` : 'Latest guides'}
@@ -218,14 +215,6 @@ export function BlogIndexPage() {
               </Link>
             </div>
           </section>
-            </div>
-
-            {!activeCategory && !search && (
-              <HubIndexResources
-                intro="Editorial guides meet product pages — records, passports, vaccines, and tracking."
-                showCommercial
-              />
-            )}
           </div>
         </div>
       </div>

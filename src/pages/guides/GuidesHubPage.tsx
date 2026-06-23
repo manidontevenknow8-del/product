@@ -3,12 +3,10 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { listProgrammaticCollections } from '@/data/programmatic/collections';
-import { HubIndexResources } from '@/components/seo/HubIndexResources';
 import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { listProgrammaticPages, PROGRAMMATIC_PAGE_COUNT } from '@/data/programmatic';
 import { ProgrammaticHubSEO, getProgrammaticHubBreadcrumbs } from '@/seo/programmaticSeo';
 import { ROUTES } from '@/routes/paths';
-import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import styles from './GuidesPages.module.css';
 
 export function GuidesHubPage() {
@@ -27,9 +25,7 @@ export function GuidesHubPage() {
         <div className={styles.inner}>
           <Breadcrumbs items={getProgrammaticHubBreadcrumbs()} />
 
-          <div className={hubStyles.hubLayout}>
-            <div>
-              <header className={styles.hero}>
+          <header className={styles.hero}>
                 <h1 className={styles.title}>Pet care guides &amp; templates</h1>
                 <p className={styles.lead}>
                   {PROGRAMMATIC_PAGE_COUNT} programmatic guides across {collections.length}{' '}
@@ -56,10 +52,6 @@ export function GuidesHubPage() {
               </Link>
             ))}
               </div>
-            </div>
-
-            <HubIndexResources showCommercial />
-          </div>
         </div>
       </div>
       <Footer />

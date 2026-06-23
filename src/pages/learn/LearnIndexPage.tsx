@@ -3,12 +3,10 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { LEARN_CATEGORIES, type LearnCategoryId } from '@/data/learn/categories';
-import { HubIndexResources } from '@/components/seo/HubIndexResources';
 import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { LEARN_ARTICLE_COUNT, listLearnArticles } from '@/data/learn';
 import { LearnIndexSEO, getLearnIndexBreadcrumbs } from '@/seo/learnSeo';
 import { ROUTES } from '@/routes/paths';
-import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import styles from './LearnIndexPage.module.css';
 
 function parseCategory(value: string | null): LearnCategoryId | undefined {
@@ -33,9 +31,7 @@ export function LearnIndexPage() {
         <div className={styles.inner}>
           <Breadcrumbs items={getLearnIndexBreadcrumbs(activeCategory?.label)} />
 
-          <div className={hubStyles.hubLayout}>
-            <div>
-              <header className={styles.hero}>
+          <header className={styles.hero}>
                 <h1 className={styles.title}>
                   {activeCategory ? `${activeCategory.label} guides` : 'PetClues Learn'}
                 </h1>
@@ -86,10 +82,6 @@ export function LearnIndexPage() {
               </Link>
             ))}
               </div>
-            </div>
-
-            <HubIndexResources showCommercial />
-          </div>
         </div>
       </div>
       <Footer />

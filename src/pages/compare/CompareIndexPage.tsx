@@ -4,11 +4,9 @@ import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { listIndexableComparisonPages } from '@/data/comparisons';
 import { resolveCompareHref } from '@/data/comparisons/compareRedirects';
-import { HubIndexResources } from '@/components/seo/HubIndexResources';
 import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { CompareIndexSEO, getCompareIndexBreadcrumbs } from '@/seo/compareSeo';
 import { ROUTES } from '@/routes/paths';
-import hubStyles from '@/components/seo/HubIndexResources.module.css';
 import styles from './CompareIndexPage.module.css';
 
 export function CompareIndexPage() {
@@ -23,9 +21,7 @@ export function CompareIndexPage() {
         <div className={styles.inner}>
           <Breadcrumbs items={getCompareIndexBreadcrumbs()} />
 
-          <div className={hubStyles.hubLayout}>
-            <div>
-              <header className={styles.hero}>
+          <header className={styles.hero}>
                 <h1 className={styles.title}>PetClues comparisons &amp; alternatives</h1>
                 <p className={styles.lead}>
                   {indexableCount} in-depth guides comparing PetClues with spreadsheets, cloud
@@ -52,13 +48,6 @@ export function CompareIndexPage() {
                   </Link>
                 ))}
               </div>
-            </div>
-
-            <HubIndexResources
-              intro="Cross-check tools, then explore product pages for records, passports, and tracking."
-              showCommercial
-            />
-          </div>
         </div>
       </div>
       <Footer />

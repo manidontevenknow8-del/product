@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { Header } from '@/components/layout/Header';
-import { AppFooter } from '@/components/navigation/AppFooter';
+import { SiteFooter } from '@/components/layout/SiteFooter';
 
 type PublicLayoutProps = {
   children: ReactNode;
@@ -19,7 +19,7 @@ export function PublicLayout({ children, centered = true }: PublicLayoutProps) {
           children
         )}
       </main>
-      <AppFooter />
+      <SiteFooter />
     </div>
   );
 }

@@ -3,7 +3,6 @@ import { type FormEvent, useState } from 'react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
-import { HubIndexResources } from '@/components/seo/HubIndexResources';
 import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { FAQ_HUB_COUNT, listFaqItems } from '@/data/faq';
 import { FAQ_CATEGORIES, type FaqCategoryId } from '@/data/faq/categories';
@@ -119,10 +118,6 @@ export function FaqHubPage() {
             <p className={styles.empty}>
               No FAQs match your search. Try broader terms like “vaccination”, “travel”, or “records”.
             </p>
-          )}
-
-          {!category && !search && (
-            <HubIndexResources intro="Answers pair with guides, comparisons, and product pages." showCommercial />
           )}
 
           <footer className={styles.cta}>
