@@ -1,0 +1,25 @@
+.guestActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ctaPrimary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-dark);
+  color: var(--color-text-inverse);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color var(--transition);
+}
+
+.ctaPrimary:hover {
+  background: color-mix(in srgb, var(--color-bg-dark) 86%, #000);
+}

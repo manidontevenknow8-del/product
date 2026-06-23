@@ -1,6 +1,6 @@
 # SEO Audit Report
 
-Generated: 2026-06-23T02:53:27.256Z
+Generated: 2026-06-23T08:29:27.254Z
 
 ## Scorecard
 

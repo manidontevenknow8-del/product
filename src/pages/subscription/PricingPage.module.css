@@ -386,3 +386,13 @@
 .enterpriseBtn:hover {
   background: rgba(250, 249, 247, 0.08);
 }
+
+@media (max-width: 640px) {
+  .hero {
+    padding: calc(var(--header-height) + var(--space-8)) 0 var(--space-12);
+  }
+
+  .planGrid {
+    grid-template-columns: 1fr;
+  }
+}

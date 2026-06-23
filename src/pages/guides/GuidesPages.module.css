@@ -212,3 +212,22 @@
   padding: var(--space-10) var(--space-4);
   text-align: center;
 }
+
+@media (max-width: 640px) {
+  .inner {
+    padding: var(--space-5) var(--space-4) var(--space-12);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding: var(--space-6);
+  }
+
+  .ctaActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

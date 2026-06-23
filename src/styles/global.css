@@ -79,6 +79,13 @@ img {
   padding: 0 var(--space-6);
 }
 
+@media (max-width: 640px) {
+  .container,
+  .container-sm {
+    padding-inline: var(--space-4);
+  }
+}
+
 .container-sm {
   width: 100%;
   max-width: var(--max-width-md);

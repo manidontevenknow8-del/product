@@ -22,7 +22,8 @@
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  gap: var(--space-4);
+  gap: var(--space-3);
+  min-width: 0;
 }
 
 .logo {
@@ -32,12 +33,18 @@
   text-decoration: none;
 }
 
+.logoImg {
+  height: 2rem !important;
+  width: auto !important;
+}
+
 .nav {
   display: flex;
   align-items: center;
   gap: var(--space-1);
   flex: 1;
   justify-content: center;
+  min-width: 0;
 }
 
 .navLink {
@@ -68,8 +75,45 @@
   flex-shrink: 0;
 }
 
+.menuBtn {
+  display: none;
+  height: 2.5rem;
+  width: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.menuBtn:hover {
+  background: var(--color-bg-muted);
+}
+
 @media (max-width: 768px) {
   .nav {
     display: none;
+  }
+
+  .menuBtn {
+    display: inline-flex;
+  }
+
+  .hideMobile {
+    display: none;
+  }
+
+  .logoImg {
+    height: 1.75rem !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .actions a button {
+    padding-inline: var(--space-3);
+    font-size: var(--text-xs);
   }
 }

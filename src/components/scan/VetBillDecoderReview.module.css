@@ -18,6 +18,13 @@
   padding: 0 var(--space-6) var(--space-4);
 }
 
+@media (max-width: 640px) {
+  .visualStrip {
+    grid-template-columns: 1fr;
+    padding-inline: var(--space-4);
+  }
+}
+
 @media (min-width: 768px) {
   .visualStrip {
     padding-left: var(--space-8);
