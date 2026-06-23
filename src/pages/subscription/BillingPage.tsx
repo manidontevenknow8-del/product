@@ -110,7 +110,7 @@ export function BillingPage() {
                 {currentPlan !== 'free' && subscription?.renewalDate
                   ? `Renews ${subscription.renewalDate} · ${ANNUAL_BILLING_LABEL}`
                   : currentPlan !== 'free' && priceNote
-                    ? `${planLabel} — ${priceNote}`
+                    ? `${planLabel}, ${priceNote}`
                     : 'No active membership'}
               </p>
               {subscription?.startedAt && currentPlan !== 'free' && (
@@ -229,7 +229,7 @@ export function BillingPage() {
               <div className={styles.invoiceEmpty}>
                 {currentPlan !== 'free'
                   ? 'No payment records yet.'
-                  : 'No payments yet — upgrade to see billing history here.'}
+                  : 'No payments yet, upgrade to see billing history here.'}
               </div>
             ) : (
               <div className={styles.invoiceList}>

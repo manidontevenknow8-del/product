@@ -10,9 +10,9 @@ export type CommercialSchemaTopic = {
 export type CommercialPageSchemaProps = {
   /** Canonical page URL (e.g. https://petclues.com/digital-pet-passport). */
   pageUrl: string;
-  /** WebPage name — typically the SEO title. */
+  /** WebPage name, typically the SEO title. */
   name: string;
-  /** WebPage description — typically the meta description. */
+  /** WebPage description: typically the meta description. */
   description: string;
   /** Primary entity the page is about (display name). */
   topicName: string;

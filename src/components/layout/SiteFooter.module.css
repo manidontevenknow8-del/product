@@ -28,8 +28,8 @@
 .top {
   display: grid;
   grid-template-columns: minmax(0, 11.5rem) minmax(0, 1fr);
-  column-gap: var(--space-10);
-  row-gap: var(--space-6);
+  column-gap: var(--space-8);
+  row-gap: var(--space-5);
   align-items: start;
 }
 
@@ -89,8 +89,9 @@
 .groups {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-5) var(--space-6);
+  gap: var(--space-4) var(--space-5);
   width: 100%;
+  align-items: start;
 }
 
 .group {

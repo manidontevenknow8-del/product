@@ -1,5 +1,5 @@
 /**
- * Annual membership pricing — single source of truth for UI and Razorpay.
+ * Annual membership pricing, single source of truth for UI and Razorpay.
  * India: INR (paise). International: USD (cents).
  */
 

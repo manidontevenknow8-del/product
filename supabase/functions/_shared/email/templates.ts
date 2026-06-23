@@ -26,7 +26,7 @@ import type {
   WelcomeEmailPayload,
 } from './types.ts';
 
-/** Warm lifestyle photo for digest hero — dogs & cats, matches site mood. */
+/** Warm lifestyle photo for digest hero, dogs & cats, matches site mood. */
 const DIGEST_HERO_IMAGE =
   'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80';
 
@@ -82,7 +82,7 @@ function buildUpcomingReminderEmail(payload: UpcomingReminderPayload) {
   `;
 
   const html = renderEmailLayout({
-    preheader: `${payload.reminderTitle} for ${payload.petName} — ${payload.dueLabel}`,
+    preheader: `${payload.reminderTitle} for ${payload.petName}, ${payload.dueLabel}`,
     eyebrow: 'Care reminder',
     title: payload.dueLabel,
     bodyHtml,
@@ -171,7 +171,7 @@ function renderWeeklyPetCard(pet: WeeklySummaryPayload['pets'][number]): string 
 
   const encouragement =
     pet.checkInsThisWeek === 0
-      ? `<p style="margin: 14px 0 0; padding: 12px 14px; font-size: 13px; line-height: 1.55; color: ${BRAND.textSecondary}; background: ${BRAND.sageLight}; border-radius: 10px; border: 1px solid #BBE5D4;">No check-ins logged this week — a quick daily note helps you spot patterns early.</p>`
+      ? `<p style="margin: 14px 0 0; padding: 12px 14px; font-size: 13px; line-height: 1.55; color: ${BRAND.textSecondary}; background: ${BRAND.sageLight}; border-radius: 10px; border: 1px solid #BBE5D4;">No check-ins logged this week, a quick daily note helps you spot patterns early.</p>`
       : '';
 
   const nextCare =
@@ -179,7 +179,7 @@ function renderWeeklyPetCard(pet: WeeklySummaryPayload['pets'][number]): string 
       ? `<p style="margin: 12px 0 0; font-size: 13px; color: ${BRAND.muted};"><strong style="color: ${BRAND.text};">Next up:</strong> ${escapeHtml(pet.upcomingReminders[0].title)} · ${escapeHtml(pet.upcomingReminders[0].dueLabel)}</p>`
       : pet.overdueReminders[0]
         ? `<p style="margin: 12px 0 0; font-size: 13px; color: ${BRAND.warning};"><strong>Needs attention:</strong> ${escapeHtml(pet.overdueReminders[0].title)} · ${escapeHtml(pet.overdueReminders[0].dueLabel)}</p>`
-        : `<p style="margin: 12px 0 0; font-size: 13px; color: ${BRAND.muted};">All caught up this week — great work keeping ${escapeHtml(pet.name)}&rsquo;s care on track.</p>`;
+        : `<p style="margin: 12px 0 0; font-size: 13px; color: ${BRAND.muted};">All caught up this week, great work keeping ${escapeHtml(pet.name)}&rsquo;s care on track.</p>`;
 
   return `
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 20px; border: 1px solid ${BRAND.border}; border-radius: 16px; overflow: hidden; background: ${BRAND.bgElevated}; box-shadow: 0 4px 20px rgba(44, 62, 53, 0.05);">
@@ -251,7 +251,7 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
   );
 
   const bodyHtml = `
-    ${renderLead(`Hi ${escapeHtml(firstName)}, here&rsquo;s a snapshot of care across <strong>${payload.totals.petCount} pet${payload.totals.petCount === 1 ? '' : 's'}</strong> — reminders, check-ins, and what needs attention.`)}
+    ${renderLead(`Hi ${escapeHtml(firstName)}, here&rsquo;s a snapshot of care across <strong>${payload.totals.petCount} pet${payload.totals.petCount === 1 ? '' : 's'}</strong>, reminders, check-ins, and what needs attention.`)}
     ${renderStatRow(
       renderStatPill('Upcoming', String(payload.totals.upcoming)) +
         renderStatPill('Overdue', String(payload.totals.overdue), payload.totals.overdue > 0 ? 'warning' : 'default') +
@@ -259,7 +259,7 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
     )}
     ${
       petCards ||
-      `<p style="margin: 0; padding: 20px; background: ${BRAND.sageLight}; border-radius: 14px; border: 1px solid #BBE5D4; font-size: 15px; line-height: 1.6; color: ${BRAND.textSecondary};">Add a pet profile with a photo to start receiving personalized weekly snapshots — reminders, check-ins, and care history in one place.</p>`
+      `<p style="margin: 0; padding: 20px; background: ${BRAND.sageLight}; border-radius: 14px; border: 1px solid #BBE5D4; font-size: 15px; line-height: 1.6; color: ${BRAND.textSecondary};">Add a pet profile with a photo to start receiving personalized weekly snapshots, reminders, check-ins, and care history in one place.</p>`
     }
     ${renderDivider()}
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background: ${BRAND.bgMuted}; border-radius: 14px; border: 1px solid ${BRAND.border};">
@@ -291,15 +291,15 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
   });
 
   const text = [
-    `Your care week — ${payload.weekLabel}`,
+    `Your care week, ${payload.weekLabel}`,
     '',
     `Upcoming: ${payload.totals.upcoming} · Overdue: ${payload.totals.overdue} · Check-ins: ${payload.totals.checkIns}`,
     '',
     ...payload.pets.flatMap((pet) => [
       `${pet.name} (${pet.speciesLabel})`,
       `  ${pet.upcomingCount} upcoming · ${pet.overdueCount} overdue · ${pet.checkInsThisWeek} check-ins`,
-      ...pet.upcomingReminders.map((r) => `  · ${r.title} — ${r.dueLabel}`),
-      ...pet.overdueReminders.map((r) => `  ! ${r.title} — ${r.dueLabel}`),
+      ...pet.upcomingReminders.map((r) => `  · ${r.title}, ${r.dueLabel}`),
+      ...pet.overdueReminders.map((r) => `  ! ${r.title}, ${r.dueLabel}`),
       '',
     ]),
     `Dashboard: ${payload.dashboardUrl}`,
@@ -426,7 +426,7 @@ function buildPremiumUpgradeEmail(payload: PremiumUpgradePayload) {
 export function subjectForEmail(input: SendEmailInput): string {
   switch (input.type) {
     case 'upcoming_reminder':
-      return `${input.payload.petName}: ${input.payload.reminderTitle} — ${input.payload.dueLabel}`;
+      return `${input.payload.petName}: ${input.payload.reminderTitle}, ${input.payload.dueLabel}`;
     case 'overdue_reminder':
       return `Action needed: ${input.payload.reminderTitle} for ${input.payload.petName}`;
     case 'weekly_pet_summary':

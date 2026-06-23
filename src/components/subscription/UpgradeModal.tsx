@@ -75,7 +75,7 @@ export function UpgradeModal({
           <h2 className={styles.title}>Join PetClues {planLabel}</h2>
           <p className={styles.subtitle}>
             {targetPlan === 'plus'
-              ? 'Annual membership for organized pet parents — records, reminders, and family sharing.'
+              ? 'Annual membership for organized pet parents, records, reminders, and family sharing.'
               : 'Annual membership with AI insights, priority support, and future premium features.'}
           </p>
         </div>

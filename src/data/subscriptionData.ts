@@ -27,7 +27,7 @@ export function buildSubscriptionPlans(currency: BillingCurrency): SubscriptionP
     {
       id: 'free',
       name: 'Free',
-      description: 'Professional organization for one companion — start your pet care journey.',
+      description: 'Professional organization for one companion, start your pet care journey.',
       annualPrice: 0,
       currency,
       priceDisplay: formatPrice(0, currency),

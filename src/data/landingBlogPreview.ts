@@ -1,4 +1,4 @@
-/** Lightweight blog preview cards for landing — no full article bodies. */
+/** Lightweight blog preview cards for landing, no full article bodies. */
 import type { BlogCategoryId } from '@/data/blogCategories';
 
 export const LANDING_BLOG_PREVIEW: {

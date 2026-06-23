@@ -1,6 +1,6 @@
 # SEO Audit Report
 
-Generated: 2026-06-23T02:41:49.492Z
+Generated: 2026-06-23T02:53:27.256Z
 
 ## Scorecard
 
@@ -22,7 +22,7 @@ Generated: 2026-06-23T02:41:49.492Z
 
 ## Duplicate titles (0)
 
-None — all indexable pages have unique titles.
+None, all indexable pages have unique titles.
 
 ## Critical failures (0)
 
@@ -30,7 +30,7 @@ None.
 
 ## Missing registry (0)
 
-None — all sitemap URLs mapped to content sources.
+None, all sitemap URLs mapped to content sources.
 
 ## Redirect URLs still in sitemap (0)
 
@@ -52,8 +52,8 @@ None.
 
 ## Remaining audit gaps
 
-1. **CSR meta delivery** — titles/descriptions are applied client-side; audit validates source configs, not rendered HTML.
-2. **Rendered canonical/robots** — no headless fetch; assumes React SEO handlers match registry.
-3. **Per-URL JSON-LD instance validation** — schema families checked at handler level, not per-page graph output.
-4. **Compare redirect slug** — `/compare/best-pet-health-record-app` kept as 301 only; excluded from sitemap and internal compare links resolve to `/best/`.
-5. **Prerender/SSR** — not in scope; homepage still hydrates meta from React after first paint.
+1. **CSR meta delivery**, titles/descriptions are applied client-side; audit validates source configs, not rendered HTML.
+2. **Rendered canonical/robots**, no headless fetch; assumes React SEO handlers match registry.
+3. **Per-URL JSON-LD instance validation**, schema families checked at handler level, not per-page graph output.
+4. **Compare redirect slug**, `/compare/best-pet-health-record-app` kept as 301 only; excluded from sitemap and internal compare links resolve to `/best/`.
+5. **Prerender/SSR**, not in scope; homepage still hydrates meta from React after first paint.

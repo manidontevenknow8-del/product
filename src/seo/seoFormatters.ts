@@ -26,7 +26,7 @@ export function formatPageTitle(pageTitle: string): string {
 }
 
 /**
- * Normalize meta descriptions to 140–160 characters for SERP snippets.
+ * Normalize meta descriptions to 140-160 characters for SERP snippets.
  */
 export function formatMetaDescription(text: string, contextHint = ''): string {
   const normalized = text.replace(/\s+/g, ' ').trim();

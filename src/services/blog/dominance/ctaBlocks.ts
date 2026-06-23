@@ -16,7 +16,7 @@ const CTA_COPY: Record<DominanceCtaKind, { title: string; body: string; action: 
     action: '[Decode your next vet bill free →](/signup)',
   },
   'pet-match': {
-    title: 'Match a breed to your real life—not Instagram',
+    title: 'Match a breed to your real life, not Instagram',
     body:
       'Apartment size, work hours, allergy risk, and lifetime vet spend matter more than coat color. The PetClues Pet Match Engine scores breeds against your budget and lifestyle in under three minutes.',
     action: '[Take the Pet Match quiz →](/pet-match)',
@@ -24,19 +24,19 @@ const CTA_COPY: Record<DominanceCtaKind, { title: string; body: string; action: 
   'health-foresight': {
     title: 'Turn symptom notes into a timeline your vet can use',
     body:
-      'PetClues Pro Health Foresight AI logs vomiting episodes, limping, water intake, and medication responses—then surfaces patterns before they become ER visits.',
+      'PetClues Pro Health Foresight AI logs vomiting episodes, limping, water intake, and medication responses, then surfaces patterns before they become ER visits.',
     action: '[Start symptom tracking →](/signup)',
   },
   'emergency-passport': {
     title: 'One link. Every vaccine, allergy, and emergency contact.',
     body:
-      'PetClues Plus Emergency Passport generates a shareable medical profile for sitters, boarders, and border agents—updated the moment you upload a new record.',
+      'PetClues Plus Emergency Passport generates a shareable medical profile for sitters, boarders, and border agents, updated the moment you upload a new record.',
     action: '[Build your Emergency Passport →](/signup)',
   },
   'digital-pet-os': {
     title: 'Your pet deserves more than a shoebox of receipts',
     body:
-      'PetClues Digital Pet OS stores labs, imaging, behavior notes, and milestones in a searchable Living Archive—built for 15-year care arcs, not single appointments.',
+      'PetClues Digital Pet OS stores labs, imaging, behavior notes, and milestones in a searchable Living Archive, built for 15-year care arcs, not single appointments.',
     action: '[Create your Living Archive →](/signup)',
   },
 };

@@ -1,5 +1,5 @@
 /**
- * SEO audit — validates titles, descriptions, canonicals, robots, and schema coverage
+ * SEO audit, validates titles, descriptions, canonicals, robots, and schema coverage
  * for every URL in public/sitemap.xml. Fails the build on critical gaps.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -671,7 +671,7 @@ Generated: ${new Date().toISOString()}
 
 ## Duplicate titles (${duplicates.length})
 
-${duplicates.length === 0 ? 'None — all indexable pages have unique titles.' : duplicates.slice(0, 20).map((d) => `- **${d.title}**\n  ${d.urls.map((u) => `  - ${u}`).join('\n')}`).join('\n\n')}
+${duplicates.length === 0 ? 'None, all indexable pages have unique titles.' : duplicates.slice(0, 20).map((d) => `- **${d.title}**\n  ${d.urls.map((u) => `  - ${u}`).join('\n')}`).join('\n\n')}
 
 ## Critical failures (${criticalFailures.length})
 
@@ -679,7 +679,7 @@ ${criticalFailures.length === 0 ? 'None.' : criticalFailures.slice(0, 30).map((f
 
 ## Missing registry (${missingRegistry.length})
 
-${missingRegistry.length === 0 ? 'None — all sitemap URLs mapped to content sources.' : missingRegistry.slice(0, 30).map((u) => `- ${u}`).join('\n')}
+${missingRegistry.length === 0 ? 'None, all sitemap URLs mapped to content sources.' : missingRegistry.slice(0, 30).map((u) => `- ${u}`).join('\n')}
 
 ## Redirect URLs still in sitemap (${redirectInSitemap.length})
 
@@ -699,16 +699,16 @@ ${registryOnly.length === 0 ? 'None.' : registryOnly.slice(0, 15).map((u) => `- 
 
 ## Remaining audit gaps
 
-1. **CSR meta delivery** — titles/descriptions are applied client-side; audit validates source configs, not rendered HTML.
-2. **Rendered canonical/robots** — no headless fetch; assumes React SEO handlers match registry.
-3. **Per-URL JSON-LD instance validation** — schema families checked at handler level, not per-page graph output.
-4. **Compare redirect slug** — \`/compare/best-pet-health-record-app\` kept as 301 only; excluded from sitemap and internal compare links resolve to \`/best/\`.
-5. **Prerender/SSR** — not in scope; homepage still hydrates meta from React after first paint.
+1. **CSR meta delivery**, titles/descriptions are applied client-side; audit validates source configs, not rendered HTML.
+2. **Rendered canonical/robots**, no headless fetch; assumes React SEO handlers match registry.
+3. **Per-URL JSON-LD instance validation**, schema families checked at handler level, not per-page graph output.
+4. **Compare redirect slug**, \`/compare/best-pet-health-record-app\` kept as 301 only; excluded from sitemap and internal compare links resolve to \`/best/\`.
+5. **Prerender/SSR**, not in scope; homepage still hydrates meta from React after first paint.
 `;
 
 writeFileSync(join(root, 'SEO_AUDIT_REPORT.md'), report, 'utf8');
 console.log(
-  `SEO audit complete — sitemap ${sitemapUrls.length} URLs, ${indexable.length} indexable audited, ${criticalFailures.length} critical failures, ${duplicates.length} duplicate titles`,
+  `SEO audit complete, sitemap ${sitemapUrls.length} URLs, ${indexable.length} indexable audited, ${criticalFailures.length} critical failures, ${duplicates.length} duplicate titles`,
 );
 console.log('Report written to SEO_AUDIT_REPORT.md');
 

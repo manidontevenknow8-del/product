@@ -52,7 +52,7 @@ export function FoundingBenefitsCard() {
             {onTrial && trialEnd
               ? `Active until ${trialEnd} (${FOUNDING_TRIAL_DAYS}-day trial)`
               : user.subscriptionStatus === 'active'
-                ? 'Trial complete — Pro is active'
+                ? 'Trial complete, Pro is active'
                 : `Your ${FOUNDING_TRIAL_DAYS}-day trial starts when you finish signup`}
           </span>
         </li>

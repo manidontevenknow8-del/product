@@ -51,7 +51,7 @@ export function PromoCodeForm({ disabled = false, onSuccess, onRedeemed }: Promo
       <h2 id="promo-code-heading" className={styles.title}>
         Have a promo code?
       </h2>
-      <p className={styles.lead}>Redeem a code for a free Pro trial — no payment required.</p>
+      <p className={styles.lead}>Redeem a code for a free Pro trial: no payment required.</p>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.label} htmlFor="promo-code-input">
           Promo code

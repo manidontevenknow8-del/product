@@ -18,17 +18,17 @@ export const AUTHORITY_CITATIONS = {
     context: 'USDA requirements for interstate and international pet travel health certificates.',
   },
   akcHealth: {
-    name: 'American Kennel Club (AKC) – Dog Health',
+    name: 'American Kennel Club (AKC): Dog Health',
     url: 'https://www.akc.org/expert-advice/health/',
     context: 'AKC expert guidance on vaccination timing and everyday dog health documentation.',
   },
   cdcRabies: {
-    name: 'Centers for Disease Control and Prevention (CDC) – Rabies',
+    name: 'Centers for Disease Control and Prevention (CDC): Rabies',
     url: 'https://www.cdc.gov/rabies/',
     context: 'CDC information on rabies vaccination importance for pets and public health.',
   },
   fdaAnimalHealth: {
-    name: 'U.S. FDA – Animal & Veterinary',
+    name: 'U.S. FDA: Animal & Veterinary',
     url: 'https://www.fda.gov/animal-veterinary',
     context: 'FDA resources on veterinary medications, prescriptions, and safe use.',
   },
@@ -38,7 +38,7 @@ export const AUTHORITY_CITATIONS = {
     context: 'ASPCA guidance on poison exposure preparedness for pet households.',
   },
   hsusEmergency: {
-    name: 'The Humane Society of the United States – Disaster Planning',
+    name: 'The Humane Society of the United States: Disaster Planning',
     url: 'https://www.humanesociety.org/resources/make-disaster-plan-your-pets',
     context: 'Humane Society recommendations for pet emergency and evacuation planning.',
   },

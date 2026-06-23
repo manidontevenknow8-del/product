@@ -367,9 +367,9 @@ Boarding facilities mandate current rabies, distemper combo, and often **Bordete
 
 ## Typical vaccination requirements
 
-- Rabies (within 1–3 years per label)
+- Rabies (within 1-3 years per label)
 - DHPP or FVRCP current
-- Bordetella within 6–12 months
+- Bordetella within 6-12 months
 - Flea/tick prevention documentation
 
 ## Medication and diet instructions
@@ -408,7 +408,7 @@ Sudden loss or gain signals thyroid issues, diabetes, pain, or parasites. A simp
 
 - Puppies: weekly during growth
 - Adults: monthly at home
-- Seniors: every 2–4 weeks if managing chronic illness
+- Seniors: every 2-4 weeks if managing chronic illness
 
 ## Log with context
 
@@ -444,7 +444,7 @@ Environmental and food **pet allergies** require months of observation. A struct
 
 ## What to log daily during flare-ups
 
-- Itching severity (1–5 scale)
+- Itching severity (1-5 scale)
 - Paw licking, ear shaking, or GI signs
 - New foods, treats, or detergents
 - Bathing and medication given

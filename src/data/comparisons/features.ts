@@ -49,7 +49,7 @@ export const COMPARISON_FEATURES: ComparisonFeature[] = [
   {
     id: 'pet_specific_workflows',
     label: 'Purpose-built pet workflows',
-    petcluesDescription: 'Designed around vaccines, preventatives, and care timelines—not generic folders.',
+    petcluesDescription: 'Designed around vaccines, preventatives, and care timelines, not generic folders.',
   },
 ];
 

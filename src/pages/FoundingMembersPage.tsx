@@ -65,7 +65,7 @@ export function FoundingMembersPage() {
       {
         step: '02',
         title: 'Create your account',
-        body: 'Sign up with the same email — your founding perks unlock automatically.',
+        body: 'Sign up with the same email: your founding perks unlock automatically.',
       },
       {
         step: '03',

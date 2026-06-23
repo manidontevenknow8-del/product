@@ -16,29 +16,29 @@ PetClues can help here by keeping vaccine records in one place and sending a gen
 ## The core puppy vaccination schedule (typical)
 Your veterinarian may adjust timing, but this is a common 2026 baseline for most puppies:
 
-### 6–8 weeks: first puppy shots
+### 6-8 weeks: first puppy shots
 - **DHPP (or DAPP)**: Distemper, Hepatitis/Adenovirus, Parvovirus, Parainfluenza
 
 If your puppy came from a breeder or shelter, ask for written proof of what was given and on what date. If you don’t have proof, most vets will treat it as unknown and start fresh for safety.
 
-### 10–12 weeks: second round
+### 10-12 weeks: second round
 - **DHPP** booster
 - **Leptospirosis** (often starts here in many regions)
 - **Bordetella** (kennel cough) if daycare/boarding/grooming is likely
 
-### 14–16 weeks: third round + critical timing
+### 14-16 weeks: third round + critical timing
 - **DHPP** booster (final in series for many puppies)
 - **Rabies** (legally required in many places; timing varies by jurisdiction)
 - **Leptospirosis** booster if started earlier
 
-Many vets emphasize the 14–16 week visit because it often completes the core series at the moment maternal antibodies are least likely to interfere.
+Many vets emphasize the 14-16 week visit because it often completes the core series at the moment maternal antibodies are least likely to interfere.
 
 ### 12 months: first adult boosters
 - **DHPP** booster at ~1 year after finishing puppy series
 - **Rabies** booster per local law (often 1-year, then 3-year depending on product and rules)
 - Lifestyle boosters as recommended
 
-After that, DHPP is commonly boosted every 1–3 years depending on your vet’s protocol and your dog’s risk profile.
+After that, DHPP is commonly boosted every 1-3 years depending on your vet’s protocol and your dog’s risk profile.
 
 ## Optional and lifestyle vaccines (when they make sense)
 Not every puppy needs every vaccine, but some are “common optional” based on lifestyle.
@@ -120,7 +120,7 @@ Vets generally recommend:
 ## FAQ
 **Question? What is the most important puppy vaccine series?** DHPP is the core series for many puppies because it protects against several severe diseases, including parvovirus and distemper.
 
-**Question? When does my puppy get rabies?** Often around 12–16 weeks, but timing can vary by local rules and your vet’s guidance.
+**Question? When does my puppy get rabies?** Often around 12-16 weeks, but timing can vary by local rules and your vet’s guidance.
 
 **Question? Do indoor puppies still need vaccines?** Yes. Many diseases spread through contact on shoes, shared spaces, or brief encounters, and lifestyle can change quickly as puppies grow.
 
@@ -174,7 +174,7 @@ Think beyond vaccines. A complete set usually includes:
 If you’re starting from scratch, your goal isn’t perfection-it’s creating a reliable “single source of truth” that you can update after each appointment.
 
 ## The fastest way to organize pet medical records online
-You can build a strong system in about 60–90 minutes.
+You can build a strong system in about 60-90 minutes.
 
 ### Step 1: Pick one home for everything
 Choose one place that becomes the default:
@@ -466,14 +466,14 @@ Rabies laws vary. Even indoor cats may need rabies vaccination for legal complia
 ## Typical kitten vaccination schedule
 Your veterinarian may adjust timing, but many kittens follow a pattern like this:
 
-### 6–8 weeks
+### 6-8 weeks
 - FVRCP first dose
 
-### 10–12 weeks
+### 10-12 weeks
 - FVRCP booster
 - FeLV (often recommended for kittens; risk-based)
 
-### 14–16 weeks
+### 14-16 weeks
 - FVRCP booster (often final of kitten series)
 - Rabies vaccine (timing varies by local rules)
 - FeLV booster if started earlier
@@ -496,7 +496,7 @@ Depending on region and risk, your vet may discuss additional options. The impor
 ## Step-by-step: keep your cat vaccination schedule on track
 1. **Ask your vet for a written plan** with target dates and “acceptable windows.”
 2. **Save proof immediately** (rabies certificate, invoice, visit summary).
-3. **Set a cat vaccination reminder** for each due date and one “book the appointment” reminder 2–3 weeks earlier.
+3. **Set a cat vaccination reminder** for each due date and one “book the appointment” reminder 2-3 weeks earlier.
 4. **Log any reactions** after vaccines (lethargy, swelling, vomiting) to inform future decisions.
 5. **Prepare a boarding packet** if you might travel or board within the year.
 
@@ -550,7 +550,7 @@ The kitten series is about building immunity as your kitten grows. The key actio
 ### At 12 months: the “first adult reset”
 The one-year booster is a common point where cats fall off schedule. Treat it as a milestone:
 - Confirm which vaccines are due
-- Ask what the long-term interval will be (some vaccines move to 1–3 years)
+- Ask what the long-term interval will be (some vaccines move to 1-3 years)
 - Save updated certificates for boarding and travel
 
 ### Adult cats: build a repeatable yearly routine
@@ -584,9 +584,9 @@ If you’re still building your kitten foundations, use [new kitten checklist](/
 
 **Question? What is the key vaccine series for kittens?** FVRCP is a major core series and is typically given in multiple doses as kittens grow.
 
-**Question? When does my kitten get rabies?** Commonly around 12–16 weeks, but timing depends on local rules and your vet’s protocol.
+**Question? When does my kitten get rabies?** Commonly around 12-16 weeks, but timing depends on local rules and your vet’s protocol.
 
-**Question? Do cats need annual vaccines forever?** Many adult cats move to 1–3 year boosters for certain vaccines, depending on risk, product, and your vet’s guidance.
+**Question? Do cats need annual vaccines forever?** Many adult cats move to 1-3 year boosters for certain vaccines, depending on risk, product, and your vet’s guidance.
 
 **Question? What if we missed a booster?** Call your vet. Depending on the gap, they may adjust the schedule or repeat a dose.
 
@@ -633,7 +633,7 @@ If you have multiple documents scattered around, consolidate them using [organiz
 
 ## Build a schedule that matches real life
 ### Choose anchor times
-Pick 2–4 consistent daily anchors that already happen:
+Pick 2-4 consistent daily anchors that already happen:
 - Breakfast
 - Dinner
 - Last walk
@@ -651,7 +651,7 @@ As-needed meds need extra clarity: what symptom, what dose, minimum spacing, and
 ## Step-by-step: set up a pet medication reminder system
 1. **Copy the label instructions** exactly once (don’t rely on memory).
 2. **Confirm the timing rule** with your vet if it’s unclear (with food, every 8 hours, etc.).
-3. **Create reminders** for each dose and a second “refill reminder” 5–7 days before you run out.
+3. **Create reminders** for each dose and a second “refill reminder” 5-7 days before you run out.
 4. **Add a logging habit**: mark each dose given, not just “the reminder went off.”
 5. **Add a backup person** who can see the schedule if you’re out.
 
@@ -773,7 +773,7 @@ PetClues helps by combining feeding/walk notes with daily check-ins and health r
 
 ## Choose the right baseline feeding schedule
 Most dogs do well with:
-- **Puppies**: 3–4 meals/day (age-dependent)
+- **Puppies**: 3-4 meals/day (age-dependent)
 - **Adult dogs**: 2 meals/day
 - **Some seniors/medical cases**: smaller, more frequent meals
 
@@ -798,9 +798,9 @@ You don’t need perfect data; you need consistent notes that reveal trends.
 
 ### A practical daily walk rhythm
 Many households succeed with:
-- Morning potty walk (10–20 minutes)
+- Morning potty walk (10-20 minutes)
 - Midday break (short, if possible)
-- Evening exercise walk (20–45 minutes)
+- Evening exercise walk (20-45 minutes)
 - Final potty break (5 minutes)
 
 If you’re managing weight, combine walking notes with [dog weight tracker](/blog/dog-weight-tracker-log-trends-vet-health).
@@ -842,7 +842,7 @@ A consistent **dog feeding schedule** plus simple walk tracking turns these into
 
 ## Expanded step-by-step: build a routine by life stage
 ### Puppies (growing, training, house-training)
-- Feed 3–4 smaller meals depending on age and vet guidance
+- Feed 3-4 smaller meals depending on age and vet guidance
 - Tie potty breaks to meals and naps
 - Track stool and appetite daily because changes happen fast
 
@@ -1123,7 +1123,7 @@ Tie these to your reminder system using [pet medication reminder](/blog/pet-medi
 4. **Attach notes**: “vomiting started 2 days prior,” “new food trial,” “started ear drops.”
 5. **Track what’s recurring**: monthly preventatives, chronic meds, routine labs.
 
-PetClues makes steps 2–4 easier by letting you upload invoices and attach them to the visit timeline alongside symptoms and reminders.
+PetClues makes steps 2-4 easier by letting you upload invoices and attach them to the visit timeline alongside symptoms and reminders.
 
 ## How to use bills to ask better questions
 Bring your invoice and ask:
@@ -1256,7 +1256,7 @@ PetClues can support this stage by storing vaccine proof, sending reminders, and
 
 If paperwork is missing, start a new record system now using [organize pet medical records](/blog/organize-pet-medical-records-online).
 
-## Week 1–2: build your medical timeline
+## Week 1-2: build your medical timeline
 ### Vaccination plan
 Ask your vet for a written plan and follow a reliable **puppy vaccination schedule**. Start here:
 - [puppy vaccination schedule](/blog/puppy-vaccination-schedule-2026)
@@ -1276,7 +1276,7 @@ Use these guides to build a calendar:
 If your puppy is chipped, complete ownership details promptly:
 - [microchip registration](/blog/microchip-registration-guide-dogs-cats)
 
-## Week 2–4: routine and tracking (the “easy to miss” part)
+## Week 2-4: routine and tracking (the “easy to miss” part)
 ### Feeding and potty rhythm
 Choose consistent anchors and keep notes:
 - Meal times and portion
@@ -1294,7 +1294,7 @@ Keep it simple:
 
 PetClues daily check-ins are designed for this short format so you can see patterns without writing long notes.
 
-## Month 2–6: socialization with health boundaries
+## Month 2-6: socialization with health boundaries
 Your vet will guide safe exposure timing based on vaccines. Common principles:
 - Controlled playdates with healthy, vaccinated dogs
 - Avoid unknown dog parks and high-traffic pet areas early
@@ -1318,7 +1318,7 @@ The first month with a puppy is a blur. The checklist matters because real life 
 
 A strong **new puppy checklist** gives you two advantages: consistency (so problems are less likely) and clarity (so if something changes, you can describe it accurately to your vet).
 
-## Expanded timeline: weeks 1–12
+## Expanded timeline: weeks 1-12
 Use this as a practical roadmap and customize it with your veterinarian.
 
 ### Week 1: settle in and establish baselines
@@ -1329,7 +1329,7 @@ Use this as a practical roadmap and customize it with your veterinarian.
 
 If you’re organizing from scratch, see [organize pet medical records](/blog/organize-pet-medical-records-online).
 
-### Weeks 2–4: routine becomes your superpower
+### Weeks 2-4: routine becomes your superpower
 - Keep meal and potty anchors consistent (this supports training and digestion).
 - Start prevention calendars early:
   - [heartworm prevention schedule](/blog/heartworm-prevention-schedule-reminder-dogs)
@@ -1338,12 +1338,12 @@ If you’re organizing from scratch, see [organize pet medical records](/blog/or
 
 PetClues daily check-ins help here because you can spot patterns like “new treats = soft stool” or “busy days = less water.”
 
-### Weeks 5–8: training, exposure, and health follow-through
+### Weeks 5-8: training, exposure, and health follow-through
 - Keep your **puppy vaccination schedule** on track: [puppy vaccination schedule](/blog/puppy-vaccination-schedule-2026)
 - Build a simple walk and feeding rhythm: [dog feeding schedule](/blog/dog-feeding-schedule-walk-tracker)
 - Start “handling practice” (paws, ears, mouth) to make vet visits and grooming easier later.
 
-### Weeks 9–12: prepare for real-life needs
+### Weeks 9-12: prepare for real-life needs
 Even if you don’t plan to travel or board soon, emergencies happen.
 - Make sure microchip registration is complete: [microchip registration](/blog/microchip-registration-guide-dogs-cats)
 - Keep vaccine proof easy to share for daycare/boarding: [pet boarding preparation](/blog/pet-boarding-preparation-vaccination-records-health-forms)
@@ -1421,7 +1421,7 @@ PetClues supports this by storing vaccine proof and reminders and by making dail
 
 If records are incomplete, start organizing now using [organize pet medical records](/blog/organize-pet-medical-records-online).
 
-## Week 1–4: vaccines, prevention, and tracking
+## Week 1-4: vaccines, prevention, and tracking
 ### Vaccination schedule
 Follow a clear **cat vaccination schedule** and set reminders for boosters:
 - [cat vaccination schedule](/blog/cat-vaccination-schedule-guide)
@@ -1467,28 +1467,28 @@ The first weeks are full of “is this normal?” questions:
 
 A strong **new kitten checklist** reduces uncertainty by turning these into trackable routines. When you can say “this started Tuesday” or “she’s been eating 70% of normal for 2 days,” your vet can advise faster and with fewer assumptions.
 
-## Expanded timeline: weeks 1–12 at home
+## Expanded timeline: weeks 1-12 at home
 Use this as a practical rhythm. Adjust for your kitten’s age and your vet’s recommendations.
 
 ### Week 1: settle in and establish baselines
-1. Keep one quiet “safe room” for the first 24–72 hours.
+1. Keep one quiet “safe room” for the first 24-72 hours.
 2. Log appetite, water intake, and litter box habits daily.
 3. Start carrier training immediately (short, positive sessions).
 4. Save every document you receive (even if it’s a photo at first).
 
 If you’re building your record system, start with [organize pet medical records](/blog/organize-pet-medical-records-online).
 
-### Weeks 2–4: complete early vaccines and prevention plan
+### Weeks 2-4: complete early vaccines and prevention plan
 - Follow the booster schedule in [cat vaccination schedule](/blog/cat-vaccination-schedule-guide) and set reminders right away.
 - Coordinate flea/tick prevention based on your region and household pets: [flea tick prevention](/blog/flea-tick-prevention-calendar-pets).
 - Track weight weekly if possible; tiny changes can be meaningful in kittens.
 
-### Weeks 5–8: reduce stress and increase resilience
+### Weeks 5-8: reduce stress and increase resilience
 - Keep feeding routines consistent and avoid frequent food changes.
 - Add a weekly “health glance” routine: ears, eyes, coat, and gums.
 - Continue carrier practice even when you don’t have an appointment.
 
-### Weeks 9–12: prepare for boarding/travel and “real life”
+### Weeks 9-12: prepare for boarding/travel and “real life”
 Even if you’re not traveling soon, a kitten’s lifestyle can change quickly.
 - Keep vaccine proof ready in case you need boarding or a sitter.
 - Build your emergency passport and share plan with a trusted person.
@@ -1579,7 +1579,7 @@ If you’re already tracking feeding and activity, [dog feeding schedule](/blog/
 4. **Dental plan** and breath/chewing checks.
 5. **Quarterly record review**: upload new labs and update emergency info.
 
-PetClues can handle steps 3–5: medication reminders, document storage, and an emergency passport-style profile.
+PetClues can handle steps 3-5: medication reminders, document storage, and an emergency passport-style profile.
 
 ## Medication tracking for seniors
 Senior dogs often take multiple meds or supplements. Use:
@@ -1682,7 +1682,7 @@ If you’re not sure where to start, pick one habit for two weeks-weekly weight 
 
 **Question? How can I tell if my dog’s “slowing down” is arthritis or something else?** Track when stiffness happens (morning vs after exercise), whether warming up helps, and whether stairs or jumping change. Share the pattern with your vet.
 
-**Question? What should I bring to a senior wellness visit?** A current med list, recent weight trend, and 2–4 weeks of notes on appetite, stool, energy, and mobility. This reduces guesswork and helps targeted decisions.
+**Question? What should I bring to a senior wellness visit?** A current med list, recent weight trend, and 2-4 weeks of notes on appetite, stool, energy, and mobility. This reduces guesswork and helps targeted decisions.
 
 **Question? Should I adjust feeding for a senior dog?** Often yes, depending on weight, activity, and health conditions. Align meals with routine and tracking using [dog feeding schedule](/blog/dog-feeding-schedule-walk-tracker).
 
@@ -1767,7 +1767,7 @@ Most pet sitting hiccups happen in predictable, human ways:
 Clear **pet sitter instructions** reduce these risks by turning your routines into simple decisions the sitter can follow.
 
 ## Expanded step-by-step: match instructions to the type of sitting
-### Drop-in visits (10–30 minutes)
+### Drop-in visits (10-30 minutes)
 Focus on essentials:
 - Where food, meds, and supplies are located
 - Potty routine and any “must do” walk rules
@@ -2203,7 +2203,7 @@ Use a calm, practical approach:
 2. **Confirm the last prevention dose date** (this is where your calendar/log matters).
 3. **Contact your vet** for next-step guidance if you’re seeing multiple pests, skin infection signs, or if you’re unsure which products are safe to combine.
 4. **Do environment basics**: wash bedding, vacuum resting areas, and keep coats checked after outdoor exposure.
-5. **Track symptoms** (itching, ear issues, hot spots) for the next 7–10 days so you can tell if the plan is working.
+5. **Track symptoms** (itching, ear issues, hot spots) for the next 7-10 days so you can tell if the plan is working.
 
 If your pet already has allergy-like itching, combine this with consistent symptom notes using [pet allergy tracker](/blog/pet-allergy-tracker-symptoms-triggers-records).
 
@@ -2226,7 +2226,7 @@ If your pet already has allergy-like itching, combine this with consistent sympt
 
 **Question? Do I need to treat my home if I see fleas?** Often yes. Fleas have life stages in the environment, so washing bedding and vacuuming resting areas helps break the cycle alongside consistent prevention.
 
-**Question? How fast should symptoms improve after prevention?** It depends on the situation. Some itching improves within days, but skin irritation or infection can take longer. Track symptoms for 1–2 weeks and contact your vet if you’re not seeing improvement.
+**Question? How fast should symptoms improve after prevention?** It depends on the situation. Some itching improves within days, but skin irritation or infection can take longer. Track symptoms for 1-2 weeks and contact your vet if you’re not seeing improvement.
 
 ## Related guides
 - [heartworm prevention schedule](/blog/heartworm-prevention-schedule-reminder-dogs)
@@ -2250,14 +2250,14 @@ It’s also expensive when delayed. A schedule and reminders help you spread car
 
 ## A practical dog dental care schedule
 ### Daily or near-daily (ideal)
-- Tooth brushing (even 3–4 times/week helps)
+- Tooth brushing (even 3-4 times/week helps)
 - Quick mouth check during cuddles
 
 ### Weekly
 - Check breath, gum redness, and chewing behavior
 - Inspect for broken teeth or mouth sensitivity
 
-### Every 6–12 months (vet-guided)
+### Every 6-12 months (vet-guided)
 - Dental evaluation during wellness visit
 - Cleaning recommendations based on risk
 
@@ -2296,21 +2296,21 @@ Use this as a repeatable cycle (your vet may adjust based on risk).
 ### Month 1: baseline and setup
 1. Do a calm mouth look in good lighting (gums, tartar, broken teeth).
 2. Start toothpaste introduction (lick-only for a few days).
-3. Set a reminder schedule you can maintain (3–4x/week is a great start).
+3. Set a reminder schedule you can maintain (3-4x/week is a great start).
 
-### Months 2–3: build the brushing habit
+### Months 2-3: build the brushing habit
 - Increase brushing time slowly (10 seconds → 30 seconds → 60 seconds)
 - Focus on outer surfaces (where plaque builds fastest)
 - Log “brushed” days so you see your true consistency
 
 PetClues can be used here as a gentle reminder system and a place to store dental visit invoices and recheck dates alongside other records.
 
-### Months 4–6: evaluate chewing and breath trends
+### Months 4-6: evaluate chewing and breath trends
 - Note breath changes and chewing behavior in quick weekly notes
 - Watch for one-sided chewing or food dropping
 - If your dog has allergies, note flare-ups that may worsen mouth inflammation: [pet allergy tracker](/blog/pet-allergy-tracker-symptoms-triggers-records)
 
-### Months 6–12: vet evaluation + plan
+### Months 6-12: vet evaluation + plan
 At your wellness visit, ask for a dental assessment. If cleaning is recommended:
 - Get the proposed plan (cleaning + possible extractions)
 - Ask what pre-anesthesia labs are advised
@@ -2332,7 +2332,7 @@ If your dog takes post-dental meds, keep timing clear with [pet medication remin
 ## What veterinarians recommend (expert tips)
 Vets often recommend focusing on comfort and prevention:
 - **Start early and go slow**: training the mouth-touch routine reduces stress and improves long-term compliance.
-- **Prioritize consistency**: 3–4x/week brushing beats an “all or nothing” approach.
+- **Prioritize consistency**: 3-4x/week brushing beats an “all or nothing” approach.
 - **Watch weight and appetite together**: mouth pain can reduce eating, and weight loss can be subtle. Track trends with [dog weight tracker](/blog/dog-weight-tracker-log-trends-vet-health).
 - **Consider senior context**: senior dogs may need tailored plans for mobility and chronic meds; integrate with [senior dog care](/blog/senior-dog-care-health-records-medication-tracker).
 
@@ -2357,7 +2357,7 @@ These tools are not perfect substitutes for brushing, but they can help you stay
 
 **Question? Are some breeds higher risk?** Yes, especially small breeds with crowded teeth, but any dog can develop dental disease without routine care.
 
-**Question? What’s the best first step if my dog won’t tolerate brushing?** Start with toothpaste licking, then brief tooth touches, then 5–10 second “micro-brush” sessions. Build comfort before increasing duration.
+**Question? What’s the best first step if my dog won’t tolerate brushing?** Start with toothpaste licking, then brief tooth touches, then 5-10 second “micro-brush” sessions. Build comfort before increasing duration.
 
 **Question? What records should I keep after a cleaning?** Keep the invoice, anesthesia monitoring notes (if provided), extraction details, and the recheck plan. These matter for future dental timing and medication decisions.
 
@@ -2406,7 +2406,7 @@ Use [pet medication reminder](/blog/pet-medication-reminder-guide) to keep dosin
 Build this with [pet emergency information](/blog/pet-emergency-information-card-guide).
 
 ## Step-by-step travel prep timeline
-### 2–4 weeks before
+### 2-4 weeks before
 1. Confirm vaccines are current and meet any facility rules.
 2. Update microchip registration and ID tags.
 3. Refill medications and confirm dosing plan.
@@ -2416,7 +2416,7 @@ Coordinate with:
 - [heartworm prevention schedule](/blog/heartworm-prevention-schedule-reminder-dogs)
 - [flea tick prevention](/blog/flea-tick-prevention-calendar-pets)
 
-### 3–7 days before
+### 3-7 days before
 1. Assemble documents in one digital place and one backup.
 2. Pack food and avoid last-minute diet changes.
 3. Confirm emergency contacts are reachable.
@@ -2558,13 +2558,13 @@ Provide:
 Build the schedule with [pet medication reminder](/blog/pet-medication-reminder-guide).
 
 ## Step-by-step: boarding preparation timeline
-### 2–4 weeks before
+### 2-4 weeks before
 1. Confirm facility requirements and deadlines.
 2. Update vaccines early enough to meet “must be given X days before boarding” rules.
 3. Ensure preventatives are current.
 4. Choose an emergency contact who can answer calls.
 
-### 3–7 days before
+### 3-7 days before
 1. Print or download vaccine certificates.
 2. Prepare a labeled medication kit by day and time.
 3. Write a one-page routine summary.
@@ -2575,7 +2575,7 @@ Build the schedule with [pet medication reminder](/blog/pet-medication-reminder-
 3. Ask how appetite drops or diarrhea will be handled.
 
 ## What to send the facility (email template idea)
-To reduce drop-off stress, many pet parents email the essentials 24–48 hours before check-in:
+To reduce drop-off stress, many pet parents email the essentials 24-48 hours before check-in:
 - Rabies certificate and core vaccine proof
 - Medication list with last dose time and next dose due
 - Emergency contact and consent guidance
@@ -2672,7 +2672,7 @@ PetClues can store weight entries alongside daily check-ins and vet records, so 
 1. Weigh your dog using a consistent method (same scale, similar time).
 2. Track weekly if weight is changing; otherwise monthly.
 3. Add notes when something changes (new food, less walking, illness).
-4. Review trends every 4–8 weeks, not daily.
+4. Review trends every 4-8 weeks, not daily.
 
 ## Pair weight with routine data
 Weight makes more sense when you track:
@@ -2696,7 +2696,7 @@ If the number bounces but returns to baseline, it’s usually not a crisis.
 
 ### What a meaningful trend looks like
 Pay attention when:
-- The number moves the same direction for 3–4 readings
+- The number moves the same direction for 3-4 readings
 - Your dog’s waistline or ribs feel different
 - Energy, appetite, or mobility changes alongside weight
 
@@ -2740,7 +2740,7 @@ If you notice chewing changes, prioritize dental evaluation and review [dog dent
 
 ## Vet visit prep: how to make your tracker useful
 Bring:
-- The last 8–12 weight entries
+- The last 8-12 weight entries
 - A two-sentence summary: “Weight increased X over Y weeks; activity decreased; treats increased during training.”
 - Any diet/med changes and dates
 
@@ -2757,7 +2757,7 @@ The goal of a **dog weight tracker** is not perfection-it’s early awareness an
 
 ## Common mistakes (and how to avoid them)
 - Weighing at random times and comparing numbers that aren’t comparable
-- Reacting to one weigh-in instead of looking at a 4–8 week trend
+- Reacting to one weigh-in instead of looking at a 4-8 week trend
 - Changing food, treats, and exercise all at once (then you don’t know what worked)
 - Forgetting treat calories during training blocks
 - Ignoring dental or GI symptoms that accompany weight changes
@@ -2776,7 +2776,7 @@ If a medication change coincides with weight drift, log it clearly and keep dosi
 ## Quick weigh-in tips that improve accuracy
 - Weigh at the same time of day when possible
 - Keep collar/harness consistency (or remove it each time)
-- If your dog is wiggly, take 2–3 readings and use the average
+- If your dog is wiggly, take 2-3 readings and use the average
 - Record “before breakfast” versus “after meal” in your notes
 - If the scale seems off, check it with a known weight occasionally
 
@@ -2838,14 +2838,14 @@ Tracking prevents “change everything at once” chaos. PetClues can capture da
 - Medications started/changed
 - Baths/topicals
 - Diet trial steps
-- How symptoms changed over 24–72 hours
+- How symptoms changed over 24-72 hours
 
 ## Step-by-step tracking routine
 1. Pick a daily check-in time.
-2. Rate symptoms quickly (a 1–3 scale is enough).
+2. Rate symptoms quickly (a 1-3 scale is enough).
 3. Note any changes (food, environment, missed preventative).
 4. Review weekly for patterns.
-5. Bring a 2–4 week summary to your vet.
+5. Bring a 2-4 week summary to your vet.
 
 ## Prevention is part of allergy control
 Fleas can amplify itching even in pets with broader allergies. Keep prevention consistent with [flea tick prevention](/blog/flea-tick-prevention-calendar-pets).
@@ -2870,7 +2870,7 @@ If your vet recommends a diet trial, tracking is essential because the trial onl
 
 ## Step-by-step: track a food trial correctly
 1. **Choose one plan** with your vet (novel protein or hydrolyzed diet).
-2. **Set a strict window** (often 6–10+ weeks, vet-guided).
+2. **Set a strict window** (often 6-10+ weeks, vet-guided).
 3. **Log everything eaten**: meals, treats, chews, flavored medications.
 4. **Track symptoms weekly** using the same scale.
 5. **Reintroduce carefully** only if your vet instructs you to.
@@ -2919,7 +2919,7 @@ While your vet will tailor treatment, common guidance includes:
 - **Control the basics first**: consistent flea/tick prevention and treating any secondary infections before concluding it’s “just allergies.”
 - **Track severity, not just presence**: “mild vs severe” helps evaluate medication response.
 - **Treat tracking like an experiment**: change one major variable at a time when possible.
-- **Bring a concise summary**: 2–4 weeks of data, plus a list of treatments tried and dates.
+- **Bring a concise summary**: 2-4 weeks of data, plus a list of treatments tried and dates.
 
 If your pet takes multiple meds, keep dosing clear using [pet medication reminder](/blog/pet-medication-reminder-guide) so your “what changed” timeline stays accurate.
 
@@ -2936,7 +2936,7 @@ If you want the simplest possible routine, log:
 
 **Question? How detailed should my tracking be?** Keep it simple and consistent. Daily symptom ratings plus notes on changes is often enough.
 
-**Question? How long should I track before patterns appear?** Many people see useful patterns in 2–4 weeks, especially across diet or seasonal changes.
+**Question? How long should I track before patterns appear?** Many people see useful patterns in 2-4 weeks, especially across diet or seasonal changes.
 
 **Question? Can flea prevention reduce allergy symptoms?** Yes. Fleas can worsen inflammation and itching, so consistent prevention can reduce baseline flare intensity.
 
@@ -2992,9 +2992,9 @@ Many dogs need:
 
 This is a common point where schedules slip because the puppy phase feels “over.” Treat it as your reset moment: save proof and set reminders for the next interval.
 
-### Adult dogs: maintain on a 1–3 year cycle (vet-guided)
+### Adult dogs: maintain on a 1-3 year cycle (vet-guided)
 Depending on your vet’s protocol, your dog may receive:
-- DHPP boosters on a 1–3 year schedule
+- DHPP boosters on a 1-3 year schedule
 - Rabies boosters according to law and product labeling
 
 The key is consistency and documentation. A pet health records app like PetClues keeps the certificate and the due date together so you can follow a clear plan.
@@ -3025,7 +3025,7 @@ Recommended in some regions during outbreaks or for dogs with frequent dog-to-do
 1. **Ask your vet for a written plan**: include vaccine names and next due dates.
 2. **Store proof the same day**: rabies certificate, DHPP record, and invoice.
 3. **Create a pet vaccination reminder**:
-   - “Book the appointment” reminder 2–3 weeks early
+   - “Book the appointment” reminder 2-3 weeks early
    - “Vaccine due” reminder on the due date
 4. **Keep a boarding/travel packet** ready:
    - [pet boarding preparation](/blog/pet-boarding-preparation-vaccination-records-health-forms)
@@ -3072,18 +3072,18 @@ If you want a “one page” year view after your dog is up to date:
 - Confirm core vaccines are current (DHPP and rabies where required)
 - Set reminders and upload proof
 
-### Months 2–3
+### Months 2-3
 - Catch up on any lifestyle vaccines required for daycare/boarding (Bordetella, etc.)
 - Align parasite prevention calendars:
   - [flea tick prevention](/blog/flea-tick-prevention-calendar-pets)
   - [heartworm prevention schedule](/blog/heartworm-prevention-schedule-reminder-dogs)
 
-### Months 4–6
+### Months 4-6
 - Review records for completeness (certificates, invoices, lot information if provided)
 - Build a boarding-ready packet:
   - [pet boarding preparation](/blog/pet-boarding-preparation-vaccination-records-health-forms)
 
-### Months 7–12
+### Months 7-12
 - Plan your annual review: vaccines due, prevention adherence, and any reaction history
 - If you travel, prepare documents:
   - [traveling with pets](/blog/traveling-with-pets-health-documents-checklist)
@@ -3102,7 +3102,7 @@ Store these together with your emergency summary:
 
 **Question? Which vaccines are “core” for dogs?** DHPP and rabies are commonly core, with rabies often required by law. Your vet will tailor timing to your region.
 
-**Question? How often do adult dogs need boosters?** Many dogs move to a 1–3 year cycle for certain vaccines based on risk, product, and vet guidance.
+**Question? How often do adult dogs need boosters?** Many dogs move to a 1-3 year cycle for certain vaccines based on risk, product, and vet guidance.
 
 **Question? What if I missed a booster appointment?** Call your vet. Some schedules can continue; others may need adjustment depending on how late the booster is.
 
@@ -3177,7 +3177,7 @@ Keep schedules consistent with [pet medication reminder](/blog/pet-medication-re
 
 If you also have a dog at home, dental planning tips apply similarly: [dog dental care schedule](/blog/dog-dental-care-schedule-cleanings-reminders).
 
-## Step-by-step: organize cat health records in 60–90 minutes
+## Step-by-step: organize cat health records in 60-90 minutes
 1. **Pick one home for everything** (cloud folder or a pet health records app).
 2. **Collect what you already have**: email, photo roll, clinic portals.
 3. **Upload the “big three” first**:
@@ -3220,7 +3220,7 @@ Vets generally recommend:
 - **Centralize** records from every clinic (primary, emergency, specialist).
 - **Keep a concise medication list** that’s always current.
 - **Track trends**: appetite and weight changes matter.
-- **Bring a summary**: 2–4 weeks of notes can accelerate diagnosis.
+- **Bring a summary**: 2-4 weeks of notes can accelerate diagnosis.
 
 PetClues helps by combining records, reminders, and daily check-ins so the “what happened when” timeline is easy to share.
 
@@ -3308,7 +3308,7 @@ Birds are prey animals. Many species instinctively mask weakness. Real scenarios
 PetClues can help as a central home for records, reminders, and a shareable emergency summary-useful even if your pet isn’t a dog or cat.
 
 ## Daily bird care routine (high-signal checks)
-### Morning (2–5 minutes)
+### Morning (2-5 minutes)
 - Observe energy and posture
 - Check food and water consumption from overnight
 - Quick look at droppings (volume, consistency, color changes)
@@ -3318,7 +3318,7 @@ PetClues can help as a central home for records, reminders, and a shareable emer
 - Confirm water is clean and accessible
 - Note vocalization and engagement changes
 
-### Evening (2–5 minutes)
+### Evening (2-5 minutes)
 - Replace fresh food and remove spoiled items
 - Clean obvious messes and check cage safety
 - Note appetite and behavior patterns (fluffed feathers, aggression, lethargy)
@@ -3386,7 +3386,7 @@ Avian vets often recommend:
 - **Track weight trends**: small losses can be meaningful.
 - **Record droppings and appetite changes** with dates.
 - **Avoid sudden diet changes** unless guided and tracked.
-- **Bring a concise summary** to appointments: last 2–4 weeks of notes plus any photos.
+- **Bring a concise summary** to appointments: last 2-4 weeks of notes plus any photos.
 
 Keeping invoices and test names also helps. If you need a decoder mindset, [vet bill organizer](/blog/vet-bill-organizer-pet-medical-bills) can guide how to store and interpret itemized charges.
 
@@ -3513,7 +3513,7 @@ If someone else may care for your pet, adapt [pet sitter instructions](/blog/pet
 
 ## What veterinarians recommend (expert tips)
 Exotics vets often recommend:
-- **Bring a timeline**: weight trend, feeding history, and husbandry notes for the last 2–4 weeks.
+- **Bring a timeline**: weight trend, feeding history, and husbandry notes for the last 2-4 weeks.
 - **Document environment**: temperatures, humidity, lighting schedule, and changes.
 - **Keep medication accuracy**: exact drug, dose, and last dose time. Use [pet medication reminder](/blog/pet-medication-reminder-guide) for structure.
 - **Save invoices and lab names**: it prevents repeating tests unnecessarily and supports better decision-making.

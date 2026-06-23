@@ -21,7 +21,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
       clinicalNarrative:
         'During the visit, the veterinarian performed a routine wellness examination. Rabies and DHPP vaccines were administered. Flea prevention was dispensed for six months. No acute illness was documented; the visit is classified as preventive care.',
       keyFindings: [
-        'Rabies vaccine administered - booster typically due in 1–3 years depending on local regulations and vaccine type.',
+        'Rabies vaccine administered - booster typically due in 1-3 years depending on local regulations and vaccine type.',
         'DHPP (distemper combination) booster given - maintain schedule for core puppy/adult vaccines.',
         'Flea prevention prescribed for 6 months - set a refill reminder before supply runs out.',
         'Annual wellness recheck suggested - good opportunity to review weight, dental health, and diet.',
@@ -33,7 +33,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
         'Keep this invoice for insurance or tax records if applicable.',
       ],
       watchFor: [
-        'Mild lethargy or soreness for 24–48 hours after vaccination is common - contact your vet if symptoms worsen or persist.',
+        'Mild lethargy or soreness for 24-48 hours after vaccination is common - contact your vet if symptoms worsen or persist.',
       ],
       dataQualityNotes:
         'Mock extraction for demo. Real documents may have partial text if scanned or photographed at an angle.',
@@ -90,7 +90,7 @@ export function buildMockExtraction(fileName: string): VetBillExtractionResult {
         description: 'Recommended return visit for routine health assessment.',
         explanation: 'Follow-up date noted in the discharge or reminder section of the document.',
         followUpDate: '2027-03-12',
-        ownerAction: 'Book the appointment 2–4 weeks before the suggested date.',
+        ownerAction: 'Book the appointment 2-4 weeks before the suggested date.',
         confidence: 'medium',
         approved: false,
       },

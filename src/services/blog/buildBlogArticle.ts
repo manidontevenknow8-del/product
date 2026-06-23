@@ -81,7 +81,7 @@ function clusterScheduleTable(cluster: BlogArticleCluster, focus: string): strin
 | --- | --- | --- |
 | First visit | Vaccine name, lot, date | 7 days before next due |
 | Booster due | Certificate PDF + clinic phone | 7 days |
-| Lifestyle vaccine | Bordetella / Lepto / Lyme as advised | 3–7 days |
+| Lifestyle vaccine | Bordetella / Lepto / Lyme as advised | 3-7 days |
 | Annual wellness | Exam notes + weight | 14 days |
 | Boarding/travel gate | Proof uploaded to vault | Day of booking |`;
   }
@@ -101,12 +101,12 @@ function clusterScheduleTable(cluster: BlogArticleCluster, focus: string): strin
 
 | Document | Typical validity | Where stored |
 | --- | --- | --- |
-| Rabies certificate | 1–3 years | Vault PDF |
-| Health certificate | 10–30 days | Travel folder |
+| Rabies certificate | 1-3 years | Vault PDF |
+| Health certificate | 10-30 days | Travel folder |
 | Microchip proof | Lifetime | Profile card |
 | Medication list | Updated per trip | Emergency passport |`;
   }
-  return `### ${focus} — at-a-glance tracker
+  return `### ${focus}, at-a-glance tracker
 
 | Item | Status | Next action |
 | --- | --- | --- |

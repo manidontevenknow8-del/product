@@ -42,7 +42,7 @@ export type CompetitorConfig = {
 };
 
 const DEFAULT_PETCLUES_PROS = [
-  'Purpose-built for pet vaccinations, medications, and vet visits—not generic folders.',
+  'Purpose-built for pet vaccinations, medications, and vet visits, not generic folders.',
   'Emergency passport and reminders stay linked to each pet profile.',
   'Free tier covers one pet with records, reminders, and passport basics.',
   'AI vet bill decoder on paid plans saves time after every clinic visit.',

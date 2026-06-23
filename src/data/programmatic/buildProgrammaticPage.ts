@@ -46,37 +46,37 @@ function dogVaccineSchedule(seed: DogBreedSeed): ProgrammaticScheduleRow[] {
   const lifestyleNote =
     seed.lifestyle === 'active'
       ? 'Discuss leptospirosis and Lyme vaccines if your area or travel exposes your dog.'
-      : 'Lifestyle vaccines depend on local risk—ask your vet before boarding or hiking.';
+      : 'Lifestyle vaccines depend on local risk, ask your vet before boarding or hiking.';
 
   return [
-    { age: '6–8 weeks', vaccines: ['DHPP (distemper combo) — 1st dose'], notes: `Start only if maternal antibodies allow; confirm with your vet for ${seed.name} puppies.` },
-    { age: '10–12 weeks', vaccines: ['DHPP — 2nd dose', 'Optional: Bordetella'], notes: lifestyleNote },
-    { age: '14–16 weeks', vaccines: ['DHPP — 3rd dose', 'Rabies (per local law)'], notes: `Final puppy series timing is critical for ${seed.size} breeds.` },
-    { age: '12–16 months', vaccines: ['DHPP booster', 'Rabies booster (if due)'], notes: 'First adult booster; align with clinic protocol.' },
-    { age: 'Every 1–3 years', vaccines: ['DHPP', 'Rabies', 'Lifestyle vaccines as needed'], notes: `Monitor ${seed.healthFocus} at annual exams.` },
+    { age: '6-8 weeks', vaccines: ['DHPP (distemper combo), 1st dose'], notes: `Start only if maternal antibodies allow; confirm with your vet for ${seed.name} puppies.` },
+    { age: '10-12 weeks', vaccines: ['DHPP, 2nd dose', 'Optional: Bordetella'], notes: lifestyleNote },
+    { age: '14-16 weeks', vaccines: ['DHPP, 3rd dose', 'Rabies (per local law)'], notes: `Final puppy series timing is critical for ${seed.size} breeds.` },
+    { age: '12-16 months', vaccines: ['DHPP booster', 'Rabies booster (if due)'], notes: 'First adult booster; align with clinic protocol.' },
+    { age: 'Every 1-3 years', vaccines: ['DHPP', 'Rabies', 'Lifestyle vaccines as needed'], notes: `Monitor ${seed.healthFocus} at annual exams.` },
   ];
 }
 
 function catVaccineSchedule(seed: CatBreedSeed): ProgrammaticScheduleRow[] {
   const exposureNote =
     seed.lifestyle === 'indoor'
-      ? 'Indoor cats may use a reduced lifestyle vaccine set—confirm with your veterinarian.'
+      ? 'Indoor cats may use a reduced lifestyle vaccine set, confirm with your veterinarian.'
       : 'Outdoor or active cats often need feline leukemia (FeLV) vaccination.';
 
   return [
-    { age: '6–8 weeks', vaccines: ['FVRCP — 1st dose'], notes: `Begin kitten series for ${seed.name} kittens under veterinary guidance.` },
-    { age: '10–12 weeks', vaccines: ['FVRCP — 2nd dose'], notes: exposureNote },
-    { age: '14–16 weeks', vaccines: ['FVRCP — 3rd dose', 'Rabies (per local law)'], notes: 'Complete core kitten series before high exposure environments.' },
-    { age: '12–16 months', vaccines: ['FVRCP booster', 'Rabies booster (if due)', 'FeLV if lifestyle warrants'], notes: `Discuss ${seed.healthFocus} at the first adult visit.` },
-    { age: 'Every 1–3 years', vaccines: ['FVRCP', 'Rabies', 'FeLV if continued risk'], notes: 'Revaccination intervals vary by product and local regulations.' },
+    { age: '6-8 weeks', vaccines: ['FVRCP, 1st dose'], notes: `Begin kitten series for ${seed.name} kittens under veterinary guidance.` },
+    { age: '10-12 weeks', vaccines: ['FVRCP, 2nd dose'], notes: exposureNote },
+    { age: '14-16 weeks', vaccines: ['FVRCP, 3rd dose', 'Rabies (per local law)'], notes: 'Complete core kitten series before high exposure environments.' },
+    { age: '12-16 months', vaccines: ['FVRCP booster', 'Rabies booster (if due)', 'FeLV if lifestyle warrants'], notes: `Discuss ${seed.healthFocus} at the first adult visit.` },
+    { age: 'Every 1-3 years', vaccines: ['FVRCP', 'Rabies', 'FeLV if continued risk'], notes: 'Revaccination intervals vary by product and local regulations.' },
   ];
 }
 
 function buildDogVaccinationPage(seed: DogBreedSeed): ProgrammaticPage {
   const subjectName = seed.name;
-  const title = `${subjectName} Vaccination Schedule (2026) – Puppy Shots & Boosters`;
+  const title = `${subjectName} Vaccination Schedule (2026): Puppy Shots & Boosters`;
   const metaDescription = `Complete ${subjectName} vaccination schedule: puppy shot timeline, core vaccines (DHPP, rabies), boosters, and breed-specific wellness notes.`;
-  const quickAnswer = `${subjectName} puppies typically start DHPP at 6–8 weeks, complete the series by 16 weeks, and receive rabies per local law. Adult boosters follow every 1–3 years based on your veterinarian's protocol.`;
+  const quickAnswer = `${subjectName} puppies typically start DHPP at 6-8 weeks, complete the series by 16 weeks, and receive rabies per local law. Adult boosters follow every 1-3 years based on your veterinarian's protocol.`;
 
   return {
     collectionId: 'dog-vaccination-schedule',
@@ -89,7 +89,7 @@ function buildDogVaccinationPage(seed: DogBreedSeed): ProgrammaticPage {
     updatedAt: UPDATED_AT,
     intro: [
       `This ${subjectName} vaccination schedule outlines core puppy shots, booster timing, and lifestyle vaccines to discuss with your veterinarian.`,
-      `Because ${seed.name} dogs are ${seed.size} and ${seed.lifestyle}, your clinic may adjust timing—especially around ${seed.healthFocus}.`,
+      `Because ${seed.name} dogs are ${seed.size} and ${seed.lifestyle}, your clinic may adjust timing, especially around ${seed.healthFocus}.`,
     ],
     sections: [
       {
@@ -104,7 +104,7 @@ function buildDogVaccinationPage(seed: DogBreedSeed): ProgrammaticPage {
         heading: `Breed-specific notes for ${subjectName}`,
         paragraphs: [
           `${subjectName} owners should document vaccine lot numbers, reaction notes, and titer discussions if your clinic offers them.`,
-          `Watch for ${seed.healthFocus} during wellness visits—these concerns are separate from vaccines but belong in the same health record.`,
+          `Watch for ${seed.healthFocus} during wellness visits, these concerns are separate from vaccines but belong in the same health record.`,
         ],
       },
     ],
@@ -135,9 +135,9 @@ function buildDogVaccinationPage(seed: DogBreedSeed): ProgrammaticPage {
 
 function buildCatVaccinationPage(seed: CatBreedSeed): ProgrammaticPage {
   const subjectName = seed.name;
-  const title = `${subjectName} Vaccination Schedule (2026) – Kitten Shots & Boosters`;
+  const title = `${subjectName} Vaccination Schedule (2026): Kitten Shots & Boosters`;
   const metaDescription = `Complete ${subjectName} vaccination schedule: FVRCP kitten series, rabies timing, FeLV considerations, and adult boosters.`;
-  const quickAnswer = `${subjectName} kittens begin FVRCP at 6–8 weeks, finish the series around 16 weeks, and receive rabies per local regulations. FeLV may be recommended based on outdoor exposure.`;
+  const quickAnswer = `${subjectName} kittens begin FVRCP at 6-8 weeks, finish the series around 16 weeks, and receive rabies per local regulations. FeLV may be recommended based on outdoor exposure.`;
 
   return {
     collectionId: 'cat-vaccination-schedule',
@@ -161,7 +161,7 @@ function buildCatVaccinationPage(seed: CatBreedSeed): ProgrammaticPage {
         heading: `Breed and lifestyle notes for ${subjectName}`,
         paragraphs: [
           `Indoor versus outdoor access changes which non-core vaccines your veterinarian recommends for ${subjectName} cats.`,
-          `Keep vaccine records with dental, weight, and cardiac screening notes—especially for ${seed.healthFocus}.`,
+          `Keep vaccine records with dental, weight, and cardiac screening notes, especially for ${seed.healthFocus}.`,
         ],
       },
     ],
@@ -196,7 +196,7 @@ function buildTravelChecklistPage(seed: CountrySeed): ProgrammaticPage {
 
   const checklist: ProgrammaticChecklistGroup[] = [
     {
-      title: '3–6 months before travel',
+      title: '3-6 months before travel',
       items: [
         'Confirm import rules with official government sources for ' + subjectName,
         seed.microchipRequired ? 'Implant ISO microchip before rabies vaccine' : 'Verify identification requirements',
@@ -205,7 +205,7 @@ function buildTravelChecklistPage(seed: CountrySeed): ProgrammaticPage {
       ],
     },
     {
-      title: '30–60 days before departure',
+      title: '30-60 days before departure',
       items: [
         'Book veterinary health certificate appointment',
         'Collect prior vaccine records and microchip number',
@@ -235,7 +235,7 @@ function buildTravelChecklistPage(seed: CountrySeed): ProgrammaticPage {
     updatedAt: UPDATED_AT,
     intro: [
       `${seed.entrySummary}`,
-      `This checklist is a planning aid for ${seed.region} travel to ${subjectName}—always verify current rules before booking.`,
+      `This checklist is a planning aid for ${seed.region} travel to ${subjectName}, always verify current rules before booking.`,
     ],
     sections: [
       {
@@ -248,7 +248,7 @@ function buildTravelChecklistPage(seed: CountrySeed): ProgrammaticPage {
       },
     ],
     checklist,
-    faqs: standardFaqs(`pet travel checklist for ${subjectName}`, `Import rules for ${subjectName} change—use official government sources.`),
+    faqs: standardFaqs(`pet travel checklist for ${subjectName}`, `Import rules for ${subjectName} change- use official government sources.`),
     petcluesWorkflow: {
       headline: 'Organize travel documents in PetClues',
       steps: [
@@ -270,7 +270,7 @@ function buildTravelChecklistPage(seed: CountrySeed): ProgrammaticPage {
 
 function buildEmergencyChecklistPage(seed: EmergencySpeciesSeed): ProgrammaticPage {
   const subjectName = seed.name;
-  const title = `${subjectName} Emergency Checklist – First Aid & Urgent Vet Signs`;
+  const title = `${subjectName} Emergency Checklist: First Aid & Urgent Vet Signs`;
   const metaDescription = `Species-specific ${subjectName.toLowerCase()} emergency checklist: normal vitals, first-aid kit items, and when to seek urgent veterinary care.`;
   const quickAnswer = `For ${subjectName.toLowerCase()}s, know normal vitals (heart ${seed.heartRate}), keep a species-appropriate first-aid kit, and seek urgent care for ${seed.uniqueRisk.toLowerCase()}.`;
 
@@ -328,7 +328,7 @@ function buildEmergencyChecklistPage(seed: EmergencySpeciesSeed): ProgrammaticPa
       },
     ],
     checklist,
-    faqs: standardFaqs(`${subjectName} emergency checklist`, `First aid stabilizes transport—it does not replace emergency veterinary care for ${subjectName.toLowerCase()}s.`),
+    faqs: standardFaqs(`${subjectName} emergency checklist`, `First aid stabilizes transport. It does not replace emergency veterinary care for ${subjectName.toLowerCase()}s.`),
     petcluesWorkflow: {
       headline: 'Emergency-ready records in PetClues',
       steps: [
@@ -359,7 +359,7 @@ function buildTemplatePage(
         ? 'Health record template'
         : 'Pet care checklist';
 
-  const title = `${seed.name} – Free ${typeLabel}`;
+  const title = `${seed.name}: Free ${typeLabel}`;
   const metaDescription = `Use this ${seed.name.toLowerCase()} for ${seed.audience.toLowerCase()}. Track ${seed.focus} digitally in PetClues or print for your binder.`;
   const quickAnswer = `The ${seed.name} helps ${seed.audience.toLowerCase()} track ${seed.focus}. Duplicate it in PetClues for reminders and searchable history.`;
 
@@ -422,7 +422,7 @@ function buildTemplatePage(
     ],
     sections,
     checklist,
-    faqs: standardFaqs(seed.name.toLowerCase(), `Templates organize information—they do not diagnose or prescribe.`),
+    faqs: standardFaqs(seed.name.toLowerCase(), `Templates organize information. They do not diagnose or prescribe.`),
     petcluesWorkflow: {
       headline: workflowHeadline,
       steps: [

@@ -89,7 +89,7 @@ function formatInvoiceAmount(
   if (plan === 'pro' && currency) {
     return formatPrice(getAnnualPrice('pro', currency), currency);
   }
-  return '—';
+  return ', ';
 }
 
 export const supabaseSubscriptionService: ISubscriptionService = {

@@ -15,10 +15,10 @@ function rangeValues(range: CostRange, currency: BillingCurrency): readonly [num
   return currency === 'INR' ? range.inr : range.usd;
 }
 
-/** e.g. "₹10,000 – ₹18,000" or "$120 – $220" */
+/** e.g. "₹10,000, ₹18,000" or "$120, $220" */
 export function formatCostRange(range: CostRange, currency: BillingCurrency): string {
   const [min, max] = rangeValues(range, currency);
-  return `${formatPrice(min, currency)} – ${formatPrice(max, currency)}`;
+  return `${formatPrice(min, currency)}, ${formatPrice(max, currency)}`;
 }
 
 export type PetMatchBudgetTier = 'lean' | 'balanced' | 'generous';
@@ -37,13 +37,13 @@ export function formatPetMatchBudgetHint(tier: PetMatchBudgetTier, currency: Bil
   if (tier === 'balanced') {
     const min = currency === 'INR' ? BUDGET_THRESHOLDS.balanced.inrMin : BUDGET_THRESHOLDS.balanced.usdMin;
     const max = currency === 'INR' ? BUDGET_THRESHOLDS.balanced.inrMax : BUDGET_THRESHOLDS.balanced.usdMax;
-    return `${formatPrice(min, currency)} – ${formatPrice(max, currency)} / month`;
+    return `${formatPrice(min, currency)}, ${formatPrice(max, currency)} / month`;
   }
   const min = currency === 'INR' ? BUDGET_THRESHOLDS.generous.inrMin : BUDGET_THRESHOLDS.generous.usdMin;
   return `${formatPrice(min, currency)}+ / month`;
 }
 
-/** Approximate monthly pet care by breed — localized at display time. */
+/** Approximate monthly pet care by breed, localized at display time. */
 export const PET_MATCH_BREED_MONTHLY_COSTS: Record<string, CostRange> = {
   'golden-retriever': { inr: [10_000, 18_000], usd: [120, 220] },
   'maine-coon': { inr: [6_000, 12_000], usd: [75, 145] },

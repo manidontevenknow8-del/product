@@ -46,7 +46,7 @@ const FAQ_SCHEMA_DEFAULT_DATE = SCHEMA_DATETIME_FALLBACK;
 
 /**
  * Stable placeholder upvote count per question (derived from URL or question text).
- * Not shown in the UI — schema-only until real helpful-vote tracking ships.
+ * Not shown in the UI, schema-only until real helpful-vote tracking ships.
  */
 export function deriveFaqUpvoteCount(seed: string): number {
   let hash = 0;
@@ -216,7 +216,7 @@ export function buildSoftwareApplicationSchema() {
         price: '99',
         priceCurrency: 'USD',
         priceValidUntil: '2027-12-31',
-        description: 'Annual Plus membership — international pricing',
+        description: 'Annual Plus membership, international pricing',
       },
       {
         '@type': 'Offer',
@@ -224,7 +224,7 @@ export function buildSoftwareApplicationSchema() {
         price: '299',
         priceCurrency: 'USD',
         priceValidUntil: '2027-12-31',
-        description: 'Annual Pro membership — international pricing',
+        description: 'Annual Pro membership, international pricing',
       },
     ],
     publisher: { '@id': ORGANIZATION_ID },
@@ -272,7 +272,7 @@ export function buildPricingPageSchema() {
             name: 'Plus Annual',
             price: '99',
             priceCurrency: 'USD',
-            description: 'Annual Plus membership — international',
+            description: 'Annual Plus membership, international',
           },
         },
         {
@@ -283,7 +283,7 @@ export function buildPricingPageSchema() {
             name: 'Pro Annual',
             price: '299',
             priceCurrency: 'USD',
-            description: 'Annual Pro membership — international',
+            description: 'Annual Pro membership, international',
           },
         },
       ],

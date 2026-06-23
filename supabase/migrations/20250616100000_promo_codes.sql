@@ -28,7 +28,7 @@ create index if not exists promo_codes_valid_until_idx on public.promo_codes (va
 
 alter table public.promo_codes enable row level security;
 
--- No public read — redemption goes through security definer RPC only.
+-- No public read - redemption goes through security definer RPC only.
 
 create table if not exists public.promo_code_redemptions (
   id uuid primary key default gen_random_uuid(),
@@ -66,7 +66,7 @@ insert into public.promo_codes (
 )
 values (
   '6QDZ-LC4A',
-  '1 month free Pro trial — marketing promo',
+  '1 month free Pro trial - marketing promo',
   'pro',
   30,
   timestamptz '2026-06-08 00:00:00+00',

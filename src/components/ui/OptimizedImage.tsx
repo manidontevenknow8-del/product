@@ -5,7 +5,7 @@ type OptimizedImageProps = {
   src: string;
   alt: string;
   className?: string;
-  /** Above-the-fold / LCP — disables lazy loading and sets fetchpriority high */
+  /** Above-the-fold / LCP, disables lazy loading and sets fetchpriority high */
   priority?: boolean;
   sizes?: string;
   width?: number;

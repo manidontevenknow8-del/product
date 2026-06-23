@@ -53,7 +53,7 @@ const PRICING_FAQ = [
   },
   {
     q: 'Can I start free and upgrade later?',
-    a: 'Yes. Every account begins on Free with one pet. Upgrade to Plus or Pro anytime — your records and timeline come with you.',
+    a: 'Yes. Every account begins on Free with one pet. Upgrade to Plus or Pro anytime, your records and timeline come with you.',
   },
   {
     q: 'Can I cancel?',
@@ -186,7 +186,7 @@ export function PricingPage() {
           </h1>
           <p className={styles.heroLead}>
             Health records, medical history, reminders, documents, boarding readiness, travel
-            records, and life&apos;s most important moments — beautifully organized in one place.
+            records, and life&apos;s most important moments, beautifully organized in one place.
           </p>
         </div>
       </section>
@@ -279,7 +279,7 @@ export function PricingPage() {
             {isAuthenticated ? (
               <Link to={ROUTES.DASHBOARD}>Continue with Free</Link>
             ) : (
-              <Link to={ROUTES.SIGNUP}>Start free — one pet, no card required</Link>
+              <Link to={ROUTES.SIGNUP}>Start free, one pet, no card required</Link>
             )}
           </p>
         </div>

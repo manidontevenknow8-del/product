@@ -80,13 +80,13 @@ export function isMetaPixelEnabled(): boolean {
 
 /**
  * Initialize the Meta Pixel once per session.
- * Safe to call during SSR/prerender — no-ops without `window`.
+ * Safe to call during SSR/prerender, no-ops without `window`.
  */
 export async function initMetaPixel(): Promise<boolean> {
   if (!isBrowser()) return false;
   if (initialized) return true;
   if (!PIXEL_ID) {
-    debug('Meta Pixel disabled — VITE_META_PIXEL_ID is not set');
+    debug('Meta Pixel disabled, VITE_META_PIXEL_ID is not set');
     return false;
   }
 
@@ -103,7 +103,7 @@ export async function initMetaPixel(): Promise<boolean> {
   }
 }
 
-/** SPA route change — fire after init. */
+/** SPA route change, fire after init. */
 export function trackMetaPageView(): void {
   if (!isMetaPixelEnabled()) return;
   try {
@@ -128,7 +128,7 @@ export function trackConversion(
 
   const fbq = window.fbq;
   if (!fbq || !PIXEL_ID) {
-    debug('Conversion skipped — pixel not ready', eventName);
+    debug('Conversion skipped, pixel not ready', eventName);
     return;
   }
 

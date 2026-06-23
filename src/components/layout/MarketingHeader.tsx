@@ -14,7 +14,7 @@ const publicNav = [
   { label: 'Pricing', path: ROUTES.PRICING },
 ] as const;
 
-/** Landing-only header — no auth/Supabase on first paint. */
+/** Landing-only header, no auth/Supabase on first paint. */
 export function MarketingHeader() {
   const handleLandingSectionClick =
     (hash: string) => (event: MouseEvent<HTMLAnchorElement>) => {

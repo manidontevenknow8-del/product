@@ -1,5 +1,5 @@
 /**
- * Cloudflare Pages middleware — query-param crawl controls.
+ * Cloudflare Pages middleware, query-param crawl controls.
  *
  * Note: Cloudflare `_headers` matches paths only, not query strings.
  * Only `?tag=` and `?q=` get noindex; clean paths and indexable filters

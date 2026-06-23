@@ -1,6 +1,6 @@
-/** Reusable HTML blocks for transactional email — table-based for client compatibility. */
+/** Reusable HTML blocks for transactional email, table-based for client compatibility. */
 
-/** Mirrors src/styles/tokens.css — warm cream + forest sage, not black/gold. */
+/** Mirrors src/styles/tokens.css, warm cream + forest sage, not black/gold. */
 export const BRAND = {
   name: 'PetClues',
   appUrl: 'https://petclues.com',
@@ -248,7 +248,7 @@ export function renderStatusChip(label: string, tone: 'default' | 'warning' | 's
   return `<span style="display: inline-block; margin: 0 6px 6px 0; padding: 5px 11px; font-size: 12px; font-weight: 600; color: ${styles.color}; background: ${styles.bg}; border: 1px solid ${styles.border}; border-radius: 999px;">${escapeHtml(label)}</span>`;
 }
 
-/** Hero banner for digest emails — soft scrim over a warm pet photo. */
+/** Hero banner for digest emails, soft scrim over a warm pet photo. */
 export function renderDigestHeroBanner(title: string, subtitle: string, imageUrl: string): string {
   return `
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 0 0 0;">

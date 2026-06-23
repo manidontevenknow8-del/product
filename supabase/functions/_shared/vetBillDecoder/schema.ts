@@ -105,9 +105,9 @@ Report sections (detailedReport) - STRICT LENGTH:
 - visitContext: max 2 sentences (clinic, date, pet if visible).
 - financialSummary: ONE sentence total + amount if bill; omit if not a bill.
 - clinicalNarrative: max 3 sentences on what happened clinically.
-- keyFindings: 3–5 bullets, each max 12 words - the most important takeaways.
-- careRecommendations: 2–4 bullets, each max 12 words - actionable next steps.
-- watchFor: 0–2 short bullets only if clinically relevant; else [].
+- keyFindings: 3-5 bullets, each max 12 words - the most important takeaways.
+- careRecommendations: 2-4 bullets, each max 12 words - actionable next steps.
+- watchFor: 0-2 short bullets only if clinically relevant; else [].
 - dataQualityNotes: ONE sentence on OCR/limitations.
 
 Structured items (keep brief):

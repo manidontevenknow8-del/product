@@ -39,7 +39,7 @@ function shortAnswerFor(question: string, categoryId: FaqCategoryId): string {
   }
 
   if (question.startsWith('Should') || question.startsWith('Do ') || question.startsWith('Can ')) {
-    return `In most cases, yes—${focus} is safer when documented in one place your vet, sitter, or family can access quickly.`;
+    return `In most cases, yes, ${focus} is safer when documented in one place your vet, sitter, or family can access quickly.`;
   }
 
   if (question.startsWith('When')) {

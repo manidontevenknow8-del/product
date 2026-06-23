@@ -6,9 +6,9 @@ const LEGACY_EXPANSION_BY_SLUG: Record<string, string> = {
 
 | Age | Core vaccines | Lifestyle / optional | Notes |
 | --- | --- | --- | --- |
-| 6–8 weeks | DHPP #1 | — | Confirm prior doses from breeder/shelter |
-| 10–12 weeks | DHPP #2 | Bordetella, Lepto start | Daycare/boarding may require Bordetella |
-| 14–16 weeks | DHPP #3, Rabies | Lepto booster | Many vets complete puppy series here |
+| 6-8 weeks | DHPP #1 |, | Confirm prior doses from breeder/shelter |
+| 10-12 weeks | DHPP #2 | Bordetella, Lepto start | Daycare/boarding may require Bordetella |
+| 14-16 weeks | DHPP #3, Rabies | Lepto booster | Many vets complete puppy series here |
 | 12 months | DHPP booster | Lifestyle boosters per risk | Rabies per local law (1- or 3-year) |
 
 ## PetClues CTA

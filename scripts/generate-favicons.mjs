@@ -3,7 +3,7 @@
  *
  * Pipeline mirrors the pre-change setup that worked for Google Search:
  * 1. Build a clean 512px master PNG
- * 2. Write favicon.svg (high-res embed — same link tag Google saw before)
+ * 2. Write favicon.svg (high-res embed, same link tag Google saw before)
  * 3. Rasterize from SVG at density 512 (vector pipeline; crisp downscales)
  */
 import fs from 'node:fs';
@@ -22,7 +22,7 @@ const MASTER_SIZE = 512;
 const SVG_DENSITY = 1024;
 
 if (!fs.existsSync(sourcePath)) {
-  console.error('Missing public/logo-source.png — add the master logo asset first.');
+  console.error('Missing public/logo-source.png, add the master logo asset first.');
   process.exit(1);
 }
 
@@ -42,7 +42,7 @@ async function buildMasterLogoPng() {
     .toBuffer();
 }
 
-/** favicon.svg link must stay — Google indexing used this exact tag set. */
+/** favicon.svg link must stay, Google indexing used this exact tag set. */
 async function writeFaviconSvg(masterPng) {
   const base64 = masterPng.toString('base64');
   const svg = `<?xml version="1.0" encoding="UTF-8"?>

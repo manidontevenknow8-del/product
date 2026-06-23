@@ -17,7 +17,7 @@ export const LIFE_STAGE_INSIGHTS: LifeStageInsight[] = [
       'Signs of anxiety in new environments',
     ],
     checkups: [
-      'Puppy wellness visits every 3–4 weeks until 16 weeks',
+      'Puppy wellness visits every 3-4 weeks until 16 weeks',
       'Discuss spay/neuter timing with your vet',
     ],
   },
@@ -135,7 +135,7 @@ export const GOLDEN_RETRIEVER_INSIGHTS: BreedInsight[] = [
     title: 'Activity recommendations',
     description:
       'Goldens thrive with daily exercise and mental stimulation. A tired Golden is a happy Golden.',
-    tip: 'Aim for 60–90 minutes of activity split across the day.',
+    tip: 'Aim for 60-90 minutes of activity split across the day.',
   },
 ];
 
@@ -179,7 +179,7 @@ export function getMilestonesForPet(
     {
       id: 'ms-senior',
       title: 'Senior life stage',
-      description: 'Golden Retrievers typically enter senior years around age 8–10.',
+      description: 'Golden Retrievers typically enter senior years around age 8-10.',
       eta: ageYears >= 8 ? 'Current chapter' : `~${8 - ageYears} years away`,
       type: 'life_stage',
     },

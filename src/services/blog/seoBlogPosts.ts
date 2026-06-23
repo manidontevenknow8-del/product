@@ -20,10 +20,10 @@ Puppies need a predictable shot timeline during their first year. Missing a boos
 
 ## Puppy vaccination schedule at a glance
 
-- **6–8 weeks:** DHPP (distemper combo)
-- **10–12 weeks:** DHPP booster, optional Bordetella
-- **14–16 weeks:** DHPP booster, rabies (per local law)
-- **12–16 months:** Adult boosters
+- **6-8 weeks:** DHPP (distemper combo)
+- **10-12 weeks:** DHPP booster, optional Bordetella
+- **14-16 weeks:** DHPP booster, rabies (per local law)
+- **12-16 months:** Adult boosters
 
 Always confirm timing with your veterinarian - breed, region, and lifestyle change the plan.
 
@@ -44,7 +44,7 @@ PetClues links **pet health records**, **vaccination reminders**, and your **eme
 
 ## FAQ
 
-**When do puppies get their first shots?** Most start at 6–8 weeks with a veterinarian-guided series.
+**When do puppies get their first shots?** Most start at 6-8 weeks with a veterinarian-guided series.
 
 **Can I use a pet health tracker app for vaccines?** Yes - digital reminders outperform paper calendars for busy pet parents.
 
@@ -177,9 +177,9 @@ Cats need a structured **cat vaccination schedule** during kittenhood and regula
 
 ## Kitten vaccine timeline
 
-- **6–8 weeks:** FVRCP (feline distemper combo)
-- **10–12 weeks:** FVRCP booster
-- **14–16 weeks:** FVRCP booster, rabies
+- **6-8 weeks:** FVRCP (feline distemper combo)
+- **10-12 weeks:** FVRCP booster
+- **14-16 weeks:** FVRCP booster, rabies
 - **1 year:** Adult boosters per vet plan
 
 ## Core vs non-core vaccines

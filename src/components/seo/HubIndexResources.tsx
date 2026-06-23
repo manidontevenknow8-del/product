@@ -16,7 +16,7 @@ type HubIndexResourcesProps = {
 export function HubIndexResources({
   showCommercial = true,
   showHubNav = true,
-  intro = 'Explore PetClues resources — organized guides, comparisons, and product pages for pet health records, vaccines, and everyday care.',
+  intro = 'Explore PetClues resources, organized guides, comparisons, and product pages for pet health records, vaccines, and everyday care.',
 }: HubIndexResourcesProps) {
   return (
     <aside className={styles.aside} aria-label="PetClues resources">

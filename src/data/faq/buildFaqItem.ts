@@ -71,7 +71,7 @@ export function buildFaqItem(seed: FaqSeed, index: number, categorySlugs: string
 4. Keep a one-page emergency summary with allergies, meds, and contacts.
 5. Share access with anyone who may care for your pet while you are away.
 
-**Why this matters:** ${categoryLabel} questions usually surface when you are rushed—before boarding, during travel, or at an after-hours clinic. A single searchable timeline prevents conflicting notes and duplicate tests.
+**Why this matters:** ${categoryLabel} questions usually surface when you are rushed, before boarding, during travel, or at an after-hours clinic. A single searchable timeline prevents conflicting notes and duplicate tests.
 
 **Common mistakes:** Waiting until an emergency to compile records, storing files only in email, forgetting to update medications after vet visits, and not sharing records with co-parents or sitters.
 

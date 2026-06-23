@@ -117,9 +117,9 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: OG_IMAGE_ALT,
   },
   [ROUTES.PRICING]: {
-    title: formatPageTitle('PetClues Membership — Annual Pet Health Plans'),
+    title: formatPageTitle('PetClues Membership: Annual Pet Health Plans'),
     description: formatMetaDescription(
-      'Annual memberships for organized pet parents. Free tier for one pet. Plus and Pro include health records, reminders, passports, and AI insights — billed once per year.',
+      'Annual memberships for organized pet parents. Free tier for one pet. Plus and Pro include health records, reminders, passports, and AI insights, billed once per year.',
     ),
     keywords: 'pet health app pricing, annual pet membership, pet care plans, pet records app',
     ogImage: DEFAULT_OG_IMAGE,
@@ -165,7 +165,7 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: 'PetClues comparison guides',
   },
   [ROUTES.BEST]: {
-    title: 'Best Pet Health Apps & Tools (2026) – Intent Guides | PetClues',
+    title: 'Best Pet Health Apps & Tools (2026): Intent Guides | PetClues',
     description:
       'Authoritative guides for the best pet health record apps, vaccination trackers, reminder apps, digital passports, and pet care platforms.',
     keywords:
@@ -174,7 +174,7 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImageAlt: 'PetClues best pet health app guides',
   },
   [ROUTES.GUIDES]: {
-    title: 'Pet Care Guides & Templates – Vaccines, Travel, Emergency | PetClues',
+    title: 'Pet Care Guides & Templates: Vaccines, Travel, Emergency | PetClues',
     description:
       'Programmatic pet care guides: dog and cat vaccination schedules by breed, travel checklists by country, emergency checklists, and health record templates.',
     keywords:

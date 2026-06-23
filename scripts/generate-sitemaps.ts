@@ -20,7 +20,7 @@ const CONTENT_LASTMOD = {
   legal: '2026-03-01',
 } as const;
 
-/** High-intent product landing pages — isolated for crawl-budget priority. */
+/** High-intent product landing pages, isolated for crawl-budget priority. */
 const COMMERCIAL_PATHS = [
   '/pet-health-records',
   '/digital-pet-passport',
@@ -31,7 +31,7 @@ const COMMERCIAL_PATHS = [
 
 const COMMERCIAL_PATH_SET = new Set<string>(COMMERCIAL_PATHS);
 
-/** Compare slugs that 301 to /best/:slug — exclude from sitemap, keep redirect for backlinks. */
+/** Compare slugs that 301 to /best/:slug, exclude from sitemap, keep redirect for backlinks. */
 const COMPARE_SITEMAP_EXCLUDED = new Set(['best-pet-health-record-app']);
 
 const BLOG_FILES = [
