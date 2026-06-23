@@ -29,7 +29,7 @@ export function GuidesHubPage() {
                 <h1 className={styles.title}>Pet care guides &amp; templates</h1>
                 <p className={styles.lead}>
                   {PROGRAMMATIC_PAGE_COUNT} programmatic guides across {collections.length}{' '}
-                  collections — vaccination schedules by breed, travel checklists by country,
+                  collections, vaccination schedules by breed, travel checklists by country,
                   emergency prep by species, and templates for medications and health records.
                 </p>
               </header>

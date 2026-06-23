@@ -25,7 +25,7 @@ export function CompareIndexPage() {
                 <h1 className={styles.title}>PetClues comparisons &amp; alternatives</h1>
                 <p className={styles.lead}>
                   {indexableCount} in-depth guides comparing PetClues with spreadsheets, cloud
-                  storage, notes apps, and pet health tools — for vaccination reminders, vet bills,
+                  storage, notes apps, and pet health tools, for vaccination reminders, vet bills,
                   and emergency pet info. For best-of roundups, see our{' '}
                   <Link to={ROUTES.BEST}>best pet health apps</Link> hub.
                 </p>

@@ -13,8 +13,8 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
     'pet vaccine reminder app',
   ],
   searchIntent:
-    'Owners who need proof of vaccines for boarding, travel, or daycare—and want due dates tracked without relying on clinic postcards.',
-  title: 'Pet Vaccination Records — Proof, Reminders, No Scrambling',
+    'Owners who need proof of vaccines for boarding, travel, or daycare, and want due dates tracked without relying on clinic postcards.',
+  title: 'Pet Vaccination Records: Proof, Reminders, No Scrambling',
   metaDescription:
     'Store rabies certificates and full vaccine history with due-date reminders. Boarding-ready exports and multi-pet schedules in one place.',
   schemaTopic: {
@@ -30,14 +30,14 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
   heroEyebrow: 'Vaccination records',
   heroTitle: 'Boarding opens tomorrow. Your rabies certificate should not be a mystery.',
   heroSubhead:
-    'PetClues stores vaccine products, dates, and certificates—and reminds you before due dates slip. Proof when a facility asks; peace when they do not.',
+    'PetClues stores vaccine products, dates, and certificates, and reminds you before due dates slip. Proof when a facility asks; peace when they do not.',
   heroImage: PAGE_IMG.reminders.vet,
   heroImageAlt: 'Veterinary vaccination reminder and certificate on a phone',
-  featuresTitle: 'Vaccines are dates, products, and paper—handled together',
+  featuresTitle: 'Vaccines are dates, products, and paper handled together',
   features: [
     {
       title: 'Certificate storage that counts',
-      body: 'Upload the signed rabies certificate—not just a note that says “done.” Kennels want manufacturer, lot, and veterinarian signature.',
+      body: 'Upload the signed rabies certificate, not just a note that says “done.” Kennels want manufacturer, lot, and veterinarian signature.',
     },
     {
       title: 'Due dates from the label, not memory',
@@ -57,7 +57,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
     },
     {
       title: 'Export for facilities',
-      body: 'Send a PDF bundle with certificates and dates formatted for front-desk staff—no retaking photos in the parking lot.',
+      body: 'Send a PDF bundle with certificates and dates formatted for front-desk staff, no retaking photos in the parking lot.',
     },
   ],
   trustTitle: 'Compliance without the guilt spiral',
@@ -72,7 +72,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
     },
     {
       title: 'Free reminders for core vaccines',
-      body: 'Rabies and routine due-date alerts are part of the free tier—because missed boosters are expensive in every sense.',
+      body: 'Rabies and routine due-date alerts are part of the free tier, because missed boosters are expensive in every sense.',
     },
     {
       title: 'Audit trail for your own sanity',
@@ -84,7 +84,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       id: 'why-proof-matters',
       title: 'Proof is a product of how you store, not how diligent you are',
       paragraphs: [
-        'Facilities do not accept diligence—they accept documentation. A verbal assurance that “she’s up to date” fails at check-in when the desk needs a rabies certificate with a visible expiration.',
+        'Facilities do not accept diligence. They accept documentation. A verbal assurance that “she’s up to date” fails at check-in when the desk needs a rabies certificate with a visible expiration.',
         'Most owners were vaccinated on time. The failure is archival: the certificate went home in a paper folder, lived on a fridge magnet, then vanished during a move. Digital storage fails too when it is only a photo lost among thousands.',
         'A vaccination record system must hold three things together: what was given, when it was given, and the paper that proves it. Separate any one of those and you are back to scrambling.',
       ],
@@ -93,9 +93,9 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       id: 'core-vs-lifestyle',
       title: 'Core vaccines, lifestyle vaccines, and the conversation behind them',
       paragraphs: [
-        'Core vaccines address diseases with serious public or animal health impact—rabies foremost among legal requirements in many regions. Lifestyle vaccines depend on exposure: boarding frequency, wildlife contact, geographic risk.',
+        'Core vaccines address diseases with serious public or animal health impact: rabies foremost among legal requirements in many regions. Lifestyle vaccines depend on exposure: boarding frequency, wildlife contact, geographic risk.',
         'Your record should tag which category each entry belongs to. When a daycare asks only for Bordetella, you should not scroll past unrelated entries.',
-        'When a veterinarian recommends skipping or deferring a lifestyle vaccine, note the rationale. Future you—and future vets—will wonder why a gap exists.',
+        'When a veterinarian recommends skipping or deferring a lifestyle vaccine, note the rationale. Future you, and future vets, will wonder why a gap exists.',
       ],
     },
     {
@@ -103,7 +103,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       title: 'Series vaccines punish small timing errors',
       paragraphs: [
         'Puppies and kittens do not receive full immunity from a single visit. Intervals between doses are part of the medicine. A record that shows “shot 2 of 3, due in three weeks” prevents accidental early revaccination or late gaps.',
-        'If you switch clinics mid-series, the new team needs the prior product names and dates—not a guess from memory. Upload the invoice if the certificate is not ready yet; update when paperwork arrives.',
+        'If you switch clinics mid-series, the new team needs the prior product names and dates, not a guess from memory. Upload the invoice if the certificate is not ready yet; update when paperwork arrives.',
         'When the series completes, set the adult booster schedule immediately. The handoff from intensive puppy care to annual maintenance is where records most often stall.',
       ],
     },
@@ -111,7 +111,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       id: 'boarding-travel',
       title: 'Boarding and travel deadlines are unforgiving',
       paragraphs: [
-        'Kennels often require vaccines administered a minimum number of days before arrival—not merely “current.” Read their policy when you book, then back-calculate from your stored dates.',
+        'Kennels often require vaccines administered a minimum number of days before arrival, not merely “current.” Read their policy when you book, then back-calculate from your stored dates.',
         'International travel may require government-endorsed forms beyond routine certificates. PetClues holds your clinic-issued proof; statutory forms stay in the official channel your vet describes.',
         'Build a boarding packet once: rabies certificate, Bordetella if required, emergency contact, feeding notes. Reuse and update rather than rebuilding under stress.',
         'Daycares sometimes require explicit flea and tick proof during warm months. Tag those entries seasonally so spring does not surprise you in May.',
@@ -121,7 +121,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       id: 'reminder-discipline',
       title: 'Reminders only work if they attach to reality',
       paragraphs: [
-        'Set reminders at the moment of vaccination—when the vet states the next due date. Waiting until you get home invites drift.',
+        'Set reminders at the moment of vaccination, when the vet states the next due date. Waiting until you get home invites drift.',
         'If a reminder fires and you already vaccinated, log the new dose and roll the date forward. Stale reminders erode trust in the system.',
         'For multi-pet homes, stagger is normal. A single calendar for “pets” collapses under complexity; per-pet due dates do not.',
       ],
@@ -130,7 +130,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       id: 'long-term-value',
       title: 'Vaccination discipline is a household skill',
       paragraphs: [
-        'Clinics send reminders; kennels send requirements; life sends distractions. Someone in the home must own the intersection—and that person should not be the only one who can prove compliance. Shared access means either partner can upload the certificate the night it arrives.',
+        'Clinics send reminders; kennels send requirements; life sends distractions. Someone in the home must own the intersection, and that person should not be the only one who can prove compliance. Shared access means either partner can upload the certificate the night it arrives.',
         'PetClues does not guess your local law. It remembers what your veterinarian documented and when the next dose is due. That distinction matters in regions where titers, exemptions, or lifestyle vaccines change the conversation.',
         'Treat vaccination logging like paying a utility: small recurring attention prevents large urgent costs. A missed booster can mean cancelled travel, refused boarding, or an extra clinic visit to restart a series.',
       ],
@@ -139,7 +139,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       id: 'adult-boosters',
       title: 'Adult boosters are where good systems prove themselves',
       paragraphs: [
-        'Puppy series intensity fades into annual or triennial rhythms. That is when memory fails—because nothing feels urgent for months at a time. Automated due dates matter more in year three than week three.',
+        'Puppy series intensity fades into annual or triennial rhythms. That is when memory fails, because nothing feels urgent for months at a time. Automated due dates matter more in year three than week three.',
         'When your municipality or landlord asks for proof, they rarely care about clinical nuance. They care whether the date on the certificate is valid today. Store the certificate image alongside the date entry so proof and record cannot separate.',
         'If you adopt an adult with unknown history, log what you know as “verified” and what you assume as “pending verification.” Honest gaps beat confident guesses when a new vet reviews the file.',
       ],
@@ -149,7 +149,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
       title: 'When paperwork is lost, your log becomes the source of truth',
       paragraphs: [
         'Clinics reissue certificates, but not instantly. Your dated entry with product name and lot can unblock boarding while admin catches up.',
-        'If a vet retires or a practice merges, records transfer slowly—or not at all. Owner-maintained history prevents amnesia during transitions.',
+        'If a vet retires or a practice merges, records transfer slowly, or not at all. Owner-maintained history prevents amnesia during transitions.',
         'Scan certificates the day you receive them. The cost of five minutes now is smaller than the cost of a cancelled trip later.',
       ],
     },
@@ -158,7 +158,7 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
     {
       question: 'Can PetClues tell me which vaccines my pet needs?',
       answer:
-        'PetClues tracks what you and your veterinarian decide. Protocol varies by species, age, law, and lifestyle—those decisions stay in the clinic.',
+        'PetClues tracks what you and your veterinarian decide. Protocol varies by species, age, law, and lifestyle. Those decisions stay in the clinic.',
     },
     {
       question: 'What should I photograph for rabies proof?',

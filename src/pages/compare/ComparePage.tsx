@@ -171,7 +171,7 @@ export function ComparePage() {
               <section className={styles.cta} aria-labelledby="compare-cta-heading">
                 <h2 id="compare-cta-heading">Ready to organize your pet&apos;s health records?</h2>
                 <p>
-                  Start free with PetClues — vaccination reminders, emergency passport, and records
+                  Start free with PetClues: vaccination reminders, emergency passport, and records
                   for one pet. Upgrade when you need AI vet bill decoding or multiple pets.
                 </p>
                 <div className={styles.ctaActions}>

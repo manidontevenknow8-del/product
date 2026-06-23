@@ -225,8 +225,8 @@ export function GuidesDetailPage() {
               <section className={styles.cta} aria-labelledby="guides-cta-heading">
                 <h2 id="guides-cta-heading">Track this guide in PetClues</h2>
                 <p>
-                  Turn schedules and checklists into reminders, documents, and an emergency passport
-                  — free for one pet.
+                  Turn schedules and checklists into reminders, documents, and an emergency passport,
+                  free for one pet.
                 </p>
                 <div className={styles.ctaActions}>
                   <Link to={ROUTES.SIGNUP}>

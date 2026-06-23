@@ -6,19 +6,30 @@
 
 .widgetBand {
   position: relative;
-  margin-top: calc(-1 * var(--space-6));
-  padding: 0 var(--space-6) var(--space-8);
   z-index: 2;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: calc(-1 * var(--space-4)) auto 0;
+  padding: 0 var(--space-6) var(--space-8);
+  box-sizing: border-box;
 }
 
 .widgetInner {
-  max-width: var(--max-width);
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
   padding: var(--space-6) var(--space-5);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-xl);
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 24px 48px -32px rgba(26, 31, 28, 0.28);
+}
+
+.widgetContent {
+  width: min(100%, 48rem);
+  margin-inline: auto;
 }
 
 @media (max-width: 640px) {

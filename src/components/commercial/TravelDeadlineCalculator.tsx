@@ -5,6 +5,7 @@ import { trackCommercialLead } from '@/analytics/commercialTracking';
 import { Button } from '@/components/ui';
 import { useHydrated } from '@/hooks/useHydrated';
 import { ROUTES } from '@/routes/paths';
+import styles from './TravelDeadlineCalculator.module.css';
 
 type Species = 'dog' | 'cat';
 
@@ -23,11 +24,6 @@ const SPECIES_LABEL: Record<Species, string> = {
   dog: 'Dog',
   cat: 'Cat',
 };
-
-const fieldClass =
-  'w-full rounded-lg border border-stone-200 bg-white px-3 py-2.5 font-sans text-sm text-stone-800 shadow-sm outline-none transition-colors placeholder:text-stone-400 focus:border-stone-400 focus:ring-2 focus:ring-stone-200/80';
-
-const labelClass = 'mb-1.5 block font-sans text-sm font-medium text-stone-700';
 
 function parseDateInput(value: string): Date | null {
   if (!value) return null;
@@ -97,26 +93,21 @@ function evaluateClearance(
   };
 }
 
-const RESULT_STYLES: Record<
-  Exclude<ClearanceState, 'idle'>,
-  { panel: string; badge: string; badgeLabel: string }
-> = {
-  incubation: {
-    panel: 'border-rose-200/80 bg-rose-50/50 ring-rose-100/80',
-    badge: 'border-rose-200/90 bg-rose-100/70 text-rose-900',
-    badgeLabel: 'Clearance denied',
-  },
-  expired: {
-    panel: 'border-rose-200/80 bg-rose-50/50 ring-rose-100/80',
-    badge: 'border-rose-200/90 bg-rose-100/70 text-rose-900',
-    badgeLabel: 'Clearance denied',
-  },
-  cleared: {
-    panel: 'border-emerald-200/80 bg-emerald-50/40 ring-emerald-100/80',
-    badge: 'border-emerald-200/90 bg-emerald-100/70 text-emerald-900',
-    badgeLabel: 'Cleared for travel',
-  },
-};
+function resultPanelClass(state: ClearanceState): string {
+  if (state === 'cleared') return `${styles.resultPanel} ${styles.resultPanelCleared}`;
+  if (state === 'incubation' || state === 'expired') return `${styles.resultPanel} ${styles.resultPanelDenied}`;
+  return styles.resultPanel;
+}
+
+function resultBadgeClass(state: ClearanceState): string {
+  if (state === 'cleared') return `${styles.resultBadge} ${styles.resultBadgeCleared}`;
+  return `${styles.resultBadge} ${styles.resultBadgeDenied}`;
+}
+
+function resultBadgeLabel(state: ClearanceState): string {
+  if (state === 'cleared') return 'Cleared for travel';
+  return 'Clearance denied';
+}
 
 export function TravelDeadlineCalculator() {
   const hydrated = useHydrated();
@@ -133,29 +124,26 @@ export function TravelDeadlineCalculator() {
   );
 
   const showResult = result.state !== 'idle';
-  const resultStyle = result.state !== 'idle' ? RESULT_STYLES[result.state] : null;
 
   return (
-    <div className="mx-auto w-full max-w-xl">
-      <header className="mb-6 text-center sm:text-left">
-        <p className="font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-stone-500">
-          Travel clearance check
-        </p>
-        <h2 className="mt-1 font-serif text-2xl text-stone-900">Rabies travel deadline calculator</h2>
-        <p className="mt-1.5 font-sans text-sm leading-relaxed text-stone-500">
+    <div className={styles.root}>
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Travel clearance check</p>
+        <h2 className={styles.title}>Rabies travel deadline calculator</h2>
+        <p className={styles.lead}>
           Verify the 28-day incubation window and one-year validity before boarding or crossing borders.
         </p>
       </header>
 
-      <div className="overflow-hidden rounded-xl border border-stone-200 bg-white shadow-[0_16px_40px_-28px_rgba(28,25,23,0.35)]">
-        <div className="space-y-5 p-5 sm:p-6">
-          <div className="grid gap-5 sm:grid-cols-3">
-            <label className="block sm:col-span-1">
-              <span className={labelClass}>Species</span>
+      <div className={styles.shell}>
+        <div className={styles.panel}>
+          <div className={styles.formGrid}>
+            <label className={styles.fieldGroup}>
+              <span className={styles.label}>Species</span>
               <select
                 value={species}
                 onChange={(event) => setSpecies(event.target.value as Species)}
-                className={fieldClass}
+                className={styles.field}
                 aria-label="Species"
               >
                 <option value="dog">Dog</option>
@@ -163,24 +151,24 @@ export function TravelDeadlineCalculator() {
               </select>
             </label>
 
-            <label className="block sm:col-span-1">
-              <span className={labelClass}>Last rabies vaccine date</span>
+            <label className={styles.fieldGroup}>
+              <span className={styles.label}>Last rabies vaccine date</span>
               <input
                 type="date"
                 value={vaccineDate}
                 onChange={(event) => setVaccineDate(event.target.value)}
-                className={fieldClass}
+                className={styles.field}
                 aria-label="Last rabies vaccine date"
               />
             </label>
 
-            <label className="block sm:col-span-1">
-              <span className={labelClass}>Target boarding / travel date</span>
+            <label className={styles.fieldGroup}>
+              <span className={styles.label}>Target boarding / travel date</span>
               <input
                 type="date"
                 value={travelDate}
                 onChange={(event) => setTravelDate(event.target.value)}
-                className={fieldClass}
+                className={styles.field}
                 aria-label="Target boarding or travel date"
               />
             </label>
@@ -195,28 +183,15 @@ export function TravelDeadlineCalculator() {
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               role="status"
               aria-live="polite"
-              className={[
-                'rounded-xl border px-4 py-4 ring-1',
-                showResult && resultStyle
-                  ? resultStyle.panel
-                  : 'border-stone-200/80 bg-stone-50/40 ring-transparent',
-              ].join(' ')}
+              className={resultPanelClass(result.state)}
             >
-              {showResult && resultStyle ? (
+              {showResult ? (
                 <>
-                  <span
-                    className={`inline-flex rounded-full border px-2.5 py-1 font-sans text-[10px] font-medium uppercase tracking-wider ${resultStyle.badge}`}
-                  >
-                    {resultStyle.badgeLabel}
-                  </span>
-                  <p className="mt-3 font-sans text-sm font-medium leading-snug text-stone-800">
-                    {result.message}
-                  </p>
-                  {result.detail && (
-                    <p className="mt-2 font-sans text-xs leading-relaxed text-stone-600">{result.detail}</p>
-                  )}
+                  <span className={resultBadgeClass(result.state)}>{resultBadgeLabel(result.state)}</span>
+                  <p className={styles.resultMessage}>{result.message}</p>
+                  {result.detail && <p className={styles.resultDetail}>{result.detail}</p>}
                   {result.state === 'cleared' && (
-                    <div className="mt-4">
+                    <div className={styles.ctaRow}>
                       <Link
                         to={ROUTES.SIGNUP}
                         onClick={() => trackCommercialLead('widget_travel_calculator', pathname)}
@@ -230,18 +205,16 @@ export function TravelDeadlineCalculator() {
                 </>
               ) : (
                 <>
-                  <p className="font-sans text-sm text-stone-700">{result.message}</p>
-                  {result.detail && (
-                    <p className="mt-1.5 font-sans text-xs leading-relaxed text-stone-500">{result.detail}</p>
-                  )}
+                  <p className={styles.resultIdleMessage}>{result.message}</p>
+                  {result.detail && <p className={styles.resultIdleDetail}>{result.detail}</p>}
                 </>
               )}
             </motion.div>
           </AnimatePresence>
         </div>
 
-        <div className="border-t border-stone-100 bg-stone-50/60 px-5 py-3 sm:px-6">
-          <p className="font-sans text-[11px] leading-relaxed text-stone-500">
+        <div className={styles.footer}>
+          <p className={styles.footerText}>
             For planning purposes only. Local law, airline policy, and your veterinarian&apos;s protocol may
             differ. PetClues does not issue travel clearance.
           </p>

@@ -62,7 +62,9 @@ export function CommercialLandingPage() {
       {pathname === ROUTES.PET_HEALTH_RECORDS && (
         <section className={styles.widgetBand} aria-label="Document scanner demonstration">
           <div className={styles.widgetInner}>
-            <DocumentScannerDemo />
+            <div className={styles.widgetContent}>
+              <DocumentScannerDemo />
+            </div>
           </div>
         </section>
       )}
@@ -70,7 +72,9 @@ export function CommercialLandingPage() {
       {pathname === ROUTES.PET_VACCINATION_RECORDS && (
         <section className={styles.widgetBand} aria-label="Travel deadline calculator">
           <div className={styles.widgetInner}>
-            <TravelDeadlineCalculator />
+            <div className={styles.widgetContent}>
+              <TravelDeadlineCalculator />
+            </div>
           </div>
         </section>
       )}

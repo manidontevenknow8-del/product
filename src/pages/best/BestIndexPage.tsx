@@ -23,7 +23,7 @@ export function BestIndexPage() {
                 <h1 className={styles.title}>Best pet health apps &amp; tools</h1>
                 <p className={styles.lead}>
                   {INTENT_PAGE_COUNT} intent-focused guides for pet owners searching for the best
-                  health record apps, vaccination trackers, reminder tools, and digital passports —
+                  health record apps, vaccination trackers, reminder tools, and digital passports,
                   with comparisons, citations, and FAQs. Head-to-head alternatives live in{' '}
                   <Link to={ROUTES.COMPARE}>comparisons</Link>.
                 </p>

@@ -109,7 +109,7 @@ export function BestIntentPage() {
                       <a href={citation.url} target="_blank" rel="noopener noreferrer">
                         {citation.name}
                       </a>
-                      <span className={styles.citationContext}> — {citation.context}</span>
+                      <span className={styles.citationContext}>, {citation.context}</span>
                     </li>
                   ))}
                 </ul>
@@ -214,7 +214,7 @@ export function BestIntentPage() {
               <section className={styles.cta} aria-labelledby="intent-cta-heading">
                 <h2 id="intent-cta-heading">Ready to organize your pet&apos;s health records?</h2>
                 <p>
-                  Start free with PetClues — vaccination reminders, emergency passport, and records
+                  Start free with PetClues: vaccination reminders, emergency passport, and records
                   for one pet. Upgrade when you need AI vet bill decoding or multiple pets.
                 </p>
                 <div className={styles.ctaActions}>

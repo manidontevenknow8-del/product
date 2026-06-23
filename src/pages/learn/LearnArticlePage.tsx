@@ -188,7 +188,7 @@ export function LearnArticlePage() {
               <section className={styles.cta} aria-labelledby="learn-cta-heading">
                 <h2 id="learn-cta-heading">Put this guide into practice</h2>
                 <p>
-                  Start free with PetClues — organize records, set reminders, and build your
+                  Start free with PetClues: organize records, set reminders, and build your
                   pet&apos;s emergency passport in one calm app.
                 </p>
                 <div className={styles.ctaActions}>
