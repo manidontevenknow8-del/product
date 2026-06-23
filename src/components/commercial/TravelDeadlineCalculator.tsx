@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCommercialLead } from '@/analytics/commercialTracking';
 import { Button } from '@/components/ui';
+import { useHydrated } from '@/hooks/useHydrated';
 import { ROUTES } from '@/routes/paths';
 
 type Species = 'dog' | 'cat';
@@ -118,7 +119,9 @@ const RESULT_STYLES: Record<
 };
 
 export function TravelDeadlineCalculator() {
+  const hydrated = useHydrated();
   const reduceMotion = useReducedMotion();
+  const animateEntrance = hydrated && !reduceMotion;
   const { pathname } = useLocation();
   const [species, setSpecies] = useState<Species>('dog');
   const [vaccineDate, setVaccineDate] = useState('');
@@ -186,7 +189,7 @@ export function TravelDeadlineCalculator() {
           <AnimatePresence mode="wait">
             <motion.div
               key={result.state + result.message}
-              initial={reduceMotion ? false : { opacity: 0, y: 6 }}
+              initial={animateEntrance ? { opacity: 0, y: 6 } : false}
               animate={{ opacity: 1, y: 0 }}
               exit={reduceMotion ? undefined : { opacity: 0, y: -4 }}
               transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}

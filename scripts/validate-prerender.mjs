@@ -57,6 +57,12 @@ const samples = [
     titleIncludes: 'Digital Pet Passport',
     bodyIncludes: 'passport',
   },
+  {
+    label: 'pet vaccination records',
+    file: 'pet-vaccination-records/index.html',
+    titleIncludes: 'Vaccination Records',
+    bodyIncludes: 'rabies',
+  },
 ];
 
 function extractRootInnerHtml(html) {

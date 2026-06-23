@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState, type DragEvent } from 'react'
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { trackCommercialLead } from '@/analytics/commercialTracking';
+import { useHydrated } from '@/hooks/useHydrated';
 import { ROUTES } from '@/routes/paths';
 
 type DemoPhase = 'idle' | 'scanning' | 'complete';
@@ -136,10 +137,12 @@ function ExtractedRecordCard({ pagePath }: { pagePath: string }) {
 
 export function DocumentScannerDemo() {
   const { pathname } = useLocation();
+  const hydrated = useHydrated();
   const [phase, setPhase] = useState<DemoPhase>('idle');
   const [isDragging, setIsDragging] = useState(false);
   const scanTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reduceMotion = useReducedMotion();
+  const animateEntrance = hydrated && !reduceMotion;
 
   const clearScanTimer = useCallback(() => {
     if (scanTimerRef.current) {
@@ -200,7 +203,7 @@ export function DocumentScannerDemo() {
               <motion.button
                 key="dropzone"
                 type="button"
-                initial={{ opacity: 0 }}
+                initial={animateEntrance ? { opacity: 0 } : false}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 onClick={startScan}
@@ -241,7 +244,7 @@ export function DocumentScannerDemo() {
             {phase === 'scanning' && (
               <motion.div
                 key="scanning"
-                initial={{ opacity: 0 }}
+                initial={animateEntrance ? { opacity: 0 } : false}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 className="space-y-4"
@@ -273,7 +276,7 @@ export function DocumentScannerDemo() {
             )}
 
             {phase === 'complete' && (
-              <motion.div key="complete" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+              <motion.div key="complete" initial={animateEntrance ? { opacity: 0 } : false} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                 <ExtractedRecordCard pagePath={pathname} />
                 <button
                   type="button"
