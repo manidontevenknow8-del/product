@@ -111,7 +111,31 @@ function assertCrawlSafe(label, filePath, titleIncludes, bodyIncludes) {
     throw new Error(`[${label}] missing expected body content: ${bodyIncludes}`);
   }
 
+  assertStylesLoaded(label, html, rootBody, filePath);
+
   console.log(`[PASS] ${label}`);
+}
+
+function assertStylesLoaded(label, html, rootBody, filePath) {
+  const stylesheetHref = html.match(/<link rel="stylesheet"[^>]+href="([^"]+)"/i)?.[1];
+  if (!stylesheetHref) {
+    throw new Error(`[${label}] missing stylesheet link`);
+  }
+
+  const cssModuleClass = rootBody.match(/\bclass="[^"]*\b(_[a-zA-Z0-9]+_[a-z0-9]+)\b/i)?.[1];
+  if (!cssModuleClass) return;
+
+  const cssPath = join(dist, stylesheetHref.replace(/^\//, ''));
+  if (!existsSync(cssPath)) {
+    throw new Error(`[${label}] stylesheet file missing: ${cssPath}`);
+  }
+
+  const css = readFileSync(cssPath, 'utf8');
+  if (!css.includes(cssModuleClass)) {
+    throw new Error(
+      `[${label}] prerender body uses ${cssModuleClass} but linked stylesheet does not define it (${stylesheetHref})`,
+    );
+  }
 }
 
 let queryMeta = {};

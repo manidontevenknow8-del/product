@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ROUTES } from '@/routes/paths';
 import { ProtectedRoute, GuestRoute } from '@/auth';
 import { LandingPage } from '@/pages/LandingPage';
+import { CommercialLandingPage } from '@/pages/commercial/CommercialLandingPage';
 import { lazyRoute, RouteFallback } from '@/routes/lazyRoute';
 
 const OnboardingPage = lazyRoute(() => import('@/pages/OnboardingPage'), 'OnboardingPage');
@@ -55,10 +56,6 @@ const GuidesCollectionPage = lazyRoute(() => import('@/pages/guides/GuidesCollec
 const GuidesDetailPage = lazyRoute(() => import('@/pages/guides/GuidesDetailPage'), 'GuidesDetailPage');
 const LearnIndexPage = lazyRoute(() => import('@/pages/learn/LearnIndexPage'), 'LearnIndexPage');
 const LearnArticlePage = lazyRoute(() => import('@/pages/learn/LearnArticlePage'), 'LearnArticlePage');
-const CommercialLandingPage = lazyRoute(
-  () => import('@/pages/commercial/CommercialLandingPage'),
-  'CommercialLandingPage',
-);
 
 export function App() {
   return (
