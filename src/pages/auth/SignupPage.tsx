@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { AuthLayout } from '@/layouts/AuthLayout';
 import { Button, Input } from '@/components/ui';
-import { AuthDivider, GoogleSignInButton } from '@/components/auth/GoogleSignInButton';
 import { useAuth } from '@/auth/AuthProvider';
 import { useAnalytics } from '@/analytics';
 import { ROUTES } from '@/routes/paths';
@@ -11,7 +10,7 @@ import { PAGE_IMG } from '@/data/pageImages';
 import styles from './AuthPages.module.css';
 
 export function SignupPage() {
-  const { signUp, signInWithGoogle } = useAuth();
+  const { signUp } = useAuth();
   const { track } = useAnalytics();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
@@ -21,7 +20,6 @@ export function SignupPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [googleLoading, setGoogleLoading] = useState(false);
 
   const fromPetMatch = searchParams.get('from') === 'pet-match';
   const referralCode = searchParams.get('ref');
@@ -53,35 +51,6 @@ export function SignupPage() {
     navigate(result.needsOnboarding === false ? ROUTES.DASHBOARD : onboardingPath);
   };
 
-  const handleGoogleSignUp = async () => {
-    setError('');
-    setGoogleLoading(true);
-    const result = await signInWithGoogle({
-      referralCode: referralCode ?? undefined,
-      fromPetMatch,
-    });
-    setGoogleLoading(false);
-
-    if (result.error) {
-      setError(result.error);
-      return;
-    }
-
-    if (result.emailVerified === undefined) return;
-
-    track('signup_completed', { provider: 'google' });
-
-    if (result.emailVerified === false) {
-      navigate(ROUTES.VERIFY_EMAIL, { replace: true });
-      return;
-    }
-
-    const onboardingPath = fromPetMatch
-      ? `${ROUTES.ONBOARDING}?from=pet-match`
-      : ROUTES.ONBOARDING;
-    navigate(result.needsOnboarding === false ? ROUTES.DASHBOARD : onboardingPath, { replace: true });
-  };
-
   return (
     <AuthLayout
       visualImage={PAGE_IMG.auth.signup}
@@ -103,8 +72,6 @@ export function SignupPage() {
 
       <form className={styles.form} onSubmit={handleSubmit}>
         {error && <div className={styles.error}>{error}</div>}
-        <GoogleSignInButton onClick={handleGoogleSignUp} loading={googleLoading} disabled={loading} />
-        <AuthDivider />
         <Input
           label="Full name"
           value={name}
@@ -132,7 +99,7 @@ export function SignupPage() {
           minLength={8}
           autoComplete="new-password"
         />
-        <Button variant="primary" size="lg" fullWidth type="submit" disabled={loading || googleLoading}>
+        <Button variant="primary" size="lg" fullWidth type="submit" disabled={loading}>
           {loading ? 'Creating account…' : 'Create account'}
         </Button>
       </form>
