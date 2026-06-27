@@ -8,6 +8,7 @@ import { DocumentScannerDemo } from '@/components/commercial/DocumentScannerDemo
 import { getCommercialPageByPath } from '@/data/commercial';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { CommercialPageSEO } from '@/seo/commercialSeo';
+import { DynamicAuthorityLinks } from '@/components/seo/DynamicAuthorityLinks';
 import { ROUTES } from '@/routes/paths';
 import styles from './CommercialLandingPage.module.css';
 
@@ -169,6 +170,8 @@ export function CommercialLandingPage() {
             </Link>
           </div>
         </section>
+
+        <DynamicAuthorityLinks currentPath={pathname} />
 
         <p className={styles.disclaimer}>{HEALTH_DISCLAIMER}</p>
       </div>

@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { PublicLayout } from '@/layouts/PublicLayout';
 import { Button, Badge, LoadingState } from '@/components/ui';
 import { EmptyFallback } from '@/components/errors/EmptyFallback';
@@ -7,6 +7,7 @@ import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { BlogPostBody } from '@/components/blog/BlogPostBody';
 import { BlogInternalLinks } from '@/components/blog/BlogInternalLinks';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { DynamicAuthorityLinks } from '@/components/seo/DynamicAuthorityLinks';
 import { BlogArticleNotFoundSEO, BlogPostSEO } from '@/seo/blogSeo';
 import { getBlogPostBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { getBlogRepository } from '@/services/blog';
@@ -50,6 +51,7 @@ function estimateReadMinutes(content: string): number {
 
 export function BlogPostPage() {
   const { slug } = useParams<{ slug: string }>();
+  const { pathname } = useLocation();
   const prerenderData = usePrerenderRouteData();
   const prerenderPost =
     prerenderData?.blogPost?.slug === slug ? prerenderData?.blogPost : undefined;
@@ -187,6 +189,8 @@ export function BlogPostPage() {
             <div className={styles.prose}>
               <BlogPostBody content={post.content} />
             </div>
+
+            <DynamicAuthorityLinks currentPath={pathname} />
 
             {linkPlan && <BlogInternalLinks plan={linkPlan} />}
 

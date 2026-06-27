@@ -19,6 +19,9 @@ import {
 import { getBlogIndexBreadcrumbs, getBlogPostBreadcrumbs } from './pageBreadcrumbs';
 import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 import { useJsonLd } from './useJsonLd';
+import { KnowledgeGraph } from '@/components/seo/KnowledgeGraph';
+import { getKnowledgeGraphConfigForBlogSlug } from '@/data/knowledgeGraphBlogEntities';
+import { buildKnowledgeGraphSchema } from '@/seo/buildKnowledgeGraphSchema';
 
 type BlogIndexSEOOptions = {
   category?: BlogCategoryId;
@@ -189,14 +192,23 @@ type BlogPostSEOProps = {
 
 export function BlogPostSEO({ post }: BlogPostSEOProps) {
   const config = getBlogPostSEO(post);
+  const knowledgeGraph = getKnowledgeGraphConfigForBlogSlug(post.slug);
+
   useJsonLd(`blog-post-${post.slug}`, getBlogPostingStructuredData(post));
 
   return (
     <>
       <MetaTags config={config} />
       <OpenGraph config={config} />
+      {knowledgeGraph ? <KnowledgeGraph {...knowledgeGraph} /> : null}
     </>
   );
+}
+
+/** Prerender-only helper — entity graph for growth-band blog posts. */
+export function getBlogKnowledgeGraphStructuredData(slug: string) {
+  const config = getKnowledgeGraphConfigForBlogSlug(slug);
+  return config ? buildKnowledgeGraphSchema(config) : null;
 }
 
 type BlogArticleNotFoundSEOProps = {

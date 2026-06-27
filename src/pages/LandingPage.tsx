@@ -13,6 +13,7 @@ import {
   CTASection,
   Footer,
 } from '@/components/landing';
+import { DynamicAuthorityLinks } from '@/components/seo/DynamicAuthorityLinks';
 import styles from './LandingPage.module.css';
 
 export function LandingPage({ marketingShell = false }: { marketingShell?: boolean }) {
@@ -33,6 +34,7 @@ export function LandingPage({ marketingShell = false }: { marketingShell?: boole
         <TrustSection />
         <LandingExploreSection />
         <LandingBlogPreview />
+        <DynamicAuthorityLinks />
         <CTASection />
       </main>
       <Footer />

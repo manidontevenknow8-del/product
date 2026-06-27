@@ -30,6 +30,7 @@ import {
   getBlogIndexStructuredData,
   getBlogPostSEO,
   getBlogPostingStructuredData,
+  getBlogKnowledgeGraphStructuredData,
 } from '@/seo/blogSeo';
 import { buildBreadcrumbListSchema } from '@/seo/breadcrumbSchema';
 import {
@@ -150,9 +151,14 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
     const raw = MOCK_BLOG_POSTS.find((post) => post.slug === slug && post.status === 'published');
     if (!raw) return null;
     const post = applyLongFormContent(raw);
-    return withSchema(getBlogPostSEO(post), [
+    const schemas: PrerenderDocument['schemas'] = [
       schemaEntry(`blog-post-${slug}`, getBlogPostingStructuredData(post)),
-    ]);
+    ];
+    const entityGraph = getBlogKnowledgeGraphStructuredData(slug);
+    if (entityGraph) {
+      schemas.push(schemaEntry(`knowledge-graph-${slug}`, entityGraph));
+    }
+    return withSchema(getBlogPostSEO(post), schemas);
   }
 
   if (pathname === ROUTES.COMPARE) {
