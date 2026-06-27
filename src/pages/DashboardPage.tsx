@@ -1,9 +1,8 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { capturePostHogEvent } from '@/analytics/posthog';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
-import { SectionIntro } from '@/components/visual';
-import { Avatar } from '@/components/ui';
+import { EditorialUpgradeModal } from '@/components/ui';
 import { PAGE_IMG } from '@/data/pageImages';
 import { EmptyDashboardState } from '@/components/empty-states';
 import { DashboardHeaderLoading } from '@/components/dashboard';
@@ -14,7 +13,6 @@ import { useDocuments } from '@/documents';
 import { usePetCareScore } from '@/petCareScore';
 import { DailyCheckInCard } from '@/components/daily-check-in';
 import { useDailyCheckIn } from '@/dailyCheckIn';
-import { AddAnotherPetButton, PetSwitcherHero } from '@/components/pets';
 import { PremiumGate } from '@/components/ui';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
@@ -35,10 +33,12 @@ import { isDemoDataEnabled } from '@/data/demoData';
 import { mockRecentActivity } from '@/data/dashboardData';
 import type { ActivityLogEntry } from '@/services/activity/activityLogService';
 import { petRecordToPet } from '@/services/pets/petService';
+import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
 import { getAvatarInitials } from '@/services/pets/petUtils';
 import { getTrendLabel } from '@/utils/petCareScoreUtils';
 import { ROUTES } from '@/routes/paths';
 import type { MonthlyPetLifeReport } from '@/types/monthlyReport';
+import type { PetRecord } from '@/services/pets/petTypes';
 import styles from './DashboardPage.module.css';
 
 const clamp = (n: number) => Math.max(0, Math.min(100, n));
@@ -55,22 +55,6 @@ function getGreeting(): string {
   return 'Good evening';
 }
 
-const TASK_IMAGE: Record<DashboardNextTask['urgency'], string> = {
-  overdue: PAGE_IMG.reminders.vet,
-  today: PAGE_IMG.reminders.notify,
-  soon: PAGE_IMG.app.reminders,
-  setup: PAGE_IMG.profile.health,
-  calm: PAGE_IMG.app.trust,
-};
-
-const TASK_ACCENT: Record<DashboardNextTask['urgency'], string> = {
-  overdue: styles.accentOverdue,
-  today: styles.accentToday,
-  soon: styles.accentSoon,
-  setup: styles.accentSetup,
-  calm: styles.accentCalm,
-};
-
 const TASK_DUE: Record<DashboardNextTask['urgency'], string> = {
   overdue: styles.dueOverdue,
   today: styles.dueToday,
@@ -85,34 +69,27 @@ const CHIP_CLASS = {
   attention: styles.chipAttention,
 } as const;
 
-const MOMENT_ICON_CLASS: Record<DashboardMoment['kind'], string> = {
-  vaccination: styles.iconVaccination,
-  reminder: styles.iconReminder,
-  document: styles.iconDocument,
-  health: styles.iconHealth,
-  automation: styles.iconAutomation,
-  score: styles.iconScore,
-  report: styles.iconReport,
-  update: styles.iconUpdate,
-};
-
-function ScoreRing({ score, size = 120 }: { score: number; size?: number }) {
-  const stroke = 8;
+function ScoreRing({ score, size = 140 }: { score: number; size?: number }) {
+  const stroke = 4;
   const r = (size - stroke) / 2;
   const c = 2 * Math.PI * r;
   const offset = c - (clamp(score) / 100) * c;
-  const strokeColor =
-    score >= 80 ? 'var(--color-success)' : score >= 60 ? 'var(--color-warning)' : 'var(--color-danger)';
 
   return (
     <svg className={styles.ringSvg} width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden>
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--color-border)" strokeWidth={stroke} />
+      <defs>
+        <linearGradient id="lux-score-arc" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#A8833A" />
+          <stop offset="100%" stopColor="#1C2B1D" />
+        </linearGradient>
+      </defs>
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#DDD5C8" strokeWidth={stroke} />
       <circle
         cx={size / 2}
         cy={size / 2}
         r={r}
         fill="none"
-        stroke={strokeColor}
+        stroke="url(#lux-score-arc)"
         strokeWidth={stroke}
         strokeLinecap="round"
         strokeDasharray={c}
@@ -122,74 +99,142 @@ function ScoreRing({ score, size = 120 }: { score: number; size?: number }) {
   );
 }
 
-function StatsStrip({
+function StatValueDisplay({ value, warn }: { value: string; warn?: boolean }) {
+  const kgMatch = value.match(/^([\d.]+)\s*kg$/i);
+  const valueClass = `${styles.statValue}${warn ? ` ${styles.statValueWarn}` : ''}`;
+  if (kgMatch) {
+    return (
+      <span className={valueClass}>
+        {kgMatch[1]} <span className={styles.statUnit}>kg</span>
+      </span>
+    );
+  }
+  return <span className={valueClass}>{value}</span>;
+}
+
+function PetStack({
+  pets,
+  activeId,
+  onSelect,
+}: {
+  pets: PetRecord[];
+  activeId: string;
+  onSelect: (id: string) => void;
+}) {
+  if (pets.length <= 1) return null;
+
+  return (
+    <div className={styles.petStack} role="tablist" aria-label="Switch pet">
+      {pets.map((pet, index) => (
+        <button
+          key={pet.id}
+          type="button"
+          role="tab"
+          aria-selected={pet.id === activeId}
+          aria-label={pet.name}
+          title={pet.name}
+          style={{ zIndex: index + 1 }}
+          onClick={() => onSelect(pet.id)}
+          className={`${styles.petStackBtn} ${pet.id === activeId ? styles.petStackBtnActive : ''}`}
+        >
+          {pet.photoUrl ? (
+            <img src={pet.photoUrl} alt="" className={styles.petStackImg} />
+          ) : (
+            <span className={styles.petStackInitials}>{getAvatarInitials(pet.name)}</span>
+          )}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+function AddPetGhostButton() {
+  const navigate = useNavigate();
+  const { pets } = usePets();
+  const petAccess = useFeatureAccess('pets');
+  const [upgradeOpen, setUpgradeOpen] = useState(false);
+
+  if (pets.length === 0) return null;
+
+  const handleClick = () => {
+    if (petAccess.isAllowed) {
+      navigate(`${ROUTES.ONBOARDING}?add=true`);
+      return;
+    }
+    setUpgradeOpen(true);
+  };
+
+  return (
+    <>
+      <button type="button" className={styles.heroGhostBtn} onClick={handleClick}>
+        Add another pet
+      </button>
+      <EditorialUpgradeModal
+        isOpen={upgradeOpen}
+        onClose={() => setUpgradeOpen(false)}
+        eyebrow="PetClues Plus"
+        title="Your family is growing"
+        description="Upgrade to Plus to manage up to 3 pets and unlock unlimited care history."
+        requiredTier="Plus"
+      />
+    </>
+  );
+}
+
+function DashboardSectionIntro({
+  eyebrow,
+  title,
+  lead,
+  titleId,
+}: {
+  eyebrow: string;
+  title: string;
+  lead?: string;
+  titleId?: string;
+}) {
+  return (
+    <header className={styles.sectionIntro}>
+      <p className={styles.sectionKicker}>{eyebrow}</p>
+      <h2 id={titleId} className={styles.sectionTitle}>
+        {title}
+      </h2>
+      {lead && <p className={styles.sectionLead}>{lead}</p>}
+    </header>
+  );
+}
+
+function StatsBand({
   upcoming,
   overdue,
   score,
   weight,
-  todayFed,
-  weekWalkKm,
 }: {
   upcoming: number;
   overdue: number;
   score: number | null;
   weight: string | null;
-  todayFed: string | null;
-  weekWalkKm: number;
 }) {
   return (
-    <div className={styles.statsStrip} aria-label="Care summary">
-      <div className={`${styles.statPill} ${overdue > 0 ? styles.statWarn : ''}`}>
-        <span className={styles.statValue}>{overdue}</span>
-        <span className={styles.statLabel}>overdue</span>
-      </div>
-      <div className={styles.statPill}>
-        <span className={styles.statValue}>{upcoming}</span>
-        <span className={styles.statLabel}>upcoming</span>
-      </div>
-      <div className={styles.statPill}>
-        <span className={styles.statValue}>{score ?? '-'}</span>
-        <span className={styles.statLabel}>care score</span>
-      </div>
-      <div className={styles.statPill}>
-        <span className={styles.statValue}>{weight ?? '-'}</span>
-        <span className={styles.statLabel}>weight</span>
-      </div>
-      <div className={styles.statPill}>
-        <span className={styles.statValue}>{weekWalkKm > 0 ? weekWalkKm : '-'}</span>
-        <span className={styles.statLabel}>km this week</span>
-      </div>
-      <div className={styles.statPill}>
-        <span className={styles.statValue} title={todayFed ?? undefined}>
-          {todayFed ? (todayFed.length > 18 ? `${todayFed.slice(0, 18)}…` : todayFed) : '-'}
-        </span>
-        <span className={styles.statLabel}>fed today</span>
+    <div className={styles.statsBand} data-reveal aria-label="Care summary">
+      <div className={styles.statsBandInner}>
+        <div className={styles.statCell}>
+          <StatValueDisplay value={String(overdue)} warn={overdue > 0} />
+          <span className={styles.statLabel}>Overdue</span>
+        </div>
+        <div className={styles.statCell}>
+          <StatValueDisplay value={String(upcoming)} />
+          <span className={styles.statLabel}>Upcoming</span>
+        </div>
+        <div className={styles.statCell}>
+          <StatValueDisplay value={score != null ? String(score) : '—'} />
+          <span className={styles.statLabel}>Care score</span>
+        </div>
+        <div className={styles.statCell}>
+          <StatValueDisplay value={weight ?? '—'} />
+          <span className={styles.statLabel}>Weight</span>
+        </div>
       </div>
     </div>
-  );
-}
-
-function NextTaskCard({ task }: { task: DashboardNextTask }) {
-  return (
-    <article className={styles.mediaCard}>
-      <div className={styles.mediaThumb}>
-        <img src={TASK_IMAGE[task.urgency]} alt="" className={styles.mediaThumbImg} aria-hidden />
-      </div>
-      <div className={styles.mediaBody}>
-        <div className={`${styles.taskAccent} ${TASK_ACCENT[task.urgency]}`} aria-hidden />
-        <div className={styles.taskRow}>
-          {!task.isPositive && task.dueLabel && (
-            <span className={`${styles.dueBadge} ${TASK_DUE[task.urgency]}`}>{task.dueLabel}</span>
-          )}
-          {task.isPositive && <span className={`${styles.dueBadge} ${styles.dueCalm}`}>All clear</span>}
-        </div>
-        <h3 className={styles.cardTitle}>{task.title}</h3>
-        <p className={styles.cardText}>{task.description}</p>
-        <Link to={task.ctaPath} className={styles.ctaButton}>
-          {task.ctaLabel}
-        </Link>
-      </div>
-    </article>
   );
 }
 
@@ -200,6 +245,7 @@ function CareScoreCard({
   trendText,
   isLoading,
   showProDepth,
+  ringSize = 140,
 }: {
   metrics: { id: string; label: string; value: number }[];
   score: number | null;
@@ -207,50 +253,46 @@ function CareScoreCard({
   trendText: string;
   isLoading: boolean;
   showProDepth: boolean;
+  ringSize?: number;
 }) {
   return (
-    <article className={styles.mediaCard}>
-      <div className={styles.mediaThumb}>
-        <img src={PAGE_IMG.app.score} alt="" className={styles.mediaThumbImg} aria-hidden />
+    <article className={styles.scoreCard}>
+      <div className={styles.scoreCardHeadRow}>
+        <h3 className={styles.scoreCardHead}>Care score</h3>
+        {showProDepth && <span className={styles.proBadge}>Deeper · Pro</span>}
       </div>
-      <div className={styles.mediaBody}>
-        <div className={styles.cardHead}>
-          <h3 className={styles.cardTitle}>Care score</h3>
-          {showProDepth && <span className={styles.proBadge}>Deeper · Pro</span>}
-        </div>
-        {isLoading || score == null ? (
-          <p className={styles.loadingText}>Calculating your care picture…</p>
-        ) : (
-          <>
-            <div className={styles.scoreRow}>
-              <div className={styles.ringWrap}>
-                <ScoreRing score={score} />
-                <div className={styles.ringCenter}>
-                  <span className={styles.ringScore}>{score}</span>
-                  <span className={styles.ringLabel}>{scoreLabel}</span>
-                </div>
-              </div>
-              <div className={styles.careBars}>
-                {metrics.map((m) => (
-                  <div key={m.id} className={styles.metricRow}>
-                    <div className={styles.metricHead}>
-                      <span className={styles.metricLabel}>{m.label}</span>
-                      <span className={styles.metricPct}>{m.value}%</span>
-                    </div>
-                    <div className={styles.barTrack}>
-                      <div className={styles.barFill} style={{ width: `${clamp(m.value)}%` }} />
-                    </div>
-                  </div>
-                ))}
+      {isLoading || score == null ? (
+        <p className={styles.loadingText}>Calculating your care picture…</p>
+      ) : (
+        <>
+          <div className={styles.scoreRow}>
+            <div className={styles.ringWrap}>
+              <ScoreRing score={score} size={ringSize} />
+              <div className={styles.ringCenter}>
+                <span className={styles.ringScore}>{score}</span>
+                {scoreLabel && <span className={styles.ringLabel}>{scoreLabel}</span>}
               </div>
             </div>
-            <p className={styles.trend}>{trendText}</p>
-            <Link to={ROUTES.PET_CARE_SCORE} className={styles.textLink}>
-              View full breakdown →
-            </Link>
-          </>
-        )}
-      </div>
+            <div className={styles.careBars}>
+              {metrics.map((m) => (
+                <div key={m.id} className={styles.metricRow}>
+                  <div className={styles.metricHead}>
+                    <span className={styles.metricLabel}>{m.label}</span>
+                    <span className={styles.metricPct}>{m.value}%</span>
+                  </div>
+                  <div className={styles.barTrack}>
+                    <div className={styles.barFill} style={{ width: `${clamp(m.value)}%` }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          {trendText && <p className={styles.trend}>{trendText}</p>}
+          <Link to={ROUTES.PET_CARE_SCORE} className={styles.textLink}>
+            View full breakdown →
+          </Link>
+        </>
+      )}
     </article>
   );
 }
@@ -260,7 +302,9 @@ function MomentsListItems({ moments }: { moments: DashboardMoment[] }) {
     <>
       {moments.map((m) => (
         <li key={m.id} className={styles.momentItem}>
-          <span className={`${styles.momentDot} ${MOMENT_ICON_CLASS[m.kind]}`} aria-hidden />
+          <div className={styles.momentRail}>
+            <span className={styles.momentDot} aria-hidden />
+          </div>
           <div className={styles.momentBody}>
             <div className={styles.momentTop}>
               <p className={styles.momentTitle}>{m.title}</p>
@@ -302,6 +346,7 @@ function RecentMomentsSection({
 
   return (
     <div className={styles.momentsWrap}>
+      <div className={styles.timelineSpine} aria-hidden />
       <ul className={styles.momentsList}>
         <MomentsListItems moments={recentMoments} />
         {timelineAccess.isAllowed && historicalMoments.length > 0 && (
@@ -326,68 +371,92 @@ function RecentMomentsSection({
   );
 }
 
-function AiInsightSection({
+function CareInsightAside({
   aiAccess,
   title,
   body,
   isLoading,
-  score,
-  insightCount,
 }: {
   aiAccess: FeatureAccessResult;
   title: string;
   body: string;
   isLoading: boolean;
-  score: number | null;
-  insightCount: number;
 }) {
   return (
-    <section className={styles.insightSection} aria-labelledby="dash-ai-insight">
-      <p className={styles.sectionKicker} id="dash-ai-insight">
-        Reflection
-      </p>
-      <PremiumGate
-        requiredTier="Pro"
-        title="Health Foresight"
-        description="Advanced medical summarization and predictive patterns are available exclusively in Pro."
-        className={styles.insightPremiumGate}
-      >
-        <article className={`${styles.mediaCard} ${styles.insightArticle}`}>
-          <div className={styles.mediaThumb}>
-            <img src={PAGE_IMG.app.scan} alt="" className={styles.mediaThumbImg} aria-hidden />
-          </div>
-          <div className={styles.mediaBody}>
-            <span className={styles.insightSpark} aria-hidden>
-              {aiAccess.isAllowed ? 'Pro insight' : 'Care signal'}
-            </span>
-            <h3 className={styles.cardTitle}>{title}</h3>
-            {isLoading ? (
-              <p className={styles.loadingText}>Reading your care data…</p>
-            ) : (
-              <>
-                <p className={styles.cardText}>{body}</p>
-                {(score != null || insightCount > 0) && (
-                  <div className={styles.insightStats}>
-                    {score != null && (
-                      <div className={styles.insightStat}>
-                        <p className={styles.insightStatValue}>{score}</p>
-                        <p className={styles.insightStatLabel}>Care score</p>
-                      </div>
-                    )}
-                    {insightCount > 0 && (
-                      <div className={styles.insightStat}>
-                        <p className={styles.insightStatValue}>{insightCount}</p>
-                        <p className={styles.insightStatLabel}>Signals</p>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </>
-            )}
-          </div>
-        </article>
-      </PremiumGate>
-    </section>
+    <PremiumGate
+      requiredTier="Pro"
+      title="Health Foresight"
+      description="Advanced medical summarization and predictive patterns are available exclusively in Pro."
+      className={styles.insightAsideGate}
+    >
+      <article className={styles.insightAside}>
+        <span className={styles.insightSpark}>
+          {aiAccess.isAllowed ? 'Pro insight' : 'Care signal'}
+        </span>
+        <h3 className={styles.asideTitle}>{title}</h3>
+        {isLoading ? (
+          <p className={styles.loadingText}>Reading your care data…</p>
+        ) : (
+          <p className={styles.asideText}>{body}</p>
+        )}
+        <Link to={ROUTES.PET_CARE_SCORE} className={styles.asideLink}>
+          Open foresight →
+        </Link>
+      </article>
+    </PremiumGate>
+  );
+}
+
+function CareOverviewBlock({
+  metrics,
+  score,
+  scoreLabel,
+  trendText,
+  isLoading,
+  showProDepth,
+  report,
+  exportIsPro,
+  aiAccess,
+  insightTitle,
+  insightBody,
+  scoreLoading,
+}: {
+  metrics: { id: string; label: string; value: number }[];
+  score: number | null;
+  scoreLabel?: string;
+  trendText: string;
+  isLoading: boolean;
+  showProDepth: boolean;
+  report: MonthlyPetLifeReport;
+  exportIsPro: boolean;
+  aiAccess: FeatureAccessResult;
+  insightTitle: string;
+  insightBody: string;
+  scoreLoading: boolean;
+}) {
+  return (
+    <div className={styles.careOverview}>
+      <div className={styles.carePrimary}>
+        <CareScoreCard
+          metrics={metrics}
+          score={score}
+          scoreLabel={scoreLabel}
+          trendText={trendText}
+          isLoading={isLoading}
+          showProDepth={showProDepth}
+          ringSize={168}
+        />
+      </div>
+      <aside className={styles.careAside} aria-label="Care highlights">
+        <MonthlyPreviewCard report={report} exportIsPro={exportIsPro} />
+        <CareInsightAside
+          aiAccess={aiAccess}
+          title={insightTitle}
+          body={insightBody}
+          isLoading={scoreLoading}
+        />
+      </aside>
+    </div>
   );
 }
 
@@ -399,19 +468,15 @@ function MonthlyPreviewCard({
   exportIsPro: boolean;
 }) {
   const metrics = report.metrics.slice(0, 3);
-  const highlight = report.highlights[0] ?? report.milestones[0]?.title;
 
   return (
     <article className={styles.monthCard}>
-      <img src={PAGE_IMG.app.monthlyReport} alt="" className={styles.monthBg} aria-hidden />
-      <div className={styles.monthScrim} aria-hidden />
       <div className={styles.monthContent}>
-        <p className={styles.monthKicker}>{report.monthLabel}</p>
+        <p className={styles.monthKicker}>{report.monthLabel.toUpperCase()}</p>
         <h3 className={styles.monthTitle}>{report.petName}&apos;s month</h3>
-        {highlight && <p className={styles.monthHighlight}>{highlight}</p>}
         <div className={styles.monthMetrics}>
           {metrics.map((m) => (
-            <div key={m.label} className={styles.monthMetric}>
+            <div key={m.label}>
               <p className={styles.monthMetricValue}>{m.value}</p>
               <p className={styles.monthMetricLabel}>{m.label}</p>
             </div>
@@ -478,13 +543,14 @@ function QuickActionsSection({
           >
             <div className={styles.actionThumb}>
               <img src={action.image} alt="" className={styles.actionThumbImg} aria-hidden />
+              <div className={styles.actionThumbScrim} aria-hidden />
             </div>
-            <span className={styles.actionLabel}>
-              {action.label}
+            <div className={styles.actionBody}>
+              <span className={styles.actionLabel}>{action.label}</span>
               {isDecoder && decoderNote ? (
                 <span className={styles.actionNote}>{decoderNote}</span>
               ) : null}
-            </span>
+            </div>
           </Link>
         );
       })}
@@ -503,7 +569,7 @@ export function DashboardPage() {
   const { records, healthSummary } = useHealthRecords();
   const { documents } = useDocuments();
   const { data: scoreData, isLoading: scoreLoading } = usePetCareScore();
-  const { checkIns, todayCheckIn, weekSummary } = useDailyCheckIn();
+  const { checkIns, todayCheckIn } = useDailyCheckIn();
   const { canAccess, currentPlan } = useSubscription();
   const timelineAccess = useFeatureAccess('timelineHistory');
   const aiAccess = useFeatureAccess('aiHealthInsights');
@@ -551,14 +617,18 @@ export function DashboardPage() {
     return (
       <AppLayout flushContent>
         <div className={styles.page}>
-          <header className={styles.hero}>
-            <img className={styles.heroBg} src={PAGE_IMG.app.dashboard} alt="" aria-hidden />
-            <div className={styles.heroScrim} aria-hidden />
-            <div className={styles.heroInner}>
-              <p className={styles.heroEyebrow}>Dashboard</p>
-              <h1 className={styles.heroTitle}>Loading your care hub…</h1>
-            </div>
-          </header>
+          <div className={styles.heroWrap}>
+            <header className={styles.hero}>
+              <img className={styles.heroBg} src={PAGE_IMG.app.hero} alt="" aria-hidden />
+              <div className={styles.heroWash} aria-hidden />
+              <div className={styles.heroFade} aria-hidden />
+              <div className={styles.heroTexture} aria-hidden />
+              <div className={styles.heroInner}>
+                <p className={styles.heroEyebrow}>Dashboard</p>
+                <h1 className={styles.heroTitle}>Loading your care hub…</h1>
+              </div>
+            </header>
+          </div>
           <div className={styles.body}>
             <DashboardHeaderLoading />
           </div>
@@ -571,23 +641,22 @@ export function DashboardPage() {
     return (
       <AppLayout flushContent>
         <div className={styles.page}>
-          <header className={styles.hero}>
-            <img
-              className={styles.heroBg}
-              src={PAGE_IMG.app.dashboardWelcome}
-              alt=""
-              aria-hidden
-            />
-            <div className={styles.heroScrim} aria-hidden />
-            <div className={styles.heroInner}>
-              <p className={styles.heroEyebrow}>Your dashboard</p>
-              <h1 className={styles.heroTitle}>Welcome to PetClues</h1>
-              <p className={styles.heroLead}>
-                Add your first pet to unlock reminders, health records, and your personalized care
-                dashboard.
-              </p>
-            </div>
-          </header>
+          <div className={styles.heroWrap}>
+            <header className={styles.hero}>
+              <img className={styles.heroBg} src={PAGE_IMG.app.hero} alt="" aria-hidden />
+              <div className={styles.heroWash} aria-hidden />
+              <div className={styles.heroFade} aria-hidden />
+              <div className={styles.heroTexture} aria-hidden />
+              <div className={styles.heroInner}>
+                <p className={styles.heroEyebrow}>Your dashboard</p>
+                <h1 className={styles.heroTitle}>Welcome to PetClues</h1>
+                <p className={styles.heroLead}>
+                  Add your first pet to unlock reminders, health records, and your personalized care
+                  dashboard.
+                </p>
+              </div>
+            </header>
+          </div>
           <div className={styles.body}>
             <EmptyDashboardState />
           </div>
@@ -648,112 +717,142 @@ export function DashboardPage() {
       })
     : getActivityLogForPet(activePet.id, 24);
   const moments = activityToMoments(activityEntries);
-
-  const heroImage = display.photo || PAGE_IMG.app.dashboard;
+  const heroBackground = resolvePetHeroBackground(activePet.photoUrl);
 
   return (
     <AppLayout flushContent>
       <div className={styles.page}>
-        <header className={styles.hero}>
-          <img className={styles.heroBg} src={heroImage} alt="" aria-hidden />
-          <div className={styles.heroScrim} aria-hidden />
+        <div className={styles.heroWrap}>
+          <header className={styles.hero}>
+            <img
+              className={`${styles.heroBg} ${heroBackground.isPetPhoto ? styles.heroBgPet : ''}`}
+              src={heroBackground.src}
+              alt=""
+              aria-hidden
+            />
+            <div className={styles.heroWash} aria-hidden />
+            <div className={styles.heroFade} aria-hidden />
+            <div className={styles.heroTexture} aria-hidden />
+            <div className={styles.heroInner}>
+              <div className={styles.heroTopRow}>
+                <PetStack pets={pets} activeId={activePet.id} onSelect={setActivePet} />
+                <AddPetGhostButton />
+              </div>
 
-          <PetSwitcherHero pets={pets} activeId={activePet.id} onSelect={setActivePet} />
+              <div className={styles.heroCoverGrid}>
+                <div className={styles.heroCoverText}>
+                  <p className={styles.heroEyebrow}>{getGreeting()}</p>
+                  <h1 className={styles.heroTitle}>{display.name}</h1>
+                  {meta && <p className={styles.heroMeta}>{meta}</p>}
+                  <div className={styles.heroBadges}>
+                    <span className={`${styles.statusChip} ${CHIP_CLASS[chip.tone]}`}>
+                      {chip.label}
+                    </span>
+                    <span className={styles.heroUpdated}>Updated today</span>
+                  </div>
+                  <div className={styles.heroCtaRow}>
+                    <Link to={nextTask.ctaPath} className={styles.heroPrimaryCta}>
+                      {nextTask.ctaLabel}
+                    </Link>
+                    <Link to={ROUTES.TIMELINE} className={styles.heroSecondaryCta}>
+                      View timeline
+                    </Link>
+                  </div>
+                  {!nextTask.isPositive && nextTask.dueLabel && (
+                    <p className={styles.heroTaskNote}>
+                      <span className={`${styles.dueBadge} ${TASK_DUE[nextTask.urgency]}`}>
+                        {nextTask.dueLabel}
+                      </span>
+                      {' · '}
+                      {nextTask.title}
+                    </p>
+                  )}
+                </div>
 
-          <div className={styles.heroInner}>
-            <div className={styles.heroIdentityRow}>
-              <div className={styles.heroAvatar}>
-                {display.photo ? (
-                  <img
-                    src={display.photo}
-                    alt={display.name}
-                    className={styles.heroAvatarImg}
-                  />
-                ) : (
-                  <Avatar initials={getAvatarInitials(display.name)} size="xl" />
+                {(display.photo || heroBackground.isPetPhoto) && (
+                  <div className={styles.heroPortraitFrame} aria-hidden>
+                    <img
+                      src={display.photo ?? heroBackground.src}
+                      alt=""
+                      className={styles.heroPortraitImg}
+                    />
+                  </div>
                 )}
               </div>
-              <div className={styles.heroText}>
-                <p className={styles.heroEyebrow}>{getGreeting()}</p>
-                <h1 className={styles.heroTitle}>{display.name}</h1>
-                {meta && <p className={styles.heroMeta}>{meta}</p>}
-                <div className={styles.heroBadges}>
-                  <span className={`${styles.statusChip} ${CHIP_CLASS[chip.tone]}`}>
-                    {chip.label}
-                  </span>
-                  <span className={styles.heroUpdated}>Updated today</span>
-                </div>
-              </div>
             </div>
-            <div className={styles.heroActions}>
-              <AddAnotherPetButton size="md" className={styles.heroLightBtn} />
-            </div>
-          </div>
-        </header>
+          </header>
 
-        <StatsStrip
-          upcoming={upcomingCount}
-          overdue={overdueCount}
-          score={score}
-          weight={
-            todayCheckIn?.weightKg != null
-              ? `${todayCheckIn.weightKg} kg`
-              : healthSummary.latestWeight ?? activePet.weight
-          }
-          todayFed={todayCheckIn?.feeding ?? null}
-          weekWalkKm={weekSummary.totalWalkKm}
-        />
+          <StatsBand
+            upcoming={upcomingCount}
+            overdue={overdueCount}
+            score={score}
+            weight={
+              todayCheckIn?.weightKg != null
+                ? `${todayCheckIn.weightKg} kg`
+                : healthSummary.latestWeight ?? activePet.weight
+            }
+          />
+        </div>
 
         <div className={styles.body}>
-          <SectionIntro
-            eyebrow="Today"
-            title="Your care command center"
-            description="Check in, tackle what matters next, and see how your pet's health picture is shaping up."
-          />
-
-          <div className={styles.contentGrid}>
-            <div className={styles.col}>
+          <section className={styles.chapter} data-reveal aria-labelledby="chapter-checkin">
+            <DashboardSectionIntro
+              titleId="chapter-checkin"
+              eyebrow="Today"
+              title="Daily check-in"
+              lead="A quiet ritual — log feeding, walks, and weight to keep the story current."
+            />
+            <div className={styles.majorBlock}>
               <DailyCheckInCard petName={activePet.name} />
-              <CareScoreCard
-                metrics={careMetrics}
-                score={score}
-                scoreLabel={scoreData?.snapshot.label}
-                trendText={trendText}
-                isLoading={scoreLoading}
-                showProDepth={!hasAdvancedScore}
-              />
-              <AiInsightSection
-                aiAccess={aiAccess}
-                title={insightTitle}
-                body={insightBody}
-                isLoading={scoreLoading}
-                score={score}
-                insightCount={scoreData?.insights.length ?? 0}
-              />
             </div>
+          </section>
 
-            <div className={styles.col}>
-              <NextTaskCard task={nextTask} />
-              <MonthlyPreviewCard report={monthlyReport} exportIsPro={!canExportReport} />
-              <section aria-labelledby="dash-actions">
-                <h2 id="dash-actions" className={styles.inlineHead}>
-                  Quick actions
-                </h2>
-                <QuickActionsSection
-                  decoderAccess={decoderAccess}
-                  isEnterprise={isEnterprise}
-                  isMonthlyDecoderQuota={isMonthlyDecoderQuota}
-                />
-              </section>
-            </div>
-          </div>
+          <section className={styles.chapter} data-reveal aria-labelledby="chapter-care">
+            <DashboardSectionIntro
+              titleId="chapter-care"
+              eyebrow="Care portrait"
+              title={`How ${display.name} is doing`}
+              lead="Score, rhythm, and the signal we see from your real records."
+            />
+            <CareOverviewBlock
+              metrics={careMetrics}
+              score={score}
+              scoreLabel={scoreData?.snapshot.label}
+              trendText={trendText}
+              isLoading={scoreLoading}
+              showProDepth={!hasAdvancedScore}
+              report={monthlyReport}
+              exportIsPro={!canExportReport}
+              aiAccess={aiAccess}
+              insightTitle={insightTitle}
+              insightBody={insightBody}
+              scoreLoading={scoreLoading}
+            />
+          </section>
 
-          <SectionIntro
-            eyebrow="Activity"
-            title="Recent moments"
-            description="A live feed of vaccinations, uploads, reminders, and milestones from your pet's care journey."
-          />
-          <RecentMomentsSection moments={moments} timelineAccess={timelineAccess} />
+          <section className={styles.chapter} data-reveal aria-labelledby="chapter-paths">
+            <DashboardSectionIntro
+              titleId="chapter-paths"
+              eyebrow="Curated paths"
+              title="Continue the story"
+              lead="Every record, document, and reminder becomes part of your pet's living archive."
+            />
+            <QuickActionsSection
+              decoderAccess={decoderAccess}
+              isEnterprise={isEnterprise}
+              isMonthlyDecoderQuota={isMonthlyDecoderQuota}
+            />
+          </section>
+
+          <section className={styles.chapter} data-reveal aria-labelledby="chapter-activity">
+            <DashboardSectionIntro
+              titleId="chapter-activity"
+              eyebrow="The story so far"
+              title="Recent moments"
+              lead="Vaccinations, uploads, reminders, and milestones from your pet's care journey."
+            />
+            <RecentMomentsSection moments={moments} timelineAccess={timelineAccess} />
+          </section>
         </div>
       </div>
     </AppLayout>

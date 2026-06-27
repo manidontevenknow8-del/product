@@ -1,10 +1,12 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
-import { Button, EmptyState, LoadingState, Card } from '@/components/ui';
+import { Button, EmptyState, LoadingState } from '@/components/ui';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
-import { PageHeroBand, SectionIntro } from '@/components/visual';
+import { PageHeroBand } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
+import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
+import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import {
   MonthPicker,
   MonthlyReportActions,
@@ -143,7 +145,7 @@ export function MonthlyReportPage() {
   if (isLoading) {
     return (
       <AppLayout flushContent>
-        <div className={styles.page}>
+        <div className="ed-page">
           <div className={styles.loadingWrap}>
             <LoadingState message="Generating your monthly report" />
           </div>
@@ -155,7 +157,7 @@ export function MonthlyReportPage() {
   if (!hasPets || !activePet) {
     return (
       <AppLayout flushContent>
-        <div className={styles.page}>
+        <div className="ed-page">
           <PageHeroBand
             image={PAGE_IMG.app.monthlyReport}
             imageAlt=""
@@ -179,84 +181,135 @@ export function MonthlyReportPage() {
     );
   }
 
+  const heroBg = resolvePetHeroBackground(activePet.photoUrl);
+  const heroSrc = heroBg.isPetPhoto ? heroBg.src : PAGE_IMG.app.monthlyReport;
+  const heroPhoto = normalizePhotoUrlFromDb(activePet.photoUrl);
+
   return (
     <AppLayout flushContent>
-      <div className={styles.page}>
-        {report && (
-          <PageHeroBand
-            image={PAGE_IMG.app.monthlyReport}
-            imageAlt=""
-            eyebrow="PetClues · Monthly life report"
-            title={`${report.petName}'s ${report.monthLabel}`}
-            subtitle="A visual story of care, consistency, and milestones."
-            topActions={
-              <PetSwitcherHero
-                pets={pets}
-                activeId={activePet.id}
-                onSelect={setActivePet}
-              />
-            }
+      <div className="ed-page">
+        <header className="ed-hero">
+          <img
+            className={`ed-hero__bg ${heroBg.isPetPhoto ? 'ed-hero__bg--pet' : ''}`}
+            src={heroSrc}
+            alt=""
+            aria-hidden
           />
-        )}
+          <div className="ed-hero__wash" aria-hidden />
+          <div className="ed-hero__texture" aria-hidden />
+          <div className="ed-hero__inner">
+            <div className="ed-hero__top">
+              <PetSwitcherHero pets={pets} activeId={activePet.id} onSelect={setActivePet} />
+            </div>
+            <div className="ed-hero__grid">
+              <div className="ed-hero__text">
+                <p className="ed-hero__kicker">PetClues · Monthly life report</p>
+                <h1 className="ed-hero__title">
+                  {report ? `${report.petName}'s ${report.monthLabel}` : 'Monthly life report'}
+                </h1>
+                <p className="ed-hero__subtitle">
+                  A visual story of care, consistency, and the small milestones that add up to a
+                  well-loved life.
+                </p>
+                <div className="ed-hero__cta">
+                  <button
+                    type="button"
+                    className="ed-btn"
+                    onClick={() => void handleDownload()}
+                    disabled={isDownloading}
+                  >
+                    {isDownloading ? 'Preparing…' : 'Download report'}
+                  </button>
+                  <a href="#report" className="ed-btn-ghost">
+                    Read the story
+                  </a>
+                </div>
+              </div>
+              {heroPhoto && (
+                <div className="ed-hero__portrait" aria-hidden>
+                  <img src={heroPhoto} alt="" />
+                </div>
+              )}
+            </div>
+          </div>
+        </header>
 
         <div className={styles.toolbar}>
-          <MonthPicker monthKey={monthKey} onChange={(mk) => { setMonthKey(mk); setSaved(false); }} />
-          {error && (
-            <p role="alert" className={styles.error}>
-              {error}
-            </p>
-          )}
+          <div className={styles.toolbarInner}>
+            <MonthPicker
+              monthKey={monthKey}
+              onChange={(mk) => {
+                setMonthKey(mk);
+                setSaved(false);
+              }}
+            />
+            <MonthlyReportActions
+              onShare={() => void handleShare()}
+              onDownload={() => void handleDownload()}
+              onSave={() => void handleSave()}
+              isDownloading={isDownloading}
+              isSaving={isSaving}
+              saved={saved}
+              isPremium={canExport}
+            />
+            {error && (
+              <p role="alert" className={styles.error}>
+                {error}
+              </p>
+            )}
+          </div>
         </div>
 
         {report && (
-          <div className={styles.layout}>
-            <div className={styles.reportCol}>
-              <SectionIntro
-                eyebrow="This month"
-                title="Your pet's life report"
-                description="Scroll through every chapter below - download captures the full report when you're ready to share."
+          <div className="ed-body">
+            {!canExport && (
+              <PremiumUpgradePrompt
+                feature="monthlyReportExport"
+                currentPlan={currentPlan}
+                onUpgrade={() => setUpgradeOpen(true)}
               />
-              <MonthlyReportDocument
-                ref={reportRef}
-                report={report}
-                showWatermark={currentPlan === 'free'}
-              />
-              <p className={styles.caption}>
-                Download captures the full report above - scroll through every chapter before exporting.
-              </p>
-            </div>
+            )}
 
-            <aside className={styles.sideCol} aria-label="Report actions">
-              {!canExport && (
-                <PremiumUpgradePrompt
-                  feature="monthlyReportExport"
-                  currentPlan={currentPlan}
-                  onUpgrade={() => setUpgradeOpen(true)}
+            <section className="ed-chapter" id="report" aria-label="Monthly report">
+              <div className={styles.reportFrame}>
+                <MonthlyReportDocument
+                  ref={reportRef}
+                  report={report}
+                  showWatermark={currentPlan === 'free'}
                 />
-              )}
-              <MonthlyReportActions
-                onShare={() => void handleShare()}
-                onDownload={() => void handleDownload()}
-                onSave={() => void handleSave()}
-                isDownloading={isDownloading}
-                isSaving={isSaving}
-                saved={saved}
-                isPremium={canExport}
-              />
-              <Card variant="flat" className={styles.archiveCard}>
-                <h3 className={styles.archiveTitle}>Archive</h3>
-                <p className={styles.archiveText}>
-                  Save reports each month to build a beautiful story you can revisit anytime.
+                <p className={styles.caption}>
+                  Download captures the full report above — scroll through every chapter before
+                  exporting.
                 </p>
-                <Link to={ROUTES.MONTHLY_REPORT_ARCHIVE}>
-                  <Button variant="secondary">View archive</Button>
-                </Link>
-              </Card>
-            </aside>
+              </div>
+            </section>
+
+            <section className="ed-band" aria-label="Archive">
+              <div className="ed-band__texture" aria-hidden />
+              <span className="ed-band__watermark" aria-hidden>
+                Archive
+              </span>
+              <div className="ed-band__inner">
+                <p className="ed-eyebrow">Build the collection</p>
+                <h2 className="ed-band__title">A library of months, beautifully kept</h2>
+                <p className="ed-band__text">
+                  Save a report each month to build a story of {report.petName}&apos;s life you can
+                  revisit any time.
+                </p>
+                <div className={styles.archiveActions}>
+                  <Link to={ROUTES.MONTHLY_REPORT_ARCHIVE} className="ed-btn">
+                    View archive
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            <footer className="ed-footnote">
+              <hr />
+              <HealthDisclaimerNote compact />
+            </footer>
           </div>
         )}
-
-        <HealthDisclaimerNote />
 
         <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />
       </div>

@@ -21,6 +21,7 @@ import type { HealthRecord, HealthRecordType } from '@/services/healthRecords/he
 import { UpgradeModal } from '@/components/subscription';
 import { EditorialUpgradeModal } from '@/components/ui';
 import { getUserFacingError } from '@/utils/userFacingErrors';
+import styles from './EmergencyPassportPage.module.css';
 
 const PET_PORTRAIT_PLACEHOLDER =
   'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80';
@@ -40,40 +41,27 @@ function PassportRecordBlock({
   onAdd?: () => void;
   onEdit?: (record: HealthRecord) => void;
 }) {
+  const isCritical = variant === 'critical';
   return (
-    <section
-      className={`border p-5 sm:p-6 ${
-        variant === 'critical'
-          ? 'border-red-200/70 bg-red-50/30'
-          : 'border-stone-200/70 bg-white/50'
-      }`}
-    >
-      <div className="mb-4 flex items-center justify-between gap-3">
-        <h3 className="font-serif text-xl text-stone-900">{title}</h3>
+    <section className={`${styles.recordBlock} ${isCritical ? styles.recordBlockCritical : ''}`}>
+      <div className={styles.blockHead}>
+        <h3 className={`${styles.blockTitle} ${isCritical ? styles.blockTitleCritical : ''}`}>
+          {title}
+        </h3>
         {onAdd && (
-          <button
-            type="button"
-            onClick={onAdd}
-            className="font-sans text-[10px] uppercase tracking-[0.18em] text-stone-500 hover:text-stone-800"
-          >
+          <button type="button" onClick={onAdd} className={styles.blockAdd}>
             Add
           </button>
         )}
       </div>
       {records.length === 0 ? (
-        <p className="font-sans text-sm text-stone-400">{emptyMessage}</p>
+        <p className={styles.emptyLine}>{emptyMessage}</p>
       ) : (
-        <ul className="divide-y divide-stone-100">
+        <ul className={styles.recordList}>
           {records.map((record) => (
-            <li key={record.id} className="py-3 first:pt-0 last:pb-0">
-              <button
-                type="button"
-                className="w-full text-left"
-                onClick={() => onEdit?.(record)}
-              >
-                <p className="font-sans text-sm text-stone-800">
-                  {formatPassportRecordLine(record)}
-                </p>
+            <li key={record.id} className={styles.recordItem}>
+              <button type="button" className={styles.recordBtn} onClick={() => onEdit?.(record)}>
+                {formatPassportRecordLine(record)}
               </button>
             </li>
           ))}
@@ -86,47 +74,33 @@ function PassportRecordBlock({
 /** Placeholder medical blocks inside PremiumGate - no real user health data */
 function PassportMedicalGatePreview() {
   return (
-    <div className="space-y-10">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <PassportRecordBlock
-          title="Critical allergies"
-          records={[]}
-          emptyMessage="No allergies on file - add known reactions for safer care."
-          variant="critical"
-        />
-        <PassportRecordBlock
-          title="Active medications"
-          records={[]}
-          emptyMessage="No medications recorded."
-        />
-      </div>
-
-      <section className="border border-stone-200/70 bg-white/50 p-5 sm:p-6">
-        <h3 className="font-serif text-xl text-stone-900">Emergency contacts</h3>
-        <ul className="mt-4 divide-y divide-stone-100">
-          <li className="py-3">
-            <p className="font-sans text-sm font-medium text-stone-800">Primary owner</p>
-            <p className="font-sans text-xs text-stone-500">Add your contact details for emergency routing.</p>
-          </li>
-          <li className="py-3">
-            <p className="font-sans text-sm font-medium text-stone-800">Veterinary clinic</p>
-            <p className="font-sans text-xs text-stone-500">
-              Add your vet&apos;s details in health records for faster emergency routing.
-            </p>
-          </li>
-        </ul>
+    <div className={styles.gatePreview}>
+      <PassportRecordBlock
+        title="Critical allergies"
+        records={[]}
+        emptyMessage="No allergies on file - add known reactions for safer care."
+        variant="critical"
+      />
+      <PassportRecordBlock
+        title="Active medications"
+        records={[]}
+        emptyMessage="No medications recorded."
+      />
+      <section className={styles.recordBlock}>
+        <div className={styles.blockHead}>
+          <h3 className={styles.blockTitle}>Emergency contacts</h3>
+        </div>
+        <div className={styles.contactItem}>
+          <p className={styles.contactName}>Primary owner</p>
+          <p className={styles.contactMeta}>Add your contact details for emergency routing.</p>
+        </div>
+        <div className={styles.contactItem}>
+          <p className={styles.contactName}>Veterinary clinic</p>
+          <p className={styles.contactMeta}>
+            Add your vet&apos;s details in health records for faster emergency routing.
+          </p>
+        </div>
       </section>
-
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div className="border border-stone-200/70 bg-white/60 p-5">
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">Export</p>
-          <p className="mt-2 font-serif text-xl text-stone-900">Print-ready PDF sheet</p>
-        </div>
-        <div className="border border-stone-200/70 bg-white/60 p-5">
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">Share</p>
-          <p className="mt-2 font-serif text-xl text-stone-900">Public care link</p>
-        </div>
-      </div>
     </div>
   );
 }
@@ -139,36 +113,38 @@ function PassportDailyCareBlock({
   const { careContext } = passport;
 
   return (
-    <section className="mb-10 border border-stone-200/70 bg-white/50 p-5 sm:p-6">
-      <h3 className="font-serif text-xl text-stone-900">Recent feeding &amp; activity</h3>
-      <p className="mt-2 font-sans text-sm text-stone-500">
+    <section className={styles.recordBlock}>
+      <div className={styles.blockHead}>
+        <h3 className={styles.blockTitle}>Recent feeding &amp; activity</h3>
+      </div>
+      <p className={styles.careMeta}>
         Last 14 days · {careContext.weekSummary.totalWalkKm} km walked this week ·{' '}
         {careContext.weekSummary.daysLogged} day
         {careContext.weekSummary.daysLogged === 1 ? '' : 's'} logged this week
       </p>
       {careContext.recentDailyCare.length === 0 ? (
-        <p className="mt-4 font-sans text-sm text-stone-400">
-          No daily check-ins yet - log feeding and walks from your dashboard so vets see recent
+        <p className={styles.emptyLine}>
+          No daily check-ins yet — log feeding and walks from your dashboard so vets see recent
           routines in an emergency.
         </p>
       ) : (
-        <div className="mt-4 overflow-x-auto">
-          <table className="w-full min-w-[20rem] border-collapse font-sans text-sm">
+        <div className={styles.tableWrap}>
+          <table className={styles.careTable}>
             <thead>
-              <tr className="border-b border-stone-200 text-left text-[11px] uppercase tracking-[0.14em] text-stone-400">
-                <th className="py-2 pr-4 font-medium">Date</th>
-                <th className="py-2 pr-4 font-medium">Fed</th>
-                <th className="py-2 pr-4 font-medium">Walk</th>
-                <th className="py-2 font-medium">Weight</th>
+              <tr>
+                <th>Date</th>
+                <th>Fed</th>
+                <th>Walk</th>
+                <th>Weight</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100">
+            <tbody>
               {careContext.recentDailyCare.map((entry) => (
                 <tr key={entry.id}>
-                  <td className="py-3 pr-4 whitespace-nowrap text-stone-500">{entry.dateLabel}</td>
-                  <td className="py-3 pr-4 text-stone-800">{entry.feeding}</td>
-                  <td className="py-3 pr-4 text-stone-800">{entry.walkLabel}</td>
-                  <td className="py-3 text-stone-800">{entry.weightLabel ?? 'Not recorded'}</td>
+                  <td>{entry.dateLabel}</td>
+                  <td>{entry.feeding}</td>
+                  <td>{entry.walkLabel}</td>
+                  <td>{entry.weightLabel ?? 'Not recorded'}</td>
                 </tr>
               ))}
             </tbody>
@@ -237,86 +213,58 @@ function PremiumPassportTools({
   };
 
   return (
-    <div className="space-y-6">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <button
-          type="button"
-          onClick={onExport}
-          disabled={exporting}
-          className="border border-stone-200/70 bg-white/60 p-5 text-left transition-colors hover:bg-white disabled:opacity-60"
-        >
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">
-            Export
-          </p>
-          <p className="mt-2 font-serif text-xl text-stone-900">Print-ready PDF sheet</p>
-          <p className="mt-2 font-sans text-sm text-stone-500">
+    <>
+      <div className={styles.toolStack}>
+        <button type="button" onClick={onExport} disabled={exporting} className={styles.tool}>
+          <p className={styles.toolKicker}>Export</p>
+          <p className={styles.toolTitle}>Print-ready sheet</p>
+          <p className={styles.toolDesc}>
             Download a high-resolution PNG for travel, boarding, or clinics.
           </p>
-          {exporting && (
-            <p className="mt-2 font-sans text-xs text-stone-400">Preparing download…</p>
-          )}
+          {exporting && <p className={styles.toolNote}>Preparing download…</p>}
         </button>
-        <button
-          type="button"
-          onClick={() => void handleCopy()}
-          className="border border-stone-200/70 bg-white/60 p-5 text-left transition-colors hover:bg-white"
-        >
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">
-            Share
-          </p>
-          <p className="mt-2 font-serif text-xl text-stone-900">Public care link</p>
-          <p className="mt-2 truncate font-sans text-xs text-stone-400">{link}</p>
-          {copied && (
-            <p className="mt-2 font-sans text-xs text-stone-600">Link copied</p>
-          )}
+        <button type="button" onClick={() => void handleCopy()} className={styles.tool}>
+          <p className={styles.toolKicker}>Share</p>
+          <p className={styles.toolTitle}>Public care link</p>
+          <p className={styles.toolLink}>{link}</p>
+          {copied && <p className={styles.toolNote}>Link copied</p>}
         </button>
+
+        {hasEmergencyMode ? (
+          <div className={styles.tool}>
+            <p className={styles.toolKicker}>Emergency mode</p>
+            <p className={styles.toolTitle}>Activate rapid handoff</p>
+            <p className={styles.toolDesc}>
+              Pin critical allergies and medications to your lock-screen summary for pet sitters and
+              emergency clinicians.
+            </p>
+            <span className="ed-btn" style={{ marginTop: 20 }}>
+              Enable emergency mode
+            </span>
+          </div>
+        ) : (
+          <button type="button" onClick={onEmergencyModeUpgrade} className={styles.tool}>
+            <p className={styles.toolKicker}>Emergency mode · Pro</p>
+            <p className={styles.toolTitle}>Activate rapid handoff</p>
+            <p className={styles.toolDesc}>
+              Upgrade to Pro to pin critical allergies and medications to a lock-screen summary for
+              pet sitters and emergency clinicians.
+            </p>
+            <span className="ed-btn" style={{ marginTop: 20 }}>
+              Upgrade to Pro
+            </span>
+          </button>
+        )}
       </div>
 
-      {hasEmergencyMode ? (
-        <article className="border border-amber-200/60 bg-amber-50/40 p-6">
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-amber-800/70">
-            Emergency mode
-          </p>
-          <h3 className="mt-2 font-serif text-2xl text-stone-900">Activate rapid handoff</h3>
-          <p className="mt-2 font-sans text-sm leading-relaxed text-stone-600">
-            Pin critical allergies and medications to your lock screen summary for pet sitters and
-            emergency clinicians.
-          </p>
-          <button
-            type="button"
-            className="mt-5 border border-stone-900 bg-stone-900 px-5 py-2.5 font-sans text-xs uppercase tracking-[0.2em] text-stone-50"
-          >
-            Enable emergency mode
-          </button>
-        </article>
-      ) : (
-        <article className="border border-stone-200/70 bg-white/50 p-6">
-          <p className="font-sans text-[11px] uppercase tracking-[0.2em] text-stone-400">
-            Emergency mode · Pro
-          </p>
-          <h3 className="mt-2 font-serif text-2xl text-stone-900">Activate rapid handoff</h3>
-          <p className="mt-2 font-sans text-sm leading-relaxed text-stone-500">
-            Upgrade to Pro to pin critical allergies and medications to a lock-screen summary for
-            pet sitters and emergency clinicians.
-          </p>
-          <button
-            type="button"
-            onClick={onEmergencyModeUpgrade}
-            className="mt-5 border border-stone-900 bg-stone-900 px-5 py-2.5 font-sans text-xs uppercase tracking-[0.2em] text-stone-50"
-          >
-            Upgrade to Pro
-          </button>
-        </article>
-      )}
-
       {exportError && (
-        <p className="font-sans text-sm text-red-700" role="alert">
+        <p className={styles.emergencyNote} role="alert">
           {exportError}
         </p>
       )}
 
       <PassportExportSheet ref={exportRef} passport={passport} />
-    </div>
+    </>
   );
 }
 
@@ -413,7 +361,7 @@ export function EmergencyPassportPage() {
   if (isLoading) {
     return (
       <AppLayout flushContent>
-        <div className="mx-auto w-full max-w-3xl px-6 py-20">
+        <div className={styles.loading}>
           <LoadingState message="Loading passport" />
         </div>
       </AppLayout>
@@ -423,7 +371,7 @@ export function EmergencyPassportPage() {
   if (!hasPets || !passport || !activePet) {
     return (
       <AppLayout flushContent>
-        <div className="mx-auto w-full max-w-3xl px-6 py-20">
+        <div className={styles.loading}>
           <EmptyPetProfileState />
         </div>
       </AppLayout>
@@ -435,60 +383,80 @@ export function EmergencyPassportPage() {
   const ownerName = user?.name ?? 'Pet owner';
   const ownerEmail = user?.email ?? 'Not set';
   const hasPremiumPassport = passportAccess.isAllowed;
+  const heroPetPhoto = identity.photo || null;
 
   const medicalAndToolsContent = (
     <>
-      <div className="mb-10 grid gap-5 sm:grid-cols-2">
-        <PassportWeightBlock
-          passport={passport}
-          onAdd={() => openAdd('weight')}
-          onEdit={openEdit}
-        />
-        <PassportDailyCareBlock passport={passport} />
-      </div>
-
-      <div className="mb-10 grid gap-5 sm:grid-cols-2">
-        <PassportRecordBlock
-          title="Critical allergies"
-          records={passport.allergies}
-          emptyMessage="No allergies on file - add known reactions for safer care."
-          variant="critical"
-          onAdd={() => openAdd('allergy')}
-          onEdit={openEdit}
-        />
-        <PassportRecordBlock
-          title="Active medications"
-          records={passport.medications}
-          emptyMessage="No medications recorded."
-          onAdd={() => openAdd('medication')}
-          onEdit={openEdit}
-        />
-      </div>
-
-      <section className="mb-10 border border-stone-200/70 bg-white/50 p-5 sm:p-6">
-        <h3 className="font-serif text-xl text-stone-900">Emergency contacts</h3>
-        <ul className="mt-4 divide-y divide-stone-100">
-          <li className="py-3">
-            <p className="font-sans text-sm font-medium text-stone-800">{ownerName}</p>
-            <p className="font-sans text-xs text-stone-500">Primary owner · {ownerEmail}</p>
-          </li>
-          <li className="py-3">
-            <p className="font-sans text-sm font-medium text-stone-800">Veterinary clinic</p>
-            <p className="font-sans text-xs text-stone-500">
-              Add your vet&apos;s details in health records for faster emergency routing.
-            </p>
-          </li>
-        </ul>
+      <section className="ed-chapter" aria-label="Critical medical">
+        <div className="ed-chapter__intro">
+          <p className="ed-eyebrow">Critical first</p>
+          <h2 className="ed-title">What a vet needs in seconds</h2>
+        </div>
+        <div className={styles.blockStack}>
+          <PassportRecordBlock
+            title="Critical allergies"
+            records={passport.allergies}
+            emptyMessage="No allergies on file — add known reactions for safer care."
+            variant="critical"
+            onAdd={() => openAdd('allergy')}
+            onEdit={openEdit}
+          />
+          <PassportRecordBlock
+            title="Active medications"
+            records={passport.medications}
+            emptyMessage="No medications recorded."
+            onAdd={() => openAdd('medication')}
+            onEdit={openEdit}
+          />
+        </div>
       </section>
 
-      <section className="border-t border-stone-200/60 pt-10">
-        <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-stone-400">
-          Premium tools
-        </p>
-        <h2 className="mt-2 font-serif text-2xl text-stone-900 sm:text-3xl">
-          Export, share &amp; emergency mode
-        </h2>
-        <div className="mt-8">
+      <section className="ed-chapter" aria-label="Care context">
+        <div className="ed-chapter__intro">
+          <p className="ed-eyebrow">Care context</p>
+          <h2 className="ed-title">Weight & recent routine</h2>
+        </div>
+        <div className={styles.blockStack}>
+          <PassportWeightBlock
+            passport={passport}
+            onAdd={() => openAdd('weight')}
+            onEdit={openEdit}
+          />
+          <PassportDailyCareBlock passport={passport} />
+        </div>
+      </section>
+
+      <section className="ed-chapter" aria-label="Emergency contacts">
+        <div className="ed-chapter__intro">
+          <p className="ed-eyebrow">Who to call</p>
+          <h2 className="ed-title">Emergency contacts</h2>
+        </div>
+        <div className={styles.recordBlock}>
+          <div className={styles.contactItem}>
+            <p className={styles.contactName}>{ownerName}</p>
+            <p className={styles.contactMeta}>Primary owner · {ownerEmail}</p>
+          </div>
+          <div className={styles.contactItem}>
+            <p className={styles.contactName}>Veterinary clinic</p>
+            <p className={styles.contactMeta}>
+              Add your vet&apos;s details in health records for faster emergency routing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="ed-band" aria-label="Premium tools">
+        <div className="ed-band__texture" aria-hidden />
+        <span className="ed-band__watermark" aria-hidden>
+          Carry it
+        </span>
+        <div className="ed-band__inner">
+          <p className="ed-eyebrow">Take it anywhere</p>
+          <h2 className="ed-band__title">Export, share & emergency mode</h2>
+          <p className="ed-band__text">
+            One tap turns {identity.petName}&apos;s record into a print-ready sheet or a secure link
+            for sitters and clinicians.
+          </p>
           <PremiumPassportTools
             passport={passport}
             exportRef={exportRef}
@@ -505,90 +473,104 @@ export function EmergencyPassportPage() {
 
   return (
     <AppLayout flushContent>
-      <div className="overflow-x-hidden">
-        <div className="mx-auto w-full max-w-3xl px-6 pb-20 pt-8 sm:px-8 sm:pt-12">
-          <div className="relative mb-10">
-            <PetSwitcherHero
-              pets={pets}
-              activeId={activePet.id}
-              onSelect={setActivePet}
-            />
-          </div>
-
-          <header className="mb-10 text-center">
-            <p className="font-sans text-[11px] uppercase tracking-[0.22em] text-stone-400">
-              Official medical ID
-            </p>
-            <h1 className="mt-3 font-serif text-4xl tracking-tight text-stone-900 sm:text-5xl">
-              Emergency Passport
-            </h1>
-            <p className="mx-auto mt-4 max-w-lg font-sans text-sm leading-relaxed text-stone-500">
-              A print-ready identity and care summary for travel, boarding, and emergency handoffs.
-            </p>
-          </header>
-
-          <article className="mb-10 border border-stone-300 bg-gradient-to-br from-stone-50 to-white p-6 shadow-[0_20px_60px_rgba(28,25,23,0.06)] sm:p-8">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-              <div className="mx-auto shrink-0 border-4 border-white bg-stone-100 shadow-md sm:mx-0">
-                <img
-                  src={photo}
-                  alt={identity.petName}
-                  className="h-36 w-28 object-cover sm:h-44 sm:w-32"
-                />
-              </div>
-              <div className="min-w-0 flex-1 text-center sm:text-left">
-                <p className="font-sans text-[10px] uppercase tracking-[0.28em] text-stone-400">
-                  PetClues · Identity
+      <div className="ed-page">
+        <header className="ed-hero">
+          <img
+            className={`ed-hero__bg ${heroPetPhoto ? 'ed-hero__bg--pet' : ''}`}
+            src={photo}
+            alt=""
+            aria-hidden
+          />
+          <div className="ed-hero__wash" aria-hidden />
+          <div className="ed-hero__texture" aria-hidden />
+          <div className="ed-hero__inner">
+            <div className="ed-hero__top">
+              <PetSwitcherHero pets={pets} activeId={activePet.id} onSelect={setActivePet} />
+            </div>
+            <div className="ed-hero__grid">
+              <div className="ed-hero__text">
+                <p className="ed-hero__kicker">Official medical ID</p>
+                <h1 className="ed-hero__title">Emergency Passport</h1>
+                <p className="ed-hero__subtitle">
+                  A print-ready identity and care summary for {identity.petName} — built for travel,
+                  boarding, and the moments that matter most.
                 </p>
-                <h2 className="mt-2 font-serif text-3xl text-stone-900">{identity.petName}</h2>
-                <dl className="mt-4 grid gap-2 font-sans text-sm text-stone-600 sm:grid-cols-2">
+                {hasPremiumPassport && (
+                  <div className="ed-hero__cta">
+                    <button
+                      type="button"
+                      className="ed-btn"
+                      onClick={() => void handleDownload()}
+                      disabled={exporting}
+                    >
+                      {exporting ? 'Preparing…' : 'Export passport'}
+                    </button>
+                    <a href="#identity" className="ed-btn-ghost">
+                      View record
+                    </a>
+                  </div>
+                )}
+              </div>
+              <div className="ed-hero__portrait" aria-hidden>
+                <img src={photo} alt="" />
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div className="ed-body">
+          <section className="ed-chapter" id="identity" aria-label="Identity">
+            <article className={styles.identityCard}>
+              <div className={styles.identityPortrait}>
+                <img src={photo} alt={identity.petName} />
+              </div>
+              <div>
+                <p className={styles.identityKicker}>PetClues · Identity</p>
+                <h2 className={styles.identityName}>{identity.petName}</h2>
+                <dl className={styles.identityDl}>
                   <div>
-                    <dt className="text-stone-400">Species</dt>
-                    <dd>{identity.species}</dd>
+                    <dt className={styles.dlTerm}>Species</dt>
+                    <dd className={styles.dlDef}>{identity.species}</dd>
                   </div>
                   <div>
-                    <dt className="text-stone-400">Breed</dt>
-                    <dd>{identity.breed}</dd>
+                    <dt className={styles.dlTerm}>Breed</dt>
+                    <dd className={styles.dlDef}>{identity.breed}</dd>
                   </div>
                   <div>
-                    <dt className="text-stone-400">Age</dt>
-                    <dd>{identity.age}</dd>
+                    <dt className={styles.dlTerm}>Age</dt>
+                    <dd className={styles.dlDef}>{identity.age}</dd>
                   </div>
                   {identity.weight && (
                     <div>
-                      <dt className="text-stone-400">Weight</dt>
-                      <dd>{identity.weight}</dd>
+                      <dt className={styles.dlTerm}>Weight</dt>
+                      <dd className={styles.dlDef}>{identity.weight}</dd>
                     </div>
                   )}
                 </dl>
-                <p className="mt-4 font-sans text-xs text-stone-400">
-                  Updated {identity.lastUpdated}
-                </p>
+                <p className={styles.identityUpdated}>Updated {identity.lastUpdated}</p>
               </div>
-            </div>
-          </article>
+            </article>
+          </section>
 
           {hasPremiumPassport ? (
             medicalAndToolsContent
           ) : (
-            <PremiumGate
-              requiredTier="Plus"
-              title="Secure Your Pet's Passport"
-              description="Upgrade to Plus to unlock medical records, emergency contacts, print-ready sheets, and shareable care safety links for pet sitters or clinicians."
-              className="!min-h-[20rem]"
-            >
-              <PassportMedicalGatePreview />
-            </PremiumGate>
+            <section className="ed-chapter">
+              <PremiumGate
+                requiredTier="Plus"
+                title="Secure Your Pet's Passport"
+                description="Upgrade to Plus to unlock medical records, emergency contacts, print-ready sheets, and shareable care safety links for pet sitters or clinicians."
+                className="!min-h-[20rem]"
+              >
+                <PassportMedicalGatePreview />
+              </PremiumGate>
+            </section>
           )}
 
-          <footer className="mt-12 border-t border-stone-200/60 pt-8">
-            <p className="font-sans text-xs text-stone-400">
-              <strong className="text-stone-600">PetClues Emergency Passport</strong> ·{' '}
-              {identity.petName}
-            </p>
-            <div className="mt-4">
-              <HealthDisclaimerNote compact />
-            </div>
+          <footer className="ed-footnote">
+            <hr />
+            <p>PetClues Emergency Passport · {identity.petName}</p>
+            <HealthDisclaimerNote compact />
           </footer>
         </div>
 

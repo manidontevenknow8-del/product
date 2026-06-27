@@ -6,155 +6,203 @@
 
 .card {
   position: relative;
-  display: flex;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
+  background: var(--lux-surface, #FFFFFF);
+  border: 1px solid var(--lux-border, #DDD5C8);
+  border-radius: 2px;
   overflow: hidden;
-  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  box-shadow: var(--lux-shadow-rest);
+  transition: box-shadow 220ms var(--lux-ease), transform 220ms var(--lux-ease);
 }
 
 .cardLink:hover .card,
 .card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-  border-color: var(--color-border);
-}
-
-.cardHighlight {
-  background: linear-gradient(
-    145deg,
-    rgba(196, 168, 130, 0.14) 0%,
-    var(--color-bg-elevated) 48%
-  );
+  box-shadow: var(--lux-shadow-hover);
+  transform: translateY(-3px);
 }
 
 .accent {
-  width: 4px;
-  flex-shrink: 0;
-  background: var(--color-accent);
-}
-
-.card[data-event-type='adoption'] .accent {
-  background: linear-gradient(180deg, var(--color-accent) 0%, var(--color-bg-dark) 100%);
-}
-
-.card[data-event-type='vaccination'] .accent {
-  background: #5a7a62;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--lux-gold, #A8833A);
 }
 
 .card[data-event-type='document_uploaded'] .accent {
-  background: #6b7f94;
+  background: var(--lux-teal, #3D6B62);
 }
 
-.card[data-event-type='reminder_completed'] .accent {
-  background: #7a8f6e;
-}
-
-.card[data-event-type='petcare_score_milestone'] .accent {
-  background: linear-gradient(180deg, var(--color-accent) 0%, #8a7355 100%);
-}
-
-.card[data-event-type='weight_milestone'] .accent {
-  background: #8a7b6a;
+.card[data-event-type='adoption'] .accent {
+  background: var(--lux-burgundy, #7A3030);
 }
 
 .body {
-  flex: 1;
-  min-width: 0;
-  padding: var(--space-5) var(--space-5) var(--space-5) var(--space-4);
+  padding: 40px 40px 40px 44px;
+  min-height: 120px;
 }
 
 .header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .typeGroup {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem 0.55rem;
+  gap: var(--space-2);
 }
 
 .type {
   font-family: var(--font-sans);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  color: var(--lux-gold, #A8833A);
+}
+
+.card[data-event-type='document_uploaded'] .type {
+  color: var(--lux-teal, #3D6B62);
+}
+
+.card[data-event-type='adoption'] .type {
+  color: var(--lux-burgundy, #7A3030);
 }
 
 .meta {
-  font-size: 0.68rem;
+  font-family: var(--font-sans);
+  font-size: 10px;
   font-weight: 500;
-  color: var(--color-text-light);
-  padding: 0.15rem 0.5rem;
-  background: var(--color-bg-muted);
-  border-radius: var(--radius-full);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-muted, #5C554D);
+  padding: 4px 10px;
+  border: 1px solid var(--lux-border, #DDD5C8);
+  border-radius: 2px;
+}
+
+.card[data-event-type='adoption'] .meta {
+  color: var(--lux-burgundy, #7A3030);
+  background: rgba(122, 48, 48, 0.08);
+  border-color: rgba(122, 48, 48, 0.25);
 }
 
 .date {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 10px;
   font-weight: 500;
-  color: var(--color-text-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #A8833A);
   flex-shrink: 0;
 }
 
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.docIcon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 2px;
+  background: var(--lux-bg, #F2EDE6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lux-teal, #3D6B62);
+}
+
 .title {
-  font-family: var(--font-sans);
-  font-size: 1.1rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: var(--space-2);
-  line-height: 1.35;
-  color: var(--color-text);
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--lux-text, #1A1712);
+}
+
+.cardHighlight .title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
 }
 
 .description {
+  margin: var(--space-3) 0 0;
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  color: var(--color-text-muted);
-  line-height: 1.65;
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--lux-muted, #5C554D);
 }
 
-.footer {
+.cardHighlight .description {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.85;
+}
+
+.docSub {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--lux-muted, #5C554D);
+}
+
+.attachmentRow {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  margin-top: var(--space-4);
-  padding-top: var(--space-3);
-  border-top: 1px solid var(--color-border-light);
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--lux-border, #DDD5C8);
 }
 
-.attachment {
+.attachmentInfo {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--lux-text, #1A1712);
+  min-width: 0;
 }
 
-.attachmentIcon {
-  width: 12px;
-  height: 14px;
-  border: 1.5px solid currentColor;
-  border-radius: 2px;
-  opacity: 0.7;
+.attachmentInfo svg {
+  flex-shrink: 0;
+  color: var(--lux-teal, #3D6B62);
+}
+
+.attachmentName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.downloadIcon {
+  flex-shrink: 0;
+  color: var(--lux-gold, #A8833A);
+  opacity: 0;
+  transition: opacity 220ms var(--lux-ease);
+}
+
+.card:hover .downloadIcon,
+.cardLink:hover .downloadIcon {
+  opacity: 1;
 }
 
 @media (max-width: 640px) {
   .body {
-    padding: var(--space-4);
-  }
-
-  .title {
-    font-size: 1rem;
+    padding: 28px 28px 28px 32px;
   }
 }

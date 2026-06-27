@@ -3,7 +3,10 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from '@/components/errors';
 import { RootRouter } from '@/app/RootRouter';
+import { initEditorialReveal } from '@/lib/editorialReveal';
 import '@/styles/global.css';
+
+initEditorialReveal();
 
 function schedulePostHogInit() {
   const run = () => {

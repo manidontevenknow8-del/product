@@ -7,21 +7,23 @@ type LifeStorySummaryProps = {
 
 export function LifeStorySummary({ summary }: LifeStorySummaryProps) {
   return (
-    <section className={styles.card} aria-label="Timeline summary">
+    <section className={styles.section} aria-label="Timeline summary">
       <p className={styles.eyebrow}>At a glance</p>
-      <h2 className={styles.headline}>{summary.headline}</h2>
-      <p className={styles.detail}>{summary.detail}</p>
+      <div className={styles.content}>
+        <h2 className={styles.headline}>{summary.headline}</h2>
+        <p className={styles.detail}>{summary.detail}</p>
 
-      {summary.highlights.length > 0 && (
-        <div className={styles.highlights}>
-          {summary.highlights.map((item) => (
-            <div key={item.label} className={styles.highlight}>
-              <span className={styles.highlightValue}>{item.value}</span>
-              <span className={styles.highlightLabel}>{item.label}</span>
-            </div>
-          ))}
-        </div>
-      )}
+        {summary.highlights.length > 0 && (
+          <p className={styles.inlineStats}>
+            {summary.highlights.map((item, index) => (
+              <span key={item.label}>
+                {index > 0 && <span className={styles.statSep}>·</span>}
+                <span className={styles.statNum}>{item.value}</span> {item.label.toLowerCase()}
+              </span>
+            ))}
+          </p>
+        )}
+      </div>
     </section>
   );
 }

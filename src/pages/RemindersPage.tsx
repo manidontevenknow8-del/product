@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
-import { Button, LoadingState } from '@/components/ui';
+import { LoadingState } from '@/components/ui';
 import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
 import { useAuth } from '@/auth/AuthProvider';
 import {
@@ -19,6 +19,8 @@ import {
 import { useReminders } from '@/reminders';
 import { usePets } from '@/pets';
 import { PetSwitcherHero } from '@/components/pets';
+import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
+import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import {
   UPCOMING_REMINDER_DAYS,
   OVERDUE_REMINDER_MAX_DAYS,
@@ -30,8 +32,6 @@ import styles from './RemindersPage.module.css';
 
 const IMG = {
   hero: '/images/reminders/reminders-hero.webp',
-  notify: '/images/reminders/reminders-notify.webp',
-  vet: '/images/reminders/reminders-vet.webp',
 } as const;
 
 const WEEKDAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -51,21 +51,6 @@ const HOW_IT_WORKS = [
     step: '3',
     title: 'Get nudged on schedule',
     body: 'PetClues tracks due dates in the app. If your account email and notification preferences are on, we also send email reminders on the schedule below - not the instant you tap save.',
-  },
-] as const;
-
-const USE_CASES = [
-  {
-    title: 'Vet & vaccine dates',
-    body: 'Annual boosters, deworming, and check-ups stay tied to the right pet so nothing slips between visits.',
-    image: IMG.vet,
-    alt: 'Illustration of a pet owner reviewing a vet appointment schedule',
-  },
-  {
-    title: 'Daily life & refills',
-    body: 'Grooming, food refills, insurance renewals, or custom tasks - all with the same due-date and repeat rules.',
-    image: IMG.notify,
-    alt: 'Illustration of pet care reminders arriving on a phone',
   },
 ] as const;
 
@@ -148,136 +133,102 @@ export function RemindersPage() {
 
   const upcomingLabel = formatUpcomingDays();
   const weeklyDay = WEEKDAY_NAMES[WEEKLY_SUMMARY_DAY];
+  const heroBg = resolvePetHeroBackground(activePet?.photoUrl);
+  const heroSrc = heroBg.isPetPhoto ? heroBg.src : IMG.hero;
+  const heroPhoto = normalizePhotoUrlFromDb(activePet?.photoUrl);
+  const upcomingCount = stats.upcoming + stats.dueToday;
 
   return (
     <AppLayout flushContent>
-      <div className={styles.page}>
-        <header className={styles.hero}>
-          <img className={styles.heroImg} src={IMG.hero} alt="" aria-hidden />
-          <div className={styles.heroScrim} aria-hidden />
-          {activePet && (
-            <PetSwitcherHero
-              pets={pets}
-              activeId={activePet.id}
-              onSelect={handlePetSwitch}
-            />
-          )}
-          <div className={styles.heroInner}>
-            <p className={styles.heroEyebrow}>Pet care scheduling</p>
-            <h1 className={styles.heroTitle}>Reminders that match real pet life</h1>
-            <p className={styles.heroLead}>
-              Set appointments, vaccines, grooming, medication, and anything else - then let
-              PetClues surface what is due in the app and, when enabled, by email on a fixed
-              schedule so you are not guessing when the next nudge arrives.
-            </p>
-            <div className={styles.heroActions}>
-              <Button variant="primary" size="md" onClick={handleOpenCreate}>
-                New reminder
-              </Button>
-              {!isLoading && (
-                <div className={styles.heroStats} aria-label="Reminder summary">
-                  <span className={styles.statPill}>
-                    <strong>{stats.upcoming + stats.dueToday}</strong> upcoming
-                  </span>
-                  <span className={`${styles.statPill} ${stats.overdue > 0 ? styles.statWarn : ''}`}>
-                    <strong>{stats.overdue}</strong> overdue
-                  </span>
-                  <span className={styles.statPill}>
-                    <strong>{stats.total}</strong> active
-                  </span>
+      <div className="ed-page">
+        <header className="ed-hero">
+          <img
+            className={`ed-hero__bg ${heroBg.isPetPhoto ? 'ed-hero__bg--pet' : ''}`}
+            src={heroSrc}
+            alt=""
+            aria-hidden
+          />
+          <div className="ed-hero__wash" aria-hidden />
+          <div className="ed-hero__texture" aria-hidden />
+          <div className="ed-hero__inner">
+            <div className="ed-hero__top">
+              {activePet && (
+                <PetSwitcherHero
+                  pets={pets}
+                  activeId={activePet.id}
+                  onSelect={handlePetSwitch}
+                />
+              )}
+            </div>
+
+            <div className="ed-hero__grid">
+              <div className="ed-hero__text">
+                <p className="ed-hero__kicker">Care scheduling</p>
+                <h1 className="ed-hero__title">Never miss a moment of care</h1>
+                <p className="ed-hero__subtitle">
+                  Appointments, vaccines, grooming, and medication — gathered into one calm
+                  schedule that nudges you in the app and by email, right on time.
+                </p>
+                <div className="ed-hero__cta">
+                  <button type="button" className="ed-btn" onClick={handleOpenCreate}>
+                    New reminder
+                  </button>
+                  <a href="#manage-heading" className="ed-btn-ghost">
+                    View schedule
+                  </a>
+                </div>
+              </div>
+
+              {heroPhoto && (
+                <div className="ed-hero__portrait" aria-hidden>
+                  <img src={heroPhoto} alt="" />
                 </div>
               )}
             </div>
           </div>
         </header>
 
-        <div className={styles.body}>
-          <section className={styles.section} aria-labelledby="how-heading">
-            <h2 id="how-heading" className={styles.sectionTitle}>
-              What happens when you set a reminder
-            </h2>
-            <div className={styles.steps}>
-              {HOW_IT_WORKS.map((item) => (
-                <article key={item.step} className={styles.stepCard}>
-                  <span className={styles.stepNum}>{item.step}</span>
-                  <h3 className={styles.stepTitle}>{item.title}</h3>
-                  <p className={styles.stepBody}>{item.body}</p>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className={styles.bento} aria-labelledby="schedule-heading">
-            <div className={styles.scheduleCard}>
-              <h2 id="schedule-heading" className={styles.cardTitle}>
-                Email reminder schedule
-              </h2>
-              <p className={styles.cardLead}>
-                Emails run once per day at <strong>{DAILY_EMAIL_CRON_HOUR_UTC}:00 UTC</strong> (not
-                immediately when you create a reminder). You need a profile email and notification
-                preferences enabled in Settings.
-              </p>
-              <ul className={styles.scheduleList}>
-                <li>
-                  <span className={styles.scheduleTag}>Upcoming</span>
-                  One email each on {upcomingLabel} the due date.
-                </li>
-                <li>
-                  <span className={styles.scheduleTag}>Overdue</span>
-                  One email per day while overdue, for up to {OVERDUE_REMINDER_MAX_DAYS} days past
-                  due.
-                </li>
-                <li>
-                  <span className={styles.scheduleTag}>Weekly</span>
-                  Summary email every <strong>{weeklyDay}</strong> for open reminders across your
-                  pets.
-                </li>
-              </ul>
-              <div className={styles.timeline} role="img" aria-label="Upcoming email touchpoints before due date">
-                {UPCOMING_REMINDER_DAYS.map((day) => (
-                  <div key={day} className={styles.timelineNode}>
-                    <span className={styles.timelineDot} />
-                    <span className={styles.timelineLabel}>
-                      {day === 0 ? 'Due' : `−${day}d`}
-                    </span>
-                  </div>
-                ))}
+        {!isLoading && (
+          <section className="ed-stats" style={{ ['--ed-stat-cols' as string]: 4 }} aria-label="Reminder summary">
+            <div className="ed-stats__inner">
+              <div className="ed-stat">
+                <div className="ed-stat__value">{upcomingCount}</div>
+                <p className="ed-stat__label">Upcoming</p>
               </div>
-              <p className={styles.scheduleNote}>
-                In-app reminders and dashboard widgets update as soon as data syncs - email is an
-                extra layer on top of that rhythm.
-              </p>
-            </div>
-
-            <div className={styles.useCases}>
-              {USE_CASES.map((item) => (
-                <article key={item.title} className={styles.useCard}>
-                  <div className={styles.useMedia}>
-                    <img src={item.image} alt={item.alt} className={styles.useImg} loading="lazy" />
-                  </div>
-                  <div className={styles.useCopy}>
-                    <h3 className={styles.useTitle}>{item.title}</h3>
-                    <p className={styles.useBody}>{item.body}</p>
-                  </div>
-                </article>
-              ))}
+              <div className="ed-stat">
+                <div className={`ed-stat__value ${stats.overdue > 0 ? styles.statValueWarn : ''}`}>
+                  {stats.overdue}
+                </div>
+                <p className="ed-stat__label">Overdue</p>
+              </div>
+              <div className="ed-stat">
+                <div className="ed-stat__value">{stats.total}</div>
+                <p className="ed-stat__label">Active</p>
+              </div>
+              <div className="ed-stat">
+                <div className="ed-stat__value">{stats.completed}</div>
+                <p className="ed-stat__label">Completed</p>
+              </div>
             </div>
           </section>
+        )}
 
-          <section className={styles.workspace} aria-labelledby="manage-heading">
+        <div className="ed-body">
+          <section className="ed-chapter" aria-labelledby="manage-heading">
             <div className={styles.workspaceHead}>
-              <div>
-                <h2 id="manage-heading" className={styles.sectionTitle}>
+              <div className="ed-chapter__intro">
+                <p className="ed-eyebrow">The schedule</p>
+                <h2 id="manage-heading" className="ed-title">
                   Your reminders
                 </h2>
-                <p className={styles.workspaceLead}>
-                  Filter by view and category, switch to calendar, complete tasks, or edit dates.
-                  Everything here stays in sync with your pets and dashboard.
+                <p className="ed-lead">
+                  Filter by view and category, switch to calendar, complete tasks, or edit dates —
+                  always in sync with your pets and dashboard.
                 </p>
               </div>
-              <Button variant="secondary" size="sm" onClick={handleOpenCreate}>
+              <button type="button" className="ed-btn-dark" onClick={handleOpenCreate}>
                 Add reminder
-              </Button>
+              </button>
             </div>
 
             {atReminderLimit && (
@@ -325,6 +276,65 @@ export function RemindersPage() {
                 )}
               </div>
             )}
+          </section>
+
+          <section className="ed-band" aria-labelledby="schedule-heading">
+            <div className="ed-band__texture" aria-hidden />
+            <span className="ed-band__watermark" aria-hidden>
+              On time
+            </span>
+            <div className="ed-band__inner">
+              <p className="ed-eyebrow">How reminders reach you</p>
+              <h2 id="schedule-heading" className="ed-band__title">
+                A gentle rhythm, never a scramble
+              </h2>
+              <p className="ed-band__text">
+                Emails run once daily at {DAILY_EMAIL_CRON_HOUR_UTC}:00 UTC — never the instant you
+                hit save. In-app reminders and dashboard cues update the moment data syncs.
+              </p>
+
+              <div className={styles.touchpoints} role="img" aria-label="Email touchpoints before a due date">
+                {UPCOMING_REMINDER_DAYS.map((day) => (
+                  <div key={day} className={styles.touchNode}>
+                    <span className={styles.touchDot} />
+                    <span className={styles.touchLabel}>{day === 0 ? 'Due' : `−${day}d`}</span>
+                  </div>
+                ))}
+              </div>
+
+              <ul className={styles.scheduleList}>
+                <li>
+                  <span className={styles.scheduleTag}>Upcoming</span>
+                  One email each on {upcomingLabel} the due date.
+                </li>
+                <li>
+                  <span className={styles.scheduleTag}>Overdue</span>
+                  One per day while overdue, up to {OVERDUE_REMINDER_MAX_DAYS} days past due.
+                </li>
+                <li>
+                  <span className={styles.scheduleTag}>Weekly</span>
+                  A {weeklyDay} summary of open reminders across your pets.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section className="ed-chapter" aria-labelledby="how-heading">
+            <div className="ed-chapter__intro">
+              <p className="ed-eyebrow">How it works</p>
+              <h2 id="how-heading" className="ed-title">
+                Set it once, stay ahead
+              </h2>
+            </div>
+            <div className="ed-steps">
+              {HOW_IT_WORKS.map((item) => (
+                <article key={item.step} className="ed-step">
+                  <span className="ed-step__num">{item.step}</span>
+                  <h3 className="ed-step__title">{item.title}</h3>
+                  <p className="ed-step__body">{item.body}</p>
+                </article>
+              ))}
+            </div>
           </section>
         </div>
       </div>

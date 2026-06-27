@@ -1,0 +1,16 @@
+/**
+ * Shared editorial layout primitives — magazine chapters, not widget grids.
+ */
+
+:root {
+  --editorial-max: 1280px;
+  --editorial-gutter: 48px;
+  --editorial-chapter-gap: 96px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --editorial-gutter: 24px;
+    --editorial-chapter-gap: 64px;
+  }
+}

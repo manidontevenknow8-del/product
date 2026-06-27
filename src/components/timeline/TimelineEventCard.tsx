@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { eventTypeLabels, type TimelineEventItem } from '@/types/timeline';
 import { ROUTES } from '@/routes/paths';
-import { TimelineEventMedia } from './TimelineEventMedia';
 import styles from './TimelineEventCard.module.css';
 
 type TimelineEventCardProps = {
   event: TimelineEventItem;
   featured?: boolean;
+  petName?: string;
 };
 
 function eventHref(event: TimelineEventItem): string | null {
@@ -24,9 +24,41 @@ function eventHref(event: TimelineEventItem): string | null {
   }
 }
 
-export function TimelineEventCard({ event, featured = false }: TimelineEventCardProps) {
+function DocumentIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path
+        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Z"
+        stroke="currentColor"
+        strokeWidth="1.25"
+        strokeLinejoin="round"
+      />
+      <path d="M14 2v6h6M8 13h8M8 17h5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.25" />
+      <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.25" />
+    </svg>
+  );
+}
+
+function DownloadIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <path d="M12 3v12M7 10l5 5 5-5" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+      <path d="M4 21h16" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function TimelineEventCard({ event, featured = false, petName = 'your pet' }: TimelineEventCardProps) {
   const href = eventHref(event);
-  const showMedia = Boolean(event.imageUrl || event.thumbnailDocumentId);
+  const isDocument = event.type === 'document_uploaded';
   const isHighlight = featured || event.type === 'adoption';
 
   const card = (
@@ -47,23 +79,35 @@ export function TimelineEventCard({ event, featured = false }: TimelineEventCard
           </time>
         </div>
 
-        <h3 className={styles.title}>{event.title}</h3>
-        <p className={styles.description}>{event.description}</p>
-
-        {showMedia && (
-          <TimelineEventMedia
-            imageUrl={event.imageUrl}
-            thumbnailDocumentId={event.thumbnailDocumentId}
-            alt={event.title}
-            variant={isHighlight ? 'hero' : 'card'}
-          />
+        {isDocument ? (
+          <>
+            <div className={styles.titleRow}>
+              <div className={styles.docIcon}>
+                <DocumentIcon />
+              </div>
+              <div>
+                <h3 className={styles.title}>{event.title}</h3>
+                <p className={styles.docSub}>
+                  PDF archived for {petName} on {event.displayDate}
+                </p>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <h3 className={styles.title}>{event.title}</h3>
+            <p className={styles.description}>{event.description}</p>
+          </>
         )}
 
         {event.hasAttachment && event.attachmentName && (
-          <div className={styles.footer}>
-            <span className={styles.attachment}>
-              <span className={styles.attachmentIcon} aria-hidden="true" />
-              {event.attachmentName}
+          <div className={styles.attachmentRow}>
+            <span className={styles.attachmentInfo}>
+              <LockIcon />
+              <span className={styles.attachmentName}>{event.attachmentName}</span>
+            </span>
+            <span className={styles.downloadIcon}>
+              <DownloadIcon />
             </span>
           </div>
         )}

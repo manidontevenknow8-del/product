@@ -6,7 +6,9 @@ export const PAGE_IMG = {
     recovery: '/images/auth/auth-recovery.webp',
   },
   app: {
+    /** Primary editorial hero — same photo as the marketing homepage */
     dashboard: '/images/landing/landing-hero.webp',
+    hero: '/images/landing/landing-hero.webp',
     dashboardWelcome: '/images/app/dashboard-welcome.webp',
     onboarding: '/images/app/onboarding-welcome.webp',
     timeline: '/images/landing/landing-timeline.webp',

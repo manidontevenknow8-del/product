@@ -38,8 +38,10 @@ export function TimelineFilters({
             }`}
             onClick={() => onFilterChange(filter)}
           >
-            <span>{filterLabels[filter]}</span>
-            <span className={styles.count}>{count}</span>
+            <span className={styles.labelWrap}>
+              {filterLabels[filter]}
+              <sup className={styles.count}>{count}</sup>
+            </span>
           </button>
         );
       })}

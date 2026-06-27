@@ -1,22 +1,35 @@
 @import 'tailwindcss';
 
+@source "../**/*.{tsx,ts,jsx,js}";
+
 @import '@fontsource/inter/300.css';
 @import '@fontsource/inter/400.css';
 @import '@fontsource/inter/500.css';
 @import '@fontsource/inter/600.css';
+@import '@fontsource/cormorant-garamond/300.css';
 @import '@fontsource/cormorant-garamond/400.css';
 @import '@fontsource/cormorant-garamond/500.css';
 @import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/300-italic.css';
 @import '@fontsource/cormorant-garamond/400-italic.css';
+@import '@fontsource/playfair-display/400.css';
+@import '@fontsource/playfair-display/500.css';
+@import '@fontsource/dm-sans/400.css';
+@import '@fontsource/dm-sans/500.css';
+@import '@fontsource/dm-sans/600.css';
 
 @theme {
   --font-serif: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
 }
 
 @import './tokens.css';
 @import './typography.css';
 @import './app-shell.css';
+
+@import './editorial-layout.css';
+@import './editorial-shell.css';
 
 /* ── Reset & base ──────────────────────────────────────────── */
 *, *::before, *::after {
@@ -31,6 +44,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
   scroll-padding-top: calc(var(--header-height) + var(--space-4));
+}
+
+:root {
+  /* Final-stage luxury system tokens (shared) */
+  --lux-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --lux-shadow-rest: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.05);
+  --lux-shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 body {

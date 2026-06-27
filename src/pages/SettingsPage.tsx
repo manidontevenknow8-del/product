@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { LoadingState } from '@/components/ui';
-import { PageHeroBand } from '@/components/visual';
 import { PAGE_IMG } from '@/data/pageImages';
 import {
   SettingsNav,
@@ -49,7 +48,7 @@ export function SettingsPage() {
   if (isLoading) {
     return (
       <AppLayout flushContent>
-        <div className={styles.page}>
+        <div className="ed-page">
           <div className={styles.loadingWrap}>
             <LoadingState message="Loading settings" />
           </div>
@@ -60,19 +59,30 @@ export function SettingsPage() {
 
   return (
     <AppLayout flushContent>
-      <div className={styles.page}>
-        <PageHeroBand
-          compact
-          image={PAGE_IMG.app.settings}
-          imageAlt=""
-          eyebrow="Account"
-          title="Settings"
-          subtitle="Manage your account, notifications, privacy, and security."
-        />
+      <div className="ed-page">
+        <header className="ed-hero ed-hero--compact">
+          <img className="ed-hero__bg" src={PAGE_IMG.app.settings} alt="" aria-hidden />
+          <div className="ed-hero__wash" aria-hidden />
+          <div className="ed-hero__texture" aria-hidden />
+          <div className="ed-hero__inner">
+            <div className="ed-hero__top" />
+            <div className="ed-hero__grid">
+              <div className="ed-hero__text">
+                <p className="ed-hero__kicker">Account</p>
+                <h1 className="ed-hero__title">Settings</h1>
+                <p className="ed-hero__subtitle">
+                  Manage your account, notifications, privacy, and security — all in one calm place.
+                </p>
+              </div>
+            </div>
+          </div>
+        </header>
 
-        <div className={styles.body}>
+        <div className="ed-body">
           <div className={styles.layout}>
-            <SettingsNav active={section} onChange={handleSectionChange} />
+            <div className={styles.nav}>
+              <SettingsNav active={section} onChange={handleSectionChange} />
+            </div>
             <div className={styles.content}>
               {section === 'account' && (
                 <>

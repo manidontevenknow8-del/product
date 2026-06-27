@@ -12,16 +12,6 @@ import {
 import { formatDocumentVaultDate } from '@/services/documents/documentService';
 import styles from './PetHealthRecords.module.css';
 
-const typeDotClass: Record<HealthRecordType, string> = {
-  vaccination: styles.typeDotVaccination,
-  allergy: styles.typeDotAllergy,
-  medication: styles.typeDotMedication,
-  diagnosis: styles.typeDotDiagnosis,
-  surgery: styles.typeDotSurgery,
-  weight: styles.typeDotWeight,
-  wellness: styles.typeDotWellness,
-};
-
 const groupOrder: HealthRecordType[] = [
   'vaccination',
   'wellness',
@@ -35,6 +25,7 @@ const groupOrder: HealthRecordType[] = [
 type PetHealthRecordsProps = {
   onAdd: () => void;
   onEdit: (record: HealthRecord) => void;
+  showHeader?: boolean;
 };
 
 function groupRecords(records: HealthRecord[]) {
@@ -61,7 +52,7 @@ function RecordDocumentLink({ record }: { record: HealthRecord }) {
   );
 }
 
-export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
+export function PetHealthRecords({ onAdd, onEdit, showHeader = true }: PetHealthRecordsProps) {
   const { records, isLoading } = useHealthRecords();
   const { atLimit, recordCount, limit } = useHealthRecordLimit();
   const [upgradeOpen, setUpgradeOpen] = useState(false);
@@ -77,17 +68,21 @@ export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
 
   return (
     <section className={styles.section}>
-      <div className={styles.header}>
-        <div>
-          <h2 className={styles.title}>Health records</h2>
-          {!isLoading && records.length > 0 && (
-            <span className={styles.count}>{records.length} entries</span>
-          )}
+      {showHeader && (
+        <div className={styles.header}>
+          <div className={styles.headerText}>
+            {!isLoading && records.length > 0 && (
+              <span className={styles.count}>
+                {records.length} {records.length === 1 ? 'entry' : 'entries'}
+              </span>
+            )}
+            <h2 className={styles.title}>Health records</h2>
+          </div>
+          <button type="button" className={styles.addBtn} onClick={handleAdd}>
+            Add record
+          </button>
         </div>
-        <button type="button" className={styles.addBtn} onClick={handleAdd}>
-          Add record
-        </button>
-      </div>
+      )}
 
       {atLimit && (
         <PremiumUpgradePrompt
@@ -104,25 +99,29 @@ export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
         <EmptyHealthRecordsState onAdd={handleAdd} compact />
       ) : (
         groups.map((group) => (
-          <div key={group.type}>
+          <div key={group.type} className={styles.groupBlock}>
             <h3 className={styles.groupLabel}>{group.label}</h3>
-            <div className={styles.list}>
+            <ul className={styles.list}>
               {group.items.map((entry) => (
-                <article key={entry.id} className={styles.entry}>
-                  <div className={styles.typeIcon}>
-                    <div className={`${styles.typeDot} ${typeDotClass[entry.recordType]}`} />
-                  </div>
-                  <div className={styles.content}>
+                <li key={entry.id} className={styles.entry}>
+                  <div className={styles.bead} aria-hidden />
+                  <article className={styles.entryBody}>
                     <div className={styles.entryHeader}>
-                      <div className={styles.entryTitle}>{entry.title}</div>
-                      <button type="button" className={styles.editBtn} onClick={() => onEdit(entry)}>
+                      <span className={styles.typeLabel}>
+                        {healthRecordTypeLabels[entry.recordType]}
+                      </span>
+                      <button
+                        type="button"
+                        className={styles.editBtn}
+                        onClick={() => onEdit(entry)}
+                      >
                         Edit
                       </button>
                     </div>
-                    <div className={styles.entryMeta}>
-                      {healthRecordTypeLabels[entry.recordType]} ·{' '}
+                    <h4 className={styles.entryTitle}>{entry.title}</h4>
+                    <p className={styles.entryMeta}>
                       {formatHealthRecordDate(entry.dateRecorded)}
-                    </div>
+                    </p>
                     {entry.description && (
                       <p className={styles.entryDetail}>{entry.description}</p>
                     )}
@@ -132,15 +131,15 @@ export function PetHealthRecords({ onAdd, onEdit }: PetHealthRecordsProps) {
                         Next due {formatHealthRecordDate(entry.nextDueDate)}
                       </p>
                     )}
-                  </div>
-                  {entry.severity && (
-                    <span className={`${styles.status} ${styles[`severity_${entry.severity}`]}`}>
-                      {entry.severity}
-                    </span>
-                  )}
-                </article>
+                    {entry.severity && (
+                      <span className={`${styles.severity} ${styles[`severity_${entry.severity}`]}`}>
+                        {entry.severity}
+                      </span>
+                    )}
+                  </article>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))
       )}

@@ -22,6 +22,8 @@ import { useSubscription } from '@/subscription/SubscriptionProvider';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { useAnalytics } from '@/analytics';
 import { HealthDisclaimerNote } from '@/components/trust/HealthDisclaimerNote';
+import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
+import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import { formatFileTypeLabel } from '@/services/documents/documentService';
 import { getHealthRecordService } from '@/services/healthRecords/healthRecordService';
 import { getReminderService } from '@/services/reminders/reminderService';
@@ -299,11 +301,13 @@ export function ScanPage() {
   if (!hasPets || !activePet) {
     return (
       <AppLayout flushContent>
-        <div className={styles.page}>
-          <header className={styles.header}>
-            <h1 className={styles.title}>PetClues Scan</h1>
-            <p className={styles.lead}>Add a pet first to scan documents.</p>
-          </header>
+        <div className="ed-loading" style={{ textAlign: 'center' }}>
+          <h1 className="ed-title" style={{ marginInline: 'auto' }}>
+            PetClues Scan
+          </h1>
+          <p className="ed-lead" style={{ marginInline: 'auto' }}>
+            Add a pet first to scan documents.
+          </p>
         </div>
       </AppLayout>
     );
@@ -316,7 +320,8 @@ export function ScanPage() {
     documents.find((d) => d.id === activeExtraction?.documentId)?.fileName ?? 'Document';
   const showReport = decodeState === 'report' && activeExtraction && reviewResult;
   const upgradeTier = decoderAccess.upgradeTierTarget;
-  const showSwitcher = pets.length > 1;
+  const heroBg = resolvePetHeroBackground(activePet.photoUrl);
+  const heroPhoto = normalizePhotoUrlFromDb(activePet.photoUrl);
 
   const dropzone = (
     <ScanMagicDropzone
@@ -331,114 +336,149 @@ export function ScanPage() {
 
   return (
     <AppLayout flushContent>
-      <div className={styles.page}>
-        <header className={styles.header}>
-          <div className={styles.headerRow}>
-            <p className={styles.eyebrow}>{activePet.name}</p>
-            {showSwitcher && (
-              <div className={styles.switcher}>
-                <PetSwitcher
-                  pets={pets}
-                  activeId={activePet.id}
-                  onSelect={setActivePet}
-                  variant="light"
-                />
+      <div className="ed-page">
+        <header className="ed-hero ed-hero--compact">
+          <img
+            className={`ed-hero__bg ${heroBg.isPetPhoto ? 'ed-hero__bg--pet' : ''}`}
+            src={heroBg.src}
+            alt=""
+            aria-hidden
+          />
+          <div className="ed-hero__wash" aria-hidden />
+          <div className="ed-hero__texture" aria-hidden />
+          <div className="ed-hero__inner">
+            <div className="ed-hero__top">
+              <PetSwitcher pets={pets} activeId={activePet.id} onSelect={setActivePet} />
+            </div>
+            <div className="ed-hero__grid">
+              <div className="ed-hero__text">
+                <p className="ed-hero__kicker">AI document studio · {activePet.name}</p>
+                <h1 className="ed-hero__title">Scan</h1>
+                <p className="ed-hero__subtitle">
+                  Upload any vet bill, prescription, or lab report — we extract the clarity and file
+                  it where it belongs.
+                </p>
+                <div className="ed-hero__cta">
+                  <a href="#upload" className="ed-btn">
+                    Upload a document
+                  </a>
+                  <a href="#recent" className="ed-btn-ghost">
+                    Recent scans
+                  </a>
+                </div>
               </div>
-            )}
+              {heroPhoto && (
+                <div className="ed-hero__portrait" aria-hidden>
+                  <img src={heroPhoto} alt="" />
+                </div>
+              )}
+            </div>
           </div>
-          <h1 className={styles.title}>PetClues Scan</h1>
-          <p className={styles.lead}>
-            Upload any vet bill, prescription, or health record. We extract the clarity.
-          </p>
         </header>
 
         {decoderMockMode && (
           <p className={styles.mockBanner} role="status">
-            Local preview - Vet Bill Decoder uses sample extraction data until Supabase is
+            Local preview — Vet Bill Decoder uses sample extraction data until Supabase is
             configured.
           </p>
         )}
 
-        {showReport && (
-          <div className={styles.reportBlock}>
-            <VetBillDecoderReview
-              record={activeExtraction}
-              result={reviewResult}
-              fileName={activeFileName}
-              isSaving={isSaving}
-              isDeleting={isDeleting}
-              onChange={setReviewResult}
-              onAddToTimeline={() => void handleAddToTimeline()}
-              onClose={() => void handleCloseReport()}
-              onDelete={() => void handleDeleteReport()}
+        <div className="ed-body">
+          {showReport && (
+            <section className="ed-chapter" aria-label="Decoded report">
+              <div className={styles.reportBlock}>
+                <VetBillDecoderReview
+                  record={activeExtraction}
+                  result={reviewResult}
+                  fileName={activeFileName}
+                  isSaving={isSaving}
+                  isDeleting={isDeleting}
+                  onChange={setReviewResult}
+                  onAddToTimeline={() => void handleAddToTimeline()}
+                  onClose={() => void handleCloseReport()}
+                  onDelete={() => void handleDeleteReport()}
+                />
+              </div>
+            </section>
+          )}
+
+          <section className="ed-chapter" id="upload" aria-label="Upload">
+            <div className="ed-chapter__intro">
+              <p className="ed-eyebrow">Upload</p>
+              <h2 className="ed-title">Drop it in, we&apos;ll do the reading</h2>
+            </div>
+            <div className={styles.stack}>
+              <DecoderUsageBar
+                decoderAccess={decoderAccess}
+                isEnterprise={isEnterprise}
+                isMonthlyQuota={isMonthlyDecoderQuota}
+              />
+
+              <div className={styles.dropzoneWrap}>
+                {documentVaultFull ? (
+                  <PremiumGate
+                    requiredTier="Plus"
+                    title="Document Vault Limit Reached"
+                    description="Upgrade to Plus to unlock unlimited secure medical document storage."
+                    className={styles.gateMinHeight}
+                    onUpgrade={() => setDocumentUpgradeOpen(true)}
+                  >
+                    {dropzone}
+                  </PremiumGate>
+                ) : quotaExhausted ? (
+                  <PremiumGate
+                    requiredTier={upgradeTier}
+                    title="Scan Limit Reached"
+                    description={`Upgrade to ${upgradeTier} to unlock more AI document extractions.`}
+                    className={styles.gateMinHeight}
+                  >
+                    {dropzone}
+                  </PremiumGate>
+                ) : (
+                  dropzone
+                )}
+              </div>
+
+              {decodeState === 'decoding' && (
+                <LoadingState message="Creating your report (one-time AI scan)…" />
+              )}
+              {decodeError && !showReport && (
+                <p className={styles.error} role="alert">
+                  {decodeError}
+                </p>
+              )}
+              {displaySuccess && lastUploaded && (
+                <UploadSuccessCard document={lastUploaded} decoding={decodeState === 'decoding'} />
+              )}
+            </div>
+          </section>
+
+          <section className="ed-chapter" id="recent" aria-label="Recent scans">
+            <RecentScansHistory
+              items={historyItems}
+              timelineAccess={timelineAccess}
+              activeId={activeExtraction?.id}
+              onOpenRecord={openReport}
             />
-          </div>
-        )}
+          </section>
 
-        <div className={styles.stack}>
-          <DecoderUsageBar
-            decoderAccess={decoderAccess}
-            isEnterprise={isEnterprise}
-            isMonthlyQuota={isMonthlyDecoderQuota}
-          />
+          <section className="ed-chapter" aria-label="Supported formats">
+            <div className="ed-chapter__intro">
+              <p className="ed-eyebrow">What we read</p>
+              <h2 className="ed-title">Supported formats</h2>
+            </div>
+            <ul className={styles.formatsList}>
+              <li>Vet bills &amp; invoices</li>
+              <li>Prescriptions</li>
+              <li>Vaccine records</li>
+              <li>Lab reports · PDF, JPG, PNG</li>
+            </ul>
+          </section>
 
-          <div className={styles.dropzoneWrap}>
-            {documentVaultFull ? (
-              <PremiumGate
-                requiredTier="Plus"
-                title="Document Vault Limit Reached"
-                description="Upgrade to Plus to unlock unlimited secure medical document storage."
-                className={styles.gateMinHeight}
-                onUpgrade={() => setDocumentUpgradeOpen(true)}
-              >
-                {dropzone}
-              </PremiumGate>
-            ) : quotaExhausted ? (
-              <PremiumGate
-                requiredTier={upgradeTier}
-                title="Scan Limit Reached"
-                description={`Upgrade to ${upgradeTier} to unlock more AI document extractions.`}
-                className={styles.gateMinHeight}
-              >
-                {dropzone}
-              </PremiumGate>
-            ) : (
-              dropzone
-            )}
-          </div>
-
-          {decodeState === 'decoding' && (
-            <LoadingState message="Creating your report (one-time AI scan)…" />
-          )}
-          {decodeError && !showReport && (
-            <p className={styles.error} role="alert">
-              {decodeError}
-            </p>
-          )}
-          {displaySuccess && lastUploaded && (
-            <UploadSuccessCard document={lastUploaded} decoding={decodeState === 'decoding'} />
-          )}
-        </div>
-
-        <RecentScansHistory
-          items={historyItems}
-          timelineAccess={timelineAccess}
-          activeId={activeExtraction?.id}
-          onOpenRecord={openReport}
-        />
-
-        <div className={styles.formats}>
-          <p className={styles.formatsEyebrow}>Supported formats</p>
-          <ul className={styles.formatsList}>
-            <li>Vet bills &amp; invoices</li>
-            <li>Prescriptions</li>
-            <li>Vaccine records</li>
-            <li>Lab reports · PDF, JPG, PNG</li>
-          </ul>
-        </div>
-
-        <div className={styles.trust}>
-          <HealthDisclaimerNote compact />
+          <footer className="ed-footnote">
+            <hr />
+            <HealthDisclaimerNote compact />
+          </footer>
         </div>
 
         <UpgradeModal isOpen={upgradeOpen} onClose={() => setUpgradeOpen(false)} />

@@ -1,7 +1,7 @@
 .figure {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  gap: var(--space-4);
 }
 
 .caption {
@@ -36,4 +36,115 @@
   width: 100%;
   height: 6rem;
   color: #292524;
+}
+
+/* ── Luxury variant ───────────────────────────────────────────── */
+
+.luxury .label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: #A8833A;
+}
+
+.luxury .value {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: #1A1712;
+}
+
+.luxury .valueStrong {
+  font-weight: 300;
+}
+
+.luxuryChartWrap {
+  background: #F8F4EE;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.luxPlot {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.feature .luxPlot {
+  height: 300px;
+}
+
+.feature .value {
+  font-size: 36px;
+}
+
+.feature .luxuryChartWrap {
+  padding: 24px 28px;
+  border-radius: 2px;
+  background: transparent;
+  border: none;
+}
+
+.luxChart {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.luxYLabel {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  color: #C5BDB4;
+  pointer-events: none;
+}
+
+.luxDot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: rgba(168, 131, 58, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.luxDotGold {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #A8833A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.luxDotCenter {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.luxPill {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 14px));
+  padding: 4px 9px;
+  border-radius: 6px;
+  background: #1C2B1D;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  white-space: nowrap;
+  pointer-events: none;
 }

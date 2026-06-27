@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui';
 import { useDailyCheckIn } from '@/dailyCheckIn';
 import { useHealthRecords } from '@/healthRecords';
 import { useSubscription } from '@/subscription/SubscriptionProvider';
@@ -86,8 +85,7 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             Daily check-in
           </h2>
           <p className={styles.subtitle}>
-            Log what {petName} ate, how far you walked, and today&apos;s weight - builds streaks,
-            health records, and monthly stories.
+            Log what {petName} ate, how far you walked, and today&apos;s weight.
           </p>
         </div>
         {streak > 0 && (
@@ -162,13 +160,13 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
           )}
 
           <div className={styles.actions}>
-            <Button type="submit" variant="primary" disabled={saving}>
+            <button type="submit" className={styles.submitBtn} disabled={saving}>
               {saving ? 'Saving…' : todayCheckIn ? 'Update today' : 'Log today'}
-            </Button>
+            </button>
             {editing && (
-              <Button type="button" variant="ghost" onClick={() => setEditing(false)}>
+              <button type="button" className={styles.ghostBtn} onClick={() => setEditing(false)}>
                 Cancel
-              </Button>
+              </button>
             )}
           </div>
         </form>
@@ -183,32 +181,40 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             <div>
               <dt>Walk</dt>
               <dd>
-                {todayCheckIn.walkDistanceKm != null
-                  ? `${todayCheckIn.walkDistanceKm} km`
-                  : 'Not recorded'}
+                {todayCheckIn.walkDistanceKm != null ? (
+                  `${todayCheckIn.walkDistanceKm} km`
+                ) : (
+                  <span className={styles.emptyDash}>—</span>
+                )}
               </dd>
             </div>
             <div>
               <dt>Weight</dt>
               <dd>
-                {todayCheckIn.weightKg != null
-                  ? `${todayCheckIn.weightKg} kg`
-                  : 'Not recorded'}
+                {todayCheckIn.weightKg != null ? (
+                  `${todayCheckIn.weightKg} kg`
+                ) : (
+                  <span className={styles.emptyDash}>—</span>
+                )}
               </dd>
             </div>
           </dl>
-          <Button type="button" variant="secondary" size="sm" onClick={() => {
-            setFeeding(todayCheckIn.feeding);
-            setWalkKm(
-              todayCheckIn.walkDistanceKm != null ? String(todayCheckIn.walkDistanceKm) : '',
-            );
-            setWeightKg(
-              todayCheckIn.weightKg != null ? String(todayCheckIn.weightKg) : '',
-            );
-            setEditing(true);
-          }}>
+          <button
+            type="button"
+            className={styles.editBtn}
+            onClick={() => {
+              setFeeding(todayCheckIn.feeding);
+              setWalkKm(
+                todayCheckIn.walkDistanceKm != null ? String(todayCheckIn.walkDistanceKm) : '',
+              );
+              setWeightKg(
+                todayCheckIn.weightKg != null ? String(todayCheckIn.weightKg) : '',
+              );
+              setEditing(true);
+            }}
+          >
             Edit
-          </Button>
+          </button>
         </div>
       )}
 
