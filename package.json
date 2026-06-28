@@ -15,7 +15,8 @@
     "validate:schema": "node scripts/validate-schema-coverage.mjs",
     "validate:links": "node scripts/validate-internal-linking.mjs",
     "generate:sitemaps": "tsx scripts/generate-sitemaps.ts",
-    "gsc:striking-distance": "tsx scripts/striking-distance.ts"
+    "gsc:striking-distance": "tsx scripts/striking-distance.ts",
+    "google:request-index": "tsx scripts/request-google-index.ts"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.11",

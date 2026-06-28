@@ -4,9 +4,14 @@ import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from '@/components/errors';
 import { RootRouter } from '@/app/RootRouter';
 import { initEditorialReveal } from '@/lib/editorialReveal';
+import { isBotOptimized } from '@/lib/botOptimized';
 import '@/styles/global.css';
 
-initEditorialReveal();
+const botOptimized = isBotOptimized();
+
+if (!botOptimized) {
+  initEditorialReveal();
+}
 
 function schedulePostHogInit() {
   const run = () => {
@@ -37,10 +42,12 @@ function scheduleMetaPixelInit() {
   window.addEventListener('load', () => window.setTimeout(run, 1000), { once: true });
 }
 
-schedulePostHogInit();
-scheduleMetaPixelInit();
+if (!botOptimized) {
+  schedulePostHogInit();
+  scheduleMetaPixelInit();
+}
 
-if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+if (!botOptimized && import.meta.env.PROD && 'serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js').catch(() => {
       // Service worker is a performance enhancement only.
