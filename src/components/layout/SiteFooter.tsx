@@ -24,27 +24,17 @@ export function SiteFooter() {
             <p className={styles.tagline}>
               Calm, organized pet care for dog and cat parents.
             </p>
+            <a
+              href={SOCIAL_PROFILES.instagram}
+              className={styles.instagramCta}
+              rel="me noopener noreferrer"
+              target="_blank"
+            >
+              Follow on Instagram
+            </a>
             <div className={styles.brandMeta}>
               <a href={`mailto:${LEGAL_CONTACT.support}`} className={styles.supportLink}>
                 {LEGAL_CONTACT.support}
-              </a>
-              <span className={styles.metaDivider} aria-hidden>·</span>
-              <a
-                href={SOCIAL_PROFILES.instagram}
-                className={styles.socialLink}
-                rel="me noopener noreferrer"
-                target="_blank"
-              >
-                Instagram
-              </a>
-              <span className={styles.metaDivider} aria-hidden>·</span>
-              <a
-                href={SOCIAL_PROFILES.facebook}
-                className={styles.socialLink}
-                rel="me noopener noreferrer"
-                target="_blank"
-              >
-                Facebook
               </a>
             </div>
           </div>
