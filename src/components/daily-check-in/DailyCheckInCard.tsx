@@ -18,9 +18,11 @@ const FEEDING_PRESETS = [
 
 type DailyCheckInCardProps = {
   petName: string;
+  /** Editorial dashboard variant — hairline form, no shadows */
+  editorial?: boolean;
 };
 
-export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
+export function DailyCheckInCard({ petName, editorial = false }: DailyCheckInCardProps) {
   const { todayCheckIn, streak, weekSummary, isLoading, saveCheckIn } = useDailyCheckIn();
   const { healthSummary } = useHealthRecords();
   const { isPremium } = useSubscription();
@@ -77,7 +79,10 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
   };
 
   return (
-    <section className={styles.card} aria-labelledby="daily-check-in-title">
+    <section
+      className={`${styles.card} ${editorial ? styles.cardEditorial : ''}`}
+      aria-labelledby="daily-check-in-title"
+    >
       <div className={styles.head}>
         <div>
           <p className={styles.kicker}>Today&apos;s ritual</p>
@@ -85,7 +90,9 @@ export function DailyCheckInCard({ petName }: DailyCheckInCardProps) {
             Daily check-in
           </h2>
           <p className={styles.subtitle}>
-            Log what {petName} ate, how far you walked, and today&apos;s weight.
+            {editorial
+              ? 'A quiet ritual — log feeding, walks, and weight to keep the story current.'
+              : `Log what ${petName} ate, how far you walked, and today's weight.`}
           </p>
         </div>
         {streak > 0 && (

@@ -364,3 +364,167 @@
 .editBtn:hover {
   color: #A8833A;
 }
+
+/* Editorial dashboard variant */
+.cardEditorial {
+  padding: 48px 0;
+  min-height: auto;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.cardEditorial:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+@media (min-width: 900px) {
+  .cardEditorial {
+    grid-template-columns: 2fr 3fr;
+    gap: 48px;
+  }
+}
+
+.cardEditorial .head {
+  margin-bottom: 0;
+}
+
+.cardEditorial .streak {
+  display: none;
+}
+
+.cardEditorial .kicker::before {
+  width: 3px;
+  height: 14px;
+}
+
+.cardEditorial .kicker {
+  margin-bottom: 8px;
+  letter-spacing: 0.15em;
+  color: #B08D57;
+}
+
+.cardEditorial .title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  color: #1A1A17;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.cardEditorial .subtitle {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: #6B6860;
+  line-height: 1.6;
+}
+
+.cardEditorial .loading,
+.cardEditorial .form,
+.cardEditorial .done {
+  grid-column: 1;
+}
+
+@media (min-width: 900px) {
+  .cardEditorial .head {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .cardEditorial .loading,
+  .cardEditorial .form,
+  .cardEditorial .done {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+.cardEditorial .form {
+  gap: 32px;
+}
+
+.cardEditorial .label {
+  letter-spacing: 0.12em;
+  color: #A8A49C;
+  font-weight: 400;
+}
+
+.cardEditorial .input {
+  border-bottom: 1px solid #E2DECA;
+  font-family: var(--font-display);
+  font-size: 18px;
+}
+
+.cardEditorial .input::placeholder {
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 18px;
+  color: #C8C4BC;
+}
+
+.cardEditorial .input:focus {
+  border-bottom-color: #B08D57;
+}
+
+.cardEditorial .preset {
+  border-radius: 2px;
+  border-color: #E2DECA;
+  color: #6B6860;
+  font-weight: 400;
+  transition: border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+
+.cardEditorial .preset:hover {
+  border-color: #B08D57;
+  color: #B08D57;
+}
+
+.cardEditorial .presetActive {
+  border-color: #B08D57;
+  color: #B08D57;
+  background: #FAF7F0;
+}
+
+.cardEditorial .presetActive:hover {
+  color: #B08D57;
+}
+
+.cardEditorial .submitBtn {
+  height: 52px;
+  border-radius: 0;
+  background: #1C2018;
+  color: #F5F2EC;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: opacity 200ms ease;
+}
+
+.cardEditorial .submitBtn:hover:not(:disabled) {
+  opacity: 0.88;
+  background: #1C2018;
+}
+
+.cardEditorial .weekPanel {
+  border-top-color: #E2DECA;
+}
+
+.cardEditorial .weekTitle {
+  color: #B08D57;
+}
+
+.cardEditorial .proTease {
+  border-top-color: #E2DECA;
+}
+
