@@ -4,14 +4,12 @@ import type { BlogCategoryId } from '@/data/blogCategories';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
 import type { BlogPost, BlogPostListItem } from '@/types/blog';
 import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
-import { extractBlogFaqs } from '@/services/blog/extractBlogFaqs';
 import { ROUTES } from '@/routes/paths';
 import { MetaTags, OpenGraph } from './MetaTags';
 import { buildBreadcrumbListSchema } from './breadcrumbSchema';
 import {
   buildBlogPostingSchema,
   buildCollectionPageSchema,
-  buildFaqPageSchema,
   buildOrganizationSchema,
   buildSchemaGraph,
   buildWebSiteSchema,
@@ -102,7 +100,6 @@ export function getBlogPostingStructuredData(post: BlogPost) {
   const url = `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}`;
   const categoryLabel = getBlogCategoryLabel(post.category);
   const breadcrumbs = buildBreadcrumbListSchema(getBlogPostBreadcrumbs(post.title, post.slug));
-  const faqs = extractBlogFaqs(post.content);
   const image = (() => {
     const img = resolveBlogFeaturedImage(post.slug, post.featuredImage);
     return img ? [`${SITE_META.siteUrl}${img}`] : undefined;
@@ -122,7 +119,6 @@ export function getBlogPostingStructuredData(post: BlogPost) {
       articleSection: categoryLabel,
       keywords: post.tags.join(', '),
     }),
-    faqs.length > 0 ? buildFaqPageSchema(faqs, `${url}#faq`) : null,
     breadcrumbs,
   );
 }

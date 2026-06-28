@@ -16,7 +16,8 @@
     "validate:links": "node scripts/validate-internal-linking.mjs",
     "generate:sitemaps": "tsx scripts/generate-sitemaps.ts",
     "gsc:striking-distance": "tsx scripts/striking-distance.ts",
-    "google:request-index": "tsx scripts/request-google-index.ts"
+    "google:request-index": "tsx scripts/request-google-index.ts",
+    "generate:blog-faqs": "tsx scripts/generate-blog-faqs.ts"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.11",
@@ -38,6 +39,7 @@
     "@types/react-dom": "^19.1.5",
     "@vitejs/plugin-react": "^4.5.2",
     "googleapis": "^148.0.0",
+    "openai": "^6.45.0",
     "png-to-ico": "^3.0.1",
     "sharp": "^0.35.1",
     "tailwindcss": "^4.3.0",

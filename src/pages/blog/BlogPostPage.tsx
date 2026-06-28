@@ -8,7 +8,10 @@ import { BlogPostBody } from '@/components/blog/BlogPostBody';
 import { BlogInternalLinks } from '@/components/blog/BlogInternalLinks';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { DynamicAuthorityLinks } from '@/components/seo/DynamicAuthorityLinks';
+import { DynamicFAQ } from '@/components/seo/DynamicFAQ';
 import { BlogArticleNotFoundSEO, BlogPostSEO } from '@/seo/blogSeo';
+import { getGeneratedFaqsForSlug } from '@/data/blogFaqs';
+import { SITE_META } from '@/data/seoConfig';
 import { getBlogPostBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { getBlogRepository } from '@/services/blog';
 import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
@@ -109,6 +112,13 @@ export function BlogPostPage() {
     return resolveBlogInternalLinks(post, candidates);
   }, [post, allPosts]);
 
+  const postFaqs = useMemo(
+    () => (post ? getGeneratedFaqsForSlug(post.slug) : []),
+    [post],
+  );
+
+  const postPageUrl = post ? `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}` : undefined;
+
   return (
     <PublicLayout>
       {post && <BlogPostSEO post={post} />}
@@ -189,6 +199,10 @@ export function BlogPostPage() {
             <div className={styles.prose}>
               <BlogPostBody content={post.content} />
             </div>
+
+            {postFaqs.length > 0 && (
+              <DynamicFAQ faqs={postFaqs} pageUrl={postPageUrl} />
+            )}
 
             <DynamicAuthorityLinks currentPath={pathname} />
 
