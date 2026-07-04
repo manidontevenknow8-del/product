@@ -57,6 +57,55 @@ export function pricingForPlan(
   };
 }
 
+export const GENESIS_VAULT_PRODUCT = 'genesis_vault' as const;
+export const GENESIS_VAULT_USD_MINOR = 24_900;
+export const GENESIS_VAULT_INR_MINOR = 2_099_900;
+
+export function genesisVaultPricing(currency: BillingCurrency): {
+  amount: number;
+  currency: BillingCurrency;
+} {
+  return {
+    amount: currency === 'INR' ? GENESIS_VAULT_INR_MINOR : GENESIS_VAULT_USD_MINOR,
+    currency,
+  };
+}
+
+export async function createGenesisVaultOrder(input: {
+  currency: BillingCurrency;
+  sessionId?: string;
+}): Promise<RazorpayOrder> {
+  const pricing = genesisVaultPricing(input.currency);
+  const receipt = `genesis_${input.sessionId?.slice(0, 8) ?? 'guest'}_${Date.now()}`;
+
+  const response = await fetch('https://api.razorpay.com/v1/orders', {
+    method: 'POST',
+    headers: {
+      Authorization: basicAuthHeader(),
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      amount: pricing.amount,
+      currency: pricing.currency,
+      receipt,
+      notes: {
+        product: GENESIS_VAULT_PRODUCT,
+        currency: pricing.currency,
+      },
+    }),
+  });
+
+  const body = await response.json();
+  if (!response.ok) {
+    const message = typeof body?.error?.description === 'string'
+      ? body.error.description
+      : 'Failed to create Razorpay order';
+    throw new Error(message);
+  }
+
+  return body as RazorpayOrder;
+}
+
 export function getRazorpayKeyId(): string {
   const keyId = Deno.env.get('RAZORPAY_KEY_ID');
   if (!keyId) throw new Error('RAZORPAY_KEY_ID is not configured');
