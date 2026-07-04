@@ -24,6 +24,9 @@ Disallow: /verify-email
 Disallow: /auth/
 Disallow: /reset-password
 
+# Invitation-only offers
+Disallow: /genesis
+
 # Internal / deferred routes
 Disallow: /waitlist
 Disallow: /analytics

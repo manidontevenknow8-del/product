@@ -10,6 +10,7 @@ interface ImportMetaEnv {
   readonly VITE_DEMO_DASHBOARD?: string;
   readonly VITE_PAYMENTS_ENABLED?: string;
   readonly VITE_RAZORPAY_KEY_ID?: string;
+  readonly VITE_GENESIS_RAZORPAY_PAYMENT_LINK?: string;
 }
 
 interface ImportMeta {

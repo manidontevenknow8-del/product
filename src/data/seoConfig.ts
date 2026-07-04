@@ -101,6 +101,7 @@ const FORCE_NOINDEX_ROUTES = new Set<string>([
   ROUTES.LOST_PET_REPORT,
   ROUTES.AGE_TRANSLATOR,
   ROUTES.FOUNDING_MEMBERS,
+  ROUTES.GENESIS,
 ]);
 
 FORCE_NOINDEX_ROUTES.delete(ROUTES.FOUNDING_MEMBERS);
@@ -134,6 +135,14 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogType: 'website',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues pet match quiz',
+  },
+  [ROUTES.GENESIS]: {
+    title: formatPageTitle('Genesis Vault — PetClues'),
+    description:
+      'Invitation-only Genesis Vault: white-glove digitization and lifetime security for your companion\'s health archive.',
+    noIndex: true,
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues Genesis Vault',
   },
   [ROUTES.FOUNDING_MEMBERS]: {
     title: formatPageTitle('Founding Members - Early Access to PetClues'),

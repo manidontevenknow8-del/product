@@ -46,6 +46,7 @@ export const ROUTES = {
   NOTIFICATIONS: '/notifications',
   FAMILY_ACCESS: '/family',
   FOUNDING_MEMBERS: '/founding-members',
+  GENESIS: '/genesis',
   PET_HEALTH_RECORDS: '/pet-health-records',
   DIGITAL_PET_PASSPORT: '/digital-pet-passport',
   PET_VACCINATION_RECORDS: '/pet-vaccination-records',
