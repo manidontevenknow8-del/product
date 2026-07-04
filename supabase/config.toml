@@ -38,3 +38,9 @@ verify_jwt = true
 
 [functions.track-referral-share]
 verify_jwt = true
+
+[functions.create-genesis-razorpay-order]
+verify_jwt = false
+
+[functions.verify-genesis-razorpay-payment]
+verify_jwt = false
