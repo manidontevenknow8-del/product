@@ -23,9 +23,10 @@ const groupOrder: HealthRecordType[] = [
 ];
 
 type PetHealthRecordsProps = {
-  onAdd: () => void;
-  onEdit: (record: HealthRecord) => void;
+  onAdd?: () => void;
+  onEdit?: (record: HealthRecord) => void;
   showHeader?: boolean;
+  highlightRecordId?: string | null;
 };
 
 function groupRecords(records: HealthRecord[]) {
@@ -52,13 +53,14 @@ function RecordDocumentLink({ record }: { record: HealthRecord }) {
   );
 }
 
-export function PetHealthRecords({ onAdd, onEdit, showHeader = true }: PetHealthRecordsProps) {
+export function PetHealthRecords({ onAdd, onEdit, showHeader = true, highlightRecordId }: PetHealthRecordsProps) {
   const { records, isLoading } = useHealthRecords();
   const { atLimit, recordCount, limit } = useHealthRecordLimit();
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const groups = groupRecords(records);
 
   const handleAdd = () => {
+    if (!onAdd) return;
     if (atLimit) {
       setUpgradeOpen(true);
       return;
@@ -78,9 +80,11 @@ export function PetHealthRecords({ onAdd, onEdit, showHeader = true }: PetHealth
             )}
             <h2 className={styles.title}>Health records</h2>
           </div>
-          <button type="button" className={styles.addBtn} onClick={handleAdd}>
-            Add record
-          </button>
+          {onAdd && (
+            <button type="button" className={styles.addBtn} onClick={handleAdd}>
+              Add record
+            </button>
+          )}
         </div>
       )}
 
@@ -96,27 +100,33 @@ export function PetHealthRecords({ onAdd, onEdit, showHeader = true }: PetHealth
       {isLoading ? (
         <p className={styles.loadingHint}>Loading health records…</p>
       ) : records.length === 0 ? (
-        <EmptyHealthRecordsState onAdd={handleAdd} compact />
+        <EmptyHealthRecordsState onAdd={onAdd ? handleAdd : undefined} compact />
       ) : (
         groups.map((group) => (
           <div key={group.type} className={styles.groupBlock}>
             <h3 className={styles.groupLabel}>{group.label}</h3>
             <ul className={styles.list}>
               {group.items.map((entry) => (
-                <li key={entry.id} className={styles.entry}>
+                <li
+                  key={entry.id}
+                  id={`health-record-${entry.id}`}
+                  className={`${styles.entry} ${highlightRecordId === entry.id ? styles.entryHighlight : ''}`}
+                >
                   <div className={styles.bead} aria-hidden />
                   <article className={styles.entryBody}>
                     <div className={styles.entryHeader}>
                       <span className={styles.typeLabel}>
                         {healthRecordTypeLabels[entry.recordType]}
                       </span>
-                      <button
-                        type="button"
-                        className={styles.editBtn}
-                        onClick={() => onEdit(entry)}
-                      >
-                        Edit
-                      </button>
+                      {onEdit && (
+                        <button
+                          type="button"
+                          className={styles.editBtn}
+                          onClick={() => onEdit(entry)}
+                        >
+                          Edit
+                        </button>
+                      )}
                     </div>
                     <h4 className={styles.entryTitle}>{entry.title}</h4>
                     <p className={styles.entryMeta}>

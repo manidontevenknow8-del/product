@@ -70,3 +70,13 @@
 .statSep {
   display: none;
 }
+
+.accessNote {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--lux-border, #DDD5C8);
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--lux-muted, #5C554D);
+}

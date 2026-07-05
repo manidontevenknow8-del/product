@@ -26,25 +26,33 @@ export function TimelineFilters({
   events,
 }: TimelineFiltersProps) {
   return (
-    <nav className={styles.filters} aria-label="Timeline filters">
-      {filters.map((filter) => {
-        const count = countEventsForFilter(events, filter);
-        return (
-          <button
-            key={filter}
-            type="button"
-            className={`${styles.filterBtn} ${
-              activeFilter === filter ? styles.filterBtnActive : ''
-            }`}
-            onClick={() => onFilterChange(filter)}
-          >
-            <span className={styles.labelWrap}>
-              {filterLabels[filter]}
-              <sup className={styles.count}>{count}</sup>
-            </span>
-          </button>
-        );
-      })}
-    </nav>
+    <div className={styles.filtersWrap}>
+      <nav className={styles.filters} aria-label="Timeline filters">
+        {filters.map((filter) => {
+          const count = countEventsForFilter(events, filter);
+          return (
+            <button
+              key={filter}
+              type="button"
+              className={`${styles.filterBtn} ${
+                activeFilter === filter ? styles.filterBtnActive : ''
+              }`}
+              onClick={() => onFilterChange(filter)}
+            >
+              <span className={styles.labelWrap}>
+                {filterLabels[filter]}
+                <sup className={styles.count}>{count}</sup>
+              </span>
+            </button>
+          );
+        })}
+      </nav>
+      {activeFilter === 'memory' && (
+        <p className={styles.memoryHint} role="note">
+          Hand-picked moments you saved appear here alongside photos and welcome-home
+          chapters — clinical care logs stay under Care.
+        </p>
+      )}
+    </div>
   );
 }

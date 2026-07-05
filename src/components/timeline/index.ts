@@ -6,3 +6,5 @@ export { MilestoneCard } from './MilestoneCard';
 export { LifeStorySummary } from './LifeStorySummary';
 export { EmptyTimelineState } from './EmptyTimelineState';
 export { AddEventModal } from './AddEventModal';
+export { StoryShareCard } from './StoryShareCard';
+export { PublicStoryView } from './PublicStoryView';

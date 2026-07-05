@@ -1,11 +1,13 @@
 import type { HealthRecord } from '@/services/healthRecords/healthRecordTypes';
 import { healthRecordTypeLabels } from '@/services/healthRecords/healthRecordTypes';
 import type { PetDocumentRecord } from '@/services/documents/documentTypes';
+import type { PetMoment } from '@/services/petMoments';
 import type { PetRecord } from '@/services/pets/petTypes';
+import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import type { Reminder } from '@/types/reminder';
 import { categoryLabels } from '@/types/reminder';
 import type { Milestone, TimelineEventItem, TimelineStats } from '@/types/timeline';
-import { loadPetCareScoreHistory } from '@/services/petCareScore/petCareScoreEngine';
+import type { StoredScoreSnapshot } from '@/services/petCareScore/petCareScoreTypes';
 
 function formatDisplayDate(isoDate: string): string {
   const date = new Date(`${isoDate.slice(0, 10)}T12:00:00`);
@@ -117,6 +119,28 @@ function reminderToEvent(reminder: Reminder): TimelineEventItem | null {
   };
 }
 
+function manualMomentToEvent(moment: PetMoment): TimelineEventItem {
+  const date = moment.occurredAt.slice(0, 10);
+  const caption = moment.caption.trim();
+  const firstLine = caption.split('\n')[0]?.trim() || caption;
+  const title = firstLine.length > 72 ? `${firstLine.slice(0, 69)}…` : firstLine;
+  const photo = moment.photoUrl ? normalizePhotoUrlFromDb(moment.photoUrl) : null;
+
+  return {
+    id: `moment-${moment.id}`,
+    type: 'manual_moment',
+    date,
+    displayDate: formatDisplayDate(date),
+    monthGroup: formatMonthGroup(date),
+    title,
+    description: caption,
+    imageUrl: photo ?? undefined,
+    sourceId: moment.id,
+    sourceKind: 'moment',
+    meta: 'Your memory',
+  };
+}
+
 function adoptionEvent(pet: PetRecord): TimelineEventItem {
   const date = pet.birthDate ?? pet.createdAt.slice(0, 10);
   const breedPart = pet.breed ? ` - ${pet.breed}` : '';
@@ -138,13 +162,15 @@ function adoptionEvent(pet: PetRecord): TimelineEventItem {
   };
 }
 
-function scoreMilestoneEvents(petId: string, petName: string): TimelineEventItem[] {
-  const history = loadPetCareScoreHistory(petId);
+export function scoreMilestoneEvents(
+  scoreHistory: StoredScoreSnapshot[],
+  petName: string,
+): TimelineEventItem[] {
   const events: TimelineEventItem[] = [];
 
-  for (let i = 1; i < history.length; i += 1) {
-    const prev = history[i - 1];
-    const curr = history[i];
+  for (let i = 1; i < scoreHistory.length; i += 1) {
+    const prev = scoreHistory[i - 1];
+    const curr = scoreHistory[i];
     const crossed86 = prev.score < 86 && curr.score >= 86;
     const crossed70 = prev.score < 70 && curr.score >= 70;
 
@@ -173,6 +199,8 @@ export type TimelineSourceInput = {
   healthRecords: HealthRecord[];
   documents: PetDocumentRecord[];
   reminders: Reminder[];
+  scoreHistory: StoredScoreSnapshot[];
+  petMoments: PetMoment[];
 };
 
 const MILESTONE_TYPES = new Set([
@@ -182,24 +210,8 @@ const MILESTONE_TYPES = new Set([
   'petcare_score_milestone',
 ]);
 
-export function buildTimelineFromSources(input: TimelineSourceInput): {
-  events: TimelineEventItem[];
-  milestones: Milestone[];
-  stats: TimelineStats;
-} {
-  const { pet } = input;
-
-  const events: TimelineEventItem[] = [
-    adoptionEvent(pet),
-    ...input.healthRecords.map((r) => healthRecordToEvent(r, input.documents, pet.name)),
-    ...input.documents.map((d) => documentToEvent(d, pet.name)),
-    ...input.reminders.map(reminderToEvent).filter((e): e is TimelineEventItem => e !== null),
-    ...scoreMilestoneEvents(pet.id, pet.name),
-  ];
-
-  events.sort((a, b) => b.date.localeCompare(a.date));
-
-  const milestones: Milestone[] = events
+export function buildMilestonesFromEvents(events: TimelineEventItem[]): Milestone[] {
+  return events
     .filter((e) => MILESTONE_TYPES.has(e.type))
     .slice(0, 8)
     .map((e) => ({
@@ -211,13 +223,34 @@ export function buildTimelineFromSources(input: TimelineSourceInput): {
       thumbnailDocumentId: e.thumbnailDocumentId,
       eventType: e.type,
     }));
+}
+
+export function buildTimelineFromSources(input: TimelineSourceInput): {
+  events: TimelineEventItem[];
+  milestones: Milestone[];
+  stats: TimelineStats;
+} {
+  const { pet } = input;
+
+  const events: TimelineEventItem[] = [
+    adoptionEvent(pet),
+    ...input.petMoments.map(manualMomentToEvent),
+    ...input.healthRecords.map((r) => healthRecordToEvent(r, input.documents, pet.name)),
+    ...input.documents.map((d) => documentToEvent(d, pet.name)),
+    ...input.reminders.map(reminderToEvent).filter((e): e is TimelineEventItem => e !== null),
+    ...scoreMilestoneEvents(input.scoreHistory, pet.name),
+  ];
+
+  events.sort((a, b) => b.date.localeCompare(a.date));
+
+  const milestones = buildMilestonesFromEvents(events);
 
   const uniqueDays = new Set(events.map((e) => e.date)).size;
   const careMoments = events.filter((e) =>
     ['health_record', 'vaccination', 'reminder_completed'].includes(e.type),
   ).length;
   const memoryMoments = events.filter((e) =>
-    ['adoption', 'document_uploaded'].includes(e.type),
+    ['adoption', 'document_uploaded', 'manual_moment'].includes(e.type),
   ).length;
 
   const stats: TimelineStats = {

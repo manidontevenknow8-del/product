@@ -3,10 +3,13 @@ import { useSubscription } from '@/subscription/SubscriptionProvider';
 import type { CommercialPlan } from '@/subscription/entitlements';
 import {
   canUseDecoder,
+  canAccessPlanFeature,
+  canUseVetVisitExport,
   getDocumentLimit,
   getFamilySharingLimit,
   getPetLimit,
   getTimelineDayLimit,
+  getVetVisitExportMonthlyLimit,
   hasMatrixFeatureAccess,
   planMeetsMinimum,
 } from '@/subscription/entitlements';
@@ -87,6 +90,31 @@ function resolveQuotaAccess(
         upgradeTierTarget: plan === 'free' ? 'Plus' : 'Pro',
       };
     }
+    case 'vetVisitExport': {
+      if (!planMeetsMinimum(plan, 'plus')) {
+        return {
+          isAllowed: false,
+          usageLimit: 0,
+          currentUsage,
+          upgradeTierTarget: 'Plus',
+        };
+      }
+      const monthlyLimit = getVetVisitExportMonthlyLimit(plan);
+      if (monthlyLimit == null) {
+        return {
+          isAllowed: true,
+          usageLimit: 'unlimited',
+          currentUsage,
+          upgradeTierTarget: 'Pro',
+        };
+      }
+      return {
+        isAllowed: canUseVetVisitExport(plan, currentUsage),
+        usageLimit: monthlyLimit,
+        currentUsage,
+        upgradeTierTarget: 'Pro',
+      };
+    }
     case 'familyMembers': {
       const limit = getFamilySharingLimit(plan);
       if (limit == null) {
@@ -131,8 +159,10 @@ function resolveFeatureAccess(
     | 'timelineHistory'
     | 'documents'
     | 'vetBillDecoder'
+    | 'vetVisitExport'
     | 'familyMembers'
     | 'advancedHealthInsights'
+    | 'petCareScore'
     | 'emergencyCareMode'
     | 'vetCollaboration'
   >,
@@ -177,16 +207,51 @@ export function useFeatureAccess(featureKey: FeatureKey): FeatureAccessResult {
           usage?.familyMembers.used ?? 0,
         );
       case 'vetBillDecoder': {
-        const monthlyUsed = usage?.scans.used ?? 0;
-        const lifetimeUsed = usage?.scansLifetime.used ?? monthlyUsed;
-        const used = currentPlan === 'free' ? lifetimeUsed : monthlyUsed;
-        return resolveQuotaAccess(currentPlan, featureKey, used);
+      const monthlyUsed = usage?.scans.used ?? 0;
+      const lifetimeUsed = usage?.scansLifetime.used ?? monthlyUsed;
+      const used = currentPlan === 'free' ? lifetimeUsed : monthlyUsed;
+      return resolveQuotaAccess(currentPlan, featureKey, used);
+    }
+    case 'vetVisitExport': {
+      if (!planMeetsMinimum(currentPlan, 'plus')) {
+        return {
+          isAllowed: false,
+          usageLimit: 0,
+          currentUsage: 0,
+          upgradeTierTarget: 'Plus',
+        };
       }
+      const monthlyUsed = usage?.vetVisitExports.used ?? 0;
+      const monthlyLimit = getVetVisitExportMonthlyLimit(currentPlan);
+      if (monthlyLimit == null) {
+        return {
+          isAllowed: true,
+          usageLimit: 'unlimited',
+          currentUsage: monthlyUsed,
+          upgradeTierTarget: 'Pro',
+        };
+      }
+      return {
+        isAllowed: canUseVetVisitExport(currentPlan, monthlyUsed),
+        usageLimit: monthlyLimit,
+        currentUsage: monthlyUsed,
+        upgradeTierTarget: 'Pro',
+      };
+    }
       case 'timeline':
       case 'timelineHistory':
         return resolveQuotaAccess(currentPlan, featureKey, 0);
       case 'advancedHealthInsights':
         return resolveFeatureAccess(currentPlan, 'aiHealthInsights');
+      case 'petCareScore': {
+        const isAllowed = canAccessPlanFeature(currentPlan, 'petCareScore');
+        return {
+          isAllowed,
+          usageLimit: isAllowed ? 'unlimited' : 0,
+          currentUsage: 0,
+          upgradeTierTarget: 'Plus',
+        };
+      }
       case 'emergencyCareMode':
         return resolveFeatureAccess(currentPlan, 'petPassport');
       case 'vetCollaboration':

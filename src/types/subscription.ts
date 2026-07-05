@@ -49,6 +49,7 @@ export type UsageLimits = {
   familyMembers: { used: number; limit: number | null };
   reminders: { used: number; limit: number | null };
   healthRecords: { used: number; limit: number | null };
+  vetVisitExports: { used: number; limit: number | null };
 };
 
 export type Invoice = {

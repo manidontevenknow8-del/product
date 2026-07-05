@@ -3,19 +3,15 @@ import type { HealthRecord } from '@/services/healthRecords/healthRecordTypes';
 import type { PetRecord } from '@/services/pets/petTypes';
 import { formatPetAge, formatPassportUpdatedAt, getAvatarInitials } from '@/services/pets/petUtils';
 import { formatHealthRecordDate } from '@/services/healthRecords/healthRecordMappers';
-import { ROUTES } from '@/routes/paths';
+import { buildPublicEmergencyUrl } from '@/services/emergencyPassport/emergencyPassportTypes';
 import type { DailyCheckIn } from '@/types/dailyCheckIn';
 import { buildPassportCareContext, type PassportCareContext } from './passportCareContext';
 
 export type { PassportCareContext, PassportDailyCareEntry, PassportWeightEntry } from './passportCareContext';
 
-function passportShareUrl(): string {
-  const origin =
-    typeof window !== 'undefined'
-      ? window.location.origin
-      : (import.meta.env.VITE_APP_URL as string | undefined) ?? '';
-  const base = origin.replace(/\/$/, '');
-  return base ? `${base}${ROUTES.EMERGENCY_PASSPORT}` : ROUTES.EMERGENCY_PASSPORT;
+function passportShareUrl(publicToken?: string | null): string {
+  if (publicToken) return buildPublicEmergencyUrl(publicToken);
+  return '';
 }
 
 export type PassportIdentity = {
@@ -109,7 +105,10 @@ function resolveLastUpdated(
   return formatPassportUpdatedAt(latest);
 }
 
-export function buildPassportIdentity(pet: PetRecord): PassportIdentity {
+export function buildPassportIdentity(
+  pet: PetRecord,
+  publicToken?: string | null,
+): PassportIdentity {
   const lastUpdated = resolveLastUpdated(pet, [], []);
 
   return {
@@ -122,7 +121,7 @@ export function buildPassportIdentity(pet: PetRecord): PassportIdentity {
     avatarInitials: getAvatarInitials(pet.name),
     photo: pet.photoUrl,
     lastUpdated,
-    secureLink: passportShareUrl(),
+    secureLink: passportShareUrl(publicToken),
   };
 }
 
@@ -131,6 +130,7 @@ export function buildPassportSummary(
   records: HealthRecord[],
   documents: PetDocumentRecord[],
   dailyCheckIns: DailyCheckIn[] = [],
+  publicToken?: string | null,
 ): PassportData {
   const vaccinations = sortByDateDesc(records.filter((r) => r.recordType === 'vaccination'));
   const allergies = sortByDateDesc(records.filter((r) => r.recordType === 'allergy'));
@@ -142,7 +142,7 @@ export function buildPassportSummary(
   const careContext = buildPassportCareContext(pet, records, dailyCheckIns);
 
   const identity: PassportIdentity = {
-    ...buildPassportIdentity(pet),
+    ...buildPassportIdentity(pet, publicToken),
     weight: careContext.latestWeight,
     lastUpdated: resolveLastUpdated(pet, records, documents),
   };

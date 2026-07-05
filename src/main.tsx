@@ -47,12 +47,16 @@ if (!botOptimized) {
   scheduleMetaPixelInit();
 }
 
-if (!botOptimized && import.meta.env.PROD && 'serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(() => {
-      // Service worker is a performance enhancement only.
+if (!botOptimized && 'serviceWorker' in navigator) {
+  const shouldRegister =
+    import.meta.env.PROD || Boolean(import.meta.env.VITE_VAPID_PUBLIC_KEY?.trim());
+  if (shouldRegister) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // Service worker is a performance enhancement only.
+      });
     });
-  });
+  }
 }
 
 createRoot(document.getElementById('root')!).render(

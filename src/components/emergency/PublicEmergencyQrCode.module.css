@@ -1,0 +1,8 @@
+.qr {
+  display: block;
+  width: 220px;
+  height: 220px;
+  border: 1px solid #d8d2c8;
+  border-radius: 8px;
+  background: #fff;
+}

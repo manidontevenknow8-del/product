@@ -15,6 +15,8 @@ import { useHealthRecords } from '@/healthRecords';
 import { useDocuments } from '@/documents';
 import { useDailyCheckIn } from '@/dailyCheckIn';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
+import { useEmergencyPassport } from '@/hooks/useEmergencyPassport';
+import { buildPublicEmergencyUrl } from '@/services/emergencyPassport/emergencyPassportTypes';
 import { buildPassportSummary, formatPassportRecordLine } from '@/services/passport/passportService';
 import type { CreateHealthRecordInput } from '@/services/healthRecords/healthRecordService';
 import type { HealthRecord, HealthRecordType } from '@/services/healthRecords/healthRecordTypes';
@@ -189,6 +191,7 @@ function PremiumPassportTools({
   exportError,
   hasEmergencyMode,
   onEmergencyModeUpgrade,
+  publicShareUrl,
 }: {
   passport: ReturnType<typeof buildPassportSummary>;
   exportRef: RefObject<HTMLDivElement | null>;
@@ -197,11 +200,13 @@ function PremiumPassportTools({
   exportError: string | null;
   hasEmergencyMode: boolean;
   onEmergencyModeUpgrade: () => void;
+  publicShareUrl: string | null;
 }) {
   const [copied, setCopied] = useState(false);
-  const link = passport.identity.secureLink;
+  const link = publicShareUrl ?? passport.identity.secureLink;
 
   const handleCopy = async () => {
+    if (!link) return;
     try {
       await navigator.clipboard.writeText(link);
       setCopied(true);
@@ -223,10 +228,15 @@ function PremiumPassportTools({
           </p>
           {exporting && <p className={styles.toolNote}>Preparing download…</p>}
         </button>
-        <button type="button" onClick={() => void handleCopy()} className={styles.tool}>
+        <button type="button" onClick={() => void handleCopy()} className={styles.tool} disabled={!link}>
           <p className={styles.toolKicker}>Share</p>
-          <p className={styles.toolTitle}>Public care link</p>
-          <p className={styles.toolLink}>{link}</p>
+          <p className={styles.toolTitle}>Emergency share link</p>
+          <p className={styles.toolDesc}>
+            Token-gated public page — allergies, meds, vet, insurance, and microchip only.
+          </p>
+          {link ? <p className={styles.toolLink}>{link}</p> : (
+            <p className={styles.toolNote}>Create a share link from Home or Records.</p>
+          )}
           {copied && <p className={styles.toolNote}>Link copied</p>}
         </button>
 
@@ -280,6 +290,10 @@ export function EmergencyPassportPage() {
     useHealthRecords();
   const { documents, isLoading: documentsLoading } = useDocuments();
   const { checkIns } = useDailyCheckIn();
+  const {
+    passport: emergencyPassport,
+    ensureLink,
+  } = useEmergencyPassport(activePet, records);
   const [healthModalOpen, setHealthModalOpen] = useState(false);
   const [editingRecord, setEditingRecord] = useState<HealthRecord | null>(null);
   const [defaultRecordType, setDefaultRecordType] = useState<HealthRecordType | undefined>();
@@ -295,10 +309,24 @@ export function EmergencyPassportPage() {
             records.filter((r) => r.petId === activePet.id),
             documents.filter((d) => d.petId === activePet.id),
             checkIns.filter((c) => c.petId === activePet.id),
+            emergencyPassport && !emergencyPassport.revokedAt
+              ? emergencyPassport.publicToken
+              : null,
           )
         : null,
-    [activePet, records, documents, checkIns],
+    [activePet, records, documents, checkIns, emergencyPassport],
   );
+
+  const publicShareUrl = useMemo(() => {
+    if (!emergencyPassport || emergencyPassport.revokedAt) return null;
+    return buildPublicEmergencyUrl(emergencyPassport.publicToken);
+  }, [emergencyPassport]);
+
+  useEffect(() => {
+    if (passportAccess.isAllowed && activePet && !emergencyPassport) {
+      void ensureLink().catch(() => undefined);
+    }
+  }, [passportAccess.isAllowed, activePet?.id, emergencyPassport, ensureLink]);
 
   useEffect(() => {
     if (passport) track('passport_viewed');
@@ -465,6 +493,7 @@ export function EmergencyPassportPage() {
             exportError={exportError}
             hasEmergencyMode={emergencyModeAccess.isAllowed}
             onEmergencyModeUpgrade={() => setEmergencyUpgradeOpen(true)}
+            publicShareUrl={publicShareUrl}
           />
         </div>
       </section>

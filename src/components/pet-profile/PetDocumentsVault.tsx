@@ -5,9 +5,15 @@ import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import {
   formatDocumentVaultDate,
   formatFileTypeLabel,
+  type PetDocumentRecord,
 } from '@/services/documents/documentService';
 import styles from './PetDocumentsVault.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
+import { downloadBlob } from '@/utils/imageExport';
+
+function isViewableInBrowser(fileType: string) {
+  return fileType === 'application/pdf' || fileType.startsWith('image/');
+}
 
 function DocIcon() {
   return (
@@ -37,6 +43,20 @@ function DownloadIcon() {
   );
 }
 
+function DownloadSpinner() {
+  return (
+    <svg className={styles.downloadSpinner} width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" opacity="0.25" />
+      <path
+        d="M12 3a9 9 0 0 1 9 9"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 function UploadIcon() {
   return (
     <svg className={styles.uploadIcon} width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -51,7 +71,15 @@ function UploadIcon() {
   );
 }
 
-export function PetDocumentsVault({ showHeader = true }: { showHeader?: boolean }) {
+export function PetDocumentsVault({
+  showHeader = true,
+  canUpload = true,
+  highlightDocumentId,
+}: {
+  showHeader?: boolean;
+  canUpload?: boolean;
+  highlightDocumentId?: string | null;
+}) {
   const fileRef = useRef<HTMLInputElement>(null);
   const documentAccess = useFeatureAccess('documents');
   const [upgradeOpen, setUpgradeOpen] = useState(false);
@@ -63,8 +91,11 @@ export function PetDocumentsVault({ showHeader = true }: { showHeader?: boolean 
     uploadError,
     uploadDocument,
     resetUploadState,
+    getDocumentUrl,
   } = useDocuments();
   const [localError, setLocalError] = useState<string | null>(null);
+  const [downloadingId, setDownloadingId] = useState<string | null>(null);
+  const [downloadErrors, setDownloadErrors] = useState<Record<string, string>>({});
 
   const isUploading = uploadState === 'uploading';
   const displayError = localError ?? (uploadState === 'error' ? uploadError : null);
@@ -106,6 +137,47 @@ export function PetDocumentsVault({ showHeader = true }: { showHeader?: boolean 
     }
   };
 
+  const handleDownload = async (doc: PetDocumentRecord) => {
+    if (downloadingId) return;
+
+    setDownloadErrors((prev) => {
+      if (!prev[doc.id]) return prev;
+      const next = { ...prev };
+      delete next[doc.id];
+      return next;
+    });
+    setDownloadingId(doc.id);
+
+    try {
+      const url = await getDocumentUrl(doc.id);
+      if (!url) {
+        throw new Error('That document could not be found. Try uploading it again.');
+      }
+
+      if (isViewableInBrowser(doc.fileType)) {
+        const opened = window.open(url, '_blank', 'noopener,noreferrer');
+        if (!opened) {
+          throw new Error('We could not open this file. Allow pop-ups for this site and try again.');
+        }
+      } else {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('We could not download this file. Please try again.');
+        }
+        await downloadBlob(await response.blob(), doc.fileName);
+      }
+    } catch (err) {
+      const message = getUserFacingError(
+        err,
+        'export',
+        'We could not download this file. Please try again.',
+      );
+      setDownloadErrors((prev) => ({ ...prev, [doc.id]: message }));
+    } finally {
+      setDownloadingId(null);
+    }
+  };
+
   return (
     <section className={styles.section}>
       {showHeader && (
@@ -134,33 +206,57 @@ export function PetDocumentsVault({ showHeader = true }: { showHeader?: boolean 
         <div className={styles.shelf}>
           <div className={styles.shelfLedge} aria-hidden />
           <div className={styles.shelfGrid}>
-            {documents.map((doc, index) => (
-              <article key={doc.id} className={styles.volume}>
-                <div className={styles.volumeSpine} aria-hidden>
-                  <span className={styles.volumeIndex}>
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <div className={styles.volumeFace}>
-                  <div className={styles.docIconWrap}>
-                    <DocIcon />
+            {documents.map((doc, index) => {
+              const isDownloading = downloadingId === doc.id;
+              const downloadError = downloadErrors[doc.id];
+
+              return (
+                <article
+                  key={doc.id}
+                  id={`vault-document-${doc.id}`}
+                  className={`${styles.volume} ${highlightDocumentId === doc.id ? styles.volumeHighlight : ''}`}
+                >
+                  <div className={styles.volumeSpine} aria-hidden>
+                    <span className={styles.volumeIndex}>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
                   </div>
-                  <div className={styles.docInfo}>
-                    <div className={styles.docName}>{doc.fileName}</div>
-                    <div className={styles.docMeta}>
-                      {formatDocumentVaultDate(doc.uploadedAt)} · {formatFileTypeLabel(doc.fileType)}
+                  <div className={styles.volumeFace}>
+                    <div className={styles.docIconWrap}>
+                      <DocIcon />
                     </div>
+                    <div className={styles.docInfo}>
+                      <div className={styles.docName}>{doc.fileName}</div>
+                      <div className={styles.docMeta}>
+                        {formatDocumentVaultDate(doc.uploadedAt)} · {formatFileTypeLabel(doc.fileType)}
+                      </div>
+                      {downloadError && (
+                        <p className={styles.downloadError} role="alert">
+                          {downloadError}
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      type="button"
+                      className={styles.downloadBtn}
+                      aria-label={
+                        isDownloading ? `Opening ${doc.fileName}` : `Download ${doc.fileName}`
+                      }
+                      aria-busy={isDownloading}
+                      disabled={isDownloading || Boolean(downloadingId)}
+                      onClick={() => void handleDownload(doc)}
+                    >
+                      {isDownloading ? <DownloadSpinner /> : <DownloadIcon />}
+                    </button>
                   </div>
-                  <button type="button" className={styles.downloadBtn} aria-label={`Download ${doc.fileName}`}>
-                    <DownloadIcon />
-                  </button>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       )}
 
+      {canUpload ? (
       <div
         className={styles.uploadArea}
         role="button"
@@ -218,6 +314,9 @@ export function PetDocumentsVault({ showHeader = true }: { showHeader?: boolean 
           aria-label="Upload vault document"
         />
       </div>
+      ) : (
+        <p className={styles.emptyHint}>View-only access. Household editors can upload documents to this vault.</p>
+      )}
 
       <EditorialUpgradeModal
         isOpen={upgradeOpen}

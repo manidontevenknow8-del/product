@@ -35,6 +35,10 @@ export const mockPetService: IPetService = {
       weight: input.weight ?? null,
       gender: input.gender ?? null,
       photoUrl: input.photoUrl ?? null,
+      diet: input.diet ?? null,
+      coatColor: input.coatColor ?? null,
+      microchipId: input.microchipId ?? null,
+      conditionsNotes: input.conditionsNotes ?? null,
       createdAt: now,
       updatedAt: now,
     };
@@ -65,6 +69,11 @@ export const mockPetService: IPetService = {
       weight: input.weight !== undefined ? input.weight : pets[idx].weight,
       gender: input.gender !== undefined ? input.gender : pets[idx].gender,
       photoUrl: input.photoUrl !== undefined ? input.photoUrl : pets[idx].photoUrl,
+      diet: input.diet !== undefined ? input.diet : pets[idx].diet,
+      coatColor: input.coatColor !== undefined ? input.coatColor : pets[idx].coatColor,
+      microchipId: input.microchipId !== undefined ? input.microchipId : pets[idx].microchipId,
+      conditionsNotes:
+        input.conditionsNotes !== undefined ? input.conditionsNotes : pets[idx].conditionsNotes,
       updatedAt: new Date().toISOString(),
     };
 

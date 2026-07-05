@@ -7,6 +7,8 @@ import { PetProfilePage } from '@/pages/PetProfilePage';
 import { ScanPage } from '@/pages/ScanPage';
 import { TimelinePage } from '@/pages/TimelinePage';
 import { EmergencyPassportPage } from '@/pages/EmergencyPassportPage';
+import { PublicEmergencyPassportPage } from '@/pages/PublicEmergencyPassportPage';
+import { PublicPetStoryPage } from '@/pages/PublicPetStoryPage';
 import { PetMatchPage } from '@/pages/PetMatchPage';
 import { RemindersPage } from '@/pages/RemindersPage';
 import { InsightsPage } from '@/pages/InsightsPage';
@@ -16,6 +18,8 @@ import { MonthlyReportArchivePage } from '@/pages/MonthlyReportArchivePage';
 import { SettingsPage } from '@/pages/SettingsPage';
 import { NotFoundPage } from '@/pages/NotFoundPage';
 import { DeferredRedirect } from '@/pages/DeferredRedirect';
+import { FamilyAccessRedirect } from '@/pages/FamilyAccessRedirect';
+import { HouseholdInvitePage } from '@/pages/HouseholdInvitePage';
 import { LoginPage } from '@/pages/auth/LoginPage';
 import { SignupPage } from '@/pages/auth/SignupPage';
 import { ForgotPasswordPage } from '@/pages/auth/ForgotPasswordPage';
@@ -95,6 +99,8 @@ export function PrerenderPublicRoutes() {
       <Route path={ROUTES.VERIFY_EMAIL} element={<VerifyEmailPage />} />
       <Route path={ROUTES.AUTH_CALLBACK} element={<AuthCallbackPage />} />
       <Route path={ROUTES.RESET_PASSWORD} element={<ResetPasswordPage />} />
+      <Route path={`${ROUTES.EMERGENCY_PUBLIC}/:token`} element={<PublicEmergencyPassportPage />} />
+      <Route path={`${ROUTES.STORY_PUBLIC}/:token`} element={<PublicPetStoryPage />} />
       <Route path={ROUTES.ONBOARDING} element={<ProtectedRoute requireOnboardingComplete={false}><OnboardingPage /></ProtectedRoute>} />
       <Route path={ROUTES.DASHBOARD} element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       <Route path={ROUTES.PET_PROFILE} element={<ProtectedRoute><PetProfilePage /></ProtectedRoute>} />
@@ -113,7 +119,8 @@ export function PrerenderPublicRoutes() {
       <Route path={ROUTES.LOST_PET} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
       <Route path={ROUTES.AGE_TRANSLATOR} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
       <Route path={ROUTES.NOTIFICATIONS} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
-      <Route path={ROUTES.FAMILY_ACCESS} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
+      <Route path={ROUTES.FAMILY_ACCESS} element={<ProtectedRoute><FamilyAccessRedirect /></ProtectedRoute>} />
+      <Route path={`${ROUTES.FAMILY_INVITE}/:token`} element={<HouseholdInvitePage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

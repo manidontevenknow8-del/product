@@ -23,6 +23,11 @@ export function LifeStorySummary({ summary }: LifeStorySummaryProps) {
             ))}
           </p>
         )}
+        {summary.accessNote && (
+          <p className={styles.accessNote} role="note">
+            {summary.accessNote}
+          </p>
+        )}
       </div>
     </section>
   );

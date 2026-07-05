@@ -67,6 +67,11 @@ const SAFE_MESSAGE_PATTERNS: RegExp[] = [
   /^pet limit reached/i,
   /^reminder limit reached/i,
   /^health record limit reached/i,
+  /^vet visit export requires plus/i,
+  /^monthly vet visit export limit reached/i,
+  /^household invites require plus/i,
+  /^household member limit reached/i,
+  /^only the household owner/i,
 ];
 
 const TECHNICAL_PATTERNS: { pattern: RegExp; context?: UserErrorContext }[] = [
@@ -75,7 +80,7 @@ const TECHNICAL_PATTERNS: { pattern: RegExp; context?: UserErrorContext }[] = [
   { pattern: /foreign key|duplicate key|unique constraint/i },
   { pattern: /relation\s+"[^"]+"\s+(does not exist|violates)/i },
   { pattern: /sqlstate|postgres|supabase db push|npx supabase/i },
-  { pattern: /\bvet_bill_extractions\b|\bpet_documents\b|\bstorage\.objects\b/i },
+  { pattern: /\bvet_bill_extractions\b|\bvet_visit_exports\b|\bpet_documents\b|\bstorage\.objects\b/i },
   { pattern: /bucket not found|bucket.*missing/i, context: 'upload' },
   { pattern: /jwt|token.*expired|invalid.*session/i, context: 'auth' },
   { pattern: /network|fetch failed|failed to fetch/i },
@@ -135,6 +140,15 @@ function mapTechnicalMessage(message: string, context: UserErrorContext): string
     return message;
   }
   if (/health record limit reached/i.test(lower)) {
+    return message;
+  }
+  if (/vet visit export requires plus/i.test(lower)) {
+    return message;
+  }
+  if (/monthly vet visit export limit reached/i.test(lower)) {
+    return message;
+  }
+  if (/household invites require plus|household member limit reached|only the household owner/i.test(lower)) {
     return message;
   }
   if (/document not found|that document/.test(lower)) return USER_FACING_ERRORS.documentNotFound;

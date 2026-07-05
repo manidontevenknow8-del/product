@@ -1,0 +1,15 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.summary {
+  margin: 0;
+  font-family: var(--font-serif, serif);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--ed-ink, #1a1712);
+}

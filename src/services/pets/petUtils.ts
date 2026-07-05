@@ -118,6 +118,10 @@ export function petRecordToEditPetForm(record: PetRecord): EditPetForm {
     weight: record.weight ?? '',
     gender: record.gender ?? '',
     photo: record.photoUrl,
+    diet: record.diet ?? '',
+    coatColor: record.coatColor ?? '',
+    microchipId: record.microchipId ?? '',
+    conditionsNotes: record.conditionsNotes ?? '',
   };
 }
 
@@ -135,6 +139,10 @@ export function editPetFormToUpdateInput(form: EditPetForm): UpdatePetInput {
     weight: form.weight.trim() || null,
     gender,
     photoUrl: form.photo,
+    diet: form.diet.trim() || null,
+    coatColor: form.coatColor.trim() || null,
+    microchipId: form.microchipId.trim() || null,
+    conditionsNotes: form.conditionsNotes.trim() || null,
   };
 }
 
@@ -155,16 +163,16 @@ export function petRecordToPetProfile(record: PetRecord): PetProfile {
   const base = petRecordToPet(record);
   return {
     ...base,
-    diet: 'Not recorded',
+    diet: record.diet?.trim() || 'Not recorded',
     vaccinationStatus: 'Not recorded',
     allergies: 'Not recorded',
-    microchipId: null,
+    microchipId: record.microchipId?.trim() || null,
     gender: record.gender
       ? record.gender.charAt(0).toUpperCase() + record.gender.slice(1)
       : 'Not specified',
     dateOfBirth: formatBirthDateDisplay(record.birthDate),
-    color: 'Not recorded',
-    conditionsNotes: 'Not recorded',
+    color: record.coatColor?.trim() || 'Not recorded',
+    conditionsNotes: record.conditionsNotes?.trim() || 'Not recorded',
     photo: normalizePhotoUrlFromDb(record.photoUrl),
   };
 }
@@ -192,6 +200,10 @@ export function mapPetRow(row: {
   weight: string | null;
   gender: string | null;
   photo_url: string | null;
+  diet?: string | null;
+  coat_color?: string | null;
+  microchip_id?: string | null;
+  conditions_notes?: string | null;
   created_at: string;
   updated_at: string;
 }): PetRecord {
@@ -205,6 +217,10 @@ export function mapPetRow(row: {
     weight: row.weight,
     gender: (row.gender as PetRecord['gender']) ?? null,
     photoUrl: normalizePhotoUrlFromDb(row.photo_url),
+    diet: row.diet ?? null,
+    coatColor: row.coat_color ?? null,
+    microchipId: row.microchip_id ?? null,
+    conditionsNotes: row.conditions_notes ?? null,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -220,6 +236,10 @@ export function petInputToRow(input: CreatePetInput, ownerId: string) {
     weight: input.weight ?? null,
     gender: input.gender ?? null,
     photo_url: input.photoUrl ?? null,
+    diet: input.diet ?? null,
+    coat_color: input.coatColor ?? null,
+    microchip_id: input.microchipId ?? null,
+    conditions_notes: input.conditionsNotes ?? null,
   };
 }
 
@@ -231,6 +251,10 @@ export function petUpdateToRow(input: UpdatePetInput): Partial<{
   weight: string | null;
   gender: string | null;
   photo_url: string | null;
+  diet: string | null;
+  coat_color: string | null;
+  microchip_id: string | null;
+  conditions_notes: string | null;
 }> {
   const patch: Partial<{
     name: string;
@@ -240,6 +264,10 @@ export function petUpdateToRow(input: UpdatePetInput): Partial<{
     weight: string | null;
     gender: string | null;
     photo_url: string | null;
+    diet: string | null;
+    coat_color: string | null;
+    microchip_id: string | null;
+    conditions_notes: string | null;
   }> = {};
   if (input.name !== undefined) patch.name = input.name;
   if (input.species !== undefined) patch.species = input.species;
@@ -248,5 +276,9 @@ export function petUpdateToRow(input: UpdatePetInput): Partial<{
   if (input.weight !== undefined) patch.weight = input.weight;
   if (input.gender !== undefined) patch.gender = input.gender;
   if (input.photoUrl !== undefined) patch.photo_url = input.photoUrl;
+  if (input.diet !== undefined) patch.diet = input.diet;
+  if (input.coatColor !== undefined) patch.coat_color = input.coatColor;
+  if (input.microchipId !== undefined) patch.microchip_id = input.microchipId;
+  if (input.conditionsNotes !== undefined) patch.conditions_notes = input.conditionsNotes;
   return patch;
 }

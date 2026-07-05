@@ -107,6 +107,10 @@
   box-shadow: var(--lux-shadow-hover);
 }
 
+.volumeHighlight {
+  box-shadow: 0 0 0 2px rgba(168, 131, 58, 0.45), var(--lux-shadow-hover);
+}
+
 .volumeSpine {
   flex-shrink: 0;
   width: 36px;
@@ -195,9 +199,32 @@
   opacity: 1;
 }
 
-.downloadBtn:hover {
+.downloadBtn:hover:not(:disabled) {
   border-color: #3D6B62;
   color: #3D6B62;
+}
+
+.downloadBtn:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.downloadSpinner {
+  animation: vaultDownloadSpin 0.8s linear infinite;
+}
+
+@keyframes vaultDownloadSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.downloadError {
+  margin: 6px 0 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.4;
+  color: #7A3030;
 }
 
 .loadingHint {

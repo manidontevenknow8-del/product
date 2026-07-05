@@ -1,0 +1,219 @@
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 5vw, 56px);
+}
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--lux-border, #ddd5c8);
+}
+
+.heroText {
+  min-width: 0;
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+}
+
+.heroTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.05;
+  color: var(--lux-text, #1a1712);
+}
+
+.heroMeta {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--lux-muted, #5c554d);
+}
+
+.heroPhoto {
+  width: 96px;
+  height: 96px;
+  border-radius: 2px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid var(--lux-border, #ddd5c8);
+}
+
+.sectionHead {
+  margin-bottom: var(--space-6);
+}
+
+.sectionKicker {
+  margin: 0 0 var(--space-2);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--lux-text, #1a1712);
+}
+
+.milestonesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+
+.monthGroup {
+  margin-bottom: var(--space-8);
+}
+
+.monthLabel {
+  margin: 0 0 var(--space-5);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lux-text, #1a1712);
+}
+
+.monthEvents {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.eventCard {
+  position: relative;
+  background: var(--lux-surface, #fff);
+  border: 1px solid var(--lux-border, #ddd5c8);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: var(--lux-shadow-rest);
+}
+
+.eventAccent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--lux-gold, #a8833a);
+}
+
+.eventCard[data-event-type='manual_moment'] .eventAccent {
+  background: #9b6b8e;
+}
+
+.eventCard[data-event-type='document_uploaded'] .eventAccent {
+  background: var(--lux-teal, #3d6b62);
+}
+
+.eventCard[data-event-type='adoption'] .eventAccent {
+  background: var(--lux-burgundy, #7a3030);
+}
+
+.eventBody {
+  padding: 28px 28px 28px 32px;
+}
+
+.eventHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.eventType {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lux-muted, #5c554d);
+}
+
+.eventDate {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+}
+
+.eventImage {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--lux-border, #ddd5c8);
+}
+
+.eventTitle {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--lux-text, #1a1712);
+}
+
+.eventDescription {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--lux-muted, #5c554d);
+}
+
+.eventCard[data-event-type='manual_moment'] .eventDescription {
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+.eventMeta {
+  display: inline-block;
+  margin-top: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-muted, #5c554d);
+  padding: 4px 10px;
+  border: 1px solid var(--lux-border, #ddd5c8);
+  border-radius: 2px;
+}
+
+@media (max-width: 640px) {
+  .hero {
+    flex-direction: column-reverse;
+  }
+
+  .heroPhoto {
+    width: 72px;
+    height: 72px;
+  }
+}

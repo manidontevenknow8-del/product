@@ -65,42 +65,108 @@
   line-height: 1.65;
 }
 
-.actionsList {
-  padding: var(--space-5);
+.readOnlyNote {
+  margin: 0;
+  padding: var(--space-4);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
   background: var(--color-bg-muted);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-lg);
-  margin-bottom: var(--space-5);
 }
 
-.actionsTitle {
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  margin: 0 0 var(--space-3);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.textarea,
+.dateInput {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
   color: var(--color-text);
 }
 
-.actionsList ul {
-  margin: 0;
-  padding-left: 1.15rem;
+.textarea {
+  resize: vertical;
+  min-height: 96px;
+}
+
+.photoField {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.photoRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.fileInput {
+  display: none;
+}
+
+.photoBtn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-muted);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.textBtn {
   font-family: var(--font-sans);
   font-size: 0.85rem;
   color: var(--color-text-muted);
-  line-height: 1.65;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.actionsList li {
-  margin-bottom: 0.55rem;
+.photoPreview {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-light);
 }
 
-.actionsList li:last-child {
-  margin-bottom: 0;
-}
-
-.actionsList strong {
-  color: var(--color-text);
-  font-weight: 600;
+.error {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-danger, #9b3b3b);
 }
 
 .footer {
@@ -108,6 +174,7 @@
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: var(--space-2);
+  margin-top: var(--space-2);
 }
 
 @keyframes fadeIn {

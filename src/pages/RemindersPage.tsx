@@ -28,6 +28,7 @@ import {
   WEEKLY_SUMMARY_DAY,
 } from '@/services/email/emailScheduler';
 import type { Reminder, ReminderFilters as ReminderFiltersState } from '@/types/reminder';
+import { TIMELINE_DEEP_LINK_PARAMS } from '@/services/timeline/timelineEventHref';
 import styles from './RemindersPage.module.css';
 
 const IMG = {
@@ -71,6 +72,7 @@ export function RemindersPage() {
   };
   const [upgradeOpen, setUpgradeOpen] = useState(false);
   const {
+    reminders,
     stats,
     isLoading,
     filterReminders,
@@ -109,6 +111,20 @@ export function RemindersPage() {
       setSearchParams({});
     }
   }, [searchParams, isLoading, atReminderLimit, setSearchParams]);
+
+  useEffect(() => {
+    if (isLoading) return;
+    const reminderId = searchParams.get(TIMELINE_DEEP_LINK_PARAMS.reminder);
+    if (!reminderId) return;
+
+    const reminder = reminders.find((entry) => entry.id === reminderId);
+    if (!reminder) return;
+
+    setEditReminder(reminder);
+    const next = new URLSearchParams(searchParams);
+    next.delete(TIMELINE_DEEP_LINK_PARAMS.reminder);
+    setSearchParams(next, { replace: true });
+  }, [isLoading, reminders, searchParams, setSearchParams]);
 
   const filtered = useMemo(() => filterReminders(filters), [filterReminders, filters]);
 

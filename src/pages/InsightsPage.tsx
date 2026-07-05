@@ -1,35 +1,34 @@
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { eventTracker } from '@/analytics/EventTracker';
 import { AppLayout } from '@/layouts/AppLayout';
 import { LoadingState, PremiumGate } from '@/components/ui';
-import { GatedPagePreview } from '@/components/premium/GatedPagePreview';
-import { MinimalLineChart } from '@/components/insights';
+import { WeightTrendChart, VaccineDueAside, WeeklyDigestSection, CareRecommendationsSection, MultiPetComparativeSection, type PetComparativeRow } from '@/components/insights';
 import { usePets } from '@/pets';
 import { useHealthRecords } from '@/healthRecords';
 import { useDocuments } from '@/documents';
 import { useDailyCheckIn } from '@/dailyCheckIn';
 import { usePetCareScore } from '@/petCareScore';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
-import { formatHealthRecordDate } from '@/services/healthRecords/healthRecordMappers';
+import { buildPetWeightTrend, MIN_WEIGHT_TREND_POINTS } from '@/services/weightTrend';
+import { buildVaccineDueForecast, type VaccineDueForecast } from '@/services/vaccineDue';
+import { useSymptomLogs } from '@/symptomLog';
+import { useHousehold } from '@/household';
+import { SymptomObservationsSection } from '@/components/symptom-log';
 import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
 import { getAvatarInitials } from '@/services/pets/petUtils';
 import type { PetRecord } from '@/services/pets/petTypes';
-import type { ScoreFactor } from '@/types/petCareScore';
+import { useReminders } from '@/reminders';
+import { computePetCareScoreFromSources } from '@/services/petCareScore/petCareScoreEngine';
+import { buildScoreDisplayMetrics } from '@/services/petCareScore/scoreDisplayMetrics';
+import { detectSymptomPatterns } from '@/services/symptomLog';
 import { ROUTES } from '@/routes/paths';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { getTrendLabel } from '@/utils/petCareScoreUtils';
 import styles from './InsightsPage.module.css';
 
-function parseWeightKg(weight: string | null | undefined): number | null {
-  if (!weight) return null;
-  const match = weight.match(/([\d.]+)/);
-  return match ? Number.parseFloat(match[1]) : null;
-}
-
-function factorScore(factors: ScoreFactor[], id: ScoreFactor['id']): number {
-  return factors.find((f) => f.id === id)?.score ?? 0;
-}
+type BreakdownRow = { label: string; pct: number };
 
 function PetStack({
   pets,
@@ -98,27 +97,18 @@ function DocumentIcon() {
   );
 }
 
-function VaxShieldIcon() {
-  return (
-    <svg className={styles.vaxIcon} width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path d="M12 3 4 7v6c0 5 3.5 8.5 8 10 3.5-1.5 8-5 8-10V7l-8-4Z" stroke="currentColor" strokeWidth="1.25" strokeLinejoin="round" />
-      <path d="M12 8v8M9 11h6" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
-    </svg>
-  );
-}
-
-type BreakdownRow = { label: string; pct: number };
-
 function ScoreHeroSection({
   pet,
   score,
   scoreLabel,
+  scoreSummary,
   trendText,
   breakdown,
 }: {
   pet: PetRecord;
   score: number | null;
   scoreLabel: string;
+  scoreSummary: string;
   trendText: string;
   breakdown: BreakdownRow[];
 }) {
@@ -147,6 +137,7 @@ function ScoreHeroSection({
                 {trendText && <span className={styles.scoreHeroTrend}>{trendText}</span>}
               </div>
             </div>
+            {scoreSummary && <p className={styles.scoreSummary}>{scoreSummary}</p>}
             <ul className={styles.scoreBreakdown}>
               {breakdown.map((row) => (
                 <li key={row.label} className={styles.breakdownRow}>
@@ -164,47 +155,6 @@ function ScoreHeroSection({
             Add health records and documents to generate your first care score.
           </p>
         )}
-      </div>
-    </section>
-  );
-}
-
-function ConfidenceTrendBand({
-  petName,
-  trendText,
-}: {
-  petName: string;
-  trendText: string;
-}) {
-  return (
-    <section className={styles.confidenceBleed} data-reveal aria-labelledby="confidence-heading">
-      <div className={styles.confidenceInner}>
-        <span className={styles.confidenceWatermark} aria-hidden>
-          TREND
-        </span>
-        <p className={styles.synthesisEyebrow}>Pattern confidence</p>
-        <h2 id="confidence-heading" className={styles.synthesisTitle}>
-          {trendText ? 'Care trajectory' : 'Quiet confidence rising'}
-        </h2>
-        <hr className={styles.synthesisRule} aria-hidden />
-        <p className={styles.synthesisText}>
-          {trendText
-            ? `${petName}'s score is ${trendText.toLowerCase()} — Pro models cross-reference weight velocity, vaccine windows, and recurring symptom language to surface early-care prompts before a crisis visit.`
-            : `Pro models cross-reference ${petName}'s weight velocity, vaccine due windows, and recurring symptom language — surfacing gentle prompts weeks before urgency.`}
-        </p>
-        <div className={styles.synthesisFooter}>
-          <div className={styles.confidenceMeter} aria-label="Model confidence">
-            {[1, 2, 3, 4, 5].map((bar) => (
-              <span
-                key={bar}
-                className={`${styles.confidenceBar} ${bar <= 4 ? styles.confidenceBarFilled : ''}`}
-              />
-            ))}
-          </div>
-          <a href="#how-predictive-works" className={styles.synthesisLink}>
-            How synthesis works →
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -265,7 +215,7 @@ function HowPredictiveWorksSection({ petName }: { petName: string }) {
       </h2>
       <span className={styles.howRule} aria-hidden />
       <p className={styles.howLead}>
-        PetClues Pro reads patterns across {petName}'s daily check-ins, health records, and uploaded
+        Health Foresight reads patterns across {petName}'s daily check-ins, health records, and uploaded
         documents — then surfaces gentle prompts before small shifts become urgent visits.
       </p>
       <ol className={styles.howSteps}>
@@ -314,80 +264,86 @@ function HowPredictiveWorksSection({ petName }: { petName: string }) {
   );
 }
 
-function PredictiveForesightSection({
-  weightSeries,
-  vaccinationLabels,
-  symptomNotes,
+function PlusForesightSection({
+  weightTrend,
+  vaccineForecast,
 }: {
-  weightSeries: number[];
-  vaccinationLabels: string[];
-  symptomNotes: string[];
+  weightTrend: ReturnType<typeof buildPetWeightTrend>;
+  vaccineForecast: VaccineDueForecast;
 }) {
+  const hasWeightTrend = weightTrend.hasEnoughData;
+
   return (
     <div className={styles.foresight}>
       <article className={styles.predictiveFeature} id="predictive-analysis">
-        <MinimalLineChart
-          label="Weight trend"
-          values={weightSeries}
-          unit="kg"
-          variant="feature"
-        />
-        <p className={styles.featureLead}>
-          Subtle shifts in body weight can signal hydration, nutrition, or metabolic changes
-          before symptoms surface — one of the earliest signals in your predictive model.
-        </p>
+        {hasWeightTrend ? (
+          <>
+            <WeightTrendChart trend={weightTrend} />
+            <p className={styles.featureLead}>
+              Subtle shifts in body weight can signal hydration, nutrition, or metabolic changes
+              before symptoms surface — one of the earliest signals in your predictive model.
+            </p>
+          </>
+        ) : (
+          <div className={styles.foresightEmpty}>
+            <p className={styles.sectionEyebrow}>Weight trend</p>
+            <p className={styles.foresightEmptyText}>
+              {weightTrend.points.length === 0
+                ? 'Weight trend will appear here once you log weigh-ins via daily check-ins or weight records.'
+                : `Add ${MIN_WEIGHT_TREND_POINTS - weightTrend.points.length} more weight ${
+                    MIN_WEIGHT_TREND_POINTS - weightTrend.points.length === 1 ? 'entry' : 'entries'
+                  } to unlock the trend chart (${weightTrend.points.length}/${MIN_WEIGHT_TREND_POINTS} logged).`}
+            </p>
+            <Link to={ROUTES.DASHBOARD} className={styles.vaxBtn}>
+              Log a check-in
+            </Link>
+          </div>
+        )}
       </article>
 
-      {vaccinationLabels.length > 0 ? (
-        <aside className={styles.vaxAside} aria-label="Vaccination timeline">
-          <p className={styles.vaxEyebrow}>Immunity windows</p>
-          <ul className={styles.vaxList}>
-            {vaccinationLabels.map((label) => (
-              <li key={label} className={styles.vaxItem}>
-                <span className={styles.vaxDot} aria-hidden />
-                {label}
-              </li>
-            ))}
-          </ul>
-        </aside>
-      ) : (
-        <aside className={styles.vaxAsideEmpty}>
-          <VaxShieldIcon />
-          <p className={styles.vaxEmptyText}>
-            Add vaccination records to map immunity windows and due-date cadence.
-          </p>
-          <Link to={ROUTES.PET_PROFILE} className={styles.vaxBtn}>
-            Add vaccination
-          </Link>
-        </aside>
-      )}
-
-      {symptomNotes.length > 0 && (
-        <section className={styles.observations} aria-label="Symptom observations">
-          <p className={styles.sectionEyebrow}>Observations</p>
-          <h3 className={styles.observationsTitle}>What we&apos;re watching</h3>
-          <ul className={styles.observationsList}>
-            {symptomNotes.map((note, index) => (
-              <li key={index} className={styles.observationItem}>
-                <span className={styles.observationNum} aria-hidden>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <p className={styles.observationText}>{note}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+      <VaccineDueAside forecast={vaccineForecast} />
     </div>
   );
 }
 
+function ProSymptomSection({
+  petName,
+  symptomLogs,
+  canLogSymptoms,
+  onCreateSymptomLog,
+}: {
+  petName: string;
+  symptomLogs: ReturnType<typeof useSymptomLogs>['logs'];
+  canLogSymptoms: boolean;
+  onCreateSymptomLog: ReturnType<typeof useSymptomLogs>['createLog'];
+}) {
+  const patterns = useMemo(() => detectSymptomPatterns(symptomLogs), [symptomLogs]);
+
+  return (
+    <SymptomObservationsSection
+      petName={petName}
+      logs={symptomLogs}
+      patterns={patterns}
+      canLog={canLogSymptoms}
+      onCreateLog={onCreateSymptomLog}
+    />
+  );
+}
+
 export function InsightsPage() {
-  const advancedInsights = useFeatureAccess('advancedHealthInsights');
+  const foresightBasics = useFeatureAccess('petCareScore');
+
+  useEffect(() => {
+    eventTracker.track('insights_viewed');
+  }, []);
+  const proInsights = useFeatureAccess('advancedHealthInsights');
   const { activePet, pets, setActivePet, isLoading: petsLoading, hasPets } = usePets();
   const { records, isLoading: recordsLoading } = useHealthRecords();
   const { documents, isLoading: docsLoading } = useDocuments();
   const { checkIns, isLoading: checkInsLoading } = useDailyCheckIn();
+  const { reminders, isLoading: remindersLoading } = useReminders();
+  const { logs: symptomLogs, createLog: createSymptomLog, isLoading: symptomLogsLoading } = useSymptomLogs();
+  const { canEdit: canEditHousehold } = useHousehold();
   const { data: scoreData, isLoading: scoreLoading } = usePetCareScore();
 
   const petRecords = useMemo(
@@ -400,35 +356,21 @@ export function InsightsPage() {
     [documents, activePet],
   );
 
-  const vaccinations = useMemo(
-    () =>
-      [...petRecords]
-        .filter((r) => r.recordType === 'vaccination')
-        .sort((a, b) => b.dateRecorded.localeCompare(a.dateRecorded))
-        .slice(0, 5),
+  const vaccineForecast = useMemo(
+    () => buildVaccineDueForecast(petRecords),
     [petRecords],
   );
 
-  const vaccinationLabels = vaccinations.map(
-    (v) => `${v.title} · ${formatHealthRecordDate(v.dateRecorded)}`,
-  );
-
-  const weightSeries = useMemo(() => {
-    const base = parseWeightKg(activePet?.weight) ?? 12;
-    return [base - 0.6, base - 0.3, base - 0.15, base, base + 0.1];
-  }, [activePet?.weight]);
-
-  const symptomNotes = useMemo(() => {
-    const wellness = petRecords.filter((r) => r.recordType === 'wellness').slice(0, 3);
-    if (wellness.length >= 3) {
-      return wellness.map((r) => r.description?.trim() || r.title);
+  const weightTrend = useMemo(() => {
+    if (!activePet) {
+      return buildPetWeightTrend({ petName: '', records: [], checkIns: [] });
     }
-    return [
-      'Coat quality stable across recent check-ins.',
-      'Energy levels consistent with age and breed baseline.',
-      'No recurring GI or respiratory flags in the last 90 days.',
-    ];
-  }, [petRecords]);
+    return buildPetWeightTrend({
+      petName: activePet.name,
+      records: petRecords,
+      checkIns: checkIns.filter((checkIn) => checkIn.petId === activePet.id),
+    });
+  }, [activePet, petRecords, checkIns]);
 
   const checkInsThisMonth = useMemo(() => {
     if (!activePet) return 0;
@@ -439,25 +381,53 @@ export function InsightsPage() {
   }, [checkIns, activePet]);
 
   const scoreBreakdown = useMemo((): BreakdownRow[] => {
-    const factors = scoreData?.factors ?? [];
-    const vaxCount = petRecords.filter((r) => r.recordType === 'vaccination').length;
-    const vaxPct = vaxCount === 0 ? 0 : Math.min(100, 40 + vaxCount * 20);
+    return buildScoreDisplayMetrics(scoreData?.factors ?? []).map((metric) => ({
+      label: metric.label,
+      pct: metric.value,
+    }));
+  }, [scoreData?.factors]);
 
-    const reminderPct = Math.round(
-      (factorScore(factors, 'upcoming_reminder_coverage') +
-        factorScore(factors, 'reminder_completion_rate')) /
-        2,
-    );
+  const comparativeRows = useMemo((): PetComparativeRow[] => {
+    if (!proInsights.isAllowed || pets.length < 2) return [];
 
-    return [
-      { label: 'Health Records', pct: factorScore(factors, 'health_records_count') },
-      { label: 'Documents', pct: factorScore(factors, 'document_completeness') },
-      { label: 'Reminders', pct: reminderPct },
-      { label: 'Vaccinations', pct: vaxPct },
-    ];
-  }, [scoreData?.factors, petRecords]);
+    return pets.map((pet) => {
+      const petRecords = records.filter((record) => record.petId === pet.id);
+      const petDocs = documents.filter((doc) => doc.petId === pet.id);
+      const petReminders = reminders.filter((reminder) => reminder.petId === pet.id);
+      const petCheckIns = checkIns.filter((checkIn) => checkIn.petId === pet.id);
+      const result = computePetCareScoreFromSources({
+        pet,
+        healthRecords: petRecords,
+        documents: petDocs,
+        reminders: petReminders,
+        dailyCheckIns: checkIns,
+      });
+      const trend = buildPetWeightTrend({
+        petName: pet.name,
+        records: petRecords,
+        checkIns: petCheckIns,
+      });
 
-  const isLoading = petsLoading || recordsLoading || scoreLoading || docsLoading || checkInsLoading;
+      return {
+        petId: pet.id,
+        petName: pet.name,
+        photoUrl: pet.photoUrl,
+        score: result.data.snapshot.score,
+        scoreLabel: result.data.snapshot.label,
+        trendText: getTrendLabel(result.data.snapshot.trend, result.data.snapshot.trendDelta),
+        weightSummary: trend.hasEnoughData ? trend.summary : null,
+      };
+    });
+  }, [proInsights.isAllowed, pets, records, documents, reminders, checkIns]);
+
+  const isLoading =
+    petsLoading ||
+    recordsLoading ||
+    scoreLoading ||
+    docsLoading ||
+    checkInsLoading ||
+    symptomLogsLoading ||
+    remindersLoading;
 
   if (isLoading) {
     return (
@@ -489,45 +459,42 @@ export function InsightsPage() {
     );
   }
 
-  if (!advancedInsights.isAllowed) {
-    const gatedHero = resolvePetHeroBackground(activePet.photoUrl);
-    return (
-      <AppLayout flushContent>
-        <div className={styles.page}>
-          <div className={styles.gatedWrap}>
-            <PremiumGate
-              requiredTier="Pro"
-              title="Unlock Health Foresight"
-              description="PetClues Pro analyzes deep historical health records, vaccines, and weight data to catch subtle care trends before they become emergencies."
-              className={styles.gateMinHeight}
-            >
-              <GatedPagePreview
-                imageUrl={gatedHero.src}
-                eyebrow="Health Foresight"
-                title="Predictive care journal"
-                subtitle="A living health journal — curated from records, check-ins, and care signals."
-              />
-            </PremiumGate>
-            <footer className={styles.legalFooter}>
-              <hr className={styles.legalRule} />
-              <p className={styles.legalText} role="note">
-                {HEALTH_DISCLAIMER}
-              </p>
-            </footer>
-          </div>
-        </div>
-      </AppLayout>
-    );
-  }
-
   const score = scoreData?.snapshot.score ?? null;
   const scoreLabel = scoreData?.snapshot.label ?? 'Getting started';
+  const scoreSummary = scoreData?.snapshot.summary ?? '';
   const trendText = scoreData
     ? getTrendLabel(scoreData.snapshot.trend, scoreData.snapshot.trendDelta)
     : '';
   const petName = activePet.name;
   const heroBackground = resolvePetHeroBackground(activePet.photoUrl);
   const heroPhoto = normalizePhotoUrlFromDb(activePet.photoUrl);
+
+  const plusEssentials = (
+    <>
+      <ScoreHeroSection
+        pet={activePet}
+        score={score}
+        scoreLabel={scoreLabel}
+        scoreSummary={scoreSummary}
+        trendText={trendText}
+        breakdown={scoreBreakdown}
+      />
+
+      <section className={styles.predictiveChapter} data-reveal aria-labelledby="predictive-heading">
+        <header className={styles.chapterIntro}>
+          <p className={styles.sectionEyebrow}>Predictive analysis</p>
+          <h2 id="predictive-heading" className={styles.sectionTitle}>
+            Foresight modeling
+          </h2>
+          <p className={styles.sectionLead}>
+            Weight curves and vaccine cadence — interpreted as one intelligence narrative.
+          </p>
+        </header>
+
+        <PlusForesightSection weightTrend={weightTrend} vaccineForecast={vaccineForecast} />
+      </section>
+    </>
+  );
 
   return (
     <AppLayout flushContent>
@@ -581,34 +548,71 @@ export function InsightsPage() {
         </div>
 
         <div className={styles.body}>
-          <ScoreHeroSection
-            pet={activePet}
-            score={score}
-            scoreLabel={scoreLabel}
-            trendText={trendText}
-            breakdown={scoreBreakdown}
-          />
+          {foresightBasics.isAllowed ? (
+            plusEssentials
+          ) : (
+            <PremiumGate
+              requiredTier="Plus"
+              title="Unlock Health Foresight basics"
+              description="PetClues Plus gives you a living PetCare score with plain-language explanation, a real weight trend from your check-ins, and vaccine-due predictions."
+              className={styles.sectionGate}
+            >
+              {plusEssentials}
+            </PremiumGate>
+          )}
 
-          <ConfidenceTrendBand petName={petName} trendText={trendText} />
+          <PremiumGate
+            requiredTier="Pro"
+            title="Weekly care digest"
+            description="Pro synthesizes your week of check-ins, records, and reminders into a concise narrative — what improved, what needs attention, and why."
+            className={styles.sectionGate}
+          >
+            {scoreData?.weeklyInsight && (
+              <WeeklyDigestSection insight={scoreData.weeklyInsight} petName={petName} />
+            )}
+          </PremiumGate>
 
-          <section className={styles.predictiveChapter} data-reveal aria-labelledby="predictive-heading">
-            <header className={styles.chapterIntro}>
-              <p className={styles.sectionEyebrow}>Predictive analysis</p>
-              <h2 id="predictive-heading" className={styles.sectionTitle}>
-                Foresight modeling
-              </h2>
-              <p className={styles.sectionLead}>
-                Weight curves, vaccine cadence, and symptom recurrence — interpreted as one
-                intelligence narrative.
-              </p>
-            </header>
+          <PremiumGate
+            requiredTier="Pro"
+            title="Symptom history & pattern detection"
+            description="Pro tracks every structured symptom log, surfaces recurring patterns, and helps you spot shifts before they become urgent vet visits."
+            className={styles.sectionGate}
+          >
+            <section className={styles.predictiveChapter} aria-label="Symptom observations">
+              <ProSymptomSection
+                petName={petName}
+                symptomLogs={symptomLogs}
+                canLogSymptoms={canEditHousehold}
+                onCreateSymptomLog={createSymptomLog}
+              />
+            </section>
+          </PremiumGate>
 
-            <PredictiveForesightSection
-              weightSeries={weightSeries}
-              vaccinationLabels={vaccinationLabels}
-              symptomNotes={symptomNotes}
-            />
-          </section>
+          {pets.length > 1 && (
+            <PremiumGate
+              requiredTier="Pro"
+              title="Multi-pet comparative trends"
+              description="Pro compares PetCare scores and weight signals across every pet in your household — one view for multi-pet families."
+              className={styles.sectionGate}
+            >
+              <MultiPetComparativeSection
+                rows={comparativeRows}
+                activePetId={activePet.id}
+                onSelectPet={setActivePet}
+              />
+            </PremiumGate>
+          )}
+
+          <PremiumGate
+            requiredTier="Pro"
+            title="Personalized care recommendations"
+            description="Pro turns score factors into prioritized next steps — the highest-impact updates for your pet's care file."
+            className={styles.sectionGate}
+          >
+            {scoreData && (
+              <CareRecommendationsSection recommendations={scoreData.recommendations} />
+            )}
+          </PremiumGate>
 
           <HowPredictiveWorksSection petName={petName} />
 

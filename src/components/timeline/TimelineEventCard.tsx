@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { eventTypeLabels, type TimelineEventItem } from '@/types/timeline';
-import { ROUTES } from '@/routes/paths';
+import { timelineEventHref } from '@/services/timeline/timelineEventHref';
+import { TimelineEventMedia } from './TimelineEventMedia';
 import styles from './TimelineEventCard.module.css';
 
 type TimelineEventCardProps = {
@@ -8,21 +9,6 @@ type TimelineEventCardProps = {
   featured?: boolean;
   petName?: string;
 };
-
-function eventHref(event: TimelineEventItem): string | null {
-  switch (event.sourceKind) {
-    case 'document':
-      return ROUTES.SCAN;
-    case 'health_record':
-      return ROUTES.PET_PROFILE;
-    case 'reminder':
-      return ROUTES.REMINDERS;
-    case 'profile':
-      return ROUTES.PET_PROFILE;
-    default:
-      return null;
-  }
-}
 
 function DocumentIcon() {
   return (
@@ -57,13 +43,22 @@ function DownloadIcon() {
 }
 
 export function TimelineEventCard({ event, featured = false, petName = 'your pet' }: TimelineEventCardProps) {
-  const href = eventHref(event);
+  const href = timelineEventHref(event);
   const isDocument = event.type === 'document_uploaded';
-  const isHighlight = featured || event.type === 'adoption';
+  const isManualMoment = event.type === 'manual_moment';
+  const hasMedia = Boolean(event.imageUrl || event.thumbnailDocumentId);
+  const isPdfDocument = isDocument && !event.thumbnailDocumentId;
+  const isHighlight =
+    featured ||
+    event.type === 'adoption' ||
+    (isManualMoment && hasMedia) ||
+    (isDocument && hasMedia);
 
   const card = (
     <article
-      className={`${styles.card} ${isHighlight ? styles.cardHighlight : ''}`}
+      className={`${styles.card} ${isHighlight ? styles.cardHighlight : ''} ${
+        isManualMoment ? styles.cardMemory : ''
+      }`}
       data-event-type={event.type}
     >
       <div className={styles.accent} aria-hidden="true" />
@@ -79,20 +74,27 @@ export function TimelineEventCard({ event, featured = false, petName = 'your pet
           </time>
         </div>
 
-        {isDocument ? (
-          <>
-            <div className={styles.titleRow}>
-              <div className={styles.docIcon}>
-                <DocumentIcon />
-              </div>
-              <div>
-                <h3 className={styles.title}>{event.title}</h3>
-                <p className={styles.docSub}>
-                  PDF archived for {petName} on {event.displayDate}
-                </p>
-              </div>
+        {hasMedia && (
+          <TimelineEventMedia
+            imageUrl={event.imageUrl}
+            thumbnailDocumentId={event.thumbnailDocumentId}
+            alt={event.title}
+            variant="card"
+          />
+        )}
+
+        {isPdfDocument ? (
+          <div className={styles.titleRow}>
+            <div className={styles.docIcon}>
+              <DocumentIcon />
             </div>
-          </>
+            <div>
+              <h3 className={styles.title}>{event.title}</h3>
+              <p className={styles.docSub}>
+                PDF archived for {petName} on {event.displayDate}
+              </p>
+            </div>
+          </div>
         ) : (
           <>
             <h3 className={styles.title}>{event.title}</h3>

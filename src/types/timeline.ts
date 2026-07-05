@@ -12,14 +12,16 @@ export type TimelineEventType =
   | 'vaccination'
   | 'document_uploaded'
   | 'weight_milestone'
-  | 'petcare_score_milestone';
+  | 'petcare_score_milestone'
+  | 'manual_moment';
 
 export type TimelineEventSourceKind =
   | 'document'
   | 'health_record'
   | 'reminder'
   | 'profile'
-  | 'score';
+  | 'score'
+  | 'moment';
 
 export type TimelineEventItem = {
   id: string;
@@ -63,6 +65,13 @@ export type LifeStorySummary = {
   headline: string;
   detail: string;
   highlights: { label: string; value: string }[];
+  accessNote?: string;
+};
+
+export type TimelineSummaryAccess = {
+  hasFullTimeline: boolean;
+  lockedMomentsCount: number;
+  freeTimelineDays: number;
 };
 
 export const filterLabels: Record<TimelineFilter, string> = {
@@ -81,6 +90,7 @@ export const eventTypeLabels: Record<TimelineEventType, string> = {
   document_uploaded: 'Document',
   weight_milestone: 'Weight check',
   petcare_score_milestone: 'PetCare Score',
+  manual_moment: 'Memory',
 };
 
 export function eventMatchesFilter(
@@ -95,7 +105,11 @@ export function eventMatchesFilter(
     'reminder_completed',
   ];
 
-  const memoryTypes: TimelineEventType[] = ['adoption', 'document_uploaded'];
+  const memoryTypes: TimelineEventType[] = [
+    'adoption',
+    'document_uploaded',
+    'manual_moment',
+  ];
 
   const milestoneTypes: TimelineEventType[] = [
     'weight_milestone',

@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { AppLayout } from '@/layouts/AppLayout';
 import { LoadingState, EditorialUpgradeModal } from '@/components/ui';
 import { UpgradeModal } from '@/components/subscription';
 import { useAuth } from '@/auth/AuthProvider';
+import { eventTracker } from '@/analytics/EventTracker';
 import { canCreateHealthRecord } from '@/subscription/featureGates';
 import {
   PetSummaryCard,
@@ -15,10 +16,18 @@ import {
   HealthRecordModal,
 } from '@/components/pet-profile';
 import { EmptyPetProfileState } from '@/components/empty-states';
+import { EmergencyPassportEditor } from '@/components/emergency';
+import { VetVisitExportPanel } from '@/components/vet-visit-export';
 import { usePets } from '@/pets';
 import { useHealthRecords } from '@/healthRecords';
+import { useDocuments } from '@/documents';
+import { useDailyCheckIn } from '@/dailyCheckIn';
+import { useSymptomLogs } from '@/symptomLog';
 import { usePetCareScore } from '@/petCareScore';
 import { useFeatureAccess } from '@/subscription/useFeatureAccess';
+import { useEmergencyPassport } from '@/hooks/useEmergencyPassport';
+import { useHousehold } from '@/household';
+import { HouseholdMembersPanel } from '@/components/household';
 import { petRecordToPetProfile, type UpdatePetInput } from '@/services/pets/petService';
 import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
 import { getAvatarInitials } from '@/services/pets/petUtils';
@@ -27,6 +36,7 @@ import type { CreateHealthRecordInput } from '@/services/healthRecords/healthRec
 import type { ProfileStatus } from '@/types/profile';
 import type { PetRecord } from '@/services/pets/petTypes';
 import { ROUTES } from '@/routes/paths';
+import { TIMELINE_DEEP_LINK_PARAMS } from '@/services/timeline/timelineEventHref';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { PAGE_IMG } from '@/data/pageImages';
 import styles from './PetProfilePage.module.css';
@@ -195,13 +205,99 @@ function AddPetGhostButton() {
 
 export function PetProfilePage() {
   const { user } = useAuth();
+
+  useEffect(() => {
+    eventTracker.track('pet_profile_viewed');
+  }, []);
+  const [searchParams, setSearchParams] = useSearchParams();
   const { activePet, pets, setActivePet, isLoading, hasPets, updatePet } = usePets();
-  const { healthSummary, createRecord, updateRecord, deleteRecord } = useHealthRecords();
+  const { records, healthSummary, createRecord, updateRecord, deleteRecord, isLoading: recordsLoading } =
+    useHealthRecords();
+  const { documents, isLoading: documentsLoading, getDocumentUrl } = useDocuments();
+  const { checkIns } = useDailyCheckIn();
+  const { logs: symptomLogs } = useSymptomLogs();
   const { data: scoreData } = usePetCareScore();
+  const emergencyShareAccess = useFeatureAccess('emergencyCareMode');
+  const { canEdit: canEditHousehold, household } = useHousehold();
+  const {
+    passport: emergencyPassport,
+    canEdit: canEditEmergency,
+    saveCriticalFields,
+    syncFromRecords,
+    regenerateToken,
+    revokeLink,
+  } = useEmergencyPassport(activePet, records);
   const [editOpen, setEditOpen] = useState(false);
   const [healthModalOpen, setHealthModalOpen] = useState(false);
   const [healthUpgradeOpen, setHealthUpgradeOpen] = useState(false);
   const [editingRecord, setEditingRecord] = useState<HealthRecord | null>(null);
+  const [highlightRecordId, setHighlightRecordId] = useState<string | null>(null);
+  const [highlightDocumentId, setHighlightDocumentId] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (isLoading || recordsLoading || documentsLoading || !activePet) return;
+
+    const recordId = searchParams.get(TIMELINE_DEEP_LINK_PARAMS.record);
+    const documentId = searchParams.get(TIMELINE_DEEP_LINK_PARAMS.document);
+    if (!recordId && !documentId) return;
+
+    const clearDeepLinkParams = () => {
+      const next = new URLSearchParams(searchParams);
+      next.delete(TIMELINE_DEEP_LINK_PARAMS.record);
+      next.delete(TIMELINE_DEEP_LINK_PARAMS.document);
+      setSearchParams(next, { replace: true });
+    };
+
+    if (recordId) {
+      const record = records.find((entry) => entry.id === recordId);
+      if (record) {
+        document.getElementById('chapter-medical')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.setTimeout(() => {
+          document
+            .getElementById(`health-record-${recordId}`)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 180);
+        setHighlightRecordId(recordId);
+        window.setTimeout(() => setHighlightRecordId(null), 2400);
+        if (canEditHousehold) {
+          setEditingRecord(record);
+          setHealthModalOpen(true);
+        }
+        clearDeepLinkParams();
+        return;
+      }
+    }
+
+    if (documentId) {
+      const doc = documents.find((entry) => entry.id === documentId);
+      if (doc) {
+        document.getElementById('chapter-vault')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.setTimeout(() => {
+          document
+            .getElementById(`vault-document-${documentId}`)
+            ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 180);
+        setHighlightDocumentId(documentId);
+        window.setTimeout(() => setHighlightDocumentId(null), 2400);
+        void getDocumentUrl(documentId).then((url) => {
+          if (!url) return;
+          window.open(url, '_blank', 'noopener,noreferrer');
+        });
+        clearDeepLinkParams();
+      }
+    }
+  }, [
+    isLoading,
+    recordsLoading,
+    documentsLoading,
+    activePet,
+    records,
+    documents,
+    searchParams,
+    setSearchParams,
+    canEditHousehold,
+    getDocumentUrl,
+  ]);
 
   const profile = activePet ? petRecordToPetProfile(activePet) : null;
   const profileStatus = deriveProfileStatus(healthSummary.recordCount);
@@ -212,6 +308,7 @@ export function PetProfilePage() {
   };
 
   const openAddRecord = () => {
+    if (!canEditHousehold) return;
     if (!canCreateHealthRecord(accessInput, healthSummary.recordCount)) {
       setHealthUpgradeOpen(true);
       return;
@@ -221,6 +318,7 @@ export function PetProfilePage() {
   };
 
   const openEditRecord = (record: HealthRecord) => {
+    if (!canEditHousehold) return;
     setEditingRecord(record);
     setHealthModalOpen(true);
   };
@@ -316,14 +414,23 @@ export function PetProfilePage() {
                     <span className={styles.statusSeal}>{profileStatus.label}</span>
                     <span className={styles.statusSealMuted}>{recordCountLabel}</span>
                   </div>
+                  {!canEditHousehold && household && (
+                    <p className={styles.viewerBanner}>
+                      View-only access on {household.name}. Ask the household owner to edit records.
+                    </p>
+                  )}
                   <div className={styles.heroCtaRow}>
-                    <button type="button" className={styles.btnGold} onClick={openAddRecord}>
-                      Add health record
-                    </button>
-                    <button type="button" className={styles.btnGhost} onClick={() => setEditOpen(true)}>
-                      Edit profile
-                    </button>
-                    <AddPetGhostButton />
+                    {canEditHousehold && (
+                      <button type="button" className={styles.btnGold} onClick={openAddRecord}>
+                        Add health record
+                      </button>
+                    )}
+                    {canEditHousehold && (
+                      <button type="button" className={styles.btnGhost} onClick={() => setEditOpen(true)}>
+                        Edit profile
+                      </button>
+                    )}
+                    {canEditHousehold && <AddPetGhostButton />}
                   </div>
                 </div>
 
@@ -398,22 +505,26 @@ export function PetProfilePage() {
             <div className={styles.medicalArchive}>
               <div className={styles.medicalTimeline}>
                 <PetMedicalHistory
-                  onAdd={openAddRecord}
-                  onEdit={openEditRecord}
+                  onAdd={canEditHousehold ? openAddRecord : undefined}
+                  onEdit={canEditHousehold ? openEditRecord : undefined}
                   showHeader={false}
+                  highlightRecordId={highlightRecordId}
                 />
               </div>
               <div className={styles.medicalDossier}>
                 <div className={styles.dossierHeader}>
                   <p className={styles.dossierKicker}>By category</p>
-                  <button type="button" className={styles.dossierAddBtn} onClick={openAddRecord}>
-                    Add record
-                  </button>
+                  {canEditHousehold && (
+                    <button type="button" className={styles.dossierAddBtn} onClick={openAddRecord}>
+                      Add record
+                    </button>
+                  )}
                 </div>
                 <PetHealthRecords
-                  onAdd={openAddRecord}
-                  onEdit={openEditRecord}
+                  onAdd={canEditHousehold ? openAddRecord : undefined}
+                  onEdit={canEditHousehold ? openEditRecord : undefined}
                   showHeader={false}
+                  highlightRecordId={highlightRecordId}
                 />
               </div>
             </div>
@@ -423,11 +534,50 @@ export function PetProfilePage() {
             <ProfileSectionIntro
               titleId="chapter-vault"
               chapter="Chapter III · Vault"
-              title="Document archive"
-              lead="Prescriptions, lab reports, and emergency papers — curated, encrypted, and always within reach."
+              title="Records & emergency share"
+              lead="Curate critical handoff fields for sitters and ER vets, and keep prescriptions and lab reports in your document archive."
             />
+            {emergencyShareAccess.isAllowed && (
+              <div className={styles.vaultChapter}>
+                <EmergencyPassportEditor
+                  petName={profile.name}
+                  initialFields={
+                    emergencyPassport?.criticalFields ?? {
+                      allergies: [],
+                      medications: [],
+                      vetName: null,
+                      vetPhone: null,
+                      insuranceProvider: null,
+                      insurancePolicyNumber: null,
+                      microchipId: activePet.microchipId ?? null,
+                    }
+                  }
+                  canEdit={canEditHousehold && canEditEmergency}
+                  isRevoked={Boolean(emergencyPassport?.revokedAt)}
+                  onSave={saveCriticalFields}
+                  onSyncFromRecords={syncFromRecords}
+                  onRegenerateToken={regenerateToken}
+                  onRevoke={revokeLink}
+                />
+              </div>
+            )}
             <div className={styles.vaultChapter}>
-              <PetDocumentsVault showHeader={false} />
+              <HouseholdMembersPanel compact />
+            </div>
+            <div className={styles.vaultChapter}>
+              <VetVisitExportPanel
+                pet={activePet}
+                records={records}
+                checkIns={checkIns}
+                symptomLogs={symptomLogs}
+              />
+            </div>
+            <div className={styles.vaultChapter}>
+              <PetDocumentsVault
+                showHeader={false}
+                canUpload={canEditHousehold}
+                highlightDocumentId={highlightDocumentId}
+              />
             </div>
           </section>
 

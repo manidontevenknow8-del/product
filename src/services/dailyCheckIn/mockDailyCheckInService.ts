@@ -25,7 +25,7 @@ export const mockDailyCheckInService: IDailyCheckInService = {
       .map(mapDailyCheckInRow);
   },
 
-  async upsertCheckIn(_ownerId, input: UpsertDailyCheckInInput) {
+  async upsertCheckIn(ownerId, input: UpsertDailyCheckInInput) {
     const now = new Date().toISOString();
     const rows = loadRows();
     const index = rows.findIndex(
@@ -39,6 +39,7 @@ export const mockDailyCheckInService: IDailyCheckInService = {
         walk_distance_km: input.walkDistanceKm ?? null,
         weight_kg: input.weightKg ?? null,
         notes: input.notes?.trim() || null,
+        logged_by_user_id: ownerId,
         updated_at: now,
       };
       rows[index] = updated;
@@ -54,6 +55,7 @@ export const mockDailyCheckInService: IDailyCheckInService = {
       walk_distance_km: input.walkDistanceKm ?? null,
       weight_kg: input.weightKg ?? null,
       notes: input.notes?.trim() || null,
+      logged_by_user_id: ownerId,
       created_at: now,
       updated_at: now,
     };

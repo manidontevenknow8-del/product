@@ -3,6 +3,8 @@ import styles from './MinimalLineChart.module.css';
 type MinimalLineChartProps = {
   label: string;
   values: number[];
+  dates?: string[];
+  trendValues?: number[];
   unit?: string;
   className?: string;
   variant?: 'default' | 'luxury' | 'feature';
@@ -13,9 +15,36 @@ function formatValue(value: number): string {
   return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
 }
 
+function daysBetween(start: string, end: string): number {
+  const startMs = new Date(`${start}T12:00:00`).getTime();
+  const endMs = new Date(`${end}T12:00:00`).getTime();
+  return Math.round((endMs - startMs) / (24 * 60 * 60 * 1000));
+}
+
+function buildXPositions(
+  values: number[],
+  dates: string[] | undefined,
+  width: number,
+  padding: number,
+): number[] {
+  if (!dates || dates.length !== values.length || values.length <= 1) {
+    return values.map(
+      (_, index) => padding + (index / Math.max(values.length - 1, 1)) * (width - padding * 2),
+    );
+  }
+
+  const origin = dates[0]!;
+  const span = Math.max(daysBetween(origin, dates[dates.length - 1]!), 1);
+  return dates.map(
+    (date) => padding + (daysBetween(origin, date) / span) * (width - padding * 2),
+  );
+}
+
 export function MinimalLineChart({
   label,
   values,
+  dates,
+  trendValues,
   unit = '',
   className = '',
   variant = 'default',
@@ -28,10 +57,21 @@ export function MinimalLineChart({
   const range = max - min || 1;
 
   const coords = values.map((value, index) => {
-    const x = padding + (index / Math.max(values.length - 1, 1)) * (width - padding * 2);
+    const xPositions = buildXPositions(values, dates, width, padding);
+    const x = xPositions[index]!;
     const y = height - padding - ((value - min) / range) * (height - padding * 2);
     return { x, y, value };
   });
+
+  const trendCoords =
+    trendValues && trendValues.length === values.length
+      ? trendValues.map((value, index) => {
+          const xPositions = buildXPositions(values, dates, width, padding);
+          const x = xPositions[index]!;
+          const y = height - padding - ((value - min) / range) * (height - padding * 2);
+          return { x, y };
+        })
+      : null;
 
   const points = coords.map((c) => `${c.x},${c.y}`).join(' ');
 
@@ -49,10 +89,21 @@ export function MinimalLineChart({
     const plotHeight = plotBottom - plotTop;
 
     const lCoords = values.map((value, index) => {
-      const x = lPadX + (index / Math.max(values.length - 1, 1)) * (lW - lPadX * 2);
+      const xPositions = buildXPositions(values, dates, lW, lPadX);
+      const x = xPositions[index]!;
       const y = plotTop + (1 - (value - min) / range) * plotHeight;
       return { x, y, value };
     });
+
+    const lTrendCoords =
+      trendValues && trendValues.length === values.length
+        ? trendValues.map((value, index) => {
+            const xPositions = buildXPositions(values, dates, lW, lPadX);
+            const x = xPositions[index]!;
+            const y = plotTop + (1 - (value - min) / range) * plotHeight;
+            return { x, y };
+          })
+        : null;
 
     const lPoints = lCoords.map((c) => `${c.x},${c.y}`).join(' ');
     const lArea = [
@@ -126,6 +177,19 @@ export function MinimalLineChart({
               ))}
 
               <path d={lArea} fill="url(#luxWeightArea)" />
+
+              {lTrendCoords && (
+                <polyline
+                  fill="none"
+                  stroke="rgba(61, 107, 98, 0.55)"
+                  strokeWidth={2}
+                  strokeDasharray="6 5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  points={lTrendCoords.map((coord) => `${coord.x},${coord.y}`).join(' ')}
+                  vectorEffect="non-scaling-stroke"
+                />
+              )}
 
               <polyline
                 fill="none"
@@ -208,6 +272,18 @@ export function MinimalLineChart({
           strokeLinejoin="round"
           points={points}
         />
+        {trendCoords && (
+          <polyline
+            fill="none"
+            stroke="currentColor"
+            strokeOpacity={0.45}
+            strokeWidth={1.25}
+            strokeDasharray="5 4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            points={trendCoords.map((coord) => `${coord.x},${coord.y}`).join(' ')}
+          />
+        )}
         {coords.map((c, index) => (
           <circle
             key={index}

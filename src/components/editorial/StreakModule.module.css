@@ -1,0 +1,109 @@
+.band {
+  background: var(--ed-surface-alt);
+  border-bottom: 1px solid color-mix(in srgb, var(--ed-text) 8%, transparent);
+}
+
+.urgent {
+  background: color-mix(in srgb, var(--ed-gold) 6%, var(--ed-surface-alt));
+}
+
+.inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  max-width: var(--editorial-max, 1280px);
+  margin: 0 auto;
+  padding: 28px var(--editorial-gutter, 48px);
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 5.5rem;
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--ed-forest);
+}
+
+.statLabel {
+  font-size: var(--editorial-type-label);
+  letter-spacing: var(--editorial-tracking-label);
+  text-transform: uppercase;
+  color: var(--ed-muted);
+}
+
+.divider {
+  width: 1px;
+  height: 48px;
+  background: color-mix(in srgb, var(--ed-text) 12%, transparent);
+}
+
+.messageBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+  min-width: min(100%, 20rem);
+  max-width: 36rem;
+}
+
+.badge {
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: var(--editorial-type-label);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ed-gold);
+  background: color-mix(in srgb, var(--ed-gold) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ed-gold) 35%, transparent);
+}
+
+.message {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ed-muted);
+}
+
+.cta {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: var(--editorial-tracking-cta);
+  text-transform: uppercase;
+  color: var(--ed-forest);
+  text-decoration: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--ed-forest) 35%, transparent);
+  padding-bottom: 2px;
+  transition: border-color var(--lux-ease);
+}
+
+.cta:hover {
+  border-bottom-color: var(--ed-forest);
+}
+
+@media (max-width: 640px) {
+  .inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px var(--editorial-gutter, 24px);
+  }
+}

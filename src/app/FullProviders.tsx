@@ -7,8 +7,11 @@ import { SubscriptionProvider } from '@/subscription';
 import { ReminderProvider } from '@/reminders';
 import { GrowthProvider } from '@/growth';
 import { DailyCheckInProvider } from '@/dailyCheckIn';
+import { SymptomLogProvider } from '@/symptomLog';
+import { PetMomentProvider } from '@/petMoments';
 import { PetCareScoreProvider } from '@/petCareScore';
 import { SettingsProvider } from '@/settings';
+import { HouseholdProvider } from '@/household';
 import { AnalyticsProvider } from '@/analytics';
 import { SEOProvider } from '@/seo';
 
@@ -21,25 +24,31 @@ export function FullProviders({ children }: FullProvidersProps) {
   return (
     <AuthProvider>
       <SubscriptionProvider>
-        <PetProvider>
+        <HouseholdProvider>
+          <PetProvider>
           <DocumentProvider>
             <ReminderProvider>
               <HealthRecordProvider>
                 <GrowthProvider>
                   <DailyCheckInProvider>
-                    <PetCareScoreProvider>
-                      <SettingsProvider>
-                        <AnalyticsProvider>
-                          <SEOProvider>{children}</SEOProvider>
-                        </AnalyticsProvider>
-                      </SettingsProvider>
-                    </PetCareScoreProvider>
+                    <SymptomLogProvider>
+                      <PetMomentProvider>
+                      <PetCareScoreProvider>
+                        <SettingsProvider>
+                          <AnalyticsProvider>
+                            <SEOProvider>{children}</SEOProvider>
+                          </AnalyticsProvider>
+                        </SettingsProvider>
+                      </PetCareScoreProvider>
+                      </PetMomentProvider>
+                    </SymptomLogProvider>
                   </DailyCheckInProvider>
                 </GrowthProvider>
               </HealthRecordProvider>
             </ReminderProvider>
           </DocumentProvider>
         </PetProvider>
+        </HouseholdProvider>
       </SubscriptionProvider>
     </AuthProvider>
   );

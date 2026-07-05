@@ -388,6 +388,133 @@
   color: var(--cream);
 }
 
+/* ── Check-in streak band ── */
+.streakBand {
+  background: var(--cream);
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.streakBandUrgent {
+  background: color-mix(in srgb, var(--gold) 6%, var(--cream));
+}
+
+.streakBandInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  max-width: var(--editorial-max, 1280px);
+  margin: 0 auto;
+  padding: 28px 40px;
+}
+
+.streakStats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.streakStat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 5.5rem;
+}
+
+.streakStatValue {
+  font-family: var(--display);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--forest);
+}
+
+.streakStatLabel {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.streakStatDivider {
+  width: 1px;
+  height: 48px;
+  background: color-mix(in srgb, var(--ink) 12%, transparent);
+}
+
+.streakMessageBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+  min-width: min(100%, 20rem);
+  max-width: 36rem;
+}
+
+.streakEndsTodayBadge {
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bronze);
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent);
+}
+
+.streakMessage {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.streakCta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 18px;
+  border: 1px solid color-mix(in srgb, var(--forest) 25%, transparent);
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--forest);
+  transition: background 180ms var(--ease), border-color 180ms var(--ease);
+}
+
+.streakCta:hover {
+  background: color-mix(in srgb, var(--forest) 6%, transparent);
+  border-color: var(--forest);
+}
+
+/* ── Household check-in activity strip ── */
+.householdActivityStrip {
+  background: color-mix(in srgb, var(--forest) 5%, var(--cream));
+  border-bottom: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.householdActivityText {
+  max-width: var(--editorial-max, 1280px);
+  margin: 0 auto;
+  padding: 14px 40px;
+  font-family: var(--display);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--stone);
+}
+
 /* ── Summary band ── */
 .summaryBand {
   display: grid;
@@ -603,6 +730,20 @@
   margin: 0;
   font-size: 15px;
   line-height: 1.65;
+  color: var(--stone);
+}
+
+.ritualSymptomWrap {
+  grid-column: 1 / -1;
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+}
+
+.ritualSymptomLead {
+  margin: 0 0 14px;
+  font-size: 14px;
+  line-height: 1.6;
   color: var(--stone);
 }
 
@@ -1322,6 +1463,21 @@
 
   .heroAside {
     order: -1;
+  }
+
+  .streakBandInner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+
+  .streakStats {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .householdActivityText {
+    padding: 14px 24px;
   }
 
   .summaryBand {

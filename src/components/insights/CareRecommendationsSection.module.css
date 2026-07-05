@@ -1,0 +1,124 @@
+.wrap {
+  padding: 40px 0;
+  border-top: 1px solid var(--lux-border, #ddd5c8);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+}
+
+.title {
+  margin: 0 0 12px;
+  font-family: var(--font-serif, serif);
+  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--lux-ink, #1a1712);
+}
+
+.lead,
+.empty {
+  margin: 0 0 24px;
+  max-width: 36rem;
+  font-family: var(--font-serif, serif);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.7;
+  color: var(--lux-muted, #5f5a52);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.item {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.itemHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.itemTitle {
+  margin: 0;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--lux-ink, #1a1712);
+}
+
+.impact {
+  flex-shrink: 0;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+.impact_high {
+  color: var(--ed-burgundy, #7a3040);
+  background: rgba(122, 48, 64, 0.08);
+}
+
+.impact_medium {
+  color: var(--lux-gold, #a8833a);
+  background: rgba(168, 131, 58, 0.1);
+}
+
+.impact_low {
+  color: var(--lux-muted, #5f5a52);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.desc {
+  margin: 0 0 12px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--lux-muted, #5f5a52);
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--lux-gold, #a8833a);
+  border-radius: 2px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.action:hover {
+  background: rgba(168, 131, 58, 0.1);
+}

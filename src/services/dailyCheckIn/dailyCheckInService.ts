@@ -7,6 +7,10 @@ export { mockDailyCheckInService, supabaseDailyCheckInService };
 export {
   todayDateKey,
   computeCheckInStreak,
+  computeBestCheckInStreak,
+  buildCheckInStreakStats,
+  isCheckInDayGettingLate,
+  CHECK_IN_LATE_HOUR,
   summarizeCheckInWeek,
   checkInsInMonth,
 } from './checkInUtils';

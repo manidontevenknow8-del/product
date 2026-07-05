@@ -12,6 +12,7 @@ type PetMedicalHistoryProps = {
   onAdd?: () => void;
   onEdit?: (record: HealthRecord) => void;
   showHeader?: boolean;
+  highlightRecordId?: string | null;
 };
 
 function formatMonthLabel(dateRecorded: string): string {
@@ -34,7 +35,7 @@ function groupByMonth(records: HealthRecord[]): { key: string; items: HealthReco
   return groups;
 }
 
-export function PetMedicalHistory({ onAdd, onEdit, showHeader = true }: PetMedicalHistoryProps) {
+export function PetMedicalHistory({ onAdd, onEdit, showHeader = true, highlightRecordId }: PetMedicalHistoryProps) {
   const { records, isLoading } = useHealthRecords();
 
   const timeline = [...records].sort((a, b) => b.dateRecorded.localeCompare(a.dateRecorded));
@@ -60,7 +61,11 @@ export function PetMedicalHistory({ onAdd, onEdit, showHeader = true }: PetMedic
               <h3 className={styles.monthLabel}>{group.key}</h3>
               <ol className={styles.monthList}>
                 {group.items.map((record) => (
-                  <li key={record.id} className={styles.item}>
+                  <li
+                    key={record.id}
+                    id={`health-record-${record.id}`}
+                    className={`${styles.item} ${highlightRecordId === record.id ? styles.itemHighlight : ''}`}
+                  >
                     <div className={styles.marker} aria-hidden="true" />
                     <article className={styles.body}>
                       <div className={styles.itemHeader}>

@@ -72,6 +72,10 @@
   position: relative;
 }
 
+.itemHighlight .body {
+  box-shadow: 0 0 0 2px rgba(168, 131, 58, 0.45);
+}
+
 .marker {
   width: 10px;
   height: 10px;

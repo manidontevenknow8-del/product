@@ -22,6 +22,8 @@ export interface PlanQuotaLimits {
   vetBillDecoderMonthly: LimitValue | null;
   /** Lifetime Vet Bill Decoder scans (null = not applicable; use monthly) */
   vetBillDecoderLifetime: LimitValue | null;
+  /** Monthly outgoing vet visit PDF exports (null = feature unavailable) */
+  vetVisitExportMonthly: LimitValue | null;
   familyMembers: LimitValue;
 }
 
@@ -64,6 +66,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
       documents: 5,
       vetBillDecoderMonthly: null,
       vetBillDecoderLifetime: 2,
+      vetVisitExportMonthly: null,
       familyMembers: 0,
     },
     features: {
@@ -87,6 +90,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
       documents: UNLIMITED,
       vetBillDecoderMonthly: 5,
       vetBillDecoderLifetime: null,
+      vetVisitExportMonthly: 1,
       familyMembers: 2,
     },
     features: {
@@ -110,6 +114,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
       documents: UNLIMITED,
       vetBillDecoderMonthly: 30,
       vetBillDecoderLifetime: null,
+      vetVisitExportMonthly: UNLIMITED,
       familyMembers: UNLIMITED,
     },
     features: {
@@ -133,6 +138,7 @@ export const PLAN_LIMITS_MATRIX: Record<CommercialPlan, PlanEntitlementProfile> 
       documents: UNLIMITED,
       vetBillDecoderMonthly: UNLIMITED,
       vetBillDecoderLifetime: null,
+      vetVisitExportMonthly: UNLIMITED,
       familyMembers: UNLIMITED,
     },
     features: {
@@ -156,6 +162,7 @@ export type FeatureKey =
   | 'timelineHistory'
   | 'documents'
   | 'vetBillDecoder'
+  | 'vetVisitExport'
   | 'familyMembers'
   | 'aiRecordSearch'
   | 'petPassport'
@@ -168,6 +175,8 @@ export type FeatureKey =
   | 'customDomain'
   /** Alias → aiHealthInsights */
   | 'advancedHealthInsights'
+  /** Alias → petCareScore (Plus foresight basics) */
+  | 'petCareScore'
   /** Alias → petPassport (Plus passport tools) */
   | 'emergencyCareMode'
   /** Alias → vetCollaborationPortal */
@@ -189,8 +198,10 @@ export const FEATURE_UPGRADE_TIER: Record<
     | 'timelineHistory'
     | 'documents'
     | 'vetBillDecoder'
+    | 'vetVisitExport'
     | 'familyMembers'
     | 'advancedHealthInsights'
+    | 'petCareScore'
     | 'emergencyCareMode'
     | 'vetCollaboration'
   >,

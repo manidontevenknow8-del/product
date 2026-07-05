@@ -1,0 +1,151 @@
+.page {
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 16px 32px;
+  background: #f6f3ee;
+  color: #1a1a1a;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.status {
+  margin: 48px auto 0;
+  max-width: 28rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.card {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 24px 20px 28px;
+  background: #fff;
+  border: 1px solid #d8d2c8;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.06);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #1a1a1a;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a3040;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.75rem, 6vw, 2.4rem);
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.meta {
+  margin: 8px 0 0;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.block {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #e7e1d8;
+  border-radius: 8px;
+  background: #faf8f5;
+}
+
+.blockCritical {
+  border-color: #d6a3a3;
+  background: #fff7f7;
+}
+
+.blockTitle {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.list li {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+.list li:last-child {
+  margin-bottom: 0;
+}
+
+.empty {
+  margin: 0;
+  font-size: 1rem;
+  color: #6a6a6a;
+}
+
+.contactPrimary {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.contactSecondary,
+.mono {
+  margin: 6px 0 0;
+  font-size: 1.05rem;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.04em;
+}
+
+.phoneLink {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e7e1d8;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #6a6a6a;
+}
+
+.footer p {
+  margin: 0 0 6px;
+}
+
+.footer p:last-child {
+  margin-bottom: 0;
+}

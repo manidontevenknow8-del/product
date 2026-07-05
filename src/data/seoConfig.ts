@@ -392,6 +392,17 @@ export function isFaqPath(pathname: string): boolean {
   return pathname === ROUTES.FAQ || isFaqArticlePath(pathname);
 }
 
+export function isPublicStoryPath(pathname: string): boolean {
+  return pathname.startsWith(`${ROUTES.STORY_PUBLIC}/`) && pathname.length > `${ROUTES.STORY_PUBLIC}/`.length;
+}
+
+export function isPublicEmergencyPath(pathname: string): boolean {
+  return (
+    pathname.startsWith(`${ROUTES.EMERGENCY_PUBLIC}/`) &&
+    pathname.length > `${ROUTES.EMERGENCY_PUBLIC}/`.length
+  );
+}
+
 export function isIndexablePublicPath(pathname: string): boolean {
   if (pathname === ROUTES.LANDING) return true;
   if (isCommercialPath(pathname)) return true;
@@ -541,6 +552,32 @@ export function getPageSEO(pathname: string): SEOConfig {
         canonical: buildCanonical(pathname),
         ogType: 'article',
         noIndex: false,
+      },
+      pathname,
+    );
+  }
+
+  if (isPublicStoryPath(pathname)) {
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'Pet Life Story - PetClues',
+        description: 'A read-only pet life story shared from PetClues.',
+        canonical: buildCanonical(pathname),
+        noIndex: true,
+      },
+      pathname,
+    );
+  }
+
+  if (isPublicEmergencyPath(pathname)) {
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: 'Emergency Pet Info - PetClues',
+        description: 'Critical pet information shared for emergency situations.',
+        canonical: buildCanonical(pathname),
+        noIndex: true,
       },
       pathname,
     );

@@ -3,6 +3,7 @@ export type SubscriptionTier = 'free' | 'premium' | 'family';
 export type PetRow = {
   id: string;
   owner_id: string;
+  household_id?: string;
   name: string;
   species: string;
   breed: string | null;
@@ -10,6 +11,10 @@ export type PetRow = {
   weight: string | null;
   gender: string | null;
   photo_url: string | null;
+  diet: string | null;
+  coat_color: string | null;
+  microchip_id: string | null;
+  conditions_notes: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -40,6 +45,20 @@ export type PetDocumentRow = {
   created_at: string;
 };
 
+export type ActivityEventRow = {
+  id: string;
+  household_id: string;
+  pet_id: string;
+  actor_user_id: string | null;
+  event_type: 'scan' | 'reminder' | 'note' | 'update' | 'automation';
+  payload_json: {
+    title: string;
+    description: string;
+    displayTimestamp?: string;
+  };
+  created_at: string;
+};
+
 export type DailyCheckInRow = {
   id: string;
   pet_id: string;
@@ -48,8 +67,56 @@ export type DailyCheckInRow = {
   walk_distance_km: number | null;
   weight_kg: number | null;
   notes: string | null;
+  logged_by_user_id: string | null;
   created_at: string;
   updated_at: string;
+};
+
+export type PetCareScoreSnapshotRow = {
+  id: string;
+  pet_id: string;
+  score: number;
+  factors_json: Record<string, number>;
+  recorded_at: string;
+};
+
+export type EmergencyPassportRow = {
+  id: string;
+  pet_id: string;
+  public_token: string;
+  critical_fields_json: Record<string, unknown>;
+  updated_at: string;
+  revoked_at: string | null;
+};
+
+export type PetStoryShareRow = {
+  id: string;
+  pet_id: string;
+  public_token: string;
+  story_snapshot_json: Record<string, unknown>;
+  shared_with_full_history: boolean;
+  updated_at: string;
+  revoked_at: string | null;
+};
+
+export type VetVisitExportRow = {
+  id: string;
+  user_id: string;
+  pet_id: string;
+  created_at: string;
+};
+
+export type HouseholdInviteRow = {
+  id: string;
+  household_id: string;
+  invited_email: string;
+  role: 'editor' | 'viewer';
+  invited_by_user_id: string;
+  token: string;
+  status: 'pending' | 'accepted' | 'declined' | 'revoked';
+  created_at: string;
+  expires_at: string;
+  responded_at: string | null;
 };
 
 export type HealthRecordRow = {
@@ -240,11 +307,219 @@ export type Database = {
         };
         Relationships: [];
       };
+      activity_events: {
+        Row: ActivityEventRow;
+        Insert: {
+          id?: string;
+          household_id: string;
+          pet_id: string;
+          actor_user_id?: string | null;
+          event_type: ActivityEventRow['event_type'];
+          payload_json?: ActivityEventRow['payload_json'];
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          household_id?: string;
+          pet_id?: string;
+          actor_user_id?: string | null;
+          event_type?: ActivityEventRow['event_type'];
+          payload_json?: ActivityEventRow['payload_json'];
+          created_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'activity_events_household_id_fkey';
+            columns: ['household_id'];
+            referencedRelation: 'households';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'activity_events_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      emergency_passports: {
+        Row: EmergencyPassportRow;
+        Insert: {
+          id?: string;
+          pet_id: string;
+          public_token: string;
+          critical_fields_json?: Record<string, unknown>;
+          updated_at?: string;
+          revoked_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          pet_id?: string;
+          public_token?: string;
+          critical_fields_json?: Record<string, unknown>;
+          updated_at?: string;
+          revoked_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'emergency_passports_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      pet_story_shares: {
+        Row: PetStoryShareRow;
+        Insert: {
+          id?: string;
+          pet_id: string;
+          public_token: string;
+          story_snapshot_json?: Record<string, unknown>;
+          shared_with_full_history?: boolean;
+          updated_at?: string;
+          revoked_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          pet_id?: string;
+          public_token?: string;
+          story_snapshot_json?: Record<string, unknown>;
+          shared_with_full_history?: boolean;
+          updated_at?: string;
+          revoked_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'pet_story_shares_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      vet_visit_exports: {
+        Row: VetVisitExportRow;
+        Insert: {
+          id?: string;
+          user_id: string;
+          pet_id: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          pet_id?: string;
+          created_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'vet_visit_exports_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      household_invites: {
+        Row: HouseholdInviteRow;
+        Insert: {
+          id?: string;
+          household_id: string;
+          invited_email: string;
+          role: 'editor' | 'viewer';
+          invited_by_user_id: string;
+          token: string;
+          status?: HouseholdInviteRow['status'];
+          created_at?: string;
+          expires_at?: string;
+          responded_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          household_id?: string;
+          invited_email?: string;
+          role?: 'editor' | 'viewer';
+          invited_by_user_id?: string;
+          token?: string;
+          status?: HouseholdInviteRow['status'];
+          created_at?: string;
+          expires_at?: string;
+          responded_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'household_invites_household_id_fkey';
+            columns: ['household_id'];
+            referencedRelation: 'households';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      households: {
+        Row: {
+          id: string;
+          name: string;
+          plan_tier: string;
+          billing_owner_user_id: string;
+          stripe_customer_id: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          name: string;
+          plan_tier?: string;
+          billing_owner_user_id: string;
+          stripe_customer_id?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          name?: string;
+          plan_tier?: string;
+          billing_owner_user_id?: string;
+          stripe_customer_id?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      household_members: {
+        Row: {
+          household_id: string;
+          user_id: string;
+          role: 'owner' | 'editor' | 'viewer';
+          joined_at: string;
+        };
+        Insert: {
+          household_id: string;
+          user_id: string;
+          role: 'owner' | 'editor' | 'viewer';
+          joined_at?: string;
+        };
+        Update: {
+          household_id?: string;
+          user_id?: string;
+          role?: 'owner' | 'editor' | 'viewer';
+          joined_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'household_members_household_id_fkey';
+            columns: ['household_id'];
+            referencedRelation: 'households';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       pets: {
         Row: PetRow;
         Insert: {
           id?: string;
           owner_id: string;
+          household_id?: string;
           name: string;
           species: string;
           breed?: string | null;
@@ -252,12 +527,17 @@ export type Database = {
           weight?: string | null;
           gender?: string | null;
           photo_url?: string | null;
+          diet?: string | null;
+          coat_color?: string | null;
+          microchip_id?: string | null;
+          conditions_notes?: string | null;
           created_at?: string;
           updated_at?: string;
         };
         Update: {
           id?: string;
           owner_id?: string;
+          household_id?: string;
           name?: string;
           species?: string;
           breed?: string | null;
@@ -265,6 +545,10 @@ export type Database = {
           weight?: string | null;
           gender?: string | null;
           photo_url?: string | null;
+          diet?: string | null;
+          coat_color?: string | null;
+          microchip_id?: string | null;
+          conditions_notes?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -346,6 +630,31 @@ export type Database = {
           },
         ];
       };
+      pet_care_score_snapshots: {
+        Row: PetCareScoreSnapshotRow;
+        Insert: {
+          id?: string;
+          pet_id: string;
+          score: number;
+          factors_json?: Record<string, number>;
+          recorded_at?: string;
+        };
+        Update: {
+          id?: string;
+          pet_id?: string;
+          score?: number;
+          factors_json?: Record<string, number>;
+          recorded_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'pet_care_score_snapshots_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
       daily_check_ins: {
         Row: DailyCheckInRow;
         Insert: {
@@ -356,6 +665,7 @@ export type Database = {
           walk_distance_km?: number | null;
           weight_kg?: number | null;
           notes?: string | null;
+          logged_by_user_id?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -367,6 +677,7 @@ export type Database = {
           walk_distance_km?: number | null;
           weight_kg?: number | null;
           notes?: string | null;
+          logged_by_user_id?: string | null;
           created_at?: string;
           updated_at?: string;
         };
@@ -375,6 +686,104 @@ export type Database = {
             foreignKeyName: 'daily_check_ins_pet_id_fkey';
             columns: ['pet_id'];
             referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'daily_check_ins_logged_by_user_id_fkey';
+            columns: ['logged_by_user_id'];
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      pet_symptom_logs: {
+        Row: {
+          id: string;
+          pet_id: string;
+          symptoms_json: unknown;
+          note: string | null;
+          photo_url: string | null;
+          logged_at: string;
+          logged_by_user_id: string | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          pet_id: string;
+          symptoms_json?: unknown;
+          note?: string | null;
+          photo_url?: string | null;
+          logged_at?: string;
+          logged_by_user_id?: string | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          pet_id?: string;
+          symptoms_json?: unknown;
+          note?: string | null;
+          photo_url?: string | null;
+          logged_at?: string;
+          logged_by_user_id?: string | null;
+          created_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'pet_symptom_logs_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+        ];
+      };
+      pet_moments: {
+        Row: {
+          id: string;
+          pet_id: string;
+          household_id: string;
+          created_by: string | null;
+          caption: string;
+          photo_url: string | null;
+          occurred_at: string;
+          type: string;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          pet_id: string;
+          household_id?: string;
+          created_by?: string | null;
+          caption: string;
+          photo_url?: string | null;
+          occurred_at: string;
+          type?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          pet_id?: string;
+          household_id?: string;
+          created_by?: string | null;
+          caption?: string;
+          photo_url?: string | null;
+          occurred_at?: string;
+          type?: string;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'pet_moments_pet_id_fkey';
+            columns: ['pet_id'];
+            referencedRelation: 'pets';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'pet_moments_household_id_fkey';
+            columns: ['household_id'];
+            referencedRelation: 'households';
             referencedColumns: ['id'];
           },
         ];
@@ -469,6 +878,45 @@ export type Database = {
           recipient_email?: string;
           resend_id?: string | null;
           sent_at?: string;
+        };
+        Relationships: [];
+      };
+      push_subscriptions: {
+        Row: {
+          id: string;
+          user_id: string;
+          endpoint: string;
+          p256dh: string;
+          auth: string;
+          timezone: string;
+          active_pet_id: string | null;
+          last_streak_push_date: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          endpoint: string;
+          p256dh: string;
+          auth: string;
+          timezone?: string;
+          active_pet_id?: string | null;
+          last_streak_push_date?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          endpoint?: string;
+          p256dh?: string;
+          auth?: string;
+          timezone?: string;
+          active_pet_id?: string | null;
+          last_streak_push_date?: string | null;
+          created_at?: string;
+          updated_at?: string;
         };
         Relationships: [];
       };
@@ -777,6 +1225,66 @@ export type Database = {
     };
     Views: Record<string, never>;
     Functions: {
+      get_emergency_passport_public: {
+        Args: { p_token: string };
+        Returns: Record<string, unknown> | null;
+      };
+      get_pet_story_public: {
+        Args: { p_token: string };
+        Returns: Record<string, unknown> | null;
+      };
+      get_my_household_role_for_pet: {
+        Args: { p_pet_id: string };
+        Returns: string | null;
+      };
+      reserve_vet_visit_export: {
+        Args: { p_pet_id: string };
+        Returns: string;
+      };
+      get_my_primary_household: {
+        Args: Record<string, never>;
+        Returns: Record<string, unknown> | null;
+      };
+      list_household_members: {
+        Args: { p_household_id: string };
+        Returns: Record<string, unknown>[] | null;
+      };
+      list_household_invites: {
+        Args: { p_household_id: string };
+        Returns: Record<string, unknown>[] | null;
+      };
+      list_my_pending_household_invites: {
+        Args: Record<string, never>;
+        Returns: Record<string, unknown>[] | null;
+      };
+      create_household_invite: {
+        Args: { p_household_id: string; p_email: string; p_role: string };
+        Returns: Record<string, unknown>;
+      };
+      accept_household_invite: {
+        Args: { p_token: string };
+        Returns: Record<string, unknown>;
+      };
+      decline_household_invite: {
+        Args: { p_token: string };
+        Returns: undefined;
+      };
+      revoke_household_invite: {
+        Args: { p_invite_id: string };
+        Returns: undefined;
+      };
+      update_household_member_role: {
+        Args: { p_household_id: string; p_user_id: string; p_role: string };
+        Returns: undefined;
+      };
+      remove_household_member: {
+        Args: { p_household_id: string; p_user_id: string };
+        Returns: undefined;
+      };
+      get_household_invite_preview: {
+        Args: { p_token: string };
+        Returns: Record<string, unknown> | null;
+      };
       sync_profile_subscription_tier: {
         Args: { p_user_id: string };
         Returns: undefined;

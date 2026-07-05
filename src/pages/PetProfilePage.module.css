@@ -157,6 +157,18 @@
   margin-top: var(--space-8);
 }
 
+.viewerBanner {
+  margin: var(--space-4) 0 0;
+  padding: 10px 12px;
+  border: 1px solid rgba(184, 147, 90, 0.28);
+  border-radius: 2px;
+  background: rgba(184, 147, 90, 0.08);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--lux-muted);
+}
+
 .statusSeal,
 .statusSealMuted {
   display: inline-flex;

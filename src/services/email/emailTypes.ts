@@ -34,11 +34,22 @@ export type WeeklyPetSummaryItem = {
   upcomingCount: number;
   overdueCount: number;
   checkInsThisWeek: number;
+  currentStreak: number;
+  careScore?: number;
+  scoreLabel?: string;
+  scoreTrend?: 'up' | 'down' | 'stable';
+  scoreTrendDelta?: number;
+  weeklyInsight?: {
+    title: string;
+    message: string;
+    highlight?: string;
+  };
   upcomingReminders: Array<{ title: string; dueLabel: string; category: string }>;
   overdueReminders: Array<{ title: string; dueLabel: string; category: string }>;
   nextReminderTitle?: string;
   nextReminderDue?: string;
   profileUrl: string;
+  insightsUrl: string;
 };
 
 export type WeeklyPetSummaryEmailPayload = {

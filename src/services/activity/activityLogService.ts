@@ -1,74 +1,49 @@
+import { isSupabaseConfigured } from '@/services/supabase/config';
 import type { ActivityItem } from '@/types/dashboard';
+import { mockActivityEventService } from './mockActivityEventService';
+import { supabaseActivityEventService } from './supabaseActivityEventService';
+import type {
+  ActivityLogEntry,
+  AppendActivityLogInput,
+  IActivityEventService,
+} from './activityEventTypes';
 
-export type ActivityLogEntry = {
-  id: string;
-  petId: string;
-  type: ActivityItem['type'];
-  title: string;
-  description: string;
-  timestamp: string;
-  createdAt: string;
-};
+export type { ActivityLogEntry } from './activityEventTypes';
 
-const STORAGE_KEY = 'petclues_activity_log';
-const MAX_ENTRIES = 100;
+function getActivityEventService(): IActivityEventService {
+  return isSupabaseConfigured() ? supabaseActivityEventService : mockActivityEventService;
+}
 
-function loadEntries(): ActivityLogEntry[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as ActivityLogEntry[]) : [];
-  } catch {
-    return [];
+export async function getActivityLogForPet(
+  petId: string,
+  limit = 10,
+  options?: { petIdsForMigration?: string[] },
+): Promise<ActivityLogEntry[]> {
+  const service = getActivityEventService();
+  if (options?.petIdsForMigration?.length) {
+    await service.migrateFromLocalStorage(options.petIdsForMigration);
   }
+  return service.getForPet(petId, limit);
 }
 
-function saveEntries(entries: ActivityLogEntry[]) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(entries.slice(0, MAX_ENTRIES)));
+export async function appendActivityLogEntry(
+  entry: AppendActivityLogInput,
+): Promise<ActivityLogEntry> {
+  return getActivityEventService().append(entry);
 }
 
-function formatActivityTimestamp(iso: string): string {
-  return new Date(iso).toLocaleDateString(undefined, {
-    month: 'short',
-    day: 'numeric',
-  });
-}
-
-export function appendActivityLogEntry(
-  entry: Omit<ActivityLogEntry, 'id' | 'createdAt' | 'timestamp'> & {
-    timestamp?: string;
-  },
-): ActivityLogEntry {
-  const createdAt = new Date().toISOString();
-  const full: ActivityLogEntry = {
-    id: crypto.randomUUID(),
-    createdAt,
-    timestamp: entry.timestamp ?? formatActivityTimestamp(createdAt),
-    petId: entry.petId,
-    type: entry.type,
-    title: entry.title,
-    description: entry.description,
-  };
-
-  saveEntries([full, ...loadEntries()]);
-  return full;
-}
-
-export function logAutomationReminderCreated(params: {
+export async function logAutomationReminderCreated(params: {
   petId: string;
   reminderTitle: string;
   dueDate: string;
   ruleLabel: string;
-}): ActivityLogEntry {
+}): Promise<ActivityLogEntry> {
   return appendActivityLogEntry({
     petId: params.petId,
     type: 'automation',
     title: 'Reminder created automatically',
     description: `${params.reminderTitle} · ${params.ruleLabel} · due ${params.dueDate}`,
   });
-}
-
-export function getActivityLogForPet(petId: string, limit = 10): ActivityLogEntry[] {
-  return loadEntries().filter((entry) => entry.petId === petId).slice(0, limit);
 }
 
 export function activityLogToDashboardItems(entries: ActivityLogEntry[]): ActivityItem[] {

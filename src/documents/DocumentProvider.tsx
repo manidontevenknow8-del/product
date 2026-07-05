@@ -125,7 +125,7 @@ export function DocumentProvider({
         setDocuments((prev) => [document, ...prev]);
         setLastUploaded(document);
         setUploadState('success');
-        appendActivityLogEntry({
+        void appendActivityLogEntry({
           petId: activePet.id,
           type: 'scan',
           title: document.fileName,

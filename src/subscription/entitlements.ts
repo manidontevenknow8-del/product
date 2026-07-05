@@ -126,6 +126,13 @@ export const DECODER_MONTHLY_LIMITS: Record<CommercialPlan, number | null> = {
   enterprise: null,
 };
 
+export const VET_VISIT_EXPORT_MONTHLY_LIMITS: Record<CommercialPlan, number | null> = {
+  free: null,
+  plus: numericLimit(getQuotaLimits('plus').vetVisitExportMonthly),
+  pro: null,
+  enterprise: null,
+};
+
 export const REMINDER_LIMITS: Record<CommercialPlan, number | null> = {
   free: 2,
   plus: null,
@@ -301,6 +308,11 @@ export function getDecoderMonthlyLimit(plan: CommercialPlan): number | null {
   return numericLimit(value);
 }
 
+export function getVetVisitExportMonthlyLimit(plan: CommercialPlan): number | null {
+  const value = getQuotaLimits(plan).vetVisitExportMonthly;
+  return numericLimit(value);
+}
+
 export function getDecoderLifetimeLimit(plan: CommercialPlan): number | null {
   const value = getQuotaLimits(plan).vetBillDecoderLifetime;
   return numericLimit(value);
@@ -376,6 +388,14 @@ export function canUseDecoder(
   return counts.monthly < monthlyLimit;
 }
 
+export function canUseVetVisitExport(plan: CommercialPlan, monthlyExportCount: number): boolean {
+  const monthlyLimit = getVetVisitExportMonthlyLimit(plan);
+  if (monthlyLimit == null) {
+    return planMeetsMinimum(plan, 'plus');
+  }
+  return monthlyExportCount < monthlyLimit;
+}
+
 /** @deprecated Use canUseDecoder with monthly + lifetime counts */
 export function canDecodeVetBill(plan: CommercialPlan, monthlyDecodeCount: number): boolean {
   return canUseDecoder(plan, { monthly: monthlyDecodeCount, lifetime: monthlyDecodeCount });
@@ -424,7 +444,7 @@ export function isCheckoutPlan(plan: CommercialPlan): plan is 'plus' | 'pro' {
 
 export function getLimitReachedMessage(
   plan: CommercialPlan,
-  limitType: 'pets' | 'reminders' | 'healthRecords' | 'decoder' | 'documents',
+  limitType: 'pets' | 'reminders' | 'healthRecords' | 'decoder' | 'documents' | 'vetVisitExport',
 ): string {
   const next = getNextUpgradePlan(plan);
   if (limitType === 'pets' && plan === 'pro') {
@@ -448,6 +468,11 @@ export function getLimitReachedMessage(
         return `You've used your ${DECODER_LIFETIME_LIMITS.free} free Vet Bill Decoder scans. Upgrade to ${nextLabel}.`;
       }
       return `You've used your monthly decode allowance. Upgrade to ${nextLabel} for more.`;
+    case 'vetVisitExport':
+      if (plan === 'free') {
+        return `Vet visit exports are available on Plus and above. Upgrade to ${nextLabel}.`;
+      }
+      return `You've used your monthly vet visit export. Upgrade to Pro for unlimited PDFs.`;
     default:
       return `Upgrade to ${nextLabel} to continue.`;
   }

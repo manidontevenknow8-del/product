@@ -14,6 +14,7 @@ import {
   getPetLimit,
   getReminderLimit,
   getTimelineDayLimit,
+  getVetVisitExportMonthlyLimit,
   resolveEffectivePlan,
 } from '@/subscription/entitlements';
 import type { CommercialPlan } from '@/subscription/entitlements';
@@ -92,6 +93,35 @@ function formatInvoiceAmount(
   return ', ';
 }
 
+async function countHouseholdMemberSlots(
+  supabase: ReturnType<typeof getSupabaseClient>,
+  userId: string,
+): Promise<number> {
+  const { data: ownedHousehold } = await supabase
+    .from('households')
+    .select('id')
+    .eq('billing_owner_user_id', userId)
+    .maybeSingle();
+
+  if (!ownedHousehold?.id) return 0;
+
+  const [{ count: memberCount }, { count: inviteCount }] = await Promise.all([
+    supabase
+      .from('household_members')
+      .select('user_id', { count: 'exact', head: true })
+      .eq('household_id', ownedHousehold.id)
+      .neq('role', 'owner'),
+    supabase
+      .from('household_invites')
+      .select('id', { count: 'exact', head: true })
+      .eq('household_id', ownedHousehold.id)
+      .eq('status', 'pending')
+      .gt('expires_at', new Date().toISOString()),
+  ]);
+
+  return (memberCount ?? 0) + (inviteCount ?? 0);
+}
+
 export const supabaseSubscriptionService: ISubscriptionService = {
   async getSubscription(userId) {
     const supabase = getSupabaseClient();
@@ -159,6 +189,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
     const [
       { count: lifetimeScanCount },
       { count: monthlyScanCount },
+      { count: monthlyVetVisitExportCount },
       { count: documentCount },
       { count: reminderCount },
       { count: recordCount },
@@ -172,12 +203,18 @@ export const supabaseSubscriptionService: ISubscriptionService = {
         .select('id', { count: 'exact', head: true })
         .eq('user_id', userId)
         .gte('created_at', monthStart.toISOString()),
+      supabase
+        .from('vet_visit_exports')
+        .select('id', { count: 'exact', head: true })
+        .eq('user_id', userId)
+        .gte('created_at', monthStart.toISOString()),
       documentsQuery,
       remindersQuery,
       healthRecordsQuery,
     ]);
 
     const monthlyDecoderLimit = getDecoderMonthlyLimit(commercialPlan);
+    const monthlyVetVisitExportLimit = getVetVisitExportMonthlyLimit(commercialPlan);
     const timelineDayLimit = getTimelineDayLimit(commercialPlan);
 
     return {
@@ -206,7 +243,7 @@ export const supabaseSubscriptionService: ISubscriptionService = {
         limit: timelineDayLimit != null ? 1 : null,
       },
       familyMembers: {
-        used: 0,
+        used: await countHouseholdMemberSlots(supabase, userId),
         limit: getFamilySharingLimit(commercialPlan),
       },
       reminders: {
@@ -216,6 +253,10 @@ export const supabaseSubscriptionService: ISubscriptionService = {
       healthRecords: {
         used: recordCount ?? 0,
         limit: getHealthRecordLimit(commercialPlan),
+      },
+      vetVisitExports: {
+        used: monthlyVetVisitExportCount ?? 0,
+        limit: monthlyVetVisitExportLimit,
       },
     } satisfies UsageLimits;
   },

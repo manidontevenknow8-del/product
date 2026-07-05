@@ -1,4 +1,6 @@
 import type { WeeklyPetSummary } from './types.ts';
+import { computeCheckInStreak } from './checkInStreak.ts';
+import type { PetCareScoreEmailSummary } from './petCareScoreForEmail.ts';
 
 type ReminderRow = {
   id: string;
@@ -17,6 +19,11 @@ type PetRow = {
 };
 
 type CheckInRow = {
+  pet_id: string;
+  check_in_date: string;
+};
+
+type StreakCheckInRow = {
   pet_id: string;
   check_in_date: string;
 };
@@ -66,10 +73,12 @@ export function buildWeeklyPetSummaries(input: {
   pets: PetRow[];
   reminders: ReminderRow[];
   checkIns: CheckInRow[];
+  streakCheckIns?: StreakCheckInRow[];
+  careScoresByPetId?: Record<string, PetCareScoreEmailSummary | null | undefined>;
   today: Date;
   baseUrl: string;
 }): WeeklyPetSummary[] {
-  const { pets, reminders, checkIns, today, baseUrl } = input;
+  const { pets, reminders, checkIns, streakCheckIns, careScoresByPetId, today, baseUrl } = input;
   const weekAgo = new Date(today);
   weekAgo.setUTCDate(weekAgo.getUTCDate() - 7);
   const weekAgoIso = weekAgo.toISOString().slice(0, 10);
@@ -123,6 +132,13 @@ export function buildWeeklyPetSummaries(input: {
       (c) => c.pet_id === pet.id && c.check_in_date >= weekAgoIso,
     ).length;
 
+    const streakDates = (streakCheckIns ?? checkIns)
+      .filter((c) => c.pet_id === pet.id)
+      .map((c) => c.check_in_date);
+    const currentStreak = computeCheckInStreak(streakDates);
+
+    const careScore = careScoresByPetId?.[pet.id] ?? null;
+
     return {
       id: pet.id,
       name: pet.name,
@@ -132,6 +148,12 @@ export function buildWeeklyPetSummaries(input: {
       upcomingCount,
       overdueCount,
       checkInsThisWeek,
+      currentStreak,
+      careScore: careScore?.score,
+      scoreLabel: careScore?.scoreLabel,
+      scoreTrend: careScore?.trend,
+      scoreTrendDelta: careScore?.trendDelta,
+      weeklyInsight: careScore?.weeklyInsight,
       upcomingReminders,
       overdueReminders,
       nextReminderTitle: nextReminder?.title,
@@ -139,6 +161,7 @@ export function buildWeeklyPetSummaries(input: {
         ? formatDueLabel(nextReminder.due_date, today)
         : undefined,
       profileUrl: `${baseUrl}/pet-profile`,
+      insightsUrl: `${baseUrl}/pet-care-score`,
     };
   });
 }

@@ -16,6 +16,7 @@ export function buildDefaultSettings(name: string, email: string): UserSettings 
       emailUpcomingReminders: true,
       emailOverdueReminders: true,
       emailWeeklySummary: true,
+      pushStreakReminders: false,
     },
     privacy: {
       publicProfileEnabled: false,
@@ -59,5 +60,10 @@ export const NOTIFICATION_PREFERENCE_LABELS = {
   emailWeeklySummary: {
     label: 'Email: weekly pet summary',
     description: 'Weekly digest email with care overview across your pets',
+  },
+  pushStreakReminders: {
+    label: 'Push: streak reminder',
+    description:
+      'A gentle evening nudge if today\'s check-in is still open and your streak is active (browser only)',
   },
 } as const;

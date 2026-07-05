@@ -13,6 +13,7 @@ type TimelineFeedProps = {
   petName: string;
   storySummary: LifeStorySummaryData;
   showMilestones?: boolean;
+  milestonesAccessNote?: string;
   filteredEmpty?: boolean;
   activeFilter?: TimelineFilter;
   onAddMoment?: () => void;
@@ -36,6 +37,10 @@ function FilteredEmptyLuxury({
   onAddMoment?: () => void;
 }) {
   const label = filter === 'all' ? 'moments' : filterLabels[filter].toLowerCase();
+  const lead =
+    filter === 'memory'
+      ? `Save a photo and caption with Add moment — hand-picked memories show here alongside vault photos and welcome-home chapters.`
+      : `Every moment you log becomes part of ${petName}'s story.`;
 
   return (
     <div className={styles.filteredEmpty}>
@@ -43,9 +48,7 @@ function FilteredEmptyLuxury({
         —
       </p>
       <p className={styles.filteredTitle}>No {label} moments yet</p>
-      <p className={styles.filteredLead}>
-        Every moment you log becomes part of {petName}'s story.
-      </p>
+      <p className={styles.filteredLead}>{lead}</p>
       {onAddMoment && (
         <button type="button" className={styles.filteredAction} onClick={onAddMoment}>
           + Add first moment
@@ -61,6 +64,7 @@ export function TimelineFeed({
   petName,
   storySummary,
   showMilestones = true,
+  milestonesAccessNote,
   filteredEmpty = false,
   activeFilter = 'all',
   onAddMoment,
@@ -97,7 +101,8 @@ export function TimelineFeed({
                   Milestone moments
                 </h2>
                 <p className={styles.milestonesLead}>
-                  The turning points that define {petName}&apos;s story — highlighted with care.
+                  {milestonesAccessNote ??
+                    `The turning points that define ${petName}'s story — highlighted with care.`}
                 </p>
               </div>
               <span className={styles.milestonesCount}>
@@ -152,7 +157,10 @@ export function TimelineFeed({
                     </div>
                     <TimelineEventCard
                       event={event}
-                      featured={index === 0 && event.type === 'adoption'}
+                      featured={
+                        index === 0 &&
+                        (event.type === 'adoption' || event.type === 'manual_moment')
+                      }
                       petName={petName}
                     />
                   </div>

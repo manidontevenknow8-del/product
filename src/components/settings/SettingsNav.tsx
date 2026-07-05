@@ -3,6 +3,7 @@ import styles from './SettingsNav.module.css';
 
 const SECTIONS: { id: SettingsSection; label: string }[] = [
   { id: 'account', label: 'Account' },
+  { id: 'household', label: 'Household' },
   { id: 'notifications', label: 'Notifications' },
   { id: 'privacy', label: 'Privacy' },
   { id: 'security', label: 'Security' },

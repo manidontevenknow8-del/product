@@ -12,6 +12,10 @@ export type PetRecord = {
   weight: string | null;
   gender: PetGender | null;
   photoUrl: string | null;
+  diet: string | null;
+  coatColor: string | null;
+  microchipId: string | null;
+  conditionsNotes: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -24,6 +28,10 @@ export type CreatePetInput = {
   weight?: string | null;
   gender?: PetGender | null;
   photoUrl?: string | null;
+  diet?: string | null;
+  coatColor?: string | null;
+  microchipId?: string | null;
+  conditionsNotes?: string | null;
 };
 
 export type UpdatePetInput = Partial<CreatePetInput>;
@@ -36,6 +44,10 @@ export type EditPetForm = {
   weight: string;
   gender: PetGender | '';
   photo: string | null;
+  diet: string;
+  coatColor: string;
+  microchipId: string;
+  conditionsNotes: string;
 };
 
 export interface IPetService {

@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from 'react';
-import { capturePostHogEvent } from '@/analytics/posthog';
+import { useEffect, useMemo, useState } from 'react';
+import { eventTracker } from '@/analytics/EventTracker';
 import { AppLayout } from '@/layouts/AppLayout';
 import { EmptyDashboardState } from '@/components/empty-states';
 import { usePets } from '@/pets';
@@ -15,9 +15,9 @@ import { MonthlyReportEngine } from '@/services/monthlyReport';
 import { pickDashboardNextTask } from '@/services/dashboard/dashboardNextTask';
 import {
   activityToMoments,
-  completenessMetrics,
 } from '@/services/dashboard/dashboardMoments';
-import { countOverdueReminders } from '@/services/dashboard/dashboardStatus';
+import { buildScoreDisplayMetrics } from '@/services/petCareScore/scoreDisplayMetrics';
+import { countOverdueReminders, countUpcomingReminders } from '@/services/dashboard/dashboardStatus';
 import { isDemoDataEnabled } from '@/data/demoData';
 import { mockRecentActivity } from '@/data/dashboardData';
 import type { ActivityLogEntry } from '@/services/activity/activityLogService';
@@ -25,6 +25,8 @@ import { petRecordToPet } from '@/services/pets/petService';
 import { getTrendLabel } from '@/utils/petCareScoreUtils';
 import { DashboardNav } from '@/pages/dashboard/components/DashboardNav';
 import { DashboardHero } from '@/pages/dashboard/components/DashboardHero';
+import { CheckInStreakBand } from '@/pages/dashboard/components/CheckInStreakBand';
+import { HouseholdCheckInActivityStrip } from '@/pages/dashboard/components/HouseholdCheckInActivityStrip';
 import { SummaryBand } from '@/pages/dashboard/components/SummaryBand';
 import { AttentionNow } from '@/pages/dashboard/components/AttentionNow';
 import { RitualSection } from '@/pages/dashboard/components/RitualSection';
@@ -32,6 +34,11 @@ import { CareIntelligence } from '@/pages/dashboard/components/CareIntelligence'
 import { ConciergeStrip } from '@/pages/dashboard/components/ConciergeStrip';
 import { ArchiveSection } from '@/pages/dashboard/components/ArchiveSection';
 import { DashboardFooter } from '@/pages/dashboard/components/DashboardFooter';
+import { EmergencyShareCard } from '@/components/emergency';
+import { PendingHouseholdInvitesBanner } from '@/components/household';
+import { useEmergencyPassport } from '@/hooks/useEmergencyPassport';
+import { useHousehold } from '@/household';
+import { useStreakRiskPushSync } from '@/push';
 import { currentMonthKey, getGreeting } from '@/pages/dashboard/utils';
 import styles from './DashboardPage.module.css';
 
@@ -53,10 +60,10 @@ export function DashboardPage() {
   const { activePet, pets, setActivePet, isLoading, hasPets } = usePets();
 
   useEffect(() => {
-    capturePostHogEvent('dashboard_viewed');
+    eventTracker.track('dashboard_viewed');
   }, []);
 
-  const { reminders, stats: reminderStats } = useReminders();
+  const { reminders } = useReminders();
   const { records, healthSummary } = useHealthRecords();
   const { documents } = useDocuments();
   const { data: scoreData, isLoading: scoreLoading } = usePetCareScore();
@@ -64,10 +71,16 @@ export function DashboardPage() {
   const { currentPlan } = useSubscription();
   const timelineAccess = useFeatureAccess('timelineHistory');
   const decoderAccess = useFeatureAccess('vetBillDecoder');
+  const emergencyShareAccess = useFeatureAccess('emergencyCareMode');
+  const { canEdit: canEditHousehold } = useHousehold();
   const isEnterprise = currentPlan === 'enterprise';
   const isMonthlyDecoderQuota = currentPlan === 'plus' || currentPlan === 'pro';
 
   const petId = activePet?.id;
+  useStreakRiskPushSync(petId);
+  const petIds = useMemo(() => pets.map((pet) => pet.id), [pets]);
+  const [activityEntries, setActivityEntries] = useState<ActivityLogEntry[]>([]);
+
   const petReminders = useMemo(
     () => (petId ? reminders.filter((r) => r.petId === petId) : []),
     [reminders, petId],
@@ -80,6 +93,43 @@ export function DashboardPage() {
     () => (petId ? documents.filter((d) => d.petId === petId) : []),
     [documents, petId],
   );
+
+  const {
+    passport: emergencyPassport,
+    canEdit: canEditEmergency,
+    isLoading: emergencyPassportLoading,
+    ensureLink,
+    regenerateToken,
+  } = useEmergencyPassport(activePet, records);
+
+  useEffect(() => {
+    if (!petId || isDemoDataEnabled('dashboardActivity')) {
+      setActivityEntries([]);
+      return;
+    }
+
+    let cancelled = false;
+
+    void getActivityLogForPet(petId, 24, { petIdsForMigration: petIds })
+      .then((entries) => {
+        if (!cancelled) setActivityEntries(entries);
+      })
+      .catch(() => {
+        if (!cancelled) setActivityEntries([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [
+    petId,
+    petIds,
+    petDocuments.length,
+    petRecords.length,
+    petReminders.length,
+    checkIns.length,
+    todayCheckIn?.updatedAt,
+  ]);
 
   const monthKey = currentMonthKey();
   const monthlyReport = useMemo(() => {
@@ -155,15 +205,12 @@ export function DashboardPage() {
     .join(' · ');
 
   const overdueCount = countOverdueReminders(petReminders);
-  const upcomingCount = reminderStats.upcoming + reminderStats.dueToday;
+  const upcomingCount = countUpcomingReminders(petReminders);
   const score = scoreData?.snapshot.score ?? null;
-  const careMetrics = completenessMetrics({
-    healthRecords: petRecords.length,
-    documents: petDocuments.length,
-    overdueCount,
-    hasVaccination: petRecords.some((r) => r.recordType === 'vaccination'),
-    profileHasPhoto: Boolean(activePet.photoUrl),
-  });
+  const careMetrics = useMemo(
+    () => buildScoreDisplayMetrics(scoreData?.factors ?? []),
+    [scoreData?.factors],
+  );
   const trendText = scoreData
     ? getTrendLabel(scoreData.snapshot.trend, scoreData.snapshot.trendDelta)
     : '';
@@ -179,7 +226,7 @@ export function DashboardPage() {
     scoreData?.insights[0]?.message ??
     'Add a health record or document — we surface one clear insight from your real data.';
 
-  const activityEntries: ActivityLogEntry[] = isDemoDataEnabled('dashboardActivity')
+  const activityEntriesForDisplay: ActivityLogEntry[] = isDemoDataEnabled('dashboardActivity')
     ? mockRecentActivity.map((item, index) => {
         const daysAgo = index * 12;
         const createdAt = new Date(Date.now() - daysAgo * 24 * 60 * 60 * 1000).toISOString();
@@ -193,8 +240,8 @@ export function DashboardPage() {
           createdAt,
         };
       })
-    : getActivityLogForPet(activePet.id, 24);
-  const moments = activityToMoments(activityEntries);
+    : activityEntries;
+  const moments = activityToMoments(activityEntriesForDisplay);
 
   const weightRaw =
     todayCheckIn?.weightKg != null
@@ -226,11 +273,27 @@ export function DashboardPage() {
           photoUrl={activePet.photoUrl}
         />
 
+        <CheckInStreakBand petName={display.name} />
+
+        <HouseholdCheckInActivityStrip petName={display.name} />
+
         <SummaryBand
           overdue={overdueCount}
           upcoming={upcomingCount}
           score={score}
           weight={weightRaw}
+        />
+
+        <PendingHouseholdInvitesBanner />
+
+        <EmergencyShareCard
+          petName={display.name}
+          passport={emergencyPassport}
+          isLoading={emergencyPassportLoading}
+          hasPremiumAccess={emergencyShareAccess.isAllowed}
+          canEdit={canEditHousehold && canEditEmergency}
+          onEnsureLink={ensureLink}
+          onRegenerateToken={regenerateToken}
         />
 
         <AttentionNow petName={display.name} task={nextTask} />

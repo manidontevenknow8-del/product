@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
-import { Button, Input } from '@/components/ui';
+import { Button, Input, Textarea } from '@/components/ui';
 import {
   editPetFormToUpdateInput,
   petRecordToEditPetForm,
@@ -232,6 +232,34 @@ export function EditProfileModal({ pet, isOpen, onClose, onSave }: EditProfileMo
             <option value="female">Female</option>
             <option value="unknown">Unknown</option>
           </Input>
+          <Input
+            label="Diet"
+            value={form.diet}
+            onChange={(e) => update('diet', e.target.value)}
+            placeholder="e.g. Dry food, prescription renal diet"
+            disabled={isSaving}
+          />
+          <Input
+            label="Coat color"
+            value={form.coatColor}
+            onChange={(e) => update('coatColor', e.target.value)}
+            placeholder="e.g. Black and tan"
+            disabled={isSaving}
+          />
+          <Input
+            label="Microchip number"
+            value={form.microchipId}
+            onChange={(e) => update('microchipId', e.target.value)}
+            placeholder="15-digit ISO chip ID"
+            disabled={isSaving}
+          />
+          <Textarea
+            label="Conditions & notes"
+            value={form.conditionsNotes}
+            onChange={(e) => update('conditionsNotes', e.target.value)}
+            placeholder="Chronic conditions, medications, sensitivities, habits…"
+            disabled={isSaving}
+          />
         </div>
 
         <div className={styles.footer}>

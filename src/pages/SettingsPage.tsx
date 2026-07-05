@@ -10,6 +10,7 @@ import {
   PrivacySettingsCard,
   SecuritySettingsCard,
 } from '@/components/settings';
+import { HouseholdMembersPanel } from '@/components/household';
 import { FoundingBenefitsCard } from '@/components/founding';
 import { useSettings } from '@/settings';
 import type { SettingsSection } from '@/types/settings';
@@ -17,6 +18,7 @@ import styles from './SettingsPage.module.css';
 
 const VALID_SECTIONS: SettingsSection[] = [
   'account',
+  'household',
   'notifications',
   'privacy',
   'security',
@@ -90,6 +92,7 @@ export function SettingsPage() {
                   <AccountSettingsCard />
                 </>
               )}
+              {section === 'household' && <HouseholdMembersPanel />}
               {section === 'notifications' && <NotificationSettingsCard />}
               {section === 'privacy' && <PrivacySettingsCard />}
               {section === 'security' && <SecuritySettingsCard />}

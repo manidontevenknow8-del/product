@@ -157,6 +157,12 @@ function renderWeeklyPetCard(pet: WeeklySummaryPayload['pets'][number]): string 
     .join('');
 
   const chips = [
+    pet.currentStreak > 0
+      ? renderStatusChip(
+          `${pet.currentStreak}-day streak`,
+          'success',
+        )
+      : '',
     pet.upcomingCount > 0
       ? renderStatusChip(`${pet.upcomingCount} upcoming`, 'default')
       : '',
@@ -167,7 +173,44 @@ function renderWeeklyPetCard(pet: WeeklySummaryPayload['pets'][number]): string 
       `${pet.checkInsThisWeek} check-in${pet.checkInsThisWeek === 1 ? '' : 's'} this week`,
       pet.checkInsThisWeek > 0 ? 'success' : 'default',
     ),
-  ].join('');
+  ].filter(Boolean).join('');
+
+  const scoreSection =
+    pet.careScore != null
+      ? `
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 14px 0 0; background: ${BRAND.bgMuted}; border-radius: 12px; border: 1px solid ${BRAND.border};">
+        <tr>
+          <td style="padding: 14px 16px;">
+            <p style="margin: 0 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: ${BRAND.muted};">PetCare score</p>
+            <p style="margin: 0; font-size: 22px; font-weight: 600; color: ${BRAND.text}; font-family: Georgia, 'Times New Roman', serif;">
+              ${pet.careScore}
+              <span style="font-size: 14px; font-weight: 400; color: ${BRAND.muted};"> · ${escapeHtml(pet.scoreLabel ?? '')}</span>
+              ${
+                pet.scoreTrend && pet.scoreTrend !== 'stable' && pet.scoreTrendDelta
+                  ? `<span style="font-size: 13px; font-weight: 600; color: ${pet.scoreTrend === 'up' ? BRAND.sage : BRAND.warning};"> ${pet.scoreTrend === 'up' ? '+' : '−'}${pet.scoreTrendDelta} pts</span>`
+                  : ''
+              }
+            </p>
+          </td>
+        </tr>
+      </table>`
+      : '';
+
+  const insightSection =
+    pet.weeklyInsight
+      ? `
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin: 14px 0 0; background: ${BRAND.sageLight}; border-radius: 12px; border: 1px solid #BBE5D4;">
+        <tr>
+          <td style="padding: 14px 16px;">
+            <p style="margin: 0 0 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: ${BRAND.primary};">
+              ${escapeHtml(pet.weeklyInsight.title)}
+              ${pet.weeklyInsight.highlight ? ` · ${escapeHtml(pet.weeklyInsight.highlight)}` : ''}
+            </p>
+            <p style="margin: 0; font-size: 14px; line-height: 1.65; color: ${BRAND.textSecondary};">${escapeHtml(pet.weeklyInsight.message)}</p>
+          </td>
+        </tr>
+      </table>`
+      : '';
 
   const encouragement =
     pet.checkInsThisWeek === 0
@@ -204,6 +247,8 @@ function renderWeeklyPetCard(pet: WeeklySummaryPayload['pets'][number]): string 
             </tr>
           </table>
           <p style="margin: 0 0 4px; line-height: 1.8;">${chips}</p>
+          ${scoreSection}
+          ${insightSection}
           ${nextCare}
         </td>
       </tr>
@@ -233,6 +278,7 @@ function renderWeeklyPetCard(pet: WeeklySummaryPayload['pets'][number]): string 
         <td style="padding: 16px 20px 20px;">
           ${encouragement}
           <p style="margin: ${encouragement ? '12px' : '0'} 0 0;">
+            <a href="${escapeHtml(pet.insightsUrl)}" style="font-size: 13px; font-weight: 600; color: ${BRAND.sage}; text-decoration: none; margin-right: 16px;">Health foresight →</a>
             <a href="${escapeHtml(pet.profileUrl)}" style="font-size: 13px; font-weight: 600; color: ${BRAND.sage}; text-decoration: none;">View ${escapeHtml(pet.name)}&rsquo;s profile →</a>
           </p>
         </td>
@@ -251,7 +297,7 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
   );
 
   const bodyHtml = `
-    ${renderLead(`Hi ${escapeHtml(firstName)}, here&rsquo;s a snapshot of care across <strong>${payload.totals.petCount} pet${payload.totals.petCount === 1 ? '' : 's'}</strong>, reminders, check-ins, and what needs attention.`)}
+    ${renderLead(`Hi ${escapeHtml(firstName)}, here&rsquo;s your weekly digest — check-in streaks, PetCare score movement, and what&rsquo;s coming up for <strong>${payload.totals.petCount} pet${payload.totals.petCount === 1 ? '' : 's'}</strong>.`)}
     ${renderStatRow(
       renderStatPill('Upcoming', String(payload.totals.upcoming)) +
         renderStatPill('Overdue', String(payload.totals.overdue), payload.totals.overdue > 0 ? 'warning' : 'default') +
@@ -275,7 +321,7 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
   `;
 
   const html = renderEmailLayout({
-    preheader: `${payload.totals.upcoming} upcoming · ${payload.totals.overdue} overdue · ${payload.totals.checkIns} check-ins`,
+    preheader: `${payload.totals.checkIns} check-ins · ${payload.pets.map((p) => p.currentStreak).reduce((a, b) => Math.max(a, b), 0)}-day best streak`,
     title: 'Your care week',
     bodyHtml,
     heroHtml,
@@ -297,7 +343,11 @@ function buildWeeklySummaryEmail(payload: WeeklySummaryPayload) {
     '',
     ...payload.pets.flatMap((pet) => [
       `${pet.name} (${pet.speciesLabel})`,
-      `  ${pet.upcomingCount} upcoming · ${pet.overdueCount} overdue · ${pet.checkInsThisWeek} check-ins`,
+      `  ${pet.checkInsThisWeek} check-ins this week · ${pet.currentStreak}-day streak`,
+      pet.careScore != null
+        ? `  PetCare score: ${pet.careScore} (${pet.scoreLabel ?? ''})${pet.scoreTrendDelta ? ` · ${pet.scoreTrend === 'up' ? '+' : pet.scoreTrend === 'down' ? '-' : ''}${pet.scoreTrendDelta} pts` : ''}`
+        : '',
+      pet.weeklyInsight ? `  ${pet.weeklyInsight.title}: ${pet.weeklyInsight.message}` : '',
       ...pet.upcomingReminders.map((r) => `  · ${r.title}, ${r.dueLabel}`),
       ...pet.overdueReminders.map((r) => `  ! ${r.title}, ${r.dueLabel}`),
       '',

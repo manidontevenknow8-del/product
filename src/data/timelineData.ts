@@ -3,6 +3,7 @@ import type {
   Milestone,
   TimelineStats,
   LifeStorySummary,
+  TimelineSummaryAccess,
 } from '@/types/timeline';
 
 /** Demo-only - requires VITE_DEMO_TIMELINE=true */
@@ -188,6 +189,7 @@ export function buildLifeStorySummary(
   petName: string,
   stats: TimelineStats,
   petMeta?: { breed?: string | null; species?: string },
+  access?: TimelineSummaryAccess,
 ): LifeStorySummary {
   if (events.length === 0) {
     return {
@@ -203,9 +205,14 @@ export function buildLifeStorySummary(
 
   const headline = `${petName}'s living archive${breedNote}`;
 
+  const lockedClause =
+    access && !access.hasFullTimeline && access.lockedMomentsCount > 0
+      ? ` ${access.lockedMomentsCount} older moment${access.lockedMomentsCount === 1 ? '' : 's'} remain in your full archive.`
+      : '';
+
   const detail = adoption
-    ? `Since ${adoption.displayDate}, you've captured ${stats.totalMoments} moments across ${stats.daysRemembered} days. Latest update: ${latest.title} (${latest.displayDate}).`
-    : `${stats.totalMoments} moments logged across ${stats.daysRemembered} days. Latest: ${latest.title} on ${latest.displayDate}.`;
+    ? `Since ${adoption.displayDate}, you've captured ${stats.totalMoments} moments across ${stats.daysRemembered} days.${lockedClause} Latest update: ${latest.title} (${latest.displayDate}).`
+    : `${stats.totalMoments} moments logged across ${stats.daysRemembered} days.${lockedClause} Latest: ${latest.title} on ${latest.displayDate}.`;
 
   const highlights = [
     { label: 'Care moments', value: String(stats.careMoments) },
@@ -214,7 +221,14 @@ export function buildLifeStorySummary(
     { label: 'Milestones', value: String(stats.milestones) },
   ].filter((h) => h.value !== '0');
 
-  return { headline, detail, highlights };
+  const accessNote =
+    access && !access.hasFullTimeline
+      ? access.lockedMomentsCount > 0
+        ? `Totals reflect ${petName}'s full archive. The chronology and milestones below show the last ${access.freeTimelineDays} days on Free — upgrade to Plus to browse every chapter.`
+        : `Totals reflect ${petName}'s full archive. The chronology below is limited to the last ${access.freeTimelineDays} days on Free.`
+      : undefined;
+
+  return { headline, detail, highlights, accessNote };
 }
 
 /** @deprecated Use buildLifeStorySummary */

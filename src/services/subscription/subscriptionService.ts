@@ -14,7 +14,10 @@ import {
   getPetLimit,
   getReminderLimit,
   getTimelineDayLimit,
+  getVetVisitExportMonthlyLimit,
 } from '@/subscription/entitlements';
+import { countMockHouseholdMemberSlots } from '@/services/household/householdInviteService';
+import { countMockVetVisitExportsForUser } from '@/services/vetVisitExport/vetVisitExportService';
 import type {
   CheckoutPlan,
   CheckoutPrefill,
@@ -132,6 +135,19 @@ export const mockSubscriptionService: ISubscriptionService = {
       HEALTH_RECORDS_STORAGE_KEY,
       petIds,
     );
+    const vetVisitExportCount = countMockVetVisitExportsForUser(userId, true);
+    const ownedHousehold = (() => {
+      try {
+        const raw = localStorage.getItem('petclues_household');
+        const rows = raw ? (JSON.parse(raw) as { id: string; billing_owner_user_id: string }[]) : [];
+        return rows.find((row) => row.billing_owner_user_id === userId) ?? null;
+      } catch {
+        return null;
+      }
+    })();
+    const familyMemberSlots = ownedHousehold
+      ? countMockHouseholdMemberSlots(ownedHousehold.id)
+      : 0;
     return {
       pets: { used: petCount, limit: getPetLimit(plan) },
       documents: { used: documentCount, limit: getDocumentLimit(plan) },
@@ -139,9 +155,13 @@ export const mockSubscriptionService: ISubscriptionService = {
       scansLifetime: { used: 0, limit: getDecoderLifetimeLimit(plan) },
       timelineDays: { used: 0, limit: timelineDays },
       timelineMonths: { used: 0, limit: timelineDays != null ? 1 : null },
-      familyMembers: { used: 0, limit: getFamilySharingLimit(plan) },
+      familyMembers: { used: familyMemberSlots, limit: getFamilySharingLimit(plan) },
       reminders: { used: reminderCount, limit: getReminderLimit(plan) },
       healthRecords: { used: healthRecordCount, limit: getHealthRecordLimit(plan) },
+      vetVisitExports: {
+        used: vetVisitExportCount,
+        limit: getVetVisitExportMonthlyLimit(plan),
+      },
     };
   },
 

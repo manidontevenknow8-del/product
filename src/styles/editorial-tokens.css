@@ -1,0 +1,62 @@
+/**
+ * Canonical editorial design tokens for Dashboard, Profile, Timeline, and Insights.
+ * Prefer these over per-page --lux-* blocks. Aliases keep existing CSS working during migration.
+ */
+
+:root {
+  /* ── Color palette ─────────────────────────────────────────── */
+  --ed-bg: #f2ede6;
+  --ed-bg-deep: #ece4d8;
+  --ed-surface: #ffffff;
+  --ed-surface-alt: #faf6f0;
+  --ed-border: #ddd5c8;
+  --ed-border-soft: #e9e2d8;
+  --ed-forest: #1c2b1d;
+  --ed-forest-deep: #111a12;
+  --ed-forest-ink: #080d09;
+  --ed-gold: #a8833a;
+  --ed-gold-soft: #c49a4a;
+  --ed-gold-bright: #e6c577;
+  --ed-gold-light: rgba(168, 131, 58, 0.12);
+  --ed-text: #1a1712;
+  --ed-muted: #5c554d;
+  --ed-faint: #8a8278;
+  --ed-parchment: #c5bdb4;
+  --ed-spine: #ddd5c8;
+  --ed-teal: #3d6b62;
+  --ed-burgundy: #7a3030;
+
+  /* Legacy luxury aliases (Timeline, Profile, Insights modules) */
+  --lux-bg: var(--ed-bg);
+  --lux-surface: var(--ed-surface);
+  --lux-border: var(--ed-border);
+  --lux-forest: var(--ed-forest);
+  --lux-forest-deep: var(--ed-forest-deep);
+  --lux-gold: var(--ed-gold);
+  --lux-gold-light: var(--ed-gold-light);
+  --lux-text: var(--ed-text);
+  --lux-muted: var(--ed-muted);
+  --lux-parchment: var(--ed-parchment);
+  --lux-spine: var(--ed-spine);
+  --lux-teal: var(--ed-teal);
+  --lux-burgundy: var(--ed-burgundy);
+  --lux-display: var(--font-display, 'Playfair Display', 'Cormorant Garamond', Georgia, serif);
+  --lux-serif: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  --lux-ease: 220ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  --lux-shadow-rest: 0 1px 3px rgba(28, 43, 29, 0.04), 0 10px 30px rgba(28, 43, 29, 0.05);
+  --lux-shadow-hover: 0 4px 14px rgba(28, 43, 29, 0.07), 0 20px 48px rgba(28, 43, 29, 0.09);
+
+  /* ── Editorial type scale ──────────────────────────────────── */
+  --editorial-type-kicker: 10px;
+  --editorial-type-kicker-lg: 11px;
+  --editorial-type-label: 10px;
+  --editorial-type-body: 15px;
+  --editorial-type-lead: clamp(1.125rem, 2.1vw, 1.4rem);
+  --editorial-type-title: clamp(3rem, 8.5vw, 6rem);
+  --editorial-type-section: clamp(2.1rem, 4.4vw, 3.4rem);
+  --editorial-type-stat: clamp(2rem, 4vw, 2.75rem);
+
+  --editorial-tracking-kicker: 0.28em;
+  --editorial-tracking-label: 0.18em;
+  --editorial-tracking-cta: 0.14em;
+}

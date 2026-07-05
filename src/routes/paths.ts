@@ -12,6 +12,10 @@ export const ROUTES = {
   SCAN: '/scan',
   TIMELINE: '/timeline',
   EMERGENCY_PASSPORT: '/emergency-passport',
+  /** Public token-gated emergency sheet (no auth) */
+  EMERGENCY_PUBLIC: '/e',
+  /** Public token-gated pet life story (no auth) */
+  STORY_PUBLIC: '/s',
   VET_PORTAL: '/vet-portal',
   PET_MATCH: '/pet-match',
   BLOG: '/blog',
@@ -45,6 +49,7 @@ export const ROUTES = {
   AGE_TRANSLATOR: '/age-translator',
   NOTIFICATIONS: '/notifications',
   FAMILY_ACCESS: '/family',
+  FAMILY_INVITE: '/family/invite',
   FOUNDING_MEMBERS: '/founding-members',
   GENESIS: '/genesis',
   PET_HEALTH_RECORDS: '/pet-health-records',

@@ -25,6 +25,12 @@ function sanitizePetInput(input: CreatePetInput): CreatePetInput {
     name: trimField(input.name, INPUT_LIMITS.name),
     breed: input.breed ? trimField(input.breed, INPUT_LIMITS.breed) : input.breed,
     weight: input.weight ? trimField(input.weight, 40) : input.weight,
+    diet: input.diet ? trimField(input.diet, 200) : input.diet,
+    coatColor: input.coatColor ? trimField(input.coatColor, 80) : input.coatColor,
+    microchipId: input.microchipId ? trimField(input.microchipId, 32) : input.microchipId,
+    conditionsNotes: input.conditionsNotes
+      ? trimField(input.conditionsNotes, INPUT_LIMITS.notes)
+      : input.conditionsNotes,
     photoUrl: sanitizeStoredPhotoUrl(input.photoUrl) ?? null,
   };
 }
@@ -41,6 +47,12 @@ function sanitizePetUpdate(input: UpdatePetInput): UpdatePetInput {
   }
   if (input.breed != null) next.breed = trimField(input.breed, INPUT_LIMITS.breed);
   if (input.weight != null) next.weight = trimField(input.weight, 40);
+  if (input.diet != null) next.diet = trimField(input.diet, 200);
+  if (input.coatColor != null) next.coatColor = trimField(input.coatColor, 80);
+  if (input.microchipId != null) next.microchipId = trimField(input.microchipId, 32);
+  if (input.conditionsNotes != null) {
+    next.conditionsNotes = trimField(input.conditionsNotes, INPUT_LIMITS.notes);
+  }
   if (input.photoUrl !== undefined) next.photoUrl = sanitizeStoredPhotoUrl(input.photoUrl) ?? null;
   return next;
 }

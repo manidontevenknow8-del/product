@@ -92,6 +92,34 @@
   border-color: rgba(122, 48, 48, 0.25);
 }
 
+.card[data-event-type='manual_moment'] .accent {
+  background: #9b6b8e;
+}
+
+.card[data-event-type='manual_moment'] .type {
+  color: #9b6b8e;
+}
+
+.card[data-event-type='manual_moment'] .meta {
+  color: #7d4f72;
+  background: rgba(155, 107, 142, 0.12);
+  border-color: rgba(155, 107, 142, 0.28);
+}
+
+.cardMemory {
+  border-color: rgba(155, 107, 142, 0.22);
+}
+
+.cardMemory .description {
+  font-family: var(--font-serif);
+  font-style: italic;
+  line-height: 1.85;
+}
+
+.cardMemory.cardHighlight .title {
+  color: #5c3d52;
+}
+
 .date {
   font-family: var(--font-sans);
   font-size: 10px;

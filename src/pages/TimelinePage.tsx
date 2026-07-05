@@ -1,5 +1,6 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { eventTracker } from '@/analytics/EventTracker';
 import { AppLayout } from '@/layouts/AppLayout';
 import { Button, EmptyState, LoadingState } from '@/components/ui';
 import { PremiumUpgradePrompt, UpgradeModal } from '@/components/subscription';
@@ -13,10 +14,17 @@ import {
   TimelineFeed,
   EmptyTimelineState,
   AddEventModal,
+  StoryShareCard,
 } from '@/components/timeline';
+import { EditorialHero, KpiStrip } from '@/components/editorial';
 import { usePets } from '@/pets';
+import { useDocuments } from '@/documents';
+import { useHousehold } from '@/household';
+import { usePetStoryShare } from '@/hooks/usePetStoryShare';
+import { usePetMoments } from '@/petMoments';
 import { useTimelineData } from '@/hooks/useTimelineData';
 import { buildLifeStorySummary } from '@/data/timelineData';
+import { buildMilestonesFromEvents } from '@/services/timeline/timelineBuilder';
 import { normalizePhotoUrlFromDb } from '@/services/pets/petPhotoService';
 import { resolvePetHeroBackground } from '@/services/pets/petHeroImage';
 import { getAvatarInitials } from '@/services/pets/petUtils';
@@ -93,44 +101,107 @@ function PetStack({
 
 export function TimelinePage() {
   const { activePet, pets, setActivePet } = usePets();
+
+  useEffect(() => {
+    eventTracker.track('timeline_viewed');
+  }, []);
+  const { canEdit } = useHousehold();
+  const { createMoment } = usePetMoments();
+  const { getDocumentUrl } = useDocuments();
   const { canAccess } = useSubscription();
   const hasFullTimeline = canAccess('premiumTimeline');
   const petName = activePet?.name ?? 'your pet';
   const [activeFilter, setActiveFilter] = useState<TimelineFilter>('all');
   const [showAddEvent, setShowAddEvent] = useState(false);
   const [upgradeOpen, setUpgradeOpen] = useState(false);
-  const { events, milestones, stats, isLoading, isDemo } = useTimelineData();
+  const { events, stats, isLoading, isDemo } = useTimelineData();
+  const {
+    share: storyShare,
+    isLoading: storyShareLoading,
+    canEdit: canEditStoryShare,
+    ensureLink: ensureStoryLink,
+    refreshSnapshot: refreshStorySnapshot,
+    regenerateToken: regenerateStoryToken,
+  } = usePetStoryShare({
+    pet: activePet,
+    events,
+    stats,
+    hasFullTimeline,
+    resolveDocumentUrl: getDocumentUrl,
+  });
 
-  const filteredEvents = useMemo(
-    () => events.filter((e) => eventMatchesFilter(e, activeFilter)),
-    [events, activeFilter],
-  );
-
-  const { visible: freeVisibleEvents, locked: lockedEvents } = useMemo(() => {
-    if (canAccess('premiumTimeline')) {
-      return { visible: filteredEvents, locked: [] as typeof filteredEvents };
+  const tierPartition = useMemo(() => {
+    if (hasFullTimeline) {
+      return { visible: events, locked: [] as typeof events };
     }
-    return partitionTimelineEvents(filteredEvents);
-  }, [filteredEvents, canAccess]);
+    return partitionTimelineEvents(events);
+  }, [events, hasFullTimeline]);
 
-  const displayEvents = hasFullTimeline ? filteredEvents : freeVisibleEvents;
+  const tierVisibleEvents = tierPartition.visible;
+  const lockedEventCount = tierPartition.locked.length;
+
+  const displayEvents = useMemo(() => {
+    const pool = hasFullTimeline ? events : tierVisibleEvents;
+    return pool.filter((e) => eventMatchesFilter(e, activeFilter));
+  }, [events, tierVisibleEvents, hasFullTimeline, activeFilter]);
+
+  const filteredLockedEvents = useMemo(() => {
+    if (hasFullTimeline) return [];
+    return partitionTimelineEvents(
+      events.filter((e) => eventMatchesFilter(e, activeFilter)),
+    ).locked;
+  }, [events, activeFilter, hasFullTimeline]);
 
   const storySummary = useMemo(
     () =>
       buildLifeStorySummary(events, petName, stats, {
         breed: activePet?.breed,
         species: activePet?.species,
+      }, {
+        hasFullTimeline,
+        lockedMomentsCount: lockedEventCount,
+        freeTimelineDays: FREE_TIMELINE_DAYS,
       }),
-    [events, petName, stats, activePet?.breed, activePet?.species],
+    [events, petName, stats, activePet?.breed, activePet?.species, hasFullTimeline, lockedEventCount],
   );
 
-  const hasAnyEvents = events.length > 0;
   const showMilestones = activeFilter === 'all' || activeFilter === 'milestones';
+
+  const displayMilestones = useMemo(() => {
+    if (!showMilestones) return [];
+    const pool =
+      activeFilter === 'milestones'
+        ? displayEvents
+        : hasFullTimeline
+          ? events
+          : tierVisibleEvents;
+    return buildMilestonesFromEvents(pool);
+  }, [showMilestones, activeFilter, displayEvents, events, tierVisibleEvents, hasFullTimeline]);
+
+  const milestonesAccessNote =
+    !hasFullTimeline && lockedEventCount > 0
+      ? `Showing milestone moments from the last ${FREE_TIMELINE_DAYS} days on Free. Older turning points remain in ${petName}'s full archive — upgrade to Plus to see them all.`
+      : !hasFullTimeline
+        ? `Showing milestone moments from the last ${FREE_TIMELINE_DAYS} days on Free.`
+        : undefined;
+
+  const hasAnyEvents = events.length > 0;
 
   const heroSubtitle =
     stats.totalMoments > 0
-      ? `${stats.totalMoments} moment${stats.totalMoments === 1 ? '' : 's'} woven into one living story`
+      ? hasFullTimeline
+        ? `${stats.totalMoments} moment${stats.totalMoments === 1 ? '' : 's'} woven into one living story`
+        : lockedEventCount > 0
+          ? `${stats.totalMoments} moments in ${petName}'s full archive · chronology shows the last ${FREE_TIMELINE_DAYS} days`
+          : `${stats.totalMoments} moment${stats.totalMoments === 1 ? '' : 's'} in ${petName}'s story · last ${FREE_TIMELINE_DAYS} days below`
       : 'A story waiting for its first chapter';
+
+  const statBandNote =
+    !hasFullTimeline && stats.totalMoments > 0
+      ? lockedEventCount > 0
+        ? `Full-archive totals · ${lockedEventCount} older moment${lockedEventCount === 1 ? '' : 's'} unlock with Plus`
+        : `Full-archive totals · chronology limited to the last ${FREE_TIMELINE_DAYS} days on Free`
+      : null;
 
   const statItems = [
     { value: stats.totalMoments, label: 'Total moments' },
@@ -216,65 +287,34 @@ export function TimelinePage() {
     <AppLayout flushContent>
       <div className={styles.page}>
         <div className={styles.heroWrap}>
-          <header className={styles.hero}>
-            <img
-              className={`${styles.heroBg} ${heroBackground.isPetPhoto ? styles.heroBgPet : ''}`}
-              src={heroBackground.src}
-              alt=""
-              aria-hidden
-            />
-            <div className={styles.heroWash} aria-hidden />
-            <div className={styles.heroTexture} aria-hidden />
-            <div className={styles.heroFade} aria-hidden />
+          <EditorialHero
+            backgroundSrc={heroBackground.src}
+            isPetPhoto={heroBackground.isPetPhoto}
+            compact
+            topSlot={
+              <PetStack pets={pets} activeId={activePet.id} onSelect={setActivePet} />
+            }
+            kicker="Life story"
+            title={petName}
+            meta={heroContext || undefined}
+            subtitle={heroSubtitle}
+            portraitSrc={heroPhoto ?? heroBackground.src}
+            showPortrait={Boolean(heroPhoto || heroBackground.isPetPhoto)}
+          >
+            <button type="button" className="ed-btn" onClick={() => setShowAddEvent(true)}>
+              Add moment
+            </button>
+            <Link to={ROUTES.PET_PROFILE} className="ed-btn-ghost">
+              View archive
+            </Link>
+          </EditorialHero>
 
-            <div className={styles.heroInner}>
-              <div className={styles.heroTopRow}>
-                <PetStack pets={pets} activeId={activePet.id} onSelect={setActivePet} />
-              </div>
-
-              <div className={styles.heroCoverGrid}>
-                <div className={styles.heroCoverText}>
-                  <p className={styles.heroKicker}>Life story</p>
-                  <h1 className={styles.heroTitle}>{petName}</h1>
-                  {heroContext && <p className={styles.heroContext}>{heroContext}</p>}
-                  <p className={styles.heroSubtitle}>{heroSubtitle}</p>
-                  <div className={styles.heroCtaRow}>
-                    <button
-                      type="button"
-                      className={styles.btnPrimary}
-                      onClick={() => setShowAddEvent(true)}
-                    >
-                      Add moment
-                    </button>
-                    <Link to={ROUTES.PET_PROFILE} className={styles.btnSecondary}>
-                      View archive
-                    </Link>
-                  </div>
-                </div>
-
-                {(heroPhoto || heroBackground.isPetPhoto) && (
-                  <div className={styles.heroPortraitFrame} aria-hidden>
-                    <img
-                      src={heroPhoto ?? heroBackground.src}
-                      alt=""
-                      className={styles.heroPortraitImg}
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-          </header>
-
-          <div className={styles.statBand} data-reveal aria-label="Timeline summary">
-            <div className={styles.statBandInner}>
-              {statItems.map((stat) => (
-                <div key={stat.label} className={styles.statCell}>
-                  <span className={styles.statValue}>{stat.value}</span>
-                  <span className={styles.statLabel}>{stat.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          <KpiStrip
+            items={statItems}
+            note={statBandNote}
+            variant="glass"
+            aria-label="Timeline summary"
+          />
         </div>
 
         <div className={styles.body}>
@@ -286,6 +326,18 @@ export function TimelinePage() {
 
           {hasAnyEvents ? (
             <div className={styles.contentStack}>
+              <StoryShareCard
+                petId={activePet.id}
+                petName={petName}
+                share={storyShare}
+                isLoading={storyShareLoading}
+                hasFullTimeline={hasFullTimeline}
+                canEdit={canEditStoryShare}
+                onEnsureLink={ensureStoryLink}
+                onRefreshSnapshot={refreshStorySnapshot}
+                onRegenerateToken={regenerateStoryToken}
+              />
+
               <section className={styles.filterChapter} data-reveal aria-label="Filter timeline">
                 <TimelineFilters
                   activeFilter={activeFilter}
@@ -298,23 +350,24 @@ export function TimelinePage() {
                 <>
                   <TimelineFeed
                     events={displayEvents}
-                    milestones={milestones}
+                    milestones={displayMilestones}
                     petName={petName}
                     storySummary={storySummary}
                     showMilestones={showMilestones}
+                    milestonesAccessNote={milestonesAccessNote}
                     onAddMoment={() => setShowAddEvent(true)}
                   />
-                  {lockedEvents.length > 0 && (
+                  {filteredLockedEvents.length > 0 && (
                     <div className={styles.proGate}>
                       <PremiumUpgradePrompt
                         feature="premiumTimeline"
                         onUpgrade={() => setUpgradeOpen(true)}
-                        emotionalOverride={`${lockedEvents.length} older moment${lockedEvents.length === 1 ? '' : 's'} from before the last ${FREE_TIMELINE_DAYS} days are waiting in ${petName}'s full story. Upgrade to Plus to revisit every chapter.`}
+                        emotionalOverride={`${filteredLockedEvents.length} older moment${filteredLockedEvents.length === 1 ? '' : 's'} from before the last ${FREE_TIMELINE_DAYS} days are waiting in ${petName}'s full story. Upgrade to Plus to revisit every chapter.`}
                       />
                     </div>
                   )}
                 </>
-              ) : lockedEvents.length > 0 ? (
+              ) : filteredLockedEvents.length > 0 ? (
                 <div className={styles.proGate}>
                   <PremiumUpgradePrompt
                     feature="premiumTimeline"
@@ -356,6 +409,14 @@ export function TimelinePage() {
         isOpen={showAddEvent}
         onClose={() => setShowAddEvent(false)}
         petName={petName}
+        canEdit={canEdit}
+        onSubmit={async (input) => {
+          await createMoment({
+            caption: input.caption,
+            photoUrl: input.photoUrl,
+            occurredAt: input.occurredAt,
+          });
+        }}
       />
 
       <UpgradeModal

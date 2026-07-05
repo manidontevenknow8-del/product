@@ -11,6 +11,14 @@ const PetProfilePage = lazyRoute(() => import('@/pages/PetProfilePage'), 'PetPro
 const ScanPage = lazyRoute(() => import('@/pages/ScanPage'), 'ScanPage');
 const TimelinePage = lazyRoute(() => import('@/pages/TimelinePage'), 'TimelinePage');
 const EmergencyPassportPage = lazyRoute(() => import('@/pages/EmergencyPassportPage'), 'EmergencyPassportPage');
+const PublicEmergencyPassportPage = lazyRoute(
+  () => import('@/pages/PublicEmergencyPassportPage'),
+  'PublicEmergencyPassportPage',
+);
+const PublicPetStoryPage = lazyRoute(
+  () => import('@/pages/PublicPetStoryPage'),
+  'PublicPetStoryPage',
+);
 const PetMatchPage = lazyRoute(() => import('@/pages/PetMatchPage'), 'PetMatchPage');
 const RemindersPage = lazyRoute(() => import('@/pages/RemindersPage'), 'RemindersPage');
 const InsightsPage = lazyRoute(() => import('@/pages/InsightsPage'), 'InsightsPage');
@@ -35,6 +43,8 @@ const AccountSettingsPage = lazyRoute(() => import('@/pages/settings/AccountSett
 const ProfileSettingsPage = lazyRoute(() => import('@/pages/settings/ProfileSettingsPage'), 'ProfileSettingsPage');
 const ReferralsPage = lazyRoute(() => import('@/pages/waitlist/ReferralsPage'), 'ReferralsPage');
 const FoundingMembersPage = lazyRoute(() => import('@/pages/FoundingMembersPage'), 'FoundingMembersPage');
+const HouseholdInvitePage = lazyRoute(() => import('@/pages/HouseholdInvitePage'), 'HouseholdInvitePage');
+const FamilyAccessRedirect = lazyRoute(() => import('@/pages/FamilyAccessRedirect'), 'FamilyAccessRedirect');
 const PrivacyPolicyPage = lazyRoute(() => import('@/pages/legal/PrivacyPolicyPage'), 'PrivacyPolicyPage');
 const TermsOfServicePage = lazyRoute(() => import('@/pages/legal/TermsOfServicePage'), 'TermsOfServicePage');
 const CookiePolicyPage = lazyRoute(() => import('@/pages/legal/CookiePolicyPage'), 'CookiePolicyPage');
@@ -104,6 +114,9 @@ export function App() {
         <Route path={ROUTES.AUTH_CALLBACK} element={<AuthCallbackPage />} />
         <Route path={ROUTES.RESET_PASSWORD} element={<ResetPasswordPage />} />
 
+        <Route path={`${ROUTES.EMERGENCY_PUBLIC}/:token`} element={<PublicEmergencyPassportPage />} />
+        <Route path={`${ROUTES.STORY_PUBLIC}/:token`} element={<PublicPetStoryPage />} />
+
         <Route path={ROUTES.ONBOARDING} element={<ProtectedRoute requireOnboardingComplete={false}><OnboardingPage /></ProtectedRoute>} />
         <Route path={ROUTES.DASHBOARD} element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         <Route path={ROUTES.PET_PROFILE} element={<ProtectedRoute><PetProfilePage /></ProtectedRoute>} />
@@ -123,7 +136,8 @@ export function App() {
         <Route path={ROUTES.LOST_PET} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
         <Route path={ROUTES.AGE_TRANSLATOR} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
         <Route path={ROUTES.NOTIFICATIONS} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
-        <Route path={ROUTES.FAMILY_ACCESS} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
+        <Route path={ROUTES.FAMILY_ACCESS} element={<ProtectedRoute><FamilyAccessRedirect /></ProtectedRoute>} />
+        <Route path={`${ROUTES.FAMILY_INVITE}/:token`} element={<HouseholdInvitePage />} />
         <Route path={ROUTES.LAUNCH_READINESS} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
         <Route path={ROUTES.BETA_RELEASE} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />
         <Route path={ROUTES.ANALYTICS} element={<ProtectedRoute><DeferredRedirect /></ProtectedRoute>} />

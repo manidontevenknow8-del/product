@@ -11,6 +11,7 @@ import type {
   ScoreHistoryPoint,
   WeeklyInsight,
 } from '@/types/petCareScore';
+import { ROUTES } from '@/routes/paths';
 import { buildPassportSummary } from '@/services/passport/passportSummaryService';
 import { getReminderStatus } from '@/utils/reminderUtils';
 import {
@@ -19,8 +20,8 @@ import {
 } from '@/utils/petCareScoreUtils';
 import type { PetCareScoreInput, StoredScoreSnapshot } from './petCareScoreTypes';
 import { formatPassportUpdatedAt } from '@/services/pets/petUtils';
+import { shouldAppendScoreSnapshot } from './petCareScoreSnapshotTypes';
 
-const HISTORY_KEY_PREFIX = 'petclues_score_history_';
 const FACTOR_WEIGHT = 100 / 6;
 
 const FACTOR_LABELS: Record<ScoreFactorId, string> = {
@@ -120,39 +121,14 @@ function buildFactor(
   };
 }
 
-function loadHistory(petId: string): StoredScoreSnapshot[] {
-  try {
-    const raw = localStorage.getItem(`${HISTORY_KEY_PREFIX}${petId}`);
-    return raw ? (JSON.parse(raw) as StoredScoreSnapshot[]) : [];
-  } catch {
-    return [];
-  }
-}
-
-/** Exposed for timeline milestones and analytics */
-export function loadPetCareScoreHistory(petId: string): StoredScoreSnapshot[] {
-  return loadHistory(petId);
-}
-
-function saveHistory(petId: string, snapshots: StoredScoreSnapshot[]) {
-  localStorage.setItem(`${HISTORY_KEY_PREFIX}${petId}`, JSON.stringify(snapshots.slice(-12)));
-}
-
-function appendHistory(
-  petId: string,
-  score: number,
-  factorScores: Record<string, number>,
-): StoredScoreSnapshot[] {
-  const history = loadHistory(petId);
-  const today = new Date().toISOString().slice(0, 10);
-  const last = history[history.length - 1];
-
-  if (last?.date === today && last.score === score) return history;
-
-  const next = [...history, { date: today, score, factorScores }];
-  saveHistory(petId, next);
-  return next;
-}
+export type PetCareScoreComputeResult = {
+  data: PetCareScoreData;
+  snapshotToPersist?: {
+    date: string;
+    score: number;
+    factorScores: Record<string, number>;
+  };
+};
 
 function historyToChart(history: StoredScoreSnapshot[]): ScoreHistoryPoint[] {
   if (history.length === 0) return [{ date: 'Today', score: 0, label: 'Today' }];
@@ -198,12 +174,21 @@ function buildRecommendations(factors: ScoreFactor[]): CareRecommendation[] {
     if (!factor.suggestion) continue;
 
     const paths: Partial<Record<ScoreFactorId, { label: string; path: string }>> = {
-      profile_completeness: { label: 'Edit profile', path: '/pet-profile' },
-      health_records_count: { label: 'Add health record', path: '/pet-profile' },
-      document_completeness: { label: 'Upload document', path: '/scan' },
-      upcoming_reminder_coverage: { label: 'Add reminder', path: '/reminders?create=true' },
-      reminder_completion_rate: { label: 'View reminders', path: '/reminders' },
-      passport_completeness: { label: 'Open passport', path: '/passport' },
+      profile_completeness: { label: 'Edit profile', path: ROUTES.PET_PROFILE },
+      health_records_count: {
+        label: 'Add health record',
+        path: `${ROUTES.PET_PROFILE}#chapter-medical`,
+      },
+      document_completeness: { label: 'Upload document', path: ROUTES.SCAN },
+      upcoming_reminder_coverage: {
+        label: 'Add reminder',
+        path: `${ROUTES.REMINDERS}?create=true`,
+      },
+      reminder_completion_rate: { label: 'View reminders', path: ROUTES.REMINDERS },
+      passport_completeness: {
+        label: 'Emergency passport',
+        path: ROUTES.EMERGENCY_PASSPORT,
+      },
     };
 
     const action = paths[factor.id];
@@ -259,7 +244,10 @@ function buildWeeklyInsight(
   };
 }
 
-export function computePetCareScore(input: PetCareScoreInput): PetCareScoreData {
+export function computePetCareScore(
+  input: PetCareScoreInput,
+  history: StoredScoreSnapshot[] = [],
+): PetCareScoreComputeResult {
   const profileScore = scoreProfileCompleteness(input.pet);
   const healthScore = scoreHealthRecordsCount(input.healthRecords);
   const documentScore = scoreDocumentCompleteness(input.documents);
@@ -324,15 +312,18 @@ export function computePetCareScore(input: PetCareScoreInput): PetCareScoreData 
 
   const overallScore = computeOverallFromFactors(factors);
   const factorScores = Object.fromEntries(factors.map((f) => [f.id, f.score]));
+  const today = new Date().toISOString().slice(0, 10);
 
-  const historyBefore = loadHistory(input.pet.id);
+  const historyBefore = history;
   const previousOverall =
     input.previousOverallScore ?? historyBefore[historyBefore.length - 1]?.score;
   const previousFactors =
     input.previousFactorScores ?? historyBefore[historyBefore.length - 1]?.factorScores;
 
-  const history = appendHistory(input.pet.id, overallScore, factorScores);
-  const chartHistory = historyToChart(history);
+  const displayHistory = shouldAppendScoreSnapshot(historyBefore, overallScore, today)
+    ? [...historyBefore, { date: today, score: overallScore, factorScores }]
+    : historyBefore;
+  const chartHistory = historyToChart(displayHistory);
 
   let trendDelta = 0;
   let trend: 'up' | 'down' | 'stable' = 'stable';
@@ -342,7 +333,9 @@ export function computePetCareScore(input: PetCareScoreInput): PetCareScoreData 
     else if (trendDelta < 0) trend = 'down';
   }
 
-  const monthAgo = history.length >= 2 ? history[Math.max(0, history.length - 2)] : null;
+  const monthAgo = displayHistory.length >= 2
+    ? displayHistory[Math.max(0, displayHistory.length - 2)]
+    : null;
   if (monthAgo && trend === 'stable') {
     trendDelta = overallScore - monthAgo.score;
     if (trendDelta > 0) trend = 'up';
@@ -398,21 +391,26 @@ export function computePetCareScore(input: PetCareScoreInput): PetCareScoreData 
     .slice(0, 3);
 
   return {
-    snapshot,
-    factors,
-    breakdown: {
-      helping,
-      improving,
-      suggestions,
-      increasedBecause: changes.increased,
-      decreasedBecause: changes.decreased,
+    data: {
+      snapshot,
+      factors,
+      breakdown: {
+        helping,
+        improving,
+        suggestions,
+        increasedBecause: changes.increased,
+        decreasedBecause: changes.decreased,
+      },
+      history: chartHistory,
+      insights,
+      recommendations: buildRecommendations(improving),
+      positiveProgress,
+      attentionItems,
+      weeklyInsight: buildWeeklyInsight(input.pet.name, snapshot, changes, weakest),
     },
-    history: chartHistory,
-    insights,
-    recommendations: buildRecommendations(improving),
-    positiveProgress,
-    attentionItems,
-    weeklyInsight: buildWeeklyInsight(input.pet.name, snapshot, changes, weakest),
+    snapshotToPersist: shouldAppendScoreSnapshot(historyBefore, overallScore, today)
+      ? { date: today, score: overallScore, factorScores }
+      : undefined,
   };
 }
 
@@ -429,7 +427,8 @@ function buildSummary(score: number, helpingCount: number, improvingCount: numbe
 /** Convenience wrapper when passport is not pre-built. */
 export function computePetCareScoreFromSources(
   input: Omit<PetCareScoreInput, 'passport'>,
-): PetCareScoreData {
+  history: StoredScoreSnapshot[] = [],
+): PetCareScoreComputeResult {
   const petCheckIns = input.dailyCheckIns.filter((checkIn) => checkIn.petId === input.pet.id);
   const passport = buildPassportSummary(
     input.pet,
@@ -437,9 +436,5 @@ export function computePetCareScoreFromSources(
     input.documents,
     petCheckIns,
   );
-  return computePetCareScore({ ...input, passport });
-}
-
-export function clearScoreHistory(petId: string) {
-  localStorage.removeItem(`${HISTORY_KEY_PREFIX}${petId}`);
+  return computePetCareScore({ ...input, passport }, history);
 }

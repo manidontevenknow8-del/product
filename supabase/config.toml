@@ -12,6 +12,15 @@ verify_jwt = true
 [functions.process-email-jobs]
 verify_jwt = false
 
+[functions.register-push-subscription]
+verify_jwt = true
+
+[functions.unregister-push-subscription]
+verify_jwt = true
+
+[functions.process-streak-risk-push]
+verify_jwt = false
+
 [functions.decode-vet-document]
 verify_jwt = true
 

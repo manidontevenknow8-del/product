@@ -17,7 +17,8 @@
     "generate:sitemaps": "tsx scripts/generate-sitemaps.ts",
     "gsc:striking-distance": "tsx scripts/striking-distance.ts",
     "google:request-index": "tsx scripts/request-google-index.ts",
-    "generate:blog-faqs": "tsx scripts/generate-blog-faqs.ts"
+    "generate:blog-faqs": "tsx scripts/generate-blog-faqs.ts",
+    "test:household-rls": "./scripts/run-household-rls-tests.sh"
   },
   "dependencies": {
     "@fontsource/cormorant-garamond": "^5.2.11",
@@ -27,6 +28,7 @@
     "@supabase/supabase-js": "^2.106.2",
     "framer-motion": "^12.40.0",
     "html-to-image": "^1.11.13",
+    "jspdf": "^2.5.2",
     "lucide-react": "^1.21.0",
     "posthog-js": "^1.382.0",
     "react": "^19.1.0",

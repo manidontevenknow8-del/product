@@ -11,6 +11,7 @@ interface ImportMetaEnv {
   readonly VITE_PAYMENTS_ENABLED?: string;
   readonly VITE_RAZORPAY_KEY_ID?: string;
   readonly VITE_GENESIS_RAZORPAY_PAYMENT_LINK?: string;
+  readonly VITE_VAPID_PUBLIC_KEY?: string;
 }
 
 interface ImportMeta {

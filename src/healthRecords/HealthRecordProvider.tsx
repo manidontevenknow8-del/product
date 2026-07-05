@@ -98,7 +98,7 @@ export function HealthRecordProvider({
 
       if (result.action === 'created' || result.action === 'updated') {
         if (result.ruleId && result.reminderTitle && result.dueDate) {
-          logAutomationReminderCreated({
+          void logAutomationReminderCreated({
             petId: record.petId,
             reminderTitle: result.reminderTitle,
             dueDate: result.dueDate,
@@ -126,7 +126,7 @@ export function HealthRecordProvider({
       setRecords((prev) =>
         [record, ...prev].sort((a, b) => b.dateRecorded.localeCompare(a.dateRecorded)),
       );
-      appendActivityLogEntry({
+      void appendActivityLogEntry({
         petId: input.petId,
         type: 'update',
         title: record.title,

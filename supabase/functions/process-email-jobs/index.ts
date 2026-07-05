@@ -10,6 +10,7 @@ import {
   formatDueLabel,
   summarizeWeeklyTotals,
 } from '../_shared/email/weeklySummaryData.ts';
+import { buildPetCareScoreEmailSummary } from '../_shared/email/petCareScoreForEmail.ts';
 
 /** Send upcoming emails on these days-before-due (UTC). Each fires once per reminder. */
 const UPCOMING_REMINDER_DAYS = [7, 3, 1, 0] as const;
@@ -217,7 +218,7 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
 
     const { data: pets } = await supabase
       .from('pets')
-      .select('id, name, species, breed, photo_url')
+      .select('id, name, species, breed, photo_url, birth_date, weight, gender')
       .eq('owner_id', userId);
 
     if (!pets?.length) continue;
@@ -307,7 +308,7 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
       }
     }
 
-    // Weekly summary on Sunday
+    // Weekly digest on Sunday (UTC) — check-ins, streak, care score insight, reminders
     if (
       today.getUTCDay() === WEEKLY_SUMMARY_DAY &&
       canSendEmailType(prefs, 'weekly_pet_summary')
@@ -321,11 +322,66 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
         weekAgo.setUTCDate(weekAgo.getUTCDate() - 7);
         const weekAgoIso = weekAgo.toISOString().slice(0, 10);
 
-        const { data: checkIns } = await supabase
-          .from('daily_check_ins')
-          .select('pet_id, check_in_date')
-          .in('pet_id', petIds)
-          .gte('check_in_date', weekAgoIso);
+        const [
+          { data: weekCheckIns },
+          { data: streakCheckIns },
+          { data: healthRecords },
+          { data: documents },
+          { data: scoreSnapshots },
+          { data: allReminders },
+        ] = await Promise.all([
+          supabase
+            .from('daily_check_ins')
+            .select('pet_id, check_in_date')
+            .in('pet_id', petIds)
+            .gte('check_in_date', weekAgoIso),
+          supabase
+            .from('daily_check_ins')
+            .select('pet_id, check_in_date')
+            .in('pet_id', petIds),
+          supabase
+            .from('health_records')
+            .select('pet_id, record_type, severity')
+            .in('pet_id', petIds),
+          supabase
+            .from('pet_documents')
+            .select('pet_id')
+            .in('pet_id', petIds),
+          supabase
+            .from('pet_care_score_snapshots')
+            .select('pet_id, score, factors_json, recorded_at')
+            .in('pet_id', petIds)
+            .order('recorded_at', { ascending: true }),
+          supabase
+            .from('reminders')
+            .select('pet_id, due_date, completed_at')
+            .in('pet_id', petIds),
+        ]);
+
+        const documentCountByPet = Object.fromEntries(
+          petIds.map((id) => [
+            id,
+            (documents ?? []).filter((doc) => doc.pet_id === id).length,
+          ]),
+        );
+
+        const careScoresByPetId: Record<string, ReturnType<typeof buildPetCareScoreEmailSummary>> = {};
+        for (const pet of pets) {
+          careScoresByPetId[pet.id] = buildPetCareScoreEmailSummary({
+            pet,
+            healthRecords: healthRecords ?? [],
+            documentCount: documentCountByPet[pet.id] ?? 0,
+            reminders: allReminders ?? [],
+            checkIns: streakCheckIns ?? [],
+            snapshots: (scoreSnapshots ?? []).map((row) => ({
+              pet_id: row.pet_id,
+              score: row.score,
+              factors_json: (row.factors_json as Record<string, number> | null) ?? null,
+              recorded_at: row.recorded_at,
+            })),
+            today,
+          });
+        }
 
         const petSummaries = buildWeeklyPetSummaries({
           pets,
@@ -336,7 +392,9 @@ async function processReminderEmails(supabase: ReturnType<typeof adminClient>, t
             category: r.category,
             due_date: r.due_date,
           })),
-          checkIns: checkIns ?? [],
+          checkIns: weekCheckIns ?? [],
+          streakCheckIns: streakCheckIns ?? [],
+          careScoresByPetId,
           today,
           baseUrl,
         });

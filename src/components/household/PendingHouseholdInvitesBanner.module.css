@@ -1,0 +1,64 @@
+.banner {
+  margin: 0 clamp(20px, 4vw, 48px) 20px;
+  padding: 16px 18px;
+  border: 1px solid rgba(184, 147, 90, 0.35);
+  border-radius: 2px;
+  background: linear-gradient(135deg, rgba(184, 147, 90, 0.08), rgba(255, 255, 255, 0.96));
+}
+
+.title {
+  margin: 0 0 6px;
+  font-family: var(--font-serif, serif);
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.lead {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ed-muted, #5f5a52);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 10px 14px;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.primaryBtn {
+  border: none;
+  background: var(--ed-text, #1a1a1a);
+  color: #fff;
+}
+
+.secondaryBtn {
+  border: 1px solid var(--ed-border, #ddd5c8);
+  background: transparent;
+  color: var(--ed-text, #1a1a1a);
+}
+
+.primaryBtn:disabled,
+.secondaryBtn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--ed-burgundy, #7a3040);
+}

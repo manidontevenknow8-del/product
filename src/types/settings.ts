@@ -12,7 +12,8 @@ export type NotificationPreferenceKey =
   | 'monthlyRecap'
   | 'emailUpcomingReminders'
   | 'emailOverdueReminders'
-  | 'emailWeeklySummary';
+  | 'emailWeeklySummary'
+  | 'pushStreakReminders';
 
 export type NotificationSettings = Record<NotificationPreferenceKey, boolean>;
 
@@ -36,4 +37,5 @@ export type SettingsSection =
   | 'account'
   | 'notifications'
   | 'privacy'
-  | 'security';
+  | 'security'
+  | 'household';

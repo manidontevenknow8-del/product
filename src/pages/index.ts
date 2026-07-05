@@ -5,6 +5,7 @@ export { PetProfilePage } from './PetProfilePage';
 export { ScanPage } from './ScanPage';
 export { TimelinePage } from './TimelinePage';
 export { EmergencyPassportPage } from './EmergencyPassportPage';
+export { PublicEmergencyPassportPage } from './PublicEmergencyPassportPage';
 export { InsightsPage } from './InsightsPage';
 export { VetPortalPage } from './VetPortalPage';
 export { RemindersPage } from './RemindersPage';

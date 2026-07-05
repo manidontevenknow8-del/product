@@ -1,5 +1,5 @@
 import type { Reminder } from '@/types/reminder';
-import { getReminderStatus } from '@/utils/reminderUtils';
+import { computeStats, getReminderStatus } from '@/utils/reminderUtils';
 
 export function deriveDashboardPetStatus(params: {
   overdueCount: number;
@@ -27,4 +27,9 @@ export function deriveDashboardPetStatus(params: {
 
 export function countOverdueReminders(reminders: Reminder[]): number {
   return reminders.filter((r) => getReminderStatus(r) === 'overdue').length;
+}
+
+export function countUpcomingReminders(reminders: Reminder[]): number {
+  const stats = computeStats(reminders);
+  return stats.upcoming + stats.dueToday;
 }

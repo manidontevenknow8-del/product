@@ -82,6 +82,11 @@
   color: var(--color-success, #5a8a6a);
 }
 
+.error {
+  font-size: var(--text-sm);
+  color: var(--color-danger, #9a4a4a);
+}
+
 .photoRow {
   display: flex;
   align-items: center;

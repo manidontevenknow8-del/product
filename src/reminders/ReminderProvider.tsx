@@ -102,7 +102,7 @@ export function ReminderProvider({
       const reminder = reminders.find((r) => r.id === id);
       await reminderService.complete(user.id, id);
       if (reminder) {
-        appendActivityLogEntry({
+        void appendActivityLogEntry({
           petId: reminder.petId,
           type: 'reminder',
           title: reminder.title,

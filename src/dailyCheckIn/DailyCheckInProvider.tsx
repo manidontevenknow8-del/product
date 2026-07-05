@@ -13,6 +13,7 @@ import { usePets } from '@/pets';
 import { useHealthRecords } from '@/healthRecords';
 import { appendActivityLogEntry } from '@/services/activity/activityLogService';
 import {
+  buildCheckInStreakStats,
   computeCheckInStreak,
   getDailyCheckInService,
   summarizeCheckInWeek,
@@ -24,12 +25,13 @@ import {
   syncCheckInWeightRecord,
 } from '@/services/dailyCheckIn/syncCheckInWeightRecord';
 import type { IDailyCheckInService } from '@/services/dailyCheckIn/dailyCheckInTypes';
-import type { DailyCheckIn, DailyCheckInWeekSummary, UpsertDailyCheckInInput } from '@/types/dailyCheckIn';
+import type { DailyCheckIn, DailyCheckInWeekSummary, CheckInStreakStats, UpsertDailyCheckInInput } from '@/types/dailyCheckIn';
 
 type DailyCheckInContextValue = {
   checkIns: DailyCheckIn[];
   todayCheckIn: DailyCheckIn | null;
   streak: number;
+  streakStats: CheckInStreakStats;
   weekSummary: DailyCheckInWeekSummary;
   isLoading: boolean;
   refresh: () => Promise<void>;
@@ -108,7 +110,7 @@ export function DailyCheckInProvider({
         const summaryParts = [saved.feeding];
         if (saved.walkDistanceKm != null) summaryParts.push(`${saved.walkDistanceKm} km walk`);
         if (saved.weightKg != null) summaryParts.push(formatCheckInWeightLabel(saved.weightKg));
-        appendActivityLogEntry({
+        void appendActivityLogEntry({
           petId: activePet.id,
           type: 'note',
           title: 'Daily check-in logged',
@@ -125,6 +127,10 @@ export function DailyCheckInProvider({
   const todayKey = todayDateKey();
   const todayCheckIn = checkIns.find((c) => c.checkInDate === todayKey) ?? null;
   const streak = useMemo(() => computeCheckInStreak(checkIns, todayKey), [checkIns, todayKey]);
+  const streakStats = useMemo(
+    () => buildCheckInStreakStats(checkIns, todayKey),
+    [checkIns, todayKey],
+  );
   const weekSummary = useMemo(() => summarizeCheckInWeek(checkIns), [checkIns]);
 
   const value = useMemo(
@@ -132,12 +138,13 @@ export function DailyCheckInProvider({
       checkIns,
       todayCheckIn,
       streak,
+      streakStats,
       weekSummary,
       isLoading,
       refresh,
       saveCheckIn,
     }),
-    [checkIns, todayCheckIn, streak, weekSummary, isLoading, refresh, saveCheckIn],
+    [checkIns, todayCheckIn, streak, streakStats, weekSummary, isLoading, refresh, saveCheckIn],
   );
 
   return <DailyCheckInContext.Provider value={value}>{children}</DailyCheckInContext.Provider>;

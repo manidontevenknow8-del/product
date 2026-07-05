@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { PremiumGate } from '@/components/ui';
+import { useFeatureAccess } from '@/subscription/useFeatureAccess';
 import { clampPercent } from '../utils';
 import { ROUTES } from '@/routes/paths';
 import type { MonthlyPetLifeReport } from '@/types/monthlyReport';
@@ -34,6 +34,8 @@ export function CareIntelligence({
   scoreLoading,
   upcomingReminders,
 }: CareIntelligenceProps) {
+  const foresightBasics = useFeatureAccess('petCareScore');
+  const proInsights = useFeatureAccess('advancedHealthInsights');
   const monthMetrics = report.metrics.slice(0, 3);
 
   return (
@@ -115,13 +117,11 @@ export function CareIntelligence({
               </article>
             )}
 
-            <PremiumGate
-              requiredTier="Pro"
-              title="Health Foresight"
-              description="Advanced medical summarization and predictive patterns are available exclusively in Pro."
-            >
+            {foresightBasics.isAllowed ? (
               <article className={styles.insightCard}>
-                <p className={styles.sectionEyebrowGold}>Pro insight</p>
+                <p className={styles.sectionEyebrowGold}>
+                  {proInsights.isAllowed ? 'Pro insight' : 'Health Foresight · Plus'}
+                </p>
                 <h3 className={styles.insightTitle}>{insightTitle}</h3>
                 {scoreLoading ? (
                   <p className={styles.insightBody}>Reading your care data…</p>
@@ -132,7 +132,20 @@ export function CareIntelligence({
                   Open foresight →
                 </Link>
               </article>
-            </PremiumGate>
+            ) : (
+              <article className={styles.insightCard}>
+                <p className={styles.sectionEyebrowGold}>Health Foresight · Plus</p>
+                <h3 className={styles.insightTitle}>Predictive care journal</h3>
+                <p className={styles.insightBody}>
+                  Plus unlocks your PetCare score with explanation, a real weight trend from check-ins,
+                  and vaccine-due predictions. Upgrade to Pro for symptom pattern detection, weekly
+                  digest, and multi-pet comparisons.
+                </p>
+                <Link to={`${ROUTES.PRICING}?plan=plus`} className={styles.inlineLinkDark}>
+                  Upgrade to Plus →
+                </Link>
+              </article>
+            )}
           </aside>
         </div>
       </div>

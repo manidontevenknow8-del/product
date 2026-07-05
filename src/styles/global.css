@@ -29,6 +29,7 @@
 @import './app-shell.css';
 
 @import './editorial-layout.css';
+@import './editorial-tokens.css';
 @import './editorial-shell.css';
 
 /* ── Reset & base ──────────────────────────────────────────── */

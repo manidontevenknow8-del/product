@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { useDailyCheckIn } from '@/dailyCheckIn';
+import { useSymptomLogs } from '@/symptomLog';
+import { useHousehold } from '@/household';
+import { SymptomLogForm } from '@/components/symptom-log';
 import { useHealthRecords } from '@/healthRecords';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 import styles from '../../DashboardPage.module.css';
@@ -19,6 +22,8 @@ type RitualCheckInProps = {
 
 export function RitualCheckIn({ petName }: RitualCheckInProps) {
   const { todayCheckIn, isLoading, saveCheckIn } = useDailyCheckIn();
+  const { createLog: createSymptomLog } = useSymptomLogs();
+  const { canEdit: canEditHousehold } = useHousehold();
   const { healthSummary } = useHealthRecords();
   const [feeding, setFeeding] = useState('');
   const [walkKm, setWalkKm] = useState('');
@@ -26,6 +31,7 @@ export function RitualCheckIn({ petName }: RitualCheckInProps) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [editing, setEditing] = useState(false);
+  const [showSymptoms, setShowSymptoms] = useState(false);
 
   const showForm = !todayCheckIn || editing;
   const weightPlaceholder = healthSummary.latestWeight
@@ -193,6 +199,32 @@ export function RitualCheckIn({ petName }: RitualCheckInProps) {
           </div>
         )}
       </div>
+
+      {canEditHousehold && (
+        <div className={styles.ritualSymptomWrap}>
+          {!showSymptoms ? (
+            <button type="button" className={styles.textAction} onClick={() => setShowSymptoms(true)}>
+              Log symptoms today
+            </button>
+          ) : (
+            <>
+              <p className={styles.ritualSymptomLead}>Notice anything off? Log symptoms separately from feeding and walks.</p>
+              <SymptomLogForm
+                petName={petName}
+                compact
+                submitLabel="Save symptom log"
+                onSubmit={async (input) => {
+                  await createSymptomLog(input);
+                  setShowSymptoms(false);
+                }}
+              />
+              <button type="button" className={styles.textAction} onClick={() => setShowSymptoms(false)}>
+                Cancel
+              </button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }

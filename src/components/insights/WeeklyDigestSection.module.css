@@ -1,0 +1,59 @@
+.wrap {
+  padding: 40px 0;
+  border-top: 1px solid var(--lux-border, #ddd5c8);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+}
+
+.title {
+  margin: 0 0 18px;
+  font-family: var(--font-serif, serif);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--lux-ink, #1a1712);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 40rem;
+}
+
+.highlight {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border: 1px solid var(--lux-gold, #a8833a);
+  border-radius: 999px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lux-gold, #a8833a);
+}
+
+.message {
+  margin: 0;
+  font-family: var(--font-serif, serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--lux-muted, #5f5a52);
+}
+
+.meta {
+  margin: 0;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  color: var(--lux-muted, #5f5a52);
+}
