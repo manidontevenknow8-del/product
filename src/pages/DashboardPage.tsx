@@ -160,6 +160,11 @@ export function DashboardPage() {
     [petReminders],
   );
 
+  const careMetrics = useMemo(
+    () => buildScoreDisplayMetrics(scoreData?.factors ?? []),
+    [scoreData?.factors],
+  );
+
   if (isLoading) {
     return (
       <AppLayout flushContent hideChrome>
@@ -207,10 +212,6 @@ export function DashboardPage() {
   const overdueCount = countOverdueReminders(petReminders);
   const upcomingCount = countUpcomingReminders(petReminders);
   const score = scoreData?.snapshot.score ?? null;
-  const careMetrics = useMemo(
-    () => buildScoreDisplayMetrics(scoreData?.factors ?? []),
-    [scoreData?.factors],
-  );
   const trendText = scoreData
     ? getTrendLabel(scoreData.snapshot.trend, scoreData.snapshot.trendDelta)
     : '';
