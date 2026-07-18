@@ -14,9 +14,9 @@ export const PET_VACCINATION_RECORDS_PAGE: CommercialPageConfig = {
   ],
   searchIntent:
     'Owners who need proof of vaccines for boarding, travel, or daycare, and want due dates tracked without relying on clinic postcards.',
-  title: 'Pet Vaccination Records: Proof, Reminders, No Scrambling',
+  title: 'Pet Vaccination Records: Instant Proof & Due-Date Reminders',
   metaDescription:
-    'Store rabies certificates and full vaccine history with due-date reminders. Boarding-ready exports and multi-pet schedules in one place.',
+    'Store pet vaccination records and rabies certificates with automatic due-date reminders. Boarding- and travel-ready exports plus multi-pet schedules in one place.',
   schemaTopic: {
     topicName: 'Vaccination',
     topicWikidataUrl: COMMERCIAL_WIKIDATA.vaccination,

@@ -23,7 +23,15 @@ export function WebSiteStructuredData() {
 }
 
 export function SoftwareApplicationStructuredData() {
-  return <JsonLd id="software-application" data={buildSoftwareApplicationSchema()} />;
+  return (
+    <JsonLd
+      id="software-application"
+      data={{
+        '@context': 'https://schema.org',
+        ...buildSoftwareApplicationSchema(),
+      }}
+    />
+  );
 }
 
 type FaqStructuredDataProps = {

@@ -63,7 +63,10 @@ const BestIndexPage = lazyRoute(() => import('@/pages/best/BestIndexPage'), 'Bes
 const BestIntentPage = lazyRoute(() => import('@/pages/best/BestIntentPage'), 'BestIntentPage');
 const GuidesHubPage = lazyRoute(() => import('@/pages/guides/GuidesHubPage'), 'GuidesHubPage');
 const GuidesCollectionPage = lazyRoute(() => import('@/pages/guides/GuidesCollectionPage'), 'GuidesCollectionPage');
-const GuidesDetailPage = lazyRoute(() => import('@/pages/guides/GuidesDetailPage'), 'GuidesDetailPage');
+const GuidesTwoSegmentPage = lazyRoute(
+  () => import('@/pages/guides/GuidesTwoSegmentPage'),
+  'GuidesTwoSegmentPage',
+);
 const LearnIndexPage = lazyRoute(() => import('@/pages/learn/LearnIndexPage'), 'LearnIndexPage');
 const LearnArticlePage = lazyRoute(() => import('@/pages/learn/LearnArticlePage'), 'LearnArticlePage');
 
@@ -83,7 +86,7 @@ export function App() {
         <Route path={`${ROUTES.BEST}/:slug`} element={<BestIntentPage />} />
         <Route path={ROUTES.GUIDES} element={<GuidesHubPage />} />
         <Route path={`${ROUTES.GUIDES}/:collection`} element={<GuidesCollectionPage />} />
-        <Route path={`${ROUTES.GUIDES}/:collection/:slug`} element={<GuidesDetailPage />} />
+        <Route path={`${ROUTES.GUIDES}/:breed/:condition`} element={<GuidesTwoSegmentPage />} />
         <Route path={ROUTES.LEARN} element={<LearnIndexPage />} />
         <Route path={`${ROUTES.LEARN}/:slug`} element={<LearnArticlePage />} />
         <Route path={ROUTES.REFERRALS} element={<ProtectedRoute><ReferralsPage /></ProtectedRoute>} />

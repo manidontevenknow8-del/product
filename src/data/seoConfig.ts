@@ -1,4 +1,5 @@
 import { getCommercialPageByPath, isCommercialPath } from '@/data/commercial';
+import { getBreedConditionBySegments } from '@/data/breedConditions';
 import { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 import { ROUTES, PROTECTED_ROUTES, AUTH_ROUTES } from '@/routes/paths';
 import { formatMetaDescription, formatPageTitle } from '@/seo/seoFormatters';
@@ -516,6 +517,32 @@ export function getPageSEO(pathname: string): SEOConfig {
   }
 
   if (isGuidesDetailPath(pathname) || isGuidesCollectionPath(pathname)) {
+    const rest = pathname.startsWith(`${ROUTES.GUIDES}/`)
+      ? pathname.slice(`${ROUTES.GUIDES}/`.length)
+      : '';
+    const [segmentA, segmentB] = rest.split('/');
+    if (segmentA && segmentB) {
+      const breedCondition = getBreedConditionBySegments(segmentA, segmentB);
+      if (breedCondition) {
+        return finalizeSEO(
+          {
+            ...DEFAULT,
+            title: formatPageTitle(
+              `${breedCondition.condition} in ${breedCondition.breed}s: Symptoms, Timeline & Digital Tracking`,
+            ),
+            description: formatMetaDescription(
+              `${breedCondition.scientificName} risk in ${breedCondition.breed}s — symptoms, management protocols, and digital tracking.`,
+              breedCondition.breed,
+            ),
+            canonical: buildCanonical(pathname),
+            ogType: 'article',
+            noIndex: false,
+          },
+          pathname,
+        );
+      }
+    }
+
     return finalizeSEO(
       {
         ...DEFAULT,
@@ -615,7 +642,7 @@ export const SITE_META = {
   themeColor: BRAND_THEME_COLOR,
   backgroundColor: BRAND_BG_COLOR,
   organizationDescription:
-    'Premium digital biological archive and concierge medical records management for pets.',
+    'PetClues helps pet owners and professionals manage veterinary records, vaccinations, documents, and travel paperwork in one place.',
   softwareDescription:
-    'An Amex Centurion-style digital veterinary health archive and international pet travel passport vault for relocation agencies, breeders, and affluent pet owners.',
+    'PetClues is pet health and travel software that stores veterinary records, vaccinations, titers, documents, and reminders in one secure vault — with digital pet passports, care timelines, and household sharing for owners, breeders, and relocation agencies.',
 };

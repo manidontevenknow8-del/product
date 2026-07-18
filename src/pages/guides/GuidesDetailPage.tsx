@@ -4,6 +4,7 @@ import { Footer } from '@/components/landing';
 import { Button } from '@/components/ui';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { ChecklistGroups } from '@/components/programmatic/ChecklistGroups';
+import { ConversionCtaBand } from '@/components/seo/ConversionCtaBand';
 import { VaccinationScheduleTable } from '@/components/programmatic/VaccinationScheduleTable';
 import { getProgrammaticCollection } from '@/data/programmatic/collections';
 import {
@@ -23,8 +24,16 @@ import { ROUTES } from '@/routes/paths';
 import styles from './GuidesPages.module.css';
 import relatedStyles from '@/components/programmatic/ProgrammaticSections.module.css';
 
-export function GuidesDetailPage() {
-  const { collection, slug } = useParams<{ collection: string; slug: string }>();
+export function GuidesDetailPage({
+  collectionOverride,
+  slugOverride,
+}: {
+  collectionOverride?: string;
+  slugOverride?: string;
+} = {}) {
+  const params = useParams<{ collection?: string; slug?: string; breed?: string; condition?: string }>();
+  const collection = collectionOverride ?? params.collection ?? params.breed;
+  const slug = slugOverride ?? params.slug ?? params.condition;
   const validCollection = collection && isProgrammaticCollectionId(collection) ? collection : null;
   const page = validCollection && slug ? getProgrammaticPage(validCollection, slug) : null;
   const related = page ? getRelatedProgrammaticPages(page) : [];
@@ -237,6 +246,8 @@ export function GuidesDetailPage() {
                   </Link>
                 </div>
               </section>
+
+              <ConversionCtaBand />
 
               <p className={styles.disclaimer}>{HEALTH_DISCLAIMER}</p>
             </article>

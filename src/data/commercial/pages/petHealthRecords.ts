@@ -14,9 +14,9 @@ export const PET_HEALTH_RECORDS_PAGE: CommercialPageConfig = {
   ],
   searchIntent:
     'Pet parents searching for a dependable system to store, organize, and retrieve veterinary documents, not another folder of PDFs.',
-  title: 'Pet Health Records: Organized, Searchable, Always Ready',
+  title: 'Pet Health Records: Organized, Searchable & Vet-Ready',
   metaDescription:
-    'Store vaccines, lab results, prescriptions, and visit notes in one calm pet health record system. Reminders, timelines, and emergency access included.',
+    'Keep pet health records—vaccines, lab results, prescriptions, and visit notes—in one searchable timeline. Reminders, exports, and emergency access included.',
   schemaTopic: {
     topicName: 'Pet health record',
     topicWikidataUrl: COMMERCIAL_WIKIDATA.electronicHealthRecord,

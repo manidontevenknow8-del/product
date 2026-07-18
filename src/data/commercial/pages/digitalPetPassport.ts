@@ -14,9 +14,9 @@ export const DIGITAL_PET_PASSPORT_PAGE: CommercialPageConfig = {
   ],
   searchIntent:
     'Owners who need critical pet identity and medical facts reachable in seconds, during travel, boarding, or an emergency, not buried in a vet portal.',
-  title: 'Digital Pet Passport: Critical Info, One Tap Away',
+  title: 'Digital Pet Passport: Vet Info & Emergency Card in One Tap',
   metaDescription:
-    'A digital pet passport with allergies, medications, vet contacts, and microchip details, shareable with sitters, clinics, and border checks without digging through files.',
+    'Create a digital pet passport with allergies, medications, vaccines, vet contacts, and microchip details—shareable with sitters, clinics, and border checks in seconds.',
   schemaTopic: {
     topicName: 'Digital pet passport',
     topicWikidataUrl: COMMERCIAL_WIKIDATA.petPassport,

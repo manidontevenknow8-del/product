@@ -12355,10 +12355,10 @@ export const DOMINANCE_TOPICS: DominanceTopic[] = [
   {
     "num": 58,
     "slug": "corgi-spine-health-ivdd-ramps-reality",
-    "title": "Corgi Spine Health: The Reality of IVDD and Ramps",
+    "title": "How Common Is IVDD in Corgis? Symptoms, Costs & Ramp Reality",
     "engine": 2,
     "category": "breed-lifestyle",
-    "excerpt": "One in four Pembroke Welsh Corgis develop IVDD by age 6  -  ramp training and keeping them lean (under 28 lbs) are cheaper than the $4,000-$8,000 emergency spinal surgery.",
+    "excerpt": "How common is IVDD in corgis? Up to 1 in 4 Pembroke Welsh Corgis develop it by age 6. Learn the early symptoms, the warning signs to act on, and why ramps plus a lean weight beat a $4,000-$8,000 emergency spinal surgery.",
     "tags": [
       "corgi",
       "IVDD",
@@ -31070,10 +31070,10 @@ export const DOMINANCE_TOPICS: DominanceTopic[] = [
   {
     "num": 149,
     "slug": "ethics-pet-cloning-2026-costs-reality",
-    "title": "The Ethics of Pet Cloning in 2026: Costs and Reality",
+    "title": "Pet Cloning Cost in 2026: Real Prices, Ethics & What You Get",
     "engine": 5,
     "category": "pet-tech",
-    "excerpt": "Commercial pet cloning costs $35,000-$50,000+ with no guarantee of temperament match  -  welfare concerns include surrogate mothers and high embryo failure rates; most vets counsel adoption instead.",
+    "excerpt": "Pet cloning cost in 2026 runs $35,000-$50,000+ with no guaranteed temperament match. Here is what that price actually buys, the welfare trade-offs behind it, and why most vets still counsel adoption first.",
     "tags": [
       "pet cloning",
       "bioethics",

@@ -11,6 +11,7 @@ import {
   isProgrammaticCollectionId,
   listProgrammaticPages,
 } from '@/data/programmatic';
+import { getBreedConditionBySegments } from '@/data/breedConditions';
 import { getProgrammaticCollection, listProgrammaticCollections } from '@/data/programmatic/collections';
 import {
   getPageSEO,
@@ -67,6 +68,10 @@ import {
   getProgrammaticPageSEO,
   getProgrammaticPageStructuredData,
 } from '@/seo/programmaticSeo';
+import {
+  getBreedConditionSEO,
+  getBreedConditionStructuredData,
+} from '@/seo/breedConditionSeo';
 import { getStaticPageStructuredData } from '@/seo/staticPageSeo';
 import { getCommercialPageByPath, listCommercialPages } from '@/data/commercial';
 import {
@@ -235,12 +240,24 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
 
   if (isGuidesDetailPath(pathname)) {
     const rest = pathname.slice(`${ROUTES.GUIDES}/`.length);
-    const [collectionId, slug] = rest.split('/');
-    if (!collectionId || !slug || !isProgrammaticCollectionId(collectionId)) return null;
-    const page = getProgrammaticPage(collectionId, slug);
+    const [segmentA, segmentB] = rest.split('/');
+    if (!segmentA || !segmentB) return null;
+
+    const breedCondition = getBreedConditionBySegments(segmentA, segmentB);
+    if (breedCondition) {
+      return withSchema(getBreedConditionSEO(breedCondition), [
+        schemaEntry(
+          `breed-condition-${breedCondition.slug.replace('/', '-')}`,
+          getBreedConditionStructuredData(breedCondition),
+        ),
+      ]);
+    }
+
+    if (!isProgrammaticCollectionId(segmentA)) return null;
+    const page = getProgrammaticPage(segmentA, segmentB);
     if (!page) return null;
     return withSchema(getProgrammaticPageSEO(page), [
-      schemaEntry(`programmatic-${collectionId}-${slug}`, getProgrammaticPageStructuredData(page)),
+      schemaEntry(`programmatic-${segmentA}-${segmentB}`, getProgrammaticPageStructuredData(page)),
     ]);
   }
 

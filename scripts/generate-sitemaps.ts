@@ -266,6 +266,17 @@ function buildRoutes(): SitemapEntry[] {
     })),
   ];
 
+  const breedConditionPaths = (() => {
+    const paths = new Set<string>();
+    for (const file of ['src/data/breedConditions.ts', 'src/data/breedConditionsExpanded.ts']) {
+      const content = readFileSync(join(root, file), 'utf8');
+      for (const match of content.matchAll(/["']?slug["']?\s*:\s*["']([^"']+\/[^"']+)["']/g)) {
+        paths.add(`/guides/${match[1]}`);
+      }
+    }
+    return [...paths];
+  })();
+
   const staticCore = [
     { loc: '/', priority: '1.0', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/pricing', priority: '0.9', changefreq: 'monthly', lastmod: BUILD_DATE },
@@ -334,6 +345,12 @@ function buildRoutes(): SitemapEntry[] {
     ...programmaticPages.map(({ collectionId, slug }) => ({
       loc: `/guides/${collectionId}/${slug}`,
       priority: '0.78',
+      changefreq: 'monthly',
+      lastmod: CONTENT_LASTMOD.programmatic,
+    })),
+    ...breedConditionPaths.map((loc) => ({
+      loc,
+      priority: '0.84',
       changefreq: 'monthly',
       lastmod: CONTENT_LASTMOD.programmatic,
     })),

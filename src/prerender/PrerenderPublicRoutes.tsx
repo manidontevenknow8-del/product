@@ -50,7 +50,7 @@ import { BestIndexPage } from '@/pages/best/BestIndexPage';
 import { BestIntentPage } from '@/pages/best/BestIntentPage';
 import { GuidesHubPage } from '@/pages/guides/GuidesHubPage';
 import { GuidesCollectionPage } from '@/pages/guides/GuidesCollectionPage';
-import { GuidesDetailPage } from '@/pages/guides/GuidesDetailPage';
+import { GuidesTwoSegmentPage } from '@/pages/guides/GuidesTwoSegmentPage';
 import { LearnIndexPage } from '@/pages/learn/LearnIndexPage';
 import { LearnArticlePage } from '@/pages/learn/LearnArticlePage';
 import { CommercialLandingPage } from '@/pages/commercial/CommercialLandingPage';
@@ -71,7 +71,7 @@ export function PrerenderPublicRoutes() {
       <Route path={`${ROUTES.BEST}/:slug`} element={<BestIntentPage />} />
       <Route path={ROUTES.GUIDES} element={<GuidesHubPage />} />
       <Route path={`${ROUTES.GUIDES}/:collection`} element={<GuidesCollectionPage />} />
-      <Route path={`${ROUTES.GUIDES}/:collection/:slug`} element={<GuidesDetailPage />} />
+      <Route path={`${ROUTES.GUIDES}/:breed/:condition`} element={<GuidesTwoSegmentPage />} />
       <Route path={ROUTES.LEARN} element={<LearnIndexPage />} />
       <Route path={`${ROUTES.LEARN}/:slug`} element={<LearnArticlePage />} />
       <Route path={ROUTES.REFERRALS} element={<ProtectedRoute><ReferralsPage /></ProtectedRoute>} />

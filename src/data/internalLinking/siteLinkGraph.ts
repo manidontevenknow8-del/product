@@ -9,6 +9,7 @@ import { getLearnArticleBySlug, listLearnArticles } from '@/data/learn';
 import { getIntentPageBySlug, listIntentPages } from '@/data/intent';
 import { listProgrammaticPages } from '@/data/programmatic';
 import { listProgrammaticCollections } from '@/data/programmatic/collections';
+import { getBreedConditionPath, listBreedConditions } from '@/data/breedConditions';
 import { FOOTER_LAUNCH_LINKS } from '@/data/footerLinks';
 import { ROUTES } from '@/routes/paths';
 import type { BlogLinkCandidate } from './types';
@@ -98,6 +99,10 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
     register(`${ROUTES.GUIDES}/${page.collectionId}/${page.slug}`, page.subjectName, 'guides');
   }
 
+  for (const entry of listBreedConditions()) {
+    register(getBreedConditionPath(entry), `${entry.condition} in ${entry.breed}s`, 'guides');
+  }
+
   const connect = (from: string, href: string) => {
     const to = normalizePath(href);
     addEdge(inbound, from, to);
@@ -174,6 +179,10 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
     for (const page of pages) {
       connect(`${ROUTES.GUIDES}/${collection.id}`, `${ROUTES.GUIDES}/${page.collectionId}/${page.slug}`);
     }
+  }
+
+  for (const entry of listBreedConditions()) {
+    connect(ROUTES.GUIDES, getBreedConditionPath(entry));
   }
 
   for (const link of FOOTER_LAUNCH_LINKS) {

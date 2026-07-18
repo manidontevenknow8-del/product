@@ -193,16 +193,20 @@ export function buildWebSiteSchema() {
 }
 
 export function buildSoftwareApplicationSchema() {
+  const dashboardScreenshot = `${SITE_META.siteUrl}/images/app/dashboard-welcome.webp`;
+  const timelineScreenshot = `${SITE_META.siteUrl}/images/landing/landing-timeline.webp`;
+  const passportScreenshot = `${SITE_META.siteUrl}/images/landing/landing-passport.webp`;
+
   return {
     '@type': 'SoftwareApplication',
     '@id': SOFTWARE_ID,
     name: 'PetClues Concierge',
     alternateName: SITE_META.siteName,
     url: SITE_META.siteUrl,
-    applicationCategory: 'HealthApplication',
-    applicationSubCategory: 'BusinessApplication',
+    applicationCategory: 'BusinessApplication, HealthApplication',
     operatingSystem: 'Web, iOS, Android',
-    description: SITE_META.softwareDescription,
+    description:
+      'PetClues is pet health and travel software that stores veterinary records, vaccinations, titers, documents, and reminders in one secure vault — with digital pet passports, care timelines, and household sharing for owners, breeders, and relocation agencies.',
     featureList: [
       'White-glove veterinary record digitization',
       'International pet travel passport dossiers',
@@ -210,41 +214,48 @@ export function buildSoftwareApplicationSchema() {
       'Vaccination and titer archive',
       'Household sharing for relocation agencies',
     ],
-    knowsAbout: ORGANIZATION_KNOWS_ABOUT.map((thing) => ({ ...thing })),
-    offers: [
+    image: [
       {
-        '@type': 'Offer',
-        name: 'Free Sandbox',
-        price: '0',
-        priceCurrency: 'USD',
-        description: 'Free sandbox for evaluation — no credit card required.',
+        '@type': 'ImageObject',
+        contentUrl: dashboardScreenshot,
+        url: dashboardScreenshot,
+        width: 1200,
+        height: 800,
+        caption: 'PetClues Concierge dashboard — command center for pet health records and care streaks',
+        name: 'PetClues dashboard preview',
       },
       {
-        '@type': 'Offer',
-        name: 'Genesis Vault Lifetime Allocation',
-        price: '249.00',
-        priceCurrency: 'USD',
-        url: `${SITE_META.siteUrl}${ROUTES.GENESIS}`,
-        description:
-          'Lifetime Genesis Vault allocation with white-glove manual medical record digitization.',
+        '@type': 'ImageObject',
+        contentUrl: timelineScreenshot,
+        url: timelineScreenshot,
+        width: 1400,
+        height: 933,
+        caption: 'PetClues chronological life timeline — medical and care events in one narrative',
+        name: 'PetClues timeline preview',
       },
       {
-        '@type': 'Offer',
-        name: 'Plus Annual Membership',
-        price: '99',
-        priceCurrency: 'USD',
-        priceValidUntil: '2027-12-31',
-        description: 'Annual Plus membership, international pricing',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Pro Annual Membership',
-        price: '299',
-        priceCurrency: 'USD',
-        priceValidUntil: '2027-12-31',
-        description: 'Annual Pro membership, international pricing',
+        '@type': 'ImageObject',
+        contentUrl: passportScreenshot,
+        url: passportScreenshot,
+        width: 1400,
+        height: 933,
+        caption: 'Digital pet travel passport vault — customs-ready health dossier',
+        name: 'PetClues passport preview',
       },
     ],
+    screenshot: dashboardScreenshot,
+    knowsAbout: ORGANIZATION_KNOWS_ABOUT.map((thing) => ({ ...thing })),
+    offers: {
+      '@type': 'Offer',
+      name: 'Genesis Vault Lifetime Allocation',
+      price: '249.00',
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      url: `${SITE_META.siteUrl}${ROUTES.GENESIS}`,
+      category: 'LifetimeAllocation',
+      description:
+        'Lifetime Genesis Vault Allocation — White-glove manual medical record digitization.',
+    },
     publisher: { '@id': ORGANIZATION_ID },
     provider: { '@id': ORGANIZATION_ID },
   };

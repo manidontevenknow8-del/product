@@ -16,10 +16,12 @@ import { getBlogPostBreadcrumbs } from '@/seo/pageBreadcrumbs';
 import { getBlogRepository } from '@/services/blog';
 import { resolveBlogFeaturedImage } from '@/services/blog/resolveBlogImage';
 import { getBlogCategoryLabel } from '@/data/blogCategories';
-import { resolveBlogInternalLinks } from '@/data/internalLinking';
+import { resolveBlogInternalLinks, findRelatedBreedConditions } from '@/data/internalLinking';
+import { ConversionCtaBand } from '@/components/seo/ConversionCtaBand';
 import type { BlogPost, BlogPostListItem } from '@/types/blog';
 import { ROUTES } from '@/routes/paths';
 import styles from './BlogPostPage.module.css';
+import linkStyles from '@/components/blog/BlogInternalLinks.module.css';
 import { getUserFacingError } from '@/utils/userFacingErrors';
 import {
   readHydrationPrerenderData,
@@ -117,6 +119,19 @@ export function BlogPostPage() {
     [post],
   );
 
+  const breedConditionLinks = useMemo(() => {
+    if (!post) return [];
+    return findRelatedBreedConditions(
+      {
+        title: post.title,
+        slug: post.slug,
+        tags: post.tags,
+        excerpt: post.excerpt,
+      },
+      4,
+    );
+  }, [post]);
+
   const postPageUrl = post ? `${SITE_META.siteUrl}${ROUTES.BLOG}/${post.slug}` : undefined;
 
   return (
@@ -206,7 +221,34 @@ export function BlogPostPage() {
 
             <DynamicAuthorityLinks currentPath={pathname} />
 
+            {breedConditionLinks.length >= 2 && (
+              <section
+                className={linkStyles.section}
+                aria-labelledby="breed-clinical-guides-heading"
+              >
+                <h2 id="breed-clinical-guides-heading" className={linkStyles.title}>
+                  Breed clinical guides
+                </h2>
+                <div className={linkStyles.grid}>
+                  <div className={linkStyles.group}>
+                    <h3 className={linkStyles.groupTitle}>High-risk breed conditions</h3>
+                    <ul className={linkStyles.list}>
+                      {breedConditionLinks.map((link) => (
+                        <li key={link.href}>
+                          <Link to={link.href} className={linkStyles.link}>
+                            {link.label} · {link.riskLevel} risk
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            )}
+
             {linkPlan && <BlogInternalLinks plan={linkPlan} />}
+
+            <ConversionCtaBand />
 
             <footer className={styles.footer}>
               <p>

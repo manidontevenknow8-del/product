@@ -31,3 +31,9 @@ export {
 } from './hubMappings';
 
 export { buildSiteLinkGraph, type OrphanReport, type SiteNode } from './siteLinkGraph';
+
+export {
+  findRelatedBreedConditions,
+  type BreedConditionMatchInput,
+  type RelatedBreedConditionLink,
+} from './breedConditionLinks';
