@@ -1,5 +1,5 @@
 {
-  "validatedAt": "2026-07-05T09:34:12.093Z",
+  "validatedAt": "2026-07-18T10:31:25.817Z",
   "routeFamilies": 17,
   "indexedPageTemplates": 518,
   "builders": [
@@ -37,6 +37,10 @@
     },
     {
       "builder": "buildBreadcrumbListSchema",
+      "pass": true
+    },
+    {
+      "builder": "buildMedicalWebPageSchema",
       "pass": true
     },
     {
@@ -305,7 +309,8 @@
         "WebSite",
         "Article",
         "FAQPage",
-        "BreadcrumbList"
+        "BreadcrumbList",
+        "MedicalWebPage"
       ],
       "missing": [],
       "pass": true

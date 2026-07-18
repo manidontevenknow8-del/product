@@ -21,6 +21,7 @@ const SCHEMA_BUILDERS = [
   'buildAnswerSchema',
   'buildQAPageSchema',
   'buildBreadcrumbListSchema',
+  'buildMedicalWebPageSchema',
   'buildBlogPostingSchema',
   'buildArticleSchema',
   'buildProfilePageSchema',
@@ -152,9 +153,9 @@ const ROUTE_COVERAGE = [
     id: 'guides-detail',
     pathPattern: '/guides/:collection/:slug',
     handler: 'programmaticSeo.tsx',
-    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'MedicalWebPage'],
     optional: ['HowTo'],
-    files: ['programmaticSeo.tsx'],
+    files: ['programmaticSeo.tsx', 'medicalWebPageSchema.ts'],
     count: 91,
   },
 ];
@@ -178,6 +179,7 @@ function fileContainsType(content, type) {
     ProfilePage: ['buildProfilePageSchema', "'@type': 'ProfilePage'"],
     WebPage: ['buildWebPageSchema', "'@type': 'WebPage'"],
     CollectionPage: ['buildCollectionPageSchema', "'@type': 'CollectionPage'"],
+    MedicalWebPage: ['buildMedicalWebPageSchema', "'@type': 'MedicalWebPage'"],
     Blog: ["'@type': 'Blog'"],
     QAPage: ["'@type': 'QAPage'"],
     HowTo: ["'@type': 'HowTo'"],
@@ -215,12 +217,15 @@ function validateRouteFamily(family) {
 function validateBuilders() {
   const core = readSeoFile('structuredDataSchemas.ts');
   const breadcrumbs = readSeoFile('breadcrumbSchema.ts');
+  const medical = readSeoFile('medicalWebPageSchema.ts');
   return SCHEMA_BUILDERS.map((builder) => ({
     builder,
     pass:
       builder === 'buildBreadcrumbListSchema'
         ? breadcrumbs.includes(`export function ${builder}`)
-        : core.includes(`export function ${builder}`),
+        : builder === 'buildMedicalWebPageSchema'
+          ? medical.includes(`export function ${builder}`)
+          : core.includes(`export function ${builder}`),
   }));
 }
 

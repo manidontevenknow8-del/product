@@ -196,19 +196,37 @@ export function buildSoftwareApplicationSchema() {
   return {
     '@type': 'SoftwareApplication',
     '@id': SOFTWARE_ID,
-    name: SITE_META.siteName,
+    name: 'PetClues Concierge',
+    alternateName: SITE_META.siteName,
     url: SITE_META.siteUrl,
     applicationCategory: 'HealthApplication',
-    applicationSubCategory: 'Pet data management',
-    operatingSystem: 'Web',
+    applicationSubCategory: 'BusinessApplication',
+    operatingSystem: 'Web, iOS, Android',
     description: SITE_META.softwareDescription,
+    featureList: [
+      'White-glove veterinary record digitization',
+      'International pet travel passport dossiers',
+      'Chronological medical and life timeline',
+      'Vaccination and titer archive',
+      'Household sharing for relocation agencies',
+    ],
     knowsAbout: ORGANIZATION_KNOWS_ABOUT.map((thing) => ({ ...thing })),
     offers: [
       {
         '@type': 'Offer',
+        name: 'Free Sandbox',
         price: '0',
         priceCurrency: 'USD',
-        description: 'Free plan available',
+        description: 'Free sandbox for evaluation — no credit card required.',
+      },
+      {
+        '@type': 'Offer',
+        name: 'Genesis Vault Lifetime Allocation',
+        price: '249.00',
+        priceCurrency: 'USD',
+        url: `${SITE_META.siteUrl}${ROUTES.GENESIS}`,
+        description:
+          'Lifetime Genesis Vault allocation with white-glove manual medical record digitization.',
       },
       {
         '@type': 'Offer',

@@ -9,10 +9,10 @@ export type KnowledgeGraphProps = KnowledgeGraphConfig;
  * Injects a deep entity @graph into document head (JSON-LD).
  * Wikidata sameAs + optional ICD-10 codes for medical entity disambiguation.
  */
-export function KnowledgeGraph({ pageTitle, pageUrl, entities }: KnowledgeGraphProps) {
+export function KnowledgeGraph({ pageTitle, pageUrl, pageDescription, entities }: KnowledgeGraphProps) {
   const schema = useMemo(
-    () => buildKnowledgeGraphSchema({ pageTitle, pageUrl, entities }),
-    [pageTitle, pageUrl, entities],
+    () => buildKnowledgeGraphSchema({ pageTitle, pageUrl, pageDescription, entities }),
+    [pageTitle, pageUrl, pageDescription, entities],
   );
 
   const scriptId = useMemo(() => {

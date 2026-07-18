@@ -30,3 +30,11 @@
 
 /sitemap-core.xml
   Cache-Control: public, max-age=3600, must-revalidate
+
+/llm.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/plain; charset=utf-8
+
+/llms.txt
+  Cache-Control: public, max-age=3600, must-revalidate
+  Content-Type: text/plain; charset=utf-8

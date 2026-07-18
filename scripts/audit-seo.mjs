@@ -69,7 +69,7 @@ const SCHEMA_FAMILIES = {
   },
   'guides-page': {
     handler: 'src/seo/programmaticSeo.tsx',
-    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'MedicalWebPage'],
   },
   'learn-index': {
     handler: 'src/seo/learnSeo.tsx',
@@ -559,6 +559,7 @@ const SCHEMA_TYPE_ALIASES = {
   FAQPage: ['buildFaqPageSchema', "'FAQPage'", '"FAQPage"'],
   CollectionPage: ['buildCollectionPageSchema', "'CollectionPage'", '"CollectionPage"'],
   BreadcrumbList: ['buildBreadcrumbListSchema', "'BreadcrumbList'", '"BreadcrumbList"'],
+  MedicalWebPage: ['buildMedicalWebPageSchema', "'MedicalWebPage'", '"MedicalWebPage"'],
   Organization: ['buildOrganizationSchema', "'Organization'", '"Organization"'],
   WebSite: ['buildWebSiteSchema', "'WebSite'", '"WebSite"'],
   WebPage: ['buildWebPageSchema', "'WebPage'", '"WebPage"'],
@@ -576,7 +577,13 @@ function handlerHasSchema(family) {
   if (!handlerCache.has('schemas')) {
     handlerCache.set('schemas', read('src/seo/structuredDataSchemas.ts'));
   }
-  const source = handlerCache.get(config.handler) + handlerCache.get('schemas');
+  if (!handlerCache.has('medical')) {
+    handlerCache.set('medical', read('src/seo/medicalWebPageSchema.ts'));
+  }
+  const source =
+    handlerCache.get(config.handler) +
+    handlerCache.get('schemas') +
+    handlerCache.get('medical');
   return config.required.every((type) => {
     const aliases = SCHEMA_TYPE_ALIASES[type] ?? [`'${type}'`, `"${type}"`];
     return aliases.some((needle) => source.includes(needle));

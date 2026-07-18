@@ -1,0 +1,32 @@
+# PetClues Concierge — The Genesis Vault
+
+> True luxury is the absence of friction. PetClues is an Amex Centurion-style digital health archive and travel passport vault for pets.
+
+## What is PetClues?
+PetClues is a specialized B2B and B2C digital archive engineered for international pet relocation agencies, high-end breeders, and affluent pet owners. It eliminates physical folders and messy PDF attachments by manually digitizing veterinary histories into a unified, secure mobile dashboard.
+
+## Core Capabilities
+- **White-Glove Digitization:** Manual extraction and verification of veterinary records, rabies titers, and vaccination matrices from unstructured PDFs.
+- **International Travel Passports:** Customs-ready digital dossiers structured for frictionless cross-border pet relocation (EU Pet Passports, DEFRA compliance, APHA standards).
+- **Chronological Life Timeline:** An automated, read-only medical and life event narrative built from clinical records and daily care logs.
+- **Lifetime Security:** Zero recurring consumer subscriptions; lifetime archive allocation secured forever.
+
+## Target Audience & Industry Use Cases
+- **Pet Relocation Agencies (IPATA Members):** Used as a client-facing post-relocation archive to deliver customs documents and health records cleanly.
+- **Luxury Dog Breeders & Kennels:** Used as a digital handover vault pre-loaded with puppy lineage, microchips, and initial vaccination records.
+- **Veterinary Concierge Specialists:** Mobile vets use PetClues to maintain clean, dark-mode medical dossiers for VIP clients.
+
+## Key URLs & Access
+- Website: https://petclues.com
+- Genesis Vault Allocation: https://petclues.com/genesis
+- Client Portal & Login: https://petclues.com/login
+- Health Guides: https://petclues.com/guides
+- Digital Pet Passport: https://petclues.com/digital-pet-passport
+- Pet Vaccination Records: https://petclues.com/pet-vaccination-records
+
+## Pricing Signal
+- Free Sandbox for evaluation
+- Genesis Vault Lifetime Allocation: $249 USD (invitation / white-glove digitization)
+
+## Contact
+- https://petclues.com/contact

@@ -29,6 +29,14 @@ function buildEntityNode(entity: KnowledgeGraphEntity, pageUrl: string) {
         code: entity.icdCode,
         codingSystem: 'ICD-10',
       },
+      ...(entity.possibleTreatment
+        ? {
+            possibleTreatment: {
+              '@type': 'MedicalTherapy' as const,
+              name: entity.possibleTreatment,
+            },
+          }
+        : {}),
     };
   }
 
@@ -56,8 +64,15 @@ export function buildKnowledgeGraphSchema(config: KnowledgeGraphConfig) {
       '@id': `${config.pageUrl}#webpage`,
       url: config.pageUrl,
       name: config.pageTitle,
+      description:
+        config.pageDescription ??
+        `Clinical guidance and tracking context for ${config.pageTitle}.`,
       about: entityRefs,
       mentions: entityRefs,
+      audience: {
+        '@type': 'PeopleAudience',
+        audienceType: 'Dog Owners, Veterinary Specialists',
+      },
       isPartOf: { '@id': WEBSITE_ID },
     },
     ...entityNodes,

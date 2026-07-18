@@ -617,5 +617,5 @@ export const SITE_META = {
   organizationDescription:
     'Premium digital biological archive and concierge medical records management for pets.',
   softwareDescription:
-    'Pet data management software for health records, vaccination tracking, digital pet passports, reminders, and concierge document extraction.',
+    'An Amex Centurion-style digital veterinary health archive and international pet travel passport vault for relocation agencies, breeders, and affluent pet owners.',
 };

@@ -5,6 +5,7 @@ import { getProgrammaticCollection } from '@/data/programmatic/collections';
 import { ROUTES } from '@/routes/paths';
 import { MetaTags, OpenGraph } from './MetaTags';
 import { buildBreadcrumbListSchema, type BreadcrumbItem } from './breadcrumbSchema';
+import { buildMedicalWebPageSchema } from './medicalWebPageSchema';
 import {
   buildArticleSchema,
   buildCollectionPageSchema,
@@ -12,9 +13,57 @@ import {
   buildOrganizationSchema,
   buildSchemaGraph,
   buildWebSiteSchema,
+  WIKIDATA_ENTITIES,
 } from './structuredDataSchemas';
 import { useJsonLd } from './useJsonLd';
 import { formatMetaDescription, formatPageTitle } from './seoFormatters';
+
+const MEDICAL_GUIDE_COLLECTIONS = new Set<ProgrammaticCollectionId>([
+  'dog-vaccination-schedule',
+  'cat-vaccination-schedule',
+  'pet-emergency-checklist',
+  'medication-tracking-template',
+  'health-record-template',
+]);
+
+function medicalAboutForCollection(collectionId: ProgrammaticCollectionId) {
+  switch (collectionId) {
+    case 'dog-vaccination-schedule':
+    case 'cat-vaccination-schedule':
+      return [
+        {
+          name: WIKIDATA_ENTITIES.vaccination.name,
+          description: 'Preventive immunization schedules and booster tracking for companion animals.',
+          sameAs: WIKIDATA_ENTITIES.vaccination.sameAs,
+        },
+      ];
+    case 'health-record-template':
+      return [
+        {
+          name: WIKIDATA_ENTITIES.electronicHealthRecord.name,
+          description: 'Structured veterinary health record templates for lifelong pet medical archives.',
+          sameAs: WIKIDATA_ENTITIES.electronicHealthRecord.sameAs,
+        },
+      ];
+    case 'pet-emergency-checklist':
+      return [
+        {
+          name: 'Veterinary emergency preparedness',
+          description:
+            'Checklists and triage documentation for acute pet emergencies before veterinary assessment.',
+        },
+      ];
+    case 'medication-tracking-template':
+      return [
+        {
+          name: 'Veterinary medication adherence',
+          description: 'Dose logging and refill tracking templates for prescribed pet medications.',
+        },
+      ];
+    default:
+      return undefined;
+  }
+}
 
 function collectionPath(collectionId: ProgrammaticCollectionId): string {
   return `${ROUTES.GUIDES}/${collectionId}`;
@@ -76,7 +125,7 @@ function getProgrammaticBreadcrumbs(
 ): BreadcrumbItem[] {
   const items: BreadcrumbItem[] = [
     { name: 'Home', path: ROUTES.LANDING },
-    { name: 'Guides', path: ROUTES.GUIDES },
+    { name: 'Health Guides', path: ROUTES.GUIDES },
   ];
 
   if (collectionId) {
@@ -97,12 +146,13 @@ function getProgrammaticBreadcrumbs(
 export function getProgrammaticPageStructuredData(page: ProgrammaticPage) {
   const url = `${SITE_META.siteUrl}${pagePath(page)}`;
   const breadcrumbs = buildBreadcrumbListSchema(getProgrammaticBreadcrumbs(page));
+  const headline = page.title.replace(' | PetClues Guides', '');
 
   const checklistSchema =
     page.checklist && page.checklist.length > 0
       ? {
           '@type': 'HowTo',
-          name: page.title.replace(' | PetClues Guides', ''),
+          name: headline,
           description: page.metaDescription,
           step: page.checklist.flatMap((group) =>
             group.items.map((item, index) => ({
@@ -115,12 +165,21 @@ export function getProgrammaticPageStructuredData(page: ProgrammaticPage) {
         }
       : null;
 
+  const medicalWebPage = MEDICAL_GUIDE_COLLECTIONS.has(page.collectionId)
+    ? buildMedicalWebPageSchema({
+        url,
+        name: headline,
+        description: page.metaDescription,
+        about: medicalAboutForCollection(page.collectionId),
+      })
+    : null;
+
   return buildSchemaGraph(
     buildOrganizationSchema(),
     buildWebSiteSchema(),
     buildArticleSchema({
       url,
-      headline: page.title.replace(' | PetClues Guides', ''),
+      headline,
       description: page.metaDescription,
       datePublished: page.updatedAt,
       dateModified: page.updatedAt,
@@ -128,6 +187,7 @@ export function getProgrammaticPageStructuredData(page: ProgrammaticPage) {
     }),
     buildFaqPageSchema(page.faqs, `${url}#faq`),
     checklistSchema,
+    medicalWebPage,
     breadcrumbs,
   );
 }
@@ -142,7 +202,7 @@ export function getProgrammaticHubStructuredData(
     buildWebSiteSchema(),
     buildCollectionPageSchema({
       url,
-      name: 'PetClues Guides',
+      name: 'PetClues Health Guides',
       description: getProgrammaticHubSEO().description,
       items: collections.map((collection) => ({
         url: `${SITE_META.siteUrl}${collectionPath(collection.id)}`,
