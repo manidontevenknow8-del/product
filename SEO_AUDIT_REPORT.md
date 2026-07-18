@@ -1,19 +1,19 @@
 # SEO Audit Report
 
-Generated: 2026-07-18T11:06:20.606Z
+Generated: 2026-07-18T11:17:27.126Z
 
 ## Scorecard
 
 | Metric | Value |
 |--------|-------|
-| Sitemap URLs | 723 |
-| URLs audited from registry | 711 |
-| Indexable pages audited | 711 |
+| Sitemap URLs | 1116 |
+| URLs audited from registry | 1116 |
+| Indexable pages audited | 1116 |
 | Duplicate titles | 0 |
 | Critical field failures | 0 |
-| Missing registry entries | 12 |
+| Missing registry entries | 0 |
 | Redirect URLs in sitemap | 0 |
-| Overall SEO readiness | 80/100 |
+| Overall SEO readiness | 92/100 |
 
 ## Full sitemap coverage
 
@@ -28,20 +28,9 @@ None, all indexable pages have unique titles.
 
 None.
 
-## Missing registry (12)
+## Missing registry (0)
 
-- https://petclues.com/guides/french-bulldog/boas
-- https://petclues.com/guides/corgi/ivdd
-- https://petclues.com/guides/golden-retriever/hip-dysplasia
-- https://petclues.com/guides/german-shepherd/degenerative-myelopathy
-- https://petclues.com/guides/dachshund/ivdd
-- https://petclues.com/guides/cavalier-king-charles-spaniel/mitral-valve-disease
-- https://petclues.com/guides/labrador-retriever/exercise-induced-collapse
-- https://petclues.com/guides/pug/brachycephalic-airway-syndrome
-- https://petclues.com/guides/boxer/dilated-cardiomyopathy
-- https://petclues.com/guides/beagle/epilepsy
-- https://petclues.com/guides/yorkshire-terrier/tracheal-collapse
-- https://petclues.com/guides/great-dane/gastric-dilatation-volvulus
+None, all sitemap URLs mapped to content sources.
 
 ## Redirect URLs still in sitemap (0)
 

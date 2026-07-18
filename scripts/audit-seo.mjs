@@ -2,7 +2,7 @@
  * SEO audit, validates titles, descriptions, canonicals, robots, and schema coverage
  * for every URL in public/sitemap.xml. Fails the build on critical gaps.
  */
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { readSitemapUrls } from './lib/readSitemapUrls.mjs';
@@ -70,6 +70,10 @@ const SCHEMA_FAMILIES = {
   'guides-page': {
     handler: 'src/seo/programmaticSeo.tsx',
     required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'MedicalWebPage'],
+  },
+  'breed-condition-page': {
+    handler: 'src/seo/breedConditionSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'BreadcrumbList', 'MedicalWebPage'],
   },
   'learn-index': {
     handler: 'src/seo/learnSeo.tsx',
@@ -540,6 +544,30 @@ function registerCommercialPages() {
   }
 }
 
+function registerBreedConditionPages() {
+  const files = ['src/data/breedConditions.ts', 'src/data/breedConditionsExpanded.ts'];
+  for (const file of files) {
+    if (!existsSync(join(root, file))) continue;
+    const content = read(file);
+    for (const match of content.matchAll(
+      /\{\s*(?:["']?slug["']?\s*:\s*["']([^"']+)["'][\s\S]*?["']?breed["']?\s*:\s*["']([^"']+)["'][\s\S]*?["']?condition["']?\s*:\s*["']([^"']+)["'][\s\S]*?["']?scientificName["']?\s*:\s*["']([^"']+)["'])/g,
+    )) {
+      const slug = match[1];
+      const breed = match[2];
+      const condition = match[3];
+      const scientific = match[4];
+      if (!slug.includes('/')) continue;
+      register(`${SITE}/guides/${slug}`, {
+        title: `${condition} in ${breed}s: Symptoms, Timeline & Digital Tracking`,
+        description: `${scientific} (${condition}) risk in ${breed}s — symptoms, emergency management protocols, and digital health timeline tracking with PetClues.`,
+        canonical: `${SITE}/guides/${slug}`,
+        schemaFamily: 'breed-condition-page',
+        source: `breedConditions:${slug}`,
+      });
+    }
+  }
+}
+
 registerStaticPages();
 registerBlogPosts();
 registerComparePages();
@@ -547,6 +575,7 @@ registerIntentPages();
 registerLearnPages();
 registerFaqPages();
 registerProgrammaticPages();
+registerBreedConditionPages();
 registerCommercialPages();
 
 const sitemapUrls = readSitemapUrls(join(root, 'public'));
@@ -559,7 +588,12 @@ const SCHEMA_TYPE_ALIASES = {
   FAQPage: ['buildFaqPageSchema', "'FAQPage'", '"FAQPage"'],
   CollectionPage: ['buildCollectionPageSchema', "'CollectionPage'", '"CollectionPage"'],
   BreadcrumbList: ['buildBreadcrumbListSchema', "'BreadcrumbList'", '"BreadcrumbList"'],
-  MedicalWebPage: ['buildMedicalWebPageSchema', "'MedicalWebPage'", '"MedicalWebPage"'],
+  MedicalWebPage: [
+    'buildMedicalWebPageSchema',
+    'buildAdvancedMedicalSchema',
+    "'MedicalWebPage'",
+    '"MedicalWebPage"',
+  ],
   Organization: ['buildOrganizationSchema', "'Organization'", '"Organization"'],
   WebSite: ['buildWebSiteSchema', "'WebSite'", '"WebSite"'],
   WebPage: ['buildWebPageSchema', "'WebPage'", '"WebPage"'],
@@ -580,10 +614,19 @@ function handlerHasSchema(family) {
   if (!handlerCache.has('medical')) {
     handlerCache.set('medical', read('src/seo/medicalWebPageSchema.ts'));
   }
+  if (!handlerCache.has('advancedMedical')) {
+    handlerCache.set(
+      'advancedMedical',
+      existsSync(join(root, 'src/components/seo/AdvancedMedicalSchema.tsx'))
+        ? read('src/components/seo/AdvancedMedicalSchema.tsx')
+        : '',
+    );
+  }
   const source =
     handlerCache.get(config.handler) +
     handlerCache.get('schemas') +
-    handlerCache.get('medical');
+    handlerCache.get('medical') +
+    handlerCache.get('advancedMedical');
   return config.required.every((type) => {
     const aliases = SCHEMA_TYPE_ALIASES[type] ?? [`'${type}'`, `"${type}"`];
     return aliases.some((needle) => source.includes(needle));
