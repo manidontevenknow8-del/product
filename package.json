@@ -18,6 +18,8 @@
     "gsc:striking-distance": "tsx scripts/striking-distance.ts",
     "seed:sandbox": "tsx scripts/seed-sandbox.ts",
     "google:request-index": "tsx scripts/request-google-index.ts",
+    "google:trigger-indexing": "tsx scripts/trigger-indexing.ts",
+    "seo:indexnow": "tsx scripts/trigger-indexnow.ts",
     "generate:blog-faqs": "tsx scripts/generate-blog-faqs.ts",
     "test:household-rls": "./scripts/run-household-rls-tests.sh"
   },
