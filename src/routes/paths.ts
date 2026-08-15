@@ -14,6 +14,12 @@ export const ROUTES = {
   EMERGENCY_PASSPORT: '/emergency-passport',
   /** Public token-gated emergency sheet (no auth) */
   EMERGENCY_PUBLIC: '/e',
+  /** Public QR triage profile (no auth) - collar / crate / wallet tags */
+  PUBLIC_TRIAGE: '/p',
+  /** Printable QR emergency tag generator */
+  TOOLS_QR_GENERATOR: '/tools/qr-generator',
+  /** Public puppy/kitten vaccination & booster scheduler (SEO tool) */
+  TOOLS_VACCINE_SCHEDULER: '/tools/vaccine-scheduler',
   /** Public token-gated pet life story (no auth) */
   STORY_PUBLIC: '/s',
   VET_PORTAL: '/vet-portal',
@@ -22,6 +28,7 @@ export const ROUTES = {
   COMPARE: '/compare',
   BEST: '/best',
   GUIDES: '/guides',
+  RESOURCES: '/resources',
   LEARN: '/learn',
   PET_CARE_SCORE: '/pet-care-score',
   MONTHLY_REPORT: '/monthly-report',
@@ -52,6 +59,11 @@ export const ROUTES = {
   FAMILY_INVITE: '/family/invite',
   FOUNDING_MEMBERS: '/founding-members',
   GENESIS: '/genesis',
+  RELOCATION: '/relocation',
+  FOR_AGENCIES: '/for-agencies',
+  RELOCATION_PARTNERS: '/relocation-partners',
+  FOR_BREEDERS: '/for-breeders',
+  BREEDER_PARTNERS: '/breeder-partners',
   PET_HEALTH_RECORDS: '/pet-health-records',
   DIGITAL_PET_PASSPORT: '/digital-pet-passport',
   PET_VACCINATION_RECORDS: '/pet-vaccination-records',
@@ -75,6 +87,7 @@ export const PROTECTED_ROUTES = [
   ROUTES.SCAN,
   ROUTES.TIMELINE,
   ROUTES.EMERGENCY_PASSPORT,
+  ROUTES.TOOLS_QR_GENERATOR,
   ROUTES.VET_PORTAL,
   ROUTES.PET_CARE_SCORE,
   ROUTES.REMINDERS,

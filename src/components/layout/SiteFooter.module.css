@@ -104,7 +104,7 @@
 
 .groups {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--space-4) var(--space-5);
   width: 100%;
   align-items: start;
@@ -184,6 +184,12 @@
 .ctaLink:hover {
   background: rgba(250, 249, 247, 0.08);
   border-color: rgba(250, 249, 247, 0.45);
+}
+
+@media (max-width: 1100px) {
+  .groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 1024px) {

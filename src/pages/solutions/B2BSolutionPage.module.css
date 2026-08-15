@@ -1,0 +1,417 @@
+.page {
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse 75% 45% at 8% -8%, rgba(168, 131, 58, 0.1), transparent 55%),
+    linear-gradient(180deg, #ece4d8 0%, #f2ede6 28%, #f2ede6 100%);
+  color: #1a1712;
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-6, 1.5rem) clamp(1rem, 4vw, 3rem) var(--space-16, 4rem);
+}
+
+.hero {
+  margin: var(--space-4, 1rem) 0 var(--space-12, 3rem);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  background: linear-gradient(145deg, #080d09 0%, #1c2b1d 55%, #243528 100%);
+  color: #c5bdb4;
+}
+
+.eyebrow {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #e6c577;
+}
+
+.title {
+  margin: 0 0 1rem;
+  max-width: 16ch;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+  font-weight: 500;
+  line-height: 0.98;
+  color: #f7f1e6;
+}
+
+.lead {
+  margin: 0 0 2rem;
+  max-width: 40rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.65;
+  color: rgba(247, 241, 230, 0.86);
+}
+
+.calculator {
+  padding: 1.25rem 1.35rem;
+  border: 1px solid rgba(230, 197, 119, 0.28);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.calcHeader {
+  margin-bottom: 1rem;
+}
+
+.calcTitle {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  font-weight: 500;
+  color: #f7f1e6;
+}
+
+.calcHint {
+  margin: 0;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.9rem;
+  color: rgba(197, 189, 180, 0.9);
+}
+
+.sliderLabel {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: #e6c577;
+}
+
+.slider {
+  width: 100%;
+  accent-color: #a8833a;
+  margin-bottom: 1.25rem;
+}
+
+.metrics {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .metrics {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.metricValue {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: #e6c577;
+}
+
+.metricLabel {
+  margin: 0;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: rgba(197, 189, 180, 0.85);
+}
+
+.section {
+  margin: 0 0 var(--space-12, 3rem);
+  max-width: 52rem;
+}
+
+.kicker {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #a8833a;
+}
+
+.sectionTitle {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.85rem, 4vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.12;
+  color: #1c2b1d;
+}
+
+.painList {
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.painList li {
+  padding: 0.75rem 1rem;
+  border-left: 2px solid #a8833a;
+  background: rgba(168, 131, 58, 0.08);
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.solutionCopy {
+  margin: 0;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #5c554d;
+}
+
+.workflow {
+  display: grid;
+  gap: 1rem;
+}
+
+.workflowCard {
+  padding: 1.15rem 1.25rem;
+  border: 1px solid rgba(28, 43, 29, 0.12);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.workflowStep {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a8833a;
+}
+
+.workflowCols {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .workflowCols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.wayLabel {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8278;
+}
+
+.wayLabelConcierge {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1c2b1d;
+}
+
+.wayBody {
+  margin: 0;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5c554d;
+}
+
+.pricingGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .pricingGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.priceCard {
+  padding: 1.35rem 1.4rem;
+  border: 1px solid rgba(28, 43, 29, 0.14);
+  background: #f7f1e6;
+}
+
+.priceCard[data-tier='unlimited'] {
+  background: linear-gradient(155deg, #080d09, #1c2b1d);
+  color: #f7f1e6;
+  border-color: rgba(230, 197, 119, 0.35);
+}
+
+.priceName {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a8833a;
+}
+
+.priceCard[data-tier='unlimited'] .priceName {
+  color: #e6c577;
+}
+
+.priceAmount {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.25rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #1c2b1d;
+}
+
+.priceCard[data-tier='unlimited'] .priceAmount {
+  color: #f7f1e6;
+}
+
+.priceAmount span {
+  margin-left: 0.35rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: #8a8278;
+}
+
+.priceCard[data-tier='unlimited'] .priceAmount span {
+  color: rgba(247, 241, 230, 0.65);
+}
+
+.priceDesc {
+  margin: 0 0 1rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #5c554d;
+}
+
+.priceCard[data-tier='unlimited'] .priceDesc {
+  color: rgba(247, 241, 230, 0.8);
+}
+
+.priceList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.priceList li {
+  position: relative;
+  padding-left: 1rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.priceList li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 0.35rem;
+  height: 0.35rem;
+  background: #a8833a;
+}
+
+.claim {
+  margin: 0 0 var(--space-10, 2.5rem);
+  max-width: 40rem;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border: 1px solid rgba(28, 43, 29, 0.14);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.claimLead {
+  margin: -0.5rem 0 1.25rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #5c554d;
+}
+
+.form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.35rem;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1c2b1d;
+}
+
+.field input,
+.field select {
+  min-height: 2.85rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(28, 43, 29, 0.2);
+  background: #fff;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: none;
+  color: #1a1712;
+}
+
+.field input:focus,
+.field select:focus {
+  outline: 2px solid rgba(168, 131, 58, 0.45);
+  outline-offset: 1px;
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  margin-top: 0.35rem;
+  padding: 0.85rem 1.25rem;
+  border: none;
+  background: #1c2b1d;
+  color: #f7f1e6;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: #243528;
+  transform: translateY(-1px);
+}
+
+.submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.error {
+  margin: 0;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.88rem;
+  color: #8c3428;
+}
+
+@media (max-width: 768px) {
+  .title {
+    max-width: none;
+  }
+}

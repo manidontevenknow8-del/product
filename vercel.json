@@ -18,7 +18,7 @@
   ],
   "rewrites": [
     {
-      "source": "/((?!.*\\..*).*)",
+      "source": "/((?!api(?:/|$)|.*\\..*).*)",
       "destination": "/index.html"
     }
   ],
@@ -79,6 +79,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600, s-maxage=3600, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/api/og-clinical",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800"
         }
       ]
     },

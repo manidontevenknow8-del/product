@@ -77,6 +77,7 @@ export const PRIMARY_HUB_LINKS: HubLinkTarget[] = [
   { href: ROUTES.BLOG, label: 'Blog' },
   { href: ROUTES.LEARN, label: 'Learn' },
   { href: ROUTES.GUIDES, label: 'Guides' },
+  { href: ROUTES.RESOURCES, label: 'Local resources' },
   { href: ROUTES.BEST, label: 'Best' },
   { href: ROUTES.COMPARE, label: 'Compare' },
   { href: ROUTES.FAQ, label: 'FAQ' },

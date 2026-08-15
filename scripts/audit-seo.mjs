@@ -73,7 +73,19 @@ const SCHEMA_FAMILIES = {
   },
   'breed-condition-page': {
     handler: 'src/seo/breedConditionSeo.tsx',
-    required: ['Organization', 'WebSite', 'SoftwareApplication', 'BreadcrumbList', 'MedicalWebPage'],
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'BreadcrumbList', 'MedicalWebPage', 'FAQPage'],
+  },
+  'relocation-page': {
+    handler: 'src/seo/relocationSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage', 'BreadcrumbList', 'FAQPage'],
+  },
+  'relocation-hub': {
+    handler: 'src/seo/relocationSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage', 'BreadcrumbList'],
+  },
+  'b2b-solution': {
+    handler: 'src/seo/b2bSolutionSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage', 'BreadcrumbList', 'FAQPage'],
   },
   'learn-index': {
     handler: 'src/seo/learnSeo.tsx',
@@ -94,6 +106,22 @@ const SCHEMA_FAMILIES = {
   'commercial-page': {
     handler: 'src/seo/commercialSeo.tsx',
     required: ['Organization', 'WebSite', 'WebPage', 'FAQPage', 'BreadcrumbList', 'SoftwareApplication'],
+  },
+  'vaccine-scheduler': {
+    handler: 'src/seo/vaccineSchedulerSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'MedicalWebPage', 'FAQPage', 'BreadcrumbList'],
+  },
+  'lifecycle-page': {
+    handler: 'src/seo/lifecycleSeo.tsx',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'MedicalWebPage'],
+  },
+  'resource-hub': {
+    handler: 'src/seo/resourceSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+  },
+  'resource-page': {
+    handler: 'src/seo/resourceSeo.tsx',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'HowTo'],
   },
 };
 
@@ -198,11 +226,13 @@ function registerStaticPages() {
     LANDING: '/',
     PRICING: '/pricing',
     PET_MATCH: '/pet-match',
+    TOOLS_VACCINE_SCHEDULER: '/tools/vaccine-scheduler',
     FOUNDING_MEMBERS: '/founding-members',
     BLOG: '/blog',
     COMPARE: '/compare',
     BEST: '/best',
     GUIDES: '/guides',
+    RESOURCES: '/resources',
     LEARN: '/learn',
     PRIVACY: '/privacy',
     TERMS: '/terms',
@@ -219,11 +249,13 @@ function registerStaticPages() {
     LANDING: 'landing',
     PRICING: 'static-product',
     PET_MATCH: 'static-product',
+    TOOLS_VACCINE_SCHEDULER: 'vaccine-scheduler',
     FOUNDING_MEMBERS: 'static-product',
     BLOG: 'blog-index',
     COMPARE: 'compare-index',
     BEST: 'best-index',
     GUIDES: 'guides-hub',
+    RESOURCES: 'resource-hub',
     LEARN: 'learn-index',
     ABOUT: 'static-about',
     PRIVACY: 'static-legal',
@@ -559,10 +591,110 @@ function registerBreedConditionPages() {
       if (!slug.includes('/')) continue;
       register(`${SITE}/guides/${slug}`, {
         title: `${condition} in ${breed}s: Symptoms, Timeline & Digital Tracking`,
-        description: `${scientific} (${condition}) risk in ${breed}s — symptoms, emergency management protocols, and digital health timeline tracking with PetClues.`,
+        description: `${scientific} (${condition}) risk in ${breed}s - symptoms, emergency management protocols, and digital health timeline tracking with PetClues.`,
         canonical: `${SITE}/guides/${slug}`,
         schemaFamily: 'breed-condition-page',
         source: `breedConditions:${slug}`,
+      });
+    }
+  }
+}
+
+function registerRelocationPages() {
+  const file = 'src/data/relocationRoutes.ts';
+  if (!existsSync(join(root, file))) return;
+  const content = read(file);
+  for (const match of content.matchAll(/route\(\s*['"]([a-z0-9]+-to-[a-z0-9]+)['"]/g)) {
+    const slug = match[1];
+    const [origin, destination] = slug.split('-to-');
+    register(`${SITE}/relocation/${slug}`, {
+      title: `${origin.toUpperCase()} to ${destination.toUpperCase()} Pet Dog Travel Customs Requirements`,
+      description: `Pet relocation customs dossier for ${origin.toUpperCase()} → ${destination.toUpperCase()}: quarantine, rabies titer waits, and compliance checklist.`,
+      canonical: `${SITE}/relocation/${slug}`,
+      schemaFamily: 'relocation-page',
+      source: `relocationRoutes:${slug}`,
+    });
+  }
+  register(`${SITE}/relocation`, {
+    title: 'Pet Relocation Customs Corridors',
+    description:
+      'Airport-pair pet relocation dossiers for IPATA agencies - quarantine, rabies titer waits, and customs checklists.',
+    canonical: `${SITE}/relocation`,
+    schemaFamily: 'relocation-hub',
+    source: 'relocation:hub',
+  });
+}
+
+function registerB2BSolutionPages() {
+  register(`${SITE}/for-agencies`, {
+    title: 'White-label customs vaults for every client move',
+    description:
+      'Stop chasing messy PDFs. Deploy a permanent branded digital sanctuary for every origin → destination corridor.',
+    canonical: `${SITE}/for-agencies`,
+    schemaFamily: 'b2b-solution',
+    source: 'b2b:agency',
+  });
+  register(`${SITE}/for-breeders`, {
+    title: 'Puppy handover that feels like a private bank vault',
+    description:
+      'Replace cheap paper folders with a white-label digital sanctuary buyers show off - and come back to for life.',
+    canonical: `${SITE}/for-breeders`,
+    schemaFamily: 'b2b-solution',
+    source: 'b2b:breeder',
+  });
+}
+
+function registerLifecyclePages() {
+  const file = 'src/data/lifecycleMatrix.ts';
+  if (!existsSync(join(root, file))) return;
+  const content = read(file);
+  const breeds = [...content.matchAll(/\{ slug: '([a-z0-9-]+)', name: '([^']+)', size:/g)].map(
+    (match) => ({ slug: match[1], name: match[2] }),
+  );
+  const stageBlock = content.split('export const LIFECYCLE_STAGES')[1]?.split('export function')[0] ?? '';
+  const stages = [...stageBlock.matchAll(/slug: '([^']+)',\s*\n\s*label: '([^']+)'/g)].map((match) => ({
+    slug: match[1],
+    label: match[2],
+  }));
+
+  for (const breed of breeds) {
+    for (const stage of stages) {
+      const path = `/guides/${breed.slug}/lifecycle/${stage.slug}`;
+      register(`${SITE}${path}`, {
+        title: `${stage.label} for ${breed.name}s`,
+        description: `${stage.label} for ${breed.name}s - timeline, diet notes, and a dated care log with PetClues.`,
+        canonical: `${SITE}${path}`,
+        schemaFamily: 'lifecycle-page',
+        source: `lifecycle:${breed.slug}/${stage.slug}`,
+      });
+    }
+  }
+}
+
+function registerResourcePages() {
+  const file = 'src/data/resourceMatrix.ts';
+  if (!existsSync(join(root, file))) return;
+  const content = read(file);
+  const cities = [
+    ...content.matchAll(
+      /\{ slug: '([a-z0-9-]+)', name: '([^']+)', state: '[^']+', stateAbbr: '([A-Z]+)'/g,
+    ),
+  ].map((match) => ({ slug: match[1], name: match[2], stateAbbr: match[3] }));
+  const topicBlock = content.split('export const RESOURCE_TOPICS')[1]?.split('export function')[0] ?? '';
+  const topics = [...topicBlock.matchAll(/slug: '([^']+)', label: '([^']+)'/g)].map((match) => ({
+    slug: match[1],
+    label: match[2],
+  }));
+
+  for (const city of cities) {
+    for (const topic of topics) {
+      const path = `/resources/${city.slug}/${topic.slug}`;
+      register(`${SITE}${path}`, {
+        title: `${topic.label} in ${city.name}, ${city.stateAbbr}`,
+        description: `${topic.label} for ${city.name}, ${city.stateAbbr}. Checklist, intake steps, and a digital packet for boarding, sitters, and ER visits.`,
+        canonical: `${SITE}${path}`,
+        schemaFamily: 'resource-page',
+        source: `resource:${city.slug}/${topic.slug}`,
       });
     }
   }
@@ -576,6 +708,10 @@ registerLearnPages();
 registerFaqPages();
 registerProgrammaticPages();
 registerBreedConditionPages();
+registerRelocationPages();
+registerB2BSolutionPages();
+registerLifecyclePages();
+registerResourcePages();
 registerCommercialPages();
 
 const sitemapUrls = readSitemapUrls(join(root, 'public'));
@@ -598,6 +734,7 @@ const SCHEMA_TYPE_ALIASES = {
   WebSite: ['buildWebSiteSchema', "'WebSite'", '"WebSite"'],
   WebPage: ['buildWebPageSchema', "'WebPage'", '"WebPage"'],
   SoftwareApplication: ['buildSoftwareApplicationSchema', "'SoftwareApplication'", '"SoftwareApplication"'],
+  HowTo: ['buildHowToSchema', "'HowTo'", '"HowTo"'],
   ProfilePage: ['buildProfilePageSchema', "'ProfilePage'", '"ProfilePage"'],
   SearchAction: ['buildSearchActionSchema', "'SearchAction'", '"SearchAction"'],
 };

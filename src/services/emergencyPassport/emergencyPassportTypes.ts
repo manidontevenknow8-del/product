@@ -6,6 +6,30 @@ export type EmergencyCriticalFields = {
   insuranceProvider: string | null;
   insurancePolicyNumber: string | null;
   microchipId: string | null;
+  /** Primary guardian click-to-call number for QR triage tags */
+  ownerPhonePrimary: string | null;
+  /** Secondary guardian / backup contact */
+  ownerPhoneSecondary: string | null;
+  /** Rabies tag / certificate number for ER handoff */
+  rabiesTagNumber: string | null;
+};
+
+/**
+ * Whitelisted public triage payload for `/p/:publicId`.
+ * Intentionally excludes insurance, medications, vault docs, billing, and private notes.
+ */
+export type PublicEmergencyTriage = {
+  petName: string;
+  species: string;
+  breed: string;
+  photoUrl: string | null;
+  ownerPhonePrimary: string | null;
+  ownerPhoneSecondary: string | null;
+  severeAllergies: string[];
+  rabiesTagNumber: string | null;
+  vetName: string | null;
+  vetPhone: string | null;
+  updatedAt: string;
 };
 
 export type EmergencyPassportRecord = {
@@ -45,6 +69,9 @@ export const EMPTY_CRITICAL_FIELDS: EmergencyCriticalFields = {
   insuranceProvider: null,
   insurancePolicyNumber: null,
   microchipId: null,
+  ownerPhonePrimary: null,
+  ownerPhoneSecondary: null,
+  rabiesTagNumber: null,
 };
 
 export function mapEmergencyPassportRow(row: EmergencyPassportRow): EmergencyPassportRecord {
@@ -72,6 +99,33 @@ export function normalizeCriticalFields(
     insuranceProvider: value?.insuranceProvider?.trim() || null,
     insurancePolicyNumber: value?.insurancePolicyNumber?.trim() || null,
     microchipId: value?.microchipId?.trim() || null,
+    ownerPhonePrimary: value?.ownerPhonePrimary?.trim() || null,
+    ownerPhoneSecondary: value?.ownerPhoneSecondary?.trim() || null,
+    rabiesTagNumber: value?.rabiesTagNumber?.trim() || null,
+  };
+}
+
+/** Strip sensitive fields for the public QR triage surface. */
+export function toPublicEmergencyTriage(
+  petName: string,
+  species: string,
+  breed: string,
+  photoUrl: string | null,
+  fields: EmergencyCriticalFields,
+  updatedAt: string,
+): PublicEmergencyTriage {
+  return {
+    petName,
+    species,
+    breed,
+    photoUrl,
+    ownerPhonePrimary: fields.ownerPhonePrimary,
+    ownerPhoneSecondary: fields.ownerPhoneSecondary,
+    severeAllergies: fields.allergies,
+    rabiesTagNumber: fields.rabiesTagNumber,
+    vetName: fields.vetName,
+    vetPhone: fields.vetPhone,
+    updatedAt,
   };
 }
 
@@ -81,11 +135,21 @@ export function generatePublicToken(): string {
   return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/g, '');
 }
 
-export function buildPublicEmergencyUrl(token: string): string {
+function resolveAppOrigin(): string {
   const origin =
     typeof window !== 'undefined'
       ? window.location.origin
       : (import.meta.env.VITE_APP_URL as string | undefined) ?? '';
-  const base = origin.replace(/\/$/, '');
+  return origin.replace(/\/$/, '');
+}
+
+export function buildPublicEmergencyUrl(token: string): string {
+  const base = resolveAppOrigin();
   return base ? `${base}/e/${token}` : `/e/${token}`;
+}
+
+/** QR collar / crate / wallet tags resolve to the triage-only public profile. */
+export function buildPublicTriageUrl(publicId: string): string {
+  const base = resolveAppOrigin();
+  return base ? `${base}/p/${publicId}` : `/p/${publicId}`;
 }

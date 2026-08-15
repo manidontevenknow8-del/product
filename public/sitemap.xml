@@ -2,22 +2,30 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://petclues.com/sitemap-commercial.xml</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-blog.xml</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-faq.xml</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-guides.xml</loc>
-    <lastmod>2026-07-18</lastmod>
+    <lastmod>2026-08-15</lastmod>
   </sitemap>
   <sitemap>
-    <loc>https://petclues.com/sitemap-core.xml</loc>
-    <lastmod>2026-07-18</lastmod>
+    <loc>https://petclues.com/sitemap-medical.xml</loc>
+    <lastmod>2026-08-15</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-lifecycle.xml</loc>
+    <lastmod>2026-08-15</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-resources.xml</loc>
+    <lastmod>2026-08-15</lastmod>
   </sitemap>
 </sitemapindex>

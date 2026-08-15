@@ -1,0 +1,221 @@
+.page {
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px 16px 40px;
+  background: #f3f0ea;
+  color: #121212;
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+
+.status {
+  margin: 48px auto 0;
+  max-width: 28rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.card {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 22px 18px 26px;
+  background: #fff;
+  border: 1px solid #d4cdc2;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(18, 18, 18, 0.07);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #1c2b1d;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8b2e3b;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.7rem, 7vw, 2.2rem);
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.meta {
+  margin: 6px 0 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.photo,
+.photoFallback {
+  width: 76px;
+  height: 76px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.photoFallback {
+  display: grid;
+  place-items: center;
+  background: #1c2b1d;
+  color: #e6c577;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.callSection {
+  margin-bottom: 16px;
+}
+
+.sectionTitle,
+.blockTitle {
+  margin: 0 0 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5c554d;
+}
+
+.callStack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.callBtn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #1c2b1d;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #142018;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.callBtn:hover,
+.callBtn:focus-visible {
+  background: #243628;
+  transform: translateY(-1px);
+}
+
+.callLabel {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #e6c577;
+}
+
+.callNumber {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.callHint {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.block {
+  margin-top: 12px;
+  padding: 14px;
+  border: 1px solid #e5dfd5;
+  border-radius: 10px;
+  background: #faf8f4;
+}
+
+.blockCritical {
+  border-color: #d6a3a3;
+  background: #fff6f6;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.empty {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #6b655c;
+}
+
+.mono {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.vetBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vetName {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.phoneLink {
+  color: #1c2b1d;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer {
+  margin-top: 22px;
+  padding-top: 16px;
+  border-top: 1px solid #e5dfd5;
+}
+
+.footerCta {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: #6b655c;
+  text-align: center;
+}
+
+.footerLink {
+  color: #1c2b1d;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+@media (max-width: 420px) {
+  .card {
+    padding: 18px 14px 22px;
+  }
+
+  .callNumber {
+    font-size: 1.1rem;
+  }
+}

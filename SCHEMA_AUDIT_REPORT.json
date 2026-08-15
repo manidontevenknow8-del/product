@@ -1,7 +1,7 @@
 {
-  "validatedAt": "2026-07-18T10:48:33.808Z",
-  "routeFamilies": 17,
-  "indexedPageTemplates": 518,
+  "validatedAt": "2026-08-15T05:44:54.770Z",
+  "routeFamilies": 21,
+  "indexedPageTemplates": 5520,
   "builders": [
     {
       "builder": "buildOrganizationSchema",
@@ -89,6 +89,22 @@
         "WebSite",
         "SoftwareApplication",
         "WebPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "vaccine-scheduler",
+      "handler": "vaccineSchedulerSeo.tsx",
+      "path": "/tools/vaccine-scheduler",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "SoftwareApplication",
+        "MedicalWebPage",
+        "FAQPage",
         "BreadcrumbList"
       ],
       "missing": [],
@@ -311,6 +327,53 @@
         "FAQPage",
         "BreadcrumbList",
         "MedicalWebPage"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "lifecycle-guide",
+      "handler": "lifecycleSeo.tsx",
+      "path": "/guides/:breed/lifecycle/:stage",
+      "pageCount": 3000,
+      "present": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "FAQPage",
+        "BreadcrumbList",
+        "MedicalWebPage",
+        "HowTo"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "resource-hub",
+      "handler": "resourceSeo.tsx",
+      "path": "/resources",
+      "pageCount": 1,
+      "present": [
+        "Organization",
+        "WebSite",
+        "CollectionPage",
+        "BreadcrumbList"
+      ],
+      "missing": [],
+      "pass": true
+    },
+    {
+      "id": "resource-page",
+      "handler": "resourceSeo.tsx",
+      "path": "/resources/:city/:topic",
+      "pageCount": 2000,
+      "present": [
+        "Organization",
+        "WebSite",
+        "Article",
+        "FAQPage",
+        "BreadcrumbList",
+        "HowTo"
       ],
       "missing": [],
       "pass": true

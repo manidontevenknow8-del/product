@@ -26,13 +26,26 @@ export const FOOTER_PRODUCT_LINKS: FooterLink[] = [
   { label: 'Founding Members', to: ROUTES.FOUNDING_MEMBERS },
 ];
 
+/** Public clinical calculators and planners (SEO growth tools). */
+export const FOOTER_CLINICAL_TOOLS_LINKS: FooterLink[] = [
+  { label: 'Vaccination Scheduler', to: ROUTES.TOOLS_VACCINE_SCHEDULER },
+  { label: 'Vaccination records guide', to: ROUTES.PET_VACCINATION_RECORDS },
+];
+
 export const FOOTER_RESOURCE_LINKS: FooterLink[] = [
   { label: 'Learn', to: ROUTES.LEARN },
   { label: 'Guides', to: ROUTES.GUIDES },
+  { label: 'Local resources', to: ROUTES.RESOURCES },
   { label: 'Best', to: ROUTES.BEST },
   { label: 'Blog', to: ROUTES.BLOG },
   { label: 'Compare', to: ROUTES.COMPARE },
   { label: 'FAQ', to: ROUTES.FAQ },
+];
+
+export const FOOTER_B2B_LINKS: FooterLink[] = [
+  { label: 'For Agencies', to: ROUTES.FOR_AGENCIES },
+  { label: 'For Breeders', to: ROUTES.FOR_BREEDERS },
+  { label: 'Relocation corridors', to: ROUTES.RELOCATION },
 ];
 
 export const FOOTER_SOLUTION_LINKS: FooterLink[] = [
@@ -46,6 +59,8 @@ export const FOOTER_SOLUTION_LINKS: FooterLink[] = [
 /** Flat list for audits and sitemap cross-checks. */
 export const FOOTER_LAUNCH_LINKS: FooterLink[] = [
   ...FOOTER_PRODUCT_LINKS,
+  ...FOOTER_CLINICAL_TOOLS_LINKS,
+  ...FOOTER_B2B_LINKS,
   ...FOOTER_SOLUTION_LINKS,
   ...FOOTER_LEGAL_LINKS,
   ...FOOTER_COMPANY_LINKS,

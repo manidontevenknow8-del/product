@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: 'Records', to: ROUTES.PET_PROFILE },
   { label: 'Timeline', to: ROUTES.TIMELINE },
   { label: 'Insights', to: ROUTES.PET_CARE_SCORE },
+  { label: 'QR Tags', to: ROUTES.TOOLS_QR_GENERATOR },
 ] as const;
 
 type DashboardNavProps = {

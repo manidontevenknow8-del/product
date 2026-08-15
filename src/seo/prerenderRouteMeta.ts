@@ -12,6 +12,11 @@ import {
   listProgrammaticPages,
 } from '@/data/programmatic';
 import { getBreedConditionBySegments } from '@/data/breedConditions';
+import { getLifecycleEntry, isLifecycleGuidePath } from '@/data/lifecycleMatrix';
+import { getResourceEntry, isResourcePath } from '@/data/resourceMatrix';
+import {
+  getRelocationRouteBySlug,
+} from '@/data/relocationRoutes';
 import { getProgrammaticCollection, listProgrammaticCollections } from '@/data/programmatic/collections';
 import {
   getPageSEO,
@@ -72,7 +77,32 @@ import {
   getBreedConditionSEO,
   getBreedConditionStructuredData,
 } from '@/seo/breedConditionSeo';
+import {
+  getLifecycleGuideSEO,
+  getLifecycleGuideStructuredData,
+} from '@/seo/lifecycleSeo';
+import {
+  getResourceGuideSEO,
+  getResourceGuideStructuredData,
+  getResourceHubSEO,
+  getResourceHubStructuredData,
+} from '@/seo/resourceSeo';
+import {
+  getRelocationRouteSEO,
+  getRelocationRouteStructuredData,
+  getRelocationHubSEO,
+  getRelocationHubStructuredData,
+} from '@/seo/relocationSeo';
+import {
+  getB2BSolutionSEO,
+  getB2BSolutionStructuredData,
+} from '@/seo/b2bSolutionSeo';
+import { AGENCY_SOLUTION, BREEDER_SOLUTION } from '@/data/b2bSolutions';
 import { getStaticPageStructuredData } from '@/seo/staticPageSeo';
+import {
+  getVaccineSchedulerSEO,
+  getVaccineSchedulerStructuredData,
+} from '@/seo/vaccineSchedulerSeo';
 import { getCommercialPageByPath, listCommercialPages } from '@/data/commercial';
 import {
   getCommercialPageSEO,
@@ -238,6 +268,36 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
     ]);
   }
 
+  if (pathname === ROUTES.RESOURCES) {
+    return withSchema(getResourceHubSEO(), [
+      schemaEntry('resource-hub', getResourceHubStructuredData()),
+    ]);
+  }
+
+  if (isResourcePath(pathname)) {
+    const parts = pathname.split('/').filter(Boolean);
+    const entry = getResourceEntry(parts[1], parts[2]);
+    if (!entry) return null;
+    return withSchema(getResourceGuideSEO(entry), [
+      schemaEntry(
+        `resource-${entry.city.slug}-${entry.topic.slug}`,
+        getResourceGuideStructuredData(entry),
+      ),
+    ]);
+  }
+
+  if (isLifecycleGuidePath(pathname)) {
+    const parts = pathname.split('/').filter(Boolean);
+    const entry = getLifecycleEntry(parts[1], parts[3]);
+    if (!entry) return null;
+    return withSchema(getLifecycleGuideSEO(entry), [
+      schemaEntry(
+        `lifecycle-${entry.breed.slug}-${entry.stage.slug}`,
+        getLifecycleGuideStructuredData(entry),
+      ),
+    ]);
+  }
+
   if (isGuidesDetailPath(pathname)) {
     const rest = pathname.slice(`${ROUTES.GUIDES}/`.length);
     const [segmentA, segmentB] = rest.split('/');
@@ -258,6 +318,39 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
     if (!page) return null;
     return withSchema(getProgrammaticPageSEO(page), [
       schemaEntry(`programmatic-${segmentA}-${segmentB}`, getProgrammaticPageStructuredData(page)),
+    ]);
+  }
+
+  if (pathname === ROUTES.RELOCATION) {
+    return withSchema(getRelocationHubSEO(), [
+      schemaEntry('relocation-hub', getRelocationHubStructuredData()),
+    ]);
+  }
+
+  if (pathname.startsWith(`${ROUTES.RELOCATION}/`)) {
+    const slug = pathname.slice(`${ROUTES.RELOCATION}/`.length).split('/')[0];
+    const route = getRelocationRouteBySlug(slug);
+    if (!route) return null;
+    return withSchema(getRelocationRouteSEO(route), [
+      schemaEntry(`relocation-${route.slug}`, getRelocationRouteStructuredData(route)),
+    ]);
+  }
+
+  if (
+    pathname === ROUTES.FOR_AGENCIES ||
+    pathname === ROUTES.RELOCATION_PARTNERS
+  ) {
+    return withSchema(getB2BSolutionSEO(AGENCY_SOLUTION), [
+      schemaEntry('b2b-agency', getB2BSolutionStructuredData(AGENCY_SOLUTION)),
+    ]);
+  }
+
+  if (
+    pathname === ROUTES.FOR_BREEDERS ||
+    pathname === ROUTES.BREEDER_PARTNERS
+  ) {
+    return withSchema(getB2BSolutionSEO(BREEDER_SOLUTION), [
+      schemaEntry('b2b-breeder', getB2BSolutionStructuredData(BREEDER_SOLUTION)),
     ]);
   }
 
@@ -311,6 +404,12 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
     ]);
   }
 
+  if (pathname === ROUTES.TOOLS_VACCINE_SCHEDULER) {
+    return withSchema(getVaccineSchedulerSEO(), [
+      schemaEntry('vaccine-scheduler', getVaccineSchedulerStructuredData()),
+    ]);
+  }
+
   const staticConfig = getPageSEO(pathname);
   if (staticConfig.noIndex) return null;
 
@@ -323,7 +422,7 @@ export function listPrerenderRouteKeys(): string[] {
   const keys: string[] = [];
 
   keys.push('/');
-  keys.push(ROUTES.PRICING, ROUTES.PET_MATCH, ROUTES.FOUNDING_MEMBERS);
+  keys.push(ROUTES.PRICING, ROUTES.PET_MATCH, ROUTES.FOUNDING_MEMBERS, ROUTES.TOOLS_VACCINE_SCHEDULER);
   for (const page of listCommercialPages()) {
     keys.push(page.path);
   }

@@ -1,14 +1,14 @@
 # SEO Audit Report
 
-Generated: 2026-07-18T11:17:27.126Z
+Generated: 2026-08-15T05:44:54.738Z
 
 ## Scorecard
 
 | Metric | Value |
 |--------|-------|
-| Sitemap URLs | 1116 |
-| URLs audited from registry | 1116 |
-| Indexable pages audited | 1116 |
+| Sitemap URLs | 6137 |
+| URLs audited from registry | 6137 |
+| Indexable pages audited | 6137 |
 | Duplicate titles | 0 |
 | Critical field failures | 0 |
 | Missing registry entries | 0 |

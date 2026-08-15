@@ -1,6 +1,8 @@
 import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { LIFECYCLE_MATRIX } from '../src/data/lifecycleMatrix';
+import { RESOURCE_MATRIX } from '../src/data/resourceMatrix';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, '..');
@@ -27,6 +29,8 @@ const COMMERCIAL_PATHS = [
   '/pet-vaccination-records',
   '/pet-medical-history',
   '/pet-health-tracker',
+  '/for-agencies',
+  '/for-breeders',
 ] as const;
 
 const COMMERCIAL_PATH_SET = new Set<string>(COMMERCIAL_PATHS);
@@ -92,7 +96,7 @@ const FAQ_CATEGORIES = [
   'petclues-app',
 ] as const;
 
-type SitemapTier = 'commercial' | 'blog' | 'faq' | 'guides' | 'core';
+type SitemapTier = 'commercial' | 'blog' | 'faq' | 'guides' | 'medical' | 'lifecycle' | 'resources';
 
 interface SitemapEntry {
   loc: string;
@@ -228,12 +232,26 @@ function extractFaqSlugs(): string[] {
   return [...slugs].sort();
 }
 
-function classifyTier(pathname: string): SitemapTier {
+function classifyTier(pathname: string, medicalPaths: Set<string>): SitemapTier {
+  if (/^\/resources(\/|$)/.test(pathname)) return 'resources';
+  if (/^\/guides\/[^/]+\/lifecycle\/[^/]+$/.test(pathname)) return 'lifecycle';
+  if (medicalPaths.has(pathname)) return 'medical';
+  if (pathname === '/relocation' || pathname.startsWith('/relocation/')) return 'medical';
   if (COMMERCIAL_PATH_SET.has(pathname)) return 'commercial';
   if (pathname === '/blog' || pathname.startsWith('/blog/')) return 'blog';
   if (pathname === '/faq' || pathname.startsWith('/faq/')) return 'faq';
   if (pathname === '/guides' || pathname.startsWith('/guides/')) return 'guides';
-  return 'core';
+  if (
+    pathname === '/learn' ||
+    pathname.startsWith('/learn/') ||
+    pathname === '/compare' ||
+    pathname.startsWith('/compare/') ||
+    pathname === '/best' ||
+    pathname.startsWith('/best/')
+  ) {
+    return 'guides';
+  }
+  return 'commercial';
 }
 
 function buildRoutes(): SitemapEntry[] {
@@ -277,10 +295,20 @@ function buildRoutes(): SitemapEntry[] {
     return [...paths];
   })();
 
+  const relocationPaths = (() => {
+    const content = readFileSync(join(root, 'src/data/relocationRoutes.ts'), 'utf8');
+    const paths = new Set<string>(['/relocation']);
+    for (const match of content.matchAll(/route\(\s*['"]([a-z0-9]+-to-[a-z0-9]+)['"]/g)) {
+      paths.add(`/relocation/${match[1]}`);
+    }
+    return [...paths];
+  })();
+
   const staticCore = [
     { loc: '/', priority: '1.0', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/pricing', priority: '0.9', changefreq: 'monthly', lastmod: BUILD_DATE },
     { loc: '/pet-match', priority: '0.8', changefreq: 'monthly', lastmod: BUILD_DATE },
+    { loc: '/tools/vaccine-scheduler', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/founding-members', priority: '0.7', changefreq: 'monthly', lastmod: BUILD_DATE },
     { loc: '/compare', priority: '0.85', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/best', priority: '0.88', changefreq: 'weekly', lastmod: BUILD_DATE },
@@ -304,6 +332,7 @@ function buildRoutes(): SitemapEntry[] {
 
   const blogHub = { loc: '/blog', priority: '0.9', changefreq: 'daily', lastmod: BUILD_DATE };
   const guidesHub = { loc: '/guides', priority: '0.87', changefreq: 'weekly', lastmod: CONTENT_LASTMOD.programmatic };
+  const resourcesHub = { loc: '/resources', priority: '0.88', changefreq: 'weekly', lastmod: BUILD_DATE };
   const faqHub = { loc: '/faq', priority: '0.5', changefreq: 'monthly', lastmod: BUILD_DATE };
 
   const raw = [
@@ -311,6 +340,7 @@ function buildRoutes(): SitemapEntry[] {
     ...commercial,
     blogHub,
     guidesHub,
+    resourcesHub,
     faqHub,
     ...BLOG_CATEGORIES.map((category) => ({
       loc: `/blog?category=${category}`,
@@ -354,6 +384,24 @@ function buildRoutes(): SitemapEntry[] {
       changefreq: 'monthly',
       lastmod: CONTENT_LASTMOD.programmatic,
     })),
+    ...LIFECYCLE_MATRIX.map((entry) => ({
+      loc: entry.path,
+      priority: '0.8',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...RESOURCE_MATRIX.map((entry) => ({
+      loc: entry.path,
+      priority: '0.81',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...relocationPaths.map((loc) => ({
+      loc,
+      priority: loc === '/relocation' ? '0.9' : '0.92',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
     ...LEARN_CATEGORIES.map((category) => ({
       loc: `/learn?category=${category}`,
       priority: '0.7',
@@ -380,12 +428,14 @@ function buildRoutes(): SitemapEntry[] {
     })),
   ];
 
+  const medicalPaths = new Set(breedConditionPaths);
+
   return raw.map((entry) => {
     const url = new URL(entry.loc, SITE);
     return {
       ...entry,
       loc: url.href,
-      tier: classifyTier(url.pathname),
+      tier: classifyTier(url.pathname, medicalPaths),
     };
   });
 }
@@ -427,10 +477,12 @@ const CHILD_SITEMAPS = [
   'sitemap-blog.xml',
   'sitemap-faq.xml',
   'sitemap-guides.xml',
-  'sitemap-core.xml',
+  'sitemap-medical.xml',
+  'sitemap-lifecycle.xml',
+  'sitemap-resources.xml',
 ] as const;
 
-const LEGACY_SITEMAPS = ['sitemap-money.xml', 'sitemap-content.xml'] as const;
+const LEGACY_SITEMAPS = ['sitemap-money.xml', 'sitemap-content.xml', 'sitemap-core.xml'] as const;
 
 function main(): void {
   const routes = buildRoutes();
@@ -439,14 +491,18 @@ function main(): void {
     blog: routes.filter((r) => r.tier === 'blog'),
     faq: routes.filter((r) => r.tier === 'faq'),
     guides: routes.filter((r) => r.tier === 'guides'),
-    core: routes.filter((r) => r.tier === 'core'),
+    medical: routes.filter((r) => r.tier === 'medical'),
+    lifecycle: routes.filter((r) => r.tier === 'lifecycle'),
+    resources: routes.filter((r) => r.tier === 'resources'),
   };
 
   writeFileSync(join(publicDir, 'sitemap-commercial.xml'), renderUrlset(byTier.commercial));
   writeFileSync(join(publicDir, 'sitemap-blog.xml'), renderUrlset(byTier.blog));
   writeFileSync(join(publicDir, 'sitemap-faq.xml'), renderUrlset(byTier.faq));
   writeFileSync(join(publicDir, 'sitemap-guides.xml'), renderUrlset(byTier.guides));
-  writeFileSync(join(publicDir, 'sitemap-core.xml'), renderUrlset(byTier.core));
+  writeFileSync(join(publicDir, 'sitemap-medical.xml'), renderUrlset(byTier.medical));
+  writeFileSync(join(publicDir, 'sitemap-lifecycle.xml'), renderUrlset(byTier.lifecycle));
+  writeFileSync(join(publicDir, 'sitemap-resources.xml'), renderUrlset(byTier.resources));
 
   const indexXml = renderSitemapIndex([...CHILD_SITEMAPS]);
   writeFileSync(join(publicDir, 'sitemap-index.xml'), indexXml);
@@ -464,7 +520,7 @@ function main(): void {
   console.log(
     `Wrote sitemap-index.xml + ${CHILD_SITEMAPS.length} child sitemaps (${routes.length} URLs: ` +
       `commercial=${counts.commercial}, blog=${counts.blog}, faq=${counts.faq}, ` +
-      `guides=${counts.guides}, core=${counts.core})`,
+      `guides=${counts.guides}, medical=${counts.medical}, lifecycle=${counts.lifecycle}, resources=${counts.resources})`,
   );
 }
 

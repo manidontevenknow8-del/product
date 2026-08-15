@@ -372,6 +372,26 @@ export function buildArticleSchema(options: {
   };
 }
 
+export function buildHowToSchema(options: {
+  url: string;
+  name: string;
+  description: string;
+  steps: readonly { name: string; text: string }[];
+}) {
+  return {
+    '@type': 'HowTo',
+    '@id': `${options.url}#howto`,
+    name: options.name,
+    description: options.description,
+    step: options.steps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.name,
+      text: step.text,
+    })),
+  };
+}
+
 export function buildBlogPostingSchema(options: {
   url: string;
   headline: string;

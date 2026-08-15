@@ -45,6 +45,13 @@ const ROUTE_COVERAGE = [
     files: ['staticPageSeo.tsx', 'structuredDataSchemas.ts'],
   },
   {
+    id: 'vaccine-scheduler',
+    path: '/tools/vaccine-scheduler',
+    handler: 'vaccineSchedulerSeo.tsx',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'MedicalWebPage', 'FAQPage', 'BreadcrumbList'],
+    files: ['vaccineSchedulerSeo.tsx', 'medicalWebPageSchema.ts', 'structuredDataSchemas.ts'],
+  },
+  {
     id: 'static-about',
     path: '/about',
     handler: 'staticPageSeo.tsx',
@@ -158,6 +165,30 @@ const ROUTE_COVERAGE = [
     files: ['programmaticSeo.tsx', 'medicalWebPageSchema.ts'],
     count: 91,
   },
+  {
+    id: 'lifecycle-guide',
+    pathPattern: '/guides/:breed/lifecycle/:stage',
+    handler: 'lifecycleSeo.tsx',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'MedicalWebPage', 'HowTo'],
+    files: ['lifecycleSeo.tsx', 'medicalWebPageSchema.ts', 'structuredDataSchemas.ts'],
+    count: 3000,
+  },
+  {
+    id: 'resource-hub',
+    pathPattern: '/resources',
+    handler: 'resourceSeo.tsx',
+    required: ['Organization', 'WebSite', 'CollectionPage', 'BreadcrumbList'],
+    files: ['resourceSeo.tsx', 'structuredDataSchemas.ts'],
+    count: 1,
+  },
+  {
+    id: 'resource-page',
+    pathPattern: '/resources/:city/:topic',
+    handler: 'resourceSeo.tsx',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'HowTo'],
+    files: ['resourceSeo.tsx', 'structuredDataSchemas.ts'],
+    count: 2000,
+  },
 ];
 
 function readSeoFile(name) {
@@ -182,7 +213,7 @@ function fileContainsType(content, type) {
     MedicalWebPage: ['buildMedicalWebPageSchema', "'@type': 'MedicalWebPage'"],
     Blog: ["'@type': 'Blog'"],
     QAPage: ["'@type': 'QAPage'"],
-    HowTo: ["'@type': 'HowTo'"],
+    HowTo: ['buildHowToSchema', "'@type': 'HowTo'"],
   };
 
   const needles = typeMap[type] ?? [`'@type': '${type}'`, `"@type": "${type}"`];

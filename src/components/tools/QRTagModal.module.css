@@ -1,0 +1,282 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(12, 16, 12, 0.55);
+}
+
+.dialog {
+  position: relative;
+  width: min(560px, 100%);
+  max-height: min(92vh, 900px);
+  overflow: auto;
+  padding: 28px 24px 24px;
+  background: #f7f1e6;
+  border: 1px solid rgba(168, 131, 58, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #5c554d;
+  cursor: pointer;
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a8833a;
+}
+
+.title {
+  margin: 0 0 8px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  font-weight: 500;
+  color: #1c2b1d;
+}
+
+.lead {
+  margin: 0 0 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #5c554d;
+}
+
+.styles {
+  margin: 0 0 18px;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend {
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #5c554d;
+}
+
+.styleOption {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px 12px;
+  border: 1px solid rgba(28, 43, 29, 0.14);
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.styleOption input {
+  margin-top: 3px;
+}
+
+.styleOption strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #1c2b1d;
+}
+
+.styleOption em {
+  display: block;
+  margin-top: 2px;
+  font-style: normal;
+  font-size: 0.8rem;
+  color: #5c554d;
+}
+
+.preview {
+  margin: 0 auto 18px;
+  background: #fff;
+  border: 2px solid #111;
+  color: #111;
+}
+
+.preview_collar {
+  width: min(280px, 100%);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+}
+
+.preview_crate {
+  width: 100%;
+  padding: 28px 20px;
+}
+
+.preview_wallet {
+  width: min(340px, 100%);
+  aspect-ratio: 1.586;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.previewInner {
+  width: 100%;
+  text-align: center;
+}
+
+.tagKicker {
+  margin: 0 0 4px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.tagPetName {
+  margin: 0 0 10px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.qrFrame {
+  display: grid;
+  place-items: center;
+  margin: 0 auto 10px;
+}
+
+.qrFrame svg {
+  width: min(100%, 280px);
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.tagUrl {
+  margin: 0 0 4px;
+  font-size: 10px;
+  word-break: break-all;
+  color: #333;
+}
+
+.tagFoot {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+.canvasHold {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.primary,
+.secondary {
+  border: 0;
+  padding: 11px 14px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: #1c2b1d;
+  color: #fff;
+}
+
+.secondary {
+  background: transparent;
+  color: #1c2b1d;
+  border: 1px solid rgba(28, 43, 29, 0.35);
+}
+
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .overlay,
+  .overlay * {
+    visibility: visible !important;
+  }
+
+  .overlay {
+    position: static;
+    inset: auto;
+    background: #fff;
+    padding: 0;
+    display: block;
+  }
+
+  .dialog {
+    box-shadow: none;
+    border: 0;
+    max-height: none;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+  }
+
+  .close,
+  .eyebrow,
+  .title,
+  .lead,
+  .styles,
+  .actions,
+  .canvasHold {
+    display: none !important;
+  }
+
+  .preview {
+    border: 0;
+    margin: 0 auto;
+  }
+
+  .preview_crate {
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    place-items: center;
+    page-break-inside: avoid;
+  }
+
+  .preview_crate .tagPetName {
+    font-size: 2.4rem;
+  }
+
+  .preview_crate .qrFrame svg {
+    width: 360px;
+  }
+
+  .preview_wallet {
+    width: 85.6mm;
+    height: 53.98mm;
+    margin: 12mm auto;
+  }
+
+  .preview_collar {
+    width: 70mm;
+    height: 70mm;
+    margin: 20mm auto;
+  }
+}

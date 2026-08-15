@@ -1,7 +1,13 @@
+.wrap {
+  display: inline-block;
+  line-height: 0;
+}
+
 .qr {
   display: block;
-  width: 220px;
-  height: 220px;
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
   border: 1px solid #d8d2c8;
   border-radius: 8px;
   background: #fff;

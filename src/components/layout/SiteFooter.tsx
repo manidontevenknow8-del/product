@@ -3,6 +3,8 @@ import { PetCluesLogo } from '@/components/brand';
 import { ROUTES } from '@/routes/paths';
 import { HEALTH_DISCLAIMER, LEGAL_CONTACT } from '@/data/legalConfig';
 import {
+  FOOTER_B2B_LINKS,
+  FOOTER_CLINICAL_TOOLS_LINKS,
   FOOTER_COMPANY_LINKS,
   FOOTER_LEGAL_LINKS,
   FOOTER_PRODUCT_LINKS,
@@ -43,6 +45,22 @@ export function SiteFooter() {
             <div className={styles.group}>
               <span className={styles.groupTitle}>Product</span>
               {FOOTER_PRODUCT_LINKS.map((link) => (
+                <Link key={link.to} to={link.to} className={styles.link}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className={styles.group}>
+              <span className={styles.groupTitle}>Free Clinical Tools</span>
+              {FOOTER_CLINICAL_TOOLS_LINKS.map((link) => (
+                <Link key={link.to} to={link.to} className={styles.link}>
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+            <div className={styles.group}>
+              <span className={styles.groupTitle}>B2B Solutions</span>
+              {FOOTER_B2B_LINKS.map((link) => (
                 <Link key={link.to} to={link.to} className={styles.link}>
                   {link.label}
                 </Link>

@@ -1,0 +1,77 @@
+.section {
+  margin: var(--space-12, 3rem) 0;
+  max-width: 46rem;
+}
+
+.kicker {
+  margin: 0 0 var(--space-2, 0.5rem);
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: var(--editorial-type-kicker, 10px);
+  font-weight: 600;
+  letter-spacing: var(--editorial-tracking-kicker, 0.28em);
+  text-transform: uppercase;
+  color: var(--ed-gold, #a8833a);
+}
+
+.title {
+  margin: 0 0 var(--space-5, 1.25rem);
+  font-family: var(--font-display, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--ed-forest, #1c2b1d);
+}
+
+.list {
+  border-top: 1px solid rgba(28, 43, 29, 0.14);
+}
+
+.item {
+  border-bottom: 1px solid rgba(28, 43, 29, 0.14);
+}
+
+.itemTitle {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.trigger {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+  border: none;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 1.02rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--ed-forest, #1c2b1d);
+}
+
+.trigger:hover {
+  color: #8a6420;
+}
+
+.chevron {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ed-gold, #a8833a);
+}
+
+.panel {
+  padding: 0 0 1.1rem;
+}
+
+.panel p {
+  margin: 0;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--ed-muted, #5c554d);
+}

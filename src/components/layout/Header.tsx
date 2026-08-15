@@ -12,6 +12,7 @@ import styles from './Header.module.css';
 const publicNav = [
   { label: 'Features', href: '#features' },
   { label: 'How it works', href: '#how-it-works' },
+  { label: 'Free Clinical Tools', path: ROUTES.TOOLS_VACCINE_SCHEDULER },
   { label: 'Blog', path: ROUTES.BLOG },
   { label: 'About', path: ROUTES.ABOUT },
   { label: 'Pricing', path: ROUTES.PRICING },

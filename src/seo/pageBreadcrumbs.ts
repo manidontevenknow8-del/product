@@ -4,6 +4,7 @@ import type { BreadcrumbItem } from './breadcrumbSchema';
 const PAGE_LABELS: Record<string, string> = {
   [ROUTES.PRICING]: 'Pricing',
   [ROUTES.PET_MATCH]: 'Pet Match Quiz',
+  [ROUTES.TOOLS_VACCINE_SCHEDULER]: 'Vaccination Scheduler',
   [ROUTES.FOUNDING_MEMBERS]: 'Founding Members',
   [ROUTES.BLOG]: 'Blog',
   [ROUTES.PRIVACY]: 'Privacy Policy',

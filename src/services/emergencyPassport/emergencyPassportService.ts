@@ -6,6 +6,7 @@ import {
   generatePublicToken,
   mapEmergencyPassportRow,
   normalizeCriticalFields,
+  toPublicEmergencyTriage,
 } from './emergencyPassportTypes';
 import type { IEmergencyPassportService } from './supabaseEmergencyPassportService';
 import { supabaseEmergencyPassportService } from './supabaseEmergencyPassportService';
@@ -123,6 +124,15 @@ export const mockEmergencyPassportService: IEmergencyPassportService = {
       criticalFields: normalizeCriticalFields(row.critical_fields_json),
       updatedAt: row.updated_at,
     };
+  },
+
+  async getTriageByPublicId(publicId) {
+    const row = loadAll().find(
+      (entry) => entry.public_token === publicId && !entry.revoked_at,
+    );
+    if (!row) return null;
+    const fields = normalizeCriticalFields(row.critical_fields_json);
+    return toPublicEmergencyTriage('Pet', '', '', null, fields, row.updated_at);
   },
 };
 

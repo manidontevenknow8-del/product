@@ -18,6 +18,9 @@ supabase/.temp/
 credentials.json
 service-account*.json
 
+# Google Indexing API drip-feed cursor (do not commit)
+.indexing-state.json
+
 # Generated SEO tooling output (committed stub stays; GSC run overwrites locally)
 # src/data/striking-distance.json is tracked with [] — uncomment to ignore live data:
 # src/data/striking-distance.json

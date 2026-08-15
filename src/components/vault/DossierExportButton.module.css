@@ -1,0 +1,49 @@
+.heroBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.75rem 1.15rem;
+  border: 1px solid rgba(230, 197, 119, 0.55);
+  background: rgba(168, 131, 58, 0.18);
+  color: #e6c577;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.heroBtn:hover {
+  background: rgba(168, 131, 58, 0.32);
+  border-color: #e6c577;
+  color: #f7f1e6;
+}
+
+.vaultBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  width: 100%;
+  max-width: 28rem;
+  padding: 0.85rem 1.25rem;
+  border: none;
+  background: #1c2b1d;
+  color: #f7f1e6;
+  font-family: var(--font-sans, 'DM Sans', system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.vaultBtn:hover {
+  background: #243528;
+  transform: translateY(-1px);
+}

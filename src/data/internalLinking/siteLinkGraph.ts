@@ -10,6 +10,8 @@ import { getIntentPageBySlug, listIntentPages } from '@/data/intent';
 import { listProgrammaticPages } from '@/data/programmatic';
 import { listProgrammaticCollections } from '@/data/programmatic/collections';
 import { getBreedConditionPath, listBreedConditions } from '@/data/breedConditions';
+import { listLifecycleEntries } from '@/data/lifecycleMatrix';
+import { listResourceEntries } from '@/data/resourceMatrix';
 import { FOOTER_LAUNCH_LINKS } from '@/data/footerLinks';
 import { ROUTES } from '@/routes/paths';
 import type { BlogLinkCandidate } from './types';
@@ -58,6 +60,7 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
   register(ROUTES.COMPARE, 'Compare index', 'compare');
   register(ROUTES.BEST, 'Best index', 'best');
   register(ROUTES.GUIDES, 'Guides hub', 'guides');
+  register(ROUTES.RESOURCES, 'Local resources hub', 'resources');
   register(ROUTES.SIGNUP, 'Signup', 'core');
   register(ROUTES.FOUNDING_MEMBERS, 'Founding members', 'core');
   register(ROUTES.PET_MATCH, 'Pet match', 'core');
@@ -101,6 +104,14 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
 
   for (const entry of listBreedConditions()) {
     register(getBreedConditionPath(entry), `${entry.condition} in ${entry.breed}s`, 'guides');
+  }
+
+  for (const entry of listLifecycleEntries()) {
+    register(entry.path, `${entry.stage.label} for ${entry.breed.name}s`, 'lifecycle');
+  }
+
+  for (const entry of listResourceEntries()) {
+    register(entry.path, `${entry.topic.label} in ${entry.city.name}`, 'resources');
   }
 
   const connect = (from: string, href: string) => {
@@ -183,6 +194,15 @@ export function buildSiteLinkGraph(blogCandidates: BlogLinkCandidate[]): OrphanR
 
   for (const entry of listBreedConditions()) {
     connect(ROUTES.GUIDES, getBreedConditionPath(entry));
+  }
+
+  for (const entry of listLifecycleEntries()) {
+    connect(ROUTES.GUIDES, entry.path);
+  }
+
+  connect(ROUTES.GUIDES, ROUTES.RESOURCES);
+  for (const entry of listResourceEntries()) {
+    connect(ROUTES.RESOURCES, entry.path);
   }
 
   for (const link of FOOTER_LAUNCH_LINKS) {

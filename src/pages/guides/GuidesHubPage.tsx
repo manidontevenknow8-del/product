@@ -7,6 +7,8 @@ import { listProgrammaticCollections } from '@/data/programmatic/collections';
 import { FeaturedBlogLinks } from '@/components/seo/FeaturedBlogLinks';
 import { listProgrammaticPages, PROGRAMMATIC_PAGE_COUNT } from '@/data/programmatic';
 import { listBreedConditions, getBreedConditionPath } from '@/data/breedConditions';
+import { TOP_DOG_BREEDS, getLifecyclePath, EXPECTED_LIFECYCLE_URL_COUNT } from '@/data/lifecycleMatrix';
+import { EXPECTED_RESOURCE_URL_COUNT } from '@/data/resourceMatrix';
 import { ProgrammaticHubSEO, getProgrammaticHubBreadcrumbs } from '@/seo/programmaticSeo';
 import { ROUTES } from '@/routes/paths';
 import styles from './GuidesPages.module.css';
@@ -20,12 +22,19 @@ export function GuidesHubPage() {
   }));
   const breedConditions = listBreedConditions();
   const BREED_PREVIEW_COUNT = 24;
+  const LIFECYCLE_PREVIEW_COUNT = 24;
   const [breedsExpanded, setBreedsExpanded] = useState(false);
+  const [lifecycleExpanded, setLifecycleExpanded] = useState(false);
   const hasMoreBreeds = breedConditions.length > BREED_PREVIEW_COUNT;
   const visibleBreedConditions =
     breedsExpanded || !hasMoreBreeds
       ? breedConditions
       : breedConditions.slice(0, BREED_PREVIEW_COUNT);
+  const hasMoreLifecycle = TOP_DOG_BREEDS.length > LIFECYCLE_PREVIEW_COUNT;
+  const visibleLifecycleBreeds =
+    lifecycleExpanded || !hasMoreLifecycle
+      ? TOP_DOG_BREEDS
+      : TOP_DOG_BREEDS.slice(0, LIFECYCLE_PREVIEW_COUNT);
 
   return (
     <>
@@ -39,13 +48,18 @@ export function GuidesHubPage() {
                 <h1 className={styles.title}>Pet care guides &amp; templates</h1>
                 <p className={styles.lead}>
                   {PROGRAMMATIC_PAGE_COUNT} programmatic guides across {collections.length}{' '}
-                  collections, plus {breedConditions.length} breed–condition clinical briefs —
-                  vaccination schedules, travel checklists, emergency prep, and high-risk disease
-                  timelines.
+                  collections, {breedConditions.length} breed-condition clinical briefs, and{' '}
+                  {EXPECTED_LIFECYCLE_URL_COUNT.toLocaleString()} breed x lifecycle/diet pages and{' '}
+                  {EXPECTED_RESOURCE_URL_COUNT.toLocaleString()} city record packets. Vaccination
+                  schedules, travel checklists, emergency prep, and high-intent boarding files.
                 </p>
               </header>
 
               <FeaturedBlogLinks title="Editorial guides" />
+
+              <p className={styles.meta}>
+                <Link to={ROUTES.RESOURCES}>Local boarding and ER packets</Link>
+              </p>
 
               <h2 className={styles.sectionTitle}>Breed clinical risks</h2>
               <div className={styles.grid}>
@@ -75,6 +89,39 @@ export function GuidesHubPage() {
                     {breedsExpanded
                       ? 'Show fewer breed guides'
                       : `Show all ${breedConditions.length} breed guides`}
+                  </button>
+                </div>
+              )}
+
+              <h2 className={styles.sectionTitle}>Breed lifecycle &amp; diet guides</h2>
+              <div className={styles.grid}>
+                {visibleLifecycleBreeds.map((breed) => (
+                  <Link
+                    key={breed.slug}
+                    to={getLifecyclePath(breed.slug, 'puppy-vaccination-schedule')}
+                    className={styles.card}
+                  >
+                    <h2 className={styles.cardTitle}>{breed.name} lifecycle guides</h2>
+                    <p className={styles.cardDesc}>
+                      15 stages covering vaccination, diet, recovery, and senior care for this{' '}
+                      {breed.size} breed.
+                    </p>
+                    <span className={styles.cardMeta}>{breed.healthFocus}</span>
+                    <span className={styles.cardLink}>Open lifecycle cluster →</span>
+                  </Link>
+                ))}
+              </div>
+              {hasMoreLifecycle && (
+                <div className={styles.showMoreWrap}>
+                  <button
+                    type="button"
+                    className={styles.showMore}
+                    onClick={() => setLifecycleExpanded((prev) => !prev)}
+                    aria-expanded={lifecycleExpanded}
+                  >
+                    {lifecycleExpanded
+                      ? 'Show fewer lifecycle breeds'
+                      : `Show all ${TOP_DOG_BREEDS.length} lifecycle breeds`}
                   </button>
                 </div>
               )}

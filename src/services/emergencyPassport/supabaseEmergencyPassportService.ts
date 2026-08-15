@@ -4,11 +4,13 @@ import type {
   EmergencyPassportRecord,
   EmergencyPassportRow,
   PublicEmergencyPassport,
+  PublicEmergencyTriage,
 } from './emergencyPassportTypes';
 import {
   generatePublicToken,
   mapEmergencyPassportRow,
   normalizeCriticalFields,
+  toPublicEmergencyTriage,
 } from './emergencyPassportTypes';
 
 const SELECT = 'id, pet_id, public_token, critical_fields_json, updated_at, revoked_at';
@@ -26,6 +28,8 @@ export interface IEmergencyPassportService {
   regenerateToken(petId: string): Promise<EmergencyPassportRecord>;
   revoke(petId: string): Promise<void>;
   getPublicByToken(token: string): Promise<PublicEmergencyPassport | null>;
+  /** Triage-only public profile for QR tags (`/p/:publicId`). */
+  getTriageByPublicId(publicId: string): Promise<PublicEmergencyTriage | null>;
 }
 
 export const supabaseEmergencyPassportService: IEmergencyPassportService = {
@@ -132,5 +136,48 @@ export const supabaseEmergencyPassportService: IEmergencyPassportService = {
       criticalFields: normalizeCriticalFields(payload.criticalFields),
       updatedAt: payload.updatedAt ?? new Date().toISOString(),
     };
+  },
+
+  async getTriageByPublicId(publicId) {
+    const supabase = getSupabaseClient();
+    const { data, error } = await supabase.rpc('get_emergency_triage_public', {
+      p_token: publicId,
+    });
+
+    // Prefer the whitelisted RPC; fall back to strip-on-client if migration not applied yet.
+    if (!error && data && typeof data === 'object') {
+      const payload = data as Partial<PublicEmergencyTriage> & {
+        severeAllergies?: unknown;
+      };
+
+      const allergies = Array.isArray(payload.severeAllergies)
+        ? payload.severeAllergies.map((line) => String(line).trim()).filter(Boolean)
+        : [];
+
+      return {
+        petName: payload.petName ?? 'Pet',
+        species: payload.species ?? '',
+        breed: payload.breed ?? '',
+        photoUrl: payload.photoUrl ?? null,
+        ownerPhonePrimary: payload.ownerPhonePrimary?.trim() || null,
+        ownerPhoneSecondary: payload.ownerPhoneSecondary?.trim() || null,
+        severeAllergies: allergies,
+        rabiesTagNumber: payload.rabiesTagNumber?.trim() || null,
+        vetName: payload.vetName?.trim() || null,
+        vetPhone: payload.vetPhone?.trim() || null,
+        updatedAt: payload.updatedAt ?? new Date().toISOString(),
+      };
+    }
+
+    const legacy = await supabaseEmergencyPassportService.getPublicByToken(publicId);
+    if (!legacy) return null;
+    return toPublicEmergencyTriage(
+      legacy.petName,
+      legacy.species,
+      legacy.breed,
+      legacy.photoUrl,
+      legacy.criticalFields,
+      legacy.updatedAt,
+    );
   },
 };

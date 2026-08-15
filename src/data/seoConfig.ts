@@ -1,5 +1,7 @@
 import { getCommercialPageByPath, isCommercialPath } from '@/data/commercial';
 import { getBreedConditionBySegments } from '@/data/breedConditions';
+import { getLifecycleEntry, isLifecycleGuidePath } from '@/data/lifecycleMatrix';
+import { getResourceEntry, isResourcePath } from '@/data/resourceMatrix';
 import { ORGANIZATION_SAME_AS } from '@/data/socialProfiles';
 import { ROUTES, PROTECTED_ROUTES, AUTH_ROUTES } from '@/routes/paths';
 import { formatMetaDescription, formatPageTitle } from '@/seo/seoFormatters';
@@ -65,6 +67,7 @@ export const INDEXABLE_PUBLIC_ROUTES = [
   ROUTES.COMPARE,
   ROUTES.BEST,
   ROUTES.GUIDES,
+  ROUTES.RESOURCES,
   ROUTES.LEARN,
   ROUTES.PRIVACY,
   ROUTES.TERMS,
@@ -80,6 +83,7 @@ export const INDEXABLE_PUBLIC_ROUTES = [
   ROUTES.PET_VACCINATION_RECORDS,
   ROUTES.PET_MEDICAL_HISTORY,
   ROUTES.PET_HEALTH_TRACKER,
+  ROUTES.TOOLS_VACCINE_SCHEDULER,
 ] as const;
 
 const INDEXABLE_SET = new Set<string>(INDEXABLE_PUBLIC_ROUTES);
@@ -137,8 +141,19 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues pet match quiz',
   },
+  [ROUTES.TOOLS_VACCINE_SCHEDULER]: {
+    title: formatPageTitle('Puppy & Kitten Vaccination Scheduler | Free Immunization Roadmap'),
+    description: formatMetaDescription(
+      'Free puppy and kitten vaccination & booster scheduler. Enter species, date of birth, and lifestyle risk to generate a custom clinical immunization roadmap.',
+    ),
+    keywords:
+      'puppy vaccination schedule, kitten vaccination schedule, dog vaccine booster calculator, cat vaccine schedule, rabies vaccine puppy, FVRCP schedule, DHPP schedule',
+    ogType: 'website',
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues puppy and kitten vaccination scheduler',
+  },
   [ROUTES.GENESIS]: {
-    title: formatPageTitle('Genesis Vault — PetClues'),
+    title: formatPageTitle('Genesis Vault - PetClues'),
     description:
       'Invitation-only Genesis Vault: white-glove digitization and lifetime security for your companion\'s health archive.',
     noIndex: true,
@@ -182,6 +197,16 @@ export const SEO_PAGES: Record<string, SEOConfig> = {
       'best pet health record app, best pet reminder app, pet vaccination tracker, digital pet passport, pet medical record organizer',
     ogImage: DEFAULT_OG_IMAGE,
     ogImageAlt: 'PetClues best pet health app guides',
+  },
+  [ROUTES.RESOURCES]: {
+    title: formatPageTitle('Local pet record packets for boarding, travel, and emergencies'),
+    description: formatMetaDescription(
+      '2,000 city resource pages for boarding vaccines, titer travel files, sitter handoffs, and ER kits. Built as lead-gen checklists with PetClues vaults.',
+    ),
+    keywords:
+      'boarding vaccine requirements, pet records by city, digital pet passport, emergency pet packet, sitter handoff folder',
+    ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: 'PetClues local pet record packets',
   },
   [ROUTES.GUIDES]: {
     title: 'Pet Care Guides & Templates: Vaccines, Travel, Emergency | PetClues',
@@ -370,8 +395,10 @@ export function isGuidesCollectionPath(pathname: string): boolean {
 export function isGuidesDetailPath(pathname: string): boolean {
   if (!pathname.startsWith(`${ROUTES.GUIDES}/`)) return false;
   const rest = pathname.slice(`${ROUTES.GUIDES}/`.length);
-  return rest.includes('/');
+  return rest.includes('/') && !isLifecycleGuidePath(pathname);
 }
+
+export { isLifecycleGuidePath, isResourcePath };
 
 export function isGuidesPath(pathname: string): boolean {
   return pathname === ROUTES.GUIDES || pathname.startsWith(`${ROUTES.GUIDES}/`);
@@ -398,10 +425,13 @@ export function isPublicStoryPath(pathname: string): boolean {
 }
 
 export function isPublicEmergencyPath(pathname: string): boolean {
-  return (
+  const isLegacy =
     pathname.startsWith(`${ROUTES.EMERGENCY_PUBLIC}/`) &&
-    pathname.length > `${ROUTES.EMERGENCY_PUBLIC}/`.length
-  );
+    pathname.length > `${ROUTES.EMERGENCY_PUBLIC}/`.length;
+  const isTriage =
+    pathname.startsWith(`${ROUTES.PUBLIC_TRIAGE}/`) &&
+    pathname.length > `${ROUTES.PUBLIC_TRIAGE}/`.length;
+  return isLegacy || isTriage;
 }
 
 export function isIndexablePublicPath(pathname: string): boolean {
@@ -410,7 +440,8 @@ export function isIndexablePublicPath(pathname: string): boolean {
   if (isBlogArticlePath(pathname)) return true;
   if (isCompareArticlePath(pathname)) return true;
   if (isBestArticlePath(pathname)) return true;
-  if (isGuidesDetailPath(pathname) || isGuidesCollectionPath(pathname)) return true;
+  if (isGuidesDetailPath(pathname) || isGuidesCollectionPath(pathname) || isLifecycleGuidePath(pathname)) return true;
+  if (pathname === ROUTES.RESOURCES || isResourcePath(pathname)) return true;
   if (isLearnArticlePath(pathname)) return true;
   if (isFaqArticlePath(pathname)) return true;
   return INDEXABLE_SET.has(pathname);
@@ -516,6 +547,66 @@ export function getPageSEO(pathname: string): SEOConfig {
     );
   }
 
+  if (pathname === ROUTES.RESOURCES) {
+    return finalizeSEO(
+      {
+        ...DEFAULT,
+        title: formatPageTitle('Local pet record packets for boarding, travel, and emergencies'),
+        description: formatMetaDescription(
+          '2,000 city resource pages for boarding vaccines, titer travel files, sitter handoffs, and ER kits. Built as lead-gen checklists with PetClues vaults.',
+        ),
+        canonical: buildCanonical(pathname),
+        ogType: 'website',
+        noIndex: false,
+      },
+      pathname,
+    );
+  }
+
+  if (isResourcePath(pathname)) {
+    const parts = pathname.split('/').filter(Boolean);
+    const entry = getResourceEntry(parts[1], parts[2]);
+    if (entry) {
+      return finalizeSEO(
+        {
+          ...DEFAULT,
+          title: formatPageTitle(`${entry.topic.label} in ${entry.city.name}, ${entry.city.stateAbbr}`),
+          description: formatMetaDescription(
+            `${entry.topic.label} for ${entry.city.name}, ${entry.city.stateAbbr}. Checklist, intake steps, and a digital packet for boarding, sitters, and ER visits.`,
+            entry.city.name,
+          ),
+          canonical: buildCanonical(pathname),
+          ogType: 'article',
+          articleSection: 'Local Pet Record Resources',
+          noIndex: false,
+        },
+        pathname,
+      );
+    }
+  }
+
+  if (isLifecycleGuidePath(pathname)) {
+    const parts = pathname.split('/').filter(Boolean);
+    const entry = getLifecycleEntry(parts[1], parts[3]);
+    if (entry) {
+      return finalizeSEO(
+        {
+          ...DEFAULT,
+          title: formatPageTitle(`${entry.stage.label} for ${entry.breed.name}s`),
+          description: formatMetaDescription(
+            `${entry.stage.label} for ${entry.breed.name}s (${entry.breed.adultWeight}) - timeline, diet notes, and a dated care log for ${entry.breed.healthFocus}.`,
+            entry.breed.name,
+          ),
+          canonical: buildCanonical(pathname),
+          ogType: 'article',
+          articleSection: 'Breed Lifecycle Guides',
+          noIndex: false,
+        },
+        pathname,
+      );
+    }
+  }
+
   if (isGuidesDetailPath(pathname) || isGuidesCollectionPath(pathname)) {
     const rest = pathname.startsWith(`${ROUTES.GUIDES}/`)
       ? pathname.slice(`${ROUTES.GUIDES}/`.length)
@@ -524,6 +615,11 @@ export function getPageSEO(pathname: string): SEOConfig {
     if (segmentA && segmentB) {
       const breedCondition = getBreedConditionBySegments(segmentA, segmentB);
       if (breedCondition) {
+        const ogParams = new URLSearchParams({
+          breed: breedCondition.breed,
+          condition: breedCondition.condition,
+          risk: breedCondition.riskLevel,
+        });
         return finalizeSEO(
           {
             ...DEFAULT,
@@ -531,11 +627,13 @@ export function getPageSEO(pathname: string): SEOConfig {
               `${breedCondition.condition} in ${breedCondition.breed}s: Symptoms, Timeline & Digital Tracking`,
             ),
             description: formatMetaDescription(
-              `${breedCondition.scientificName} risk in ${breedCondition.breed}s — symptoms, management protocols, and digital tracking.`,
+              `${breedCondition.scientificName} risk in ${breedCondition.breed}s - symptoms, management protocols, and digital tracking.`,
               breedCondition.breed,
             ),
             canonical: buildCanonical(pathname),
             ogType: 'article',
+            ogImage: `${SITE_URL}/api/og-clinical?${ogParams.toString()}`,
+            ogImageAlt: `Clinical Tracking: ${breedCondition.condition} in ${breedCondition.breed}s - Risk Level: ${breedCondition.riskLevel}`,
             noIndex: false,
           },
           pathname,
@@ -644,5 +742,5 @@ export const SITE_META = {
   organizationDescription:
     'PetClues helps pet owners and professionals manage veterinary records, vaccinations, documents, and travel paperwork in one place.',
   softwareDescription:
-    'PetClues is pet health and travel software that stores veterinary records, vaccinations, titers, documents, and reminders in one secure vault — with digital pet passports, care timelines, and household sharing for owners, breeders, and relocation agencies.',
+    'PetClues is pet health and travel software that stores veterinary records, vaccinations, titers, documents, and reminders in one secure vault - with digital pet passports, care timelines, and household sharing for owners, breeders, and relocation agencies.',
 };

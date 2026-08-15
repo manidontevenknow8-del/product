@@ -1229,6 +1229,10 @@ export type Database = {
         Args: { p_token: string };
         Returns: Record<string, unknown> | null;
       };
+      get_emergency_triage_public: {
+        Args: { p_token: string };
+        Returns: Record<string, unknown> | null;
+      };
       get_pet_story_public: {
         Args: { p_token: string };
         Returns: Record<string, unknown> | null;

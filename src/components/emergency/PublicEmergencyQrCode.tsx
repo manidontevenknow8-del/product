@@ -1,22 +1,29 @@
+import { QRCodeSVG } from 'qrcode.react';
 import styles from './PublicEmergencyQrCode.module.css';
 
 type PublicEmergencyQrCodeProps = {
   url: string;
   label: string;
+  size?: number;
 };
 
-export function PublicEmergencyQrCode({ url, label }: PublicEmergencyQrCodeProps) {
-  const qrSrc = `https://quickchart.io/qr?text=${encodeURIComponent(url)}&size=220&margin=2&dark=1a1a1a&light=ffffff`;
-
+/**
+ * High-contrast QR mark for emergency share surfaces (client-rendered SVG).
+ */
+export function PublicEmergencyQrCode({ url, label, size = 180 }: PublicEmergencyQrCodeProps) {
   return (
-    <img
-      src={qrSrc}
-      alt={label}
-      className={styles.qr}
-      width={220}
-      height={220}
-      loading="lazy"
-      decoding="async"
-    />
+    <div className={styles.wrap}>
+      <QRCodeSVG
+        value={url}
+        size={size}
+        level="H"
+        includeMargin
+        bgColor="#ffffff"
+        fgColor="#111111"
+        className={styles.qr}
+        aria-label={label}
+        role="img"
+      />
+    </div>
   );
 }

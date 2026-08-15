@@ -25,5 +25,8 @@ export function buildCriticalFieldsFromSources(
     insuranceProvider: existing?.insuranceProvider ?? null,
     insurancePolicyNumber: existing?.insurancePolicyNumber ?? null,
     microchipId: existing?.microchipId ?? pet.microchipId ?? null,
+    ownerPhonePrimary: existing?.ownerPhonePrimary ?? null,
+    ownerPhoneSecondary: existing?.ownerPhoneSecondary ?? null,
+    rabiesTagNumber: existing?.rabiesTagNumber ?? null,
   });
 }

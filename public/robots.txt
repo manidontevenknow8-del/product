@@ -60,4 +60,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://petclues.com/sitemap.xml
+Sitemap: https://petclues.com/sitemap-index.xml
