@@ -737,9 +737,6 @@ const FALLBACK = pack(
 );
 
 export function getBreedConditionFaqs(meta: BreedConditionMeta): GeneratedFaqItem[] {
-  if (meta.faqs && meta.faqs.length > 0) {
-    return meta.faqs.map((faq) => ({ question: faq.question, answer: faq.answer }));
-  }
   const packForSegment = AUTHORITY_BY_SEGMENT[conditionSegment(meta)] ?? FALLBACK;
   return packForSegment.faqTemplates.map((template) => ({
     question: template.question(meta.breed, meta.condition),
@@ -750,13 +747,6 @@ export function getBreedConditionFaqs(meta: BreedConditionMeta): GeneratedFaqIte
 export function getBreedConditionCitations(
   meta: BreedConditionMeta,
 ): BreedConditionCitation[] {
-  if (meta.citations && meta.citations.length > 0) {
-    return meta.citations.map((citation) => ({
-      name: citation.name,
-      url: citation.url,
-      source: citation.source ?? 'Peer-reviewed veterinary literature',
-    }));
-  }
   const packForSegment = AUTHORITY_BY_SEGMENT[conditionSegment(meta)] ?? FALLBACK;
   return packForSegment.citations;
 }

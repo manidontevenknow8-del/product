@@ -117,3 +117,27 @@ export function findRelatedBreedConditions(
     riskLevel: meta.riskLevel,
   }));
 }
+
+export function getRelatedClinicalProfiles(meta: BreedConditionMeta, limit = 8): {
+  sameBreed: RelatedBreedConditionLink[];
+  sameCondition: RelatedBreedConditionLink[];
+} {
+  const all = listBreedConditions();
+  const sameBreed = all
+    .filter((entry) => entry.breed === meta.breed && entry.slug !== meta.slug)
+    .slice(0, limit)
+    .map((entry) => ({
+      href: getBreedConditionPath(entry),
+      label: `${entry.condition} in ${entry.breed}s`,
+      riskLevel: entry.riskLevel,
+    }));
+  const sameCondition = all
+    .filter((entry) => entry.condition === meta.condition && entry.slug !== meta.slug)
+    .slice(0, limit)
+    .map((entry) => ({
+      href: getBreedConditionPath(entry),
+      label: `${entry.condition} in ${entry.breed}s`,
+      riskLevel: entry.riskLevel,
+    }));
+  return { sameBreed, sameCondition };
+}

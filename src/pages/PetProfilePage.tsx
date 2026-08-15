@@ -39,6 +39,7 @@ import { ROUTES } from '@/routes/paths';
 import { TIMELINE_DEEP_LINK_PARAMS } from '@/services/timeline/timelineEventHref';
 import { HEALTH_DISCLAIMER } from '@/data/legalConfig';
 import { PAGE_IMG } from '@/data/pageImages';
+import { EMPTY_CRITICAL_FIELDS } from '@/services/emergencyPassport/emergencyPassportTypes';
 import styles from './PetProfilePage.module.css';
 
 const speciesLabel: Record<string, string> = {
@@ -543,12 +544,7 @@ export function PetProfilePage() {
                   petName={profile.name}
                   initialFields={
                     emergencyPassport?.criticalFields ?? {
-                      allergies: [],
-                      medications: [],
-                      vetName: null,
-                      vetPhone: null,
-                      insuranceProvider: null,
-                      insurancePolicyNumber: null,
+                      ...EMPTY_CRITICAL_FIELDS,
                       microchipId: activePet.microchipId ?? null,
                     }
                   }
