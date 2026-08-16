@@ -84,6 +84,76 @@ export function healthFocusBrief(healthFocus: string, stageLabel: string): strin
   return `Keep ${healthFocus} visible on the ${stageLabel.toLowerCase()} timeline so specialists do not treat this dog like a generic mixed-breed flowchart.`;
 }
 
+function healthFocusWatchParagraph(healthFocus: string, stageLabel: string): string {
+  const text = healthFocus.toLowerCase();
+  if (text.includes('ivdd') || text.includes('disc') || text.includes('spine')) {
+    return `IVDD and disc risk change how you run this ${stageLabel} plan: no sofa jumps, no twisting play, and a harness instead of a collar. Film a standing walk every month so a neurologist sees a baseline. If the dog goes down, crate rest starts before the search history.`;
+  }
+  if (text.includes('cardiac') || text.includes('heart') || text.includes('valve') || text.includes('cardiomyopathy') || text.includes('murmur')) {
+    return `Cardiac and heart screening belong inside this ${stageLabel} window, not after a faint. A new murmur, night cough, or exercise drop goes in the same folder as vaccine dates. Ask for the echo PDF, not a verbal we will watch it.`;
+  }
+  if (text.includes('boas') || text.includes('airway') || text.includes('brachy') || text.includes('tracheal')) {
+    return `BOAS and airway notes rewrite this ${stageLabel} day: heat, a tight collar, and a dryer-heavy groomer are medical events. Sleep snoring, reverse-sneeze clusters, and collapse after a short walk need dated video. Anesthesia consent starts with an airway exam.`;
+  }
+  if (text.includes('mdr1')) {
+    return `MDR1 status belongs on the same card as this ${stageLabel} checklist. Do not let a new clinic guess from coat color, and do not volunteer extra ivermectin folklore. Keep the DNA PDF in the vault and read every ear med and dewormer label before the first dose.`;
+  }
+  if (text.includes('bloat') || text.includes('gastric')) {
+    return `Bloat and gastric dilatation sit next to this ${stageLabel} feeding plan. Split meals, use a slow feeder, and keep a two-hour quiet window after a large ration. Unproductive retching is an ER clock, not a wait-and-see stomach upset.`;
+  }
+  if (text.includes('dental')) {
+    return `Dental disease is not cosmetic during this ${stageLabel} stretch. Crowding, tartar, and halitosis predict anesthesia and extraction bills, so keep a mouth photo next to the weight log. Chews are calories and fracture risk unless a veterinarian named the product.`;
+  }
+  if (text.includes('cancer') || text.includes('osteo') || text.includes('lymphoma') || text.includes('tumor')) {
+    return `Cancer watch-lists make this ${stageLabel} exam a hunt for lumps, unexplained lameness, and quiet weight loss. Date every mass with a photo and a ruler. We will check it next year is not a plan once the calendar has already moved.`;
+  }
+  if (text.includes('kidney') || text.includes('renal')) {
+    return `Kidney and renal numbers should ride with this ${stageLabel} diet and medication list. Thirst, urine volume, and appetite changes are data. Do not add an NSAID or grocery supplement until creatinine has a recent date.`;
+  }
+  if (text.includes('allerg') || text.includes('atopic') || text.includes('skin')) {
+    return `Allergy and skin flares will try to hijack this ${stageLabel} calendar with weekend food swaps. Log itch, ear gunk, and paw licking by date. If steroids start, store the start date beside the diet trial so a dermatologist can read cause and effect.`;
+  }
+  if (text.includes('obes') || text.includes('weight') || text.includes('joint') || text.includes('hip')) {
+    return `Obesity and joint load decide whether this ${stageLabel} plan protects hips and elbows. Keep a waist, skip they look like the breed, and film stairs once a quarter. Extra pounds here are orthopedic interest, not a winter coat.`;
+  }
+  return `Use ${healthFocus} as the filter on this ${stageLabel} page: if a tip does not change handling, diet, or screening, it is filler. Write the next screening date in the same reminder as vaccines.`;
+}
+
+function healthFocusActionParagraph(healthFocus: string, stageLabel: string): string {
+  const text = healthFocus.toLowerCase();
+  if (text.includes('ivdd') || text.includes('disc') || text.includes('spine')) {
+    return `For this ${stageLabel} stage, treat disc-risk handling as a household rule. Ramps, a written no-stairs-when-painful note, and a neurologist phone on the fridge beat a new orthopedic bed. Put pain scores in the vault before the crisis.`;
+  }
+  if (text.includes('cardiac') || text.includes('heart') || text.includes('valve') || text.includes('cardiomyopathy') || text.includes('murmur')) {
+    return `Pair this ${stageLabel} activity plan with resting respiratory rates counted at home. A night cough or collapse is a same-day call. Store echo intervals and cardiac drug sheets where a weekend ER can open them.`;
+  }
+  if (text.includes('boas') || text.includes('airway') || text.includes('brachy') || text.includes('tracheal')) {
+    return `Build this ${stageLabel} routine around cool-down, short sessions, and a go-bag with a harness plus a written BOAS history. Do not book group play on a hot afternoon. If airway surgery is discussed, keep pre-op videos with the consent forms.`;
+  }
+  if (text.includes('mdr1')) {
+    return `During ${stageLabel}, print the MDR1 genotype on the travel packet and the sitter sheet. A boarding desk that always uses the same dewormer is how sensitive dogs reach the ER. If the test is pending, treat the dog as positive until the lab PDF lands.`;
+  }
+  if (text.includes('bloat') || text.includes('gastric')) {
+    return `Keep this ${stageLabel} meal map boring: timed rations, no raised-bowl experiments unless prescribed, and no fetch right after dinner. Write the nearest 24-hour surgery number on the fridge. Minutes matter more than a feeding trend.`;
+  }
+  if (text.includes('dental')) {
+    return `Schedule the ${stageLabel} mouth exam with a probe, not a we will clean if we have time add-on. Save pre-anesthesia labs, dental radiographs, and extraction counts as PDFs. Home brushing only counts if it is daily and the photos are not getting worse.`;
+  }
+  if (text.includes('cancer') || text.includes('osteo') || text.includes('lymphoma') || text.includes('tumor')) {
+    return `Make this ${stageLabel} visit a staging conversation: baseline bloodwork, imaging if a mass is real, and a written follow-up date. Do not shop supplements while a lump is undated. Cytology PDFs belong beside the ${stageLabel} checklist.`;
+  }
+  if (text.includes('kidney') || text.includes('renal')) {
+    return `On this ${stageLabel} timeline, phosphorus, appetite, and blood pressure are the scoreboard. Prescription diets only count if the bag photo and start date are in the record. Recheck labs on a calendar, because kidney disease is quiet until it is not.`;
+  }
+  if (text.includes('allerg') || text.includes('atopic') || text.includes('skin')) {
+    return `Hold this ${stageLabel} diet still for the full trial window, then challenge one variable. Photograph hot spots and ear canals in the same lighting each week. If the skin is the emergency, the food journal still has to travel with the dog.`;
+  }
+  if (text.includes('obes') || text.includes('weight') || text.includes('joint') || text.includes('hip')) {
+    return `Treat this ${stageLabel} calorie target as joint insurance. Recheck BCS every 30 days and cut hidden training treats. If NSAIDs start, pair them with kidney values and a written stop date for the trial.`;
+  }
+  return `Translate ${healthFocus} into one action for this ${stageLabel} month: a screening, a handling change, or a lab. Store the result where the next clinic can open it.`;
+}
+
 export function uniqueLifecycleParagraphs(entry: LifecycleMatrixEntry): string[] {
   const { breed, stage } = entry;
   const group = GROUP_NOTE[breed.group] ?? GROUP_NOTE['non-sporting'];
@@ -97,6 +167,8 @@ export function uniqueLifecycleParagraphs(entry: LifecycleMatrixEntry): string[]
     sizeBlurb(breed.size, stage.category),
     group,
     healthFocusBrief(breed.healthFocus, stage.label),
+    healthFocusWatchParagraph(breed.healthFocus, stage.label),
+    healthFocusActionParagraph(breed.healthFocus, stage.label),
     `Practical standard for this page: photograph every certificate the day it is issued, put the next due date in a shared reminder, and store the PDF beside weight and stool notes so a boarding desk, neurologist, or ER in a strange zip code can read the same ${breed.name} file.`,
     `If ${breed.healthFocus} is already active, do not start a new diet, supplement, or over-the-counter pain drug without putting the change on the timeline. Stacking treatments is how "we tried everything" becomes an unreadable chart.`,
   ];
@@ -110,6 +182,6 @@ export function uniqueResourceParagraphs(entry: ResourceMatrixEntry): string[] {
     `The packet you hand a ${city.name} desk should match the pet in front of them: name, microchip, rabies tag, and dates that do not contradict each other. A PDF on a different phone is why intake fails.`,
     `This ${topic.kicker.toLowerCase()} page is the ${city.region} version of that checklist. Use it to build one vault, then share a link with sitters and family instead of forwarding a 40-image text thread.`,
     `Keep prescription-diet authorizations, heartworm dates, and ER contacts in the same folder as the boarding vaccines. ${city.name} clinics will not reconstruct your Google Photos album at 1 a.m.`,
-    `Search intent for this URL: ${topic.searchIntent}. If a ${city.name} form asks for something that is not in the checklist, photograph the form and add it to the vault the same day.`,
+    `People who land here on ${topic.searchIntent} still need the same dated PDFs this ${city.name} ${topic.label.toLowerCase()} page lists - search wording does not replace a matching name, chip, and rabies date.`,
   ];
 }
