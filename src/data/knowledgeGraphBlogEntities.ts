@@ -86,6 +86,48 @@ export const KNOWLEDGE_GRAPH_BY_BLOG_SLUG: Record<string, KnowledgeGraphConfig> 
       },
     ],
   },
+  'how-much-does-it-cost-to-clone-a-dog-2026': {
+    pageTitle: 'How Much Does It Cost to Clone a Dog in 2026?',
+    pageDescription:
+      '2026 commercial dog cloning prices, what lab packages include, extra fees, and why a clone is a genetic copy rather than the same pet.',
+    pageUrl: blogUrl('how-much-does-it-cost-to-clone-a-dog-2026'),
+    entities: [
+      {
+        name: 'Cloning',
+        description:
+          'The process of producing individuals with identical or virtually identical DNA.',
+        wikidataId: 'Q120877',
+      },
+      {
+        name: 'Somatic cell nuclear transfer',
+        description:
+          'A laboratory strategy for creating a viable embryo from a body cell and an egg cell.',
+        wikidataId: 'Q1140026',
+      },
+    ],
+  },
+  'how-common-is-ivdd-in-corgis': {
+    pageTitle: 'How Common Is IVDD in Corgis?',
+    pageDescription:
+      'Prevalence context for intervertebral disc disease in Pembroke and Cardigan Welsh Corgis, emergency grades, and records neurologists use.',
+    pageUrl: blogUrl('how-common-is-ivdd-in-corgis'),
+    entities: [
+      {
+        name: 'Intervertebral Disc Disease (IVDD)',
+        description:
+          'A condition where the cushioning discs between the vertebrae of the spinal column either bulge or burst into the spinal cord space.',
+        wikidataId: 'Q1341142',
+        icdCode: 'M51.2',
+        possibleTreatment: IVDD_TREATMENT,
+      },
+      {
+        name: 'Welsh Corgi',
+        description:
+          'A small type of herding dog that originated in Wales, known for achondroplastic dwarfism.',
+        wikidataId: 'Q29099',
+      },
+    ],
+  },
   'ethics-pet-cloning-2026-costs-reality': {
     pageTitle: 'The Ethics & Costs of Pet Cloning in 2026',
     pageUrl: blogUrl('ethics-pet-cloning-2026-costs-reality'),

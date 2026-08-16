@@ -297,6 +297,7 @@ function registerStaticPages() {
 
 function registerBlogPosts() {
   const legacyFiles = [
+    'src/services/blog/gscOpportunityPosts.ts',
     'src/services/blog/seoBlogPosts.ts',
     'src/services/blog/seoBlogPostsExtra.ts',
     'src/services/blog/mockBlogPosts.ts',

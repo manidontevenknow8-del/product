@@ -3,6 +3,7 @@ import { buildSiteLinkGraph } from '@/data/internalLinking/siteLinkGraph';
 import { resolveBlogInternalLinks } from '@/data/internalLinking/resolveBlogInternalLinks';
 import { SEO_BLOG_POSTS } from './seoBlogPosts';
 import { SEO_BLOG_POSTS_EXTRA } from './seoBlogPostsExtra';
+import { GSC_OPPORTUNITY_POSTS } from './gscOpportunityPosts';
 import { EXPANDED_BLOG_POSTS } from './expandedBlogPosts';
 import { DOMINANCE_BLOG_POSTS } from './dominanceBlogPosts';
 import { applyLongFormToPosts } from './applyLongFormContent';
@@ -192,6 +193,7 @@ Reminders, document vault, emergency passport, and PetCare Score work together -
 
 export const MOCK_BLOG_POSTS: BlogPost[] = normalizeBlogPosts(
   applyLongFormToPosts([
+    ...GSC_OPPORTUNITY_POSTS,
     ...SEO_BLOG_POSTS,
     ...SEO_BLOG_POSTS_EXTRA,
     ...LEGACY_MOCK_BLOG_POSTS,
@@ -200,8 +202,8 @@ export const MOCK_BLOG_POSTS: BlogPost[] = normalizeBlogPosts(
   ]),
 );
 
-if (MOCK_BLOG_POSTS.length !== 250) {
-  throw new Error(`Expected 250 blog posts, got ${MOCK_BLOG_POSTS.length}`);
+if (MOCK_BLOG_POSTS.length !== 257) {
+  throw new Error(`Expected 257 blog posts, got ${MOCK_BLOG_POSTS.length}`);
 }
 
 const BLOG_LINK_CANDIDATES = MOCK_BLOG_POSTS.map((post) => ({

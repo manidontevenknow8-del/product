@@ -39,6 +39,7 @@ const COMMERCIAL_PATH_SET = new Set<string>(COMMERCIAL_PATHS);
 const COMPARE_SITEMAP_EXCLUDED = new Set(['best-pet-health-record-app']);
 
 const BLOG_FILES = [
+  'gscOpportunityPosts.ts',
   'seoBlogPosts.ts',
   'seoBlogPostsExtra.ts',
   'mockBlogPosts.ts',

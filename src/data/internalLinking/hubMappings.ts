@@ -85,9 +85,9 @@ export const PRIMARY_HUB_LINKS: HubLinkTarget[] = [
 
 /** Curated high-value blog posts for hub index pages. */
 export const FEATURED_BLOG_SLUGS = [
-  'organize-pet-medical-records-online',
-  'puppy-vaccination-schedule-2026',
-  'pet-emergency-information-card-guide',
-  'pet-medication-reminder-guide',
-  'new-puppy-checklist-health-records-vaccines',
+  'how-much-does-it-cost-to-clone-a-dog-2026',
+  'how-common-is-ivdd-in-corgis',
+  'what-is-a-digital-pet-passport',
+  'heartworm-pill-tracker',
+  'share-folders-for-pets',
 ] as const;
