@@ -1,4 +1,6 @@
 import type { LifecycleBreed, LifecycleMatrixEntry, LifecycleStage } from './lifecycleMatrix';
+import { libraryLinksForLifecycle, type LibraryLink } from './pseoLibraryLinks';
+import { uniqueLifecycleParagraphs } from './pseoUniqueCopy';
 
 export type LifecycleChecklistItem = {
   id: string;
@@ -30,6 +32,8 @@ export type LifecyclePageContent = {
   dietHeading: string;
   dietNotes: string[];
   faqs: LifecycleFaq[];
+  uniqueParagraphs: string[];
+  library: LibraryLink[];
 };
 
 const SIZE_GROWTH_CLOSE: Record<LifecycleBreed['size'], string> = {
@@ -64,7 +68,7 @@ function sizePhrase(breed: LifecycleBreed): string {
   return `${breed.size}-breed ${breed.name} (${breed.adultWeight} adult, typical lifespan ${breed.lifespanYears} years)`;
 }
 
-const BUILDERS: Record<string, (entry: LifecycleMatrixEntry) => Omit<LifecyclePageContent, 'title'>> = {
+const BUILDERS: Record<string, (entry: LifecycleMatrixEntry) => Omit<LifecyclePageContent, 'title' | 'uniqueParagraphs' | 'library'>> = {
   'puppy-vaccination-schedule': (entry) => {
     const { breed } = entry;
     return {
@@ -768,6 +772,8 @@ export function getLifecyclePageContent(entry: LifecycleMatrixEntry): LifecycleP
   return {
     title: article(entry),
     ...rest,
+    uniqueParagraphs: uniqueLifecycleParagraphs(entry),
+    library: libraryLinksForLifecycle(entry.breed.slug, entry.stage.slug, entry.breed.healthFocus),
   };
 }
 

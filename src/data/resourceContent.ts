@@ -1,4 +1,6 @@
 import type { ResourceMatrixEntry } from './resourceMatrix';
+import { libraryLinksForResource, type LibraryLink } from './pseoLibraryLinks';
+import { uniqueResourceParagraphs } from './pseoUniqueCopy';
 
 export type ResourceFaq = {
   question: string;
@@ -15,6 +17,8 @@ export type ResourcePageContent = {
   ctaTitle: string;
   ctaBody: string;
   faqs: ResourceFaq[];
+  uniqueParagraphs: string[];
+  library: LibraryLink[];
 };
 
 function titleFor(entry: ResourceMatrixEntry): string {
@@ -25,7 +29,7 @@ function vaultLine(cityName: string): string {
   return `Keep the ${cityName} packet in one PetClues vault so boarding, sitters, and the ER read the same dates.`;
 }
 
-const BUILDERS: Record<string, (entry: ResourceMatrixEntry) => Omit<ResourcePageContent, 'title'>> = {
+const BUILDERS: Record<string, (entry: ResourceMatrixEntry) => Omit<ResourcePageContent, 'title' | 'uniqueParagraphs' | 'library'>> = {
   'dog-boarding-vaccine-requirements': (entry) => ({
     lead: `What ${entry.city.name} dog boarding desks usually want on file before drop-off, and how to keep those certificates ready on your phone.`,
     overview: `${entry.city.facilityNote} ${entry.city.climateNote.slice(0, 1).toUpperCase()}${entry.city.climateNote.slice(1)} changes how often Bordetella and parasite notes get asked. This page is a lead-gen checklist for ${entry.city.name}, ${entry.city.state} households that keep getting turned away at intake because a PDF is on a different phone.`,
@@ -613,5 +617,7 @@ export function getResourcePageContent(entry: ResourceMatrixEntry): ResourcePage
   return {
     title: titleFor(entry),
     ...builder(entry),
+    uniqueParagraphs: uniqueResourceParagraphs(entry),
+    library: libraryLinksForResource(entry.city.slug, entry.topic.slug),
   };
 }

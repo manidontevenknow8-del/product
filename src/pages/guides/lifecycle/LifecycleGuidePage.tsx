@@ -144,6 +144,18 @@ export function LifecycleGuidePage() {
             </ol>
           </section>
 
+          <section className={styles.chapter}>
+            <p className={styles.chapterKicker}>Breed-specific briefing</p>
+            <h2 className={styles.chapterTitle}>
+              Why this {entry.breed.name} page is not a copied template
+            </h2>
+            {content.uniqueParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 48)} className={styles.body}>
+                {paragraph}
+              </p>
+            ))}
+          </section>
+
           <section className={styles.chapter} aria-labelledby="protocol-heading">
             <p className={styles.chapterKicker}>Digital vault</p>
             <h2 id="protocol-heading" className={styles.chapterTitle}>
@@ -194,6 +206,25 @@ export function LifecycleGuidePage() {
             pageUrl={pageUrl}
             heading={`${entry.stage.label} for ${entry.breed.name}s - common questions`}
           />
+
+          <section className={styles.loop} aria-labelledby="library-heading">
+            <p className={styles.chapterKicker}>From the PetClues library</p>
+            <h2 id="library-heading" className={styles.loopTitle}>
+              Editorial guides this {entry.breed.name} page is built on
+            </h2>
+            <p className={styles.loopLead}>
+              These are the existing long-form blogs, not cloned matrix text. Read them, then come
+              back to this {entry.stage.label.toLowerCase()} checklist.
+            </p>
+            <div className={styles.loopGrid}>
+              {content.library.map((link) => (
+                <Link key={link.href} className={styles.loopLink} to={link.href}>
+                  <span className={styles.loopLinkLabel}>{link.label}</span>
+                  <span className={styles.loopMeta}>Blog</span>
+                </Link>
+              ))}
+            </div>
+          </section>
 
           <section className={styles.loop} aria-labelledby="medical-loop-heading">
             <p className={styles.chapterKicker}>Internal PageRank loop</p>

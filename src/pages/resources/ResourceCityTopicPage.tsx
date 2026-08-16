@@ -67,6 +67,11 @@ export function ResourceCityTopicPage() {
             <h2 className={styles.chapterTitle}>What {entry.city.name} desks actually ask for</h2>
             <p className={styles.body}>{content.overview}</p>
             <p className={styles.body}>{content.localNote}</p>
+            {content.uniqueParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className={styles.body}>
+                {paragraph}
+              </p>
+            ))}
           </section>
 
           <section className={styles.chapter}>
@@ -115,6 +120,22 @@ export function ResourceCityTopicPage() {
           </aside>
 
           <ClinicalFaqAccordion faqs={content.faqs} pageUrl={pageUrl} heading={`${entry.topic.label} in ${entry.city.name}`} />
+
+          <section className={styles.loop}>
+            <h2 className={styles.loopTitle}>Editorial guides this {entry.city.name} packet uses</h2>
+            <p className={styles.loopLead}>
+              Unique local copy on this URL, plus the existing PetClues blogs that already rank for
+              the underlying records problems.
+            </p>
+            <div className={styles.loopGrid}>
+              {content.library.map((link) => (
+                <Link key={link.href} className={styles.loopLink} to={link.href}>
+                  <span className={styles.loopLinkLabel}>{link.label}</span>
+                  <span className={styles.loopMeta}>Blog</span>
+                </Link>
+              ))}
+            </div>
+          </section>
 
           <section className={styles.loop}>
             <h2 className={styles.loopTitle}>More {entry.city.name} record packets</h2>
