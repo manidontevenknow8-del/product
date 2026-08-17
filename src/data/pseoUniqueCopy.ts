@@ -11,7 +11,7 @@ const SIZE_PUPPY: Record<string, string> = {
   toy: 'Toy-breed growth plates close earlier, hypoglycemia is a real puppy risk, and dental crowding starts before the adult teeth finish erupting. Do not copy a Labrador calorie chart onto a 4 lb dog.',
   small: 'Small-breed puppies mature faster than giants and still need controlled calcium. Jumping off couches during teething is how you buy an orthopedic invoice later.',
   medium: 'Medium-breed adolescents look finished before they are. Keep large-breed logic for joints if the adult weight will exceed 40 lb, and keep a biweekly weight log.',
-  large: 'Large-breed puppies need large-breed growth diets, not extra calories to “fill out.” Fast growth is orthopedic debt. Close the growth window with a dated weight curve.',
+  large: 'Large-breed puppies need large-breed growth diets, not extra calories to "fill out." Fast growth is orthopedic debt. Close the growth window with a dated weight curve.',
   giant: 'Giant-breed puppies should stay lean through 18-24 months. Free-feeding a Great Dane puppy is how you get panosteitis, HOD debates, and a surgeon on speed dial.',
 };
 
@@ -24,9 +24,9 @@ const SIZE_ADULT: Record<string, string> = {
 };
 
 const SIZE_SENIOR: Record<string, string> = {
-  toy: 'Toy seniors can look “fine” with roaring dental disease and collapsing tracheas. Anesthesia planning starts with recent bloodwork and a realistic airway note.',
+  toy: 'Toy seniors can look "fine" with roaring dental disease and collapsing tracheas. Anesthesia planning starts with recent bloodwork and a realistic airway note.',
   small: 'Small seniors often need calories down and monitoring up: teeth, knees, heart murmurs. Function beats birthday.',
-  medium: 'Medium seniors show arthritis as “slowing down.” Video the gait every 90 days. Pain is not a personality change.',
+  medium: 'Medium seniors show arthritis as "slowing down." Video the gait every 90 days. Pain is not a personality change.',
   large: 'Large seniors pay for every extra pound in elbows and hips. NSAIDs need kidney numbers. Do not add a grocery anti-inflammatory.',
   giant: 'Giant seniors are old at ages other breeds still consider midlife. Screen early, keep lean, and do not wait for a 10th birthday party to talk about quality of life.',
 };
@@ -36,10 +36,10 @@ const GROUP_NOTE: Record<string, string> = {
   herding: 'Herding breeds need a job. MDR1 testing matters before you volunteer ivermectin folklore. Eye screens belong on the same calendar as vaccines for many of these dogs.',
   working: 'Working and guardian breeds carry bloat, orthopedic, and sometimes cardiac risk. Conditioning is not optional, and neither is a 2-hour empty-stomach rule after a big meal if your veterinarian has flagged GDV risk.',
   hound: 'Hounds follow their nose into ticks, garbage, and ear infections. Prevention calendars and ear logs are part of the medical record, not grooming trivia.',
-  terrier: 'Terriers pick fights with skin, teeth, and small wildlife. Allergy and dental records will outlive the cute “feisty” story.',
+  terrier: 'Terriers pick fights with skin, teeth, and small wildlife. Allergy and dental records will outlive the cute "feisty" story.',
   toy: 'Toy-group dogs live in laps and ER waiting rooms for hypoglycemia, luxating patellas, and dental extractions. Tiny patients need dated weights more than motivational quotes.',
   'non-sporting': 'This group is a mixed medical bag. Trust the breed healthFocus on this page more than the kennel-club cluster name.',
-  companion: 'Companion-bred dogs still get breed disease. Treat the healthFocus as the watch list even if the dog’s job is the couch.',
+  companion: "Companion-bred dogs still get breed disease. Treat the healthFocus as the watch list even if the dog's job is the couch.",
 };
 
 function sizeBlurb(size: string, category: string): string {

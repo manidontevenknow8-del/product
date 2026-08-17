@@ -83,6 +83,17 @@ export function LifecycleGuidePage() {
                 Watch list <span>{entry.breed.healthFocus}</span>
               </li>
             </ul>
+            <figure className={styles.heroMedia}>
+              <img
+                className={styles.heroImage}
+                src={content.heroImage}
+                alt=""
+                width={1200}
+                height={675}
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
           </header>
 
           <section className={styles.chapter} aria-labelledby="overview-heading">

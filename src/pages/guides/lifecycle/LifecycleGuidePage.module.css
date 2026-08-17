@@ -73,6 +73,20 @@
   color: #121212;
 }
 
+.heroMedia {
+  margin: 2rem 0 0;
+  width: 100%;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  max-height: min(52vh, 520px);
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+}
+
 .chapter {
   margin: 0 0 3.5rem;
 }

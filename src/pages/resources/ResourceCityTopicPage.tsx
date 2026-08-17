@@ -60,6 +60,17 @@ export function ResourceCityTopicPage() {
             </p>
             <h1 className={styles.title}>{content.title}</h1>
             <p className={styles.lead}>{content.lead}</p>
+            <figure className={styles.heroMedia}>
+              <img
+                className={styles.heroImage}
+                src={content.heroImage}
+                alt=""
+                width={1200}
+                height={675}
+                loading="eager"
+                decoding="async"
+              />
+            </figure>
           </header>
 
           <section className={styles.chapter}>
