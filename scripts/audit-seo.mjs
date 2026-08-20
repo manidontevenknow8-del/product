@@ -2,7 +2,7 @@
  * SEO audit, validates titles, descriptions, canonicals, robots, and schema coverage
  * for every URL in public/sitemap.xml. Fails the build on critical gaps.
  */
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { readSitemapUrls } from './lib/readSitemapUrls.mjs';
@@ -122,6 +122,22 @@ const SCHEMA_FAMILIES = {
   'resource-page': {
     handler: 'src/seo/resourceSeo.tsx',
     required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList', 'HowTo'],
+  },
+  'vault-guide-page': {
+    handler: 'src/seo/vaultGuideSeo.ts',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+  },
+  'emergency-guide-page': {
+    handler: 'src/seo/emergencyGuideSeo.ts',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+  },
+  'tool-download-page': {
+    handler: 'src/seo/toolDownloadSeo.ts',
+    required: ['Organization', 'WebSite', 'SoftwareApplication', 'WebPage', 'FAQPage', 'BreadcrumbList'],
+  },
+  'content-pillar-page': {
+    handler: 'src/seo/vaultGuideSeo.ts',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
   },
 };
 
@@ -363,6 +379,30 @@ function registerBlogPosts() {
 }
 
 function registerComparePages() {
+  // Prefer content-data comparisons (production pillar). Fall back to legacy configs.
+  const jsonPath = join(root, 'content-data/comparisons.json');
+  if (existsSync(jsonPath)) {
+    const records = JSON.parse(read('content-data/comparisons.json'));
+    for (const record of records) {
+      if (!record?.slug || !record?.name) continue;
+      const pageSlug = `petclues-vs-${record.slug}`;
+      if (COMPARE_SITEMAP_EXCLUDED.has(pageSlug) || COMPARE_SITEMAP_EXCLUDED.has(record.slug)) continue;
+      const features = record.features ?? [];
+      const complete =
+        features.length > 0 &&
+        features.every((f) => f?.feature?.trim() && f?.value?.trim() && f?.source?.trim());
+      if (!complete) continue;
+      register(`${SITE}/compare/${pageSlug}`, {
+        title: `PetClues vs ${record.name} for Pet Health Records`,
+        description: `Compare PetClues and ${record.name} for pet health records, vaccination reminders, vet bills, and emergency info. See pros, cons, and which option fits your household.`,
+        canonical: `${SITE}/compare/${pageSlug}`,
+        schemaFamily: 'compare-page',
+        source: `comparisons.json:${record.slug}`,
+      });
+    }
+    return;
+  }
+
   const content = read('src/data/comparisons/competitorConfigs.ts');
   for (const block of content.split(/\n    slug: '/).slice(1)) {
     const slug = block.match(/^([^']+)'/)?.[1];
@@ -606,14 +646,146 @@ function registerVaultGuidePages() {
   if (!existsSync(join(root, file))) return;
   const pages = JSON.parse(read(file));
   for (const page of pages) {
-    if (!page?.slug || !page?.primary_keyword) continue;
+    if (!page?.slug || !page?.h1) continue;
     register(`${SITE}/guides/${page.slug}`, {
       title: `${page.h1} | PetClues`,
-      description: page.meta_description,
+      description: page.meta_description || page.h1,
       canonical: `${SITE}/guides/${page.slug}`,
       schemaFamily: 'vault-guide-page',
       source: `vaultGuide:${page.slug}`,
     });
+  }
+}
+
+function loadJsonBatches(dirRel, prefix) {
+  const dir = join(root, dirRel);
+  if (!existsSync(dir)) return [];
+  return readdirSync(dir)
+    .filter((f) => f.startsWith(prefix) && f.endsWith('.json'))
+    .flatMap((f) => {
+      const raw = JSON.parse(read(`${dirRel}/${f}`));
+      if (Array.isArray(raw)) return raw;
+      if (raw?.pages) return raw.pages;
+      return [];
+    });
+}
+
+function registerPillarContentPages() {
+  const passFile = join(root, 'content-data/generated/reports/agent-11-qa-report.json');
+  const passPaths = new Set();
+  if (existsSync(passFile)) {
+    const report = JSON.parse(read('content-data/generated/reports/agent-11-qa-report.json'));
+    for (const row of report.pass ?? []) {
+      if (row?.path) passPaths.add(row.path);
+    }
+  }
+  const allow = (pathname) => passPaths.size === 0 || passPaths.has(pathname);
+
+  const hubs = [
+    ['/breeds', 'Breed health guides', 'Breed × life-stage health guides for dogs and cats.'],
+    ['/symptoms', 'Symptom guides', 'Dog and cat symptom guides grouped by urgency.'],
+    ['/vaccinations', 'Vaccination schedules', 'Breed and general vaccination schedule guides.'],
+    ['/emergency', 'Pet emergency guides', 'Step-by-step pet emergency first-aid guides.'],
+    ['/vault', 'Records vault guides', 'Long-tail guides for storing and sharing pet records.'],
+    [
+      '/life-logistics',
+      'Life logistics guides',
+      'Moving, travel, sitters, and multi-pet logistics guides.',
+    ],
+    ['/tools', 'Printable pet tools', 'Printable vaccination sheets, emergency cards, and sitter templates.'],
+  ];
+  for (const [path, title, description] of hubs) {
+    if (!allow(path)) continue;
+    register(`${SITE}${path}`, {
+      title,
+      description,
+      canonical: `${SITE}${path}`,
+      schemaFamily: path === '/emergency' ? 'emergency-guide-page' : path === '/tools' ? 'tool-download-page' : 'content-pillar-page',
+      source: `pillarHub:${path}`,
+    });
+  }
+
+  const breedIndexPath = 'content-data/generated/breed-health/index.json';
+  if (existsSync(join(root, breedIndexPath))) {
+    const index = JSON.parse(read(breedIndexPath));
+    for (const entry of index) {
+      if (!entry?.path || !allow(entry.path)) continue;
+      const title = `${entry.breedSlug.replace(/-/g, ' ')} ${entry.stage} health guide`;
+      register(`${SITE}${entry.path}`, {
+        title,
+        description: `${title} with breed predispositions, care checklist context, and PetClues tracking tips.`,
+        canonical: `${SITE}${entry.path}`,
+        schemaFamily: 'content-pillar-page',
+        source: `breedHealth:${entry.key || entry.path}`,
+      });
+    }
+  }
+
+  for (const page of loadJsonBatches('content-data/generated/symptoms', 'batch-')) {
+    if (!page?.path || !page?.h1 || !allow(page.path)) continue;
+    register(`${SITE}${page.path}`, {
+      title: page.h1,
+      description: page.metaDescription || page.lead || page.h1,
+      canonical: `${SITE}${page.path}`,
+      schemaFamily: 'content-pillar-page',
+      source: `symptomGuide:${page.path}`,
+    });
+  }
+
+  const vacManifest = 'content-data/generated/vaccinations/_manifest.json';
+  if (existsSync(join(root, vacManifest))) {
+    const pages = JSON.parse(read(vacManifest)).pages ?? [];
+    for (const page of pages) {
+      if (!page?.path || !allow(page.path)) continue;
+      const title = `${(page.slug || '').replace(/-/g, ' ')} vaccination schedule`;
+      register(`${SITE}${page.path}`, {
+        title,
+        description: `${title} with core vaccine age windows and reminder-ready tracking.`,
+        canonical: `${SITE}${page.path}`,
+        schemaFamily: 'content-pillar-page',
+        source: `vaccination:${page.slug}`,
+      });
+    }
+  }
+
+  for (const page of loadJsonBatches('content-data/generated/emergencies', 'batch-')) {
+    const path = `/emergency/${page.slug}`;
+    if (!page?.slug || !page?.h1 || !allow(path)) continue;
+    register(`${SITE}${path}`, {
+      title: page.h1,
+      description: page.meta_description || page.lead || page.h1,
+      canonical: `${SITE}${path}`,
+      schemaFamily: 'emergency-guide-page',
+      source: `emergency:${page.slug}`,
+    });
+  }
+
+  for (const page of loadJsonBatches('content-data/generated/life-logistics', 'batch-')) {
+    const path = `/guides/${page.slug}`;
+    if (!page?.slug || !page?.h1 || !allow(path)) continue;
+    register(`${SITE}${path}`, {
+      title: page.h1,
+      description: page.meta_description || page.lead || page.h1,
+      canonical: `${SITE}${path}`,
+      schemaFamily: 'content-pillar-page',
+      source: `lifeLogistics:${page.slug}`,
+    });
+  }
+
+  const toolsPath = 'content-data/tools.json';
+  if (existsSync(join(root, toolsPath))) {
+    const tools = JSON.parse(read(toolsPath));
+    for (const tool of tools) {
+      const path = `/tools/${tool.slug}`;
+      if (!tool?.slug || !tool?.h1 || !allow(path)) continue;
+      register(`${SITE}${path}`, {
+        title: tool.h1,
+        description: tool.meta_description || tool.lead || tool.h1,
+        canonical: `${SITE}${path}`,
+        schemaFamily: 'tool-download-page',
+        source: `tool:${tool.slug}`,
+      });
+    }
   }
 }
 
@@ -726,6 +898,7 @@ registerFaqPages();
 registerProgrammaticPages();
 registerBreedConditionPages();
 registerVaultGuidePages();
+registerPillarContentPages();
 registerRelocationPages();
 registerB2BSolutionPages();
 registerLifecyclePages();
