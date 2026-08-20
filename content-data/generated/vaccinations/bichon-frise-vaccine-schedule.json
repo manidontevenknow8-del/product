@@ -1,0 +1,47 @@
+{
+  "slug": "bichon-frise-vaccine-schedule",
+  "path": "/vaccinations/bichon-frise-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "bichon-frise",
+  "subjectName": "Bichon Frise",
+  "species": "dog",
+  "primaryKeyword": "Bichon Frise vaccine schedule",
+  "metaDescription": "Bichon Frise vaccine schedule with core ages in weeks. Set reminders so Bichon Frise boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/bichon-frise/adult-health-guide",
+  "breedHealthLabel": "Bichon Frise adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Bichon Frise social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Bichon Frise exposure.",
+        "Weight range 12-18 lb (5-8 kg) and grooming needs (Regular professional grooming; coat mats without brushing.) belong in the same Bichon Frise household ops list as vaccine dates when busy weeks collide.",
+        "If your Bichon Frise is also monitored for patellar luxation, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Bichon Frise appointments.",
+        "After the Bichon Frise puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Bichon Frise misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Bichon Frise series from memory.",
+        "The danger for a delayed Bichon Frise is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Bichon Frise away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Bichon Frise due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Bichon Frise core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Bichon Frise misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Bichon Frise health context beyond vaccines?",
+      "answer": "See the Bichon Frise adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

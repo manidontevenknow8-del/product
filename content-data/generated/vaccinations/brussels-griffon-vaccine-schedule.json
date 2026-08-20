@@ -1,0 +1,47 @@
+{
+  "slug": "brussels-griffon-vaccine-schedule",
+  "path": "/vaccinations/brussels-griffon-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "brussels-griffon",
+  "subjectName": "Brussels Griffon",
+  "species": "dog",
+  "primaryKeyword": "Brussels Griffon vaccine schedule",
+  "metaDescription": "Brussels Griffon vaccine schedule with core ages in weeks. Set reminders so Brussels Griffon boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/brussels-griffon/adult-health-guide",
+  "breedHealthLabel": "Brussels Griffon adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Brussels Griffon social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Brussels Griffon exposure.",
+        "Weight range 8-10 lb (3.5-4.5 kg) and grooming needs (Wire or smooth coat care; face folds.) belong in the same Brussels Griffon household ops list as vaccine dates when busy weeks collide.",
+        "If your Brussels Griffon is also monitored for patellar luxation, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Brussels Griffon appointments.",
+        "After the Brussels Griffon puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Brussels Griffon boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Brussels Griffon row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Brussels Griffon item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Brussels Griffon kennel reservation.",
+        "PetClues should hold both the new Brussels Griffon due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Brussels Griffon core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Brussels Griffon misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Brussels Griffon health context beyond vaccines?",
+      "answer": "See the Brussels Griffon adult health guide for breed predispositions such as brachycephalic concerns, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

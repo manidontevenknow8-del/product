@@ -1,28 +1,32 @@
 /**
  * trigger-indexing.ts
  *
- * Drip-feeds URL_UPDATED payloads to the Google Indexing API from
- * `public/sitemap-lifecycle.xml` at a hard cap of 200 URLs per run
- * (Google's daily quota). State is persisted in `.indexing-state.json`
- * so the next run continues at URL 201.
+ * Sandbox-safe drip-feed of URL_UPDATED to the Google Indexing API,
+ * driven by Agent 11 PASS publish waves.
+ *
+ * After a recent ~6k page push, defaults are intentionally conservative:
+ *   - 40 URLs/day (hard max 100)
+ *   - 2.5s between requests
+ *   - ≥24h between live runs
+ *   - one wave segment per day
+ *
+ * Sitemap discovery remains the primary crawl path. This API is a slow
+ * priority nudge for the current wave only.
  *
  * Prerequisites:
  *  1. Enable "Web Search Indexing API" in the Google Cloud project.
- *  2. Service account JSON key at ./service_account.json OR set:
- *       GSC_SERVICE_ACCOUNT_KEY_PATH=/absolute/path/to/key.json
- *       # or GOOGLE_APPLICATION_CREDENTIALS=...
- *  3. In Google Search Console → Settings → Users and permissions, add the
- *     service account client_email as an **Owner** of https://petclues.com/
- *     (Editor is not enough - Owner is required or you get HTTP 403).
+ *  2. Service account JSON at ./service_account.json OR
+ *       GSC_SERVICE_ACCOUNT_KEY_PATH / GOOGLE_APPLICATION_CREDENTIALS
+ *  3. Service account client_email as Owner of https://petclues.com/ in GSC.
+ *  4. Waves prepared:
+ *       node scripts/qa-pillar-publishability.mjs
+ *       node scripts/prepare-publish-waves.mjs
  *
  * Run:
- *   npx tsx scripts/trigger-indexing.ts
- *   npx tsx scripts/trigger-indexing.ts --batch=0
- *   npx tsx scripts/trigger-indexing.ts --dry-run
- *   npm run google:trigger-indexing
- *
- * googleapis is already a project dependency. If missing:
- *   npm install googleapis
+ *   npx tsx scripts/trigger-indexing.ts --wave=1 --dry-run
+ *   npx tsx scripts/trigger-indexing.ts --wave=1
+ *   npx tsx scripts/trigger-indexing.ts --wave=1 --limit=20
+ *   npx tsx scripts/trigger-indexing.ts --wave=2 --force   # skip 24h gate (use sparingly)
  */
 
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -36,10 +40,14 @@ const PROJECT_ROOT = join(__dirname, '..');
 
 const INDEXING_SCOPE = 'https://www.googleapis.com/auth/indexing';
 const PUBLISH_ENDPOINT = 'https://indexing.googleapis.com/v3/urlNotifications:publish';
-const REQUEST_DELAY_MS = 750;
-const DAILY_LIMIT = 200;
-const LIFECYCLE_SITEMAP = 'public/sitemap-lifecycle.xml';
-const RESOURCES_SITEMAP = 'public/sitemap-resources.xml';
+
+/** Conservative after a large recent push. Override with --limit=N (capped). */
+const DEFAULT_DAILY_LIMIT = 40;
+const HARD_MAX_DAILY = 100;
+const REQUEST_DELAY_MS = 2500;
+const MIN_HOURS_BETWEEN_RUNS = 24;
+
+const WAVES_DIR = join(PROJECT_ROOT, 'content-data/generated/publish-waves');
 const STATE_FILE = join(PROJECT_ROOT, '.indexing-state.json');
 
 const c = {
@@ -59,10 +67,8 @@ function loadEnvFile(filename: string): void {
   for (const line of readFileSync(path, 'utf8').split('\n')) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith('#')) continue;
-
     const eq = trimmed.indexOf('=');
     if (eq <= 0) continue;
-
     const key = trimmed.slice(0, eq).trim();
     let value = trimmed.slice(eq + 1).trim();
     if (
@@ -71,10 +77,7 @@ function loadEnvFile(filename: string): void {
     ) {
       value = value.slice(1, -1);
     }
-
-    if (process.env[key] === undefined) {
-      process.env[key] = value;
-    }
+    if (process.env[key] === undefined) process.env[key] = value;
   }
 }
 
@@ -85,8 +88,11 @@ type IndexingState = {
   updatedAt: string;
   submitted: string[];
   lastBatchDate: string | null;
+  lastBatchAt: string | null;
   lastBatchCount: number;
+  lastWave: number | null;
   lastCursor: number;
+  waveProgress: Record<string, number>;
 };
 
 function emptyState(): IndexingState {
@@ -94,8 +100,11 @@ function emptyState(): IndexingState {
     updatedAt: new Date().toISOString(),
     submitted: [],
     lastBatchDate: null,
+    lastBatchAt: null,
     lastBatchCount: 0,
+    lastWave: null,
     lastCursor: 0,
+    waveProgress: {},
   };
 }
 
@@ -107,6 +116,10 @@ function loadState(): IndexingState {
       ...emptyState(),
       ...parsed,
       submitted: Array.isArray(parsed.submitted) ? parsed.submitted : [],
+      waveProgress:
+        parsed.waveProgress && typeof parsed.waveProgress === 'object'
+          ? parsed.waveProgress
+          : {},
     };
   } catch {
     return emptyState();
@@ -142,39 +155,87 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function parseArgs(): { dryRun: boolean; batch: number | null } {
+type CliArgs = {
+  dryRun: boolean;
+  force: boolean;
+  wave: number;
+  limit: number;
+};
+
+function parseArgs(): CliArgs {
   const args = process.argv.slice(2);
-  const batchArg = args.find((arg) => arg.startsWith('--batch=')) ?? (args.includes('--batch') ? '--batch=0' : null);
-  const batchValue = batchArg ? Number(batchArg.split('=')[1] ?? '0') : NaN;
+  const waveArg = args.find((a) => a.startsWith('--wave='));
+  const limitArg = args.find((a) => a.startsWith('--limit='));
+  const wave = waveArg ? Number(waveArg.split('=')[1]) : NaN;
+  let limit = limitArg ? Number(limitArg.split('=')[1]) : DEFAULT_DAILY_LIMIT;
+
+  if (!Number.isFinite(wave) || wave < 1 || wave > 8) {
+    throw new Error(
+      'Required: --wave=N (1-8). Example: npx tsx scripts/trigger-indexing.ts --wave=1 --dry-run',
+    );
+  }
+  if (!Number.isFinite(limit) || limit < 1) {
+    throw new Error('--limit must be a positive number');
+  }
+  if (limit > HARD_MAX_DAILY) {
+    console.warn(
+      `${c.yellow}Clamping --limit=${limit} to hard max ${HARD_MAX_DAILY}/day (sandbox-safe).${c.reset}`,
+    );
+    limit = HARD_MAX_DAILY;
+  }
 
   return {
     dryRun: args.includes('--dry-run'),
-    batch: Number.isFinite(batchValue) ? batchValue : null,
+    force: args.includes('--force'),
+    wave,
+    limit,
   };
 }
 
-function extractLocs(xml: string): string[] {
-  return [...xml.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1].trim()).filter(Boolean);
+function loadWaveUrls(wave: number): string[] {
+  const file = join(WAVES_DIR, `wave-${String(wave).padStart(2, '0')}.json`);
+  if (!existsSync(file)) {
+    throw new Error(
+      `Missing ${file}. Run: node scripts/qa-pillar-publishability.mjs && node scripts/prepare-publish-waves.mjs`,
+    );
+  }
+  const payload = JSON.parse(readFileSync(file, 'utf8')) as {
+    urls: { url: string }[];
+  };
+  return payload.urls.map((u) => u.url);
 }
 
-function loadPrioritySitemapUrls(): string[] {
-  const files = [RESOURCES_SITEMAP, LIFECYCLE_SITEMAP];
-  const urls: string[] = [];
-  const seen = new Set<string>();
-
-  for (const file of files) {
-    const path = join(PROJECT_ROOT, file);
-    if (!existsSync(path)) {
-      throw new Error(`Missing ${file}. Run: npx tsx scripts/generate-sitemaps.ts`);
-    }
-    for (const url of extractLocs(readFileSync(path, 'utf8'))) {
-      if (seen.has(url)) continue;
-      seen.add(url);
-      urls.push(url);
-    }
+function assertCooldown(state: IndexingState, force: boolean): void {
+  if (force || !state.lastBatchAt) return;
+  const last = Date.parse(state.lastBatchAt);
+  if (!Number.isFinite(last)) return;
+  const hours = (Date.now() - last) / 3_600_000;
+  if (hours < MIN_HOURS_BETWEEN_RUNS) {
+    throw new Error(
+      `Refusing live run: last Indexing API batch was ${hours.toFixed(1)}h ago ` +
+        `(minimum ${MIN_HOURS_BETWEEN_RUNS}h). Re-run later or pass --force only if intentional.`,
+    );
   }
+}
 
-  return urls;
+function assertWaveOrder(state: IndexingState, wave: number, force: boolean): void {
+  if (force || wave === 1) return;
+  const prevKey = String(wave - 1);
+  const prevFile = join(WAVES_DIR, `wave-${String(wave - 1).padStart(2, '0')}.json`);
+  if (!existsSync(prevFile)) return;
+  const prev = JSON.parse(readFileSync(prevFile, 'utf8')) as { urls: unknown[] };
+  const submitted = new Set(loadState().submitted);
+  const prevUrls = (JSON.parse(readFileSync(prevFile, 'utf8')) as { urls: { url: string }[] }).urls;
+  const prevDone = prevUrls.filter((u) => submitted.has(u.url)).length;
+  const prevTotal = prev.urls.length;
+  // Require at least 50% of previous wave submitted before advancing (sitemap covers the rest).
+  if (prevDone < Math.ceil(prevTotal * 0.5)) {
+    throw new Error(
+      `Wave ${wave} blocked: wave ${wave - 1} only has ${prevDone}/${prevTotal} Indexing API submits. ` +
+        `Finish more of wave ${wave - 1} (or wait for sitemap crawl), or pass --force.`,
+    );
+  }
+  void prevKey;
 }
 
 function readServiceAccountEmail(keyPath: string): string | null {
@@ -183,24 +244,6 @@ function readServiceAccountEmail(keyPath: string): string | null {
     return raw.client_email ?? null;
   } catch {
     return null;
-  }
-}
-
-function selectBatch(allUrls: string[], state: IndexingState, batch: number | null): string[] {
-  if (batch !== null) {
-    const start = batch * DAILY_LIMIT;
-    return allUrls.slice(start, start + DAILY_LIMIT);
-  }
-
-  const submitted = new Set(state.submitted);
-  return allUrls.filter((url) => !submitted.has(url)).slice(0, DAILY_LIMIT);
-}
-
-function assertDailyCap(urls: string[]): void {
-  if (urls.length > DAILY_LIMIT) {
-    throw new Error(
-      `Refusing to send ${urls.length} URL_UPDATED payloads in one run. Google Indexing API limit is ${DAILY_LIMIT}/day. This hard stop protects the domain from SpamBrain flags.`,
-    );
   }
 }
 
@@ -218,26 +261,15 @@ async function publishUrlUpdated(
 ): Promise<PublishResult> {
   try {
     const response = await indexing.urlNotifications.publish({
-      requestBody: {
-        url,
-        type: 'URL_UPDATED',
-      },
+      requestBody: { url, type: 'URL_UPDATED' },
     });
-
-    return {
-      url,
-      ok: true,
-      status: response.status ?? 200,
-      body: response.data,
-    };
+    return { url, ok: true, status: response.status ?? 200, body: response.data };
   } catch (error) {
     const gaxios = error as GaxiosError;
     const status = gaxios.response?.status ?? (Number(gaxios.code) || 0);
     const apiError = gaxios.response?.data?.error;
     const errorMessage =
-      apiError?.message ??
-      (error instanceof Error ? error.message : String(error));
-
+      apiError?.message ?? (error instanceof Error ? error.message : String(error));
     return {
       url,
       ok: false,
@@ -251,70 +283,74 @@ async function publishUrlUpdated(
 function logResult(result: PublishResult): void {
   if (result.ok) {
     console.log(
-      `${c.green}✅ [${result.status}] Successfully notified Google to index:${c.reset} ${result.url}`,
+      `${c.green}✅ [${result.status}] notified:${c.reset} ${result.url}`,
     );
     return;
   }
-
-  console.log(
-    `${c.red}❌ [${result.status || 'ERR'}] Failed for:${c.reset} ${result.url}`,
-  );
-  if (result.errorMessage) {
-    console.log(`${c.yellow}   ${result.errorMessage}${c.reset}`);
-  }
+  console.log(`${c.red}❌ [${result.status || 'ERR'}] failed:${c.reset} ${result.url}`);
+  if (result.errorMessage) console.log(`${c.yellow}   ${result.errorMessage}${c.reset}`);
   if (result.status === 403) {
     console.log(
-      `${c.yellow}   Hint: add the service account client_email as Owner in Search Console.${c.reset}`,
+      `${c.yellow}   Hint: add the service account as Owner in Search Console.${c.reset}`,
     );
   }
   if (result.status === 429) {
     console.log(
-      `${c.yellow}   Rate limit hit. Stopping this run so remaining quota is not burned.${c.reset}`,
+      `${c.yellow}   Rate limit — stopping this run to protect remaining quota.${c.reset}`,
     );
   }
 }
 
 async function main(): Promise<void> {
-  const { dryRun, batch } = parseArgs();
-  const allUrls = loadPrioritySitemapUrls();
+  const { dryRun, force, wave, limit } = parseArgs();
   const state = loadState();
-  const urls = selectBatch(allUrls, state, batch);
+  const allWaveUrls = loadWaveUrls(wave);
+  const submitted = new Set(state.submitted);
+  const pending = allWaveUrls.filter((url) => !submitted.has(url));
+  const urls = pending.slice(0, limit);
 
-  assertDailyCap(urls);
+  if (!dryRun) {
+    assertCooldown(state, force);
+    assertWaveOrder(state, wave, force);
+  }
 
   const keyPath = dryRun ? '(dry-run)' : resolveCredentialsPath();
   const clientEmail = dryRun ? null : readServiceAccountEmail(keyPath);
 
   console.log('');
-  console.log(`${c.bold}${c.cyan}PetClues → Google Indexing API (200/day drip-feed)${c.reset}`);
+  console.log(
+    `${c.bold}${c.cyan}PetClues → Google Indexing API (wave drip-feed)${c.reset}`,
+  );
   console.log(`${c.dim}Endpoint: ${PUBLISH_ENDPOINT}${c.reset}`);
-  console.log(`${c.dim}Sitemaps: ${RESOURCES_SITEMAP}, ${LIFECYCLE_SITEMAP}${c.reset}`);
+  console.log(`${c.dim}Wave: ${wave} · catalog ${allWaveUrls.length} · pending ${pending.length}${c.reset}`);
+  console.log(
+    `${c.dim}This run: ${urls.length} (cap ${limit}, hard max ${HARD_MAX_DAILY}) · delay ${REQUEST_DELAY_MS}ms${c.reset}`,
+  );
+  console.log(
+    `${c.dim}Cooldown: ≥${MIN_HOURS_BETWEEN_RUNS}h between live runs · after ~6k push keep daily volume low${c.reset}`,
+  );
   console.log(`${c.dim}State: ${STATE_FILE}${c.reset}`);
-  console.log(`${c.dim}Catalog: ${allUrls.length} · already submitted: ${state.submitted.length}${c.reset}`);
-  console.log(`${c.dim}This run: ${urls.length} (hard cap ${DAILY_LIMIT}) · delay: ${REQUEST_DELAY_MS}ms${c.reset}`);
-  if (batch !== null) {
-    console.log(`${c.dim}Batch index: ${batch} (URLs ${batch * DAILY_LIMIT + 1}-${batch * DAILY_LIMIT + urls.length})${c.reset}`);
-  }
   if (clientEmail) {
     console.log(`${c.dim}Service account: ${clientEmail}${c.reset}`);
-    console.log(
-      `${c.yellow}Reminder: this email must be an Owner in GSC for https://petclues.com/${c.reset}`,
-    );
   }
-  if (dryRun) console.log(`${c.yellow}Mode: DRY RUN (no API calls, state not written)${c.reset}`);
+  if (dryRun) console.log(`${c.yellow}Mode: DRY RUN (no API calls)${c.reset}`);
+  if (force) console.log(`${c.yellow}Mode: --force (cooldown / wave-order gates skipped)${c.reset}`);
   console.log('');
 
   if (urls.length === 0) {
-    console.log('No un-indexed resource or lifecycle URLs remaining.');
+    console.log(`Wave ${wave} has no unsubmitted URLs remaining.`);
     return;
   }
 
   if (dryRun) {
-    for (const url of urls) {
-      console.log(`${c.cyan}→ would notify:${c.reset} ${url}`);
-    }
+    for (const url of urls) console.log(`${c.cyan}→ would notify:${c.reset} ${url}`);
     console.log('');
-    console.log(`Dry run complete. ${urls.length} URL_UPDATED payloads queued for the next live run.`);
+    console.log(
+      `Dry run complete. ${urls.length} of ${pending.length} pending URLs in wave ${wave} queued.`,
+    );
+    console.log(
+      `${c.dim}Next live step: npx tsx scripts/trigger-indexing.ts --wave=${wave} --limit=${Math.min(limit, DEFAULT_DAILY_LIMIT)}${c.reset}`,
+    );
     return;
   }
 
@@ -322,7 +358,6 @@ async function main(): Promise<void> {
     keyFile: keyPath,
     scopes: [INDEXING_SCOPE],
   });
-
   const indexing = google.indexing({ version: 'v3', auth });
 
   let okCount = 0;
@@ -331,10 +366,9 @@ async function main(): Promise<void> {
   let abortedForRateLimit = false;
 
   for (let i = 0; i < urls.length; i++) {
-    const url = urls[i];
+    const url = urls[i]!;
     const result = await publishUrlUpdated(indexing, url);
     logResult(result);
-
     if (result.ok) {
       okCount += 1;
       succeeded.push(url);
@@ -345,27 +379,43 @@ async function main(): Promise<void> {
         break;
       }
     }
-
-    if (i < urls.length - 1 && !abortedForRateLimit) {
-      await sleep(REQUEST_DELAY_MS);
-    }
+    if (i < urls.length - 1 && !abortedForRateLimit) await sleep(REQUEST_DELAY_MS);
   }
 
-  const submitted = [...new Set([...state.submitted, ...succeeded])];
+  const nextSubmitted = [...new Set([...state.submitted, ...succeeded])];
+  const waveKey = String(wave);
+  const waveDone = allWaveUrls.filter((u) => nextSubmitted.includes(u)).length;
+
   saveState({
     updatedAt: new Date().toISOString(),
-    submitted,
+    submitted: nextSubmitted,
     lastBatchDate: new Date().toISOString().slice(0, 10),
+    lastBatchAt: new Date().toISOString(),
     lastBatchCount: succeeded.length,
-    lastCursor: submitted.length,
+    lastWave: wave,
+    lastCursor: nextSubmitted.length,
+    waveProgress: { ...state.waveProgress, [waveKey]: waveDone },
   });
 
   console.log('');
   console.log(
-    `${c.bold}Done.${c.reset} ${c.green}${okCount} ok${c.reset} · ${failCount > 0 ? c.red : c.dim}${failCount} failed${c.reset} · state saved (${submitted.length}/${allUrls.length} submitted)`,
+    `${c.bold}Done.${c.reset} ${c.green}${okCount} ok${c.reset} · ${failCount > 0 ? c.red : c.dim}${failCount} failed${c.reset} · wave ${wave} progress ${waveDone}/${allWaveUrls.length}`,
   );
   if (abortedForRateLimit) {
-    console.log(`${c.yellow}Stopped early after HTTP 429. Re-run tomorrow; failed URLs were not marked submitted.${c.reset}`);
+    console.log(
+      `${c.yellow}Stopped early after HTTP 429. Wait ≥24h before the next live run.${c.reset}`,
+    );
+  } else if (waveDone < allWaveUrls.length) {
+    console.log(
+      `${c.dim}Continue tomorrow: npx tsx scripts/trigger-indexing.ts --wave=${wave} --limit=${DEFAULT_DAILY_LIMIT}${c.reset}`,
+    );
+  } else {
+    const next = wave < 8 ? wave + 1 : null;
+    console.log(
+      next
+        ? `${c.dim}Wave ${wave} complete via API drip. Wait ≥24h, then: --wave=${next}${c.reset}`
+        : `${c.dim}All 8 waves have Indexing API coverage (sitemap still primary).${c.reset}`,
+    );
   }
 
   if (failCount > 0) process.exitCode = 1;

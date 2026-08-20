@@ -1,0 +1,47 @@
+{
+  "slug": "welsh-terrier-vaccine-schedule",
+  "path": "/vaccinations/welsh-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "welsh-terrier",
+  "subjectName": "Welsh Terrier",
+  "species": "dog",
+  "primaryKeyword": "Welsh Terrier vaccine schedule",
+  "metaDescription": "Welsh Terrier vaccine schedule with core ages in weeks. Set reminders so Welsh Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/welsh-terrier/adult-health-guide",
+  "breedHealthLabel": "Welsh Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Welsh Terrier social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Welsh Terrier exposure.",
+        "Weight range 20 lb (9 kg) and grooming needs (Wire coat.) belong in the same Welsh Terrier household ops list as vaccine dates when busy weeks collide.",
+        "If your Welsh Terrier is also monitored for allergy skin disease, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Welsh Terrier appointments.",
+        "After the Welsh Terrier puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Welsh Terrier shots when the puppy seems “a little off,” travel intervenes, or primary lens luxation risk worries dominate the week — ask the clinic whether a same-week Welsh Terrier make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Welsh Terrier antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Welsh Terrier dose for extra socialization; finish immunity first for this small dog.",
+        "Reset the Welsh Terrier reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Welsh Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Welsh Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Welsh Terrier health context beyond vaccines?",
+      "answer": "See the Welsh Terrier adult health guide for breed predispositions such as primary lens luxation risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

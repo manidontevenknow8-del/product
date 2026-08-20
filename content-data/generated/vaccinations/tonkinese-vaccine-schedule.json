@@ -1,0 +1,47 @@
+{
+  "slug": "tonkinese-vaccine-schedule",
+  "path": "/vaccinations/tonkinese-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "tonkinese",
+  "subjectName": "Tonkinese",
+  "species": "cat",
+  "primaryKeyword": "Tonkinese vaccine schedule",
+  "metaDescription": "Tonkinese vaccine schedule with core ages in weeks. Set reminders so Tonkinese boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/tonkinese/adult-health-guide",
+  "breedHealthLabel": "Tonkinese adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Tonkineses: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Tonkinese series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Tonkinese, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final FVRCP booster.",
+        "Flag asthma sensitivity at Tonkinese vaccine checkups so the kitten’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Tonkinese series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Tonkinese boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every Tonkinese row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed Tonkinese item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Tonkinese kennel reservation.",
+        "PetClues should hold both the new Tonkinese due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Tonkinese core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Tonkinese misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Tonkinese health context beyond vaccines?",
+      "answer": "See the Tonkinese adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

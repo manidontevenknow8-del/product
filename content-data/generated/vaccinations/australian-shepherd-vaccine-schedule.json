@@ -1,0 +1,47 @@
+{
+  "slug": "australian-shepherd-vaccine-schedule",
+  "path": "/vaccinations/australian-shepherd-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "australian-shepherd",
+  "subjectName": "Australian Shepherd",
+  "species": "dog",
+  "primaryKeyword": "Australian Shepherd vaccine schedule",
+  "metaDescription": "Australian Shepherd vaccine schedule with core ages in weeks. Set reminders so Australian Shepherd boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/australian-shepherd/adult-health-guide",
+  "breedHealthLabel": "Australian Shepherd adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Australian Shepherd social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Australian Shepherd exposure.",
+        "Weight range 40-65 lb (18-29 kg) and grooming needs (Medium coat; brush 2-3x weekly; mats behind ears.) belong in the same Australian Shepherd household ops list as vaccine dates when busy weeks collide.",
+        "If your Australian Shepherd is also monitored for mdr1 drug sensitivity risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Australian Shepherd appointments.",
+        "After the Australian Shepherd puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Australian Shepherd shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Australian Shepherd make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Australian Shepherd antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Australian Shepherd dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Australian Shepherd reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Australian Shepherd core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Australian Shepherd misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Australian Shepherd health context beyond vaccines?",
+      "answer": "See the Australian Shepherd adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

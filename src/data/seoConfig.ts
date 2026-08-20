@@ -444,6 +444,12 @@ export function isIndexablePublicPath(pathname: string): boolean {
   if (pathname === ROUTES.RESOURCES || isResourcePath(pathname)) return true;
   if (isLearnArticlePath(pathname)) return true;
   if (isFaqArticlePath(pathname)) return true;
+  if (pathname === '/emergency' || /^\/emergency\/[^/]+$/.test(pathname)) return true;
+  if (pathname === '/tools' || pathname.startsWith('/tools/')) {
+    const slug = pathname === '/tools' ? '' : pathname.slice('/tools/'.length);
+    if (pathname === '/tools') return true;
+    if (slug && !slug.includes('/') && slug !== 'qr-generator') return true;
+  }
   return INDEXABLE_SET.has(pathname);
 }
 

@@ -1,0 +1,47 @@
+{
+  "slug": "selkirk-rex-vaccine-schedule",
+  "path": "/vaccinations/selkirk-rex-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "selkirk-rex",
+  "subjectName": "Selkirk Rex",
+  "species": "cat",
+  "primaryKeyword": "Selkirk Rex vaccine schedule",
+  "metaDescription": "Selkirk Rex vaccine schedule with core ages in weeks. Set reminders so Selkirk Rex boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/selkirk-rex/adult-health-guide",
+  "breedHealthLabel": "Selkirk Rex adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Selkirk Rex core series (FVRCP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a medium kitten is covered as maternal antibodies fade.",
+        "At 7-16 lb (3-7 kg), Selkirk Rex visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring hypertrophic cardiomyopathy (hcm) risk and polycystic kidney disease risk talks into the Selkirk Rex exam-room conversation while you are already there for shots.",
+        "Rabies for a Selkirk Rex still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Selkirk Rex boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every Selkirk Rex row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed Selkirk Rex item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Selkirk Rex kennel reservation.",
+        "PetClues should hold both the new Selkirk Rex due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Selkirk Rex core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Selkirk Rex misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Selkirk Rex health context beyond vaccines?",
+      "answer": "See the Selkirk Rex adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

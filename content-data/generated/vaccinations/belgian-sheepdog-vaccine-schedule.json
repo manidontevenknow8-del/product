@@ -1,0 +1,47 @@
+{
+  "slug": "belgian-sheepdog-vaccine-schedule",
+  "path": "/vaccinations/belgian-sheepdog-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "belgian-sheepdog",
+  "subjectName": "Belgian Sheepdog (Groenendael)",
+  "species": "dog",
+  "primaryKeyword": "Belgian Sheepdog (Groenendael) vaccine schedule",
+  "metaDescription": "Belgian Sheepdog (Groenendael) vaccine schedule with core ages in weeks. Set reminders so Belgian Sheepdog (Groenendael) boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/belgian-sheepdog/adult-health-guide",
+  "breedHealthLabel": "Belgian Sheepdog (Groenendael) adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Belgian Sheepdog (Groenendael) core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a large puppy is covered as maternal antibodies fade.",
+        "At 45-75 lb (20-34 kg), Belgian Sheepdog (Groenendael) visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring hip dysplasia and epilepsy risk into the Belgian Sheepdog (Groenendael) exam-room conversation while you are already there for shots.",
+        "Rabies for a Belgian Sheepdog (Groenendael) still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Belgian Sheepdog (Groenendael) misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Belgian Sheepdog (Groenendael) series from memory.",
+        "The danger for a delayed Belgian Sheepdog (Groenendael) is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Belgian Sheepdog (Groenendael) away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Belgian Sheepdog (Groenendael) due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Belgian Sheepdog (Groenendael) core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Belgian Sheepdog (Groenendael) misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Belgian Sheepdog (Groenendael) health context beyond vaccines?",
+      "answer": "See the Belgian Sheepdog (Groenendael) adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

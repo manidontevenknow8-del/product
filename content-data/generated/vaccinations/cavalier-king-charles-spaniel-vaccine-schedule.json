@@ -1,0 +1,47 @@
+{
+  "slug": "cavalier-king-charles-spaniel-vaccine-schedule",
+  "path": "/vaccinations/cavalier-king-charles-spaniel-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "cavalier-king-charles-spaniel",
+  "subjectName": "Cavalier King Charles Spaniel",
+  "species": "dog",
+  "primaryKeyword": "Cavalier King Charles Spaniel vaccine schedule",
+  "metaDescription": "Cavalier King Charles Spaniel vaccine schedule with core ages in weeks. Set reminders so Cavalier King Charles Spaniel boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/cavalier-king-charles-spaniel/adult-health-guide",
+  "breedHealthLabel": "Cavalier King Charles Spaniel adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Cavalier King Charles Spaniel social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Cavalier King Charles Spaniel exposure.",
+        "Weight range 13-18 lb (6-8 kg) and grooming needs (Daily brush; ears need frequent checks.) belong in the same Cavalier King Charles Spaniel household ops list as vaccine dates when busy weeks collide.",
+        "If your Cavalier King Charles Spaniel is also monitored for syringomyelia / chiari-like risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Cavalier King Charles Spaniel appointments.",
+        "After the Cavalier King Charles Spaniel puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Cavalier King Charles Spaniel boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Cavalier King Charles Spaniel row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Cavalier King Charles Spaniel item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Cavalier King Charles Spaniel kennel reservation.",
+        "PetClues should hold both the new Cavalier King Charles Spaniel due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Cavalier King Charles Spaniel core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Cavalier King Charles Spaniel misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Cavalier King Charles Spaniel health context beyond vaccines?",
+      "answer": "See the Cavalier King Charles Spaniel adult health guide for breed predispositions such as mitral valve disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

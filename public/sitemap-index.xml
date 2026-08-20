@@ -2,30 +2,62 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://petclues.com/sitemap-commercial.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-blog.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-faq.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-guides.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-medical.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-lifecycle.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://petclues.com/sitemap-resources.xml</loc>
-    <lastmod>2026-08-16</lastmod>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-compare.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-vaccinations.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-emergency.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-vault.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-life-logistics.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-tools.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-symptoms.xml</loc>
+    <lastmod>2026-08-20</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://petclues.com/sitemap-breeds.xml</loc>
+    <lastmod>2026-08-20</lastmod>
   </sitemap>
 </sitemapindex>

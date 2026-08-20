@@ -1,0 +1,40 @@
+{
+  "key": "bulldog__puppy",
+  "path": "/breeds/bulldog/puppy-health-guide",
+  "breedSlug": "bulldog",
+  "stage": "puppy",
+  "lifeStageSlug": "dog-puppy",
+  "primaryKeyword": "Bulldog puppy health guide",
+  "metaDescription": "Bulldog puppy health guide with 40-50 lb (18-23 kg) weight range, stage checklist, and breed-linked issues. Start a free PetClues trial to track dates.",
+  "wordCount": 512,
+  "markdown": "bulldog care at the puppy stage fails when owners copy advice written for a different size class. for this bulldog, this puppy animal is built toward 40-50 lb (18-23 kg) and often lives 8-10 years, with a personality that reads as calm companion; limited exercise tolerance; avoid heat and overexertion. this bulldog puppy guide focuses on growth, vaccine-era socialization limits, and early watches for brachycephalic obstructive airway syndrome (boas). what normal looks like for a puppy bulldog\n\nmedium bulldogs sit between early-finishing toys and slow giants. for this bulldog, a written weight every two weeks through month twelve beats guessing from harness holes. socialization for a bulldog puppy still matters after the first vaccines, but dense dog-park traffic can wait until the core series on this breed's schedule is complete. teething chews for a bulldog should match a mouth heading toward 40-50 lb (18-23 kg), not a toy that becomes a foreign-body risk. bite inhibition training on a bulldog protects visiting kids because this mouth gets stronger every week in the puppy stage. write vaccine dates, stool quality, and weekly weights in one place so a new clinic does not rebuild the bulldog puppy story from memory. for this bulldog, if brachycephalic obstructive airway syndrome (boas) is already on the breed watch list, keep exercise surfaces non-slippery and avoid repeated high-impact jumping during growth. breed-linked issues to watch in this stage\n\nduring bulldog puppy months, brachycephalic obstructive airway syndrome (boas) is a predisposition to plan around while growth is unfinished. for this bulldog, red flags belong on /symptoms/difficulty-breathing-dog before a forum thread. during bulldog puppy months, hip dysplasia is a predisposition to plan around while growth is unfinished. matching signs should send a bulldog caregiver to /symptoms/limping-dog for urgency framing, then to the clinic with the written timeline. during bulldog puppy months, cherry eye is a predisposition to plan around while growth is unfinished. for this bulldog, escalation cues for cherry eye are on /symptoms/red-eyes-dog. practical context for this bulldog\n\ntemperament shapes puppy-stage risk management for a bulldog: calm companion; limited exercise tolerance; avoid heat and overexertion. for this bulldog, copied exercise advice from another breed fails this medium animal in the puppy chapter. lifespan expectations around 8-10 years change how early a bulldog household starts screening talks for brachycephalic obstructive airway syndrome (boas) during puppy care. shared puppy care of this bulldog across a household needs one vault when hip dysplasia flares after hours. home-monitoring checklist\n\nhome-monitoring checklist for a puppy bulldog (breed-specific, not a generic dog poster):\n\n1. film a fifteen-second walk or play clip monthly; trends beat memory when cherry eye is on the radar for a bulldog. if you only remember one thing: bulldog puppy care is specific. for this bulldog, size class medium, lifespan band 8-10 years, and issues like brachycephalic obstructive airway syndrome (boas) are why generic dog advice fails. bulldog puppy-only note: review Brachycephalic obstructive airway syndrome (BOAS) signs on a dated log before the next visit. bulldog puppy-only note: review Brachycephalic obstructive airway syndrome (BOAS) signs on a dated log before the next visit.",
+  "issueLinks": [
+    {
+      "issue": "Brachycephalic obstructive airway syndrome (BOAS)",
+      "href": "/symptoms/difficulty-breathing-dog"
+    },
+    {
+      "issue": "Hip dysplasia",
+      "href": "/symptoms/limping-dog"
+    },
+    {
+      "issue": "Cherry eye",
+      "href": "/symptoms/red-eyes-dog"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a normal adult weight range for a Bulldog?",
+      "answer": "This breed record lists 40-50 lb (18-23 kg). Your veterinarian sets the target for the individual using body condition, not only the breed average."
+    },
+    {
+      "question": "Which health issues should I watch for in a puppy Bulldog?",
+      "answer": "This stage guide highlights Brachycephalic obstructive airway syndrome (BOAS); Hip dysplasia; Cherry eye. Use the linked symptom pages for red flags, then contact your clinic."
+    },
+    {
+      "question": "How often should I weigh my Bulldog at this stage?",
+      "answer": "Every 1-2 weeks on the same scale while a Bulldog is growing, with the number saved beside vaccine dates."
+    }
+  ],
+  "generatorVersion": 4
+}

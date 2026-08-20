@@ -1,0 +1,47 @@
+{
+  "slug": "briard-vaccine-schedule",
+  "path": "/vaccinations/briard-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "briard",
+  "subjectName": "Briard",
+  "species": "dog",
+  "primaryKeyword": "Briard vaccine schedule",
+  "metaDescription": "Briard vaccine schedule with core ages in weeks. Set reminders so Briard boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/briard/adult-health-guide",
+  "breedHealthLabel": "Briard adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Briard table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Briard dates, not intentions, so a Briard with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Hip dysplasia shows up often enough in Briards that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Briard profile immediately; lost paperwork is the most common reason Briard travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Briard boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Briard row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Briard item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Briard kennel reservation.",
+        "PetClues should hold both the new Briard due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Briard core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Briard misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Briard health context beyond vaccines?",
+      "answer": "See the Briard adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

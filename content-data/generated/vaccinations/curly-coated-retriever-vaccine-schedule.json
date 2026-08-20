@@ -1,0 +1,47 @@
+{
+  "slug": "curly-coated-retriever-vaccine-schedule",
+  "path": "/vaccinations/curly-coated-retriever-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "curly-coated-retriever",
+  "subjectName": "Curly-Coated Retriever",
+  "species": "dog",
+  "primaryKeyword": "Curly-Coated Retriever vaccine schedule",
+  "metaDescription": "Curly-Coated Retriever vaccine schedule with core ages in weeks. Set reminders so Curly-Coated Retriever boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/curly-coated-retriever/adult-health-guide",
+  "breedHealthLabel": "Curly-Coated Retriever adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Curly-Coated Retrievers: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Curly-Coated Retriever series closes at about 16 weeks.",
+        "Size class large does not invent new viruses for the Curly-Coated Retriever, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag eye issues at Curly-Coated Retriever vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Curly-Coated Retriever series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Curly-Coated Retriever shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Curly-Coated Retriever make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Curly-Coated Retriever antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Curly-Coated Retriever dose for extra socialization; finish immunity first for this large dog.",
+        "Reset the Curly-Coated Retriever reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Curly-Coated Retriever core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Curly-Coated Retriever misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Curly-Coated Retriever health context beyond vaccines?",
+      "answer": "See the Curly-Coated Retriever adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "japanese-chin-vaccine-schedule",
+  "path": "/vaccinations/japanese-chin-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "japanese-chin",
+  "subjectName": "Japanese Chin",
+  "species": "dog",
+  "primaryKeyword": "Japanese Chin vaccine schedule",
+  "metaDescription": "Japanese Chin vaccine schedule with core ages in weeks. Set reminders so Japanese Chin boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/japanese-chin/adult-health-guide",
+  "breedHealthLabel": "Japanese Chin adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Japanese Chin social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Japanese Chin exposure.",
+        "Weight range 4-9 lb (1.8-4 kg) and grooming needs (Soft coat brushing; face cleaning.) belong in the same Japanese Chin household ops list as vaccine dates when busy weeks collide.",
+        "If your Japanese Chin is also monitored for patellar luxation, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Japanese Chin appointments.",
+        "After the Japanese Chin puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Japanese Chin misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Japanese Chin series from memory.",
+        "The danger for a delayed Japanese Chin is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Japanese Chin away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Japanese Chin due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Japanese Chin core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Japanese Chin misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Japanese Chin health context beyond vaccines?",
+      "answer": "See the Japanese Chin adult health guide for breed predispositions such as heart disease screening needs, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

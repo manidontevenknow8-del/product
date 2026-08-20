@@ -1,0 +1,64 @@
+{
+  "slug": "traveling-cat-vaccine-checklist",
+  "path": "/vaccinations/traveling-cat-vaccine-checklist",
+  "kind": "general",
+  "subjectName": "Traveling cat",
+  "species": "cat",
+  "primaryKeyword": "traveling cat vaccine checklist",
+  "metaDescription": "traveling cat vaccine checklist: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "rabies certificate renewal",
+  "common_health_issues": [
+    "Carrier stress vs appointment timing",
+    "International microchip + rabies order",
+    "PDF not accepted at desk"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Rabies within destination rules",
+      "age_weeks": 0,
+      "age_label": "Check country/state"
+    },
+    {
+      "vaccine": "FVRCP current",
+      "age_weeks": 0,
+      "age_label": "Carrier / boarding"
+    },
+    {
+      "vaccine": "Health certificate timing",
+      "age_weeks": 0,
+      "age_label": "Often ≤10 days before travel"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This traveling cat plan sequences doses against carrier stress vs appointment timing, not against a vague “sometime this season” intention for your cat.",
+        "Milestone labels on the traveling cat table (Check country/state; Carrier / boarding; Often ≤10 days before travel) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished traveling cat kitten series is still incomplete.",
+        "If your household also wrestles with international microchip + rabies order or pdf not accepted at desk, put those constraints on the same calendar thread as the rabies certificate renewal so one reminder system owns the traveling cat week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed traveling cat dose; catch-up timing depends on age and gap length for this cat scenario.",
+        "Until the traveling cat series is current again, reduce the exposure pattern that matches carrier stress vs appointment timing, and do not wait for an annual wellness slot to ask about a traveling cat make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next rabies certificate renewal due date so the same traveling cat miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this traveling cat vaccine checklist a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual cat."
+    },
+    {
+      "question": "What if we already missed a date on this traveling cat schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to carrier stress vs appointment timing, and reset reminders as soon as the next traveling cat due date is known."
+    },
+    {
+      "question": "How do reminders help with rabies certificate renewal?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that traveling cat booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

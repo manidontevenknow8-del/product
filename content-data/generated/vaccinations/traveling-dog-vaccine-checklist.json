@@ -1,0 +1,64 @@
+{
+  "slug": "traveling-dog-vaccine-checklist",
+  "path": "/vaccinations/traveling-dog-vaccine-checklist",
+  "kind": "general",
+  "subjectName": "Traveling dog",
+  "species": "dog",
+  "primaryKeyword": "traveling dog vaccine checklist",
+  "metaDescription": "traveling dog vaccine checklist: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "rabies certificate renewal",
+  "common_health_issues": [
+    "Rabies titer / waiting periods",
+    "Certificate expiry mid-trip",
+    "Airline breed/vaccine forms"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Rabies within destination rules",
+      "age_weeks": 0,
+      "age_label": "Check country/state"
+    },
+    {
+      "vaccine": "Core vaccines current",
+      "age_weeks": 0,
+      "age_label": "Airline / boarding"
+    },
+    {
+      "vaccine": "Health certificate timing",
+      "age_weeks": 0,
+      "age_label": "Often ≤10 days before travel"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This traveling dog plan sequences doses against rabies titer / waiting periods, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the traveling dog table (Check country/state; Airline / boarding; Often ≤10 days before travel) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished traveling dog puppy series is still incomplete.",
+        "If your household also wrestles with certificate expiry mid-trip or airline breed/vaccine forms, put those constraints on the same calendar thread as the rabies certificate renewal so one reminder system owns the traveling dog week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed traveling dog dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the traveling dog series is current again, reduce the exposure pattern that matches rabies titer / waiting periods, and do not wait for an annual wellness slot to ask about a traveling dog make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next rabies certificate renewal due date so the same traveling dog miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this traveling dog vaccine checklist a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this traveling dog schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to rabies titer / waiting periods, and reset reminders as soon as the next traveling dog due date is known."
+    },
+    {
+      "question": "How do reminders help with rabies certificate renewal?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that traveling dog booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

@@ -1,0 +1,1208 @@
+{
+  "wave": 5,
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "count": 239,
+  "pillars": {
+    "symptoms": 239
+  },
+  "poolSources": [
+    "symptoms"
+  ],
+  "urls": [
+    {
+      "path": "/symptoms/cat/hiding-causes",
+      "url": "https://petclues.com/symptoms/cat/hiding-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hiding-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/hiding-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hind-leg-weakness-causes",
+      "url": "https://petclues.com/symptoms/cat/hind-leg-weakness-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hind-leg-weakness-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/hind-leg-weakness-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/inappropriate-urination-causes",
+      "url": "https://petclues.com/symptoms/cat/inappropriate-urination-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/inappropriate-urination-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/inappropriate-urination-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/itching-and-hair-loss-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/itching-and-hair-loss-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/itching-and-hair-loss-together",
+      "url": "https://petclues.com/symptoms/cat/itching-and-hair-loss-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/itching-and-hair-loss-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/itching-and-hair-loss-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/itching-and-hair-loss-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/itching-and-hair-loss-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/itching-causes",
+      "url": "https://petclues.com/symptoms/cat/itching-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/itching-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/itching-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/lethargy-causes",
+      "url": "https://petclues.com/symptoms/cat/lethargy-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/litter-box-avoidance-causes",
+      "url": "https://petclues.com/symptoms/cat/litter-box-avoidance-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/litter-box-avoidance-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/litter-box-avoidance-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/loss-of-appetite-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/loss-of-appetite-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/loss-of-appetite-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/cat/loss-of-appetite-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/loss-of-appetite-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/loss-of-appetite-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/loss-of-appetite-causes",
+      "url": "https://petclues.com/symptoms/cat/loss-of-appetite-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/loss-of-appetite-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/loss-of-appetite-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/lumps-bumps-causes",
+      "url": "https://petclues.com/symptoms/cat/lumps-bumps-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/lumps-bumps-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/lumps-bumps-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/nasal-discharge-causes",
+      "url": "https://petclues.com/symptoms/cat/nasal-discharge-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/nasal-discharge-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/nasal-discharge-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/open-mouth-breathing-causes",
+      "url": "https://petclues.com/symptoms/cat/open-mouth-breathing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/open-mouth-breathing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/open-mouth-breathing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pacing-at-night-causes",
+      "url": "https://petclues.com/symptoms/cat/pacing-at-night-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pacing-at-night-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/pacing-at-night-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pale-gums-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/pale-gums-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pale-gums-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/cat/pale-gums-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pale-gums-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/pale-gums-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pale-gums-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/pale-gums-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pale-gums-causes",
+      "url": "https://petclues.com/symptoms/cat/pale-gums-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/pale-gums-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/pale-gums-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/paw-licking-causes",
+      "url": "https://petclues.com/symptoms/cat/paw-licking-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/paw-licking-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/paw-licking-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/rashes-hives-causes",
+      "url": "https://petclues.com/symptoms/cat/rashes-hives-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/rashes-hives-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/rashes-hives-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/red-eyes-causes",
+      "url": "https://petclues.com/symptoms/cat/red-eyes-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/red-eyes-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/red-eyes-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/reluctance-to-jump-causes",
+      "url": "https://petclues.com/symptoms/cat/reluctance-to-jump-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/reluctance-to-jump-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/reluctance-to-jump-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/restlessness-causes",
+      "url": "https://petclues.com/symptoms/cat/restlessness-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/restlessness-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/restlessness-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/seizures-and-tremors-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/seizures-and-tremors-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/seizures-and-tremors-together",
+      "url": "https://petclues.com/symptoms/cat/seizures-and-tremors-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/seizures-and-tremors-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/seizures-and-tremors-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/seizures-and-tremors-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/seizures-and-tremors-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/seizures-causes",
+      "url": "https://petclues.com/symptoms/cat/seizures-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/seizures-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/seizures-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/sneezing-causes",
+      "url": "https://petclues.com/symptoms/cat/sneezing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/sneezing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/sneezing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/snoring-sudden-causes",
+      "url": "https://petclues.com/symptoms/cat/snoring-sudden-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/snoring-sudden-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/snoring-sudden-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/squinting-causes",
+      "url": "https://petclues.com/symptoms/cat/squinting-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/squinting-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/squinting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/stiffness-causes",
+      "url": "https://petclues.com/symptoms/cat/stiffness-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/stiffness-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/stiffness-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/straining-to-urinate-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/straining-to-urinate-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/straining-to-urinate-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/cat/straining-to-urinate-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/straining-to-urinate-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/straining-to-urinate-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/straining-to-urinate-causes",
+      "url": "https://petclues.com/symptoms/cat/straining-to-urinate-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/straining-to-urinate-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/straining-to-urinate-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/swollen-face-causes",
+      "url": "https://petclues.com/symptoms/cat/swollen-face-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/swollen-face-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/swollen-face-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/swollen-joints-causes",
+      "url": "https://petclues.com/symptoms/cat/swollen-joints-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/swollen-joints-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/swollen-joints-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/tremors-causes",
+      "url": "https://petclues.com/symptoms/cat/tremors-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/tremors-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/tremors-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/urinary-incontinence-causes",
+      "url": "https://petclues.com/symptoms/cat/urinary-incontinence-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/urinary-incontinence-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/urinary-incontinence-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-diarrhea-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-diarrhea-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-diarrhea-together",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-diarrhea-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-diarrhea-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-diarrhea-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-diarrhea-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-diarrhea-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/vomiting-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-causes",
+      "url": "https://petclues.com/symptoms/cat/vomiting-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/vomiting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-yellow-bile-causes",
+      "url": "https://petclues.com/symptoms/cat/vomiting-yellow-bile-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/vomiting-yellow-bile-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/vomiting-yellow-bile-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/weight-gain-causes",
+      "url": "https://petclues.com/symptoms/cat/weight-gain-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/weight-gain-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/weight-gain-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/weight-loss-causes",
+      "url": "https://petclues.com/symptoms/cat/weight-loss-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/weight-loss-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/weight-loss-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/wheezing-causes",
+      "url": "https://petclues.com/symptoms/cat/wheezing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/wheezing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/wheezing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/wound-not-healing-causes",
+      "url": "https://petclues.com/symptoms/cat/wound-not-healing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/wound-not-healing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/wound-not-healing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/yellow-gums-jaundice-causes",
+      "url": "https://petclues.com/symptoms/cat/yellow-gums-jaundice-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/yellow-gums-jaundice-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/yellow-gums-jaundice-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/anal-gland-issues-causes",
+      "url": "https://petclues.com/symptoms/dog/anal-gland-issues-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/anal-gland-issues-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/anal-gland-issues-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/back-pain-causes",
+      "url": "https://petclues.com/symptoms/dog/back-pain-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/back-pain-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/back-pain-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bad-breath-causes",
+      "url": "https://petclues.com/symptoms/dog/bad-breath-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bad-breath-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/bad-breath-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/black-tarry-stool-causes",
+      "url": "https://petclues.com/symptoms/dog/black-tarry-stool-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/black-tarry-stool-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/black-tarry-stool-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloated-abdomen-and-dry-heaving-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/bloated-abdomen-and-dry-heaving-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloated-abdomen-and-dry-heaving-together",
+      "url": "https://petclues.com/symptoms/dog/bloated-abdomen-and-dry-heaving-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloated-abdomen-and-dry-heaving-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/bloated-abdomen-and-dry-heaving-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloated-abdomen-and-dry-heaving-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/bloated-abdomen-and-dry-heaving-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloated-abdomen-causes",
+      "url": "https://petclues.com/symptoms/dog/bloated-abdomen-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloated-abdomen-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/bloated-abdomen-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/blood-in-urine-causes",
+      "url": "https://petclues.com/symptoms/dog/blood-in-urine-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/blood-in-urine-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/blood-in-urine-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloody-stool-causes",
+      "url": "https://petclues.com/symptoms/dog/bloody-stool-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloody-stool-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/bloody-stool-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloody-vomit-causes",
+      "url": "https://petclues.com/symptoms/dog/bloody-vomit-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/bloody-vomit-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/bloody-vomit-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/blue-gums-causes",
+      "url": "https://petclues.com/symptoms/dog/blue-gums-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/blue-gums-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/blue-gums-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/circling-causes",
+      "url": "https://petclues.com/symptoms/dog/circling-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/circling-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/circling-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/collapse-causes",
+      "url": "https://petclues.com/symptoms/dog/collapse-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/collapse-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/collapse-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/constipation-causes",
+      "url": "https://petclues.com/symptoms/dog/constipation-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/constipation-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/constipation-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/coughing-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/dog/coughing-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/coughing-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/coughing-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-together",
+      "url": "https://petclues.com/symptoms/dog/coughing-at-night-and-exercise-intolerance-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-at-night-causes",
+      "url": "https://petclues.com/symptoms/dog/coughing-at-night-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-at-night-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/coughing-at-night-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-causes",
+      "url": "https://petclues.com/symptoms/dog/coughing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/coughing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/coughing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/dental-pain-causes",
+      "url": "https://petclues.com/symptoms/dog/dental-pain-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/dental-pain-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/dental-pain-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/diarrhea-and-vomiting-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/diarrhea-and-vomiting-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/diarrhea-and-vomiting-together",
+      "url": "https://petclues.com/symptoms/dog/diarrhea-and-vomiting-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/diarrhea-and-vomiting-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/diarrhea-and-vomiting-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/diarrhea-and-vomiting-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/diarrhea-and-vomiting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/diarrhea-causes",
+      "url": "https://petclues.com/symptoms/dog/diarrhea-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/diarrhea-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/diarrhea-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/difficulty-breathing-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/dog/difficulty-breathing-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/difficulty-breathing-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-breathing-causes",
+      "url": "https://petclues.com/symptoms/dog/difficulty-breathing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-breathing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/difficulty-breathing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-swallowing-causes",
+      "url": "https://petclues.com/symptoms/dog/difficulty-swallowing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/difficulty-swallowing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/difficulty-swallowing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/discharge-from-eyes-causes",
+      "url": "https://petclues.com/symptoms/dog/discharge-from-eyes-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/discharge-from-eyes-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/discharge-from-eyes-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/disorientation-causes",
+      "url": "https://petclues.com/symptoms/dog/disorientation-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/disorientation-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/disorientation-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/drooling-causes",
+      "url": "https://petclues.com/symptoms/dog/drooling-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/drooling-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/drooling-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/dry-heaving-causes",
+      "url": "https://petclues.com/symptoms/dog/dry-heaving-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/dry-heaving-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/dry-heaving-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/ear-scratching-causes",
+      "url": "https://petclues.com/symptoms/dog/ear-scratching-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/ear-scratching-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/ear-scratching-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/eating-grass-causes",
+      "url": "https://petclues.com/symptoms/dog/eating-grass-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/eating-grass-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/eating-grass-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-hunger-causes",
+      "url": "https://petclues.com/symptoms/dog/excessive-hunger-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-hunger-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/excessive-hunger-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-licking-causes",
+      "url": "https://petclues.com/symptoms/dog/excessive-licking-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-licking-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/excessive-licking-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/excessive-thirst-and-frequent-urination-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-together",
+      "url": "https://petclues.com/symptoms/dog/excessive-thirst-and-frequent-urination-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/excessive-thirst-and-frequent-urination-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-thirst-causes",
+      "url": "https://petclues.com/symptoms/dog/excessive-thirst-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-thirst-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/excessive-thirst-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-vocalization-causes",
+      "url": "https://petclues.com/symptoms/dog/excessive-vocalization-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/excessive-vocalization-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/excessive-vocalization-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/exercise-intolerance-causes",
+      "url": "https://petclues.com/symptoms/dog/exercise-intolerance-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/exercise-intolerance-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/exercise-intolerance-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/fainting-causes",
+      "url": "https://petclues.com/symptoms/dog/fainting-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/fainting-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/fainting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/fever-causes",
+      "url": "https://petclues.com/symptoms/dog/fever-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/fever-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/fever-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/frequent-urination-causes",
+      "url": "https://petclues.com/symptoms/dog/frequent-urination-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/frequent-urination-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/frequent-urination-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/gagging-causes",
+      "url": "https://petclues.com/symptoms/dog/gagging-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/gagging-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/gagging-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/hair-loss-causes",
+      "url": "https://petclues.com/symptoms/dog/hair-loss-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/hair-loss-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/hair-loss-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/head-shaking-causes",
+      "url": "https://petclues.com/symptoms/dog/head-shaking-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/head-shaking-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/head-shaking-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/heat-sensitivity-causes",
+      "url": "https://petclues.com/symptoms/dog/heat-sensitivity-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/heat-sensitivity-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/heat-sensitivity-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/hind-leg-weakness-causes",
+      "url": "https://petclues.com/symptoms/dog/hind-leg-weakness-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/hind-leg-weakness-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/hind-leg-weakness-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/hot-spots-causes",
+      "url": "https://petclues.com/symptoms/dog/hot-spots-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/hot-spots-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/hot-spots-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/house-soiling-causes",
+      "url": "https://petclues.com/symptoms/dog/house-soiling-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/house-soiling-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/house-soiling-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/itching-and-hair-loss-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/itching-and-hair-loss-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/itching-and-hair-loss-together",
+      "url": "https://petclues.com/symptoms/dog/itching-and-hair-loss-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/itching-and-hair-loss-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/itching-and-hair-loss-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/itching-and-hair-loss-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/itching-and-hair-loss-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/itching-causes",
+      "url": "https://petclues.com/symptoms/dog/itching-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/itching-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/itching-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/lethargy-causes",
+      "url": "https://petclues.com/symptoms/dog/lethargy-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/loss-of-appetite-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/dog/loss-of-appetite-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/loss-of-appetite-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/loss-of-appetite-causes",
+      "url": "https://petclues.com/symptoms/dog/loss-of-appetite-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/loss-of-appetite-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/loss-of-appetite-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/lumps-bumps-causes",
+      "url": "https://petclues.com/symptoms/dog/lumps-bumps-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/lumps-bumps-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/lumps-bumps-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/nasal-discharge-causes",
+      "url": "https://petclues.com/symptoms/dog/nasal-discharge-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/nasal-discharge-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/nasal-discharge-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pacing-at-night-causes",
+      "url": "https://petclues.com/symptoms/dog/pacing-at-night-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pacing-at-night-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/pacing-at-night-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pale-gums-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/pale-gums-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pale-gums-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/dog/pale-gums-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pale-gums-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/pale-gums-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pale-gums-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/pale-gums-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pale-gums-causes",
+      "url": "https://petclues.com/symptoms/dog/pale-gums-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/pale-gums-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/pale-gums-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/panting-excessively-causes",
+      "url": "https://petclues.com/symptoms/dog/panting-excessively-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/panting-excessively-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/panting-excessively-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/paw-licking-causes",
+      "url": "https://petclues.com/symptoms/dog/paw-licking-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/paw-licking-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/paw-licking-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/rashes-hives-causes",
+      "url": "https://petclues.com/symptoms/dog/rashes-hives-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/rashes-hives-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/rashes-hives-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/red-eyes-causes",
+      "url": "https://petclues.com/symptoms/dog/red-eyes-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/red-eyes-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/red-eyes-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/reluctance-to-jump-causes",
+      "url": "https://petclues.com/symptoms/dog/reluctance-to-jump-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/reluctance-to-jump-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/reluctance-to-jump-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/restlessness-causes",
+      "url": "https://petclues.com/symptoms/dog/restlessness-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/restlessness-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/restlessness-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/reverse-sneezing-causes",
+      "url": "https://petclues.com/symptoms/dog/reverse-sneezing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/reverse-sneezing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/reverse-sneezing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/scooting-causes",
+      "url": "https://petclues.com/symptoms/dog/scooting-causes",
+      "pillar": "symptoms"
+    }
+  ]
+}

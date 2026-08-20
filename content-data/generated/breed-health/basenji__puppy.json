@@ -1,0 +1,40 @@
+{
+  "key": "basenji__puppy",
+  "path": "/breeds/basenji/puppy-health-guide",
+  "breedSlug": "basenji",
+  "stage": "puppy",
+  "lifeStageSlug": "dog-puppy",
+  "primaryKeyword": "Basenji puppy health guide",
+  "metaDescription": "Basenji puppy health guide with 22-24 lb (10-11 kg) weight range, stage checklist, and breed-linked issues. Start a free PetClues trial to track dates.",
+  "wordCount": 508,
+  "markdown": "basenji care at the puppy stage fails when owners copy advice written for a different size class. for this basenji, this puppy animal is built toward 22-24 lb (10-11 kg) and often lives 13-14 years, with a personality that reads as barkless but not silent; independent hound with metabolic screening needs. this basenji puppy guide focuses on growth, vaccine-era socialization limits, and early watches for fanconi syndrome risk. what normal looks like for a puppy basenji\n\nsmall-breed basenjis usually close growth earlier than large breeds. for this basenji, track weight every two weeks in the first year and cut portions when the rib grid disappears under coat. socialization for a basenji puppy still matters after the first vaccines, but dense dog-park traffic can wait until the core series on this breed's schedule is complete. teething chews for a basenji should match a mouth heading toward 22-24 lb (10-11 kg), not a toy that becomes a foreign-body risk. house training a basenji sticks faster when potty breaks are boringly consistent and the crate is rest, not punishment. write vaccine dates, stool quality, and weekly weights in one place so a new clinic does not rebuild the basenji puppy story from memory. for this basenji, if fanconi syndrome risk is already on the breed watch list, keep exercise surfaces non-slippery and avoid repeated high-impact jumping during growth. breed-linked issues to watch in this stage\n\nduring basenji puppy months, fanconi syndrome risk is a predisposition to plan around while growth is unfinished. for this basenji, red flags belong on /symptoms/excessive-thirst-dog before a forum thread. during basenji puppy months, progressive retinal atrophy (pra) is a predisposition to plan around while growth is unfinished. matching signs should send a basenji caregiver to /symptoms/red-eyes-dog for urgency framing, then to the clinic with the written timeline. during basenji puppy months, hip dysplasia is a predisposition to plan around while growth is unfinished. for this basenji, escalation cues for hip dysplasia are on /symptoms/limping-dog. practical context for this basenji\n\ntemperament shapes puppy-stage risk management for a basenji: barkless but not silent; independent hound with metabolic screening needs. for this basenji, copied exercise advice from another breed fails this small animal in the puppy chapter. lifespan expectations around 13-14 years change how early a basenji household starts screening talks for fanconi syndrome risk during puppy care. shared puppy care of this basenji across a household needs one vault when progressive retinal atrophy (pra) flares after hours. home-monitoring checklist\n\nhome-monitoring checklist for a puppy basenji (breed-specific, not a generic dog poster):\n\n1. film a fifteen-second walk or play clip monthly; trends beat memory when hip dysplasia is on the radar for a basenji. if you only remember one thing: basenji puppy care is specific. for this basenji, size class small, lifespan band 13-14 years, and issues like fanconi syndrome risk are why generic dog advice fails. basenji puppy-only note: review Fanconi syndrome risk signs on a dated log before the next visit. basenji puppy-only note: review Fanconi syndrome risk signs on a dated log before the next visit.",
+  "issueLinks": [
+    {
+      "issue": "Fanconi syndrome risk",
+      "href": "/symptoms/excessive-thirst-dog"
+    },
+    {
+      "issue": "Progressive retinal atrophy (PRA)",
+      "href": "/symptoms/red-eyes-dog"
+    },
+    {
+      "issue": "Hip dysplasia",
+      "href": "/symptoms/limping-dog"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a normal adult weight range for a Basenji?",
+      "answer": "This breed record lists 22-24 lb (10-11 kg). Your veterinarian sets the target for the individual using body condition, not only the breed average."
+    },
+    {
+      "question": "Which health issues should I watch for in a puppy Basenji?",
+      "answer": "This stage guide highlights Fanconi syndrome risk; Progressive retinal atrophy (PRA); Hip dysplasia. Use the linked symptom pages for red flags, then contact your clinic."
+    },
+    {
+      "question": "How often should I weigh my Basenji at this stage?",
+      "answer": "Every 1-2 weeks on the same scale while a Basenji is growing, with the number saved beside vaccine dates."
+    }
+  ],
+  "generatorVersion": 6
+}

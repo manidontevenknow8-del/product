@@ -1,0 +1,47 @@
+{
+  "slug": "barbet-vaccine-schedule",
+  "path": "/vaccinations/barbet-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "barbet",
+  "subjectName": "Barbet",
+  "species": "dog",
+  "primaryKeyword": "Barbet vaccine schedule",
+  "metaDescription": "Barbet vaccine schedule with core ages in weeks. Set reminders so Barbet boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/barbet/adult-health-guide",
+  "breedHealthLabel": "Barbet adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Barbet social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Barbet exposure.",
+        "Weight range 35-65 lb (16-29 kg) and grooming needs (Woolly coat high maintenance.) belong in the same Barbet household ops list as vaccine dates when busy weeks collide.",
+        "If your Barbet is also monitored for ear infections, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Barbet appointments.",
+        "After the Barbet puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Barbet misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Barbet series from memory.",
+        "The danger for a delayed Barbet is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Barbet away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Barbet due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Barbet core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Barbet misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Barbet health context beyond vaccines?",
+      "answer": "See the Barbet adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "chesapeake-bay-retriever-vaccine-schedule",
+  "path": "/vaccinations/chesapeake-bay-retriever-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "chesapeake-bay-retriever",
+  "subjectName": "Chesapeake Bay Retriever",
+  "species": "dog",
+  "primaryKeyword": "Chesapeake Bay Retriever vaccine schedule",
+  "metaDescription": "Chesapeake Bay Retriever vaccine schedule with core ages in weeks. Set reminders so Chesapeake Bay Retriever boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/chesapeake-bay-retriever/adult-health-guide",
+  "breedHealthLabel": "Chesapeake Bay Retriever adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Chesapeake Bay Retrievers: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Chesapeake Bay Retriever series closes at about 16 weeks.",
+        "Size class large does not invent new viruses for the Chesapeake Bay Retriever, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag exercise-induced collapse risk at Chesapeake Bay Retriever vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Chesapeake Bay Retriever series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Chesapeake Bay Retriever boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Chesapeake Bay Retriever row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Chesapeake Bay Retriever item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Chesapeake Bay Retriever kennel reservation.",
+        "PetClues should hold both the new Chesapeake Bay Retriever due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Chesapeake Bay Retriever core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Chesapeake Bay Retriever misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Chesapeake Bay Retriever health context beyond vaccines?",
+      "answer": "See the Chesapeake Bay Retriever adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

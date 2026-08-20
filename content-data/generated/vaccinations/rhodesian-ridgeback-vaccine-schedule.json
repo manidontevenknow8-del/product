@@ -1,0 +1,47 @@
+{
+  "slug": "rhodesian-ridgeback-vaccine-schedule",
+  "path": "/vaccinations/rhodesian-ridgeback-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "rhodesian-ridgeback",
+  "subjectName": "Rhodesian Ridgeback",
+  "species": "dog",
+  "primaryKeyword": "Rhodesian Ridgeback vaccine schedule",
+  "metaDescription": "Rhodesian Ridgeback vaccine schedule with core ages in weeks. Set reminders so Rhodesian Ridgeback boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/rhodesian-ridgeback/adult-health-guide",
+  "breedHealthLabel": "Rhodesian Ridgeback adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Rhodesian Ridgeback social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Rhodesian Ridgeback exposure.",
+        "Weight range 70-85 lb (32-39 kg) and grooming needs (Short coat, weekly brush.) belong in the same Rhodesian Ridgeback household ops list as vaccine dates when busy weeks collide.",
+        "If your Rhodesian Ridgeback is also monitored for elbow dysplasia, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Rhodesian Ridgeback appointments.",
+        "After the Rhodesian Ridgeback puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Rhodesian Ridgeback shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Rhodesian Ridgeback make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Rhodesian Ridgeback antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Rhodesian Ridgeback dose for extra socialization; finish immunity first for this large dog.",
+        "Reset the Rhodesian Ridgeback reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Rhodesian Ridgeback core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Rhodesian Ridgeback misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Rhodesian Ridgeback health context beyond vaccines?",
+      "answer": "See the Rhodesian Ridgeback adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

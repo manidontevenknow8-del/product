@@ -1,0 +1,47 @@
+{
+  "slug": "portuguese-water-dog-vaccine-schedule",
+  "path": "/vaccinations/portuguese-water-dog-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "portuguese-water-dog",
+  "subjectName": "Portuguese Water Dog",
+  "species": "dog",
+  "primaryKeyword": "Portuguese Water Dog vaccine schedule",
+  "metaDescription": "Portuguese Water Dog vaccine schedule with core ages in weeks. Set reminders so Portuguese Water Dog boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/portuguese-water-dog/adult-health-guide",
+  "breedHealthLabel": "Portuguese Water Dog adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Portuguese Water Dogs: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Portuguese Water Dog series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Portuguese Water Dog, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag jdcm cardiac risk at Portuguese Water Dog vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Portuguese Water Dog series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Portuguese Water Dog shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Portuguese Water Dog make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Portuguese Water Dog antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Portuguese Water Dog dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Portuguese Water Dog reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Portuguese Water Dog core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Portuguese Water Dog misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Portuguese Water Dog health context beyond vaccines?",
+      "answer": "See the Portuguese Water Dog adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,1210 @@
+{
+  "wave": 6,
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "count": 239,
+  "pillars": {
+    "symptoms": 51,
+    "breeds": 188
+  },
+  "poolSources": [
+    "symptoms",
+    "breeds"
+  ],
+  "urls": [
+    {
+      "path": "/symptoms/dog/scooting-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/scooting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/seizures-and-tremors-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/seizures-and-tremors-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/seizures-and-tremors-together",
+      "url": "https://petclues.com/symptoms/dog/seizures-and-tremors-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/seizures-and-tremors-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/seizures-and-tremors-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/seizures-and-tremors-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/seizures-and-tremors-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/seizures-causes",
+      "url": "https://petclues.com/symptoms/dog/seizures-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/seizures-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/seizures-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/sneezing-causes",
+      "url": "https://petclues.com/symptoms/dog/sneezing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/sneezing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/sneezing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/snoring-sudden-causes",
+      "url": "https://petclues.com/symptoms/dog/snoring-sudden-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/snoring-sudden-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/snoring-sudden-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/squinting-causes",
+      "url": "https://petclues.com/symptoms/dog/squinting-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/squinting-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/squinting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/stiffness-causes",
+      "url": "https://petclues.com/symptoms/dog/stiffness-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/stiffness-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/stiffness-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/straining-to-urinate-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/dog/straining-to-urinate-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/straining-to-urinate-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/straining-to-urinate-causes",
+      "url": "https://petclues.com/symptoms/dog/straining-to-urinate-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/straining-to-urinate-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/straining-to-urinate-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/swollen-face-causes",
+      "url": "https://petclues.com/symptoms/dog/swollen-face-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/swollen-face-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/swollen-face-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/swollen-joints-causes",
+      "url": "https://petclues.com/symptoms/dog/swollen-joints-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/swollen-joints-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/swollen-joints-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/tremors-causes",
+      "url": "https://petclues.com/symptoms/dog/tremors-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/tremors-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/tremors-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/urinary-incontinence-causes",
+      "url": "https://petclues.com/symptoms/dog/urinary-incontinence-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/urinary-incontinence-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/urinary-incontinence-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-diarrhea-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-diarrhea-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-diarrhea-together",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-diarrhea-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-diarrhea-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-diarrhea-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-diarrhea-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-diarrhea-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/vomiting-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-causes",
+      "url": "https://petclues.com/symptoms/dog/vomiting-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/vomiting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-yellow-bile-causes",
+      "url": "https://petclues.com/symptoms/dog/vomiting-yellow-bile-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/vomiting-yellow-bile-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/vomiting-yellow-bile-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/weight-gain-causes",
+      "url": "https://petclues.com/symptoms/dog/weight-gain-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/weight-gain-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/weight-gain-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/weight-loss-causes",
+      "url": "https://petclues.com/symptoms/dog/weight-loss-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/weight-loss-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/weight-loss-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/wheezing-causes",
+      "url": "https://petclues.com/symptoms/dog/wheezing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/wheezing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/wheezing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/wound-not-healing-causes",
+      "url": "https://petclues.com/symptoms/dog/wound-not-healing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/wound-not-healing-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/wound-not-healing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/yellow-gums-jaundice-causes",
+      "url": "https://petclues.com/symptoms/dog/yellow-gums-jaundice-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/dog/yellow-gums-jaundice-when-to-worry",
+      "url": "https://petclues.com/symptoms/dog/yellow-gums-jaundice-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/breeds/abyssinian/adult-health-guide",
+      "url": "https://petclues.com/breeds/abyssinian/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/abyssinian/kitten-health-guide",
+      "url": "https://petclues.com/breeds/abyssinian/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/abyssinian/senior-health-guide",
+      "url": "https://petclues.com/breeds/abyssinian/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/affenpinscher/adult-health-guide",
+      "url": "https://petclues.com/breeds/affenpinscher/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/affenpinscher/puppy-health-guide",
+      "url": "https://petclues.com/breeds/affenpinscher/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/affenpinscher/senior-health-guide",
+      "url": "https://petclues.com/breeds/affenpinscher/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/afghan-hound/adult-health-guide",
+      "url": "https://petclues.com/breeds/afghan-hound/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/afghan-hound/puppy-health-guide",
+      "url": "https://petclues.com/breeds/afghan-hound/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/afghan-hound/senior-health-guide",
+      "url": "https://petclues.com/breeds/afghan-hound/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/airedale-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/airedale-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/airedale-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/airedale-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/airedale-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/airedale-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/akita/adult-health-guide",
+      "url": "https://petclues.com/breeds/akita/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/akita/puppy-health-guide",
+      "url": "https://petclues.com/breeds/akita/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/akita/senior-health-guide",
+      "url": "https://petclues.com/breeds/akita/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/alaskan-malamute/adult-health-guide",
+      "url": "https://petclues.com/breeds/alaskan-malamute/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/alaskan-malamute/puppy-health-guide",
+      "url": "https://petclues.com/breeds/alaskan-malamute/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/alaskan-malamute/senior-health-guide",
+      "url": "https://petclues.com/breeds/alaskan-malamute/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-bobtail/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-bobtail/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-bobtail/kitten-health-guide",
+      "url": "https://petclues.com/breeds/american-bobtail/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-bobtail/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-bobtail/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-bully/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-bully/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-bully/puppy-health-guide",
+      "url": "https://petclues.com/breeds/american-bully/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-bully/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-bully/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-curl/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-curl/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-curl/kitten-health-guide",
+      "url": "https://petclues.com/breeds/american-curl/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-curl/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-curl/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-hairless-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-hairless-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-hairless-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/american-hairless-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-hairless-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-hairless-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-shorthair/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-shorthair/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-shorthair/kitten-health-guide",
+      "url": "https://petclues.com/breeds/american-shorthair/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-shorthair/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-shorthair/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-staffordshire-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-staffordshire-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-staffordshire-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/american-staffordshire-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-staffordshire-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-staffordshire-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-water-spaniel/adult-health-guide",
+      "url": "https://petclues.com/breeds/american-water-spaniel/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-water-spaniel/puppy-health-guide",
+      "url": "https://petclues.com/breeds/american-water-spaniel/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/american-water-spaniel/senior-health-guide",
+      "url": "https://petclues.com/breeds/american-water-spaniel/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/anatolian-shepherd/adult-health-guide",
+      "url": "https://petclues.com/breeds/anatolian-shepherd/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/anatolian-shepherd/puppy-health-guide",
+      "url": "https://petclues.com/breeds/anatolian-shepherd/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/anatolian-shepherd/senior-health-guide",
+      "url": "https://petclues.com/breeds/anatolian-shepherd/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/appenzeller-sennenhund/adult-health-guide",
+      "url": "https://petclues.com/breeds/appenzeller-sennenhund/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/appenzeller-sennenhund/puppy-health-guide",
+      "url": "https://petclues.com/breeds/appenzeller-sennenhund/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/appenzeller-sennenhund/senior-health-guide",
+      "url": "https://petclues.com/breeds/appenzeller-sennenhund/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-cattle-dog/adult-health-guide",
+      "url": "https://petclues.com/breeds/australian-cattle-dog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-cattle-dog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/australian-cattle-dog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-cattle-dog/senior-health-guide",
+      "url": "https://petclues.com/breeds/australian-cattle-dog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-kelpie/adult-health-guide",
+      "url": "https://petclues.com/breeds/australian-kelpie/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-kelpie/puppy-health-guide",
+      "url": "https://petclues.com/breeds/australian-kelpie/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-kelpie/senior-health-guide",
+      "url": "https://petclues.com/breeds/australian-kelpie/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-shepherd/adult-health-guide",
+      "url": "https://petclues.com/breeds/australian-shepherd/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-shepherd/puppy-health-guide",
+      "url": "https://petclues.com/breeds/australian-shepherd/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/australian-shepherd/senior-health-guide",
+      "url": "https://petclues.com/breeds/australian-shepherd/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/azawakh/adult-health-guide",
+      "url": "https://petclues.com/breeds/azawakh/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/azawakh/puppy-health-guide",
+      "url": "https://petclues.com/breeds/azawakh/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/azawakh/senior-health-guide",
+      "url": "https://petclues.com/breeds/azawakh/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/barbet/adult-health-guide",
+      "url": "https://petclues.com/breeds/barbet/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/barbet/puppy-health-guide",
+      "url": "https://petclues.com/breeds/barbet/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/barbet/senior-health-guide",
+      "url": "https://petclues.com/breeds/barbet/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/basenji/adult-health-guide",
+      "url": "https://petclues.com/breeds/basenji/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/basenji/puppy-health-guide",
+      "url": "https://petclues.com/breeds/basenji/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/basenji/senior-health-guide",
+      "url": "https://petclues.com/breeds/basenji/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/basset-hound/adult-health-guide",
+      "url": "https://petclues.com/breeds/basset-hound/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/basset-hound/puppy-health-guide",
+      "url": "https://petclues.com/breeds/basset-hound/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/basset-hound/senior-health-guide",
+      "url": "https://petclues.com/breeds/basset-hound/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/beagle/adult-health-guide",
+      "url": "https://petclues.com/breeds/beagle/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/beagle/puppy-health-guide",
+      "url": "https://petclues.com/breeds/beagle/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/beagle/senior-health-guide",
+      "url": "https://petclues.com/breeds/beagle/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bearded-collie/adult-health-guide",
+      "url": "https://petclues.com/breeds/bearded-collie/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bearded-collie/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bearded-collie/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bearded-collie/senior-health-guide",
+      "url": "https://petclues.com/breeds/bearded-collie/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bedlington-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/bedlington-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bedlington-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bedlington-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bedlington-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/bedlington-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-malinois/adult-health-guide",
+      "url": "https://petclues.com/breeds/belgian-malinois/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-malinois/puppy-health-guide",
+      "url": "https://petclues.com/breeds/belgian-malinois/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-malinois/senior-health-guide",
+      "url": "https://petclues.com/breeds/belgian-malinois/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-sheepdog/adult-health-guide",
+      "url": "https://petclues.com/breeds/belgian-sheepdog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-sheepdog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/belgian-sheepdog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-sheepdog/senior-health-guide",
+      "url": "https://petclues.com/breeds/belgian-sheepdog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-tervuren/adult-health-guide",
+      "url": "https://petclues.com/breeds/belgian-tervuren/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-tervuren/puppy-health-guide",
+      "url": "https://petclues.com/breeds/belgian-tervuren/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/belgian-tervuren/senior-health-guide",
+      "url": "https://petclues.com/breeds/belgian-tervuren/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bengal/adult-health-guide",
+      "url": "https://petclues.com/breeds/bengal/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bengal/kitten-health-guide",
+      "url": "https://petclues.com/breeds/bengal/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bengal/senior-health-guide",
+      "url": "https://petclues.com/breeds/bengal/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bergamasco/adult-health-guide",
+      "url": "https://petclues.com/breeds/bergamasco/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bergamasco/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bergamasco/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bergamasco/senior-health-guide",
+      "url": "https://petclues.com/breeds/bergamasco/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bernese-mountain-dog/adult-health-guide",
+      "url": "https://petclues.com/breeds/bernese-mountain-dog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bernese-mountain-dog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bernese-mountain-dog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bernese-mountain-dog/senior-health-guide",
+      "url": "https://petclues.com/breeds/bernese-mountain-dog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bichon-frise/adult-health-guide",
+      "url": "https://petclues.com/breeds/bichon-frise/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bichon-frise/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bichon-frise/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bichon-frise/senior-health-guide",
+      "url": "https://petclues.com/breeds/bichon-frise/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/birman/adult-health-guide",
+      "url": "https://petclues.com/breeds/birman/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/birman/kitten-health-guide",
+      "url": "https://petclues.com/breeds/birman/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/birman/senior-health-guide",
+      "url": "https://petclues.com/breeds/birman/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bloodhound/adult-health-guide",
+      "url": "https://petclues.com/breeds/bloodhound/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bloodhound/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bloodhound/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bloodhound/senior-health-guide",
+      "url": "https://petclues.com/breeds/bloodhound/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bombay/adult-health-guide",
+      "url": "https://petclues.com/breeds/bombay/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bombay/kitten-health-guide",
+      "url": "https://petclues.com/breeds/bombay/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bombay/senior-health-guide",
+      "url": "https://petclues.com/breeds/bombay/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/border-collie/adult-health-guide",
+      "url": "https://petclues.com/breeds/border-collie/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/border-collie/puppy-health-guide",
+      "url": "https://petclues.com/breeds/border-collie/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/border-collie/senior-health-guide",
+      "url": "https://petclues.com/breeds/border-collie/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/border-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/border-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/border-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/border-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/border-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/border-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/borzoi/adult-health-guide",
+      "url": "https://petclues.com/breeds/borzoi/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/borzoi/puppy-health-guide",
+      "url": "https://petclues.com/breeds/borzoi/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/borzoi/senior-health-guide",
+      "url": "https://petclues.com/breeds/borzoi/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boston-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/boston-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boston-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/boston-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boston-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/boston-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boxer/adult-health-guide",
+      "url": "https://petclues.com/breeds/boxer/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boxer/puppy-health-guide",
+      "url": "https://petclues.com/breeds/boxer/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boxer/senior-health-guide",
+      "url": "https://petclues.com/breeds/boxer/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boykin-spaniel/adult-health-guide",
+      "url": "https://petclues.com/breeds/boykin-spaniel/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boykin-spaniel/puppy-health-guide",
+      "url": "https://petclues.com/breeds/boykin-spaniel/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/boykin-spaniel/senior-health-guide",
+      "url": "https://petclues.com/breeds/boykin-spaniel/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bracco-italiano/adult-health-guide",
+      "url": "https://petclues.com/breeds/bracco-italiano/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bracco-italiano/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bracco-italiano/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bracco-italiano/senior-health-guide",
+      "url": "https://petclues.com/breeds/bracco-italiano/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/briard/adult-health-guide",
+      "url": "https://petclues.com/breeds/briard/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/briard/puppy-health-guide",
+      "url": "https://petclues.com/breeds/briard/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/briard/senior-health-guide",
+      "url": "https://petclues.com/breeds/briard/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/british-shorthair/adult-health-guide",
+      "url": "https://petclues.com/breeds/british-shorthair/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/british-shorthair/kitten-health-guide",
+      "url": "https://petclues.com/breeds/british-shorthair/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/british-shorthair/senior-health-guide",
+      "url": "https://petclues.com/breeds/british-shorthair/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/brittany/adult-health-guide",
+      "url": "https://petclues.com/breeds/brittany/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/brittany/puppy-health-guide",
+      "url": "https://petclues.com/breeds/brittany/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/brittany/senior-health-guide",
+      "url": "https://petclues.com/breeds/brittany/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/brussels-griffon/adult-health-guide",
+      "url": "https://petclues.com/breeds/brussels-griffon/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/brussels-griffon/puppy-health-guide",
+      "url": "https://petclues.com/breeds/brussels-griffon/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/brussels-griffon/senior-health-guide",
+      "url": "https://petclues.com/breeds/brussels-griffon/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bull-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/bull-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bull-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bull-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bull-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/bull-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bulldog/adult-health-guide",
+      "url": "https://petclues.com/breeds/bulldog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bulldog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bulldog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bulldog/senior-health-guide",
+      "url": "https://petclues.com/breeds/bulldog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bullmastiff/adult-health-guide",
+      "url": "https://petclues.com/breeds/bullmastiff/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bullmastiff/puppy-health-guide",
+      "url": "https://petclues.com/breeds/bullmastiff/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/bullmastiff/senior-health-guide",
+      "url": "https://petclues.com/breeds/bullmastiff/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/burmese/adult-health-guide",
+      "url": "https://petclues.com/breeds/burmese/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/burmese/kitten-health-guide",
+      "url": "https://petclues.com/breeds/burmese/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/burmese/senior-health-guide",
+      "url": "https://petclues.com/breeds/burmese/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cairn-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/cairn-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cairn-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/cairn-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cairn-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/cairn-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/calico-domestic/adult-health-guide",
+      "url": "https://petclues.com/breeds/calico-domestic/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/calico-domestic/kitten-health-guide",
+      "url": "https://petclues.com/breeds/calico-domestic/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/calico-domestic/senior-health-guide",
+      "url": "https://petclues.com/breeds/calico-domestic/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/canaan-dog/adult-health-guide",
+      "url": "https://petclues.com/breeds/canaan-dog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/canaan-dog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/canaan-dog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/canaan-dog/senior-health-guide",
+      "url": "https://petclues.com/breeds/canaan-dog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cane-corso/adult-health-guide",
+      "url": "https://petclues.com/breeds/cane-corso/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cane-corso/puppy-health-guide",
+      "url": "https://petclues.com/breeds/cane-corso/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cane-corso/senior-health-guide",
+      "url": "https://petclues.com/breeds/cane-corso/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cardigan-welsh-corgi/adult-health-guide",
+      "url": "https://petclues.com/breeds/cardigan-welsh-corgi/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cardigan-welsh-corgi/puppy-health-guide",
+      "url": "https://petclues.com/breeds/cardigan-welsh-corgi/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cardigan-welsh-corgi/senior-health-guide",
+      "url": "https://petclues.com/breeds/cardigan-welsh-corgi/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/carolina-dog/adult-health-guide",
+      "url": "https://petclues.com/breeds/carolina-dog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/carolina-dog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/carolina-dog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/carolina-dog/senior-health-guide",
+      "url": "https://petclues.com/breeds/carolina-dog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/catahoula-leopard-dog/adult-health-guide",
+      "url": "https://petclues.com/breeds/catahoula-leopard-dog/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/catahoula-leopard-dog/puppy-health-guide",
+      "url": "https://petclues.com/breeds/catahoula-leopard-dog/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/catahoula-leopard-dog/senior-health-guide",
+      "url": "https://petclues.com/breeds/catahoula-leopard-dog/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cavalier-king-charles-spaniel/adult-health-guide",
+      "url": "https://petclues.com/breeds/cavalier-king-charles-spaniel/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cavalier-king-charles-spaniel/puppy-health-guide",
+      "url": "https://petclues.com/breeds/cavalier-king-charles-spaniel/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cavalier-king-charles-spaniel/senior-health-guide",
+      "url": "https://petclues.com/breeds/cavalier-king-charles-spaniel/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cesky-terrier/adult-health-guide",
+      "url": "https://petclues.com/breeds/cesky-terrier/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cesky-terrier/puppy-health-guide",
+      "url": "https://petclues.com/breeds/cesky-terrier/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/cesky-terrier/senior-health-guide",
+      "url": "https://petclues.com/breeds/cesky-terrier/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chartreux/adult-health-guide",
+      "url": "https://petclues.com/breeds/chartreux/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chartreux/kitten-health-guide",
+      "url": "https://petclues.com/breeds/chartreux/kitten-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chartreux/senior-health-guide",
+      "url": "https://petclues.com/breeds/chartreux/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chesapeake-bay-retriever/adult-health-guide",
+      "url": "https://petclues.com/breeds/chesapeake-bay-retriever/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chesapeake-bay-retriever/puppy-health-guide",
+      "url": "https://petclues.com/breeds/chesapeake-bay-retriever/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chesapeake-bay-retriever/senior-health-guide",
+      "url": "https://petclues.com/breeds/chesapeake-bay-retriever/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chihuahua/adult-health-guide",
+      "url": "https://petclues.com/breeds/chihuahua/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chihuahua/puppy-health-guide",
+      "url": "https://petclues.com/breeds/chihuahua/puppy-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chihuahua/senior-health-guide",
+      "url": "https://petclues.com/breeds/chihuahua/senior-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chinese-crested/adult-health-guide",
+      "url": "https://petclues.com/breeds/chinese-crested/adult-health-guide",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/breeds/chinese-crested/puppy-health-guide",
+      "url": "https://petclues.com/breeds/chinese-crested/puppy-health-guide",
+      "pillar": "breeds"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "labrador-retriever-vaccine-schedule",
+  "path": "/vaccinations/labrador-retriever-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "labrador-retriever",
+  "subjectName": "Labrador Retriever",
+  "species": "dog",
+  "primaryKeyword": "Labrador Retriever vaccine schedule",
+  "metaDescription": "Labrador Retriever vaccine schedule with core ages in weeks. Set reminders so Labrador Retriever boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/labrador-retriever/adult-health-guide",
+  "breedHealthLabel": "Labrador Retriever adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Labrador Retriever social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Labrador Retriever exposure.",
+        "Weight range 55-80 lb (25-36 kg) and grooming needs (Weekly brushing; heavier shed seasons need more frequent coat care. Check ears a) belong in the same Labrador Retriever household ops list as vaccine dates when busy weeks collide.",
+        "If your Labrador Retriever is also monitored for elbow dysplasia, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Labrador Retriever appointments.",
+        "After the Labrador Retriever puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Labrador Retriever misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Labrador Retriever series from memory.",
+        "The danger for a delayed Labrador Retriever is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Labrador Retriever away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Labrador Retriever due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Labrador Retriever core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Labrador Retriever misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Labrador Retriever health context beyond vaccines?",
+      "answer": "See the Labrador Retriever adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

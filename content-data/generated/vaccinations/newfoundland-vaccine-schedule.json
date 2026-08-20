@@ -1,0 +1,47 @@
+{
+  "slug": "newfoundland-vaccine-schedule",
+  "path": "/vaccinations/newfoundland-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "newfoundland",
+  "subjectName": "Newfoundland",
+  "species": "dog",
+  "primaryKeyword": "Newfoundland vaccine schedule",
+  "metaDescription": "Newfoundland vaccine schedule with core ages in weeks. Set reminders so Newfoundland boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/newfoundland/adult-health-guide",
+  "breedHealthLabel": "Newfoundland adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Newfoundland core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a giant puppy is covered as maternal antibodies fade.",
+        "At 100-150 lb (45-68 kg), Newfoundland visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring hip dysplasia and elbow dysplasia into the Newfoundland exam-room conversation while you are already there for shots.",
+        "Rabies for a Newfoundland still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Newfoundland boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Newfoundland row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Newfoundland item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Newfoundland kennel reservation.",
+        "PetClues should hold both the new Newfoundland due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Newfoundland core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Newfoundland misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Newfoundland health context beyond vaccines?",
+      "answer": "See the Newfoundland adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

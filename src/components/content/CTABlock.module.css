@@ -1,0 +1,62 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e6e2da;
+  background: #faf9f7;
+}
+
+.headline {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.35;
+  color: #121212;
+}
+
+.subtext {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a4a4a;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.1rem;
+  border: 0;
+  background: #121212;
+  color: #fff;
+  font: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.92;
+}
+
+.trial {
+  background: #f7f4ef;
+}
+
+.reminder {
+  background: #f4f7f5;
+}
+
+.vault {
+  background: #f5f6f8;
+}
+
+.comparison {
+  background: #f8f6f3;
+}
+
+.copy {
+  flex: 1 1 16rem;
+}

@@ -1,0 +1,69 @@
+{
+  "slug": "rescue-cat-vaccine-catch-up",
+  "path": "/vaccinations/rescue-cat-vaccine-catch-up",
+  "kind": "general",
+  "subjectName": "Rescue cat catch-up",
+  "species": "cat",
+  "primaryKeyword": "rescue cat vaccine catch-up",
+  "metaDescription": "rescue cat vaccine catch-up: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "FVRCP catch-up booster",
+  "common_health_issues": [
+    "URI during intake",
+    "FeLV/FIV testing first",
+    "Incomplete foster records"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Intake FVRCP if unknown",
+      "age_weeks": 0,
+      "age_label": "Intake week"
+    },
+    {
+      "vaccine": "FVRCP booster",
+      "age_weeks": 2,
+      "age_label": "~2–4 weeks later"
+    },
+    {
+      "vaccine": "Series completion",
+      "age_weeks": 4,
+      "age_label": "Until protocol met"
+    },
+    {
+      "vaccine": "Rabies / FeLV per risk",
+      "age_weeks": 0,
+      "age_label": "Clinic decision"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This rescue cat catch-up plan sequences doses against uri during intake, not against a vague “sometime this season” intention for your cat.",
+        "Milestone labels on the rescue cat catch-up table (Intake week; ~2–4 weeks later; Until protocol met; Clinic decision) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished rescue cat catch-up kitten series is still incomplete.",
+        "If your household also wrestles with felv/fiv testing first or incomplete foster records, put those constraints on the same calendar thread as the FVRCP catch-up booster so one reminder system owns the rescue cat catch-up week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed rescue cat catch-up dose; catch-up timing depends on age and gap length for this cat scenario.",
+        "Until the rescue cat catch-up series is current again, reduce the exposure pattern that matches uri during intake, and do not wait for an annual wellness slot to ask about a rescue cat catch-up make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next FVRCP catch-up booster due date so the same rescue cat catch-up miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this rescue cat vaccine catch-up a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual cat."
+    },
+    {
+      "question": "What if we already missed a date on this rescue cat catch-up schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to uri during intake, and reset reminders as soon as the next rescue cat catch-up due date is known."
+    },
+    {
+      "question": "How do reminders help with FVRCP catch-up booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that rescue cat catch-up booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "tibetan-mastiff-vaccine-schedule",
+  "path": "/vaccinations/tibetan-mastiff-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "tibetan-mastiff",
+  "subjectName": "Tibetan Mastiff",
+  "species": "dog",
+  "primaryKeyword": "Tibetan Mastiff vaccine schedule",
+  "metaDescription": "Tibetan Mastiff vaccine schedule with core ages in weeks. Set reminders so Tibetan Mastiff boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/tibetan-mastiff/adult-health-guide",
+  "breedHealthLabel": "Tibetan Mastiff adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Tibetan Mastiff table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Tibetan Mastiff dates, not intentions, so a Tibetan Mastiff with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Hip dysplasia shows up often enough in Tibetan Mastiffs that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Tibetan Mastiff profile immediately; lost paperwork is the most common reason Tibetan Mastiff travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Tibetan Mastiff boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Tibetan Mastiff row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Tibetan Mastiff item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Tibetan Mastiff kennel reservation.",
+        "PetClues should hold both the new Tibetan Mastiff due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Tibetan Mastiff core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Tibetan Mastiff misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Tibetan Mastiff health context beyond vaccines?",
+      "answer": "See the Tibetan Mastiff adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

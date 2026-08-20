@@ -1,0 +1,47 @@
+{
+  "slug": "norfolk-terrier-vaccine-schedule",
+  "path": "/vaccinations/norfolk-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "norfolk-terrier",
+  "subjectName": "Norfolk Terrier",
+  "species": "dog",
+  "primaryKeyword": "Norfolk Terrier vaccine schedule",
+  "metaDescription": "Norfolk Terrier vaccine schedule with core ages in weeks. Set reminders so Norfolk Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/norfolk-terrier/adult-health-guide",
+  "breedHealthLabel": "Norfolk Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Norfolk Terrier table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Norfolk Terrier dates, not intentions, so a Norfolk Terrier with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Patellar luxation shows up often enough in Norfolk Terriers that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Norfolk Terrier profile immediately; lost paperwork is the most common reason Norfolk Terrier travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Norfolk Terrier boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Norfolk Terrier row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Norfolk Terrier item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Norfolk Terrier kennel reservation.",
+        "PetClues should hold both the new Norfolk Terrier due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Norfolk Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Norfolk Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Norfolk Terrier health context beyond vaccines?",
+      "answer": "See the Norfolk Terrier adult health guide for breed predispositions such as patellar luxation, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

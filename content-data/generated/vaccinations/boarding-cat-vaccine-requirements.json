@@ -1,0 +1,64 @@
+{
+  "slug": "boarding-cat-vaccine-requirements",
+  "path": "/vaccinations/boarding-cat-vaccine-requirements",
+  "kind": "general",
+  "subjectName": "Cat boarding vaccines",
+  "species": "cat",
+  "primaryKeyword": "cat boarding vaccine requirements",
+  "metaDescription": "cat boarding vaccine requirements: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "FVRCP booster",
+  "common_health_issues": [
+    "Stress-related URI after boarding",
+    "Proof not on phone",
+    "Expired rabies labels"
+  ],
+  "schedule": [
+    {
+      "vaccine": "FVRCP current",
+      "age_weeks": 0,
+      "age_label": "Facility policy"
+    },
+    {
+      "vaccine": "Rabies current",
+      "age_weeks": 0,
+      "age_label": "Legal + facility"
+    },
+    {
+      "vaccine": "FeLV sometimes required",
+      "age_weeks": 0,
+      "age_label": "Ask cattery"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This cat boarding vaccines plan sequences doses against stress-related uri after boarding, not against a vague “sometime this season” intention for your cat.",
+        "Milestone labels on the cat boarding vaccines table (Facility policy; Legal + facility; Ask cattery) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished cat boarding vaccines kitten series is still incomplete.",
+        "If your household also wrestles with proof not on phone or expired rabies labels, put those constraints on the same calendar thread as the FVRCP booster so one reminder system owns the cat boarding vaccines week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed cat boarding vaccines dose; catch-up timing depends on age and gap length for this cat scenario.",
+        "Until the cat boarding vaccines series is current again, reduce the exposure pattern that matches stress-related uri after boarding, and do not wait for an annual wellness slot to ask about a cat boarding vaccines make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next FVRCP booster due date so the same cat boarding vaccines miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this cat boarding vaccine requirements a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual cat."
+    },
+    {
+      "question": "What if we already missed a date on this cat boarding vaccines schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to stress-related uri after boarding, and reset reminders as soon as the next cat boarding vaccines due date is known."
+    },
+    {
+      "question": "How do reminders help with FVRCP booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that cat boarding vaccines booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

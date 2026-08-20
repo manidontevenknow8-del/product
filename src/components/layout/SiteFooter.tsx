@@ -11,6 +11,7 @@ import {
   FOOTER_RESOURCE_LINKS,
 } from '@/data/footerLinks';
 import { SOCIAL_PROFILES } from '@/data/socialProfiles';
+import { FooterDirectory } from './FooterDirectory';
 import styles from './SiteFooter.module.css';
 
 export function SiteFooter() {
@@ -92,6 +93,8 @@ export function SiteFooter() {
             </div>
           </nav>
         </div>
+
+        <FooterDirectory />
 
         <div className={styles.bottom}>
           <div className={styles.bottomLeft}>

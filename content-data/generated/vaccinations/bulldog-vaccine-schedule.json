@@ -1,0 +1,47 @@
+{
+  "slug": "bulldog-vaccine-schedule",
+  "path": "/vaccinations/bulldog-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "bulldog",
+  "subjectName": "Bulldog",
+  "species": "dog",
+  "primaryKeyword": "Bulldog vaccine schedule",
+  "metaDescription": "Bulldog vaccine schedule with core ages in weeks. Set reminders so Bulldog boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/bulldog/adult-health-guide",
+  "breedHealthLabel": "Bulldog adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Bulldog social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Bulldog exposure.",
+        "Weight range 40-50 lb (18-23 kg) and grooming needs (Daily fold cleaning; short coat, low brush need.) belong in the same Bulldog household ops list as vaccine dates when busy weeks collide.",
+        "If your Bulldog is also monitored for hip dysplasia, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Bulldog appointments.",
+        "After the Bulldog puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Bulldog boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Bulldog row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Bulldog item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Bulldog kennel reservation.",
+        "PetClues should hold both the new Bulldog due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Bulldog core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Bulldog misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Bulldog health context beyond vaccines?",
+      "answer": "See the Bulldog adult health guide for breed predispositions such as brachycephalic obstructive airway syndrome (boas), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

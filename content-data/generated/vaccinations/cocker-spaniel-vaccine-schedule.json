@@ -1,0 +1,47 @@
+{
+  "slug": "cocker-spaniel-vaccine-schedule",
+  "path": "/vaccinations/cocker-spaniel-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "cocker-spaniel",
+  "subjectName": "Cocker Spaniel",
+  "species": "dog",
+  "primaryKeyword": "Cocker Spaniel vaccine schedule",
+  "metaDescription": "Cocker Spaniel vaccine schedule with core ages in weeks. Set reminders so Cocker Spaniel boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/cocker-spaniel/adult-health-guide",
+  "breedHealthLabel": "Cocker Spaniel adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Cocker Spaniel table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Cocker Spaniel dates, not intentions, so a Cocker Spaniel with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Ear infections shows up often enough in Cocker Spaniels that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Cocker Spaniel profile immediately; lost paperwork is the most common reason Cocker Spaniel travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Cocker Spaniel misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Cocker Spaniel series from memory.",
+        "The danger for a delayed Cocker Spaniel is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Cocker Spaniel away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Cocker Spaniel due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Cocker Spaniel core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Cocker Spaniel misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Cocker Spaniel health context beyond vaccines?",
+      "answer": "See the Cocker Spaniel adult health guide for breed predispositions such as ear infections, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

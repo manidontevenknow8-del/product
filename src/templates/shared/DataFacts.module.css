@@ -1,0 +1,62 @@
+.root {
+  margin: 1.75rem 0 2rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e8e4dc;
+  border-bottom: 1px solid #e8e4dc;
+}
+
+.title {
+  margin: 0 0 0.85rem;
+  font-size: 1.05rem;
+  color: #121212;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #eee9e1;
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  width: 38%;
+  font-weight: 600;
+  color: #3a3a3a;
+  background: #faf8f5;
+}
+
+.table td {
+  color: #121212;
+}
+
+.listBlock {
+  margin-top: 1.1rem;
+}
+
+.listHeading {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: #121212;
+}
+
+.list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: #2a2a2a;
+  line-height: 1.45;
+}
+
+.list li + li {
+  margin-top: 0.3rem;
+}

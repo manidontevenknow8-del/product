@@ -1,0 +1,47 @@
+{
+  "slug": "chihuahua-vaccine-schedule",
+  "path": "/vaccinations/chihuahua-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "chihuahua",
+  "subjectName": "Chihuahua",
+  "species": "dog",
+  "primaryKeyword": "Chihuahua vaccine schedule",
+  "metaDescription": "Chihuahua vaccine schedule with core ages in weeks. Set reminders so Chihuahua boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/chihuahua/adult-health-guide",
+  "breedHealthLabel": "Chihuahua adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Chihuahuas: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Chihuahua series closes at about 16 weeks.",
+        "Size class toy does not invent new viruses for the Chihuahua, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag heart disease screening needs at Chihuahua vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Chihuahua series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Chihuahua boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Chihuahua row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Chihuahua item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Chihuahua kennel reservation.",
+        "PetClues should hold both the new Chihuahua due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Chihuahua core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Chihuahua misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Chihuahua health context beyond vaccines?",
+      "answer": "See the Chihuahua adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

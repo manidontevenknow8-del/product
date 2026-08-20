@@ -1,0 +1,1506 @@
+{
+  "updatedAt": "2026-08-20T18:02:03.137Z",
+  "count": 250,
+  "pages": [
+    {
+      "slug": "abyssinian-vaccine-schedule",
+      "path": "/vaccinations/abyssinian-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "abyssinian"
+    },
+    {
+      "slug": "adult-cat-booster-schedule",
+      "path": "/vaccinations/adult-cat-booster-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "adult-dog-booster-schedule",
+      "path": "/vaccinations/adult-dog-booster-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "affenpinscher-vaccine-schedule",
+      "path": "/vaccinations/affenpinscher-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "affenpinscher"
+    },
+    {
+      "slug": "afghan-hound-vaccine-schedule",
+      "path": "/vaccinations/afghan-hound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "afghan-hound"
+    },
+    {
+      "slug": "airedale-terrier-vaccine-schedule",
+      "path": "/vaccinations/airedale-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "airedale-terrier"
+    },
+    {
+      "slug": "akita-vaccine-schedule",
+      "path": "/vaccinations/akita-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "akita"
+    },
+    {
+      "slug": "alaskan-malamute-vaccine-schedule",
+      "path": "/vaccinations/alaskan-malamute-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "alaskan-malamute"
+    },
+    {
+      "slug": "american-bobtail-vaccine-schedule",
+      "path": "/vaccinations/american-bobtail-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-bobtail"
+    },
+    {
+      "slug": "american-bully-vaccine-schedule",
+      "path": "/vaccinations/american-bully-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-bully"
+    },
+    {
+      "slug": "american-curl-vaccine-schedule",
+      "path": "/vaccinations/american-curl-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-curl"
+    },
+    {
+      "slug": "american-hairless-terrier-vaccine-schedule",
+      "path": "/vaccinations/american-hairless-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-hairless-terrier"
+    },
+    {
+      "slug": "american-shorthair-vaccine-schedule",
+      "path": "/vaccinations/american-shorthair-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-shorthair"
+    },
+    {
+      "slug": "american-staffordshire-terrier-vaccine-schedule",
+      "path": "/vaccinations/american-staffordshire-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-staffordshire-terrier"
+    },
+    {
+      "slug": "american-water-spaniel-vaccine-schedule",
+      "path": "/vaccinations/american-water-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "american-water-spaniel"
+    },
+    {
+      "slug": "anatolian-shepherd-vaccine-schedule",
+      "path": "/vaccinations/anatolian-shepherd-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "anatolian-shepherd"
+    },
+    {
+      "slug": "appenzeller-sennenhund-vaccine-schedule",
+      "path": "/vaccinations/appenzeller-sennenhund-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "appenzeller-sennenhund"
+    },
+    {
+      "slug": "australian-cattle-dog-vaccine-schedule",
+      "path": "/vaccinations/australian-cattle-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "australian-cattle-dog"
+    },
+    {
+      "slug": "australian-kelpie-vaccine-schedule",
+      "path": "/vaccinations/australian-kelpie-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "australian-kelpie"
+    },
+    {
+      "slug": "australian-shepherd-vaccine-schedule",
+      "path": "/vaccinations/australian-shepherd-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "australian-shepherd"
+    },
+    {
+      "slug": "azawakh-vaccine-schedule",
+      "path": "/vaccinations/azawakh-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "azawakh"
+    },
+    {
+      "slug": "barbet-vaccine-schedule",
+      "path": "/vaccinations/barbet-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "barbet"
+    },
+    {
+      "slug": "basenji-vaccine-schedule",
+      "path": "/vaccinations/basenji-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "basenji"
+    },
+    {
+      "slug": "basset-hound-vaccine-schedule",
+      "path": "/vaccinations/basset-hound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "basset-hound"
+    },
+    {
+      "slug": "beagle-vaccine-schedule",
+      "path": "/vaccinations/beagle-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "beagle"
+    },
+    {
+      "slug": "bearded-collie-vaccine-schedule",
+      "path": "/vaccinations/bearded-collie-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bearded-collie"
+    },
+    {
+      "slug": "bedlington-terrier-vaccine-schedule",
+      "path": "/vaccinations/bedlington-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bedlington-terrier"
+    },
+    {
+      "slug": "belgian-malinois-vaccine-schedule",
+      "path": "/vaccinations/belgian-malinois-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "belgian-malinois"
+    },
+    {
+      "slug": "belgian-sheepdog-vaccine-schedule",
+      "path": "/vaccinations/belgian-sheepdog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "belgian-sheepdog"
+    },
+    {
+      "slug": "belgian-tervuren-vaccine-schedule",
+      "path": "/vaccinations/belgian-tervuren-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "belgian-tervuren"
+    },
+    {
+      "slug": "bengal-vaccine-schedule",
+      "path": "/vaccinations/bengal-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bengal"
+    },
+    {
+      "slug": "bergamasco-vaccine-schedule",
+      "path": "/vaccinations/bergamasco-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bergamasco"
+    },
+    {
+      "slug": "bernese-mountain-dog-vaccine-schedule",
+      "path": "/vaccinations/bernese-mountain-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bernese-mountain-dog"
+    },
+    {
+      "slug": "bichon-frise-vaccine-schedule",
+      "path": "/vaccinations/bichon-frise-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bichon-frise"
+    },
+    {
+      "slug": "birman-vaccine-schedule",
+      "path": "/vaccinations/birman-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "birman"
+    },
+    {
+      "slug": "bloodhound-vaccine-schedule",
+      "path": "/vaccinations/bloodhound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bloodhound"
+    },
+    {
+      "slug": "boarding-cat-vaccine-requirements",
+      "path": "/vaccinations/boarding-cat-vaccine-requirements",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "boarding-dog-vaccine-requirements",
+      "path": "/vaccinations/boarding-dog-vaccine-requirements",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "bombay-vaccine-schedule",
+      "path": "/vaccinations/bombay-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bombay"
+    },
+    {
+      "slug": "border-collie-vaccine-schedule",
+      "path": "/vaccinations/border-collie-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "border-collie"
+    },
+    {
+      "slug": "border-terrier-vaccine-schedule",
+      "path": "/vaccinations/border-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "border-terrier"
+    },
+    {
+      "slug": "borzoi-vaccine-schedule",
+      "path": "/vaccinations/borzoi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "borzoi"
+    },
+    {
+      "slug": "boston-terrier-vaccine-schedule",
+      "path": "/vaccinations/boston-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "boston-terrier"
+    },
+    {
+      "slug": "boxer-vaccine-schedule",
+      "path": "/vaccinations/boxer-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "boxer"
+    },
+    {
+      "slug": "boykin-spaniel-vaccine-schedule",
+      "path": "/vaccinations/boykin-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "boykin-spaniel"
+    },
+    {
+      "slug": "bracco-italiano-vaccine-schedule",
+      "path": "/vaccinations/bracco-italiano-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bracco-italiano"
+    },
+    {
+      "slug": "briard-vaccine-schedule",
+      "path": "/vaccinations/briard-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "briard"
+    },
+    {
+      "slug": "british-shorthair-vaccine-schedule",
+      "path": "/vaccinations/british-shorthair-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "british-shorthair"
+    },
+    {
+      "slug": "brittany-vaccine-schedule",
+      "path": "/vaccinations/brittany-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "brittany"
+    },
+    {
+      "slug": "brussels-griffon-vaccine-schedule",
+      "path": "/vaccinations/brussels-griffon-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "brussels-griffon"
+    },
+    {
+      "slug": "bull-terrier-vaccine-schedule",
+      "path": "/vaccinations/bull-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bull-terrier"
+    },
+    {
+      "slug": "bulldog-vaccine-schedule",
+      "path": "/vaccinations/bulldog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bulldog"
+    },
+    {
+      "slug": "bullmastiff-vaccine-schedule",
+      "path": "/vaccinations/bullmastiff-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "bullmastiff"
+    },
+    {
+      "slug": "burmese-vaccine-schedule",
+      "path": "/vaccinations/burmese-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "burmese"
+    },
+    {
+      "slug": "cairn-terrier-vaccine-schedule",
+      "path": "/vaccinations/cairn-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cairn-terrier"
+    },
+    {
+      "slug": "calico-domestic-vaccine-schedule",
+      "path": "/vaccinations/calico-domestic-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "calico-domestic"
+    },
+    {
+      "slug": "canaan-dog-vaccine-schedule",
+      "path": "/vaccinations/canaan-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "canaan-dog"
+    },
+    {
+      "slug": "cane-corso-vaccine-schedule",
+      "path": "/vaccinations/cane-corso-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cane-corso"
+    },
+    {
+      "slug": "cardigan-welsh-corgi-vaccine-schedule",
+      "path": "/vaccinations/cardigan-welsh-corgi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cardigan-welsh-corgi"
+    },
+    {
+      "slug": "carolina-dog-vaccine-schedule",
+      "path": "/vaccinations/carolina-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "carolina-dog"
+    },
+    {
+      "slug": "cat-fvrcp-schedule",
+      "path": "/vaccinations/cat-fvrcp-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "cat-rabies-vaccine-schedule",
+      "path": "/vaccinations/cat-rabies-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "cat-vaccine-after-missed-dose",
+      "path": "/vaccinations/cat-vaccine-after-missed-dose",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "catahoula-leopard-dog-vaccine-schedule",
+      "path": "/vaccinations/catahoula-leopard-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "catahoula-leopard-dog"
+    },
+    {
+      "slug": "cavalier-king-charles-spaniel-vaccine-schedule",
+      "path": "/vaccinations/cavalier-king-charles-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cavalier-king-charles-spaniel"
+    },
+    {
+      "slug": "cesky-terrier-vaccine-schedule",
+      "path": "/vaccinations/cesky-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cesky-terrier"
+    },
+    {
+      "slug": "chartreux-vaccine-schedule",
+      "path": "/vaccinations/chartreux-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "chartreux"
+    },
+    {
+      "slug": "chesapeake-bay-retriever-vaccine-schedule",
+      "path": "/vaccinations/chesapeake-bay-retriever-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "chesapeake-bay-retriever"
+    },
+    {
+      "slug": "chihuahua-vaccine-schedule",
+      "path": "/vaccinations/chihuahua-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "chihuahua"
+    },
+    {
+      "slug": "chinese-crested-vaccine-schedule",
+      "path": "/vaccinations/chinese-crested-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "chinese-crested"
+    },
+    {
+      "slug": "chow-chow-vaccine-schedule",
+      "path": "/vaccinations/chow-chow-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "chow-chow"
+    },
+    {
+      "slug": "cirneco-dell-etna-vaccine-schedule",
+      "path": "/vaccinations/cirneco-dell-etna-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cirneco-dell-etna"
+    },
+    {
+      "slug": "clumber-spaniel-vaccine-schedule",
+      "path": "/vaccinations/clumber-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "clumber-spaniel"
+    },
+    {
+      "slug": "cocker-spaniel-vaccine-schedule",
+      "path": "/vaccinations/cocker-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cocker-spaniel"
+    },
+    {
+      "slug": "collie-rough-vaccine-schedule",
+      "path": "/vaccinations/collie-rough-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "collie-rough"
+    },
+    {
+      "slug": "collie-smooth-vaccine-schedule",
+      "path": "/vaccinations/collie-smooth-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "collie-smooth"
+    },
+    {
+      "slug": "cornish-rex-vaccine-schedule",
+      "path": "/vaccinations/cornish-rex-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cornish-rex"
+    },
+    {
+      "slug": "curly-coated-retriever-vaccine-schedule",
+      "path": "/vaccinations/curly-coated-retriever-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "curly-coated-retriever"
+    },
+    {
+      "slug": "cymric-vaccine-schedule",
+      "path": "/vaccinations/cymric-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "cymric"
+    },
+    {
+      "slug": "dachshund-vaccine-schedule",
+      "path": "/vaccinations/dachshund-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "dachshund"
+    },
+    {
+      "slug": "dalmatian-vaccine-schedule",
+      "path": "/vaccinations/dalmatian-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "dalmatian"
+    },
+    {
+      "slug": "dandie-dinmont-terrier-vaccine-schedule",
+      "path": "/vaccinations/dandie-dinmont-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "dandie-dinmont-terrier"
+    },
+    {
+      "slug": "danish-swedish-farmdog-vaccine-schedule",
+      "path": "/vaccinations/danish-swedish-farmdog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "danish-swedish-farmdog"
+    },
+    {
+      "slug": "devon-rex-vaccine-schedule",
+      "path": "/vaccinations/devon-rex-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "devon-rex"
+    },
+    {
+      "slug": "doberman-pinscher-vaccine-schedule",
+      "path": "/vaccinations/doberman-pinscher-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "doberman-pinscher"
+    },
+    {
+      "slug": "dog-bordetella-timing",
+      "path": "/vaccinations/dog-bordetella-timing",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "dog-distemper-parvo-schedule",
+      "path": "/vaccinations/dog-distemper-parvo-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "dog-lepto-vaccine-timing",
+      "path": "/vaccinations/dog-lepto-vaccine-timing",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "dog-rabies-vaccine-schedule",
+      "path": "/vaccinations/dog-rabies-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "dog-vaccine-after-missed-dose",
+      "path": "/vaccinations/dog-vaccine-after-missed-dose",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "domestic-longhair-vaccine-schedule",
+      "path": "/vaccinations/domestic-longhair-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "domestic-longhair"
+    },
+    {
+      "slug": "domestic-shorthair-vaccine-schedule",
+      "path": "/vaccinations/domestic-shorthair-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "domestic-shorthair"
+    },
+    {
+      "slug": "dutch-shepherd-vaccine-schedule",
+      "path": "/vaccinations/dutch-shepherd-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "dutch-shepherd"
+    },
+    {
+      "slug": "egyptian-mau-vaccine-schedule",
+      "path": "/vaccinations/egyptian-mau-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "egyptian-mau"
+    },
+    {
+      "slug": "english-bulldog-vaccine-schedule",
+      "path": "/vaccinations/english-bulldog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "english-bulldog"
+    },
+    {
+      "slug": "english-setter-vaccine-schedule",
+      "path": "/vaccinations/english-setter-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "english-setter"
+    },
+    {
+      "slug": "english-springer-spaniel-vaccine-schedule",
+      "path": "/vaccinations/english-springer-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "english-springer-spaniel"
+    },
+    {
+      "slug": "entlebucher-mountain-dog-vaccine-schedule",
+      "path": "/vaccinations/entlebucher-mountain-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "entlebucher-mountain-dog"
+    },
+    {
+      "slug": "exotic-shorthair-vaccine-schedule",
+      "path": "/vaccinations/exotic-shorthair-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "exotic-shorthair"
+    },
+    {
+      "slug": "field-spaniel-vaccine-schedule",
+      "path": "/vaccinations/field-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "field-spaniel"
+    },
+    {
+      "slug": "finnish-lapphund-vaccine-schedule",
+      "path": "/vaccinations/finnish-lapphund-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "finnish-lapphund"
+    },
+    {
+      "slug": "finnish-spitz-vaccine-schedule",
+      "path": "/vaccinations/finnish-spitz-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "finnish-spitz"
+    },
+    {
+      "slug": "first-year-kitten-shots",
+      "path": "/vaccinations/first-year-kitten-shots",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "first-year-puppy-shots",
+      "path": "/vaccinations/first-year-puppy-shots",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "flat-coated-retriever-vaccine-schedule",
+      "path": "/vaccinations/flat-coated-retriever-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "flat-coated-retriever"
+    },
+    {
+      "slug": "french-bulldog-vaccine-schedule",
+      "path": "/vaccinations/french-bulldog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "french-bulldog"
+    },
+    {
+      "slug": "french-spaniel-vaccine-schedule",
+      "path": "/vaccinations/french-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "french-spaniel"
+    },
+    {
+      "slug": "german-shepherd-vaccine-schedule",
+      "path": "/vaccinations/german-shepherd-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "german-shepherd"
+    },
+    {
+      "slug": "german-shorthaired-pointer-vaccine-schedule",
+      "path": "/vaccinations/german-shorthaired-pointer-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "german-shorthaired-pointer"
+    },
+    {
+      "slug": "german-wirehaired-pointer-vaccine-schedule",
+      "path": "/vaccinations/german-wirehaired-pointer-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "german-wirehaired-pointer"
+    },
+    {
+      "slug": "giant-breed-puppy-vaccine-schedule",
+      "path": "/vaccinations/giant-breed-puppy-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "glen-of-imaal-terrier-vaccine-schedule",
+      "path": "/vaccinations/glen-of-imaal-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "glen-of-imaal-terrier"
+    },
+    {
+      "slug": "golden-retriever-vaccine-schedule",
+      "path": "/vaccinations/golden-retriever-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "golden-retriever"
+    },
+    {
+      "slug": "gordon-setter-vaccine-schedule",
+      "path": "/vaccinations/gordon-setter-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "gordon-setter"
+    },
+    {
+      "slug": "great-dane-vaccine-schedule",
+      "path": "/vaccinations/great-dane-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "great-dane"
+    },
+    {
+      "slug": "great-pyrenees-vaccine-schedule",
+      "path": "/vaccinations/great-pyrenees-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "great-pyrenees"
+    },
+    {
+      "slug": "greater-swiss-mountain-dog-vaccine-schedule",
+      "path": "/vaccinations/greater-swiss-mountain-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "greater-swiss-mountain-dog"
+    },
+    {
+      "slug": "greyhound-vaccine-schedule",
+      "path": "/vaccinations/greyhound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "greyhound"
+    },
+    {
+      "slug": "havanese-vaccine-schedule",
+      "path": "/vaccinations/havanese-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "havanese"
+    },
+    {
+      "slug": "himalayan-vaccine-schedule",
+      "path": "/vaccinations/himalayan-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "himalayan"
+    },
+    {
+      "slug": "ibizan-hound-vaccine-schedule",
+      "path": "/vaccinations/ibizan-hound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "ibizan-hound"
+    },
+    {
+      "slug": "icelandic-sheepdog-vaccine-schedule",
+      "path": "/vaccinations/icelandic-sheepdog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "icelandic-sheepdog"
+    },
+    {
+      "slug": "indoor-cat-vaccine-schedule",
+      "path": "/vaccinations/indoor-cat-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "irish-red-and-white-setter-vaccine-schedule",
+      "path": "/vaccinations/irish-red-and-white-setter-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "irish-red-and-white-setter"
+    },
+    {
+      "slug": "irish-setter-vaccine-schedule",
+      "path": "/vaccinations/irish-setter-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "irish-setter"
+    },
+    {
+      "slug": "irish-terrier-vaccine-schedule",
+      "path": "/vaccinations/irish-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "irish-terrier"
+    },
+    {
+      "slug": "irish-water-spaniel-vaccine-schedule",
+      "path": "/vaccinations/irish-water-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "irish-water-spaniel"
+    },
+    {
+      "slug": "irish-wolfhound-vaccine-schedule",
+      "path": "/vaccinations/irish-wolfhound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "irish-wolfhound"
+    },
+    {
+      "slug": "italian-greyhound-vaccine-schedule",
+      "path": "/vaccinations/italian-greyhound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "italian-greyhound"
+    },
+    {
+      "slug": "japanese-bobtail-vaccine-schedule",
+      "path": "/vaccinations/japanese-bobtail-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "japanese-bobtail"
+    },
+    {
+      "slug": "japanese-chin-vaccine-schedule",
+      "path": "/vaccinations/japanese-chin-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "japanese-chin"
+    },
+    {
+      "slug": "keeshond-vaccine-schedule",
+      "path": "/vaccinations/keeshond-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "keeshond"
+    },
+    {
+      "slug": "kerry-blue-terrier-vaccine-schedule",
+      "path": "/vaccinations/kerry-blue-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "kerry-blue-terrier"
+    },
+    {
+      "slug": "kitten-vaccine-schedule",
+      "path": "/vaccinations/kitten-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "komondor-vaccine-schedule",
+      "path": "/vaccinations/komondor-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "komondor"
+    },
+    {
+      "slug": "kuvasz-vaccine-schedule",
+      "path": "/vaccinations/kuvasz-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "kuvasz"
+    },
+    {
+      "slug": "la-perm-vaccine-schedule",
+      "path": "/vaccinations/la-perm-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "la-perm"
+    },
+    {
+      "slug": "labrador-retriever-vaccine-schedule",
+      "path": "/vaccinations/labrador-retriever-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "labrador-retriever"
+    },
+    {
+      "slug": "lagotto-romagnolo-vaccine-schedule",
+      "path": "/vaccinations/lagotto-romagnolo-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "lagotto-romagnolo"
+    },
+    {
+      "slug": "lakeland-terrier-vaccine-schedule",
+      "path": "/vaccinations/lakeland-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "lakeland-terrier"
+    },
+    {
+      "slug": "large-breed-puppy-vaccine-schedule",
+      "path": "/vaccinations/large-breed-puppy-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "leonberger-vaccine-schedule",
+      "path": "/vaccinations/leonberger-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "leonberger"
+    },
+    {
+      "slug": "lhasa-apso-vaccine-schedule",
+      "path": "/vaccinations/lhasa-apso-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "lhasa-apso"
+    },
+    {
+      "slug": "lykoi-vaccine-schedule",
+      "path": "/vaccinations/lykoi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "lykoi"
+    },
+    {
+      "slug": "maine-coon-vaccine-schedule",
+      "path": "/vaccinations/maine-coon-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "maine-coon"
+    },
+    {
+      "slug": "maltese-vaccine-schedule",
+      "path": "/vaccinations/maltese-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "maltese"
+    },
+    {
+      "slug": "manchester-terrier-vaccine-schedule",
+      "path": "/vaccinations/manchester-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "manchester-terrier"
+    },
+    {
+      "slug": "manx-vaccine-schedule",
+      "path": "/vaccinations/manx-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "manx"
+    },
+    {
+      "slug": "mastiff-vaccine-schedule",
+      "path": "/vaccinations/mastiff-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "mastiff"
+    },
+    {
+      "slug": "miniature-bull-terrier-vaccine-schedule",
+      "path": "/vaccinations/miniature-bull-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "miniature-bull-terrier"
+    },
+    {
+      "slug": "miniature-pinscher-vaccine-schedule",
+      "path": "/vaccinations/miniature-pinscher-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "miniature-pinscher"
+    },
+    {
+      "slug": "miniature-schnauzer-vaccine-schedule",
+      "path": "/vaccinations/miniature-schnauzer-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "miniature-schnauzer"
+    },
+    {
+      "slug": "minskin-vaccine-schedule",
+      "path": "/vaccinations/minskin-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "minskin"
+    },
+    {
+      "slug": "mudi-vaccine-schedule",
+      "path": "/vaccinations/mudi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "mudi"
+    },
+    {
+      "slug": "multi-cat-household-vaccine-calendar",
+      "path": "/vaccinations/multi-cat-household-vaccine-calendar",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "multi-dog-household-vaccine-calendar",
+      "path": "/vaccinations/multi-dog-household-vaccine-calendar",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "munchkin-vaccine-schedule",
+      "path": "/vaccinations/munchkin-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "munchkin"
+    },
+    {
+      "slug": "napoleon-vaccine-schedule",
+      "path": "/vaccinations/napoleon-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "napoleon"
+    },
+    {
+      "slug": "nebelung-vaccine-schedule",
+      "path": "/vaccinations/nebelung-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "nebelung"
+    },
+    {
+      "slug": "new-guinea-singing-dog-vaccine-schedule",
+      "path": "/vaccinations/new-guinea-singing-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "new-guinea-singing-dog"
+    },
+    {
+      "slug": "newfoundland-vaccine-schedule",
+      "path": "/vaccinations/newfoundland-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "newfoundland"
+    },
+    {
+      "slug": "norfolk-terrier-vaccine-schedule",
+      "path": "/vaccinations/norfolk-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "norfolk-terrier"
+    },
+    {
+      "slug": "norwegian-buhund-vaccine-schedule",
+      "path": "/vaccinations/norwegian-buhund-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "norwegian-buhund"
+    },
+    {
+      "slug": "norwegian-elkhound-vaccine-schedule",
+      "path": "/vaccinations/norwegian-elkhound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "norwegian-elkhound"
+    },
+    {
+      "slug": "norwegian-forest-cat-vaccine-schedule",
+      "path": "/vaccinations/norwegian-forest-cat-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "norwegian-forest-cat"
+    },
+    {
+      "slug": "norwich-terrier-vaccine-schedule",
+      "path": "/vaccinations/norwich-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "norwich-terrier"
+    },
+    {
+      "slug": "nova-scotia-duck-tolling-retriever-vaccine-schedule",
+      "path": "/vaccinations/nova-scotia-duck-tolling-retriever-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "nova-scotia-duck-tolling-retriever"
+    },
+    {
+      "slug": "ocicat-vaccine-schedule",
+      "path": "/vaccinations/ocicat-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "ocicat"
+    },
+    {
+      "slug": "old-english-sheepdog-vaccine-schedule",
+      "path": "/vaccinations/old-english-sheepdog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "old-english-sheepdog"
+    },
+    {
+      "slug": "oriental-shorthair-vaccine-schedule",
+      "path": "/vaccinations/oriental-shorthair-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "oriental-shorthair"
+    },
+    {
+      "slug": "outdoor-cat-vaccine-schedule",
+      "path": "/vaccinations/outdoor-cat-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "papillon-vaccine-schedule",
+      "path": "/vaccinations/papillon-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "papillon"
+    },
+    {
+      "slug": "pekingese-vaccine-schedule",
+      "path": "/vaccinations/pekingese-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pekingese"
+    },
+    {
+      "slug": "pembroke-welsh-corgi-vaccine-schedule",
+      "path": "/vaccinations/pembroke-welsh-corgi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pembroke-welsh-corgi"
+    },
+    {
+      "slug": "persian-vaccine-schedule",
+      "path": "/vaccinations/persian-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "persian"
+    },
+    {
+      "slug": "peruvian-inca-orchid-vaccine-schedule",
+      "path": "/vaccinations/peruvian-inca-orchid-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "peruvian-inca-orchid"
+    },
+    {
+      "slug": "pharaoh-hound-vaccine-schedule",
+      "path": "/vaccinations/pharaoh-hound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pharaoh-hound"
+    },
+    {
+      "slug": "pit-bull-type-vaccine-schedule",
+      "path": "/vaccinations/pit-bull-type-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pit-bull-type"
+    },
+    {
+      "slug": "podenco-vaccine-schedule",
+      "path": "/vaccinations/podenco-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "podenco"
+    },
+    {
+      "slug": "pointer-vaccine-schedule",
+      "path": "/vaccinations/pointer-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pointer"
+    },
+    {
+      "slug": "pomeranian-vaccine-schedule",
+      "path": "/vaccinations/pomeranian-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pomeranian"
+    },
+    {
+      "slug": "poodle-miniature-vaccine-schedule",
+      "path": "/vaccinations/poodle-miniature-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "poodle-miniature"
+    },
+    {
+      "slug": "poodle-standard-vaccine-schedule",
+      "path": "/vaccinations/poodle-standard-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "poodle-standard"
+    },
+    {
+      "slug": "poodle-toy-vaccine-schedule",
+      "path": "/vaccinations/poodle-toy-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "poodle-toy"
+    },
+    {
+      "slug": "portuguese-water-dog-vaccine-schedule",
+      "path": "/vaccinations/portuguese-water-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "portuguese-water-dog"
+    },
+    {
+      "slug": "pug-vaccine-schedule",
+      "path": "/vaccinations/pug-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pug"
+    },
+    {
+      "slug": "pulik-vaccine-schedule",
+      "path": "/vaccinations/pulik-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pulik"
+    },
+    {
+      "slug": "pumi-vaccine-schedule",
+      "path": "/vaccinations/pumi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "pumi"
+    },
+    {
+      "slug": "puppy-vaccine-schedule",
+      "path": "/vaccinations/puppy-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "ragamuffin-vaccine-schedule",
+      "path": "/vaccinations/ragamuffin-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "ragamuffin"
+    },
+    {
+      "slug": "ragdoll-vaccine-schedule",
+      "path": "/vaccinations/ragdoll-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "ragdoll"
+    },
+    {
+      "slug": "rat-terrier-vaccine-schedule",
+      "path": "/vaccinations/rat-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "rat-terrier"
+    },
+    {
+      "slug": "rescue-cat-vaccine-catch-up",
+      "path": "/vaccinations/rescue-cat-vaccine-catch-up",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "rescue-dog-vaccine-catch-up",
+      "path": "/vaccinations/rescue-dog-vaccine-catch-up",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "rhodesian-ridgeback-vaccine-schedule",
+      "path": "/vaccinations/rhodesian-ridgeback-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "rhodesian-ridgeback"
+    },
+    {
+      "slug": "rottweiler-vaccine-schedule",
+      "path": "/vaccinations/rottweiler-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "rottweiler"
+    },
+    {
+      "slug": "russian-blue-vaccine-schedule",
+      "path": "/vaccinations/russian-blue-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "russian-blue"
+    },
+    {
+      "slug": "saint-bernard-vaccine-schedule",
+      "path": "/vaccinations/saint-bernard-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "saint-bernard"
+    },
+    {
+      "slug": "saluki-vaccine-schedule",
+      "path": "/vaccinations/saluki-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "saluki"
+    },
+    {
+      "slug": "samoyed-vaccine-schedule",
+      "path": "/vaccinations/samoyed-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "samoyed"
+    },
+    {
+      "slug": "savannah-f4-plus-vaccine-schedule",
+      "path": "/vaccinations/savannah-f4-plus-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "savannah-f4-plus"
+    },
+    {
+      "slug": "savannah-vaccine-schedule",
+      "path": "/vaccinations/savannah-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "savannah"
+    },
+    {
+      "slug": "schipperke-vaccine-schedule",
+      "path": "/vaccinations/schipperke-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "schipperke"
+    },
+    {
+      "slug": "scottish-deerhound-vaccine-schedule",
+      "path": "/vaccinations/scottish-deerhound-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "scottish-deerhound"
+    },
+    {
+      "slug": "scottish-fold-vaccine-schedule",
+      "path": "/vaccinations/scottish-fold-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "scottish-fold"
+    },
+    {
+      "slug": "scottish-terrier-vaccine-schedule",
+      "path": "/vaccinations/scottish-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "scottish-terrier"
+    },
+    {
+      "slug": "sealyham-terrier-vaccine-schedule",
+      "path": "/vaccinations/sealyham-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "sealyham-terrier"
+    },
+    {
+      "slug": "selkirk-rex-vaccine-schedule",
+      "path": "/vaccinations/selkirk-rex-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "selkirk-rex"
+    },
+    {
+      "slug": "senior-cat-vaccine-schedule",
+      "path": "/vaccinations/senior-cat-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "senior-dog-vaccine-schedule",
+      "path": "/vaccinations/senior-dog-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "shar-pei-vaccine-schedule",
+      "path": "/vaccinations/shar-pei-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "shar-pei"
+    },
+    {
+      "slug": "shetland-sheepdog-vaccine-schedule",
+      "path": "/vaccinations/shetland-sheepdog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "shetland-sheepdog"
+    },
+    {
+      "slug": "shiba-inu-vaccine-schedule",
+      "path": "/vaccinations/shiba-inu-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "shiba-inu"
+    },
+    {
+      "slug": "shih-tzu-vaccine-schedule",
+      "path": "/vaccinations/shih-tzu-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "shih-tzu"
+    },
+    {
+      "slug": "siamese-mix-vaccine-schedule",
+      "path": "/vaccinations/siamese-mix-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "siamese-mix"
+    },
+    {
+      "slug": "siamese-vaccine-schedule",
+      "path": "/vaccinations/siamese-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "siamese"
+    },
+    {
+      "slug": "siberian-husky-vaccine-schedule",
+      "path": "/vaccinations/siberian-husky-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "siberian-husky"
+    },
+    {
+      "slug": "siberian-vaccine-schedule",
+      "path": "/vaccinations/siberian-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "siberian"
+    },
+    {
+      "slug": "skye-terrier-vaccine-schedule",
+      "path": "/vaccinations/skye-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "skye-terrier"
+    },
+    {
+      "slug": "sloughi-vaccine-schedule",
+      "path": "/vaccinations/sloughi-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "sloughi"
+    },
+    {
+      "slug": "small-breed-puppy-vaccine-schedule",
+      "path": "/vaccinations/small-breed-puppy-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "smooth-fox-terrier-vaccine-schedule",
+      "path": "/vaccinations/smooth-fox-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "smooth-fox-terrier"
+    },
+    {
+      "slug": "soft-coated-wheaten-terrier-vaccine-schedule",
+      "path": "/vaccinations/soft-coated-wheaten-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "soft-coated-wheaten-terrier"
+    },
+    {
+      "slug": "somali-vaccine-schedule",
+      "path": "/vaccinations/somali-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "somali"
+    },
+    {
+      "slug": "spanish-water-dog-vaccine-schedule",
+      "path": "/vaccinations/spanish-water-dog-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "spanish-water-dog"
+    },
+    {
+      "slug": "sphynx-vaccine-schedule",
+      "path": "/vaccinations/sphynx-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "sphynx"
+    },
+    {
+      "slug": "spinone-italiano-vaccine-schedule",
+      "path": "/vaccinations/spinone-italiano-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "spinone-italiano"
+    },
+    {
+      "slug": "staffordshire-bull-terrier-vaccine-schedule",
+      "path": "/vaccinations/staffordshire-bull-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "staffordshire-bull-terrier"
+    },
+    {
+      "slug": "sussex-spaniel-vaccine-schedule",
+      "path": "/vaccinations/sussex-spaniel-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "sussex-spaniel"
+    },
+    {
+      "slug": "swedish-vallhund-vaccine-schedule",
+      "path": "/vaccinations/swedish-vallhund-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "swedish-vallhund"
+    },
+    {
+      "slug": "thai-ridgeback-vaccine-schedule",
+      "path": "/vaccinations/thai-ridgeback-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "thai-ridgeback"
+    },
+    {
+      "slug": "tibetan-mastiff-vaccine-schedule",
+      "path": "/vaccinations/tibetan-mastiff-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "tibetan-mastiff"
+    },
+    {
+      "slug": "tonkinese-vaccine-schedule",
+      "path": "/vaccinations/tonkinese-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "tonkinese"
+    },
+    {
+      "slug": "toy-breed-puppy-vaccine-schedule",
+      "path": "/vaccinations/toy-breed-puppy-vaccine-schedule",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "toy-fox-terrier-vaccine-schedule",
+      "path": "/vaccinations/toy-fox-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "toy-fox-terrier"
+    },
+    {
+      "slug": "toyger-vaccine-schedule",
+      "path": "/vaccinations/toyger-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "toyger"
+    },
+    {
+      "slug": "traveling-cat-vaccine-checklist",
+      "path": "/vaccinations/traveling-cat-vaccine-checklist",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "traveling-dog-vaccine-checklist",
+      "path": "/vaccinations/traveling-dog-vaccine-checklist",
+      "kind": "general",
+      "breedSlug": null
+    },
+    {
+      "slug": "turkish-angora-vaccine-schedule",
+      "path": "/vaccinations/turkish-angora-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "turkish-angora"
+    },
+    {
+      "slug": "turkish-van-vaccine-schedule",
+      "path": "/vaccinations/turkish-van-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "turkish-van"
+    },
+    {
+      "slug": "tuxedo-domestic-vaccine-schedule",
+      "path": "/vaccinations/tuxedo-domestic-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "tuxedo-domestic"
+    },
+    {
+      "slug": "vizsla-vaccine-schedule",
+      "path": "/vaccinations/vizsla-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "vizsla"
+    },
+    {
+      "slug": "weimaraner-vaccine-schedule",
+      "path": "/vaccinations/weimaraner-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "weimaraner"
+    },
+    {
+      "slug": "welsh-terrier-vaccine-schedule",
+      "path": "/vaccinations/welsh-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "welsh-terrier"
+    },
+    {
+      "slug": "west-highland-white-terrier-vaccine-schedule",
+      "path": "/vaccinations/west-highland-white-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "west-highland-white-terrier"
+    },
+    {
+      "slug": "whippet-vaccine-schedule",
+      "path": "/vaccinations/whippet-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "whippet"
+    },
+    {
+      "slug": "wire-fox-terrier-vaccine-schedule",
+      "path": "/vaccinations/wire-fox-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "wire-fox-terrier"
+    },
+    {
+      "slug": "wirehaired-pointing-griffon-vaccine-schedule",
+      "path": "/vaccinations/wirehaired-pointing-griffon-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "wirehaired-pointing-griffon"
+    },
+    {
+      "slug": "xoloitzcuintli-vaccine-schedule",
+      "path": "/vaccinations/xoloitzcuintli-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "xoloitzcuintli"
+    },
+    {
+      "slug": "yorkshire-terrier-vaccine-schedule",
+      "path": "/vaccinations/yorkshire-terrier-vaccine-schedule",
+      "kind": "breed",
+      "breedSlug": "yorkshire-terrier"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "poodle-standard-vaccine-schedule",
+  "path": "/vaccinations/poodle-standard-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "poodle-standard",
+  "subjectName": "Standard Poodle",
+  "species": "dog",
+  "primaryKeyword": "Standard Poodle vaccine schedule",
+  "metaDescription": "Standard Poodle vaccine schedule with core ages in weeks. Set reminders so Standard Poodle boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/poodle-standard/adult-health-guide",
+  "breedHealthLabel": "Standard Poodle adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Standard Poodle social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Standard Poodle exposure.",
+        "Weight range 40-70 lb (18-32 kg) and grooming needs (Professional clips every 6-8 weeks; non-shedding coat mats without care.) belong in the same Standard Poodle household ops list as vaccine dates when busy weeks collide.",
+        "If your Standard Poodle is also monitored for progressive retinal atrophy (pra), ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Standard Poodle appointments.",
+        "After the Standard Poodle puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Standard Poodle boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Standard Poodle row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Standard Poodle item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Standard Poodle kennel reservation.",
+        "PetClues should hold both the new Standard Poodle due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Standard Poodle core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Standard Poodle misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Standard Poodle health context beyond vaccines?",
+      "answer": "See the Standard Poodle adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "cornish-rex-vaccine-schedule",
+  "path": "/vaccinations/cornish-rex-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "cornish-rex",
+  "subjectName": "Cornish Rex",
+  "species": "cat",
+  "primaryKeyword": "Cornish Rex vaccine schedule",
+  "metaDescription": "Cornish Rex vaccine schedule with core ages in weeks. Set reminders so Cornish Rex boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/cornish-rex/adult-health-guide",
+  "breedHealthLabel": "Cornish Rex adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Cornish Rex social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Cornish Rex exposure.",
+        "Weight range 6-10 lb (2.7-4.5 kg) and grooming needs (Thin coat; needs warmth.) belong in the same Cornish Rex household ops list as vaccine dates when busy weeks collide.",
+        "If your Cornish Rex is also monitored for patellar luxation, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Cornish Rex appointments.",
+        "After the Cornish Rex puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Cornish Rex shots when the kitten seems “a little off,” travel intervenes, or hypertrophic cardiomyopathy (hcm) risk worries dominate the week — ask the clinic whether a same-week Cornish Rex make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Cornish Rex antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Cornish Rex dose for extra socialization; finish immunity first for this small cat.",
+        "Reset the Cornish Rex reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Cornish Rex core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Cornish Rex misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Cornish Rex health context beyond vaccines?",
+      "answer": "See the Cornish Rex adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

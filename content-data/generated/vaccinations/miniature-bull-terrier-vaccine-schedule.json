@@ -1,0 +1,47 @@
+{
+  "slug": "miniature-bull-terrier-vaccine-schedule",
+  "path": "/vaccinations/miniature-bull-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "miniature-bull-terrier",
+  "subjectName": "Miniature Bull Terrier",
+  "species": "dog",
+  "primaryKeyword": "Miniature Bull Terrier vaccine schedule",
+  "metaDescription": "Miniature Bull Terrier vaccine schedule with core ages in weeks. Set reminders so Miniature Bull Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/miniature-bull-terrier/adult-health-guide",
+  "breedHealthLabel": "Miniature Bull Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Miniature Bull Terrier table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Miniature Bull Terrier dates, not intentions, so a Miniature Bull Terrier with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Primary lens luxation risk shows up often enough in Miniature Bull Terriers that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Miniature Bull Terrier profile immediately; lost paperwork is the most common reason Miniature Bull Terrier travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Miniature Bull Terrier misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Miniature Bull Terrier series from memory.",
+        "The danger for a delayed Miniature Bull Terrier is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Miniature Bull Terrier away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Miniature Bull Terrier due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Miniature Bull Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Miniature Bull Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Miniature Bull Terrier health context beyond vaccines?",
+      "answer": "See the Miniature Bull Terrier adult health guide for breed predispositions such as primary lens luxation risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

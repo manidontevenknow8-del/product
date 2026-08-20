@@ -1,0 +1,47 @@
+{
+  "slug": "finnish-lapphund-vaccine-schedule",
+  "path": "/vaccinations/finnish-lapphund-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "finnish-lapphund",
+  "subjectName": "Finnish Lapphund",
+  "species": "dog",
+  "primaryKeyword": "Finnish Lapphund vaccine schedule",
+  "metaDescription": "Finnish Lapphund vaccine schedule with core ages in weeks. Set reminders so Finnish Lapphund boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/finnish-lapphund/adult-health-guide",
+  "breedHealthLabel": "Finnish Lapphund adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Finnish Lapphund table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Finnish Lapphund dates, not intentions, so a Finnish Lapphund with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Hip dysplasia shows up often enough in Finnish Lapphunds that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Finnish Lapphund profile immediately; lost paperwork is the most common reason Finnish Lapphund travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Finnish Lapphund misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Finnish Lapphund series from memory.",
+        "The danger for a delayed Finnish Lapphund is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Finnish Lapphund away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Finnish Lapphund due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Finnish Lapphund core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Finnish Lapphund misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Finnish Lapphund health context beyond vaccines?",
+      "answer": "See the Finnish Lapphund adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

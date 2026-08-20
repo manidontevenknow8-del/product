@@ -1,0 +1,47 @@
+{
+  "slug": "sussex-spaniel-vaccine-schedule",
+  "path": "/vaccinations/sussex-spaniel-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "sussex-spaniel",
+  "subjectName": "Sussex Spaniel",
+  "species": "dog",
+  "primaryKeyword": "Sussex Spaniel vaccine schedule",
+  "metaDescription": "Sussex Spaniel vaccine schedule with core ages in weeks. Set reminders so Sussex Spaniel boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/sussex-spaniel/adult-health-guide",
+  "breedHealthLabel": "Sussex Spaniel adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Sussex Spaniel table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Sussex Spaniel dates, not intentions, so a Sussex Spaniel with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Intervertebral disc disease (IVDD) risk shows up often enough in Sussex Spaniels that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Sussex Spaniel profile immediately; lost paperwork is the most common reason Sussex Spaniel travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Sussex Spaniel boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Sussex Spaniel row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Sussex Spaniel item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Sussex Spaniel kennel reservation.",
+        "PetClues should hold both the new Sussex Spaniel due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Sussex Spaniel core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Sussex Spaniel misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Sussex Spaniel health context beyond vaccines?",
+      "answer": "See the Sussex Spaniel adult health guide for breed predispositions such as intervertebral disc disease (ivdd) risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

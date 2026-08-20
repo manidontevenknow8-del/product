@@ -1,0 +1,146 @@
+{
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "sourceReport": "content-data/generated/reports/agent-11-qa-report.json",
+  "totalPassLeaves": 1906,
+  "waveCount": 8,
+  "targetPerWave": 239,
+  "priorityPools": [
+    {
+      "name": "compare",
+      "count": 38
+    },
+    {
+      "name": "vaccinations+emergency",
+      "count": 426
+    },
+    {
+      "name": "vault+life-logistics+tools",
+      "count": 402
+    },
+    {
+      "name": "symptoms",
+      "count": 380
+    },
+    {
+      "name": "breeds",
+      "count": 660
+    }
+  ],
+  "waves": [
+    {
+      "wave": 1,
+      "count": 247,
+      "pillars": {
+        "compare": 39,
+        "vaccinations": 202,
+        "breeds": 1,
+        "symptoms": 1,
+        "tools": 1,
+        "life-logistics": 1,
+        "vault": 1,
+        "emergency": 1
+      },
+      "poolSources": [
+        "compare",
+        "vaccinations+emergency"
+      ],
+      "file": "wave-01.json"
+    },
+    {
+      "wave": 2,
+      "count": 239,
+      "pillars": {
+        "vaccinations": 49,
+        "emergency": 176,
+        "vault": 14
+      },
+      "poolSources": [
+        "vaccinations+emergency",
+        "vault+life-logistics+tools"
+      ],
+      "file": "wave-02.json"
+    },
+    {
+      "wave": 3,
+      "count": 239,
+      "pillars": {
+        "vault": 136,
+        "life-logistics": 103
+      },
+      "poolSources": [
+        "vault+life-logistics+tools"
+      ],
+      "file": "wave-03.json"
+    },
+    {
+      "wave": 4,
+      "count": 239,
+      "pillars": {
+        "life-logistics": 47,
+        "tools": 102,
+        "symptoms": 90
+      },
+      "poolSources": [
+        "vault+life-logistics+tools",
+        "symptoms"
+      ],
+      "file": "wave-04.json"
+    },
+    {
+      "wave": 5,
+      "count": 239,
+      "pillars": {
+        "symptoms": 239
+      },
+      "poolSources": [
+        "symptoms"
+      ],
+      "file": "wave-05.json"
+    },
+    {
+      "wave": 6,
+      "count": 239,
+      "pillars": {
+        "symptoms": 51,
+        "breeds": 188
+      },
+      "poolSources": [
+        "symptoms",
+        "breeds"
+      ],
+      "file": "wave-06.json"
+    },
+    {
+      "wave": 7,
+      "count": 239,
+      "pillars": {
+        "breeds": 239
+      },
+      "poolSources": [
+        "breeds"
+      ],
+      "file": "wave-07.json"
+    },
+    {
+      "wave": 8,
+      "count": 233,
+      "pillars": {
+        "breeds": 233
+      },
+      "poolSources": [
+        "breeds"
+      ],
+      "file": "wave-08.json"
+    }
+  ],
+  "indexingGuidance": {
+    "afterRecentLargePush": true,
+    "recentPushNote": "Domain recently received ~6k pages. Prefer sitemap discovery; drip Indexing API slowly.",
+    "dailyCapDefault": 40,
+    "dailyCapHardMax": 100,
+    "requestDelayMs": 2500,
+    "minHoursBetweenRuns": 24,
+    "oneWaveSegmentPerDay": true,
+    "doNotSubmitFullWaveInOneDay": true
+  }
+}

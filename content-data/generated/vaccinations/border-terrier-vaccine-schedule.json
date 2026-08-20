@@ -1,0 +1,47 @@
+{
+  "slug": "border-terrier-vaccine-schedule",
+  "path": "/vaccinations/border-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "border-terrier",
+  "subjectName": "Border Terrier",
+  "species": "dog",
+  "primaryKeyword": "Border Terrier vaccine schedule",
+  "metaDescription": "Border Terrier vaccine schedule with core ages in weeks. Set reminders so Border Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/border-terrier/adult-health-guide",
+  "breedHealthLabel": "Border Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Border Terrier core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a small puppy is covered as maternal antibodies fade.",
+        "At 11-15 lb (5-7 kg), Border Terrier visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring canine epileptoid cramping syndrome risk and hip dysplasia into the Border Terrier exam-room conversation while you are already there for shots.",
+        "Rabies for a Border Terrier still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Border Terrier shots when the puppy seems “a little off,” travel intervenes, or canine epileptoid cramping syndrome risk worries dominate the week — ask the clinic whether a same-week Border Terrier make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Border Terrier antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Border Terrier dose for extra socialization; finish immunity first for this small dog.",
+        "Reset the Border Terrier reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Border Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Border Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Border Terrier health context beyond vaccines?",
+      "answer": "See the Border Terrier adult health guide for breed predispositions such as canine epileptoid cramping syndrome risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -11,6 +11,7 @@ import { PublicEmergencyPassportPage } from '@/pages/PublicEmergencyPassportPage
 import { EmergencyProfilePage } from '@/pages/public/EmergencyProfilePage';
 import { QRGeneratorPage } from '@/pages/tools/QRGeneratorPage';
 import { VaccineSchedulerPage } from '@/pages/tools/VaccineSchedulerPage';
+import { ToolDownloadPage, ToolsDownloadsHubPage } from '@/pages/tools/ToolDownloadPage';
 import { PublicPetStoryPage } from '@/pages/PublicPetStoryPage';
 import { PetMatchPage } from '@/pages/PetMatchPage';
 import { RemindersPage } from '@/pages/RemindersPage';
@@ -66,6 +67,8 @@ import { B2BBreederPage } from '@/pages/solutions/B2BBreederPage';
 import { LearnIndexPage } from '@/pages/learn/LearnIndexPage';
 import { LearnArticlePage } from '@/pages/learn/LearnArticlePage';
 import { CommercialLandingPage } from '@/pages/commercial/CommercialLandingPage';
+import { EmergencyHubPage } from '@/pages/emergency/EmergencyHubPage';
+import { EmergencyGuidePage } from '@/pages/emergency/EmergencyGuidePage';
 import { ProtectedRoute, GuestRoute } from '@/auth';
 
 /** Synchronous route tree for build-time SSR (no lazy/Suspense). */
@@ -95,6 +98,8 @@ export function PrerenderPublicRoutes() {
       <Route path={ROUTES.BREEDER_PARTNERS} element={<B2BBreederPage />} />
       <Route path={ROUTES.LEARN} element={<LearnIndexPage />} />
       <Route path={`${ROUTES.LEARN}/:slug`} element={<LearnArticlePage />} />
+      <Route path="/emergency" element={<EmergencyHubPage />} />
+      <Route path="/emergency/:slug" element={<EmergencyGuidePage />} />
       <Route path={ROUTES.REFERRALS} element={<ProtectedRoute><ReferralsPage /></ProtectedRoute>} />
       <Route path={ROUTES.PRIVACY} element={<PrivacyPolicyPage />} />
       <Route path={ROUTES.TERMS} element={<TermsOfServicePage />} />
@@ -124,6 +129,9 @@ export function PrerenderPublicRoutes() {
       <Route path={`${ROUTES.PUBLIC_TRIAGE}/:publicId`} element={<EmergencyProfilePage />} />
       <Route path={`${ROUTES.STORY_PUBLIC}/:token`} element={<PublicPetStoryPage />} />
       <Route path={ROUTES.TOOLS_VACCINE_SCHEDULER} element={<VaccineSchedulerPage />} />
+      <Route path={ROUTES.TOOLS_QR_GENERATOR} element={<ProtectedRoute><QRGeneratorPage /></ProtectedRoute>} />
+      <Route path={ROUTES.TOOLS_DOWNLOADS} element={<ToolsDownloadsHubPage />} />
+      <Route path={`${ROUTES.TOOLS_DOWNLOADS}/:slug`} element={<ToolDownloadPage />} />
       <Route path={ROUTES.ONBOARDING} element={<ProtectedRoute requireOnboardingComplete={false}><OnboardingPage /></ProtectedRoute>} />
       <Route path={ROUTES.DASHBOARD} element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
       <Route path={ROUTES.PET_PROFILE} element={<ProtectedRoute><PetProfilePage /></ProtectedRoute>} />
@@ -131,7 +139,6 @@ export function PrerenderPublicRoutes() {
       <Route path={ROUTES.TIMELINE} element={<ProtectedRoute><TimelinePage /></ProtectedRoute>} />
       <Route path={ROUTES.REMINDERS} element={<ProtectedRoute><RemindersPage /></ProtectedRoute>} />
       <Route path={ROUTES.EMERGENCY_PASSPORT} element={<ProtectedRoute><EmergencyPassportPage /></ProtectedRoute>} />
-      <Route path={ROUTES.TOOLS_QR_GENERATOR} element={<ProtectedRoute><QRGeneratorPage /></ProtectedRoute>} />
       <Route path={ROUTES.PET_CARE_SCORE} element={<ProtectedRoute><InsightsPage /></ProtectedRoute>} />
       <Route path={ROUTES.VET_PORTAL} element={<ProtectedRoute><VetPortalPage /></ProtectedRoute>} />
       <Route path={ROUTES.MONTHLY_REPORT} element={<ProtectedRoute><MonthlyReportPage /></ProtectedRoute>} />

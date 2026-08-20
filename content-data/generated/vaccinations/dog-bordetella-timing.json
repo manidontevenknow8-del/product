@@ -1,0 +1,64 @@
+{
+  "slug": "dog-bordetella-timing",
+  "path": "/vaccinations/dog-bordetella-timing",
+  "kind": "general",
+  "subjectName": "Dog Bordetella",
+  "species": "dog",
+  "primaryKeyword": "dog Bordetella vaccine timing",
+  "metaDescription": "dog Bordetella vaccine timing: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "Bordetella booster",
+  "common_health_issues": [
+    "Facility 7–14 day lead time",
+    "Wrong route assumed valid",
+    "Annual vs every-6-months policies"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Initial Bordetella (intranasal/oral/injectable per clinic)",
+      "age_weeks": 8,
+      "age_label": "Often ≥8 weeks"
+    },
+    {
+      "vaccine": "Booster if protocol requires",
+      "age_weeks": 12,
+      "age_label": "Product-dependent"
+    },
+    {
+      "vaccine": "Repeat for boarding / daycare",
+      "age_weeks": 26,
+      "age_label": "Every 6–12 months common"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This dog bordetella plan sequences doses against facility 7–14 day lead time, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the dog bordetella table (Often ≥8 weeks; Product-dependent; Every 6–12 months common) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished dog bordetella puppy series is still incomplete.",
+        "If your household also wrestles with wrong route assumed valid or annual vs every-6-months policies, put those constraints on the same calendar thread as the Bordetella booster so one reminder system owns the dog bordetella week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed dog bordetella dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the dog bordetella series is current again, reduce the exposure pattern that matches facility 7–14 day lead time, and do not wait for an annual wellness slot to ask about a dog bordetella make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next Bordetella booster due date so the same dog bordetella miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this dog Bordetella vaccine timing a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this dog bordetella schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to facility 7–14 day lead time, and reset reminders as soon as the next dog bordetella due date is known."
+    },
+    {
+      "question": "How do reminders help with Bordetella booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that dog bordetella booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

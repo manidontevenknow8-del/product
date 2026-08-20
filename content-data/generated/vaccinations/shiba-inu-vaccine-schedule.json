@@ -1,0 +1,47 @@
+{
+  "slug": "shiba-inu-vaccine-schedule",
+  "path": "/vaccinations/shiba-inu-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "shiba-inu",
+  "subjectName": "Shiba Inu",
+  "species": "dog",
+  "primaryKeyword": "Shiba Inu vaccine schedule",
+  "metaDescription": "Shiba Inu vaccine schedule with core ages in weeks. Set reminders so Shiba Inu boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/shiba-inu/adult-health-guide",
+  "breedHealthLabel": "Shiba Inu adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Shiba Inu owners tracking 12-15 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row Shiba Inu schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for Shiba Inu handling: Independent spitz; escape artist; needs patient training.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Shiba Inu dose.",
+        "Lifestyle add-ons stay off this Shiba Inu core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Shiba Inu misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Shiba Inu series from memory.",
+        "The danger for a delayed Shiba Inu is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Shiba Inu away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Shiba Inu due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Shiba Inu core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Shiba Inu misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Shiba Inu health context beyond vaccines?",
+      "answer": "See the Shiba Inu adult health guide for breed predispositions such as allergies, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "west-highland-white-terrier-vaccine-schedule",
+  "path": "/vaccinations/west-highland-white-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "west-highland-white-terrier",
+  "subjectName": "West Highland White Terrier",
+  "species": "dog",
+  "primaryKeyword": "West Highland White Terrier vaccine schedule",
+  "metaDescription": "West Highland White Terrier vaccine schedule with core ages in weeks. Set reminders so West Highland White Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/west-highland-white-terrier/adult-health-guide",
+  "breedHealthLabel": "West Highland White Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "West Highland White Terrier owners tracking 12-16 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row West Highland White Terrier schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for West Highland White Terrier handling: Terrier attitude; itchy Westies need dermatology plans, not only shampoo roulette.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the West Highland White Terrier dose.",
+        "Lifestyle add-ons stay off this West Highland White Terrier core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed West Highland White Terrier boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every West Highland White Terrier row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed West Highland White Terrier item, legal and boarding consequences stack on top of medical ones — restore compliance before the next West Highland White Terrier kennel reservation.",
+        "PetClues should hold both the new West Highland White Terrier due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the West Highland White Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my West Highland White Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read West Highland White Terrier health context beyond vaccines?",
+      "answer": "See the West Highland White Terrier adult health guide for breed predispositions such as allergic skin disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

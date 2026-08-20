@@ -1,0 +1,64 @@
+{
+  "slug": "adult-dog-booster-schedule",
+  "path": "/vaccinations/adult-dog-booster-schedule",
+  "kind": "general",
+  "subjectName": "Adult dog",
+  "species": "dog",
+  "primaryKeyword": "adult dog booster schedule",
+  "metaDescription": "adult dog booster schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "DA2PP / DHPP adult booster",
+  "common_health_issues": [
+    "Expired boarding proof",
+    "Mixed 1- vs 3-year labels",
+    "Forgotten lifestyle shots"
+  ],
+  "schedule": [
+    {
+      "vaccine": "DA2PP / DHPP adult booster",
+      "age_weeks": 52,
+      "age_label": "~1 year after puppy series"
+    },
+    {
+      "vaccine": "Rabies booster (1- or 3-year product per law)",
+      "age_weeks": 52,
+      "age_label": "Per product & law"
+    },
+    {
+      "vaccine": "Lifestyle vaccines as indicated",
+      "age_weeks": 52,
+      "age_label": "Annual risk review"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This adult dog plan sequences doses against expired boarding proof, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the adult dog table (~1 year after puppy series; Per product & law; Annual risk review) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished adult dog puppy series is still incomplete.",
+        "If your household also wrestles with mixed 1- vs 3-year labels or forgotten lifestyle shots, put those constraints on the same calendar thread as the DA2PP / DHPP adult booster so one reminder system owns the adult dog week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed adult dog dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the adult dog series is current again, reduce the exposure pattern that matches expired boarding proof, and do not wait for an annual wellness slot to ask about a adult dog make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next DA2PP / DHPP adult booster due date so the same adult dog miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this adult dog booster schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this adult dog schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to expired boarding proof, and reset reminders as soon as the next adult dog due date is known."
+    },
+    {
+      "question": "How do reminders help with DA2PP / DHPP adult booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that adult dog booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

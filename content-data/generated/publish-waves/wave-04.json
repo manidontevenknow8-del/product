@@ -1,0 +1,1211 @@
+{
+  "wave": 4,
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "count": 239,
+  "pillars": {
+    "life-logistics": 47,
+    "tools": 102,
+    "symptoms": 90
+  },
+  "poolSources": [
+    "vault+life-logistics+tools",
+    "symptoms"
+  ],
+  "urls": [
+    {
+      "path": "/guides/pet-sitter-medication-schedule-template",
+      "url": "https://petclues.com/guides/pet-sitter-medication-schedule-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-photo-update-expectations",
+      "url": "https://petclues.com/guides/pet-sitter-photo-update-expectations",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-red-flags-when-to-call-vet",
+      "url": "https://petclues.com/guides/pet-sitter-red-flags-when-to-call-vet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-vet-authorization-form-notes",
+      "url": "https://petclues.com/guides/pet-sitter-vet-authorization-form-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-walk-and-potty-schedule",
+      "url": "https://petclues.com/guides/pet-sitter-walk-and-potty-schedule",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-waste-and-litter-instructions",
+      "url": "https://petclues.com/guides/pet-sitter-waste-and-litter-instructions",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-travel-emergency-contacts-card",
+      "url": "https://petclues.com/guides/pet-travel-emergency-contacts-card",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-travel-feeding-schedule-template",
+      "url": "https://petclues.com/guides/pet-travel-feeding-schedule-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-travel-folder-what-to-print-vs-digital",
+      "url": "https://petclues.com/guides/pet-travel-folder-what-to-print-vs-digital",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-travel-medication-list-template",
+      "url": "https://petclues.com/guides/pet-travel-medication-list-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-travel-vaccine-timing-checklist",
+      "url": "https://petclues.com/guides/pet-travel-vaccine-timing-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pickup-day-boarding-debrief-checklist",
+      "url": "https://petclues.com/guides/pickup-day-boarding-debrief-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/prevent-mixed-up-meds-multi-pet-home",
+      "url": "https://petclues.com/guides/prevent-mixed-up-meds-multi-pet-home",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/professional-pet-sitter-intake-form",
+      "url": "https://petclues.com/guides/professional-pet-sitter-intake-form",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/rabies-certificate-for-pet-travel",
+      "url": "https://petclues.com/guides/rabies-certificate-for-pet-travel",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/read-only-pet-records-link-for-sitters",
+      "url": "https://petclues.com/guides/read-only-pet-records-link-for-sitters",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/rehoming-a-pet-records-packet",
+      "url": "https://petclues.com/guides/rehoming-a-pet-records-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/rehoming-behavior-and-routine-summary",
+      "url": "https://petclues.com/guides/rehoming-behavior-and-routine-summary",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/rehoming-cat-medical-history-template",
+      "url": "https://petclues.com/guides/rehoming-cat-medical-history-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/rehoming-dog-medical-history-template",
+      "url": "https://petclues.com/guides/rehoming-dog-medical-history-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/rescue-group-foster-medical-log",
+      "url": "https://petclues.com/guides/rescue-group-foster-medical-log",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/returning-home-after-pet-travel-checklist",
+      "url": "https://petclues.com/guides/returning-home-after-pet-travel-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/road-trip-with-pets-checklist",
+      "url": "https://petclues.com/guides/road-trip-with-pets-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/roommates-sharing-pet-responsibilities",
+      "url": "https://petclues.com/guides/roommates-sharing-pet-responsibilities",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/same-day-move-pet-handoff-plan",
+      "url": "https://petclues.com/guides/same-day-move-pet-handoff-plan",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/senior-and-puppy-same-home-care-plan",
+      "url": "https://petclues.com/guides/senior-and-puppy-same-home-care-plan",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/service-animal-travel-document-checklist",
+      "url": "https://petclues.com/guides/service-animal-travel-document-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/share-multi-pet-profiles-with-caregivers",
+      "url": "https://petclues.com/guides/share-multi-pet-profiles-with-caregivers",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/share-pet-profile-with-sitter",
+      "url": "https://petclues.com/guides/share-pet-profile-with-sitter",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/share-pet-records-with-movers-and-sitters",
+      "url": "https://petclues.com/guides/share-pet-records-with-movers-and-sitters",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/share-pet-travel-docs-with-family",
+      "url": "https://petclues.com/guides/share-pet-travel-docs-with-family",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/share-read-only-pet-profile-with-co-parent",
+      "url": "https://petclues.com/guides/share-read-only-pet-profile-with-co-parent",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/share-vaccine-proof-with-boarding",
+      "url": "https://petclues.com/guides/share-vaccine-proof-with-boarding",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/shared-household-pet-profiles",
+      "url": "https://petclues.com/guides/shared-household-pet-profiles",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/shelter-surrender-document-checklist",
+      "url": "https://petclues.com/guides/shelter-surrender-document-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/split-household-pet-medication-log",
+      "url": "https://petclues.com/guides/split-household-pet-medication-log",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/temporary-custody-pet-sitter-vs-family",
+      "url": "https://petclues.com/guides/temporary-custody-pet-sitter-vs-family",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/temporary-housing-pet-care-instructions",
+      "url": "https://petclues.com/guides/temporary-housing-pet-care-instructions",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/traveling-with-pets-documents-you-need",
+      "url": "https://petclues.com/guides/traveling-with-pets-documents-you-need",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/two-dog-household-records-system",
+      "url": "https://petclues.com/guides/two-dog-household-records-system",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/uk-pet-travel-document-basics",
+      "url": "https://petclues.com/guides/uk-pet-travel-document-basics",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/update-boarding-profile-each-season",
+      "url": "https://petclues.com/guides/update-boarding-profile-each-season",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/vet-hospital-boarding-records-packet",
+      "url": "https://petclues.com/guides/vet-hospital-boarding-records-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/visitation-schedule-pet-care-notes",
+      "url": "https://petclues.com/guides/visitation-schedule-pet-care-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/weekend-trip-pet-sitter-packet",
+      "url": "https://petclues.com/guides/weekend-trip-pet-sitter-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/who-feeds-whom-multi-pet-chart",
+      "url": "https://petclues.com/guides/who-feeds-whom-multi-pet-chart",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/work-trip-pet-sitter-packet",
+      "url": "https://petclues.com/guides/work-trip-pet-sitter-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/tools/adult-cat-core-vaccine-record",
+      "url": "https://petclues.com/tools/adult-cat-core-vaccine-record",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/adult-dog-core-vaccine-record",
+      "url": "https://petclues.com/tools/adult-dog-core-vaccine-record",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/allergy-dermatology-visit-log",
+      "url": "https://petclues.com/tools/allergy-dermatology-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/annual-exam-prep-and-log",
+      "url": "https://petclues.com/tools/annual-exam-prep-and-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/anxious-pet-sitter-calm-plan",
+      "url": "https://petclues.com/tools/anxious-pet-sitter-calm-plan",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/apartment-building-pet-emergency-card",
+      "url": "https://petclues.com/tools/apartment-building-pet-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/babysitter-kids-pet-emergency-card",
+      "url": "https://petclues.com/tools/babysitter-kids-pet-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/behavior-consult-visit-log",
+      "url": "https://petclues.com/tools/behavior-consult-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/bird-emergency-info-card",
+      "url": "https://petclues.com/tools/bird-emergency-info-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/boarding-facility-emergency-contact-card",
+      "url": "https://petclues.com/tools/boarding-facility-emergency-contact-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/boarding-kennel-handoff-sheet",
+      "url": "https://petclues.com/tools/boarding-kennel-handoff-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/car-glovebox-pet-emergency-card",
+      "url": "https://petclues.com/tools/car-glovebox-pet-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-boarding-vaccine-proof-sheet",
+      "url": "https://petclues.com/tools/cat-boarding-vaccine-proof-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-emergency-info-card",
+      "url": "https://petclues.com/tools/cat-emergency-info-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-felv-lifestyle-vaccine-record",
+      "url": "https://petclues.com/tools/cat-felv-lifestyle-vaccine-record",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-fvrcp-rabies-record",
+      "url": "https://petclues.com/tools/cat-fvrcp-rabies-record",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-only-apartment-sitter-sheet",
+      "url": "https://petclues.com/tools/cat-only-apartment-sitter-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-pet-sitter-instructions",
+      "url": "https://petclues.com/tools/cat-pet-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-travel-vaccine-record-sheet",
+      "url": "https://petclues.com/tools/cat-travel-vaccine-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-vaccination-record-sheet",
+      "url": "https://petclues.com/tools/cat-vaccination-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/cat-vet-visit-log",
+      "url": "https://petclues.com/tools/cat-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/chronic-condition-monitoring-log",
+      "url": "https://petclues.com/tools/chronic-condition-monitoring-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/clinic-vaccine-history-transfer-sheet",
+      "url": "https://petclues.com/tools/clinic-vaccine-history-transfer-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/daily-dog-walker-instruction-sheet",
+      "url": "https://petclues.com/tools/daily-dog-walker-instruction-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/daycare-drop-off-instruction-card",
+      "url": "https://petclues.com/tools/daycare-drop-off-instruction-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dental-cleaning-visit-log",
+      "url": "https://petclues.com/tools/dental-cleaning-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-boarding-vaccine-proof-sheet",
+      "url": "https://petclues.com/tools/dog-boarding-vaccine-proof-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-daycare-vaccine-checklist",
+      "url": "https://petclues.com/tools/dog-daycare-vaccine-checklist",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-emergency-info-card",
+      "url": "https://petclues.com/tools/dog-emergency-info-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-lifestyle-vaccine-record",
+      "url": "https://petclues.com/tools/dog-lifestyle-vaccine-record",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-pet-sitter-instructions",
+      "url": "https://petclues.com/tools/dog-pet-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-rabies-certificate-tracker",
+      "url": "https://petclues.com/tools/dog-rabies-certificate-tracker",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-travel-vaccine-record-sheet",
+      "url": "https://petclues.com/tools/dog-travel-vaccine-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-vaccination-record-sheet",
+      "url": "https://petclues.com/tools/dog-vaccination-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-vet-visit-log",
+      "url": "https://petclues.com/tools/dog-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/dog-with-yard-access-sitter-sheet",
+      "url": "https://petclues.com/tools/dog-with-yard-access-sitter-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/emergency-vet-visit-summary",
+      "url": "https://petclues.com/tools/emergency-vet-visit-summary",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/er-vet-authorization-card",
+      "url": "https://petclues.com/tools/er-vet-authorization-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/fridge-pet-emergency-sheet",
+      "url": "https://petclues.com/tools/fridge-pet-emergency-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/gastrointestinal-upset-visit-log",
+      "url": "https://petclues.com/tools/gastrointestinal-upset-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/holiday-weekend-pet-sitter-template",
+      "url": "https://petclues.com/tools/holiday-weekend-pet-sitter-template",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/house-sitter-with-pets-template",
+      "url": "https://petclues.com/tools/house-sitter-with-pets-template",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/indoor-cat-enrichment-sitter-sheet",
+      "url": "https://petclues.com/tools/indoor-cat-enrichment-sitter-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/kitten-emergency-card",
+      "url": "https://petclues.com/tools/kitten-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/kitten-first-vet-visit-log",
+      "url": "https://petclues.com/tools/kitten-first-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/kitten-sitter-instructions",
+      "url": "https://petclues.com/tools/kitten-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/kitten-vaccination-record-sheet",
+      "url": "https://petclues.com/tools/kitten-vaccination-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/lab-results-and-visit-notes-log",
+      "url": "https://petclues.com/tools/lab-results-and-visit-notes-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/lost-pet-recovery-card",
+      "url": "https://petclues.com/tools/lost-pet-recovery-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/medication-change-visit-log",
+      "url": "https://petclues.com/tools/medication-change-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/medication-heavy-pet-sitter-instructions",
+      "url": "https://petclues.com/tools/medication-heavy-pet-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/medication-list-emergency-card",
+      "url": "https://petclues.com/tools/medication-list-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/microchip-and-id-emergency-card",
+      "url": "https://petclues.com/tools/microchip-and-id-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/multi-cat-household-vaccine-log",
+      "url": "https://petclues.com/tools/multi-cat-household-vaccine-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/multi-dog-household-vaccine-log",
+      "url": "https://petclues.com/tools/multi-dog-household-vaccine-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/multi-pet-household-emergency-card",
+      "url": "https://petclues.com/tools/multi-pet-household-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/multi-pet-household-sitter-sheet",
+      "url": "https://petclues.com/tools/multi-pet-household-sitter-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/multi-pet-vet-visit-tracker",
+      "url": "https://petclues.com/tools/multi-pet-vet-visit-tracker",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/orthopedic-limping-visit-log",
+      "url": "https://petclues.com/tools/orthopedic-limping-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/overnight-cat-sitter-checklist",
+      "url": "https://petclues.com/tools/overnight-cat-sitter-checklist",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/overnight-pet-sitter-handoff",
+      "url": "https://petclues.com/tools/overnight-pet-sitter-handoff",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-first-aid-contacts-card",
+      "url": "https://petclues.com/tools/pet-first-aid-contacts-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-poison-hotline-quick-card",
+      "url": "https://petclues.com/tools/pet-poison-hotline-quick-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-sitter-emergency-authorization-form",
+      "url": "https://petclues.com/tools/pet-sitter-emergency-authorization-form",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-sitter-emergency-card",
+      "url": "https://petclues.com/tools/pet-sitter-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-sitter-feeding-and-meds-schedule",
+      "url": "https://petclues.com/tools/pet-sitter-feeding-and-meds-schedule",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-vaccine-and-parasite-prevention-sheet",
+      "url": "https://petclues.com/tools/pet-vaccine-and-parasite-prevention-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pet-vaccine-due-date-planner",
+      "url": "https://petclues.com/tools/pet-vaccine-due-date-planner",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/post-surgery-recovery-visit-log",
+      "url": "https://petclues.com/tools/post-surgery-recovery-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/pre-surgery-vet-checklist-log",
+      "url": "https://petclues.com/tools/pre-surgery-vet-checklist-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/printable-pet-vaccine-checklist",
+      "url": "https://petclues.com/tools/printable-pet-vaccine-checklist",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/professional-petsitter-onboarding-packet",
+      "url": "https://petclues.com/tools/professional-petsitter-onboarding-packet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/puppy-emergency-card",
+      "url": "https://petclues.com/tools/puppy-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/puppy-first-vet-visit-log",
+      "url": "https://petclues.com/tools/puppy-first-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/puppy-potty-and-crate-sitter-sheet",
+      "url": "https://petclues.com/tools/puppy-potty-and-crate-sitter-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/puppy-sitter-instructions",
+      "url": "https://petclues.com/tools/puppy-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/puppy-vaccination-record-sheet",
+      "url": "https://petclues.com/tools/puppy-vaccination-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/rabbit-emergency-info-card",
+      "url": "https://petclues.com/tools/rabbit-emergency-info-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/reactive-dog-sitter-instructions",
+      "url": "https://petclues.com/tools/reactive-dog-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/rescue-cat-intake-vaccine-sheet",
+      "url": "https://petclues.com/tools/rescue-cat-intake-vaccine-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/rescue-dog-intake-vaccine-sheet",
+      "url": "https://petclues.com/tools/rescue-dog-intake-vaccine-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/second-opinion-vet-visit-log",
+      "url": "https://petclues.com/tools/second-opinion-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-cat-booster-record-sheet",
+      "url": "https://petclues.com/tools/senior-cat-booster-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-cat-emergency-card",
+      "url": "https://petclues.com/tools/senior-cat-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-cat-sitter-instructions",
+      "url": "https://petclues.com/tools/senior-cat-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-cat-vet-visit-log",
+      "url": "https://petclues.com/tools/senior-cat-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-dog-booster-record-sheet",
+      "url": "https://petclues.com/tools/senior-dog-booster-record-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-dog-emergency-card",
+      "url": "https://petclues.com/tools/senior-dog-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-dog-sitter-instructions",
+      "url": "https://petclues.com/tools/senior-dog-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/senior-dog-vet-visit-log",
+      "url": "https://petclues.com/tools/senior-dog-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/sick-visit-symptom-log",
+      "url": "https://petclues.com/tools/sick-visit-symptom-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/special-diet-pet-sitter-instructions",
+      "url": "https://petclues.com/tools/special-diet-pet-sitter-instructions",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/specialist-referral-visit-log",
+      "url": "https://petclues.com/tools/specialist-referral-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/telehealth-vet-follow-up-log",
+      "url": "https://petclues.com/tools/telehealth-vet-follow-up-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/travel-abroad-pet-care-handoff",
+      "url": "https://petclues.com/tools/travel-abroad-pet-care-handoff",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/travel-pet-emergency-card",
+      "url": "https://petclues.com/tools/travel-pet-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/urinary-issue-vet-visit-log",
+      "url": "https://petclues.com/tools/urinary-issue-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/vaccine-only-appointment-log",
+      "url": "https://petclues.com/tools/vaccine-only-appointment-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/wallet-size-pet-emergency-card",
+      "url": "https://petclues.com/tools/wallet-size-pet-emergency-card",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/weekend-dog-boarding-prep-sheet",
+      "url": "https://petclues.com/tools/weekend-dog-boarding-prep-sheet",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/weight-check-vet-visit-log",
+      "url": "https://petclues.com/tools/weight-check-vet-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/tools/wellness-exam-visit-log",
+      "url": "https://petclues.com/tools/wellness-exam-visit-log",
+      "pillar": "tools"
+    },
+    {
+      "path": "/symptoms/cat/back-pain-causes",
+      "url": "https://petclues.com/symptoms/cat/back-pain-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/back-pain-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/back-pain-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bad-breath-causes",
+      "url": "https://petclues.com/symptoms/cat/bad-breath-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bad-breath-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/bad-breath-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/black-tarry-stool-causes",
+      "url": "https://petclues.com/symptoms/cat/black-tarry-stool-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/black-tarry-stool-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/black-tarry-stool-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bloated-abdomen-causes",
+      "url": "https://petclues.com/symptoms/cat/bloated-abdomen-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bloated-abdomen-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/bloated-abdomen-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/blood-in-urine-causes",
+      "url": "https://petclues.com/symptoms/cat/blood-in-urine-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/blood-in-urine-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/blood-in-urine-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bloody-stool-causes",
+      "url": "https://petclues.com/symptoms/cat/bloody-stool-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bloody-stool-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/bloody-stool-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bloody-vomit-causes",
+      "url": "https://petclues.com/symptoms/cat/bloody-vomit-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/bloody-vomit-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/bloody-vomit-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/blue-gums-causes",
+      "url": "https://petclues.com/symptoms/cat/blue-gums-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/blue-gums-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/blue-gums-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/circling-causes",
+      "url": "https://petclues.com/symptoms/cat/circling-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/circling-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/circling-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/collapse-causes",
+      "url": "https://petclues.com/symptoms/cat/collapse-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/collapse-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/collapse-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/constipation-causes",
+      "url": "https://petclues.com/symptoms/cat/constipation-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/constipation-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/constipation-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/coughing-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/cat/coughing-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/coughing-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/coughing-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-at-night-and-exercise-intolerance-together",
+      "url": "https://petclues.com/symptoms/cat/coughing-at-night-and-exercise-intolerance-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-at-night-causes",
+      "url": "https://petclues.com/symptoms/cat/coughing-at-night-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-at-night-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/coughing-at-night-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-causes",
+      "url": "https://petclues.com/symptoms/cat/coughing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/coughing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/coughing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/dental-pain-causes",
+      "url": "https://petclues.com/symptoms/cat/dental-pain-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/dental-pain-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/dental-pain-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/diarrhea-and-vomiting-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/diarrhea-and-vomiting-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/diarrhea-and-vomiting-together",
+      "url": "https://petclues.com/symptoms/cat/diarrhea-and-vomiting-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/diarrhea-and-vomiting-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/diarrhea-and-vomiting-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/diarrhea-and-vomiting-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/diarrhea-and-vomiting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/diarrhea-causes",
+      "url": "https://petclues.com/symptoms/cat/diarrhea-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/diarrhea-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/diarrhea-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-breathing-and-lethargy-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/difficulty-breathing-and-lethargy-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-breathing-and-lethargy-together",
+      "url": "https://petclues.com/symptoms/cat/difficulty-breathing-and-lethargy-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-breathing-and-lethargy-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/difficulty-breathing-and-lethargy-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-breathing-causes",
+      "url": "https://petclues.com/symptoms/cat/difficulty-breathing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-breathing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/difficulty-breathing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-swallowing-causes",
+      "url": "https://petclues.com/symptoms/cat/difficulty-swallowing-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/difficulty-swallowing-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/difficulty-swallowing-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/discharge-from-eyes-causes",
+      "url": "https://petclues.com/symptoms/cat/discharge-from-eyes-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/discharge-from-eyes-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/discharge-from-eyes-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/disorientation-causes",
+      "url": "https://petclues.com/symptoms/cat/disorientation-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/disorientation-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/disorientation-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/drooling-causes",
+      "url": "https://petclues.com/symptoms/cat/drooling-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/drooling-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/drooling-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/ear-scratching-causes",
+      "url": "https://petclues.com/symptoms/cat/ear-scratching-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/ear-scratching-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/ear-scratching-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-hunger-causes",
+      "url": "https://petclues.com/symptoms/cat/excessive-hunger-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-hunger-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/excessive-hunger-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-licking-causes",
+      "url": "https://petclues.com/symptoms/cat/excessive-licking-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-licking-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/excessive-licking-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-thirst-and-frequent-urination-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/excessive-thirst-and-frequent-urination-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-thirst-and-frequent-urination-together",
+      "url": "https://petclues.com/symptoms/cat/excessive-thirst-and-frequent-urination-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-thirst-and-frequent-urination-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/excessive-thirst-and-frequent-urination-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-thirst-causes",
+      "url": "https://petclues.com/symptoms/cat/excessive-thirst-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-thirst-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/excessive-thirst-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-vocalization-causes",
+      "url": "https://petclues.com/symptoms/cat/excessive-vocalization-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/excessive-vocalization-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/excessive-vocalization-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/exercise-intolerance-causes",
+      "url": "https://petclues.com/symptoms/cat/exercise-intolerance-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/exercise-intolerance-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/exercise-intolerance-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/fainting-causes",
+      "url": "https://petclues.com/symptoms/cat/fainting-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/fainting-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/fainting-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/fever-causes",
+      "url": "https://petclues.com/symptoms/cat/fever-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/fever-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/fever-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/frequent-urination-causes",
+      "url": "https://petclues.com/symptoms/cat/frequent-urination-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/frequent-urination-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/frequent-urination-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/gagging-causes",
+      "url": "https://petclues.com/symptoms/cat/gagging-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/gagging-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/gagging-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hair-loss-causes",
+      "url": "https://petclues.com/symptoms/cat/hair-loss-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hair-loss-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/hair-loss-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/head-shaking-causes",
+      "url": "https://petclues.com/symptoms/cat/head-shaking-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/head-shaking-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/head-shaking-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/heat-sensitivity-causes",
+      "url": "https://petclues.com/symptoms/cat/heat-sensitivity-causes",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/heat-sensitivity-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/heat-sensitivity-when-to-worry",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hiding-and-loss-of-appetite-emergency-signs",
+      "url": "https://petclues.com/symptoms/cat/hiding-and-loss-of-appetite-emergency-signs",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hiding-and-loss-of-appetite-together",
+      "url": "https://petclues.com/symptoms/cat/hiding-and-loss-of-appetite-together",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hiding-and-loss-of-appetite-what-to-tell-vet",
+      "url": "https://petclues.com/symptoms/cat/hiding-and-loss-of-appetite-what-to-tell-vet",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/symptoms/cat/hiding-and-loss-of-appetite-when-to-worry",
+      "url": "https://petclues.com/symptoms/cat/hiding-and-loss-of-appetite-when-to-worry",
+      "pillar": "symptoms"
+    }
+  ]
+}

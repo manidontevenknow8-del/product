@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-08-20T18:32:22.451Z",
+  "summary": {
+    "knownPaths": 1976,
+    "leafPages": 1968,
+    "emptyRelatedLinks": 0,
+    "brokenTargets": 0,
+    "orphans": 0,
+    "hubOnlyInbound": 0,
+    "lowOutbound": 0,
+    "pillarCounts": {
+      "breeds": 660,
+      "symptoms": 408,
+      "vaccinations": 250,
+      "emergencies": 200,
+      "vault": 150,
+      "lifeLogistics": 150,
+      "comparisons": 40,
+      "tools": 110
+    }
+  },
+  "emptyRelatedLinks": [],
+  "brokenTargets": [],
+  "brokenTargetsTruncated": false,
+  "orphans": [],
+  "hubOnlyInbound": [],
+  "lowOutbound": [],
+  "note": "Review-only. Do not auto-fix. Hub inbound counts toward orphans=0; hubOnlyInbound flags pages with no leaf-to-leaf inbound links."
+}

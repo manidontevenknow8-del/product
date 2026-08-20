@@ -1,0 +1,47 @@
+{
+  "slug": "pulik-vaccine-schedule",
+  "path": "/vaccinations/pulik-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "pulik",
+  "subjectName": "Puli",
+  "species": "dog",
+  "primaryKeyword": "Puli vaccine schedule",
+  "metaDescription": "Puli vaccine schedule with core ages in weeks. Set reminders so Puli boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/pulik/adult-health-guide",
+  "breedHealthLabel": "Puli adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Puli social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Puli exposure.",
+        "Weight range 25-35 lb (11-16 kg) and grooming needs (Corded coat specialist care.) belong in the same Puli household ops list as vaccine dates when busy weeks collide.",
+        "If your Puli is also monitored for degenerative myelopathy risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Puli appointments.",
+        "After the Puli puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Puli misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Puli series from memory.",
+        "The danger for a delayed Puli is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Puli away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Puli due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Puli core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Puli misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Puli health context beyond vaccines?",
+      "answer": "See the Puli adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

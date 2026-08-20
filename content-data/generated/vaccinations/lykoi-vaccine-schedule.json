@@ -1,0 +1,47 @@
+{
+  "slug": "lykoi-vaccine-schedule",
+  "path": "/vaccinations/lykoi-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "lykoi",
+  "subjectName": "Lykoi",
+  "species": "cat",
+  "primaryKeyword": "Lykoi vaccine schedule",
+  "metaDescription": "Lykoi vaccine schedule with core ages in weeks. Set reminders so Lykoi boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/lykoi/adult-health-guide",
+  "breedHealthLabel": "Lykoi adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Lykois: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Lykoi series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Lykoi, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final FVRCP booster.",
+        "Flag limited long-term dataset at Lykoi vaccine checkups so the kitten’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Lykoi series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Lykoi misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Lykoi series from memory.",
+        "The danger for a delayed Lykoi is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Lykoi away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Lykoi due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Lykoi core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Lykoi misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Lykoi health context beyond vaccines?",
+      "answer": "See the Lykoi adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

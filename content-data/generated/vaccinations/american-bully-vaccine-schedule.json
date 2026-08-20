@@ -1,0 +1,47 @@
+{
+  "slug": "american-bully-vaccine-schedule",
+  "path": "/vaccinations/american-bully-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "american-bully",
+  "subjectName": "American Bully",
+  "species": "dog",
+  "primaryKeyword": "American Bully vaccine schedule",
+  "metaDescription": "American Bully vaccine schedule with core ages in weeks. Set reminders so American Bully boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/american-bully/adult-health-guide",
+  "breedHealthLabel": "American Bully adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this American Bully table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished American Bully dates, not intentions, so a American Bully with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Hip dysplasia shows up often enough in American Bullys that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the American Bully profile immediately; lost paperwork is the most common reason American Bully travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your American Bully misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the American Bully series from memory.",
+        "The danger for a delayed American Bully is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the American Bully away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next American Bully due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the American Bully core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my American Bully misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read American Bully health context beyond vaccines?",
+      "answer": "See the American Bully adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

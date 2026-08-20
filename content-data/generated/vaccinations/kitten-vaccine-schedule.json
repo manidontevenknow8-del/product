@@ -1,0 +1,65 @@
+{
+  "slug": "kitten-vaccine-schedule",
+  "path": "/vaccinations/kitten-vaccine-schedule",
+  "kind": "general",
+  "subjectName": "Kitten",
+  "species": "cat",
+  "primaryKeyword": "kitten vaccine schedule",
+  "metaDescription": "kitten vaccine schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "FVRCP booster",
+  "common_health_issues": [
+    "Panleukopenia risk",
+    "Multi-cat household exposure",
+    "FeLV risk assessment"
+  ],
+  "schedule": [
+    {
+      "vaccine": "FVRCP",
+      "age_weeks": 8
+    },
+    {
+      "vaccine": "FVRCP booster",
+      "age_weeks": 12
+    },
+    {
+      "vaccine": "FVRCP booster (complete kitten series)",
+      "age_weeks": 16
+    },
+    {
+      "vaccine": "Rabies (per local law)",
+      "age_weeks": 16
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This kitten plan sequences doses against panleukopenia risk, not against a vague “sometime this season” intention for your cat.",
+        "Milestone labels on the kitten table (8 weeks; 12 weeks; 16 weeks; 16 weeks) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished kitten kitten series is still incomplete.",
+        "If your household also wrestles with multi-cat household exposure or felv risk assessment, put those constraints on the same calendar thread as the FVRCP booster so one reminder system owns the kitten week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed kitten dose; catch-up timing depends on age and gap length for this cat scenario.",
+        "Until the kitten series is current again, reduce the exposure pattern that matches panleukopenia risk, and do not wait for an annual wellness slot to ask about a kitten make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next FVRCP booster due date so the same kitten miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this kitten vaccine schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual cat."
+    },
+    {
+      "question": "What if we already missed a date on this kitten schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to panleukopenia risk, and reset reminders as soon as the next kitten due date is known."
+    },
+    {
+      "question": "How do reminders help with FVRCP booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that kitten booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

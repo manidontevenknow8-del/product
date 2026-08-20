@@ -1,0 +1,47 @@
+{
+  "slug": "japanese-bobtail-vaccine-schedule",
+  "path": "/vaccinations/japanese-bobtail-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "japanese-bobtail",
+  "subjectName": "Japanese Bobtail",
+  "species": "cat",
+  "primaryKeyword": "Japanese Bobtail vaccine schedule",
+  "metaDescription": "Japanese Bobtail vaccine schedule with core ages in weeks. Set reminders so Japanese Bobtail boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/japanese-bobtail/adult-health-guide",
+  "breedHealthLabel": "Japanese Bobtail adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Japanese Bobtail social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Japanese Bobtail exposure.",
+        "Weight range 6-10 lb (2.7-4.5 kg) and grooming needs (Coat varies.) belong in the same Japanese Bobtail household ops list as vaccine dates when busy weeks collide.",
+        "If your Japanese Bobtail is also monitored for patellar luxation, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Japanese Bobtail appointments.",
+        "After the Japanese Bobtail puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Japanese Bobtail misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Japanese Bobtail series from memory.",
+        "The danger for a delayed Japanese Bobtail is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Japanese Bobtail away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Japanese Bobtail due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Japanese Bobtail core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Japanese Bobtail misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Japanese Bobtail health context beyond vaccines?",
+      "answer": "See the Japanese Bobtail adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

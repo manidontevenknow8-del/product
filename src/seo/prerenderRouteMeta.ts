@@ -18,6 +18,11 @@ import {
   getRelocationRouteBySlug,
 } from '@/data/relocationRoutes';
 import { getProgrammaticCollection, listProgrammaticCollections } from '@/data/programmatic/collections';
+import { getVaultPageBySlug, listVaultPages } from '@/content/vaultPages';
+import {
+  getVaultGuideSEO,
+  getVaultGuideStructuredData,
+} from '@/seo/vaultGuideSeo';
 import {
   getPageSEO,
   isBestArticlePath,
@@ -98,11 +103,29 @@ import {
   getB2BSolutionStructuredData,
 } from '@/seo/b2bSolutionSeo';
 import { AGENCY_SOLUTION, BREEDER_SOLUTION } from '@/data/b2bSolutions';
+import {
+  getEmergencyGuidePageBySlug,
+  emergencyGuidePages,
+} from '@/content/loadEmergencyGuides';
+import {
+  getEmergencyGuideSEO,
+  getEmergencyGuideStructuredData,
+  getEmergencyHubSEO,
+  isEmergencyGuidePath,
+} from '@/seo/emergencyGuideSeo';
 import { getStaticPageStructuredData } from '@/seo/staticPageSeo';
 import {
   getVaccineSchedulerSEO,
   getVaccineSchedulerStructuredData,
 } from '@/seo/vaccineSchedulerSeo';
+import {
+  getToolDownloadSEO,
+  getToolDownloadStructuredData,
+  getToolsHubSEO,
+  getToolsHubStructuredData,
+  isToolDownloadPath,
+} from '@/seo/toolDownloadSeo';
+import { getToolBySlug, tools } from '@/content/loadContentData';
 import { getCommercialPageByPath, listCommercialPages } from '@/data/commercial';
 import {
   getCommercialPageSEO,
@@ -241,6 +264,12 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
 
   if (isGuidesCollectionPath(pathname)) {
     const collectionId = pathname.slice(`${ROUTES.GUIDES}/`.length);
+    const vaultPage = getVaultPageBySlug(collectionId);
+    if (vaultPage) {
+      return withSchema(getVaultGuideSEO(vaultPage), [
+        schemaEntry(`vault-guide-${collectionId}`, getVaultGuideStructuredData(vaultPage)),
+      ]);
+    }
     if (!isProgrammaticCollectionId(collectionId)) return null;
     const pages = listProgrammaticPages(collectionId);
     const config = getProgrammaticCollectionSEO(collectionId);
@@ -410,6 +439,42 @@ export function getPrerenderDocument(pathname: string, search = ''): PrerenderDo
     ]);
   }
 
+  if (pathname === '/emergency') {
+    return withSchema(getEmergencyHubSEO(), [
+      schemaEntry('emergency-hub', {
+        '@context': 'https://schema.org',
+        '@type': 'CollectionPage',
+        name: 'Pet emergency guides',
+        url: 'https://petclues.com/emergency',
+        numberOfItems: emergencyGuidePages.length,
+      }),
+    ]);
+  }
+
+  if (isEmergencyGuidePath(pathname) && pathname !== '/emergency') {
+    const slug = pathname.slice('/emergency/'.length);
+    const page = getEmergencyGuidePageBySlug(slug);
+    if (!page) return null;
+    return withSchema(getEmergencyGuideSEO(page), [
+      schemaEntry(`emergency-${slug}`, getEmergencyGuideStructuredData(page)),
+    ]);
+  }
+
+  if (pathname === '/tools') {
+    return withSchema(getToolsHubSEO(), [
+      schemaEntry('tools-hub', getToolsHubStructuredData(tools.length)),
+    ]);
+  }
+
+  if (isToolDownloadPath(pathname)) {
+    const slug = pathname.slice('/tools/'.length);
+    const tool = getToolBySlug(slug);
+    if (!tool) return null;
+    return withSchema(getToolDownloadSEO(tool), [
+      schemaEntry(`tool-${slug}`, getToolDownloadStructuredData(tool)),
+    ]);
+  }
+
   const staticConfig = getPageSEO(pathname);
   if (staticConfig.noIndex) return null;
 
@@ -423,6 +488,10 @@ export function listPrerenderRouteKeys(): string[] {
 
   keys.push('/');
   keys.push(ROUTES.PRICING, ROUTES.PET_MATCH, ROUTES.FOUNDING_MEMBERS, ROUTES.TOOLS_VACCINE_SCHEDULER);
+  keys.push('/tools');
+  for (const tool of tools) {
+    keys.push(`/tools/${tool.slug}`);
+  }
   for (const page of listCommercialPages()) {
     keys.push(page.path);
   }
@@ -447,6 +516,9 @@ export function listPrerenderRouteKeys(): string[] {
   for (const page of listIntentPages()) keys.push(`${ROUTES.BEST}/${page.slug}`);
   for (const collection of listProgrammaticCollections()) {
     keys.push(`${ROUTES.GUIDES}/${collection.id}`);
+  }
+  for (const page of listVaultPages()) {
+    keys.push(`${ROUTES.GUIDES}/${page.slug}`);
   }
   for (const page of listProgrammaticPages()) {
     keys.push(`${ROUTES.GUIDES}/${page.collectionId}/${page.slug}`);

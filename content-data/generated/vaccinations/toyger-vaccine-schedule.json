@@ -1,0 +1,47 @@
+{
+  "slug": "toyger-vaccine-schedule",
+  "path": "/vaccinations/toyger-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "toyger",
+  "subjectName": "Toyger",
+  "species": "cat",
+  "primaryKeyword": "Toyger vaccine schedule",
+  "metaDescription": "Toyger vaccine schedule with core ages in weeks. Set reminders so Toyger boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/toyger/adult-health-guide",
+  "breedHealthLabel": "Toyger adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Toyger owners tracking 10-15 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where panleukopenia risk concentrates for this kitten.",
+        "Use the 4-row Toyger schedule as your only planning spine: 8 weeks (FVRCP); 12 weeks (FVRCP booster); 16 weeks (FVRCP booster); 16 weeks (Rabies).",
+        "Temperament note for Toyger handling: Tiger-striped domestic; still mostly domestic health patterns.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Toyger dose.",
+        "Lifestyle add-ons stay off this Toyger core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Toyger misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Toyger series from memory.",
+        "The danger for a delayed Toyger is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Toyger away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Toyger due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Toyger core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Toyger misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Toyger health context beyond vaccines?",
+      "answer": "See the Toyger adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) talks, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

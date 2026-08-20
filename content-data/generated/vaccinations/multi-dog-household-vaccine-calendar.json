@@ -1,0 +1,64 @@
+{
+  "slug": "multi-dog-household-vaccine-calendar",
+  "path": "/vaccinations/multi-dog-household-vaccine-calendar",
+  "kind": "general",
+  "subjectName": "Multi-dog household",
+  "species": "dog",
+  "primaryKeyword": "multi dog household vaccine calendar",
+  "metaDescription": "multi dog household vaccine calendar: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "shared booster reminders",
+  "common_health_issues": [
+    "One dog current, one overdue",
+    "Shared yard exposure",
+    "Confused certificate ownership"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Per-dog core status audit",
+      "age_weeks": 0,
+      "age_label": "Same week for all dogs"
+    },
+    {
+      "vaccine": "Staggered appointments if needed",
+      "age_weeks": 1,
+      "age_label": "Avoid same-day overload"
+    },
+    {
+      "vaccine": "Aligned annual booster month",
+      "age_weeks": 52,
+      "age_label": "Household calendar"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This multi-dog household plan sequences doses against one dog current, one overdue, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the multi-dog household table (Same week for all dogs; Avoid same-day overload; Household calendar) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished multi-dog household puppy series is still incomplete.",
+        "If your household also wrestles with shared yard exposure or confused certificate ownership, put those constraints on the same calendar thread as the shared booster reminders so one reminder system owns the multi-dog household week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed multi-dog household dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the multi-dog household series is current again, reduce the exposure pattern that matches one dog current, one overdue, and do not wait for an annual wellness slot to ask about a multi-dog household make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next shared booster reminders due date so the same multi-dog household miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this multi dog household vaccine calendar a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this multi-dog household schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to one dog current, one overdue, and reset reminders as soon as the next multi-dog household due date is known."
+    },
+    {
+      "question": "How do reminders help with shared booster reminders?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that multi-dog household booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

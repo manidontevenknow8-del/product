@@ -1,0 +1,47 @@
+{
+  "slug": "bernese-mountain-dog-vaccine-schedule",
+  "path": "/vaccinations/bernese-mountain-dog-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "bernese-mountain-dog",
+  "subjectName": "Bernese Mountain Dog",
+  "species": "dog",
+  "primaryKeyword": "Bernese Mountain Dog vaccine schedule",
+  "metaDescription": "Bernese Mountain Dog vaccine schedule with core ages in weeks. Set reminders so Bernese Mountain Dog boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/bernese-mountain-dog/adult-health-guide",
+  "breedHealthLabel": "Bernese Mountain Dog adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Bernese Mountain Dog table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Bernese Mountain Dog dates, not intentions, so a Bernese Mountain Dog with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Cancer risk (breed-associated) shows up often enough in Bernese Mountain Dogs that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Bernese Mountain Dog profile immediately; lost paperwork is the most common reason Bernese Mountain Dog travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Bernese Mountain Dog boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Bernese Mountain Dog row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Bernese Mountain Dog item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Bernese Mountain Dog kennel reservation.",
+        "PetClues should hold both the new Bernese Mountain Dog due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Bernese Mountain Dog core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Bernese Mountain Dog misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Bernese Mountain Dog health context beyond vaccines?",
+      "answer": "See the Bernese Mountain Dog adult health guide for breed predispositions such as cancer risk (breed-associated), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

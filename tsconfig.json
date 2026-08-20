@@ -19,8 +19,10 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@content-data/*": ["content-data/*"],
+      "@content-types/*": ["content-types/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "content-types", "content-data"]
 }

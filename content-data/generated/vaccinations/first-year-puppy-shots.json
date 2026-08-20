@@ -1,0 +1,66 @@
+{
+  "slug": "first-year-puppy-shots",
+  "path": "/vaccinations/first-year-puppy-shots",
+  "kind": "general",
+  "subjectName": "First-year puppy shots",
+  "species": "dog",
+  "primaryKeyword": "first year puppy shots schedule",
+  "metaDescription": "first year puppy shots schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "first adult DA2PP booster",
+  "common_health_issues": [
+    "Gap after last puppy shot",
+    "Forgetting the 1-year booster",
+    "Daycare card expired"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Core series visit 1",
+      "age_weeks": 8
+    },
+    {
+      "vaccine": "Core series visit 2",
+      "age_weeks": 12
+    },
+    {
+      "vaccine": "Core series visit 3 + rabies",
+      "age_weeks": 16
+    },
+    {
+      "vaccine": "First adult booster",
+      "age_weeks": 52,
+      "age_label": "~1 year of age"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This first-year puppy shots plan sequences doses against gap after last puppy shot, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the first-year puppy shots table (8 weeks; 12 weeks; 16 weeks; ~1 year of age) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished first-year puppy shots puppy series is still incomplete.",
+        "If your household also wrestles with forgetting the 1-year booster or daycare card expired, put those constraints on the same calendar thread as the first adult DA2PP booster so one reminder system owns the first-year puppy shots week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed first-year puppy shots dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the first-year puppy shots series is current again, reduce the exposure pattern that matches gap after last puppy shot, and do not wait for an annual wellness slot to ask about a first-year puppy shots make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next first adult DA2PP booster due date so the same first-year puppy shots miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this first year puppy shots schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this first-year puppy shots schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to gap after last puppy shot, and reset reminders as soon as the next first-year puppy shots due date is known."
+    },
+    {
+      "question": "How do reminders help with first adult DA2PP booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that first-year puppy shots booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

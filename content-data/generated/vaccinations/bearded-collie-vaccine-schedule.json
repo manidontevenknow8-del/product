@@ -1,0 +1,47 @@
+{
+  "slug": "bearded-collie-vaccine-schedule",
+  "path": "/vaccinations/bearded-collie-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "bearded-collie",
+  "subjectName": "Bearded Collie",
+  "species": "dog",
+  "primaryKeyword": "Bearded Collie vaccine schedule",
+  "metaDescription": "Bearded Collie vaccine schedule with core ages in weeks. Set reminders so Bearded Collie boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/bearded-collie/adult-health-guide",
+  "breedHealthLabel": "Bearded Collie adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Bearded Collie social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Bearded Collie exposure.",
+        "Weight range 45-55 lb (20-25 kg) and grooming needs (Long coat high maintenance.) belong in the same Bearded Collie household ops list as vaccine dates when busy weeks collide.",
+        "If your Bearded Collie is also monitored for hypothyroidism, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Bearded Collie appointments.",
+        "After the Bearded Collie puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Bearded Collie boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Bearded Collie row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Bearded Collie item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Bearded Collie kennel reservation.",
+        "PetClues should hold both the new Bearded Collie due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Bearded Collie core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Bearded Collie misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Bearded Collie health context beyond vaccines?",
+      "answer": "See the Bearded Collie adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

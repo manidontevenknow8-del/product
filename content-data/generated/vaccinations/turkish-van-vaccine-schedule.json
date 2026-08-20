@@ -1,0 +1,47 @@
+{
+  "slug": "turkish-van-vaccine-schedule",
+  "path": "/vaccinations/turkish-van-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "turkish-van",
+  "subjectName": "Turkish Van",
+  "species": "cat",
+  "primaryKeyword": "Turkish Van vaccine schedule",
+  "metaDescription": "Turkish Van vaccine schedule with core ages in weeks. Set reminders so Turkish Van boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/turkish-van/adult-health-guide",
+  "breedHealthLabel": "Turkish Van adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Turkish Van social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Turkish Van exposure.",
+        "Weight range 7-15 lb (3-7 kg) and grooming needs (Cashmere-like coat.) belong in the same Turkish Van household ops list as vaccine dates when busy weeks collide.",
+        "If your Turkish Van is also monitored for dental disease, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Turkish Van appointments.",
+        "After the Turkish Van puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Turkish Van boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every Turkish Van row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed Turkish Van item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Turkish Van kennel reservation.",
+        "PetClues should hold both the new Turkish Van due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Turkish Van core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Turkish Van misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Turkish Van health context beyond vaccines?",
+      "answer": "See the Turkish Van adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) risk talks, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

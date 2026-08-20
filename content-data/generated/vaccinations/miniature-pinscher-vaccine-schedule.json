@@ -1,0 +1,47 @@
+{
+  "slug": "miniature-pinscher-vaccine-schedule",
+  "path": "/vaccinations/miniature-pinscher-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "miniature-pinscher",
+  "subjectName": "Miniature Pinscher",
+  "species": "dog",
+  "primaryKeyword": "Miniature Pinscher vaccine schedule",
+  "metaDescription": "Miniature Pinscher vaccine schedule with core ages in weeks. Set reminders so Miniature Pinscher boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/miniature-pinscher/adult-health-guide",
+  "breedHealthLabel": "Miniature Pinscher adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Miniature Pinscher social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Miniature Pinscher exposure.",
+        "Weight range 8-11 lb (3.5-5 kg) and grooming needs (Short coat.) belong in the same Miniature Pinscher household ops list as vaccine dates when busy weeks collide.",
+        "If your Miniature Pinscher is also monitored for legg-calve-perthes risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Miniature Pinscher appointments.",
+        "After the Miniature Pinscher puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Miniature Pinscher misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Miniature Pinscher series from memory.",
+        "The danger for a delayed Miniature Pinscher is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Miniature Pinscher away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Miniature Pinscher due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Miniature Pinscher core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Miniature Pinscher misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Miniature Pinscher health context beyond vaccines?",
+      "answer": "See the Miniature Pinscher adult health guide for breed predispositions such as patellar luxation, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

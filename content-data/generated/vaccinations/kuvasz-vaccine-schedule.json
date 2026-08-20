@@ -1,0 +1,47 @@
+{
+  "slug": "kuvasz-vaccine-schedule",
+  "path": "/vaccinations/kuvasz-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "kuvasz",
+  "subjectName": "Kuvasz",
+  "species": "dog",
+  "primaryKeyword": "Kuvasz vaccine schedule",
+  "metaDescription": "Kuvasz vaccine schedule with core ages in weeks. Set reminders so Kuvasz boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/kuvasz/adult-health-guide",
+  "breedHealthLabel": "Kuvasz adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Kuvasz owners tracking 10-12 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row Kuvasz schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for Kuvasz handling: Hungarian guardian; reserved with strangers.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Kuvasz dose.",
+        "Lifestyle add-ons stay off this Kuvasz core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Kuvasz boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Kuvasz row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Kuvasz item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Kuvasz kennel reservation.",
+        "PetClues should hold both the new Kuvasz due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Kuvasz core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Kuvasz misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Kuvasz health context beyond vaccines?",
+      "answer": "See the Kuvasz adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

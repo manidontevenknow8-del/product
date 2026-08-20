@@ -1,0 +1,47 @@
+{
+  "slug": "affenpinscher-vaccine-schedule",
+  "path": "/vaccinations/affenpinscher-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "affenpinscher",
+  "subjectName": "Affenpinscher",
+  "species": "dog",
+  "primaryKeyword": "Affenpinscher vaccine schedule",
+  "metaDescription": "Affenpinscher vaccine schedule with core ages in weeks. Set reminders so Affenpinscher boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/affenpinscher/adult-health-guide",
+  "breedHealthLabel": "Affenpinscher adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Affenpinscher social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Affenpinscher exposure.",
+        "Weight range 7-10 lb (3-4.5 kg) and grooming needs (Wire coat stripping or clipping.) belong in the same Affenpinscher household ops list as vaccine dates when busy weeks collide.",
+        "If your Affenpinscher is also monitored for dental disease, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Affenpinscher appointments.",
+        "After the Affenpinscher puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Affenpinscher misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Affenpinscher series from memory.",
+        "The danger for a delayed Affenpinscher is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Affenpinscher away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Affenpinscher due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Affenpinscher core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Affenpinscher misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Affenpinscher health context beyond vaccines?",
+      "answer": "See the Affenpinscher adult health guide for breed predispositions such as patellar luxation, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

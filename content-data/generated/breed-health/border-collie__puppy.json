@@ -1,0 +1,40 @@
+{
+  "key": "border-collie__puppy",
+  "path": "/breeds/border-collie/puppy-health-guide",
+  "breedSlug": "border-collie",
+  "stage": "puppy",
+  "lifeStageSlug": "dog-puppy",
+  "primaryKeyword": "Border Collie puppy health guide",
+  "metaDescription": "Border Collie puppy health guide with 30-55 lb (14-25 kg) weight range, stage checklist, and breed-linked issues. Start a free PetClues trial to track dates.",
+  "wordCount": 533,
+  "markdown": "a border collie in the puppy chapter is not a generic dog. for this border collie, adult weight lands around 30-55 lb (14-25 kg), lifespan is typically 12-15 years, and day-to-day temperament looks like this: extreme working drive; mental work is medical welfare for this breed. this border collie puppy guide focuses on growth, vaccine-era socialization limits, and early watches for hip dysplasia. what normal looks like for a puppy border collie\n\na border collie in the puppy chapter is not a generic dog. for this border collie, adult weight lands around 30-55 lb (14-25 kg), lifespan is typically 12-15 years, and day-to-day temperament looks like this: extreme working drive; mental work is medical welfare for this breed. this border collie puppy guide focuses on growth, vaccine-era socialization limits, and early watches for hip dysplasia. what normal looks like for a puppy border collie\n\nmedium border collies sit between early-finishing toys and slow giants. for this border collie, a written weight every two weeks through month twelve beats guessing from harness holes. socialization for a border collie puppy still matters after the first vaccines, but dense dog-park traffic can wait until the core series on this breed's schedule is complete. teething chews for a border collie should match a mouth heading toward 30-55 lb (14-25 kg), not a toy that becomes a foreign-body risk. house training a border collie sticks faster when potty breaks are boringly consistent and the crate is rest, not punishment. write vaccine dates, stool quality, and weekly weights in one place so a new clinic does not rebuild the border collie puppy story from memory. for this border collie, if hip dysplasia is already on the breed watch list, keep exercise surfaces non-slippery and avoid repeated high-impact jumping during growth. breed-linked issues to watch in this stage\n\nduring border collie puppy months, hip dysplasia is a predisposition to plan around while growth is unfinished. keep a border collie log with date, what you saw, and a photo if useful. for this border collie, escalation cues for hip dysplasia are on /symptoms/limping-dog. during border collie puppy months, collie eye anomaly risk is a predisposition to plan around while growth is unfinished. for this border collie, red flags belong on /symptoms/red-eyes-dog before a forum thread. during border collie puppy months, epilepsy risk is a predisposition to plan around while growth is unfinished. for this border collie, copied exercise advice from another breed fails this medium animal in the puppy chapter. lifespan expectations around 12-15 years change how early a border collie household starts screening talks for hip dysplasia during puppy care. first-year travel is where border collie paperwork dies. for this border collie, photograph certificates the day they are issued for this puppy packet. home-monitoring checklist\n\nuse this border collie puppy monitoring list weekly. for this border collie, if an item fails twice in a row, write it down and tell the veterinarian:\n\n1. check that sitters can open your border collie share link on airplane mode before you leave town. none of this replaces a veterinarian who knows your border collie. for this border collie, it keeps the puppy story coherent between visits so early disease is harder to miss.",
+  "issueLinks": [
+    {
+      "issue": "Hip dysplasia",
+      "href": "/symptoms/limping-dog"
+    },
+    {
+      "issue": "Collie eye anomaly risk",
+      "href": "/symptoms/red-eyes-dog"
+    },
+    {
+      "issue": "Epilepsy risk",
+      "href": "/symptoms/seizures-dog"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a normal adult weight range for a Border Collie?",
+      "answer": "This breed record lists 30-55 lb (14-25 kg). Your veterinarian sets the target for the individual using body condition, not only the breed average."
+    },
+    {
+      "question": "Which health issues should I watch for in a puppy Border Collie?",
+      "answer": "This stage guide highlights Hip dysplasia; Collie eye anomaly risk; Epilepsy risk. Use the linked symptom pages for red flags, then contact your clinic."
+    },
+    {
+      "question": "How often should I weigh my Border Collie at this stage?",
+      "answer": "Every 1-2 weeks on the same scale while a Border Collie is growing, with the number saved beside vaccine dates."
+    }
+  ],
+  "generatorVersion": 5
+}

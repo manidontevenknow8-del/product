@@ -1,0 +1,47 @@
+{
+  "slug": "miniature-schnauzer-vaccine-schedule",
+  "path": "/vaccinations/miniature-schnauzer-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "miniature-schnauzer",
+  "subjectName": "Miniature Schnauzer",
+  "species": "dog",
+  "primaryKeyword": "Miniature Schnauzer vaccine schedule",
+  "metaDescription": "Miniature Schnauzer vaccine schedule with core ages in weeks. Set reminders so Miniature Schnauzer boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/miniature-schnauzer/adult-health-guide",
+  "breedHealthLabel": "Miniature Schnauzer adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Miniature Schnauzer owners tracking 12-15 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row Miniature Schnauzer schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for Miniature Schnauzer handling: Spirited terrier-type companion; diet fat content often matters clinically.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Miniature Schnauzer dose.",
+        "Lifestyle add-ons stay off this Miniature Schnauzer core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Miniature Schnauzer shots when the puppy seems “a little off,” travel intervenes, or pancreatitis risk worries dominate the week — ask the clinic whether a same-week Miniature Schnauzer make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Miniature Schnauzer antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Miniature Schnauzer dose for extra socialization; finish immunity first for this small dog.",
+        "Reset the Miniature Schnauzer reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Miniature Schnauzer core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Miniature Schnauzer misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Miniature Schnauzer health context beyond vaccines?",
+      "answer": "See the Miniature Schnauzer adult health guide for breed predispositions such as pancreatitis risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

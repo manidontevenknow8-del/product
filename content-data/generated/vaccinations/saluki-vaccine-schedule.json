@@ -1,0 +1,47 @@
+{
+  "slug": "saluki-vaccine-schedule",
+  "path": "/vaccinations/saluki-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "saluki",
+  "subjectName": "Saluki",
+  "species": "dog",
+  "primaryKeyword": "Saluki vaccine schedule",
+  "metaDescription": "Saluki vaccine schedule with core ages in weeks. Set reminders so Saluki boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/saluki/adult-health-guide",
+  "breedHealthLabel": "Saluki adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Saluki social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Saluki exposure.",
+        "Weight range 40-65 lb (18-29 kg) and grooming needs (Feathering needs brush-outs.) belong in the same Saluki household ops list as vaccine dates when busy weeks collide.",
+        "If your Saluki is also monitored for heart screening needs, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Saluki appointments.",
+        "After the Saluki puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Saluki boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Saluki row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Saluki item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Saluki kennel reservation.",
+        "PetClues should hold both the new Saluki due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Saluki core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Saluki misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Saluki health context beyond vaccines?",
+      "answer": "See the Saluki adult health guide for breed predispositions such as cancer risk conversations, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

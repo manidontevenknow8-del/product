@@ -1,0 +1,782 @@
+{
+  "batch": 11,
+  "count": 8,
+  "startIndex": 401,
+  "endIndex": 408,
+  "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+  "pages": [
+    {
+      "id": "dog-straining-to-urinate-and-lethargy-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "straining-to-urinate-and-lethargy-when-to-worry",
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-when-to-worry",
+      "symptomSlug": "straining-to-urinate-dog",
+      "symptomSlugs": [
+        "straining-to-urinate-dog",
+        "lethargy-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "straining-to-urinate",
+        "b": "lethargy"
+      },
+      "h1": "Dog straining to urinate and lethargy: when to worry",
+      "primaryKeyword": "dog straining to urinate and lethargy when to worry",
+      "metaDescription": "dog straining to urinate and lethargy when to worry: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a",
+      "urgency_level": "emergency",
+      "lead": "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up straining to urinate and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to straining to urinate: Urethral obstruction (especially male cats); Urinary stones; Severe cystitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated trips to litter box/outside with no urine",
+            "Vocalizing while posturing to urinate",
+            "Distended, painful abdomen",
+            "Vomiting or collapse with urinary straining",
+            "Any male cat that cannot produce a stream",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "persian"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "urinary-blockage"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is straining to urinate with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "persian"
+      ],
+      "related_emergency_slug": "urinary-blockage"
+    },
+    {
+      "id": "dog-vomiting-and-diarrhea-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-diarrhea-emergency-signs",
+      "path": "/symptoms/dog/vomiting-and-diarrhea-emergency-signs",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "diarrhea-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "vomiting",
+        "b": "diarrhea"
+      },
+      "h1": "Emergency signs: dog with vomiting and diarrhea",
+      "primaryKeyword": "dog vomiting diarrhea emergency",
+      "metaDescription": "dog vomiting diarrhea emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact you",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and diarrhea together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane",
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with diarrhea always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane",
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-vomiting-and-diarrhea-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-diarrhea-together",
+      "path": "/symptoms/dog/vomiting-and-diarrhea-together",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "diarrhea-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "vomiting",
+        "b": "diarrhea"
+      },
+      "h1": "Dog vomiting and diarrhea: what it can mean",
+      "primaryKeyword": "dog vomiting and diarrhea",
+      "metaDescription": "dog vomiting and diarrhea: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your vet ",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and diarrhea together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane",
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with diarrhea always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane",
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-vomiting-and-diarrhea-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-diarrhea-what-to-tell-vet",
+      "path": "/symptoms/dog/vomiting-and-diarrhea-what-to-tell-vet",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "diarrhea-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "vomiting",
+        "b": "diarrhea"
+      },
+      "h1": "What to tell the vet about dog vomiting + diarrhea",
+      "primaryKeyword": "dog vomiting and diarrhea vet",
+      "metaDescription": "dog vomiting and diarrhea vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your ",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and diarrhea together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane",
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with diarrhea always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane",
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-vomiting-and-diarrhea-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-diarrhea-when-to-worry",
+      "path": "/symptoms/dog/vomiting-and-diarrhea-when-to-worry",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "diarrhea-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "vomiting",
+        "b": "diarrhea"
+      },
+      "h1": "Dog vomiting and diarrhea: when to worry",
+      "primaryKeyword": "dog vomiting and diarrhea when to worry",
+      "metaDescription": "dog vomiting and diarrhea when to worry: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Con",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and diarrhea together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Diarrhea often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane",
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with diarrhea always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane",
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-vomiting-and-lethargy-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-lethargy-emergency-signs",
+      "path": "/symptoms/dog/vomiting-and-lethargy-emergency-signs",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "lethargy-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "vomiting",
+        "b": "lethargy"
+      },
+      "h1": "Emergency signs: dog with vomiting and lethargy",
+      "primaryKeyword": "dog vomiting lethargy emergency",
+      "metaDescription": "dog vomiting lethargy emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact you",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-vomiting-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-lethargy-together",
+      "path": "/symptoms/dog/vomiting-and-lethargy-together",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "vomiting",
+        "b": "lethargy"
+      },
+      "h1": "Dog vomiting and lethargy: what it can mean",
+      "primaryKeyword": "dog vomiting and lethargy",
+      "metaDescription": "dog vomiting and lethargy: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your vet ",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-vomiting-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "vomiting-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/vomiting-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "vomiting-dog",
+      "symptomSlugs": [
+        "vomiting-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "vomiting",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog vomiting + lethargy",
+      "primaryKeyword": "dog vomiting and lethargy vet",
+      "metaDescription": "dog vomiting and lethargy vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your ",
+      "urgency_level": "urgent",
+      "lead": "Vomiting with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up vomiting and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Vomiting with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy",
+            "Known toxin or foreign object ingestion",
+            "Abdominal distension or extreme pain",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "german-shepherd",
+            "great-dane"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is vomiting with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "german-shepherd",
+        "great-dane"
+      ],
+      "related_emergency_slug": null
+    }
+  ]
+}

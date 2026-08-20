@@ -1,0 +1,47 @@
+{
+  "slug": "chow-chow-vaccine-schedule",
+  "path": "/vaccinations/chow-chow-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "chow-chow",
+  "subjectName": "Chow Chow",
+  "species": "dog",
+  "primaryKeyword": "Chow Chow vaccine schedule",
+  "metaDescription": "Chow Chow vaccine schedule with core ages in weeks. Set reminders so Chow Chow boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/chow-chow/adult-health-guide",
+  "breedHealthLabel": "Chow Chow adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Chow Chows: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Chow Chow series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Chow Chow, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag entropion at Chow Chow vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Chow Chow series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Chow Chow shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Chow Chow make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Chow Chow antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Chow Chow dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Chow Chow reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Chow Chow core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Chow Chow misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Chow Chow health context beyond vaccines?",
+      "answer": "See the Chow Chow adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

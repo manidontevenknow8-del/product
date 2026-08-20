@@ -1,0 +1,47 @@
+{
+  "slug": "oriental-shorthair-vaccine-schedule",
+  "path": "/vaccinations/oriental-shorthair-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "oriental-shorthair",
+  "subjectName": "Oriental Shorthair",
+  "species": "cat",
+  "primaryKeyword": "Oriental Shorthair vaccine schedule",
+  "metaDescription": "Oriental Shorthair vaccine schedule with core ages in weeks. Set reminders so Oriental Shorthair boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/oriental-shorthair/adult-health-guide",
+  "breedHealthLabel": "Oriental Shorthair adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Oriental Shorthair social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Oriental Shorthair exposure.",
+        "Weight range 7-14 lb (3-6.5 kg) and grooming needs (Short coat.) belong in the same Oriental Shorthair household ops list as vaccine dates when busy weeks collide.",
+        "If your Oriental Shorthair is also monitored for amyloidosis risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Oriental Shorthair appointments.",
+        "After the Oriental Shorthair puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Oriental Shorthair shots when the kitten seems “a little off,” travel intervenes, or dental disease worries dominate the week — ask the clinic whether a same-week Oriental Shorthair make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Oriental Shorthair antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Oriental Shorthair dose for extra socialization; finish immunity first for this medium cat.",
+        "Reset the Oriental Shorthair reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Oriental Shorthair core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Oriental Shorthair misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Oriental Shorthair health context beyond vaccines?",
+      "answer": "See the Oriental Shorthair adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

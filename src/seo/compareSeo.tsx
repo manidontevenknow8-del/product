@@ -18,9 +18,9 @@ import { formatMetaDescription, formatPageTitle } from './seoFormatters';
 
 export function getCompareIndexSEO(): SEOConfig {
   return {
-    title: formatPageTitle('Pet Health App Comparisons - Spreadsheets & Alternatives'),
+    title: formatPageTitle('Pet Health App Comparisons - Verified Feature Tables'),
     description: formatMetaDescription(
-      'Compare PetClues with Google Drive, Excel, Notion, PetDesk, paper records, and 45+ alternatives for pet health records, vaccination reminders, and emergency info.',
+      'Compare PetClues with verified pet apps and status-quo baselines (paper, spreadsheets, Drive). Feature rows cite sources; founding member pricing on every page.',
     ),
     keywords:
       'petclues vs, best pet health record app, alternative to spreadsheets pet records, pet health app comparison',

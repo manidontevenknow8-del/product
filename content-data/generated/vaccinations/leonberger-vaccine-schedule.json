@@ -1,0 +1,47 @@
+{
+  "slug": "leonberger-vaccine-schedule",
+  "path": "/vaccinations/leonberger-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "leonberger",
+  "subjectName": "Leonberger",
+  "species": "dog",
+  "primaryKeyword": "Leonberger vaccine schedule",
+  "metaDescription": "Leonberger vaccine schedule with core ages in weeks. Set reminders so Leonberger boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/leonberger/adult-health-guide",
+  "breedHealthLabel": "Leonberger adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Leonbergers: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Leonberger series closes at about 16 weeks.",
+        "Size class giant does not invent new viruses for the Leonberger, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag leonberger polyneuropathy risk at Leonberger vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Leonberger series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Leonberger misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Leonberger series from memory.",
+        "The danger for a delayed Leonberger is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Leonberger away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Leonberger due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Leonberger core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Leonberger misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Leonberger health context beyond vaccines?",
+      "answer": "See the Leonberger adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

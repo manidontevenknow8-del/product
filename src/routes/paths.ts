@@ -20,6 +20,8 @@ export const ROUTES = {
   TOOLS_QR_GENERATOR: '/tools/qr-generator',
   /** Public puppy/kitten vaccination & booster scheduler (SEO tool) */
   TOOLS_VACCINE_SCHEDULER: '/tools/vaccine-scheduler',
+  /** Hub for gated printable download tools */
+  TOOLS_DOWNLOADS: '/tools',
   /** Public token-gated pet life story (no auth) */
   STORY_PUBLIC: '/s',
   VET_PORTAL: '/vet-portal',

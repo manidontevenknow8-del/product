@@ -1,0 +1,47 @@
+{
+  "slug": "exotic-shorthair-vaccine-schedule",
+  "path": "/vaccinations/exotic-shorthair-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "exotic-shorthair",
+  "subjectName": "Exotic Shorthair",
+  "species": "cat",
+  "primaryKeyword": "Exotic Shorthair vaccine schedule",
+  "metaDescription": "Exotic Shorthair vaccine schedule with core ages in weeks. Set reminders so Exotic Shorthair boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/exotic-shorthair/adult-health-guide",
+  "breedHealthLabel": "Exotic Shorthair adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Exotic Shorthair core series (FVRCP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a medium kitten is covered as maternal antibodies fade.",
+        "At 7-14 lb (3-6.5 kg), Exotic Shorthair visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring brachycephalic concerns and polycystic kidney disease (pkd) risk into the Exotic Shorthair exam-room conversation while you are already there for shots.",
+        "Rabies for a Exotic Shorthair still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Exotic Shorthair boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every Exotic Shorthair row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed Exotic Shorthair item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Exotic Shorthair kennel reservation.",
+        "PetClues should hold both the new Exotic Shorthair due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Exotic Shorthair core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Exotic Shorthair misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Exotic Shorthair health context beyond vaccines?",
+      "answer": "See the Exotic Shorthair adult health guide for breed predispositions such as brachycephalic concerns, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

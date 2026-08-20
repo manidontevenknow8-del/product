@@ -1,0 +1,40 @@
+{
+  "key": "boxer__puppy",
+  "path": "/breeds/boxer/puppy-health-guide",
+  "breedSlug": "boxer",
+  "stage": "puppy",
+  "lifeStageSlug": "dog-puppy",
+  "primaryKeyword": "Boxer puppy health guide",
+  "metaDescription": "Boxer puppy health guide with 50-80 lb (23-36 kg) weight range, stage checklist, and breed-linked issues. Start a free PetClues trial to track dates.",
+  "wordCount": 511,
+  "markdown": "boxer care at the puppy stage fails when owners copy advice written for a different size class. for this boxer, this puppy animal is built toward 50-80 lb (23-36 kg) and often lives 10-12 years, with a personality that reads as playful, high-drive guardian/companion needing firm exercise outlets. this boxer puppy guide focuses on growth, vaccine-era socialization limits, and early watches for cardiomyopathy / arrhythmia screening. what normal looks like for a puppy boxer\n\nlarge-breed boxers need controlled growth. for this boxer, pushing for a finished look early is how orthopedic debt from cancer risk (breed-associated) shows up later. socialization for a boxer puppy still matters after the first vaccines, but dense dog-park traffic can wait until the core series on this breed's schedule is complete. teething chews for a boxer should match a mouth heading toward 50-80 lb (23-36 kg), not a toy that becomes a foreign-body risk. house training a boxer sticks faster when potty breaks are boringly consistent and the crate is rest, not punishment. write vaccine dates, stool quality, and weekly weights in one place so a new clinic does not rebuild the boxer puppy story from memory. for this boxer, if cardiomyopathy / arrhythmia screening is already on the breed watch list, keep exercise surfaces non-slippery and avoid repeated high-impact jumping during growth. breed-linked issues to watch in this stage\n\nduring boxer puppy months, cardiomyopathy / arrhythmia screening is a predisposition to plan around while growth is unfinished. for this boxer, red flags belong on /symptoms/difficulty-breathing-dog before a forum thread. during boxer puppy months, hip dysplasia is a predisposition to plan around while growth is unfinished. matching signs should send a boxer caregiver to /symptoms/limping-dog for urgency framing, then to the clinic with the written timeline. during boxer puppy months, allergic skin disease is a predisposition to plan around while growth is unfinished. for this boxer, escalation cues for allergic skin disease are on /symptoms/itching-dog. practical context for this boxer\n\ntemperament shapes puppy-stage risk management for a boxer: playful, high-drive guardian/companion needing firm exercise outlets. for this boxer, copied exercise advice from another breed fails this large animal in the puppy chapter. lifespan expectations around 10-12 years change how early a boxer household starts screening talks for cardiomyopathy / arrhythmia screening during puppy care. shared puppy care of this boxer across a household needs one vault when hip dysplasia flares after hours. home-monitoring checklist\n\nhome-monitoring checklist for a puppy boxer (breed-specific, not a generic dog poster):\n\n1. for this boxer, scan for cardiomyopathy / arrhythmia screening clues first: gait, breathing effort, itch, appetite, stool, or litter and urine changes. for this boxer, add a second pass for hip dysplasia so two breed risks are not competing for the same glance. film a fifteen-second walk or play clip monthly; trends beat memory when allergic skin disease is on the radar for a boxer. if you only remember one thing: boxer puppy care is specific. for this boxer, size class large, lifespan band 10-12 years, and issues like cardiomyopathy / arrhythmia screening are why generic dog advice fails.",
+  "issueLinks": [
+    {
+      "issue": "Cardiomyopathy / arrhythmia screening",
+      "href": "/symptoms/difficulty-breathing-dog"
+    },
+    {
+      "issue": "Hip dysplasia",
+      "href": "/symptoms/limping-dog"
+    },
+    {
+      "issue": "Allergic skin disease",
+      "href": "/symptoms/itching-dog"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a normal adult weight range for a Boxer?",
+      "answer": "This breed record lists 50-80 lb (23-36 kg). Your veterinarian sets the target for the individual using body condition, not only the breed average."
+    },
+    {
+      "question": "Which health issues should I watch for in a puppy Boxer?",
+      "answer": "This stage guide highlights Cardiomyopathy / arrhythmia screening; Hip dysplasia; Allergic skin disease. Use the linked symptom pages for red flags, then contact your clinic."
+    },
+    {
+      "question": "How often should I weigh my Boxer at this stage?",
+      "answer": "Every 1-2 weeks on the same scale while a Boxer is growing, with the number saved beside vaccine dates."
+    }
+  ],
+  "generatorVersion": 4
+}

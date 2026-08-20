@@ -1,0 +1,1139 @@
+[
+  {
+    "slug": "pawprint",
+    "name": "PawPrint AI",
+    "category": "pet-records-app",
+    "website": "https://apps.apple.com/us/app/pawprint-ai-pet-tracker/id6762988041",
+    "identity_note": "Multiple unrelated App Store/Play apps use Pawprint/PawPrint. Features below are taken from the PawPrint AI: Pet Tracker App Store listing (app id 6762988041), not other PawPrint products.",
+    "features": [
+      {
+        "feature": "AI vet receipt scanner",
+        "value": "Yes (claims auto-extract of vendor, date, totals, meds, weight, follow-ups)",
+        "source": "https://apps.apple.com/us/app/pawprint-ai-pet-tracker/id6762988041"
+      },
+      {
+        "feature": "Expense tracking by pet",
+        "value": "Yes",
+        "source": "https://apps.apple.com/us/app/pawprint-ai-pet-tracker/id6762988041"
+      },
+      {
+        "feature": "Vaccine and medication reminders",
+        "value": "Yes (recurring; listing says reminders re-fire until done)",
+        "source": "https://apps.apple.com/us/app/pawprint-ai-pet-tracker/id6762988041"
+      },
+      {
+        "feature": "Document vault",
+        "value": "Yes (labs, insurance PDFs, certificates)",
+        "source": "https://apps.apple.com/us/app/pawprint-ai-pet-tracker/id6762988041"
+      },
+      {
+        "feature": "Clinic PIMS / provider messaging integration",
+        "value": "Not claimed on listing reviewed",
+        "source": "https://apps.apple.com/us/app/pawprint-ai-pet-tracker/id6762988041"
+      }
+    ],
+    "source_notes": "Re-verify before publish; App Store copy changes. Brand collision risk is high."
+  },
+  {
+    "slug": "11pets",
+    "name": "11pets",
+    "category": "pet-records-app",
+    "website": "https://www.11pets.com/en/feature",
+    "features": [
+      {
+        "feature": "Vaccination and deworming schedules with reminders",
+        "value": "Yes",
+        "source": "https://www.11pets.com/en/feature"
+      },
+      {
+        "feature": "Medical records (labs, imaging, conditions, surgeries)",
+        "value": "Yes",
+        "source": "https://www.11pets.com/en/feature"
+      },
+      {
+        "feature": "Share records with vets or caregivers",
+        "value": "Yes",
+        "source": "https://www.11pets.com/en/feature"
+      },
+      {
+        "feature": "Expense tracking with Excel export",
+        "value": "Yes",
+        "source": "https://www.11pets.com/en/feature"
+      },
+      {
+        "feature": "Multi-device sync",
+        "value": "Yes",
+        "source": "https://www.11pets.com/en/feature"
+      },
+      {
+        "feature": "Business/professional booking tools",
+        "value": "Yes (Electronic Appointments; separate Business product exists)",
+        "source": "https://www.11pets.com/en/feature"
+      }
+    ]
+  },
+  {
+    "slug": "petdesk",
+    "name": "PetDesk",
+    "category": "clinic-connected-app",
+    "website": "https://apps.apple.com/us/app/petdesk/id631377773",
+    "features": [
+      {
+        "feature": "Appointment requests with connected providers",
+        "value": "Yes",
+        "source": "https://apps.apple.com/us/app/petdesk/id631377773"
+      },
+      {
+        "feature": "Health service reminders from the clinic",
+        "value": "Yes (when provider uses PetDesk)",
+        "source": "https://petdesk.zendesk.com/hc/en-us/articles/360052077794-Benefits-to-Using-the-PetDesk-Mobile-App"
+      },
+      {
+        "feature": "Medication refill requests",
+        "value": "Yes (with connected provider)",
+        "source": "https://apps.apple.com/us/app/petdesk/id631377773"
+      },
+      {
+        "feature": "Provider messaging / lab results sync",
+        "value": "Yes when clinic is on PetDesk",
+        "source": "https://petdesk.zendesk.com/hc/en-us/articles/360052077794-Benefits-to-Using-the-PetDesk-Mobile-App"
+      },
+      {
+        "feature": "Owner-built independent document vault without a clinic",
+        "value": "Primary value is clinic-connected; full offline owner vault is not the product framing on reviewed pages",
+        "source": "https://petdesk.zendesk.com/hc/en-us/articles/360052077794-Benefits-to-Using-the-PetDesk-Mobile-App"
+      }
+    ],
+    "source_notes": "PetDesk is strongest when the user's veterinary clinic is a PetDesk customer."
+  },
+  {
+    "slug": "pawlicy",
+    "name": "Pawlicy Advisor",
+    "category": "insurance-marketplace",
+    "website": "https://www.pawlicy.com/",
+    "features": [
+      {
+        "feature": "Pet insurance quote comparison marketplace",
+        "value": "Yes (one form, multiple providers)",
+        "source": "https://www.pawlicy.com/insurance-company/"
+      },
+      {
+        "feature": "Coverage Score / lifetime cost scoring",
+        "value": "Yes (proprietary comparison scores)",
+        "source": "https://www.pawlicy.com/blog/why-pawlicy-advisor/"
+      },
+      {
+        "feature": "Breed-aware plan recommendations",
+        "value": "Yes",
+        "source": "https://www.pawlicy.com/vet-patients/"
+      },
+      {
+        "feature": "Daily vaccine certificate vault / medication reminders",
+        "value": "Not a core product claim on reviewed pages (insurance shopping focus)",
+        "source": "https://www.pawlicy.com/"
+      }
+    ],
+    "source_notes": "Different category than PetClues; useful for 'insurance vs records app' comparison pages, not feature-for-feature clones."
+  },
+  {
+    "slug": "pawza",
+    "name": "Pawza",
+    "category": "pet-records-app",
+    "website": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068",
+    "features": [
+      {
+        "feature": "Scan vet documents into structured records",
+        "value": "Yes (Apple Intelligence / on-device scanning claimed on listing)",
+        "source": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068"
+      },
+      {
+        "feature": "Import PDFs and documents from Files",
+        "value": "Yes",
+        "source": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068"
+      },
+      {
+        "feature": "Vaccination, medication, grooming, and vet-visit reminders",
+        "value": "Yes",
+        "source": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068"
+      },
+      {
+        "feature": "Vet-ready PDF health summary export",
+        "value": "Yes (Pro feature on listing)",
+        "source": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068"
+      },
+      {
+        "feature": "Works without creating an account",
+        "value": "Yes (on-device + user iCloud sync claimed)",
+        "source": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068"
+      },
+      {
+        "feature": "Multi-species pet profiles",
+        "value": "Yes (dogs, cats, rabbits, birds, reptiles, horses, and more)",
+        "source": "https://apps.apple.com/us/app/pawza-pet-health-records/id6773507068"
+      }
+    ]
+  },
+  {
+    "slug": "vet-record",
+    "name": "Vet Record",
+    "category": "pet-records-app",
+    "website": "https://vetrecord.app/",
+    "features": [
+      {
+        "feature": "Vaccination, medication, and weight tracking",
+        "value": "Yes",
+        "source": "https://vetrecord.app/"
+      },
+      {
+        "feature": "Reminders for appointments, meds, and vaccination dates",
+        "value": "Yes",
+        "source": "https://vetrecord.app/"
+      },
+      {
+        "feature": "Cloud access across devices",
+        "value": "Yes",
+        "source": "https://vetrecord.app/"
+      },
+      {
+        "feature": "Share / export records with family, sitters, or a vet",
+        "value": "Yes (secure link / share claimed)",
+        "source": "https://vetrecord.app/"
+      },
+      {
+        "feature": "Free to start",
+        "value": "Yes (site claims free to start, no credit card required)",
+        "source": "https://vetrecord.app/"
+      }
+    ]
+  },
+  {
+    "slug": "vitusvet",
+    "name": "VitusVet",
+    "category": "clinic-connected-app",
+    "website": "https://vitusvet.com/pet-owners/",
+    "features": [
+      {
+        "feature": "Access pet medical records from partner practices",
+        "value": "Yes (24/7 digital records when clinic uses VitusVet)",
+        "source": "https://vitusvet.com/pet-owners/"
+      },
+      {
+        "feature": "Request appointments through the app",
+        "value": "Yes when veterinary practice partners with VitusVet",
+        "source": "https://vitusvet.com/pet-owners/"
+      },
+      {
+        "feature": "Submit medication / product refill requests",
+        "value": "Yes when practice partners with VitusVet",
+        "source": "https://apps.apple.com/us/app/vitusvet-pet-medical-records/id955252538"
+      },
+      {
+        "feature": "Upload photos of vaccination or lab records",
+        "value": "Yes",
+        "source": "https://vitusvet.com/pet-owners/"
+      },
+      {
+        "feature": "Log microchip and pet insurance details",
+        "value": "Yes",
+        "source": "https://apps.apple.com/us/app/vitusvet-pet-medical-records/id955252538"
+      },
+      {
+        "feature": "Works as a full independent vault without a partner clinic",
+        "value": "Core value is clinic-connected access; appointment/refill requests require a partner practice",
+        "source": "https://vitusvet.com/features/client-mobile-app/"
+      }
+    ],
+    "source_notes": "Clinic-connected product; owner experience depends on whether the household's clinic is on VitusVet."
+  },
+  {
+    "slug": "paper-records",
+    "name": "Paper records / folder",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Works offline without an account",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Searchable multi-pet timeline",
+        "value": "No (manual filing only)",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Automated medication / vaccine reminders",
+        "value": "No (unless owner builds a separate calendar)",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Shareable link for sitter or ER",
+        "value": "No (photocopies / photos only)",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Loss / water / fire durability",
+        "value": "Poor without digital backups",
+        "source": "baseline (physical documents)"
+      }
+    ],
+    "source_notes": "Non-app control for comparison pages. Do not invent features beyond obvious physical-file limits."
+  },
+  {
+    "slug": "spreadsheet",
+    "name": "Spreadsheets",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Flexible custom columns for any pet field",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Built-in pet vaccine / medication reminder notifications",
+        "value": "No (requires separate calendar or scripts)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured document vault for PDFs and certificates",
+        "value": "No (files usually live outside the sheet)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "One-tap shareable emergency summary",
+        "value": "No (must filter tabs and copy cells manually)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Works offline depending on the spreadsheet app",
+        "value": "Often yes for local files; cloud sheets need connectivity",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ],
+    "source_notes": "Non-app baseline. Covers Excel/Google Sheets/Numbers-style grids without inventing vendor-specific claims."
+  },
+  {
+    "slug": "google-drive",
+    "name": "Google Drive",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Upload and store vaccine PDFs and photos",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Share a folder with family or a sitter",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet-specific reminder engine for boosters and meds",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured per-pet medical timeline",
+        "value": "No (folder/file organization only)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Emergency passport summary view",
+        "value": "No (must assemble manually)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Cloud file storage for pet documents",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Folder sharing with others",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet care reminders tied to vaccine due dates",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured multi-pet health profiles",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "onedrive",
+    "name": "OneDrive",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Cloud storage for pet paperwork",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Share links to files or folders",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Automatic medication or vaccine reminders",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet-native emergency summary",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "icloud-drive",
+    "name": "iCloud Drive",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Store pet PDFs and photos in Apple ecosystem",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Sync files across Apple devices",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet vaccination due-date reminders",
+        "value": "No (use Calendar/Reminders separately)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured pet health record fields",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "google-sheets",
+    "name": "Google Sheets",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Collaborative pet tracking table",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Custom formulas for costs or dates",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Native push reminders for pet meds/vaccines",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Attached certificate vault per pet",
+        "value": "No (attachments are awkward / external)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "excel",
+    "name": "Excel",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Custom pet health tracking workbook",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pivot/filter expense and date data",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Purpose-built pet reminder notifications",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Mobile-first emergency access UX",
+        "value": "Poor compared with a pet app",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Custom databases for pets and tasks",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Embed or attach files to pages",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet-specific vaccine reminder product",
+        "value": "No (DIY databases/automations only)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Clinic/ER-ready one-screen passport",
+        "value": "No out of the box",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "apple-notes",
+    "name": "Apple Notes",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Quick notes and photo attachments",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Folder organization",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured vaccine schedule with due dates",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Automated refill or booster reminders",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "evernote",
+    "name": "Evernote",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Notebooks for scanned pet paperwork",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Search inside notes",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet medication dosing reminders",
+        "value": "No as a pet-care product feature",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Multi-pet clinical timeline",
+        "value": "No (manual notebooks only)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "onenote",
+    "name": "OneNote",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Sectioned notebooks for pet docs",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Ink/photo capture of papers",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Vaccine due-date automation",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Shareable emergency pet passport",
+        "value": "No dedicated feature",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "email-inbox",
+    "name": "Email inbox",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Vet PDFs often arrive here automatically",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Search by clinic name or date",
+        "value": "Partial (depends on subject lines)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Per-pet structured health profile",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Reminders for next vaccine from the email alone",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Durable organization as inbox grows",
+        "value": "Poor without constant filing",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "pdf-folder",
+    "name": "Local PDF folder",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Keep scanned certificates on disk",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Works offline",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Cross-device sync without extra tools",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Due-date reminders",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Sitter-ready share link",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "physical-binder",
+    "name": "Physical binder",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Holds paper vaccine cards and printouts",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Survives phone battery failure",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Searchable across pets and years",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Travel/ER portability",
+        "value": "Poor unless carried everywhere",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Automated reminders",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      }
+    ]
+  },
+  {
+    "slug": "filing-cabinet",
+    "name": "Filing cabinet",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Long-term paper archive",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Fire/water risk without digitization",
+        "value": "High",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Instant access away from home",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Multi-caregiver sharing",
+        "value": "No without photocopying",
+        "source": "baseline (physical documents)"
+      }
+    ]
+  },
+  {
+    "slug": "pen-and-paper",
+    "name": "Pen and paper log",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Fast to start writing dates",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "No software learning curve",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Backup if notebook is lost",
+        "value": "No unless photocopied",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Reminders and searchable history",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      }
+    ]
+  },
+  {
+    "slug": "fridge-notes",
+    "name": "Fridge notes / sticky board",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Visible daily reminder in the kitchen",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Durable multi-year medical archive",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Travel or ER access",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Structured multi-pet records",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      }
+    ]
+  },
+  {
+    "slug": "google-calendar",
+    "name": "Google Calendar",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Event reminders for vet visits",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Shared household calendars",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Stores vaccine certificates and lab PDFs",
+        "value": "No (links/attachments only, not a vault)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Per-pet medical history timeline",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "iphone-reminders",
+    "name": "iPhone Reminders",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Recurring local reminders",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Lists shared via iCloud",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Document vault for vaccine PDFs",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured pet health fields",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "whatsapp",
+    "name": "WhatsApp threads",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Easy to text clinic photos to family",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Searchable long-term medical archive",
+        "value": "Poor (chat noise)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Structured vaccine due dates",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Reliable retrieval months later",
+        "value": "Poor",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "airtable",
+    "name": "Airtable",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Database-style pet tracking bases",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Attachments and multiple views",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Out-of-the-box pet reminder product",
+        "value": "No (DIY automations)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Emergency passport UX for non-builders",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "box",
+    "name": "Box",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Enterprise-style cloud file storage",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Permissioned folder sharing",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet care reminder workflows",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet-native record schemas",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "notes-app",
+    "name": "Generic notes app",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Capture freeform pet notes and photos",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Low setup cost",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Vaccine schedule automation",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Multi-pet emergency packet",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "camera-roll",
+    "name": "Phone camera roll",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Quick photos of vaccine cards",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Always with you on the phone",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Organized by pet and record type",
+        "value": "No (chronological camera dump)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Due-date reminders from the photo alone",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "text-messages",
+    "name": "SMS / text threads with the clinic",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Appointment confirmations often live here",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Complete medical history archive",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Exportable structured records",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Household-wide searchable vault",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "shared-family-calendar",
+    "name": "Shared family calendar",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Coordinates vet visits across caregivers",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Stores labs, invoices, and certificates",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Medication adherence history",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "paper-vaccine-card",
+    "name": "Paper vaccine card",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Clinic-stamped proof of core vaccines",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Fits in a wallet or glove box",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Full medical history beyond vaccines",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Backup if card is lost or water-damaged",
+        "value": "No unless digitized",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Reminders for next booster",
+        "value": "No (date written only)",
+        "source": "baseline (physical documents)"
+      }
+    ]
+  },
+  {
+    "slug": "printer-file-box",
+    "name": "Desk file box of printouts",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Holds printed labs and invoices",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Accessible without internet",
+        "value": "Yes",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Remote access for partner or sitter",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      },
+      {
+        "feature": "Search and reminders",
+        "value": "No",
+        "source": "baseline (physical documents)"
+      }
+    ]
+  },
+  {
+    "slug": "coda",
+    "name": "Coda docs",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Custom docs and tables for household systems",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Packs/automations if you build them",
+        "value": "Yes (DIY)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Pet-native medical vault product",
+        "value": "No",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "ER-ready default templates for vaccines/meds",
+        "value": "Not a dedicated pet product",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "trello",
+    "name": "Trello boards",
+    "category": "non-app-baseline",
+    "features": [
+      {
+        "feature": "Visual cards for upcoming pet tasks",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Checklists for visit prep",
+        "value": "Yes",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Medical document vault",
+        "value": "No (attachments only, not structured records)",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      },
+      {
+        "feature": "Vaccine due-date clinical tracking",
+        "value": "No dedicated feature",
+        "source": "baseline (generic tool capability / physical limits \u2014 not a product claim)"
+      }
+    ]
+  },
+  {
+    "slug": "puppr",
+    "name": "Puppr",
+    "category": "pet-records-app",
+    "website": "https://puppr.app/",
+    "features": [],
+    "source_notes": "INCOMPLETE \u2014 no verified feature rows yet. Skip page generation."
+  },
+  {
+    "slug": "airvet",
+    "name": "Airvet",
+    "category": "clinic-connected-app",
+    "website": "https://www.airvet.com/",
+    "features": [
+      {
+        "feature": "Telehealth visits",
+        "value": "Unverified in this content pass",
+        "source": ""
+      }
+    ],
+    "source_notes": "INCOMPLETE \u2014 empty/blank source on feature row. Skip page generation."
+  }
+]

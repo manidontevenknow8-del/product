@@ -1,0 +1,47 @@
+{
+  "slug": "napoleon-vaccine-schedule",
+  "path": "/vaccinations/napoleon-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "napoleon",
+  "subjectName": "Napoleon (Minuet)",
+  "species": "cat",
+  "primaryKeyword": "Napoleon (Minuet) vaccine schedule",
+  "metaDescription": "Napoleon (Minuet) vaccine schedule with core ages in weeks. Set reminders so Napoleon (Minuet) boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/napoleon/adult-health-guide",
+  "breedHealthLabel": "Napoleon (Minuet) adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Napoleon (Minuet) core series (FVRCP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a small kitten is covered as maternal antibodies fade.",
+        "At 5-9 lb (2.3-4 kg), Napoleon (Minuet) visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring short-leg orthopedic stress and brachycephalic concerns from persian influence into the Napoleon (Minuet) exam-room conversation while you are already there for shots.",
+        "Rabies for a Napoleon (Minuet) still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Napoleon (Minuet) misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Napoleon (Minuet) series from memory.",
+        "The danger for a delayed Napoleon (Minuet) is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Napoleon (Minuet) away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Napoleon (Minuet) due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Napoleon (Minuet) core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Napoleon (Minuet) misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Napoleon (Minuet) health context beyond vaccines?",
+      "answer": "See the Napoleon (Minuet) adult health guide for breed predispositions such as short-leg orthopedic stress, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

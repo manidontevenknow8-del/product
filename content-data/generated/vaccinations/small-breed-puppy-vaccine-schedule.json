@@ -1,0 +1,66 @@
+{
+  "slug": "small-breed-puppy-vaccine-schedule",
+  "path": "/vaccinations/small-breed-puppy-vaccine-schedule",
+  "kind": "general",
+  "subjectName": "Small-breed puppy",
+  "species": "dog",
+  "primaryKeyword": "small breed puppy vaccine schedule",
+  "metaDescription": "small breed puppy vaccine schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "size_category": "small",
+  "common_health_issues": [
+    "Hypoglycemia postponing visits",
+    "Tracheal sensitivity handling",
+    "Same antigens, careful visit logistics"
+  ],
+  "schedule": [
+    {
+      "vaccine": "DA2PP / DHPP",
+      "age_weeks": 8
+    },
+    {
+      "vaccine": "DA2PP / DHPP booster",
+      "age_weeks": 12
+    },
+    {
+      "vaccine": "DA2PP / DHPP final ≥16 weeks",
+      "age_weeks": 16
+    },
+    {
+      "vaccine": "Rabies",
+      "age_weeks": 16
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This small-breed puppy plan sequences doses against hypoglycemia postponing visits, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the small-breed puppy table (8 weeks; 12 weeks; 16 weeks; 16 weeks) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished small-breed puppy puppy series is still incomplete.",
+        "If your household also wrestles with tracheal sensitivity handling or same antigens, careful visit logistics, put those constraints on the same calendar thread as the DA2PP / DHPP booster so one reminder system owns the small-breed puppy week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed small-breed puppy dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the small-breed puppy series is current again, reduce the exposure pattern that matches hypoglycemia postponing visits, and do not wait for an annual wellness slot to ask about a small-breed puppy make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next DA2PP / DHPP booster due date so the same small-breed puppy miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this small breed puppy vaccine schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this small-breed puppy schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to hypoglycemia postponing visits, and reset reminders as soon as the next small-breed puppy due date is known."
+    },
+    {
+      "question": "How do reminders help with DA2PP / DHPP booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that small-breed puppy booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

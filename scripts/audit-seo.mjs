@@ -601,6 +601,22 @@ function registerBreedConditionPages() {
   }
 }
 
+function registerVaultGuidePages() {
+  const file = 'content-data/generated/vault/pages.json';
+  if (!existsSync(join(root, file))) return;
+  const pages = JSON.parse(read(file));
+  for (const page of pages) {
+    if (!page?.slug || !page?.primary_keyword) continue;
+    register(`${SITE}/guides/${page.slug}`, {
+      title: `${page.h1} | PetClues`,
+      description: page.meta_description,
+      canonical: `${SITE}/guides/${page.slug}`,
+      schemaFamily: 'vault-guide-page',
+      source: `vaultGuide:${page.slug}`,
+    });
+  }
+}
+
 function registerRelocationPages() {
   const file = 'src/data/relocationRoutes.ts';
   if (!existsSync(join(root, file))) return;
@@ -709,6 +725,7 @@ registerLearnPages();
 registerFaqPages();
 registerProgrammaticPages();
 registerBreedConditionPages();
+registerVaultGuidePages();
 registerRelocationPages();
 registerB2BSolutionPages();
 registerLifecyclePages();

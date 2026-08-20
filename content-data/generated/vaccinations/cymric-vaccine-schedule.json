@@ -1,0 +1,47 @@
+{
+  "slug": "cymric-vaccine-schedule",
+  "path": "/vaccinations/cymric-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "cymric",
+  "subjectName": "Cymric",
+  "species": "cat",
+  "primaryKeyword": "Cymric vaccine schedule",
+  "metaDescription": "Cymric vaccine schedule with core ages in weeks. Set reminders so Cymric boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/cymric/adult-health-guide",
+  "breedHealthLabel": "Cymric adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Cymrics: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Cymric series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Cymric, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final FVRCP booster.",
+        "Flag dental disease at Cymric vaccine checkups so the kitten’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Cymric series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Cymric shots when the kitten seems “a little off,” travel intervenes, or manx syndrome risk worries dominate the week — ask the clinic whether a same-week Cymric make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Cymric antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Cymric dose for extra socialization; finish immunity first for this medium cat.",
+        "Reset the Cymric reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Cymric core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Cymric misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Cymric health context beyond vaccines?",
+      "answer": "See the Cymric adult health guide for breed predispositions such as manx syndrome risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

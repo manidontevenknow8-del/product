@@ -1,0 +1,47 @@
+{
+  "slug": "great-pyrenees-vaccine-schedule",
+  "path": "/vaccinations/great-pyrenees-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "great-pyrenees",
+  "subjectName": "Great Pyrenees",
+  "species": "dog",
+  "primaryKeyword": "Great Pyrenees vaccine schedule",
+  "metaDescription": "Great Pyrenees vaccine schedule with core ages in weeks. Set reminders so Great Pyrenees boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/great-pyrenees/adult-health-guide",
+  "breedHealthLabel": "Great Pyrenees adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Great Pyreneess: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Great Pyrenees series closes at about 16 weeks.",
+        "Size class giant does not invent new viruses for the Great Pyrenees, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag entropin at Great Pyrenees vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Great Pyrenees series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Great Pyrenees misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Great Pyrenees series from memory.",
+        "The danger for a delayed Great Pyrenees is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Great Pyrenees away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Great Pyrenees due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Great Pyrenees core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Great Pyrenees misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Great Pyrenees health context beyond vaccines?",
+      "answer": "See the Great Pyrenees adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

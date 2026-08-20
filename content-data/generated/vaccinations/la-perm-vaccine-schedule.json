@@ -1,0 +1,47 @@
+{
+  "slug": "la-perm-vaccine-schedule",
+  "path": "/vaccinations/la-perm-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "la-perm",
+  "subjectName": "LaPerm",
+  "species": "cat",
+  "primaryKeyword": "LaPerm vaccine schedule",
+  "metaDescription": "LaPerm vaccine schedule with core ages in weeks. Set reminders so LaPerm boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/la-perm/adult-health-guide",
+  "breedHealthLabel": "LaPerm adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan LaPerm social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader LaPerm exposure.",
+        "Weight range 5-10 lb (2.3-4.5 kg) and grooming needs (Curly coat care.) belong in the same LaPerm household ops list as vaccine dates when busy weeks collide.",
+        "If your LaPerm is also monitored for patellar luxation, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed LaPerm appointments.",
+        "After the LaPerm puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed LaPerm boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every LaPerm row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed LaPerm item, legal and boarding consequences stack on top of medical ones — restore compliance before the next LaPerm kennel reservation.",
+        "PetClues should hold both the new LaPerm due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the LaPerm core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my LaPerm misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read LaPerm health context beyond vaccines?",
+      "answer": "See the LaPerm adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

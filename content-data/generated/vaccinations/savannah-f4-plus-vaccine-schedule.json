@@ -1,0 +1,47 @@
+{
+  "slug": "savannah-f4-plus-vaccine-schedule",
+  "path": "/vaccinations/savannah-f4-plus-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "savannah-f4-plus",
+  "subjectName": "Savannah (F4+ pet type)",
+  "species": "cat",
+  "primaryKeyword": "Savannah (F4+ pet type) vaccine schedule",
+  "metaDescription": "Savannah (F4+ pet type) vaccine schedule with core ages in weeks. Set reminders so Savannah (F4+ pet type) boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/savannah-f4-plus/adult-health-guide",
+  "breedHealthLabel": "Savannah (F4+ pet type) adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Savannah (F4+ pet type) core series (FVRCP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a large kitten is covered as maternal antibodies fade.",
+        "At 10-20 lb (4.5-9 kg), Savannah (F4+ pet type) visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring dental disease and hypertrophic cardiomyopathy (hcm) talks into the Savannah (F4+ pet type) exam-room conversation while you are already there for shots.",
+        "Rabies for a Savannah (F4+ pet type) still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Savannah (F4+ pet type) shots when the kitten seems “a little off,” travel intervenes, or dental disease worries dominate the week — ask the clinic whether a same-week Savannah (F4+ pet type) make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Savannah (F4+ pet type) antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Savannah (F4+ pet type) dose for extra socialization; finish immunity first for this large cat.",
+        "Reset the Savannah (F4+ pet type) reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Savannah (F4+ pet type) core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Savannah (F4+ pet type) misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Savannah (F4+ pet type) health context beyond vaccines?",
+      "answer": "See the Savannah (F4+ pet type) adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

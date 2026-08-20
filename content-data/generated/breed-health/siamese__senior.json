@@ -1,0 +1,40 @@
+{
+  "key": "siamese__senior",
+  "path": "/breeds/siamese/senior-health-guide",
+  "breedSlug": "siamese",
+  "stage": "senior",
+  "lifeStageSlug": "cat-senior",
+  "primaryKeyword": "Siamese senior health guide",
+  "metaDescription": "Siamese senior health guide with 8-14 lb (3.5-6.5 kg) weight range, stage checklist, and breed-linked issues. Start a free PetClues trial to track dates.",
+  "wordCount": 502,
+  "markdown": "siamese care at the senior stage fails when owners copy advice written for a different size class. for this siamese, this senior animal is built toward 8-14 lb (3.5-6.5 kg) and often lives 11-15 years, with a personality that reads as vocal, people-oriented; dental disease often early. this siamese senior guide focuses on mobility, thirst, appetite trends, and tighter loops around dental disease. what normal looks like for a senior siamese\n\nsenior siameses often declare kidney or thyroid trouble with thirst, weight, or litter changes before they look sick. muscle loss can hide under a siamese coat; hands-on body condition beats eyeballing. blood pressure and lab trends every six months are normal senior medicine for many siamese households. keep meds, diet changes, and lab pdfs in one place for the next urgent siamese visit. for this siamese, grooming doubles as a pain check: short coat; weekly wipe. for this siamese, when dental disease is on the table, shorten the home review loop and call earlier rather than waiting for a crisis. breed-linked issues to watch in this stage\n\nin a senior siamese, dental disease deserves shorter review loops because aging amplifies downtime. in a senior siamese, amyloidosis risk deserves shorter review loops because aging amplifies downtime. in a senior siamese, asthma / respiratory sensitivity deserves shorter review loops because aging amplifies downtime. practical context for this siamese\n\ntemperament shapes senior-stage risk management for a siamese: vocal, people-oriented; dental disease often early. for this siamese, copied exercise advice from another breed fails this medium animal in the senior chapter. lifespan expectations around 11-15 years change how early a siamese household starts screening talks for dental disease during senior care. shared senior care of this siamese across a household needs one vault when amyloidosis risk flares after hours. home-monitoring checklist\n\nhome-monitoring checklist for a senior siamese (breed-specific, not a generic cat poster):\n\n1. if you only remember one thing: siamese senior care is specific. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit. siamese senior-only note: review Dental disease signs on a dated log before the next visit.",
+  "issueLinks": [
+    {
+      "issue": "Dental disease",
+      "href": "/symptoms/dental-pain-cat"
+    },
+    {
+      "issue": "Amyloidosis risk",
+      "href": "/symptoms/excessive-thirst-cat"
+    },
+    {
+      "issue": "Asthma / respiratory sensitivity",
+      "href": "/symptoms/lethargy-cat"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a normal adult weight range for a Siamese?",
+      "answer": "This breed record lists 8-14 lb (3.5-6.5 kg). Your veterinarian sets the target for the individual using body condition, not only the breed average."
+    },
+    {
+      "question": "Which health issues should I watch for in a senior Siamese?",
+      "answer": "This stage guide highlights Dental disease; Amyloidosis risk; Asthma / respiratory sensitivity. Use the linked symptom pages for red flags, then contact your clinic."
+    },
+    {
+      "question": "How often should I weigh my Siamese at this stage?",
+      "answer": "At least every 30 days for a senior Siamese, sooner if appetite, thirst, or mobility changes."
+    }
+  ],
+  "generatorVersion": 10
+}

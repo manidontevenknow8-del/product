@@ -1,0 +1,64 @@
+{
+  "slug": "dog-lepto-vaccine-timing",
+  "path": "/vaccinations/dog-lepto-vaccine-timing",
+  "kind": "general",
+  "subjectName": "Dog leptospirosis",
+  "species": "dog",
+  "primaryKeyword": "dog leptospirosis vaccine timing",
+  "metaDescription": "dog leptospirosis vaccine timing: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "Leptospirosis booster",
+  "common_health_issues": [
+    "Water/wildlife exposure",
+    "Urban flooding risk",
+    "Stopping after the first dose of the pair"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Lepto dose 1 (risk-based)",
+      "age_weeks": 12,
+      "age_label": "Often ≥12 weeks"
+    },
+    {
+      "vaccine": "Lepto dose 2",
+      "age_weeks": 15,
+      "age_label": "~2–4 weeks later"
+    },
+    {
+      "vaccine": "Annual lepto booster if risk continues",
+      "age_weeks": 52,
+      "age_label": "Yearly"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This dog leptospirosis plan sequences doses against water/wildlife exposure, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the dog leptospirosis table (Often ≥12 weeks; ~2–4 weeks later; Yearly) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished dog leptospirosis puppy series is still incomplete.",
+        "If your household also wrestles with urban flooding risk or stopping after the first dose of the pair, put those constraints on the same calendar thread as the Leptospirosis booster so one reminder system owns the dog leptospirosis week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed dog leptospirosis dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the dog leptospirosis series is current again, reduce the exposure pattern that matches water/wildlife exposure, and do not wait for an annual wellness slot to ask about a dog leptospirosis make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next Leptospirosis booster due date so the same dog leptospirosis miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this dog leptospirosis vaccine timing a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this dog leptospirosis schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to water/wildlife exposure, and reset reminders as soon as the next dog leptospirosis due date is known."
+    },
+    {
+      "question": "How do reminders help with Leptospirosis booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that dog leptospirosis booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

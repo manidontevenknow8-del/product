@@ -1,0 +1,47 @@
+{
+  "slug": "bull-terrier-vaccine-schedule",
+  "path": "/vaccinations/bull-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "bull-terrier",
+  "subjectName": "Bull Terrier",
+  "species": "dog",
+  "primaryKeyword": "Bull Terrier vaccine schedule",
+  "metaDescription": "Bull Terrier vaccine schedule with core ages in weeks. Set reminders so Bull Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/bull-terrier/adult-health-guide",
+  "breedHealthLabel": "Bull Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Bull Terrier social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Bull Terrier exposure.",
+        "Weight range 45-70 lb (20-32 kg) and grooming needs (Short coat; sunburn on white dogs.) belong in the same Bull Terrier household ops list as vaccine dates when busy weeks collide.",
+        "If your Bull Terrier is also monitored for kidney disease risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Bull Terrier appointments.",
+        "After the Bull Terrier puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Bull Terrier misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Bull Terrier series from memory.",
+        "The danger for a delayed Bull Terrier is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Bull Terrier away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Bull Terrier due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Bull Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Bull Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Bull Terrier health context beyond vaccines?",
+      "answer": "See the Bull Terrier adult health guide for breed predispositions such as deafness risk (especially white), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

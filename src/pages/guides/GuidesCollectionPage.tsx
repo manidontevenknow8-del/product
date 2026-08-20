@@ -5,6 +5,10 @@ import { Button } from '@/components/ui';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { getProgrammaticCollection } from '@/data/programmatic/collections';
 import { isProgrammaticCollectionId, listProgrammaticPages } from '@/data/programmatic';
+import { getVaultPageBySlug } from '@/content/vaultPages';
+import { VaultGuidePage } from '@/pages/guides/VaultGuidePage';
+import { getLifeLogisticsPageBySlug } from '@/content/loadLifeLogistics';
+import { LifeLogisticsGuidePage } from '@/pages/guides/LifeLogisticsGuidePage';
 import {
   ProgrammaticCollectionSEO,
   ProgrammaticNotFoundSEO,
@@ -15,6 +19,15 @@ import styles from './GuidesPages.module.css';
 
 export function GuidesCollectionPage() {
   const { collection } = useParams<{ collection: string }>();
+  const vaultPage = collection ? getVaultPageBySlug(collection) : undefined;
+  if (vaultPage) {
+    return <VaultGuidePage page={vaultPage} />;
+  }
+  const logisticsPage = collection ? getLifeLogisticsPageBySlug(collection) : undefined;
+  if (logisticsPage) {
+    return <LifeLogisticsGuidePage page={logisticsPage} />;
+  }
+
   const validCollection = collection && isProgrammaticCollectionId(collection) ? collection : null;
   const collectionMeta = validCollection ? getProgrammaticCollection(validCollection) : null;
   const pages = validCollection ? listProgrammaticPages(validCollection) : [];

@@ -1,0 +1,1209 @@
+{
+  "wave": 3,
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "count": 239,
+  "pillars": {
+    "vault": 136,
+    "life-logistics": 103
+  },
+  "poolSources": [
+    "vault+life-logistics+tools"
+  ],
+  "urls": [
+    {
+      "path": "/guides/breeder-vaccine-record-vs-official-certificate",
+      "url": "https://petclues.com/guides/breeder-vaccine-record-vs-official-certificate",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/campground-pet-vaccine-requirements-proof",
+      "url": "https://petclues.com/guides/campground-pet-vaccine-requirements-proof",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/cancer-treatment-records-for-pet-oncology-visits",
+      "url": "https://petclues.com/guides/cancer-treatment-records-for-pet-oncology-visits",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/cant-find-pet-rabies-tag-paperwork",
+      "url": "https://petclues.com/guides/cant-find-pet-rabies-tag-paperwork",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/cat-boarding-vaccine-records-required",
+      "url": "https://petclues.com/guides/cat-boarding-vaccine-records-required",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/ckd-cat-lab-trends-storage",
+      "url": "https://petclues.com/guides/ckd-cat-lab-trends-storage",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/cloud-storage-for-pet-vet-records",
+      "url": "https://petclues.com/guides/cloud-storage-for-pet-vet-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/co-parenting-pet-vaccine-records-access",
+      "url": "https://petclues.com/guides/co-parenting-pet-vaccine-records-access",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/denied-claim-missing-records-how-to-resubmit",
+      "url": "https://petclues.com/guides/denied-claim-missing-records-how-to-resubmit",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/dental-cleaning-records-for-dogs-store",
+      "url": "https://petclues.com/guides/dental-cleaning-records-for-dogs-store",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/dhpp-vaccine-record-storage-tips",
+      "url": "https://petclues.com/guides/dhpp-vaccine-record-storage-tips",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/diabetic-cat-records-glucose-and-insulin-log-store",
+      "url": "https://petclues.com/guides/diabetic-cat-records-glucose-and-insulin-log-store",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/digital-pet-medical-records-folder-setup",
+      "url": "https://petclues.com/guides/digital-pet-medical-records-folder-setup",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/digitize-paper-pet-medical-records",
+      "url": "https://petclues.com/guides/digitize-paper-pet-medical-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/disaster-evacuation-pet-medical-records-kit",
+      "url": "https://petclues.com/guides/disaster-evacuation-pet-medical-records-kit",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/dog-boarding-paperwork-last-minute",
+      "url": "https://petclues.com/guides/dog-boarding-paperwork-last-minute",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/dog-daycare-vaccine-expiration-tracking",
+      "url": "https://petclues.com/guides/dog-daycare-vaccine-expiration-tracking",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/dog-walker-emergency-medical-info-card",
+      "url": "https://petclues.com/guides/dog-walker-emergency-medical-info-card",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/doggie-daycare-enrollment-records-checklist",
+      "url": "https://petclues.com/guides/doggie-daycare-enrollment-records-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/email-vaccine-pdf-vs-shareable-vault-link",
+      "url": "https://petclues.com/guides/email-vaccine-pdf-vs-shareable-vault-link",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/emergency-contact-sheet-for-pets-while-traveling",
+      "url": "https://petclues.com/guides/emergency-contact-sheet-for-pets-while-traveling",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/emergency-vet-visit-what-records-to-bring",
+      "url": "https://petclues.com/guides/emergency-vet-visit-what-records-to-bring",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/end-of-life-pet-medical-records-what-to-keep",
+      "url": "https://petclues.com/guides/end-of-life-pet-medical-records-what-to-keep",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/er-asks-for-vaccine-history-no-paperwork",
+      "url": "https://petclues.com/guides/er-asks-for-vaccine-history-no-paperwork",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/family-members-who-can-open-pet-health-documents",
+      "url": "https://petclues.com/guides/family-members-who-can-open-pet-health-documents",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/felv-fiv-test-results-storage",
+      "url": "https://petclues.com/guides/felv-fiv-test-results-storage",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/first-vet-visit-kitten-paperwork-needed",
+      "url": "https://petclues.com/guides/first-vet-visit-kitten-paperwork-needed",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/first-vet-visit-puppy-records-checklist",
+      "url": "https://petclues.com/guides/first-vet-visit-puppy-records-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/foster-to-adopt-medical-records-handoff",
+      "url": "https://petclues.com/guides/foster-to-adopt-medical-records-handoff",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/groomer-asking-for-rabies-proof-email-pdf",
+      "url": "https://petclues.com/guides/groomer-asking-for-rabies-proof-email-pdf",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/heart-murmur-dog-cardiology-report-filing",
+      "url": "https://petclues.com/guides/heart-murmur-dog-cardiology-report-filing",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/heartworm-test-results-where-to-save",
+      "url": "https://petclues.com/guides/heartworm-test-results-where-to-save",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/hoa-pet-registration-documents-needed",
+      "url": "https://petclues.com/guides/hoa-pet-registration-documents-needed",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/hospice-pet-care-documents-and-meds-list",
+      "url": "https://petclues.com/guides/hospice-pet-care-documents-and-meds-list",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/hospitalize-pet-records-family-should-have",
+      "url": "https://petclues.com/guides/hospitalize-pet-records-family-should-have",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/house-sitter-vet-records-and-emergency-contacts",
+      "url": "https://petclues.com/guides/house-sitter-vet-records-and-emergency-contacts",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-long-do-vets-keep-pet-medical-records",
+      "url": "https://petclues.com/guides/how-long-do-vets-keep-pet-medical-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-get-copy-of-pet-medical-records",
+      "url": "https://petclues.com/guides/how-to-get-copy-of-pet-medical-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-keep-cat-medical-records-organized",
+      "url": "https://petclues.com/guides/how-to-keep-cat-medical-records-organized",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-name-pet-medical-pdf-files",
+      "url": "https://petclues.com/guides/how-to-name-pet-medical-pdf-files",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-organize-pet-medical-records-online",
+      "url": "https://petclues.com/guides/how-to-organize-pet-medical-records-online",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-organize-pet-vet-records",
+      "url": "https://petclues.com/guides/how-to-organize-pet-vet-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-send-rabies-certificate-from-phone-quickly",
+      "url": "https://petclues.com/guides/how-to-send-rabies-certificate-from-phone-quickly",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-share-pet-medical-pdfs-securely",
+      "url": "https://petclues.com/guides/how-to-share-pet-medical-pdfs-securely",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-share-pet-records-between-two-clinics",
+      "url": "https://petclues.com/guides/how-to-share-pet-records-between-two-clinics",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-store-cat-rabies-vaccination-proof",
+      "url": "https://petclues.com/guides/how-to-store-cat-rabies-vaccination-proof",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/how-to-transfer-pet-records-to-new-vet",
+      "url": "https://petclues.com/guides/how-to-transfer-pet-records-to-new-vet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/international-pet-travel-document-packet",
+      "url": "https://petclues.com/guides/international-pet-travel-document-packet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/interstate-travel-dog-health-papers-organize",
+      "url": "https://petclues.com/guides/interstate-travel-dog-health-papers-organize",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/itemized-invoice-vs-vaccine-certificate-filing",
+      "url": "https://petclues.com/guides/itemized-invoice-vs-vaccine-certificate-filing",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/keep-fvrcp-vaccine-certificate-organized",
+      "url": "https://petclues.com/guides/keep-fvrcp-vaccine-certificate-organized",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/keep-personal-copy-of-vet-records-before-transfer",
+      "url": "https://petclues.com/guides/keep-personal-copy-of-vet-records-before-transfer",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/keep-vet-invoices-for-insurance-reimbursement",
+      "url": "https://petclues.com/guides/keep-vet-invoices-for-insurance-reimbursement",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/kennel-wont-accept-expired-vaccine-card",
+      "url": "https://petclues.com/guides/kennel-wont-accept-expired-vaccine-card",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/kitten-health-certificate-from-shelter-store-where",
+      "url": "https://petclues.com/guides/kitten-health-certificate-from-shelter-store-where",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/landlord-requesting-pet-vaccination-records",
+      "url": "https://petclues.com/guides/landlord-requesting-pet-vaccination-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/leave-medication-list-and-vet-records-for-sitter",
+      "url": "https://petclues.com/guides/leave-medication-list-and-vet-records-for-sitter",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/leptospirosis-vaccine-certificate-for-boarding",
+      "url": "https://petclues.com/guides/leptospirosis-vaccine-certificate-for-boarding",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/lost-cat-vaccine-records-request-from-vet",
+      "url": "https://petclues.com/guides/lost-cat-vaccine-records-request-from-vet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/lost-dog-rabies-certificate-how-to-replace",
+      "url": "https://petclues.com/guides/lost-dog-rabies-certificate-how-to-replace",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/lost-titer-test-results-dog-what-to-do",
+      "url": "https://petclues.com/guides/lost-titer-test-results-dog-what-to-do",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/lost-vaccination-records-what-to-do",
+      "url": "https://petclues.com/guides/lost-vaccination-records-what-to-do",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/medical-history-packet-for-new-pet-insurance",
+      "url": "https://petclues.com/guides/medical-history-packet-for-new-pet-insurance",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/microchip-paperwork-where-to-save",
+      "url": "https://petclues.com/guides/microchip-paperwork-where-to-save",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/military-pcs-pet-records-transfer-checklist",
+      "url": "https://petclues.com/guides/military-pcs-pet-records-transfer-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/missing-puppy-vaccine-card-adoption",
+      "url": "https://petclues.com/guides/missing-puppy-vaccine-card-adoption",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/move-to-new-city-pet-vet-records-checklist",
+      "url": "https://petclues.com/guides/move-to-new-city-pet-vet-records-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/moving-with-pets-medical-records-checklist",
+      "url": "https://petclues.com/guides/moving-with-pets-medical-records-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/multi-pet-household-medical-records-system",
+      "url": "https://petclues.com/guides/multi-pet-household-medical-records-system",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/multi-specialist-pet-care-document-timeline",
+      "url": "https://petclues.com/guides/multi-specialist-pet-care-document-timeline",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/multiple-boarding-facilities-same-vaccine-pdfs",
+      "url": "https://petclues.com/guides/multiple-boarding-facilities-same-vaccine-pdfs",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/new-puppy-folder-what-documents-to-start",
+      "url": "https://petclues.com/guides/new-puppy-folder-what-documents-to-start",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/new-rescue-dog-medical-records-to-collect",
+      "url": "https://petclues.com/guides/new-rescue-dog-medical-records-to-collect",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/new-vet-asking-for-old-medical-records",
+      "url": "https://petclues.com/guides/new-vet-asking-for-old-medical-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/one-place-for-all-pet-vet-pdfs-and-photos",
+      "url": "https://petclues.com/guides/one-place-for-all-pet-vet-pdfs-and-photos",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/organize-vet-receipts-for-tax-or-fsa",
+      "url": "https://petclues.com/guides/organize-vet-receipts-for-tax-or-fsa",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/out-of-state-vet-records-transfer-dog",
+      "url": "https://petclues.com/guides/out-of-state-vet-records-transfer-dog",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/overnight-boarding-what-medical-docs-to-pack",
+      "url": "https://petclues.com/guides/overnight-boarding-what-medical-docs-to-pack",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pathology-biopsy-report-storage-pet",
+      "url": "https://petclues.com/guides/pathology-biopsy-report-storage-pet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-document-vault-vs-paper-folder",
+      "url": "https://petclues.com/guides/pet-document-vault-vs-paper-folder",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-emergency-contacts-and-meds-list-printable",
+      "url": "https://petclues.com/guides/pet-emergency-contacts-and-meds-list-printable",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-emergency-go-bag-medical-documents",
+      "url": "https://petclues.com/guides/pet-emergency-go-bag-medical-documents",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-health-records-checklist-what-to-keep",
+      "url": "https://petclues.com/guides/pet-health-records-checklist-what-to-keep",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-hotel-check-in-vaccine-certificate-tips",
+      "url": "https://petclues.com/guides/pet-hotel-check-in-vaccine-certificate-tips",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-insurance-claim-documents-to-upload",
+      "url": "https://petclues.com/guides/pet-insurance-claim-documents-to-upload",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-medical-records-destroyed-in-flood-fire",
+      "url": "https://petclues.com/guides/pet-medical-records-destroyed-in-flood-fire",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-medical-records-transfer-authorization-form",
+      "url": "https://petclues.com/guides/pet-medical-records-transfer-authorization-form",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-purchase-contract-and-health-guarantee-storage",
+      "url": "https://petclues.com/guides/pet-purchase-contract-and-health-guarantee-storage",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-records-binder-alternatives-digital",
+      "url": "https://petclues.com/guides/pet-records-binder-alternatives-digital",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-records-for-boarding-kennel",
+      "url": "https://petclues.com/guides/pet-records-for-boarding-kennel",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-sitter-medical-records-to-leave",
+      "url": "https://petclues.com/guides/pet-sitter-medical-records-to-leave",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pet-travel-health-certificate-where-to-store",
+      "url": "https://petclues.com/guides/pet-travel-health-certificate-where-to-store",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/physical-therapy-notes-for-dog-store-digitally",
+      "url": "https://petclues.com/guides/physical-therapy-notes-for-dog-store-digitally",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/poison-control-call-keep-product-and-pet-records",
+      "url": "https://petclues.com/guides/poison-control-call-keep-product-and-pet-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/pre-existing-condition-records-for-pet-insurance",
+      "url": "https://petclues.com/guides/pre-existing-condition-records-for-pet-insurance",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/prescription-label-photo-for-refill-history",
+      "url": "https://petclues.com/guides/prescription-label-photo-for-refill-history",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/recreate-pet-vaccine-history-after-move",
+      "url": "https://petclues.com/guides/recreate-pet-vaccine-history-after-move",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/rehomed-pet-no-medical-history-how-to-start",
+      "url": "https://petclues.com/guides/rehomed-pet-no-medical-history-how-to-start",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/replace-lost-bordetella-certificate-dog",
+      "url": "https://petclues.com/guides/replace-lost-bordetella-certificate-dog",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/request-pet-records-from-previous-vet",
+      "url": "https://petclues.com/guides/request-pet-records-from-previous-vet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/road-trip-dog-vet-records-digital",
+      "url": "https://petclues.com/guides/road-trip-dog-vet-records-digital",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/roommate-needs-pet-emergency-medical-info",
+      "url": "https://petclues.com/guides/roommate-needs-pet-emergency-medical-info",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/rover-sitter-vaccine-proof-requirements",
+      "url": "https://petclues.com/guides/rover-sitter-vaccine-proof-requirements",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/scan-pet-vaccine-card-to-phone",
+      "url": "https://petclues.com/guides/scan-pet-vaccine-card-to-phone",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/second-opinion-vet-share-medical-history",
+      "url": "https://petclues.com/guides/second-opinion-vet-share-medical-history",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/seizure-dog-medication-and-er-history-packet",
+      "url": "https://petclues.com/guides/seizure-dog-medication-and-er-history-packet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/send-vaccine-records-to-boarding-from-phone",
+      "url": "https://petclues.com/guides/send-vaccine-records-to-boarding-from-phone",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/senior-dog-medication-list-and-lab-history-file",
+      "url": "https://petclues.com/guides/senior-dog-medication-list-and-lab-history-file",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/share-allergy-and-med-list-with-er-from-phone",
+      "url": "https://petclues.com/guides/share-allergy-and-med-list-with-er-from-phone",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/share-pet-medical-records-with-spouse",
+      "url": "https://petclues.com/guides/share-pet-medical-records-with-spouse",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/share-pet-vaccine-records-with-pet-sitter",
+      "url": "https://petclues.com/guides/share-pet-vaccine-records-with-pet-sitter",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/shelter-shot-records-incomplete-what-to-ask",
+      "url": "https://petclues.com/guides/shelter-shot-records-incomplete-what-to-ask",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/spay-neuter-discharge-papers-keep-forever",
+      "url": "https://petclues.com/guides/spay-neuter-discharge-papers-keep-forever",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/specialist-letter-file-with-pet-records",
+      "url": "https://petclues.com/guides/specialist-letter-file-with-pet-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/specialist-referral-records-to-bring",
+      "url": "https://petclues.com/guides/specialist-referral-records-to-bring",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/specialist-visit-summary-link-to-primary-vet-copy",
+      "url": "https://petclues.com/guides/specialist-visit-summary-link-to-primary-vet-copy",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/stop-digging-through-email-for-rabies-certificate",
+      "url": "https://petclues.com/guides/stop-digging-through-email-for-rabies-certificate",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/store-estimate-and-paid-invoice-with-visit-notes",
+      "url": "https://petclues.com/guides/store-estimate-and-paid-invoice-with-visit-notes",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/surgery-discharge-instructions-keep-forever",
+      "url": "https://petclues.com/guides/surgery-discharge-instructions-keep-forever",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/switching-clinics-keep-copies-of-vaccine-certificates",
+      "url": "https://petclues.com/guides/switching-clinics-keep-copies-of-vaccine-certificates",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/switching-vets-record-transfer-checklist",
+      "url": "https://petclues.com/guides/switching-vets-record-transfer-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/temporary-caregiver-access-to-pet-health-docs",
+      "url": "https://petclues.com/guides/temporary-caregiver-access-to-pet-health-docs",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/titer-test-certificate-for-travel-boarding",
+      "url": "https://petclues.com/guides/titer-test-certificate-for-travel-boarding",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/ultrasound-report-save-with-pet-records",
+      "url": "https://petclues.com/guides/ultrasound-report-save-with-pet-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/urgent-care-vet-no-prior-records-tips",
+      "url": "https://petclues.com/guides/urgent-care-vet-no-prior-records-tips",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/usda-health-certificate-copy-keep-after-trip",
+      "url": "https://petclues.com/guides/usda-health-certificate-copy-keep-after-trip",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/vacation-pet-care-folder-what-to-include",
+      "url": "https://petclues.com/guides/vacation-pet-care-folder-what-to-include",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/vaccine-titer-vs-certificate-which-to-keep",
+      "url": "https://petclues.com/guides/vaccine-titer-vs-certificate-which-to-keep",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/vet-closed-lost-my-pet-medical-records",
+      "url": "https://petclues.com/guides/vet-closed-lost-my-pet-medical-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/vet-wont-email-vaccine-records-what-now",
+      "url": "https://petclues.com/guides/vet-wont-email-vaccine-records-what-now",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/what-records-to-bring-when-changing-veterinarians",
+      "url": "https://petclues.com/guides/what-records-to-bring-when-changing-veterinarians",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/what-to-bring-to-first-vet-visit",
+      "url": "https://petclues.com/guides/what-to-bring-to-first-vet-visit",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/what-vaccine-proof-do-dog-daycare-need",
+      "url": "https://petclues.com/guides/what-vaccine-proof-do-dog-daycare-need",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/where-to-keep-dog-rabies-certificate",
+      "url": "https://petclues.com/guides/where-to-keep-dog-rabies-certificate",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/where-to-store-dog-vaccine-certificates",
+      "url": "https://petclues.com/guides/where-to-store-dog-vaccine-certificates",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/x-ray-report-digital-copy-pet-records",
+      "url": "https://petclues.com/guides/x-ray-report-digital-copy-pet-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/adoption-transfer-vaccine-records",
+      "url": "https://petclues.com/guides/adoption-transfer-vaccine-records",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/airline-pet-travel-health-certificate",
+      "url": "https://petclues.com/guides/airline-pet-travel-health-certificate",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/apartment-move-pet-documents",
+      "url": "https://petclues.com/guides/apartment-move-pet-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/backup-sitter-onboarding-checklist",
+      "url": "https://petclues.com/guides/backup-sitter-onboarding-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/blended-family-pet-care-handoff",
+      "url": "https://petclues.com/guides/blended-family-pet-care-handoff",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/boarding-behavior-notes-template",
+      "url": "https://petclues.com/guides/boarding-behavior-notes-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/boarding-emergency-authorization",
+      "url": "https://petclues.com/guides/boarding-emergency-authorization",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/boarding-facility-intake-forms-checklist",
+      "url": "https://petclues.com/guides/boarding-facility-intake-forms-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/boarding-medication-administration-form",
+      "url": "https://petclues.com/guides/boarding-medication-administration-form",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/boarding-vs-pet-sitter-decision-checklist",
+      "url": "https://petclues.com/guides/boarding-vs-pet-sitter-decision-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/breeder-to-owner-puppy-kitten-packet",
+      "url": "https://petclues.com/guides/breeder-to-owner-puppy-kitten-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/camping-with-pets-emergency-info",
+      "url": "https://petclues.com/guides/camping-with-pets-emergency-info",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/canada-pet-travel-document-basics",
+      "url": "https://petclues.com/guides/canada-pet-travel-document-basics",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/cat-boarding-preparation-checklist",
+      "url": "https://petclues.com/guides/cat-boarding-preparation-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/cat-sitter-instructions-template",
+      "url": "https://petclues.com/guides/cat-sitter-instructions-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/cat-travel-documents-checklist",
+      "url": "https://petclues.com/guides/cat-travel-documents-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/changing-vets-after-a-move",
+      "url": "https://petclues.com/guides/changing-vets-after-a-move",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/co-parenting-a-pet-shared-profile",
+      "url": "https://petclues.com/guides/co-parenting-a-pet-shared-profile",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/cross-country-move-with-pets",
+      "url": "https://petclues.com/guides/cross-country-move-with-pets",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/daycare-drop-off-pet-info-sheet",
+      "url": "https://petclues.com/guides/daycare-drop-off-pet-info-sheet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/divorce-pet-care-document-handoff",
+      "url": "https://petclues.com/guides/divorce-pet-care-document-handoff",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/dog-and-cat-household-care-notes",
+      "url": "https://petclues.com/guides/dog-and-cat-household-care-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/dog-boarding-vaccination-requirements",
+      "url": "https://petclues.com/guides/dog-boarding-vaccination-requirements",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/dog-sitter-instructions-template",
+      "url": "https://petclues.com/guides/dog-sitter-instructions-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/dog-travel-documents-checklist",
+      "url": "https://petclues.com/guides/dog-travel-documents-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/drop-in-pet-sitter-visit-sheet",
+      "url": "https://petclues.com/guides/drop-in-pet-sitter-visit-sheet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/emotional-support-animal-travel-notes",
+      "url": "https://petclues.com/guides/emotional-support-animal-travel-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/estate-plan-pet-care-instructions",
+      "url": "https://petclues.com/guides/estate-plan-pet-care-instructions",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/eu-pet-travel-document-basics",
+      "url": "https://petclues.com/guides/eu-pet-travel-document-basics",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/family-shared-pet-care-calendar",
+      "url": "https://petclues.com/guides/family-shared-pet-care-calendar",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/find-emergency-vet-after-moving",
+      "url": "https://petclues.com/guides/find-emergency-vet-after-moving",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/first-time-boarding-what-to-bring",
+      "url": "https://petclues.com/guides/first-time-boarding-what-to-bring",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/first-time-pet-sitter-info-packet",
+      "url": "https://petclues.com/guides/first-time-pet-sitter-info-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/flying-with-a-cat-in-cabin-documents",
+      "url": "https://petclues.com/guides/flying-with-a-cat-in-cabin-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/flying-with-a-dog-in-cabin-documents",
+      "url": "https://petclues.com/guides/flying-with-a-dog-in-cabin-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/foster-to-adopt-care-notes-template",
+      "url": "https://petclues.com/guides/foster-to-adopt-care-notes-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/groomer-drop-off-health-notes",
+      "url": "https://petclues.com/guides/groomer-drop-off-health-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/holiday-boarding-reservation-documents",
+      "url": "https://petclues.com/guides/holiday-boarding-reservation-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/holiday-pet-sitter-instructions",
+      "url": "https://petclues.com/guides/holiday-pet-sitter-instructions",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/hotel-pet-policy-proof-packet",
+      "url": "https://petclues.com/guides/hotel-pet-policy-proof-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/house-sitter-pet-care-instructions",
+      "url": "https://petclues.com/guides/house-sitter-pet-care-instructions",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/household-pet-emergency-roles",
+      "url": "https://petclues.com/guides/household-pet-emergency-roles",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/how-to-update-sitter-packet-before-each-trip",
+      "url": "https://petclues.com/guides/how-to-update-sitter-packet-before-each-trip",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/international-move-pet-export-documents",
+      "url": "https://petclues.com/guides/international-move-pet-export-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/international-pet-travel-document-timeline",
+      "url": "https://petclues.com/guides/international-pet-travel-document-timeline",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/interstate-move-pet-records-checklist",
+      "url": "https://petclues.com/guides/interstate-move-pet-records-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/introducing-a-new-pet-records-checklist",
+      "url": "https://petclues.com/guides/introducing-a-new-pet-records-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/kennel-cough-and-boarding-records",
+      "url": "https://petclues.com/guides/kennel-cough-and-boarding-records",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/landlord-pet-records-packet",
+      "url": "https://petclues.com/guides/landlord-pet-records-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/long-distance-pet-relocation-documents",
+      "url": "https://petclues.com/guides/long-distance-pet-relocation-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/medical-boarding-special-care-notes",
+      "url": "https://petclues.com/guides/medical-boarding-special-care-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/mexico-pet-travel-document-basics",
+      "url": "https://petclues.com/guides/mexico-pet-travel-document-basics",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/microchip-requirements-for-pet-travel",
+      "url": "https://petclues.com/guides/microchip-requirements-for-pet-travel",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/microchip-transfer-after-rehoming",
+      "url": "https://petclues.com/guides/microchip-transfer-after-rehoming",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/military-pcs-move-with-pets",
+      "url": "https://petclues.com/guides/military-pcs-move-with-pets",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-day-pet-safety-plan",
+      "url": "https://petclues.com/guides/moving-day-pet-safety-plan",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-multi-pet-household-checklist",
+      "url": "https://petclues.com/guides/moving-multi-pet-household-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-with-a-puppy-or-kitten",
+      "url": "https://petclues.com/guides/moving-with-a-puppy-or-kitten",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-with-a-senior-pet",
+      "url": "https://petclues.com/guides/moving-with-a-senior-pet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-with-cats-checklist",
+      "url": "https://petclues.com/guides/moving-with-cats-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-with-dogs-checklist",
+      "url": "https://petclues.com/guides/moving-with-dogs-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-with-pets-checklist",
+      "url": "https://petclues.com/guides/moving-with-pets-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/moving-with-pets-on-medication",
+      "url": "https://petclues.com/guides/moving-with-pets-on-medication",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-cat-household-medication-tracker",
+      "url": "https://petclues.com/guides/multi-cat-household-medication-tracker",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-allergy-and-diet-labels",
+      "url": "https://petclues.com/guides/multi-pet-allergy-and-diet-labels",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-boarding-same-facility",
+      "url": "https://petclues.com/guides/multi-pet-boarding-same-facility",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-emergency-go-bag",
+      "url": "https://petclues.com/guides/multi-pet-emergency-go-bag",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-grooming-and-boarding-schedule",
+      "url": "https://petclues.com/guides/multi-pet-grooming-and-boarding-schedule",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-household-cost-and-docs-tracker",
+      "url": "https://petclues.com/guides/multi-pet-household-cost-and-docs-tracker",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-household-record-keeping",
+      "url": "https://petclues.com/guides/multi-pet-household-record-keeping",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-microchip-and-id-sheet",
+      "url": "https://petclues.com/guides/multi-pet-microchip-and-id-sheet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-records-audit-quarterly",
+      "url": "https://petclues.com/guides/multi-pet-records-audit-quarterly",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-sitter-instructions-template",
+      "url": "https://petclues.com/guides/multi-pet-sitter-instructions-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-travel-document-organizer",
+      "url": "https://petclues.com/guides/multi-pet-travel-document-organizer",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-vaccine-due-date-board",
+      "url": "https://petclues.com/guides/multi-pet-vaccine-due-date-board",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/multi-pet-vet-visit-prep-checklist",
+      "url": "https://petclues.com/guides/multi-pet-vet-visit-prep-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/neighbor-pet-watch-one-pager",
+      "url": "https://petclues.com/guides/neighbor-pet-watch-one-pager",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/new-city-pet-license-and-rabies-proof",
+      "url": "https://petclues.com/guides/new-city-pet-license-and-rabies-proof",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/new-home-first-week-pet-care-plan",
+      "url": "https://petclues.com/guides/new-home-first-week-pet-care-plan",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/new-owner-pet-records-handoff",
+      "url": "https://petclues.com/guides/new-owner-pet-records-handoff",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/overnight-daycare-records-packet",
+      "url": "https://petclues.com/guides/overnight-daycare-records-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/overnight-pet-sitter-checklist",
+      "url": "https://petclues.com/guides/overnight-pet-sitter-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-boarding-during-a-move",
+      "url": "https://petclues.com/guides/pet-boarding-during-a-move",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-boarding-preparation-checklist",
+      "url": "https://petclues.com/guides/pet-boarding-preparation-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-cargo-travel-document-checklist",
+      "url": "https://petclues.com/guides/pet-cargo-travel-document-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-carrier-and-crate-move-checklist",
+      "url": "https://petclues.com/guides/pet-carrier-and-crate-move-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-custody-emergency-decision-contacts",
+      "url": "https://petclues.com/guides/pet-custody-emergency-decision-contacts",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-custody-records-checklist",
+      "url": "https://petclues.com/guides/pet-custody-records-checklist",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-friendly-housing-application-documents",
+      "url": "https://petclues.com/guides/pet-friendly-housing-application-documents",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-health-certificate-how-long-valid",
+      "url": "https://petclues.com/guides/pet-health-certificate-how-long-valid",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-microchip-update-after-moving",
+      "url": "https://petclues.com/guides/pet-microchip-update-after-moving",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-move-timeline-8-weeks-out",
+      "url": "https://petclues.com/guides/pet-move-timeline-8-weeks-out",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-passport-vs-health-certificate",
+      "url": "https://petclues.com/guides/pet-passport-vs-health-certificate",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-relocation-agency-records-packet",
+      "url": "https://petclues.com/guides/pet-relocation-agency-records-packet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-app-vs-printed-instructions",
+      "url": "https://petclues.com/guides/pet-sitter-app-vs-printed-instructions",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-behavior-and-routine-notes",
+      "url": "https://petclues.com/guides/pet-sitter-behavior-and-routine-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-checkout-debrief-notes",
+      "url": "https://petclues.com/guides/pet-sitter-checkout-debrief-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-emergency-contacts-sheet",
+      "url": "https://petclues.com/guides/pet-sitter-emergency-contacts-sheet",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-feeding-and-allergy-notes",
+      "url": "https://petclues.com/guides/pet-sitter-feeding-and-allergy-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-instructions-template",
+      "url": "https://petclues.com/guides/pet-sitter-instructions-template",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-insurance-and-emergency-fund-notes",
+      "url": "https://petclues.com/guides/pet-sitter-insurance-and-emergency-fund-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-keys-and-access-notes",
+      "url": "https://petclues.com/guides/pet-sitter-keys-and-access-notes",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/guides/pet-sitter-medical-handoff-checklist",
+      "url": "https://petclues.com/guides/pet-sitter-medical-handoff-checklist",
+      "pillar": "life-logistics"
+    }
+  ]
+}

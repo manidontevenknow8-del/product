@@ -1,0 +1,47 @@
+{
+  "slug": "cirneco-dell-etna-vaccine-schedule",
+  "path": "/vaccinations/cirneco-dell-etna-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "cirneco-dell-etna",
+  "subjectName": "Cirneco dell'Etna",
+  "species": "dog",
+  "primaryKeyword": "Cirneco dell'Etna vaccine schedule",
+  "metaDescription": "Cirneco dell'Etna vaccine schedule with core ages in weeks. Set reminders so Cirneco dell'Etna boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/cirneco-dell-etna/adult-health-guide",
+  "breedHealthLabel": "Cirneco dell'Etna adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Cirneco dell'Etna social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Cirneco dell'Etna exposure.",
+        "Weight range 17-26 lb (8-12 kg) and grooming needs (Short coat.) belong in the same Cirneco dell'Etna household ops list as vaccine dates when busy weeks collide.",
+        "If your Cirneco dell'Etna is also monitored for eye issues, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Cirneco dell'Etna appointments.",
+        "After the Cirneco dell'Etna puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Cirneco dell'Etna misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Cirneco dell'Etna series from memory.",
+        "The danger for a delayed Cirneco dell'Etna is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Cirneco dell'Etna away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Cirneco dell'Etna due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Cirneco dell'Etna core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Cirneco dell'Etna misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Cirneco dell'Etna health context beyond vaccines?",
+      "answer": "See the Cirneco dell'Etna adult health guide for breed predispositions such as patellar luxation, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "slug": "dog-distemper-parvo-schedule",
+  "path": "/vaccinations/dog-distemper-parvo-schedule",
+  "kind": "general",
+  "subjectName": "Dog distemper-parvo",
+  "species": "dog",
+  "primaryKeyword": "dog distemper parvo vaccine schedule",
+  "metaDescription": "dog distemper parvo vaccine schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "common_health_issues": [
+    "Parvo in under-vaccinated areas",
+    "Early socialization vs immunity tradeoff",
+    "Missed mid-series dose"
+  ],
+  "schedule": [
+    {
+      "vaccine": "DA2PP / DHPP start",
+      "age_weeks": 8
+    },
+    {
+      "vaccine": "Booster",
+      "age_weeks": 12
+    },
+    {
+      "vaccine": "Final puppy booster ≥16 weeks",
+      "age_weeks": 16
+    },
+    {
+      "vaccine": "Adult booster",
+      "age_weeks": 52,
+      "age_label": "Per clinic protocol"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This dog distemper-parvo plan sequences doses against parvo in under-vaccinated areas, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the dog distemper-parvo table (8 weeks; 12 weeks; 16 weeks; Per clinic protocol) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished dog distemper-parvo puppy series is still incomplete.",
+        "If your household also wrestles with early socialization vs immunity tradeoff or missed mid-series dose, put those constraints on the same calendar thread as the DA2PP / DHPP booster so one reminder system owns the dog distemper-parvo week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed dog distemper-parvo dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the dog distemper-parvo series is current again, reduce the exposure pattern that matches parvo in under-vaccinated areas, and do not wait for an annual wellness slot to ask about a dog distemper-parvo make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next DA2PP / DHPP booster due date so the same dog distemper-parvo miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this dog distemper parvo vaccine schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this dog distemper-parvo schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to parvo in under-vaccinated areas, and reset reminders as soon as the next dog distemper-parvo due date is known."
+    },
+    {
+      "question": "How do reminders help with DA2PP / DHPP booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that dog distemper-parvo booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

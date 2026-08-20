@@ -1,0 +1,47 @@
+{
+  "slug": "sphynx-vaccine-schedule",
+  "path": "/vaccinations/sphynx-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "sphynx",
+  "subjectName": "Sphynx",
+  "species": "cat",
+  "primaryKeyword": "Sphynx vaccine schedule",
+  "metaDescription": "Sphynx vaccine schedule with core ages in weeks. Set reminders so Sphynx boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/sphynx/adult-health-guide",
+  "breedHealthLabel": "Sphynx adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Sphynxs: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Sphynx series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Sphynx, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final FVRCP booster.",
+        "Flag dental disease at Sphynx vaccine checkups so the kitten’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Sphynx series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Sphynx boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every Sphynx row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed Sphynx item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Sphynx kennel reservation.",
+        "PetClues should hold both the new Sphynx due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Sphynx core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Sphynx misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Sphynx health context beyond vaccines?",
+      "answer": "See the Sphynx adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

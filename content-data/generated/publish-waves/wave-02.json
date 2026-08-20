@@ -1,0 +1,1211 @@
+{
+  "wave": 2,
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "count": 239,
+  "pillars": {
+    "vaccinations": 49,
+    "emergency": 176,
+    "vault": 14
+  },
+  "poolSources": [
+    "vaccinations+emergency",
+    "vault+life-logistics+tools"
+  ],
+  "urls": [
+    {
+      "path": "/vaccinations/savannah-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/savannah-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/schipperke-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/schipperke-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/scottish-deerhound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/scottish-deerhound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/scottish-fold-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/scottish-fold-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/scottish-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/scottish-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/sealyham-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/sealyham-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/selkirk-rex-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/selkirk-rex-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/senior-cat-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/senior-cat-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/senior-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/senior-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/shar-pei-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/shar-pei-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/shetland-sheepdog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/shetland-sheepdog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/shiba-inu-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/shiba-inu-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/shih-tzu-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/shih-tzu-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/siamese-mix-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/siamese-mix-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/siamese-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/siamese-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/siberian-husky-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/siberian-husky-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/siberian-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/siberian-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/skye-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/skye-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/sloughi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/sloughi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/small-breed-puppy-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/small-breed-puppy-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/smooth-fox-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/smooth-fox-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/soft-coated-wheaten-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/soft-coated-wheaten-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/somali-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/somali-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/spanish-water-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/spanish-water-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/sphynx-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/sphynx-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/spinone-italiano-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/spinone-italiano-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/staffordshire-bull-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/staffordshire-bull-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/sussex-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/sussex-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/swedish-vallhund-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/swedish-vallhund-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/thai-ridgeback-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/thai-ridgeback-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/tibetan-mastiff-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/tibetan-mastiff-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/tonkinese-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/tonkinese-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/toy-breed-puppy-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/toy-breed-puppy-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/toy-fox-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/toy-fox-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/toyger-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/toyger-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/traveling-cat-vaccine-checklist",
+      "url": "https://petclues.com/vaccinations/traveling-cat-vaccine-checklist",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/traveling-dog-vaccine-checklist",
+      "url": "https://petclues.com/vaccinations/traveling-dog-vaccine-checklist",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/turkish-angora-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/turkish-angora-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/turkish-van-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/turkish-van-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/tuxedo-domestic-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/tuxedo-domestic-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/vizsla-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/vizsla-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/weimaraner-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/weimaraner-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/welsh-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/welsh-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/west-highland-white-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/west-highland-white-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/whippet-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/whippet-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/wire-fox-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/wire-fox-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/wirehaired-pointing-griffon-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/wirehaired-pointing-griffon-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/xoloitzcuintli-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/xoloitzcuintli-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/yorkshire-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/yorkshire-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/emergency/acetaminophen-poisoning-cats-symptoms",
+      "url": "https://petclues.com/emergency/acetaminophen-poisoning-cats-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/acetaminophen-toxicity-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/acetaminophen-toxicity-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/antifreeze-on-dog-paws",
+      "url": "https://petclues.com/emergency/antifreeze-on-dog-paws",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/antifreeze-poisoning-symptoms-dogs",
+      "url": "https://petclues.com/emergency/antifreeze-poisoning-symptoms-dogs",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/antifreeze-poisoning-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/antifreeze-poisoning-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/asiatic-lily-cat-exposure",
+      "url": "https://petclues.com/emergency/asiatic-lily-cat-exposure",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/bloat-in-dogs-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/bloat-in-dogs-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/blocked-cat-after-hours",
+      "url": "https://petclues.com/emergency/blocked-cat-after-hours",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/blocked-cat-emergency",
+      "url": "https://petclues.com/emergency/blocked-cat-emergency",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cannabis-toxicity-dogs-symptoms",
+      "url": "https://petclues.com/emergency/cannabis-toxicity-dogs-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-antifreeze-poisoning",
+      "url": "https://petclues.com/emergency/cat-antifreeze-poisoning",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-chocolate",
+      "url": "https://petclues.com/emergency/cat-ate-chocolate",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-cold-medicine",
+      "url": "https://petclues.com/emergency/cat-ate-cold-medicine",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-easter-lily",
+      "url": "https://petclues.com/emergency/cat-ate-easter-lily",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-edibles",
+      "url": "https://petclues.com/emergency/cat-ate-edibles",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-grapes",
+      "url": "https://petclues.com/emergency/cat-ate-grapes",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-ibuprofen",
+      "url": "https://petclues.com/emergency/cat-ate-ibuprofen",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-lily",
+      "url": "https://petclues.com/emergency/cat-ate-lily",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-onion-or-garlic",
+      "url": "https://petclues.com/emergency/cat-ate-onion-or-garlic",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-rat-poison",
+      "url": "https://petclues.com/emergency/cat-ate-rat-poison",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-string",
+      "url": "https://petclues.com/emergency/cat-ate-string",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-ate-tylenol",
+      "url": "https://petclues.com/emergency/cat-ate-tylenol",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-bee-sting",
+      "url": "https://petclues.com/emergency/cat-bee-sting",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-bleeding-from-wound",
+      "url": "https://petclues.com/emergency/cat-bleeding-from-wound",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-cant-pee",
+      "url": "https://petclues.com/emergency/cat-cant-pee",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-chewed-power-cord",
+      "url": "https://petclues.com/emergency/cat-chewed-power-cord",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-choking-on-food",
+      "url": "https://petclues.com/emergency/cat-choking-on-food",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-drank-lily-vase-water",
+      "url": "https://petclues.com/emergency/cat-drank-lily-vase-water",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-eye-injury",
+      "url": "https://petclues.com/emergency/cat-eye-injury",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-face-swelling",
+      "url": "https://petclues.com/emergency/cat-face-swelling",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-fell-in-pool",
+      "url": "https://petclues.com/emergency/cat-fell-in-pool",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-having-a-seizure",
+      "url": "https://petclues.com/emergency/cat-having-a-seizure",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-hit-by-car",
+      "url": "https://petclues.com/emergency/cat-hit-by-car",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-licking-penis-and-straining",
+      "url": "https://petclues.com/emergency/cat-licking-penis-and-straining",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-lily-pollen-on-fur",
+      "url": "https://petclues.com/emergency/cat-lily-pollen-on-fur",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-peeing-blood-straining",
+      "url": "https://petclues.com/emergency/cat-peeing-blood-straining",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-snake-bite",
+      "url": "https://petclues.com/emergency/cat-snake-bite",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-urinary-blockage-symptoms",
+      "url": "https://petclues.com/emergency/cat-urinary-blockage-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cat-vomiting-and-not-peeing",
+      "url": "https://petclues.com/emergency/cat-vomiting-and-not-peeing",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/chocolate-poisoning-dogs-what-to-do",
+      "url": "https://petclues.com/emergency/chocolate-poisoning-dogs-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/cluster-seizures-in-dogs",
+      "url": "https://petclues.com/emergency/cluster-seizures-in-dogs",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/copperhead-bite-dog",
+      "url": "https://petclues.com/emergency/copperhead-bite-dog",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-allergic-reaction-face",
+      "url": "https://petclues.com/emergency/dog-allergic-reaction-face",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-allergic-reaction-to-bee-sting",
+      "url": "https://petclues.com/emergency/dog-allergic-reaction-to-bee-sting",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-arterial-bleeding",
+      "url": "https://petclues.com/emergency/dog-arterial-bleeding",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-acetaminophen",
+      "url": "https://petclues.com/emergency/dog-ate-acetaminophen",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-advil",
+      "url": "https://petclues.com/emergency/dog-ate-advil",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-advil-and-vomiting",
+      "url": "https://petclues.com/emergency/dog-ate-advil-and-vomiting",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-anticoagulant-rat-poison",
+      "url": "https://petclues.com/emergency/dog-ate-anticoagulant-rat-poison",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-bakers-chocolate",
+      "url": "https://petclues.com/emergency/dog-ate-bakers-chocolate",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-bone-splinter",
+      "url": "https://petclues.com/emergency/dog-ate-bone-splinter",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-cbd-treats-too-many",
+      "url": "https://petclues.com/emergency/dog-ate-cbd-treats-too-many",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-chocolate",
+      "url": "https://petclues.com/emergency/dog-ate-chocolate",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-chocolate-chip-cookies",
+      "url": "https://petclues.com/emergency/dog-ate-chocolate-chip-cookies",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-chocolate-symptoms-timeline",
+      "url": "https://petclues.com/emergency/dog-ate-chocolate-symptoms-timeline",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-chocolate-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/dog-ate-chocolate-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-corn-cob",
+      "url": "https://petclues.com/emergency/dog-ate-corn-cob",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-dark-chocolate",
+      "url": "https://petclues.com/emergency/dog-ate-dark-chocolate",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-edibles",
+      "url": "https://petclues.com/emergency/dog-ate-edibles",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-excedrin",
+      "url": "https://petclues.com/emergency/dog-ate-excedrin",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-garlic",
+      "url": "https://petclues.com/emergency/dog-ate-garlic",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-grape-juice",
+      "url": "https://petclues.com/emergency/dog-ate-grape-juice",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-grapes",
+      "url": "https://petclues.com/emergency/dog-ate-grapes",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-grapes-symptoms",
+      "url": "https://petclues.com/emergency/dog-ate-grapes-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-grapes-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/dog-ate-grapes-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-ibuprofen",
+      "url": "https://petclues.com/emergency/dog-ate-ibuprofen",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-leftovers-with-onion",
+      "url": "https://petclues.com/emergency/dog-ate-leftovers-with-onion",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-marijuana",
+      "url": "https://petclues.com/emergency/dog-ate-marijuana",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-marijuana-butter",
+      "url": "https://petclues.com/emergency/dog-ate-marijuana-butter",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-mouse-bait",
+      "url": "https://petclues.com/emergency/dog-ate-mouse-bait",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-naproxen",
+      "url": "https://petclues.com/emergency/dog-ate-naproxen",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-onion",
+      "url": "https://petclues.com/emergency/dog-ate-onion",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-onion-powder",
+      "url": "https://petclues.com/emergency/dog-ate-onion-powder",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-painkiller",
+      "url": "https://petclues.com/emergency/dog-ate-painkiller",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-peanut-butter-xylitol",
+      "url": "https://petclues.com/emergency/dog-ate-peanut-butter-xylitol",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-raisin-bread",
+      "url": "https://petclues.com/emergency/dog-ate-raisin-bread",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-raisins",
+      "url": "https://petclues.com/emergency/dog-ate-raisins",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-rat-poison",
+      "url": "https://petclues.com/emergency/dog-ate-rat-poison",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-sock",
+      "url": "https://petclues.com/emergency/dog-ate-sock",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-something-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/dog-ate-something-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-sugar-free-gum",
+      "url": "https://petclues.com/emergency/dog-ate-sugar-free-gum",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-toy-stuffing",
+      "url": "https://petclues.com/emergency/dog-ate-toy-stuffing",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-tylenol",
+      "url": "https://petclues.com/emergency/dog-ate-tylenol",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-tylenol-pm",
+      "url": "https://petclues.com/emergency/dog-ate-tylenol-pm",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-weed-brownie",
+      "url": "https://petclues.com/emergency/dog-ate-weed-brownie",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-xylitol",
+      "url": "https://petclues.com/emergency/dog-ate-xylitol",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-ate-xylitol-timeline",
+      "url": "https://petclues.com/emergency/dog-ate-xylitol-timeline",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-bee-sting-face-swelling",
+      "url": "https://petclues.com/emergency/dog-bee-sting-face-swelling",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-bitten-by-snake-still-walking",
+      "url": "https://petclues.com/emergency/dog-bitten-by-snake-still-walking",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-bleeding-after-neutering",
+      "url": "https://petclues.com/emergency/dog-bleeding-after-neutering",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-bleeding-wont-stop",
+      "url": "https://petclues.com/emergency/dog-bleeding-wont-stop",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-bloat-after-eating",
+      "url": "https://petclues.com/emergency/dog-bloat-after-eating",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-bloat-symptoms",
+      "url": "https://petclues.com/emergency/dog-bloat-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-breathing-fast-after-electric-shock",
+      "url": "https://petclues.com/emergency/dog-breathing-fast-after-electric-shock",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-chemical-in-eye",
+      "url": "https://petclues.com/emergency/dog-chemical-in-eye",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-chewed-electric-cord",
+      "url": "https://petclues.com/emergency/dog-chewed-electric-cord",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-choking-on-ball",
+      "url": "https://petclues.com/emergency/dog-choking-on-ball",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-choking-on-rawhide",
+      "url": "https://petclues.com/emergency/dog-choking-on-rawhide",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-cut-pad-bleeding",
+      "url": "https://petclues.com/emergency/dog-cut-pad-bleeding",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-drank-antifreeze",
+      "url": "https://petclues.com/emergency/dog-drank-antifreeze",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-eye-injury-what-to-do",
+      "url": "https://petclues.com/emergency/dog-eye-injury-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-eye-prolapse",
+      "url": "https://petclues.com/emergency/dog-eye-prolapse",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-eye-ulcer-after-scratch",
+      "url": "https://petclues.com/emergency/dog-eye-ulcer-after-scratch",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-face-swelling-sudden",
+      "url": "https://petclues.com/emergency/dog-face-swelling-sudden",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-first-seizure-ever",
+      "url": "https://petclues.com/emergency/dog-first-seizure-ever",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-gagging-cant-breathe",
+      "url": "https://petclues.com/emergency/dog-gagging-cant-breathe",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-got-into-rodent-bait-station",
+      "url": "https://petclues.com/emergency/dog-got-into-rodent-bait-station",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-got-stung-in-mouth",
+      "url": "https://petclues.com/emergency/dog-got-stung-in-mouth",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-having-a-seizure-what-to-do",
+      "url": "https://petclues.com/emergency/dog-having-a-seizure-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-hit-by-car",
+      "url": "https://petclues.com/emergency/dog-hit-by-car",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-hit-by-car-still-walking",
+      "url": "https://petclues.com/emergency/dog-hit-by-car-still-walking",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-hit-by-car-what-to-do",
+      "url": "https://petclues.com/emergency/dog-hit-by-car-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-hives-after-insect-sting",
+      "url": "https://petclues.com/emergency/dog-hives-after-insect-sting",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-hives-and-face-swelling",
+      "url": "https://petclues.com/emergency/dog-hives-and-face-swelling",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-inhaled-water-coughing",
+      "url": "https://petclues.com/emergency/dog-inhaled-water-coughing",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-lake-water-aspiration",
+      "url": "https://petclues.com/emergency/dog-lake-water-aspiration",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-licked-antifreeze-puddle",
+      "url": "https://petclues.com/emergency/dog-licked-antifreeze-puddle",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-muzzle-swelling-after-vaccine",
+      "url": "https://petclues.com/emergency/dog-muzzle-swelling-after-vaccine",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-near-drowning-what-to-do",
+      "url": "https://petclues.com/emergency/dog-near-drowning-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-nonproductive-retching-er",
+      "url": "https://petclues.com/emergency/dog-nonproductive-retching-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-nosebleed-wont-stop",
+      "url": "https://petclues.com/emergency/dog-nosebleed-wont-stop",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-post-ictal-what-to-do",
+      "url": "https://petclues.com/emergency/dog-post-ictal-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-saved-from-drowning-still-tired",
+      "url": "https://petclues.com/emergency/dog-saved-from-drowning-still-tired",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-scratched-eye",
+      "url": "https://petclues.com/emergency/dog-scratched-eye",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-seizure-first-aid",
+      "url": "https://petclues.com/emergency/dog-seizure-first-aid",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-seizure-from-xylitol",
+      "url": "https://petclues.com/emergency/dog-seizure-from-xylitol",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-seizure-lasting-more-than-5-minutes",
+      "url": "https://petclues.com/emergency/dog-seizure-lasting-more-than-5-minutes",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-shocked-by-outlet",
+      "url": "https://petclues.com/emergency/dog-shocked-by-outlet",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-snake-bite-symptoms",
+      "url": "https://petclues.com/emergency/dog-snake-bite-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-snake-bite-what-to-do",
+      "url": "https://petclues.com/emergency/dog-snake-bite-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-something-stuck-in-throat",
+      "url": "https://petclues.com/emergency/dog-something-stuck-in-throat",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-sudden-blindness",
+      "url": "https://petclues.com/emergency/dog-sudden-blindness",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-swallowed-ball",
+      "url": "https://petclues.com/emergency/dog-swallowed-ball",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-swollen-belly-hard",
+      "url": "https://petclues.com/emergency/dog-swollen-belly-hard",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-swollen-lips-after-eating",
+      "url": "https://petclues.com/emergency/dog-swollen-lips-after-eating",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-third-eyelid-showing-after-trauma",
+      "url": "https://petclues.com/emergency/dog-third-eyelid-showing-after-trauma",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/dog-trying-to-vomit-nothing-coming-up",
+      "url": "https://petclues.com/emergency/dog-trying-to-vomit-nothing-coming-up",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/electric-shock-dog-symptoms",
+      "url": "https://petclues.com/emergency/electric-shock-dog-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/electric-shock-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/electric-shock-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/facial-swelling-dog-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/facial-swelling-dog-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/foreign-body-obstruction-symptoms-dogs",
+      "url": "https://petclues.com/emergency/foreign-body-obstruction-symptoms-dogs",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/gdv-in-dogs-what-to-do",
+      "url": "https://petclues.com/emergency/gdv-in-dogs-what-to-do",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/great-dane-bloat-emergency",
+      "url": "https://petclues.com/emergency/great-dane-bloat-emergency",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/hit-by-car-internal-bleeding-signs",
+      "url": "https://petclues.com/emergency/hit-by-car-internal-bleeding-signs",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/hit-by-car-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/hit-by-car-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/how-to-tell-if-dog-drank-antifreeze",
+      "url": "https://petclues.com/emergency/how-to-tell-if-dog-drank-antifreeze",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/ibuprofen-poisoning-dogs-symptoms",
+      "url": "https://petclues.com/emergency/ibuprofen-poisoning-dogs-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/indoor-cat-urinary-blockage",
+      "url": "https://petclues.com/emergency/indoor-cat-urinary-blockage",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/insect-sting-anaphylaxis-dogs",
+      "url": "https://petclues.com/emergency/insect-sting-anaphylaxis-dogs",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/large-breed-dog-bloat-risk",
+      "url": "https://petclues.com/emergency/large-breed-dog-bloat-risk",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/lily-poisoning-cats-symptoms",
+      "url": "https://petclues.com/emergency/lily-poisoning-cats-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/lily-toxicity-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/lily-toxicity-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/male-cat-straining-to-pee",
+      "url": "https://petclues.com/emergency/male-cat-straining-to-pee",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/marijuana-poisoning-dogs-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/marijuana-poisoning-dogs-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/near-drowning-pets-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/near-drowning-pets-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/nsaid-toxicity-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/nsaid-toxicity-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/onion-garlic-poisoning-when-to-call",
+      "url": "https://petclues.com/emergency/onion-garlic-poisoning-when-to-call",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/onion-garlic-toxicity-dogs-symptoms",
+      "url": "https://petclues.com/emergency/onion-garlic-toxicity-dogs-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/pet-bleeding-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/pet-bleeding-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/pet-choking-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/pet-choking-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/pet-eye-injury-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/pet-eye-injury-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/pet-hit-by-car-transport-safely",
+      "url": "https://petclues.com/emergency/pet-hit-by-car-transport-safely",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/puppy-choking-on-treat",
+      "url": "https://petclues.com/emergency/puppy-choking-on-treat",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/puppy-electric-cord-burn-mouth",
+      "url": "https://petclues.com/emergency/puppy-electric-cord-burn-mouth",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/puppy-fell-in-bathtub",
+      "url": "https://petclues.com/emergency/puppy-fell-in-bathtub",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/raisins-in-cookies-dog-ate",
+      "url": "https://petclues.com/emergency/raisins-in-cookies-dog-ate",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/rat-poison-symptoms-in-dogs",
+      "url": "https://petclues.com/emergency/rat-poison-symptoms-in-dogs",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/rat-poison-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/rat-poison-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/rattlesnake-bite-dog",
+      "url": "https://petclues.com/emergency/rattlesnake-bite-dog",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/seizure-after-toxin-dog",
+      "url": "https://petclues.com/emergency/seizure-after-toxin-dog",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/snakebite-first-aid-pets",
+      "url": "https://petclues.com/emergency/snakebite-first-aid-pets",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/snakebite-when-to-go-to-er",
+      "url": "https://petclues.com/emergency/snakebite-when-to-go-to-er",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/stop-dog-bleeding-at-home",
+      "url": "https://petclues.com/emergency/stop-dog-bleeding-at-home",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/wasp-sting-dog-swelling",
+      "url": "https://petclues.com/emergency/wasp-sting-dog-swelling",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/xylitol-poisoning-dogs-symptoms",
+      "url": "https://petclues.com/emergency/xylitol-poisoning-dogs-symptoms",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/emergency/xylitol-poisoning-when-to-call-poison-control",
+      "url": "https://petclues.com/emergency/xylitol-poisoning-when-to-call-poison-control",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/guides/adoption-paperwork-vaccine-records-what-to-keep",
+      "url": "https://petclues.com/guides/adoption-paperwork-vaccine-records-what-to-keep",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/after-hours-clinic-share-medical-history-fast",
+      "url": "https://petclues.com/guides/after-hours-clinic-share-medical-history-fast",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/airline-pet-vaccine-records-checklist",
+      "url": "https://petclues.com/guides/airline-pet-vaccine-records-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/allergy-immunotherapy-records-keep-with-vaccines",
+      "url": "https://petclues.com/guides/allergy-immunotherapy-records-keep-with-vaccines",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/allergy-test-results-pet-document-filing",
+      "url": "https://petclues.com/guides/allergy-test-results-pet-document-filing",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/apartment-pet-application-vaccine-proof",
+      "url": "https://petclues.com/guides/apartment-pet-application-vaccine-proof",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/backup-pet-vaccination-records-phone-lost",
+      "url": "https://petclues.com/guides/backup-pet-vaccination-records-phone-lost",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/behavioral-medication-history-for-vet-consult",
+      "url": "https://petclues.com/guides/behavioral-medication-history-for-vet-consult",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/best-way-to-store-pet-vaccination-records",
+      "url": "https://petclues.com/guides/best-way-to-store-pet-vaccination-records",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/bloodwork-pdf-from-vet-how-to-file",
+      "url": "https://petclues.com/guides/bloodwork-pdf-from-vet-how-to-file",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/boarding-health-form-and-vaccine-packet",
+      "url": "https://petclues.com/guides/boarding-health-form-and-vaccine-packet",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/boarding-kennel-flea-prevention-proof-needed",
+      "url": "https://petclues.com/guides/boarding-kennel-flea-prevention-proof-needed",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/boarding-kennel-vaccination-requirements-checklist",
+      "url": "https://petclues.com/guides/boarding-kennel-vaccination-requirements-checklist",
+      "pillar": "vault"
+    },
+    {
+      "path": "/guides/bordetella-certificate-for-kennel-how-to-send",
+      "url": "https://petclues.com/guides/bordetella-certificate-for-kennel-how-to-send",
+      "pillar": "vault"
+    }
+  ]
+}

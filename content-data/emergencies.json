@@ -1,0 +1,331 @@
+[
+  {
+    "slug": "chocolate-toxicity",
+    "name": "Chocolate ingestion",
+    "immediate_action_steps": [
+      "Remove remaining chocolate and secure the wrapper or package",
+      "Note the type (baker's, dark, milk, white), approximate amount, and time eaten",
+      "Call a veterinarian or pet poison hotline before inducing vomiting",
+      "Do not give salt, oil, or human medications unless a clinician instructs you",
+      "Bring the product package to the clinic if you go in"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call ASPCA Animal Poison Control (888-426-4435) or Pet Poison Helpline (855-764-7661) for dose-based risk triage, and contact your veterinarian or ER at the same time if the pet is already symptomatic (vomiting, agitation, tremors, collapse) or if a large or dark-chocolate amount was eaten. Poison control calculates toxin risk; the vet or ER provides hands-on care.",
+    "source_notes": "Hotline numbers are publicly listed by ASPCA APCC and Pet Poison Helpline. Fees may apply for poison hotlines."
+  },
+  {
+    "slug": "hit-by-car",
+    "name": "Hit by car / blunt trauma",
+    "immediate_action_steps": [
+      "Move yourself and the pet only if the roadway is unsafe; prioritize human safety",
+      "Muzzle only if the pet is conscious and not vomiting or airway-compromised, to reduce bite risk",
+      "Support the body on a board or blanket; minimize twisting the spine",
+      "Control obvious bleeding with clean, firm pressure",
+      "Go to an emergency veterinarian immediately even if the pet walks away"
+    ],
+    "when_to_call_vet_vs_poison_control": "This is a veterinary emergency, not a poison-control case. Call the ER while someone drives. Poison control is only relevant if a toxin was also involved.",
+    "source_notes": "Internal injuries can be delayed; walking after trauma does not clear the pet."
+  },
+  {
+    "slug": "heatstroke",
+    "name": "Heatstroke / overheating",
+    "immediate_action_steps": [
+      "Move to shade or air conditioning immediately",
+      "Offer small amounts of water if the pet can swallow normally",
+      "Cool with room-temperature water on paw pads, groin, and belly; avoid ice baths",
+      "Monitor breathing and gum color while transporting",
+      "Go to a veterinarian or ER even if the pet seems to improve"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call or visit the veterinarian or ER now. Poison control is not the primary contact unless a toxin contributed. Brachycephalic breeds and dogs left in hot cars are high risk.",
+    "NEEDS_VET_REVIEW": true,
+    "source_notes": "Cooling technique details vary by clinic protocol. NEEDS_VET_REVIEW before publishing exact target temperatures or stop-cooling thresholds."
+  },
+  {
+    "slug": "xylitol-toxicity",
+    "name": "Xylitol (sugar-free) ingestion",
+    "immediate_action_steps": [
+      "Remove remaining gum, candy, or baked goods and keep the packaging",
+      "Note the product name, xylitol listing, approximate amount, and time",
+      "Call pet poison control or your veterinarian immediately — do not wait for symptoms",
+      "Do not induce vomiting unless a clinician specifically instructs you",
+      "Prepare to go to an ER; hypoglycemia can develop quickly in dogs"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call poison control and your vet or ER right away. Xylitol in dogs is time-sensitive even before symptoms. Poison control helps estimate risk from the label; the clinic manages blood sugar and liver support. Cats are less commonly reported with classic xylitol crisis, but still get professional advice.",
+    "source_notes": "Xylitol dose risk is highly product-dependent; always use packaging with the hotline."
+  },
+  {
+    "slug": "grape-raisin-toxicity",
+    "name": "Grape or raisin ingestion",
+    "immediate_action_steps": [
+      "Remove remaining grapes, raisins, or foods that contain them",
+      "Estimate how many were eaten and when",
+      "Call pet poison control or your veterinarian promptly — do not wait for vomiting",
+      "Do not give home remedies unless instructed by a clinician",
+      "Bring packaging or a sample of what was eaten if you seek care"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call poison control for triage and your veterinarian the same day. Kidney injury risk is unpredictable by count alone. If the pet is already vomiting, lethargic, or not producing urine, go to the ER now; poison control alone is not enough.",
+    "NEEDS_VET_REVIEW": true,
+    "source_notes": "Toxic dose is not reliably predictable; treat any ingestion as needing professional advice."
+  },
+  {
+    "slug": "onion-garlic-toxicity",
+    "name": "Onion or garlic ingestion",
+    "immediate_action_steps": [
+      "Remove remaining onion, garlic, chives, or seasoned leftovers",
+      "Note the form (raw, cooked, powder) and approximate amount and time",
+      "Call pet poison control or your veterinarian for dose-based guidance",
+      "Watch for weakness, pale gums, or dark urine over the next 1–3 days",
+      "Do not wait for severe signs if a large amount or concentrated powder was eaten"
+    ],
+    "when_to_call_vet_vs_poison_control": "Poison control helps estimate oxidative red-cell risk from the amount and form. Call your vet the same day for non-trivial amounts. Go to the ER for collapse, pale gums, rapid breathing, or pigmenturia. Mild seasoning exposures may be monitored after clinician advice.",
+    "source_notes": "Powdered forms are more concentrated than fresh pieces of similar volume."
+  },
+  {
+    "slug": "antifreeze-poisoning",
+    "name": "Antifreeze (ethylene glycol) exposure",
+    "immediate_action_steps": [
+      "Prevent further access and wipe paws or fur if contaminated",
+      "Note the product name, approximate amount, and time of exposure",
+      "Call poison control and head toward an emergency clinic immediately",
+      "Do not wait for symptoms — early treatment is time-critical",
+      "Bring the product label with you"
+    ],
+    "when_to_call_vet_vs_poison_control": "This is both a poison-control and ER emergency. Call the hotline while driving to the ER. Do not treat this as a wait-and-see home case. Antifreeze exposure can progress from seeming intoxicated to kidney failure.",
+    "source_notes": "Ethylene glycol is a classic time-sensitive toxin; propylene glycol products differ — label matters."
+  },
+  {
+    "slug": "rodenticide-poisoning",
+    "name": "Rodenticide (rat/mouse bait) ingestion",
+    "immediate_action_steps": [
+      "Secure remaining bait and keep the package or active-ingredient label",
+      "Note which bait block or pellet type and when it was eaten",
+      "Call pet poison control immediately — active ingredients change the treatment path",
+      "Do not induce vomiting unless a clinician tells you to",
+      "Go to a veterinarian or ER as directed; some baits need urgent vitamin K or other care"
+    ],
+    "when_to_call_vet_vs_poison_control": "Always call poison control first when the bait type is unknown — anticoagulant, bromethalin, cholecalciferol, and zinc phosphide require different plans. Then follow clinic or ER instructions. Bleeding, seizures, or sudden collapse means ER now.",
+    "source_notes": "Never guess the bait class from color alone; the EPA active ingredient on the label is essential."
+  },
+  {
+    "slug": "cannabis-ingestion",
+    "name": "Cannabis / marijuana ingestion",
+    "immediate_action_steps": [
+      "Remove remaining edibles, flower, or concentrate and secure the area",
+      "Note the product type (edible, butter, vape oil), amount, and time",
+      "Call your veterinarian or pet poison control for guidance",
+      "Keep the pet in a quiet, safe space; prevent falls from ataxia",
+      "Do not give human CBD or THC products as an antidote"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call your veterinarian for most exposures; poison control helps when dose or product potency is unclear. Go to the ER for collapse, severe agitation, seizures, or inability to walk. Chocolate-containing edibles add a second toxin risk — tell the clinician both ingredients.",
+    "source_notes": "Edibles often combine THC with chocolate, xylitol, or raisins."
+  },
+  {
+    "slug": "lily-toxicity-cat",
+    "name": "Lily ingestion (cats)",
+    "immediate_action_steps": [
+      "Remove plant material from the mouth and keep a sample or photo of the plant",
+      "Note whether pollen, leaves, or water from the vase may have been involved",
+      "Call pet poison control or an ER immediately — true lilies are a cat kidney emergency",
+      "Do not wait for vomiting to start",
+      "Transport to a veterinarian promptly even if the cat seems fine"
+    ],
+    "when_to_call_vet_vs_poison_control": "Treat true lily exposure in cats as an ER case and call poison control for plant ID help if unsure. Peace lilies and calla lilies are different plants — ID matters, but when unsure, err toward urgent veterinary care. Poison control alone does not replace decontamination and kidney monitoring.",
+    "source_notes": "Lilium and Hemerocallis species are the classic feline nephrotoxic lilies."
+  },
+  {
+    "slug": "bloat-gdv",
+    "name": "Bloat / GDV (gastric dilatation-volvulus)",
+    "immediate_action_steps": [
+      "Treat unproductive retching, a swollen hard abdomen, and sudden distress as an emergency",
+      "Do not offer food, water, or attempt home decompression",
+      "Call the nearest emergency clinic while preparing to leave immediately",
+      "Keep the dog as calm as possible during transport",
+      "Tell the ER you are concerned about bloat or GDV so they can prepare"
+    ],
+    "when_to_call_vet_vs_poison_control": "This is an ER surgical emergency, not a poison-control case. Do not delay for a hotline consult unless a toxin was also involved. Minutes matter.",
+    "source_notes": "Deep-chested large breeds are at higher risk; any dog with classic signs needs ER evaluation."
+  },
+  {
+    "slug": "choking",
+    "name": "Choking / airway obstruction",
+    "immediate_action_steps": [
+      "If the pet is still moving air, keep them calm and go to an ER — do not blindly finger-sweep",
+      "If the pet collapses and is not breathing, follow veterinary CPR guidance you have been trained on, or get to help immediately",
+      "Look for visible objects at the front of the mouth only if you can see them clearly",
+      "Do not pull string or thread that continues into the throat or under the tongue without clinical help",
+      "Transport carefully with the head supported; call ahead so the ER can prepare oxygen"
+    ],
+    "when_to_call_vet_vs_poison_control": "Airway emergencies go to the ER, not poison control. Call the clinic while someone drives. Poison control applies only if a toxin or corrosive was involved in addition to obstruction.",
+    "NEEDS_VET_REVIEW": true,
+    "source_notes": "Heimlich-style maneuvers in pets are technique-sensitive; page copy should not teach unverified rescue steps as universal protocol."
+  },
+  {
+    "slug": "seizure",
+    "name": "Seizure",
+    "immediate_action_steps": [
+      "Move furniture and hazards away; do not put your hands near the mouth",
+      "Time the seizure and note what happened just before it started",
+      "Dim lights and keep the environment quiet during recovery",
+      "Call your veterinarian or ER if the seizure lasts more than a few minutes, clusters occur, or it is a first seizure",
+      "Do not give human anticonvulsants unless a veterinarian has prescribed them for this pet"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call the ER for prolonged, repeated, or first-time seizures, or if the pet does not recover normally. Poison control is important if toxin ingestion (xylitol, chocolate, bait, medications) is suspected as the trigger. Otherwise this is a veterinary neurology or ER workup.",
+    "source_notes": "Cluster seizures and status epilepticus are emergencies."
+  },
+  {
+    "slug": "snakebite",
+    "name": "Snakebite",
+    "immediate_action_steps": [
+      "Move the pet and people away from the snake; do not try to catch or kill it",
+      "Keep the pet calm and limit activity; carry small pets when possible",
+      "Photograph the snake from a safe distance only if it does not delay care",
+      "Do not cut the wound, suck venom, apply a tourniquet, or pack ice",
+      "Go to an emergency veterinarian promptly — antivenom decisions are clinical"
+    ],
+    "when_to_call_vet_vs_poison_control": "Snakebite is an ER case. Call ahead so the clinic can check antivenom availability. Poison control may help with snake ID in some regions but does not replace emergency care.",
+    "source_notes": "Venomous species vary by geography; local ER knowledge matters."
+  },
+  {
+    "slug": "insect-sting-anaphylaxis",
+    "name": "Insect sting / allergic reaction",
+    "immediate_action_steps": [
+      "Move to a safe area away from further stings",
+      "If a stinger is visible at the skin surface, scrape it away horizontally",
+      "Watch for facial swelling, hives, vomiting, collapse, or breathing change",
+      "Call your veterinarian or ER immediately for swelling of the face, throat, or any breathing effort",
+      "Do not give human antihistamines or epinephrine unless a veterinarian has already prescribed a plan for this pet"
+    ],
+    "when_to_call_vet_vs_poison_control": "Localized mild swelling can often be directed by your regular vet by phone. Facial swelling, hives with lethargy, vomiting, or breathing changes are ER now. Poison control is secondary unless a toxin was also involved.",
+    "source_notes": "Anaphylaxis can progress quickly; prior sting history raises concern."
+  },
+  {
+    "slug": "severe-bleeding",
+    "name": "Severe bleeding / laceration",
+    "immediate_action_steps": [
+      "Apply clean cloth pressure continuously; do not keep peeking every few seconds",
+      "Elevate the area if it does not worsen pain or fracture risk",
+      "Use a muzzle only if safe for breathing and the pet is not vomiting",
+      "Keep the pet warm and calm; minimize movement",
+      "Go to an ER for spurting blood, bleeding that soaks through pressure, pale gums, or collapse"
+    ],
+    "when_to_call_vet_vs_poison_control": "Bleeding trauma is an ER or urgent veterinary case, not poison control. Call ahead while applying pressure. Poison control only if rodenticide or another anticoagulant toxin is in the history.",
+    "source_notes": "Tourniquets are specialty decisions; default teaching is firm direct pressure."
+  },
+  {
+    "slug": "eye-injury",
+    "name": "Eye injury",
+    "immediate_action_steps": [
+      "Prevent pawing with an Elizabethan collar if you have one",
+      "Do not rub the eye or apply leftover medicated drops from another pet",
+      "If a chemical splashed the eye, flush with sterile saline or clean water for several minutes on the way to care",
+      "Keep the pet in dim light if light-sensitive",
+      "Seek veterinary care the same day for squinting, cloudiness, visible trauma, or discharge after injury"
+    ],
+    "when_to_call_vet_vs_poison_control": "Eye trauma and chemical exposure are veterinary emergencies or same-day urgent cases. Poison control may advise on chemical ID, but the pet still needs ocular exam. Sudden blindness or a prolapsed eye is ER now.",
+    "source_notes": "Corneal injuries can worsen within hours."
+  },
+  {
+    "slug": "cat-urinary-blockage",
+    "name": "Cat urinary blockage",
+    "immediate_action_steps": [
+      "Treat repeated litter-box trips with little or no urine as an emergency in male cats especially",
+      "Note straining, crying, licking the penis, vomiting, or hiding",
+      "Do not give pain medications meant for humans",
+      "Call an ER or your veterinarian immediately and prepare to transport",
+      "Bring a urine sample only if it does not delay leaving"
+    ],
+    "when_to_call_vet_vs_poison_control": "This is an ER veterinary emergency, not poison control. Blocked cats can become critically ill within hours. Call the clinic while you drive.",
+    "source_notes": "Male cats are at higher risk of urethral obstruction; females can have other urinary emergencies."
+  },
+  {
+    "slug": "hypothermia",
+    "name": "Hypothermia / cold exposure",
+    "immediate_action_steps": [
+      "Move the pet into a warm indoor space immediately",
+      "Wrap in dry blankets; use warm (not hot) water bottles wrapped in cloth against the body",
+      "Do not use heating pads directly on skin or force a cold, weakly swallowing pet to drink",
+      "Monitor for continuous shivering, pale gums, or extreme lethargy",
+      "Seek veterinary care for moderate to severe exposure, wet pets in freezing weather, or pets that will not warm and brighten"
+    ],
+    "when_to_call_vet_vs_poison_control": "Cold injury is a veterinary case. Call your vet or ER for guidance on warming and when to come in. Poison control is unrelated unless antifreeze or another toxin contributed to collapse outdoors.",
+    "NEEDS_VET_REVIEW": true,
+    "source_notes": "Rewarming rate guidance varies; avoid publishing unverified core-temperature targets without review."
+  },
+  {
+    "slug": "electric-shock",
+    "name": "Electric cord shock",
+    "immediate_action_steps": [
+      "Shut off power at the breaker or unplug the cord without touching the pet if still in contact",
+      "Do not pull a pet off a live cord with bare hands",
+      "Check breathing and gum color; keep the airway clear",
+      "Look for burns in the mouth; avoid forcing food or water",
+      "Go to an ER even if the pet seems recovered — lung complications can lag"
+    ],
+    "when_to_call_vet_vs_poison_control": "Electric shock is an ER veterinary emergency. Poison control is not the primary contact. Call the ER while transporting.",
+    "source_notes": "Non-cardiogenic pulmonary edema can appear after a seemingly brief shock."
+  },
+  {
+    "slug": "foreign-body-ingestion",
+    "name": "Foreign body ingestion",
+    "immediate_action_steps": [
+      "Note what was swallowed, the size, and the time",
+      "Do not induce vomiting for sharp objects, batteries, or caustic items unless a clinician directs you",
+      "Prevent further access to toys, socks, bones, or string",
+      "Call your veterinarian or pet poison control for object-specific advice",
+      "Watch for repeated vomiting, loss of appetite, abdominal pain, or lethargy and seek care promptly"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call your veterinarian for most toy, sock, or bone ingestions. Poison control is useful for batteries, magnets, adhesives, or unknown chemicals. ER now for repeated unproductive vomiting, severe pain, known linear foreign body (string) in cats, or collapse.",
+    "source_notes": "Linear foreign bodies in cats are especially dangerous."
+  },
+  {
+    "slug": "nsaid-toxicity",
+    "name": "Ibuprofen / NSAID ingestion",
+    "immediate_action_steps": [
+      "Secure the bottle and note the drug name, strength, number of pills, and time",
+      "Call pet poison control or your veterinarian immediately",
+      "Do not induce vomiting unless instructed",
+      "Do not give any additional pain medications",
+      "Be ready for ER care — GI ulceration and kidney injury risk can be dose-dependent"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call poison control with the exact product and strength, then follow veterinary or ER instructions. Symptomatic pets (vomiting, black stool, collapse) need the ER, not home observation.",
+    "source_notes": "Veterinary NSAIDs and human NSAIDs are not interchangeable; overdose math needs the label."
+  },
+  {
+    "slug": "acetaminophen-toxicity",
+    "name": "Acetaminophen (Tylenol) ingestion",
+    "immediate_action_steps": [
+      "Secure the bottle; note strength, number of tablets or liquid volume, and time",
+      "Call pet poison control or an ER immediately — cats are especially sensitive",
+      "Do not wait for chocolate-colored gums or facial swelling to appear",
+      "Do not give any more over-the-counter pain relievers",
+      "Transport with the packaging"
+    ],
+    "when_to_call_vet_vs_poison_control": "Treat as poison control plus veterinary emergency, especially in cats. Call the hotline while arranging ER care. This is not a monitor-at-home toxin when a meaningful dose may have been ingested.",
+    "source_notes": "Cats lack metabolic pathways that make acetaminophen particularly hazardous."
+  },
+  {
+    "slug": "allergic-facial-swelling",
+    "name": "Sudden facial swelling",
+    "immediate_action_steps": [
+      "Note any new food, insect sting, vaccine, or medication in the last hours",
+      "Check for difficulty breathing, retching, or spreading hives",
+      "Keep the pet calm and avoid forcing the mouth open",
+      "Call your veterinarian or ER promptly for facial or muzzle swelling",
+      "Do not give human allergy medications unless a veterinarian directs a specific dose for this pet"
+    ],
+    "when_to_call_vet_vs_poison_control": "Facial swelling with normal breathing may be an urgent same-day vet visit; swelling with breathing change, collapse, or vomiting is ER now. Poison control helps if a toxin or drug overdose is the suspected trigger.",
+    "source_notes": "Vaccine reactions and insect stings are common histories."
+  },
+  {
+    "slug": "near-drowning",
+    "name": "Near-drowning / water inhalation",
+    "immediate_action_steps": [
+      "Get the pet to dry land and clear obvious debris from the mouth if visible and easy to remove",
+      "Keep the neck aligned; avoid shaking",
+      "Cover with a towel and keep warm",
+      "Seek emergency care even if the pet coughs once and seems better",
+      "Do not delay for home observation — fluid in the lungs can worsen later"
+    ],
+    "when_to_call_vet_vs_poison_control": "Near-drowning is an ER veterinary emergency. Poison control is unrelated unless the water was chemically treated in a way that also caused toxicity (rare; still tell the ER).",
+    "source_notes": "Delayed pulmonary complications are the reason asymptomatic-appearing pets still need evaluation."
+  }
+]

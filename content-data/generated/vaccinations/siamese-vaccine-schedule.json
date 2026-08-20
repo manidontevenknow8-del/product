@@ -1,0 +1,47 @@
+{
+  "slug": "siamese-vaccine-schedule",
+  "path": "/vaccinations/siamese-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "siamese",
+  "subjectName": "Siamese",
+  "species": "cat",
+  "primaryKeyword": "Siamese vaccine schedule",
+  "metaDescription": "Siamese vaccine schedule with core ages in weeks. Set reminders so Siamese boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/siamese/adult-health-guide",
+  "breedHealthLabel": "Siamese adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Siamese social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Siamese exposure.",
+        "Weight range 8-14 lb (3.5-6.5 kg) and grooming needs (Short coat; weekly wipe.) belong in the same Siamese household ops list as vaccine dates when busy weeks collide.",
+        "If your Siamese is also monitored for amyloidosis risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Siamese appointments.",
+        "After the Siamese puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Siamese shots when the kitten seems “a little off,” travel intervenes, or dental disease worries dominate the week — ask the clinic whether a same-week Siamese make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Siamese antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Siamese dose for extra socialization; finish immunity first for this medium cat.",
+        "Reset the Siamese reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Siamese core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Siamese misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Siamese health context beyond vaccines?",
+      "answer": "See the Siamese adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

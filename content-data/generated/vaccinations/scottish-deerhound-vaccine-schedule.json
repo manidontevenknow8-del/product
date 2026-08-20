@@ -1,0 +1,47 @@
+{
+  "slug": "scottish-deerhound-vaccine-schedule",
+  "path": "/vaccinations/scottish-deerhound-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "scottish-deerhound",
+  "subjectName": "Scottish Deerhound",
+  "species": "dog",
+  "primaryKeyword": "Scottish Deerhound vaccine schedule",
+  "metaDescription": "Scottish Deerhound vaccine schedule with core ages in weeks. Set reminders so Scottish Deerhound boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/scottish-deerhound/adult-health-guide",
+  "breedHealthLabel": "Scottish Deerhound adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Scottish Deerhounds: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Scottish Deerhound series closes at about 16 weeks.",
+        "Size class giant does not invent new viruses for the Scottish Deerhound, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag bloat (gdv) at Scottish Deerhound vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Scottish Deerhound series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Scottish Deerhound misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Scottish Deerhound series from memory.",
+        "The danger for a delayed Scottish Deerhound is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Scottish Deerhound away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Scottish Deerhound due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Scottish Deerhound core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Scottish Deerhound misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Scottish Deerhound health context beyond vaccines?",
+      "answer": "See the Scottish Deerhound adult health guide for breed predispositions such as osteosarcoma risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "rat-terrier-vaccine-schedule",
+  "path": "/vaccinations/rat-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "rat-terrier",
+  "subjectName": "Rat Terrier",
+  "species": "dog",
+  "primaryKeyword": "Rat Terrier vaccine schedule",
+  "metaDescription": "Rat Terrier vaccine schedule with core ages in weeks. Set reminders so Rat Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/rat-terrier/adult-health-guide",
+  "breedHealthLabel": "Rat Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Rat Terrier core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a small puppy is covered as maternal antibodies fade.",
+        "At 10-25 lb (4.5-11 kg), Rat Terrier visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring patellar luxation and dental disease into the Rat Terrier exam-room conversation while you are already there for shots.",
+        "Rabies for a Rat Terrier still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Rat Terrier misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Rat Terrier series from memory.",
+        "The danger for a delayed Rat Terrier is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Rat Terrier away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Rat Terrier due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Rat Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Rat Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Rat Terrier health context beyond vaccines?",
+      "answer": "See the Rat Terrier adult health guide for breed predispositions such as patellar luxation, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

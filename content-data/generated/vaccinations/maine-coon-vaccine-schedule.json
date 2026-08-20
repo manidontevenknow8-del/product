@@ -1,0 +1,47 @@
+{
+  "slug": "maine-coon-vaccine-schedule",
+  "path": "/vaccinations/maine-coon-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "maine-coon",
+  "subjectName": "Maine Coon",
+  "species": "cat",
+  "primaryKeyword": "Maine Coon vaccine schedule",
+  "metaDescription": "Maine Coon vaccine schedule with core ages in weeks. Set reminders so Maine Coon boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/maine-coon/adult-health-guide",
+  "breedHealthLabel": "Maine Coon adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Maine Coon owners tracking 10-13 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where panleukopenia risk concentrates for this kitten.",
+        "Use the 4-row Maine Coon schedule as your only planning spine: 8 weeks (FVRCP); 12 weeks (FVRCP booster); 16 weeks (FVRCP booster); 16 weeks (Rabies).",
+        "Temperament note for Maine Coon handling: Dog-like gentle giant cat; HCM screening is a breed staple.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Maine Coon dose.",
+        "Lifestyle add-ons stay off this Maine Coon core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Maine Coon shots when the kitten seems “a little off,” travel intervenes, or hypertrophic cardiomyopathy (hcm) risk worries dominate the week — ask the clinic whether a same-week Maine Coon make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Maine Coon antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Maine Coon dose for extra socialization; finish immunity first for this large cat.",
+        "Reset the Maine Coon reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Maine Coon core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Maine Coon misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Maine Coon health context beyond vaccines?",
+      "answer": "See the Maine Coon adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

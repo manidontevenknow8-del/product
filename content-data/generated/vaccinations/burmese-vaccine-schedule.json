@@ -1,0 +1,47 @@
+{
+  "slug": "burmese-vaccine-schedule",
+  "path": "/vaccinations/burmese-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "burmese",
+  "subjectName": "Burmese",
+  "species": "cat",
+  "primaryKeyword": "Burmese vaccine schedule",
+  "metaDescription": "Burmese vaccine schedule with core ages in weeks. Set reminders so Burmese boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/burmese/adult-health-guide",
+  "breedHealthLabel": "Burmese adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Burmese social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Burmese exposure.",
+        "Weight range 8-12 lb (3.5-5.5 kg) and grooming needs (Short satin coat.) belong in the same Burmese household ops list as vaccine dates when busy weeks collide.",
+        "If your Burmese is also monitored for hypokalemia risk (some lines), ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Burmese appointments.",
+        "After the Burmese puppy/kitten series, keep adult FVRCP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Burmese shots when the kitten seems “a little off,” travel intervenes, or diabetes risk worries dominate the week — ask the clinic whether a same-week Burmese make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Burmese antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Burmese dose for extra socialization; finish immunity first for this medium cat.",
+        "Reset the Burmese reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Burmese core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Burmese misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Burmese health context beyond vaccines?",
+      "answer": "See the Burmese adult health guide for breed predispositions such as diabetes risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

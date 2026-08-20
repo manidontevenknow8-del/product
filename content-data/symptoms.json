@@ -1,0 +1,3582 @@
+[
+  {
+    "slug": "vomiting-dog",
+    "name": "Vomiting (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Dietary indiscretion (scavenging, sudden food change)",
+      "Gastroenteritis",
+      "Pancreatitis",
+      "Foreign body obstruction",
+      "Toxin ingestion"
+    ],
+    "when_to_see_vet_immediately": [
+      "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+      "Vomiting with blood or coffee-ground material",
+      "Collapse, pale gums, or severe lethargy",
+      "Known toxin or foreign object ingestion",
+      "Abdominal distension or extreme pain"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "german-shepherd",
+      "great-dane"
+    ],
+    "related_emergency_slug": "bloat-gdv",
+    "source_notes": "Unproductive retching in deep-chested dogs can signal GDV — treat as emergency."
+  },
+  {
+    "slug": "vomiting-cat",
+    "name": "Vomiting (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Dietary indiscretion (scavenging, sudden food change)",
+      "Gastroenteritis",
+      "Pancreatitis",
+      "Foreign body obstruction",
+      "Toxin ingestion"
+    ],
+    "when_to_see_vet_immediately": [
+      "Vomiting with blood or coffee-ground material",
+      "Collapse, pale gums, or severe lethargy",
+      "Known toxin or foreign object ingestion",
+      "Abdominal distension or extreme pain",
+      "Repeated vomiting with a painful or swollen abdomen"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "german-shepherd",
+      "great-dane"
+    ],
+    "related_emergency_slug": "bloat-gdv",
+    "source_notes": "Cats that hide after vomiting or stop eating for more than a day need prompt vet advice."
+  },
+  {
+    "slug": "difficulty-breathing-dog",
+    "name": "Difficulty breathing (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Asthma / allergic airway disease",
+      "Congestive heart failure / cardiomyopathy complications",
+      "Pleural effusion",
+      "Upper respiratory infection with obstruction",
+      "Trauma or foreign body"
+    ],
+    "when_to_see_vet_immediately": [
+      "Open-mouth breathing (especially in cats)",
+      "Blue or gray gums/tongue",
+      "Extreme effort or abdominal breathing",
+      "Collapse or inability to lie down comfortably",
+      "Sudden onset after possible toxin or trauma"
+    ],
+    "related_breed_predispositions": [
+      "maine-coon",
+      "ragdoll",
+      "persian",
+      "french-bulldog",
+      "pug"
+    ],
+    "related_emergency_slug": "difficulty-breathing",
+    "source_notes": "Open-mouth breathing in cats is generally treated as an emergency."
+  },
+  {
+    "slug": "difficulty-breathing-cat",
+    "name": "Difficulty breathing (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Asthma / allergic airway disease",
+      "Congestive heart failure / cardiomyopathy complications",
+      "Pleural effusion",
+      "Upper respiratory infection with obstruction",
+      "Trauma or foreign body"
+    ],
+    "when_to_see_vet_immediately": [
+      "Open-mouth breathing (especially in cats)",
+      "Blue or gray gums/tongue",
+      "Extreme effort or abdominal breathing",
+      "Collapse or inability to lie down comfortably",
+      "Sudden onset after possible toxin or trauma"
+    ],
+    "related_breed_predispositions": [
+      "maine-coon",
+      "ragdoll",
+      "persian",
+      "french-bulldog",
+      "pug"
+    ],
+    "related_emergency_slug": "difficulty-breathing",
+    "source_notes": "Open-mouth breathing in cats is generally treated as an emergency."
+  },
+  {
+    "slug": "limping-dog",
+    "name": "Limping (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Soft tissue sprain/strain",
+      "Paw pad injury or foreign body",
+      "Cruciate ligament injury",
+      "Developmental orthopedic disease (e.g., hip dysplasia)",
+      "IVDD or neurologic weakness"
+    ],
+    "when_to_see_vet_immediately": [
+      "Non-weight-bearing lameness",
+      "Limb held at abnormal angle (possible fracture/dislocation)",
+      "Dragged limbs, knuckling, or sudden paralysis",
+      "Severe pain, crying, or aggression when touched",
+      "Limping after known trauma (hit by car, fall)"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "french-bulldog",
+      "dachshund"
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "limping-cat",
+    "name": "Limping (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Soft tissue sprain/strain",
+      "Paw pad injury or foreign body",
+      "Cruciate ligament injury",
+      "Developmental orthopedic disease (e.g., hip dysplasia)",
+      "IVDD or neurologic weakness"
+    ],
+    "when_to_see_vet_immediately": [
+      "Non-weight-bearing lameness",
+      "Limb held at abnormal angle (possible fracture/dislocation)",
+      "Dragged limbs, knuckling, or sudden paralysis",
+      "Severe pain, crying, or aggression when touched",
+      "Limping after known trauma (hit by car, fall)"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "french-bulldog",
+      "dachshund"
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "diarrhea-dog",
+    "name": "Diarrhea (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Dietary change or scavenging",
+      "Parasites",
+      "Viral or bacterial gastroenteritis",
+      "Stress colitis",
+      "Food intolerance"
+    ],
+    "when_to_see_vet_immediately": [
+      "Bloody or black tarry stool",
+      "Diarrhea with repeated vomiting",
+      "Puppy/kitten with diarrhea lasting more than a few hours",
+      "Severe lethargy or dehydration signs",
+      "Known toxin exposure"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "diarrhea-cat",
+    "name": "Diarrhea (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Dietary change or scavenging",
+      "Parasites",
+      "Viral or bacterial gastroenteritis",
+      "Stress colitis",
+      "Food intolerance"
+    ],
+    "when_to_see_vet_immediately": [
+      "Bloody or black tarry stool",
+      "Diarrhea with repeated vomiting",
+      "Puppy/kitten with diarrhea lasting more than a few hours",
+      "Severe lethargy or dehydration signs",
+      "Known toxin exposure"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "lethargy-dog",
+    "name": "Lethargy (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Infection or fever",
+      "Pain from injury or illness",
+      "Metabolic disease (e.g., diabetes, kidney disease)",
+      "Anemia or cardiovascular issues",
+      "Toxin exposure"
+    ],
+    "when_to_see_vet_immediately": [
+      "Collapse or inability to stand",
+      "Pale, blue, or yellow gums",
+      "Difficulty breathing with low energy",
+      "Sudden extreme weakness",
+      "Lethargy with repeated vomiting or not eating"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "lethargy-cat",
+    "name": "Lethargy (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Infection or fever",
+      "Pain from injury or illness",
+      "Metabolic disease (e.g., diabetes, kidney disease)",
+      "Anemia or cardiovascular issues",
+      "Toxin exposure"
+    ],
+    "when_to_see_vet_immediately": [
+      "Collapse or inability to stand",
+      "Pale, blue, or yellow gums",
+      "Difficulty breathing with low energy",
+      "Sudden extreme weakness",
+      "Lethargy with repeated vomiting or not eating"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "loss-of-appetite-dog",
+    "name": "Loss of appetite (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Dental pain",
+      "Nausea or GI upset",
+      "Infection",
+      "Kidney or liver disease",
+      "Stress or environmental change"
+    ],
+    "when_to_see_vet_immediately": [
+      "Cat not eating for more than 24 hours",
+      "Puppy/kitten refusing food",
+      "Appetite loss with vomiting or jaundice",
+      "Signs of pain when chewing",
+      "Dehydration or extreme lethargy"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "loss-of-appetite-cat",
+    "name": "Loss of appetite (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Dental pain",
+      "Nausea or GI upset",
+      "Infection",
+      "Kidney or liver disease",
+      "Stress or environmental change"
+    ],
+    "when_to_see_vet_immediately": [
+      "Cat not eating for more than 24 hours",
+      "Puppy/kitten refusing food",
+      "Appetite loss with vomiting or jaundice",
+      "Signs of pain when chewing",
+      "Dehydration or extreme lethargy"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair"
+    ],
+    "source_notes": "Cats can develop hepatic lipidosis after short periods without food — escalate sooner than for dogs."
+  },
+  {
+    "slug": "coughing-dog",
+    "name": "Coughing (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Kennel cough / infectious tracheobronchitis",
+      "Heart disease with congestive changes",
+      "Allergies or inhaled irritants",
+      "Collapsing trachea",
+      "Pneumonia or lower airway disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Coughing with blue gums or collapse",
+      "Cough that produces blood",
+      "Difficulty breathing between coughs",
+      "Cough after known choking episode",
+      "Puppy with harsh cough and fever"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "cavalier-king-charles-spaniel",
+      "pomeranian"
+    ]
+  },
+  {
+    "slug": "coughing-cat",
+    "name": "Coughing (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Kennel cough / infectious tracheobronchitis",
+      "Heart disease with congestive changes",
+      "Allergies or inhaled irritants",
+      "Collapsing trachea",
+      "Pneumonia or lower airway disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Coughing with blue gums or collapse",
+      "Cough that produces blood",
+      "Difficulty breathing between coughs",
+      "Cough after known choking episode",
+      "Puppy with harsh cough and fever"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "cavalier-king-charles-spaniel",
+      "pomeranian"
+    ]
+  },
+  {
+    "slug": "sneezing-dog",
+    "name": "Sneezing (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Upper respiratory infection",
+      "Allergies",
+      "Nasal foreign body",
+      "Dental disease extending into nasal passages",
+      "Irritants (dust, smoke, strong cleaners)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sneezing with facial swelling",
+      "Bloody nasal discharge",
+      "Open-mouth breathing",
+      "Sudden onset after possible toxin spray",
+      "Kitten/puppy unable to nurse due to congestion"
+    ],
+    "related_breed_predispositions": [
+      "persian",
+      "himalayan"
+    ]
+  },
+  {
+    "slug": "sneezing-cat",
+    "name": "Sneezing (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Upper respiratory infection",
+      "Allergies",
+      "Nasal foreign body",
+      "Dental disease extending into nasal passages",
+      "Irritants (dust, smoke, strong cleaners)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sneezing with facial swelling",
+      "Bloody nasal discharge",
+      "Open-mouth breathing",
+      "Sudden onset after possible toxin spray",
+      "Kitten/puppy unable to nurse due to congestion"
+    ],
+    "related_breed_predispositions": [
+      "persian",
+      "himalayan"
+    ]
+  },
+  {
+    "slug": "seizures-dog",
+    "name": "Seizures (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Idiopathic epilepsy",
+      "Toxin ingestion",
+      "Metabolic imbalance (low blood sugar, liver disease)",
+      "Brain inflammation or injury",
+      "Heatstroke"
+    ],
+    "when_to_see_vet_immediately": [
+      "First-time seizure",
+      "Seizure lasting longer than 2–3 minutes",
+      "Cluster seizures (more than one in 24 hours)",
+      "Seizure after possible toxin exposure",
+      "Not returning to normal within a short recovery window"
+    ],
+    "related_breed_predispositions": [
+      "border-collie",
+      "labrador-retriever",
+      "beagle"
+    ],
+    "related_emergency_slug": "seizure"
+  },
+  {
+    "slug": "seizures-cat",
+    "name": "Seizures (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Idiopathic epilepsy",
+      "Toxin ingestion",
+      "Metabolic imbalance (low blood sugar, liver disease)",
+      "Brain inflammation or injury",
+      "Heatstroke"
+    ],
+    "when_to_see_vet_immediately": [
+      "First-time seizure",
+      "Seizure lasting longer than 2–3 minutes",
+      "Cluster seizures (more than one in 24 hours)",
+      "Seizure after possible toxin exposure",
+      "Not returning to normal within a short recovery window"
+    ],
+    "related_breed_predispositions": [
+      "border-collie",
+      "labrador-retriever",
+      "beagle"
+    ],
+    "related_emergency_slug": "seizure"
+  },
+  {
+    "slug": "excessive-thirst-dog",
+    "name": "Excessive thirst (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Diabetes mellitus",
+      "Kidney disease",
+      "Cushing’s disease (more common in dogs)",
+      "Hyperthyroidism (cats)",
+      "Pyometra in intact females"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden extreme thirst with lethargy",
+      "Inability to urinate despite drinking",
+      "Vomiting with increased thirst",
+      "Collapse or disorientation",
+      "Known toxin (e.g., antifreeze) exposure"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "poodle"
+    ]
+  },
+  {
+    "slug": "excessive-thirst-cat",
+    "name": "Excessive thirst (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Diabetes mellitus",
+      "Kidney disease",
+      "Cushing’s disease (more common in dogs)",
+      "Hyperthyroidism (cats)",
+      "Pyometra in intact females"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden extreme thirst with lethargy",
+      "Inability to urinate despite drinking",
+      "Vomiting with increased thirst",
+      "Collapse or disorientation",
+      "Known toxin (e.g., antifreeze) exposure"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "poodle"
+    ]
+  },
+  {
+    "slug": "frequent-urination-dog",
+    "name": "Frequent urination (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Urinary tract infection",
+      "Bladder stones",
+      "Diabetes",
+      "Kidney disease",
+      "Behavioral marking (rule out medical first)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Straining with little or no urine produced",
+      "Crying while trying to urinate",
+      "Blood in urine with lethargy",
+      "Male cat with a blocked appearance (emergency)",
+      "Fever or vomiting with urinary signs"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "dalmatian"
+    ],
+    "related_emergency_slug": "urinary-blockage"
+  },
+  {
+    "slug": "frequent-urination-cat",
+    "name": "Frequent urination (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Urinary tract infection",
+      "Bladder stones",
+      "Diabetes",
+      "Kidney disease",
+      "Behavioral marking (rule out medical first)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Straining with little or no urine produced",
+      "Crying while trying to urinate",
+      "Blood in urine with lethargy",
+      "Male cat with a blocked appearance (emergency)",
+      "Fever or vomiting with urinary signs"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "dalmatian"
+    ],
+    "related_emergency_slug": "urinary-blockage"
+  },
+  {
+    "slug": "straining-to-urinate-dog",
+    "name": "Straining to urinate (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Urethral obstruction (especially male cats)",
+      "Urinary stones",
+      "Severe cystitis",
+      "Prostate disease (intact male dogs)",
+      "Neurologic dysfunction"
+    ],
+    "when_to_see_vet_immediately": [
+      "Repeated trips to litter box/outside with no urine",
+      "Vocalizing while posturing to urinate",
+      "Distended, painful abdomen",
+      "Vomiting or collapse with urinary straining",
+      "Any male cat that cannot produce a stream"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "persian"
+    ],
+    "related_emergency_slug": "urinary-blockage"
+  },
+  {
+    "slug": "straining-to-urinate-cat",
+    "name": "Straining to urinate (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Urethral obstruction (especially male cats)",
+      "Urinary stones",
+      "Severe cystitis",
+      "Prostate disease (intact male dogs)",
+      "Neurologic dysfunction"
+    ],
+    "when_to_see_vet_immediately": [
+      "Repeated trips to litter box/outside with no urine",
+      "Vocalizing while posturing to urinate",
+      "Distended, painful abdomen",
+      "Vomiting or collapse with urinary straining",
+      "Any male cat that cannot produce a stream"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "persian"
+    ],
+    "related_emergency_slug": "urinary-blockage",
+    "source_notes": "Male cat urethral blockage is a true emergency — do not wait overnight."
+  },
+  {
+    "slug": "blood-in-urine-dog",
+    "name": "Blood in urine (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Urinary tract infection",
+      "Bladder stones or crystals",
+      "Idiopathic cystitis (cats)",
+      "Trauma",
+      "Clotting disorders or neoplasia (less common)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Blood in urine plus inability to urinate",
+      "Blood with pale gums or weakness",
+      "Trauma to the abdomen",
+      "Profuse bleeding",
+      "Straining without producing urine"
+    ],
+    "related_breed_predispositions": [
+      "dalmatian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "blood-in-urine-cat",
+    "name": "Blood in urine (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Urinary tract infection",
+      "Bladder stones or crystals",
+      "Idiopathic cystitis (cats)",
+      "Trauma",
+      "Clotting disorders or neoplasia (less common)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Blood in urine plus inability to urinate",
+      "Blood with pale gums or weakness",
+      "Trauma to the abdomen",
+      "Profuse bleeding",
+      "Straining without producing urine"
+    ],
+    "related_breed_predispositions": [
+      "dalmatian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "constipation-dog",
+    "name": "Constipation (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Dehydration",
+      "Hairballs (cats)",
+      "Dietary fiber imbalance",
+      "Pain when posturing (orthopedic or anal disease)",
+      "Megacolon (cats)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Straining with vocalization and no stool for more than a day",
+      "Vomiting with constipation",
+      "Bloated, painful abdomen",
+      "Blood from the rectum with straining",
+      "Complete inability to defecate in a kitten/puppy"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "constipation-cat",
+    "name": "Constipation (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Dehydration",
+      "Hairballs (cats)",
+      "Dietary fiber imbalance",
+      "Pain when posturing (orthopedic or anal disease)",
+      "Megacolon (cats)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Straining with vocalization and no stool for more than a day",
+      "Vomiting with constipation",
+      "Bloated, painful abdomen",
+      "Blood from the rectum with straining",
+      "Complete inability to defecate in a kitten/puppy"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "bloody-stool-dog",
+    "name": "Bloody stool (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Colitis / stress diarrhea",
+      "Parasites",
+      "Dietary indiscretion",
+      "Hemorrhagic gastroenteritis (dogs)",
+      "Foreign body or ulceration"
+    ],
+    "when_to_see_vet_immediately": [
+      "Large volumes of blood",
+      "Black tarry stool",
+      "Bloody stool with vomiting and lethargy",
+      "Puppy with bloody diarrhea (parvo concern)",
+      "Collapse or pale gums"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "bloody-stool-cat",
+    "name": "Bloody stool (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Colitis / stress diarrhea",
+      "Parasites",
+      "Dietary indiscretion",
+      "Hemorrhagic gastroenteritis (dogs)",
+      "Foreign body or ulceration"
+    ],
+    "when_to_see_vet_immediately": [
+      "Large volumes of blood",
+      "Black tarry stool",
+      "Bloody stool with vomiting and lethargy",
+      "Puppy with bloody diarrhea (parvo concern)",
+      "Collapse or pale gums"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "itching-dog",
+    "name": "Itching (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Flea allergy dermatitis",
+      "Environmental allergies",
+      "Food allergy",
+      "Yeast or bacterial skin infection",
+      "Dry skin or contact irritants"
+    ],
+    "when_to_see_vet_immediately": [
+      "Face/muzzle swelling with itching",
+      "Difficulty breathing with hives",
+      "Open, bleeding wounds from self-trauma",
+      "Sudden severe itching after a new medication or sting",
+      "Fever with widespread skin infection"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "french-bulldog",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "itching-cat",
+    "name": "Itching (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Flea allergy dermatitis",
+      "Environmental allergies",
+      "Food allergy",
+      "Yeast or bacterial skin infection",
+      "Dry skin or contact irritants"
+    ],
+    "when_to_see_vet_immediately": [
+      "Face/muzzle swelling with itching",
+      "Difficulty breathing with hives",
+      "Open, bleeding wounds from self-trauma",
+      "Sudden severe itching after a new medication or sting",
+      "Fever with widespread skin infection"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "french-bulldog",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "hair-loss-dog",
+    "name": "Hair loss (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Allergies and over-grooming",
+      "Fleas or mites",
+      "Hormonal disease",
+      "Ringworm",
+      "Stress-related over-grooming (cats)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapid hair loss with open sores",
+      "Hair loss with severe lethargy",
+      "Suspected toxin on the coat",
+      "Painful, hot swollen skin",
+      "Kitten/puppy with widespread lesions and not eating"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "hair-loss-cat",
+    "name": "Hair loss (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Allergies and over-grooming",
+      "Fleas or mites",
+      "Hormonal disease",
+      "Ringworm",
+      "Stress-related over-grooming (cats)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapid hair loss with open sores",
+      "Hair loss with severe lethargy",
+      "Suspected toxin on the coat",
+      "Painful, hot swollen skin",
+      "Kitten/puppy with widespread lesions and not eating"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "ear-scratching-dog",
+    "name": "Ear scratching (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Ear mites",
+      "Yeast or bacterial otitis",
+      "Allergies",
+      "Foreign material in the ear",
+      "Polyps (cats) or masses"
+    ],
+    "when_to_see_vet_immediately": [
+      "Head tilt with circling or falling",
+      "Bloody discharge from the ear after trauma",
+      "Facial paralysis or inability to blink",
+      "Severe pain when the ear is touched",
+      "Balance loss"
+    ],
+    "related_breed_predispositions": [
+      "cocker-spaniel",
+      "basset-hound",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "ear-scratching-cat",
+    "name": "Ear scratching (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Ear mites",
+      "Yeast or bacterial otitis",
+      "Allergies",
+      "Foreign material in the ear",
+      "Polyps (cats) or masses"
+    ],
+    "when_to_see_vet_immediately": [
+      "Head tilt with circling or falling",
+      "Bloody discharge from the ear after trauma",
+      "Facial paralysis or inability to blink",
+      "Severe pain when the ear is touched",
+      "Balance loss"
+    ],
+    "related_breed_predispositions": [
+      "cocker-spaniel",
+      "basset-hound",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "head-shaking-dog",
+    "name": "Head shaking (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Otitis externa",
+      "Ear mites",
+      "Allergies",
+      "Foreign body",
+      "Aural hematoma secondary to shaking"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden head tilt or inability to stand",
+      "Bleeding from the ear canal",
+      "Neurologic signs (circling, seizures)",
+      "Swollen ear flap that is hot and painful",
+      "Trauma to the head"
+    ],
+    "related_breed_predispositions": [
+      "cocker-spaniel",
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "head-shaking-cat",
+    "name": "Head shaking (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Otitis externa",
+      "Ear mites",
+      "Allergies",
+      "Foreign body",
+      "Aural hematoma secondary to shaking"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden head tilt or inability to stand",
+      "Bleeding from the ear canal",
+      "Neurologic signs (circling, seizures)",
+      "Swollen ear flap that is hot and painful",
+      "Trauma to the head"
+    ],
+    "related_breed_predispositions": [
+      "cocker-spaniel",
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "red-eyes-dog",
+    "name": "Red eyes (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Conjunctivitis",
+      "Corneal ulcer",
+      "Allergies",
+      "Glaucoma",
+      "Uveitis or systemic disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Squinting with a cloudy or blue cornea",
+      "Eye trauma or a protruding eye",
+      "Sudden vision loss",
+      "Thick green discharge with swelling",
+      "Painful eye that the pet will not open"
+    ],
+    "related_breed_predispositions": [
+      "pug",
+      "shih-tzu",
+      "persian"
+    ]
+  },
+  {
+    "slug": "red-eyes-cat",
+    "name": "Red eyes (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Conjunctivitis",
+      "Corneal ulcer",
+      "Allergies",
+      "Glaucoma",
+      "Uveitis or systemic disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Squinting with a cloudy or blue cornea",
+      "Eye trauma or a protruding eye",
+      "Sudden vision loss",
+      "Thick green discharge with swelling",
+      "Painful eye that the pet will not open"
+    ],
+    "related_breed_predispositions": [
+      "pug",
+      "shih-tzu",
+      "persian"
+    ]
+  },
+  {
+    "slug": "squinting-dog",
+    "name": "Squinting (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Corneal ulcer or scratch",
+      "Foreign body under the eyelid",
+      "Uveitis",
+      "Glaucoma",
+      "Severe dry eye irritation"
+    ],
+    "when_to_see_vet_immediately": [
+      "Squinting after a cat scratch or trauma",
+      "Cloudy eye with pain",
+      "Bulging eye",
+      "Sudden blindness",
+      "Bleeding from the eye"
+    ],
+    "related_breed_predispositions": [
+      "pug",
+      "boston-terrier",
+      "persian"
+    ]
+  },
+  {
+    "slug": "squinting-cat",
+    "name": "Squinting (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Corneal ulcer or scratch",
+      "Foreign body under the eyelid",
+      "Uveitis",
+      "Glaucoma",
+      "Severe dry eye irritation"
+    ],
+    "when_to_see_vet_immediately": [
+      "Squinting after a cat scratch or trauma",
+      "Cloudy eye with pain",
+      "Bulging eye",
+      "Sudden blindness",
+      "Bleeding from the eye"
+    ],
+    "related_breed_predispositions": [
+      "pug",
+      "boston-terrier",
+      "persian"
+    ]
+  },
+  {
+    "slug": "pale-gums-dog",
+    "name": "Pale gums (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Anemia (blood loss, destruction, or underproduction)",
+      "Shock",
+      "Internal bleeding",
+      "Severe dehydration",
+      "Heart disease with poor perfusion"
+    ],
+    "when_to_see_vet_immediately": [
+      "Gums that are white or gray",
+      "Pale gums with collapse",
+      "Rapid breathing with pale gums",
+      "Known trauma or rodenticide exposure",
+      "Bloody vomit or black stool with pale gums"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "pale-gums-cat",
+    "name": "Pale gums (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Anemia (blood loss, destruction, or underproduction)",
+      "Shock",
+      "Internal bleeding",
+      "Severe dehydration",
+      "Heart disease with poor perfusion"
+    ],
+    "when_to_see_vet_immediately": [
+      "Gums that are white or gray",
+      "Pale gums with collapse",
+      "Rapid breathing with pale gums",
+      "Known trauma or rodenticide exposure",
+      "Bloody vomit or black stool with pale gums"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "blue-gums-dog",
+    "name": "Blue or gray gums (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Severe respiratory distress",
+      "Heart failure",
+      "Airway obstruction",
+      "Smoke or toxin exposure",
+      "Circulatory collapse"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any blue/gray mucous membranes",
+      "Open-mouth breathing with blue gums",
+      "Collapse",
+      "Choking signs",
+      "Heatstroke with color change"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "english-bulldog"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "blue-gums-cat",
+    "name": "Blue or gray gums (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Severe respiratory distress",
+      "Heart failure",
+      "Airway obstruction",
+      "Smoke or toxin exposure",
+      "Circulatory collapse"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any blue/gray mucous membranes",
+      "Open-mouth breathing with blue gums",
+      "Collapse",
+      "Choking signs",
+      "Heatstroke with color change"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "english-bulldog"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "bloated-abdomen-dog",
+    "name": "Bloated abdomen (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "GDV / bloat (dogs)",
+      "Fluid accumulation (ascites)",
+      "Organ enlargement",
+      "Pregnancy (rule out with history)",
+      "Obstruction with gas buildup"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden hard, distended belly",
+      "Unproductive retching",
+      "Restlessness and pacing with a swollen abdomen",
+      "Pale gums or collapse",
+      "Known deep-chested breed with acute bloating"
+    ],
+    "related_breed_predispositions": [
+      "great-dane",
+      "german-shepherd",
+      "standard-poodle"
+    ],
+    "related_emergency_slug": "bloat-gdv",
+    "source_notes": "Acute bloating with retching in large/deep-chested dogs is a surgical emergency until proven otherwise."
+  },
+  {
+    "slug": "bloated-abdomen-cat",
+    "name": "Bloated abdomen (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "GDV / bloat (dogs)",
+      "Fluid accumulation (ascites)",
+      "Organ enlargement",
+      "Pregnancy (rule out with history)",
+      "Obstruction with gas buildup"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden hard, distended belly",
+      "Unproductive retching",
+      "Restlessness and pacing with a swollen abdomen",
+      "Pale gums or collapse",
+      "Repeated vomiting with a painful or swollen abdomen"
+    ],
+    "related_breed_predispositions": [
+      "great-dane",
+      "german-shepherd",
+      "standard-poodle"
+    ],
+    "related_emergency_slug": "bloat-gdv"
+  },
+  {
+    "slug": "collapse-dog",
+    "name": "Collapse (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Cardiac arrhythmia or heart failure",
+      "Vasovagal / situational syncope",
+      "Severe anemia or bleeding",
+      "Neurologic event",
+      "Heatstroke or toxin"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any sudden collapse",
+      "Collapse with pale or blue gums",
+      "Seizure-like activity during collapse",
+      "Inability to stand after the episode",
+      "Repeated fainting episodes"
+    ],
+    "related_breed_predispositions": [
+      "boxer",
+      "doberman-pinscher",
+      "cavalier-king-charles-spaniel"
+    ],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "collapse-cat",
+    "name": "Collapse (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Cardiac arrhythmia or heart failure",
+      "Vasovagal / situational syncope",
+      "Severe anemia or bleeding",
+      "Neurologic event",
+      "Heatstroke or toxin"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any sudden collapse",
+      "Collapse with pale or blue gums",
+      "Seizure-like activity during collapse",
+      "Inability to stand after the episode",
+      "Repeated fainting episodes"
+    ],
+    "related_breed_predispositions": [
+      "boxer",
+      "doberman-pinscher",
+      "cavalier-king-charles-spaniel"
+    ],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "tremors-dog",
+    "name": "Tremors (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Toxin exposure (e.g., chocolate, xylitol, certain insecticides)",
+      "Low blood sugar",
+      "Pain or anxiety",
+      "Neurologic disease",
+      "Fever or infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "Tremors with vomiting after possible toxin",
+      "Tremors progressing toward seizures",
+      "Inability to walk",
+      "Puppy tremors with weakness",
+      "Heatstroke signs"
+    ],
+    "related_breed_predispositions": [
+      "west-highland-white-terrier"
+    ],
+    "related_emergency_slug": "toxin-ingestion"
+  },
+  {
+    "slug": "tremors-cat",
+    "name": "Tremors (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Toxin exposure (e.g., chocolate, xylitol, certain insecticides)",
+      "Low blood sugar",
+      "Pain or anxiety",
+      "Neurologic disease",
+      "Fever or infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "Tremors with vomiting after possible toxin",
+      "Tremors progressing toward seizures",
+      "Inability to walk",
+      "Puppy tremors with weakness",
+      "Heatstroke signs"
+    ],
+    "related_breed_predispositions": [
+      "west-highland-white-terrier"
+    ],
+    "related_emergency_slug": "toxin-ingestion"
+  },
+  {
+    "slug": "disorientation-dog",
+    "name": "Disorientation (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Cognitive dysfunction (seniors)",
+      "Vestibular disease",
+      "Toxin or medication effect",
+      "Metabolic disease",
+      "Head trauma"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden circling into walls",
+      "Head trauma",
+      "Seizure activity",
+      "Inability to stand",
+      "Rapidly worsening confusion"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "disorientation-cat",
+    "name": "Disorientation (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Cognitive dysfunction (seniors)",
+      "Vestibular disease",
+      "Toxin or medication effect",
+      "Metabolic disease",
+      "Head trauma"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden circling into walls",
+      "Head trauma",
+      "Seizure activity",
+      "Inability to stand",
+      "Rapidly worsening confusion"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "head-pressing-dog",
+    "name": "Head pressing (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Brain inflammation or swelling",
+      "Toxin exposure",
+      "Metabolic encephalopathy (e.g., liver disease)",
+      "Brain tumor (less common)",
+      "Severe hypertension"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any persistent head pressing against walls or furniture",
+      "Head pressing with seizures",
+      "Blindness or pacing",
+      "Known toxin exposure",
+      "Rapid behavior change"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "collapse",
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "head-pressing-cat",
+    "name": "Head pressing (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Brain inflammation or swelling",
+      "Toxin exposure",
+      "Metabolic encephalopathy (e.g., liver disease)",
+      "Brain tumor (less common)",
+      "Severe hypertension"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any persistent head pressing against walls or furniture",
+      "Head pressing with seizures",
+      "Blindness or pacing",
+      "Known toxin exposure",
+      "Rapid behavior change"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "collapse",
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "circling-dog",
+    "name": "Circling (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Vestibular disease",
+      "Ear infection affecting balance",
+      "Brain lesion or inflammation",
+      "Toxin",
+      "Stroke-like event"
+    ],
+    "when_to_see_vet_immediately": [
+      "Circling with inability to stand",
+      "Circling after head trauma",
+      "Seizures",
+      "Rapidly worsening neurologic signs",
+      "Vomiting that prevents drinking"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "circling-cat",
+    "name": "Circling (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Vestibular disease",
+      "Ear infection affecting balance",
+      "Brain lesion or inflammation",
+      "Toxin",
+      "Stroke-like event"
+    ],
+    "when_to_see_vet_immediately": [
+      "Circling with inability to stand",
+      "Circling after head trauma",
+      "Seizures",
+      "Rapidly worsening neurologic signs",
+      "Vomiting that prevents drinking"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "panting-excessively-dog",
+    "name": "Excessive panting (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Heat stress",
+      "Pain or anxiety",
+      "Heart or lung disease",
+      "Cushing’s disease",
+      "Medication side effects"
+    ],
+    "when_to_see_vet_immediately": [
+      "Panting with blue gums",
+      "Panting that does not settle in a cool space",
+      "Collapse or weakness",
+      "Distended abdomen with panting",
+      "Suspected heatstroke"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "english-bulldog"
+    ],
+    "related_emergency_slug": "heatstroke"
+  },
+  {
+    "slug": "reverse-sneezing-dog",
+    "name": "Reverse sneezing (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Nasal/throat irritation",
+      "Allergies",
+      "Excitement",
+      "Elongated soft palate (brachycephalic dogs)",
+      "Post-nasal drip"
+    ],
+    "when_to_see_vet_immediately": [
+      "Episode that does not stop and progresses to true distress",
+      "Blue gums during an episode",
+      "Collapse",
+      "New onset with facial swelling",
+      "Suspected foreign body inhalation"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "pug",
+      "shih-tzu"
+    ]
+  },
+  {
+    "slug": "hiding-cat",
+    "name": "Hiding or withdrawal (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Pain",
+      "Illness (cats mask symptoms)",
+      "Stress or household change",
+      "Urinary discomfort",
+      "Nausea"
+    ],
+    "when_to_see_vet_immediately": [
+      "Hiding plus not eating",
+      "Hiding with labored breathing",
+      "Hiding after trauma",
+      "Inability to walk normally",
+      "Vocalizing in pain while hidden"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "inappropriate-urination-cat",
+    "name": "Inappropriate urination (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Feline idiopathic cystitis",
+      "Urinary tract infection",
+      "Litter box aversion",
+      "Stress marking",
+      "Kidney disease or diabetes"
+    ],
+    "when_to_see_vet_immediately": [
+      "Straining without producing urine",
+      "Crying in the litter box",
+      "Blood in urine with lethargy",
+      "Vomiting with urinary accidents",
+      "Male cat with sudden house soiling and straining"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "persian"
+    ],
+    "related_emergency_slug": "urinary-blockage"
+  },
+  {
+    "slug": "litter-box-avoidance-cat",
+    "name": "Litter box avoidance (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Dirty or disliked litter substrate",
+      "Pain associated with elimination",
+      "Multi-cat conflict",
+      "Medical urinary or GI disease",
+      "Location stress"
+    ],
+    "when_to_see_vet_immediately": [
+      "Avoidance plus straining",
+      "No urine produced",
+      "Blood visible in voided urine",
+      "Lethargy or vomiting",
+      "Sudden complete stop of litter use with distress"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "hot-spots-dog",
+    "name": "Hot spots (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Flea bites",
+      "Allergies",
+      "Moisture trapped in coat",
+      "Anal gland discomfort leading to chewing",
+      "Ear disease driving face rubbing"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapidly spreading infected wound",
+      "Fever with skin infection",
+      "Face swelling",
+      "Pet in severe pain",
+      "Hot spot near the eye"
+    ],
+    "related_breed_predispositions": [
+      "golden-retriever",
+      "labrador-retriever",
+      "german-shepherd"
+    ]
+  },
+  {
+    "slug": "scooting-dog",
+    "name": "Scooting (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Full or infected anal glands",
+      "Tapeworms",
+      "Allergies causing anal pruritus",
+      "Impacted feces",
+      "Perianal dermatitis"
+    ],
+    "when_to_see_vet_immediately": [
+      "Scooting with bloody discharge",
+      "Swollen, painful anal area",
+      "Inability to defecate",
+      "Fever",
+      "Sudden severe pain when sitting"
+    ],
+    "related_breed_predispositions": [
+      "chihuahua",
+      "poodle"
+    ]
+  },
+  {
+    "slug": "weight-loss-dog",
+    "name": "Weight loss (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Dental disease limiting intake",
+      "Parasites",
+      "Hyperthyroidism (cats)",
+      "Diabetes, kidney, or GI disease",
+      "Cancer (needs veterinary workup)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapid weight loss with lethargy",
+      "Weight loss with vomiting/diarrhea",
+      "Jaundice",
+      "Difficulty breathing",
+      "Not eating at all"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "siamese"
+    ]
+  },
+  {
+    "slug": "weight-loss-cat",
+    "name": "Weight loss (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Dental disease limiting intake",
+      "Parasites",
+      "Hyperthyroidism (cats)",
+      "Diabetes, kidney, or GI disease",
+      "Cancer (needs veterinary workup)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapid weight loss with lethargy",
+      "Weight loss with vomiting/diarrhea",
+      "Jaundice",
+      "Difficulty breathing",
+      "Not eating at all"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "siamese"
+    ]
+  },
+  {
+    "slug": "weight-gain-dog",
+    "name": "Sudden weight gain (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Fluid retention (heart/liver/kidney disease)",
+      "Overfeeding",
+      "Hormonal disease",
+      "Pregnancy",
+      "Reduced mobility after injury"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapid belly enlargement",
+      "Weight gain with breathing difficulty",
+      "Collapse",
+      "Distended abdomen that is hard or painful",
+      "Coughing at night with weight change"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "beagle"
+    ]
+  },
+  {
+    "slug": "weight-gain-cat",
+    "name": "Sudden weight gain (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Fluid retention (heart/liver/kidney disease)",
+      "Overfeeding",
+      "Hormonal disease",
+      "Pregnancy",
+      "Reduced mobility after injury"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapid belly enlargement",
+      "Weight gain with breathing difficulty",
+      "Collapse",
+      "Distended abdomen that is hard or painful",
+      "Coughing at night with weight change"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "beagle"
+    ]
+  },
+  {
+    "slug": "bad-breath-dog",
+    "name": "Bad breath (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Periodontal disease",
+      "Oral foreign body or wound",
+      "Kidney disease (uremic odor)",
+      "GI disease",
+      "Oral tumor"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden foul odor with facial swelling",
+      "Inability to close the mouth",
+      "Bleeding from the mouth",
+      "Choking on a foreign object",
+      "Drooling with extreme pain"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "persian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "bad-breath-cat",
+    "name": "Bad breath (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Periodontal disease",
+      "Oral foreign body or wound",
+      "Kidney disease (uremic odor)",
+      "GI disease",
+      "Oral tumor"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden foul odor with facial swelling",
+      "Inability to close the mouth",
+      "Bleeding from the mouth",
+      "Choking on a foreign object",
+      "Drooling with extreme pain"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "persian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "drooling-dog",
+    "name": "Drooling (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Nausea",
+      "Oral pain or foreign body",
+      "Toxin exposure",
+      "Heat stress",
+      "Neurologic disease affecting swallowing"
+    ],
+    "when_to_see_vet_immediately": [
+      "Drooling after possible toxin (including lilies in cats)",
+      "Inability to swallow",
+      "Choking or pawing at the mouth",
+      "Facial swelling",
+      "Seizures with drooling"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "toxin-ingestion"
+  },
+  {
+    "slug": "drooling-cat",
+    "name": "Drooling (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Nausea",
+      "Oral pain or foreign body",
+      "Toxin exposure",
+      "Heat stress",
+      "Neurologic disease affecting swallowing"
+    ],
+    "when_to_see_vet_immediately": [
+      "Drooling after possible toxin (including lilies in cats)",
+      "Inability to swallow",
+      "Choking or pawing at the mouth",
+      "Facial swelling",
+      "Seizures with drooling"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "toxin-ingestion"
+  },
+  {
+    "slug": "gagging-dog",
+    "name": "Gagging (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Kennel cough",
+      "Soft palate issues",
+      "Foreign body",
+      "Nausea",
+      "Laryngeal disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Gagging with blue gums",
+      "Complete obstruction suspicion",
+      "Collapse",
+      "Continuous unproductive gagging",
+      "After chewing a bone or toy piece"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug"
+    ],
+    "related_emergency_slug": "choking"
+  },
+  {
+    "slug": "gagging-cat",
+    "name": "Gagging (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Kennel cough",
+      "Soft palate issues",
+      "Foreign body",
+      "Nausea",
+      "Laryngeal disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Gagging with blue gums",
+      "Complete obstruction suspicion",
+      "Collapse",
+      "Continuous unproductive gagging",
+      "After chewing a bone or toy piece"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug"
+    ],
+    "related_emergency_slug": "choking"
+  },
+  {
+    "slug": "difficulty-swallowing-dog",
+    "name": "Difficulty swallowing (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Oral/pharyngeal pain",
+      "Foreign body",
+      "Megaesophagus",
+      "Neurologic disease",
+      "Mass or inflammation"
+    ],
+    "when_to_see_vet_immediately": [
+      "Food or water coming from the nose",
+      "Choking while eating",
+      "Sudden inability to swallow saliva",
+      "Blue gums",
+      "Known string or bone ingestion"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd"
+    ]
+  },
+  {
+    "slug": "difficulty-swallowing-cat",
+    "name": "Difficulty swallowing (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Oral/pharyngeal pain",
+      "Foreign body",
+      "Megaesophagus",
+      "Neurologic disease",
+      "Mass or inflammation"
+    ],
+    "when_to_see_vet_immediately": [
+      "Food or water coming from the nose",
+      "Choking while eating",
+      "Sudden inability to swallow saliva",
+      "Blue gums",
+      "Known string or bone ingestion"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd"
+    ]
+  },
+  {
+    "slug": "regurgitation-dog",
+    "name": "Regurgitation (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Megaesophagus",
+      "Esophagitis",
+      "Obstruction",
+      "Motility disorders",
+      "Eating too fast (vs true regurgitation — vet can help differentiate)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Regurgitation with difficulty breathing",
+      "Aspiration suspicion (coughing after meals)",
+      "Inability to keep water down",
+      "Weight loss with regurgitation",
+      "Puppy with frequent tube-like food return"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "great-dane"
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "regurgitation-cat",
+    "name": "Regurgitation (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Megaesophagus",
+      "Esophagitis",
+      "Obstruction",
+      "Motility disorders",
+      "Eating too fast (vs true regurgitation — vet can help differentiate)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Regurgitation with difficulty breathing",
+      "Aspiration suspicion (coughing after meals)",
+      "Inability to keep water down",
+      "Weight loss with regurgitation",
+      "Puppy with frequent tube-like food return"
+    ],
+    "related_breed_predispositions": [
+      "german-shepherd",
+      "great-dane"
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "vomiting-yellow-bile-dog",
+    "name": "Vomiting yellow bile (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Empty-stomach bilious vomiting",
+      "Dietary indiscretion",
+      "GI inflammation",
+      "Reflux",
+      "Systemic disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Bile vomiting with bloody material",
+      "Repeated vomiting preventing hydration",
+      "Abdominal pain or bloating",
+      "Lethargy or pale gums",
+      "Known toxin ingestion"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "vomiting-yellow-bile-cat",
+    "name": "Vomiting yellow bile (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Empty-stomach bilious vomiting",
+      "Dietary indiscretion",
+      "GI inflammation",
+      "Reflux",
+      "Systemic disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Bile vomiting with bloody material",
+      "Repeated vomiting preventing hydration",
+      "Abdominal pain or bloating",
+      "Lethargy or pale gums",
+      "Known toxin ingestion"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "dry-heaving-dog",
+    "name": "Dry heaving (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "GDV / bloat",
+      "Foreign body",
+      "Kennel cough irritation",
+      "Nausea without productive vomit",
+      "Laryngeal spasm"
+    ],
+    "when_to_see_vet_immediately": [
+      "Unproductive retching with a swollen belly",
+      "Restlessness and pacing",
+      "Pale gums",
+      "Collapse",
+      "Deep-chested breed with sudden dry heaving"
+    ],
+    "related_breed_predispositions": [
+      "great-dane",
+      "german-shepherd",
+      "standard-poodle"
+    ],
+    "related_emergency_slug": "bloat-gdv"
+  },
+  {
+    "slug": "bloody-vomit-dog",
+    "name": "Bloody vomit (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Gastric ulceration",
+      "Severe gastroenteritis",
+      "Toxin (including rodenticide)",
+      "Foreign body trauma",
+      "Coagulopathy"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any vomit containing frank blood or coffee-ground material",
+      "Bloody vomit with pale gums",
+      "Collapse",
+      "Known rodenticide exposure",
+      "Abdominal distension"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "toxin-ingestion"
+  },
+  {
+    "slug": "bloody-vomit-cat",
+    "name": "Bloody vomit (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Gastric ulceration",
+      "Severe gastroenteritis",
+      "Toxin (including rodenticide)",
+      "Foreign body trauma",
+      "Coagulopathy"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any vomit containing frank blood or coffee-ground material",
+      "Bloody vomit with pale gums",
+      "Collapse",
+      "Known rodenticide exposure",
+      "Abdominal distension"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "toxin-ingestion"
+  },
+  {
+    "slug": "black-tarry-stool-dog",
+    "name": "Black tarry stool (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Digested blood from upper GI bleeding",
+      "Ulcers",
+      "Toxin-related bleeding",
+      "Severe inflammation",
+      "Swallowed blood from oral/nasal bleeding"
+    ],
+    "when_to_see_vet_immediately": [
+      "Black tarry stool with weakness",
+      "Pale gums",
+      "Collapse",
+      "Known rodenticide or NSAID overdose",
+      "Vomiting with melena"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "black-tarry-stool-cat",
+    "name": "Black tarry stool (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Digested blood from upper GI bleeding",
+      "Ulcers",
+      "Toxin-related bleeding",
+      "Severe inflammation",
+      "Swallowed blood from oral/nasal bleeding"
+    ],
+    "when_to_see_vet_immediately": [
+      "Black tarry stool with weakness",
+      "Pale gums",
+      "Collapse",
+      "Known rodenticide or NSAID overdose",
+      "Vomiting with melena"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "excessive-hunger-dog",
+    "name": "Excessive hunger (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Diabetes",
+      "Hyperthyroidism (cats)",
+      "Inadequate calories",
+      "Parasites",
+      "Steroid medication effects"
+    ],
+    "when_to_see_vet_immediately": [
+      "Ravenous appetite with sudden weight loss",
+      "Excessive hunger with vomiting",
+      "Collapse in a known diabetic",
+      "Polyuria/polydipsia with extreme hunger",
+      "Behavioral frantic eating with choking risk"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "excessive-hunger-cat",
+    "name": "Excessive hunger (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Diabetes",
+      "Hyperthyroidism (cats)",
+      "Inadequate calories",
+      "Parasites",
+      "Steroid medication effects"
+    ],
+    "when_to_see_vet_immediately": [
+      "Ravenous appetite with sudden weight loss",
+      "Excessive hunger with vomiting",
+      "Collapse in a known diabetic",
+      "Polyuria/polydipsia with extreme hunger",
+      "Behavioral frantic eating with choking risk"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "eating-grass-dog",
+    "name": "Eating grass (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Dietary curiosity / boredom",
+      "GI upset",
+      "Learned behavior",
+      "Nutrient-seeking myth (usually not proven)",
+      "Anxiety"
+    ],
+    "when_to_see_vet_immediately": [
+      "Grass eating followed by repeated vomiting with blood",
+      "Suspected chemically treated lawn ingestion",
+      "Choking on grass mats",
+      "Lethargy after scavenging outdoors",
+      "Known toxic plant exposure while grazing"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever"
+    ]
+  },
+  {
+    "slug": "wheezing-dog",
+    "name": "Wheezing (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Feline asthma",
+      "Allergic airway disease",
+      "Heart disease",
+      "Airway foreign body",
+      "Chronic bronchitis"
+    ],
+    "when_to_see_vet_immediately": [
+      "Wheezing with open-mouth breathing",
+      "Blue gums",
+      "Wheezing after a choking episode",
+      "Collapse",
+      "Cat crouching with neck extended to breathe"
+    ],
+    "related_breed_predispositions": [
+      "siamese",
+      "maine-coon",
+      "french-bulldog"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "wheezing-cat",
+    "name": "Wheezing (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Feline asthma",
+      "Allergic airway disease",
+      "Heart disease",
+      "Airway foreign body",
+      "Chronic bronchitis"
+    ],
+    "when_to_see_vet_immediately": [
+      "Wheezing with open-mouth breathing",
+      "Blue gums",
+      "Wheezing after a choking episode",
+      "Collapse",
+      "Cat crouching with neck extended to breathe"
+    ],
+    "related_breed_predispositions": [
+      "siamese",
+      "maine-coon",
+      "french-bulldog"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "nasal-discharge-dog",
+    "name": "Nasal discharge (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Upper respiratory infection",
+      "Allergies",
+      "Foreign body",
+      "Dental disease",
+      "Fungal or neoplastic disease (chronic cases)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Bloody one-sided discharge after trauma",
+      "Discharge with facial deformity",
+      "Open-mouth breathing",
+      "Neurologic signs",
+      "Kitten unable to nurse due to congestion"
+    ],
+    "related_breed_predispositions": [
+      "persian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "nasal-discharge-cat",
+    "name": "Nasal discharge (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Upper respiratory infection",
+      "Allergies",
+      "Foreign body",
+      "Dental disease",
+      "Fungal or neoplastic disease (chronic cases)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Bloody one-sided discharge after trauma",
+      "Discharge with facial deformity",
+      "Open-mouth breathing",
+      "Neurologic signs",
+      "Kitten unable to nurse due to congestion"
+    ],
+    "related_breed_predispositions": [
+      "persian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "exercise-intolerance-dog",
+    "name": "Exercise intolerance (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Heart disease",
+      "Anemia",
+      "Respiratory disease",
+      "Musculoskeletal pain",
+      "Obesity or poor conditioning"
+    ],
+    "when_to_see_vet_immediately": [
+      "Collapse during mild activity",
+      "Blue gums with exercise",
+      "Fainting",
+      "Coughing up foam",
+      "Sudden inability to walk after exertion"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "boxer",
+      "maine-coon"
+    ]
+  },
+  {
+    "slug": "exercise-intolerance-cat",
+    "name": "Exercise intolerance (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Heart disease",
+      "Anemia",
+      "Respiratory disease",
+      "Musculoskeletal pain",
+      "Obesity or poor conditioning"
+    ],
+    "when_to_see_vet_immediately": [
+      "Collapse during mild activity",
+      "Blue gums with exercise",
+      "Fainting",
+      "Coughing up foam",
+      "Sudden inability to walk after exertion"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "boxer",
+      "maine-coon"
+    ]
+  },
+  {
+    "slug": "heat-sensitivity-dog",
+    "name": "Heat sensitivity (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Brachycephalic airway syndrome",
+      "Obesity",
+      "Heart or lung disease",
+      "Thick coats in warm climates",
+      "Prior heatstroke injury"
+    ],
+    "when_to_see_vet_immediately": [
+      "Heavy panting that does not improve with cooling",
+      "Vomiting or diarrhea in heat",
+      "Collapse in warm weather",
+      "Bright red or blue gums",
+      "Rectal temperature concern — go to ER"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "english-bulldog",
+      "persian"
+    ],
+    "related_emergency_slug": "heatstroke"
+  },
+  {
+    "slug": "heat-sensitivity-cat",
+    "name": "Heat sensitivity (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Brachycephalic airway syndrome",
+      "Obesity",
+      "Heart or lung disease",
+      "Thick coats in warm climates",
+      "Prior heatstroke injury"
+    ],
+    "when_to_see_vet_immediately": [
+      "Heavy panting that does not improve with cooling",
+      "Vomiting or diarrhea in heat",
+      "Collapse in warm weather",
+      "Bright red or blue gums",
+      "Rectal temperature concern — go to ER"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "english-bulldog",
+      "persian"
+    ],
+    "related_emergency_slug": "heatstroke"
+  },
+  {
+    "slug": "stiffness-dog",
+    "name": "Stiffness (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Osteoarthritis",
+      "Muscle strain",
+      "IVDD",
+      "Infectious or immune joint disease",
+      "Post-exercise soreness"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden inability to walk",
+      "Cry-out pain with paralysis signs",
+      "Stiffness with high fever",
+      "Neck pain with reluctance to move",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "german-shepherd",
+      "dachshund"
+    ]
+  },
+  {
+    "slug": "stiffness-cat",
+    "name": "Stiffness (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Osteoarthritis",
+      "Muscle strain",
+      "IVDD",
+      "Infectious or immune joint disease",
+      "Post-exercise soreness"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden inability to walk",
+      "Cry-out pain with paralysis signs",
+      "Stiffness with high fever",
+      "Neck pain with reluctance to move",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "german-shepherd",
+      "dachshund"
+    ]
+  },
+  {
+    "slug": "reluctance-to-jump-dog",
+    "name": "Reluctance to jump (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Orthopedic pain (hips, knees, elbows)",
+      "Back pain / IVDD",
+      "Arthritis",
+      "Obesity",
+      "Vision changes affecting depth perception"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden paralysis or knuckling",
+      "Crying when picked up",
+      "Incontinence with back pain",
+      "Non-weight-bearing lameness",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "dachshund",
+      "maine-coon",
+      "persian"
+    ]
+  },
+  {
+    "slug": "reluctance-to-jump-cat",
+    "name": "Reluctance to jump (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Orthopedic pain (hips, knees, elbows)",
+      "Back pain / IVDD",
+      "Arthritis",
+      "Obesity",
+      "Vision changes affecting depth perception"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden paralysis or knuckling",
+      "Crying when picked up",
+      "Incontinence with back pain",
+      "Non-weight-bearing lameness",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "dachshund",
+      "maine-coon",
+      "persian"
+    ]
+  },
+  {
+    "slug": "back-pain-dog",
+    "name": "Back pain (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Intervertebral disc disease",
+      "Muscle strain",
+      "Spinal trauma",
+      "Infection or inflammation",
+      "Referred abdominal pain"
+    ],
+    "when_to_see_vet_immediately": [
+      "Dragging rear limbs",
+      "Loss of bladder/bowel control",
+      "Severe pain, crying, or aggression on touch",
+      "Knuckling paws",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "dachshund",
+      "french-bulldog",
+      "corgi"
+    ]
+  },
+  {
+    "slug": "back-pain-cat",
+    "name": "Back pain (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Intervertebral disc disease",
+      "Muscle strain",
+      "Spinal trauma",
+      "Infection or inflammation",
+      "Referred abdominal pain"
+    ],
+    "when_to_see_vet_immediately": [
+      "Dragging rear limbs",
+      "Loss of bladder/bowel control",
+      "Severe pain, crying, or aggression on touch",
+      "Knuckling paws",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "dachshund",
+      "french-bulldog",
+      "corgi"
+    ]
+  },
+  {
+    "slug": "hind-leg-weakness-dog",
+    "name": "Hind-leg weakness (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "IVDD",
+      "Lumbosacral disease",
+      "Hip dysplasia / arthritis",
+      "Neurologic disease",
+      "Aortic thromboembolism (cats — emergency)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden paralysis of hind limbs",
+      "Cold hind limbs with severe pain (cats)",
+      "Incontinence",
+      "Rapidly ascending weakness",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "dachshund",
+      "german-shepherd",
+      "maine-coon"
+    ],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "hind-leg-weakness-cat",
+    "name": "Hind-leg weakness (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "IVDD",
+      "Lumbosacral disease",
+      "Hip dysplasia / arthritis",
+      "Neurologic disease",
+      "Aortic thromboembolism (cats — emergency)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden paralysis of hind limbs",
+      "Cold hind limbs with severe pain (cats)",
+      "Incontinence",
+      "Rapidly ascending weakness",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "dachshund",
+      "german-shepherd",
+      "maine-coon"
+    ],
+    "related_emergency_slug": "collapse",
+    "source_notes": "Sudden painful hind-limb paralysis in cats can be a saddle thrombus — emergency care now."
+  },
+  {
+    "slug": "swollen-joints-dog",
+    "name": "Swollen joints (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Injury",
+      "Infection (septic joint)",
+      "Immune-mediated arthritis",
+      "Tick-borne disease",
+      "Developmental joint disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Hot, extremely painful joint",
+      "Fever with joint swelling",
+      "Inability to bear weight",
+      "Swelling after a bite wound",
+      "Multiple joints swelling rapidly"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "german-shepherd"
+    ]
+  },
+  {
+    "slug": "swollen-joints-cat",
+    "name": "Swollen joints (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Injury",
+      "Infection (septic joint)",
+      "Immune-mediated arthritis",
+      "Tick-borne disease",
+      "Developmental joint disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Hot, extremely painful joint",
+      "Fever with joint swelling",
+      "Inability to bear weight",
+      "Swelling after a bite wound",
+      "Multiple joints swelling rapidly"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "german-shepherd"
+    ]
+  },
+  {
+    "slug": "paw-licking-dog",
+    "name": "Paw licking (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Allergies",
+      "Yeast between toes",
+      "Foreign body in the pad",
+      "Anxiety",
+      "Contact irritants"
+    ],
+    "when_to_see_vet_immediately": [
+      "Paw swollen and hot after a bite or sting",
+      "Bleeding that will not stop",
+      "Lameness with a deep wound",
+      "Licking with facial swelling / hives",
+      "Suspected pad burn"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "french-bulldog",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "paw-licking-cat",
+    "name": "Paw licking (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Allergies",
+      "Yeast between toes",
+      "Foreign body in the pad",
+      "Anxiety",
+      "Contact irritants"
+    ],
+    "when_to_see_vet_immediately": [
+      "Paw swollen and hot after a bite or sting",
+      "Bleeding that will not stop",
+      "Lameness with a deep wound",
+      "Licking with facial swelling / hives",
+      "Suspected pad burn"
+    ],
+    "related_breed_predispositions": [
+      "labrador-retriever",
+      "french-bulldog",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "excessive-licking-dog",
+    "name": "Excessive licking (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Allergies",
+      "Pain at a body site",
+      "Anxiety / compulsive behavior",
+      "Anal gland discomfort",
+      "Skin infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "Licking creating open bleeding wounds",
+      "Licking genitals with urinary obstruction signs",
+      "Sudden frantic licking after toxin on coat",
+      "Swelling of the face or throat",
+      "Fever with infected sores"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "golden-retriever"
+    ]
+  },
+  {
+    "slug": "excessive-licking-cat",
+    "name": "Excessive licking (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Allergies",
+      "Pain at a body site",
+      "Anxiety / compulsive behavior",
+      "Anal gland discomfort",
+      "Skin infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "Licking creating open bleeding wounds",
+      "Licking genitals with urinary obstruction signs",
+      "Sudden frantic licking after toxin on coat",
+      "Swelling of the face or throat",
+      "Fever with infected sores"
+    ],
+    "related_breed_predispositions": [
+      "domestic-shorthair",
+      "golden-retriever"
+    ]
+  },
+  {
+    "slug": "rashes-hives-dog",
+    "name": "Rashes or hives (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Allergic reaction (insect, food, medication)",
+      "Contact dermatitis",
+      "Vaccine reaction",
+      "Infection",
+      "Autoimmune skin disease (less common)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Hives with facial swelling",
+      "Difficulty breathing",
+      "Vomiting/diarrhea with hives after a known allergen",
+      "Collapse",
+      "Rapidly spreading welts"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "allergic-reaction"
+  },
+  {
+    "slug": "rashes-hives-cat",
+    "name": "Rashes or hives (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Allergic reaction (insect, food, medication)",
+      "Contact dermatitis",
+      "Vaccine reaction",
+      "Infection",
+      "Autoimmune skin disease (less common)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Hives with facial swelling",
+      "Difficulty breathing",
+      "Vomiting/diarrhea with hives after a known allergen",
+      "Collapse",
+      "Rapidly spreading welts"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "allergic-reaction"
+  },
+  {
+    "slug": "swollen-face-dog",
+    "name": "Swollen face (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Allergic reaction / insect sting",
+      "Dental abscess",
+      "Trauma",
+      "Snake bite (region-dependent)",
+      "Infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "Facial swelling with breathing changes",
+      "Swelling after a sting or new food/medication",
+      "Eye swelling shut",
+      "Drooling with inability to swallow",
+      "Rapidly worsening swelling"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "allergic-reaction"
+  },
+  {
+    "slug": "swollen-face-cat",
+    "name": "Swollen face (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Allergic reaction / insect sting",
+      "Dental abscess",
+      "Trauma",
+      "Snake bite (region-dependent)",
+      "Infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "Facial swelling with breathing changes",
+      "Swelling after a sting or new food/medication",
+      "Eye swelling shut",
+      "Drooling with inability to swallow",
+      "Rapidly worsening swelling"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "allergic-reaction"
+  },
+  {
+    "slug": "lumps-bumps-dog",
+    "name": "Lumps and bumps (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Lipomas",
+      "Cysts",
+      "Infected hair follicles",
+      "Vaccine-site reactions",
+      "Malignant masses (need cytology)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapidly growing mass",
+      "Bleeding or ulcerated lump",
+      "Mass interfering with breathing or walking",
+      "Lump with fever and lethargy",
+      "Sudden painful swelling"
+    ],
+    "related_breed_predispositions": [
+      "boxer",
+      "labrador-retriever",
+      "golden-retriever"
+    ]
+  },
+  {
+    "slug": "lumps-bumps-cat",
+    "name": "Lumps and bumps (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Lipomas",
+      "Cysts",
+      "Infected hair follicles",
+      "Vaccine-site reactions",
+      "Malignant masses (need cytology)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Rapidly growing mass",
+      "Bleeding or ulcerated lump",
+      "Mass interfering with breathing or walking",
+      "Lump with fever and lethargy",
+      "Sudden painful swelling"
+    ],
+    "related_breed_predispositions": [
+      "boxer",
+      "labrador-retriever",
+      "golden-retriever"
+    ]
+  },
+  {
+    "slug": "swollen-lymph-nodes-dog",
+    "name": "Swollen lymph nodes (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Local infection",
+      "Systemic infection",
+      "Immune disease",
+      "Lymphoma or other cancer",
+      "Reactive nodes after vaccination"
+    ],
+    "when_to_see_vet_immediately": [
+      "Generalized node enlargement with fever",
+      "Difficulty breathing",
+      "Severe lethargy",
+      "Nodes that are rock-hard and rapidly enlarging",
+      "Pale gums"
+    ],
+    "related_breed_predispositions": [
+      "golden-retriever",
+      "boxer"
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "swollen-lymph-nodes-cat",
+    "name": "Swollen lymph nodes (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Local infection",
+      "Systemic infection",
+      "Immune disease",
+      "Lymphoma or other cancer",
+      "Reactive nodes after vaccination"
+    ],
+    "when_to_see_vet_immediately": [
+      "Generalized node enlargement with fever",
+      "Difficulty breathing",
+      "Severe lethargy",
+      "Nodes that are rock-hard and rapidly enlarging",
+      "Pale gums"
+    ],
+    "related_breed_predispositions": [
+      "golden-retriever",
+      "boxer"
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "fever-dog",
+    "name": "Fever (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Infection",
+      "Inflammation",
+      "Immune-mediated disease",
+      "Heatstroke (vs true fever)",
+      "Post-vaccination response"
+    ],
+    "when_to_see_vet_immediately": [
+      "Fever with collapse",
+      "Fever with petechiae or bruising",
+      "Fever after a tick bite with severe pain",
+      "Fever with labored breathing",
+      "Suspected heatstroke"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "fever-cat",
+    "name": "Fever (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Infection",
+      "Inflammation",
+      "Immune-mediated disease",
+      "Heatstroke (vs true fever)",
+      "Post-vaccination response"
+    ],
+    "when_to_see_vet_immediately": [
+      "Fever with collapse",
+      "Fever with petechiae or bruising",
+      "Fever after a tick bite with severe pain",
+      "Fever with labored breathing",
+      "Suspected heatstroke"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "restlessness-dog",
+    "name": "Restlessness (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Pain",
+      "Anxiety",
+      "GDV early signs (dogs)",
+      "Cognitive dysfunction at night",
+      "Urinary obstruction discomfort"
+    ],
+    "when_to_see_vet_immediately": [
+      "Restlessness with unproductive retching",
+      "Pacing with a hard belly",
+      "Restlessness plus pale gums",
+      "Inability to get comfortable after trauma",
+      "Male cat restless and visiting litter constantly"
+    ],
+    "related_breed_predispositions": [
+      "great-dane",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "restlessness-cat",
+    "name": "Restlessness (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Pain",
+      "Anxiety",
+      "GDV early signs (dogs)",
+      "Cognitive dysfunction at night",
+      "Urinary obstruction discomfort"
+    ],
+    "when_to_see_vet_immediately": [
+      "Restlessness with unproductive retching",
+      "Pacing with a hard belly",
+      "Restlessness plus pale gums",
+      "Inability to get comfortable after trauma",
+      "Male cat restless and visiting litter constantly"
+    ],
+    "related_breed_predispositions": [
+      "great-dane",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "pacing-at-night-dog",
+    "name": "Pacing at night (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Cognitive dysfunction",
+      "Pain that worsens when settling",
+      "Anxiety",
+      "Sensory loss (vision/hearing)",
+      "Metabolic disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden frantic pacing with distress",
+      "Pacing with seizures",
+      "Disorientation into walls after trauma",
+      "Pacing with bloating/retching",
+      "Collapse"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "pacing-at-night-cat",
+    "name": "Pacing at night (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Cognitive dysfunction",
+      "Pain that worsens when settling",
+      "Anxiety",
+      "Sensory loss (vision/hearing)",
+      "Metabolic disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden frantic pacing with distress",
+      "Pacing with seizures",
+      "Disorientation into walls after trauma",
+      "Pacing with bloating/retching",
+      "Collapse"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "aggression-sudden-dog",
+    "name": "Sudden aggression (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Pain",
+      "Neurologic disease",
+      "Fear after a scary event",
+      "Resource guarding escalation",
+      "Toxin or metabolic encephalopathy"
+    ],
+    "when_to_see_vet_immediately": [
+      "Aggression with neurologic signs",
+      "Aggression after head trauma",
+      "Sudden personality change with seizures",
+      "Suspected pain so severe the pet cannot be handled safely",
+      "Rabies-risk exposure history (urgent public-health protocol)"
+    ],
+    "related_breed_predispositions": [],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "aggression-sudden-cat",
+    "name": "Sudden aggression (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Pain",
+      "Neurologic disease",
+      "Fear after a scary event",
+      "Resource guarding escalation",
+      "Toxin or metabolic encephalopathy"
+    ],
+    "when_to_see_vet_immediately": [
+      "Aggression with neurologic signs",
+      "Aggression after head trauma",
+      "Sudden personality change with seizures",
+      "Suspected pain so severe the pet cannot be handled safely",
+      "Rabies-risk exposure history (urgent public-health protocol)"
+    ],
+    "related_breed_predispositions": [],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "excessive-vocalization-dog",
+    "name": "Excessive vocalization (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Pain",
+      "Anxiety or attention seeking",
+      "Cognitive dysfunction",
+      "Hyperthyroidism (cats)",
+      "Sensory decline"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden screaming in pain",
+      "Vocalizing while straining to urinate",
+      "Cry-out with paralysis signs",
+      "Vocalizing after trauma",
+      "Distress vocalization with breathing trouble"
+    ],
+    "related_breed_predispositions": [
+      "siamese"
+    ]
+  },
+  {
+    "slug": "excessive-vocalization-cat",
+    "name": "Excessive vocalization (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Pain",
+      "Anxiety or attention seeking",
+      "Cognitive dysfunction",
+      "Hyperthyroidism (cats)",
+      "Sensory decline"
+    ],
+    "when_to_see_vet_immediately": [
+      "Sudden screaming in pain",
+      "Vocalizing while straining to urinate",
+      "Cry-out with paralysis signs",
+      "Vocalizing after trauma",
+      "Distress vocalization with breathing trouble"
+    ],
+    "related_breed_predispositions": [
+      "siamese"
+    ]
+  },
+  {
+    "slug": "urinary-incontinence-dog",
+    "name": "Urinary incontinence (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Hormone-responsive incontinence (spayed dogs)",
+      "Urinary tract infection",
+      "Neurologic disease",
+      "Age-related sphincter weakness",
+      "Overflow from partial obstruction"
+    ],
+    "when_to_see_vet_immediately": [
+      "Incontinence with inability to empty the bladder",
+      "Incontinence after spinal signs",
+      "Blood with dribbling and lethargy",
+      "Straining without a stream",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "doberman-pinscher",
+      "boxer"
+    ]
+  },
+  {
+    "slug": "urinary-incontinence-cat",
+    "name": "Urinary incontinence (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Hormone-responsive incontinence (spayed dogs)",
+      "Urinary tract infection",
+      "Neurologic disease",
+      "Age-related sphincter weakness",
+      "Overflow from partial obstruction"
+    ],
+    "when_to_see_vet_immediately": [
+      "Incontinence with inability to empty the bladder",
+      "Incontinence after spinal signs",
+      "Blood with dribbling and lethargy",
+      "Straining without a stream",
+      "Trauma"
+    ],
+    "related_breed_predispositions": [
+      "doberman-pinscher",
+      "boxer"
+    ]
+  },
+  {
+    "slug": "discharge-from-eyes-dog",
+    "name": "Eye discharge (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Conjunctivitis",
+      "Allergies",
+      "Blocked tear ducts",
+      "Corneal disease",
+      "Upper respiratory infection (cats)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Thick discharge with a closed, painful eye",
+      "Discharge after trauma",
+      "Cloudy cornea",
+      "Sudden vision loss",
+      "Swelling around the eye with fever"
+    ],
+    "related_breed_predispositions": [
+      "pug",
+      "persian",
+      "shih-tzu"
+    ]
+  },
+  {
+    "slug": "discharge-from-eyes-cat",
+    "name": "Eye discharge (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Conjunctivitis",
+      "Allergies",
+      "Blocked tear ducts",
+      "Corneal disease",
+      "Upper respiratory infection (cats)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Thick discharge with a closed, painful eye",
+      "Discharge after trauma",
+      "Cloudy cornea",
+      "Sudden vision loss",
+      "Swelling around the eye with fever"
+    ],
+    "related_breed_predispositions": [
+      "pug",
+      "persian",
+      "shih-tzu"
+    ]
+  },
+  {
+    "slug": "wound-not-healing-dog",
+    "name": "Wound not healing (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Infection",
+      "Licking trauma",
+      "Foreign material in the wound",
+      "Poor blood supply",
+      "Systemic disease delaying healing"
+    ],
+    "when_to_see_vet_immediately": [
+      "Wound with severe swelling and fever",
+      "Foul discharge and lethargy",
+      "Bleeding that will not stop",
+      "Wound over a joint with sudden lameness",
+      "Bite wound near the chest/abdomen"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "wound-not-healing-cat",
+    "name": "Wound not healing (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Infection",
+      "Licking trauma",
+      "Foreign material in the wound",
+      "Poor blood supply",
+      "Systemic disease delaying healing"
+    ],
+    "when_to_see_vet_immediately": [
+      "Wound with severe swelling and fever",
+      "Foul discharge and lethargy",
+      "Bleeding that will not stop",
+      "Wound over a joint with sudden lameness",
+      "Bite wound near the chest/abdomen"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "snoring-sudden-dog",
+    "name": "Sudden snoring or stertor (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Upper airway swelling",
+      "Foreign body",
+      "Brachycephalic airway crisis",
+      "Nasopharyngeal polyp (cats)",
+      "Infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "New loud breathing with effort",
+      "Blue gums",
+      "Collapse",
+      "After a choking episode",
+      "Heat stress in a flat-faced breed"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "persian",
+      "english-bulldog"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "snoring-sudden-cat",
+    "name": "Sudden snoring or stertor (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Upper airway swelling",
+      "Foreign body",
+      "Brachycephalic airway crisis",
+      "Nasopharyngeal polyp (cats)",
+      "Infection"
+    ],
+    "when_to_see_vet_immediately": [
+      "New loud breathing with effort",
+      "Blue gums",
+      "Collapse",
+      "After a choking episode",
+      "Heat stress in a flat-faced breed"
+    ],
+    "related_breed_predispositions": [
+      "french-bulldog",
+      "pug",
+      "persian",
+      "english-bulldog"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "fainting-dog",
+    "name": "Fainting (syncope) (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Heart arrhythmia",
+      "Obstructive heart disease",
+      "Severe coughing fits",
+      "Low blood sugar",
+      "Vasovagal events"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any fainting episode",
+      "Fainting with pale/blue gums",
+      "Repeated episodes",
+      "Fainting during excitement or exercise",
+      "Not recovering promptly"
+    ],
+    "related_breed_predispositions": [
+      "boxer",
+      "doberman-pinscher",
+      "miniature-schnauzer"
+    ],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "fainting-cat",
+    "name": "Fainting (syncope) (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Heart arrhythmia",
+      "Obstructive heart disease",
+      "Severe coughing fits",
+      "Low blood sugar",
+      "Vasovagal events"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any fainting episode",
+      "Fainting with pale/blue gums",
+      "Repeated episodes",
+      "Fainting during excitement or exercise",
+      "Not recovering promptly"
+    ],
+    "related_breed_predispositions": [
+      "boxer",
+      "doberman-pinscher",
+      "miniature-schnauzer"
+    ],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "coughing-at-night-dog",
+    "name": "Coughing at night (dog)",
+    "species": "dog",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Congestive heart failure",
+      "Kennel cough",
+      "Collapsing trachea",
+      "Airway irritation",
+      "Aspiration"
+    ],
+    "when_to_see_vet_immediately": [
+      "Night cough with labored breathing",
+      "Pink frothy fluid",
+      "Blue gums",
+      "Collapse",
+      "Inability to lie down comfortably"
+    ],
+    "related_breed_predispositions": [
+      "cavalier-king-charles-spaniel",
+      "doberman-pinscher",
+      "maine-coon"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "coughing-at-night-cat",
+    "name": "Coughing at night (cat)",
+    "species": "cat",
+    "urgency_level": "urgent",
+    "common_causes": [
+      "Congestive heart failure",
+      "Kennel cough",
+      "Collapsing trachea",
+      "Airway irritation",
+      "Aspiration"
+    ],
+    "when_to_see_vet_immediately": [
+      "Night cough with labored breathing",
+      "Pink frothy fluid",
+      "Blue gums",
+      "Collapse",
+      "Inability to lie down comfortably"
+    ],
+    "related_breed_predispositions": [
+      "cavalier-king-charles-spaniel",
+      "doberman-pinscher",
+      "maine-coon"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "anal-gland-issues-dog",
+    "name": "Anal gland issues (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Impacted anal sacs",
+      "Infection/abscess",
+      "Allergies contributing to inflammation",
+      "Soft stools reducing natural expression",
+      "Anatomical predisposition in small breeds"
+    ],
+    "when_to_see_vet_immediately": [
+      "Ruptured anal gland abscess",
+      "Fever with perianal swelling",
+      "Inability to defecate",
+      "Severe pain / aggression on approach",
+      "Heavy bleeding"
+    ],
+    "related_breed_predispositions": [
+      "chihuahua",
+      "poodle",
+      "french-bulldog"
+    ]
+  },
+  {
+    "slug": "dental-pain-dog",
+    "name": "Dental pain (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Periodontal disease",
+      "Tooth fracture",
+      "Tooth root abscess",
+      "Resorptive lesions (cats)",
+      "Oral foreign body"
+    ],
+    "when_to_see_vet_immediately": [
+      "Facial swelling under the eye",
+      "Uncontrolled oral bleeding",
+      "Inability to close the mouth",
+      "Choking on a foreign object",
+      "Refusal to eat with drooling and distress"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "persian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "dental-pain-cat",
+    "name": "Dental pain (cat)",
+    "species": "cat",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Periodontal disease",
+      "Tooth fracture",
+      "Tooth root abscess",
+      "Resorptive lesions (cats)",
+      "Oral foreign body"
+    ],
+    "when_to_see_vet_immediately": [
+      "Facial swelling under the eye",
+      "Uncontrolled oral bleeding",
+      "Inability to close the mouth",
+      "Choking on a foreign object",
+      "Refusal to eat with drooling and distress"
+    ],
+    "related_breed_predispositions": [
+      "yorkshire-terrier",
+      "persian",
+      "domestic-shorthair"
+    ]
+  },
+  {
+    "slug": "house-soiling-dog",
+    "name": "House soiling (dog)",
+    "species": "dog",
+    "urgency_level": "monitor",
+    "common_causes": [
+      "Incomplete house training",
+      "Urinary tract infection",
+      "Anxiety / separation distress",
+      "Cognitive dysfunction",
+      "Incontinence"
+    ],
+    "when_to_see_vet_immediately": [
+      "Soiling with straining and no urine",
+      "Blood in urine",
+      "Soiling with neurologic weakness",
+      "Sudden incontinence after trauma",
+      "Lethargy and vomiting with accidents"
+    ],
+    "related_breed_predispositions": []
+  },
+  {
+    "slug": "open-mouth-breathing-cat",
+    "name": "Open-mouth breathing (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Severe respiratory distress",
+      "Heart failure / cardiomyopathy crisis",
+      "Asthma attack",
+      "Heat stress",
+      "Pain or extreme stress (still needs urgent assessment)"
+    ],
+    "when_to_see_vet_immediately": [
+      "Any open-mouth breathing at rest",
+      "Blue or gray tongue",
+      "Crouching with neck extended",
+      "Collapse",
+      "Open-mouth breathing after possible toxin or trauma"
+    ],
+    "related_breed_predispositions": [
+      "maine-coon",
+      "ragdoll",
+      "siamese"
+    ],
+    "related_emergency_slug": "difficulty-breathing"
+  },
+  {
+    "slug": "yellow-gums-jaundice-dog",
+    "name": "Yellow gums (jaundice) (dog)",
+    "species": "dog",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Liver disease or bile duct obstruction",
+      "Immune-mediated hemolytic anemia",
+      "Toxin exposure affecting red cells or liver",
+      "Severe infection / sepsis",
+      "Gallbladder disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Yellow gums, eyes, or skin",
+      "Jaundice with collapse or extreme lethargy",
+      "Jaundice with dark urine or pale stool",
+      "Known toxin exposure",
+      "Rapid breathing with yellow membranes"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "collapse"
+  },
+  {
+    "slug": "yellow-gums-jaundice-cat",
+    "name": "Yellow gums (jaundice) (cat)",
+    "species": "cat",
+    "urgency_level": "emergency",
+    "common_causes": [
+      "Liver disease or bile duct obstruction",
+      "Immune-mediated hemolytic anemia",
+      "Toxin exposure affecting red cells or liver",
+      "Severe infection / sepsis",
+      "Gallbladder disease"
+    ],
+    "when_to_see_vet_immediately": [
+      "Yellow gums, eyes, or skin",
+      "Jaundice with collapse or extreme lethargy",
+      "Jaundice with dark urine or pale stool",
+      "Known toxin exposure",
+      "Rapid breathing with yellow membranes"
+    ],
+    "related_breed_predispositions": [],
+    "related_emergency_slug": "collapse"
+  }
+]

@@ -1,0 +1,47 @@
+{
+  "slug": "american-staffordshire-terrier-vaccine-schedule",
+  "path": "/vaccinations/american-staffordshire-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "american-staffordshire-terrier",
+  "subjectName": "American Staffordshire Terrier",
+  "species": "dog",
+  "primaryKeyword": "American Staffordshire Terrier vaccine schedule",
+  "metaDescription": "American Staffordshire Terrier vaccine schedule with core ages in weeks. Set reminders so American Staffordshire Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/american-staffordshire-terrier/adult-health-guide",
+  "breedHealthLabel": "American Staffordshire Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "American Staffordshire Terrier owners tracking 12-16 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row American Staffordshire Terrier schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for American Staffordshire Terrier handling: Strong companion; needs training and fair outlets.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the American Staffordshire Terrier dose.",
+        "Lifestyle add-ons stay off this American Staffordshire Terrier core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your American Staffordshire Terrier misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the American Staffordshire Terrier series from memory.",
+        "The danger for a delayed American Staffordshire Terrier is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the American Staffordshire Terrier away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next American Staffordshire Terrier due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the American Staffordshire Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my American Staffordshire Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read American Staffordshire Terrier health context beyond vaccines?",
+      "answer": "See the American Staffordshire Terrier adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

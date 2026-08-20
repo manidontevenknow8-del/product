@@ -1,0 +1,66 @@
+{
+  "slug": "toy-breed-puppy-vaccine-schedule",
+  "path": "/vaccinations/toy-breed-puppy-vaccine-schedule",
+  "kind": "general",
+  "subjectName": "Toy-breed puppy",
+  "species": "dog",
+  "primaryKeyword": "toy breed puppy vaccine schedule",
+  "metaDescription": "toy breed puppy vaccine schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "size_category": "toy",
+  "common_health_issues": [
+    "Tiny-patient handling stress",
+    "Dental topics crowding the visit",
+    "Missed doses after mild GI days"
+  ],
+  "schedule": [
+    {
+      "vaccine": "DA2PP / DHPP",
+      "age_weeks": 8
+    },
+    {
+      "vaccine": "DA2PP / DHPP booster",
+      "age_weeks": 12
+    },
+    {
+      "vaccine": "DA2PP / DHPP final ≥16 weeks",
+      "age_weeks": 16
+    },
+    {
+      "vaccine": "Rabies",
+      "age_weeks": 16
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This toy-breed puppy plan sequences doses against tiny-patient handling stress, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the toy-breed puppy table (8 weeks; 12 weeks; 16 weeks; 16 weeks) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished toy-breed puppy puppy series is still incomplete.",
+        "If your household also wrestles with dental topics crowding the visit or missed doses after mild gi days, put those constraints on the same calendar thread as the DA2PP / DHPP booster so one reminder system owns the toy-breed puppy week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed toy-breed puppy dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the toy-breed puppy series is current again, reduce the exposure pattern that matches tiny-patient handling stress, and do not wait for an annual wellness slot to ask about a toy-breed puppy make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next DA2PP / DHPP booster due date so the same toy-breed puppy miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this toy breed puppy vaccine schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this toy-breed puppy schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to tiny-patient handling stress, and reset reminders as soon as the next toy-breed puppy due date is known."
+    },
+    {
+      "question": "How do reminders help with DA2PP / DHPP booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that toy-breed puppy booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

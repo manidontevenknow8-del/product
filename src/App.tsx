@@ -27,6 +27,14 @@ const VaccineSchedulerPage = lazyRoute(
   () => import('@/pages/tools/VaccineSchedulerPage'),
   'VaccineSchedulerPage',
 );
+const ToolDownloadPage = lazyRoute(
+  () => import('@/pages/tools/ToolDownloadPage'),
+  'ToolDownloadPage',
+);
+const ToolsDownloadsHubPage = lazyRoute(
+  () => import('@/pages/tools/ToolDownloadPage'),
+  'ToolsDownloadsHubPage',
+);
 const PublicPetStoryPage = lazyRoute(
   () => import('@/pages/PublicPetStoryPage'),
   'PublicPetStoryPage',
@@ -109,6 +117,73 @@ const B2BBreederPage = lazyRoute(
 );
 const LearnIndexPage = lazyRoute(() => import('@/pages/learn/LearnIndexPage'), 'LearnIndexPage');
 const LearnArticlePage = lazyRoute(() => import('@/pages/learn/LearnArticlePage'), 'LearnArticlePage');
+const ContentExamplesIndexPage = lazyRoute(
+  () => import('@/pages/examples/ContentExamplesIndexPage'),
+  'ContentExamplesIndexPage',
+);
+const BreedsHubPage = lazyRoute(() => import('@/pages/breeds/BreedsHubPage'), 'BreedsHubPage');
+const BreedHealthGuidePage = lazyRoute(
+  () => import('@/pages/breeds/BreedHealthGuidePage'),
+  'BreedHealthGuidePage',
+);
+const VaultHubPage = lazyRoute(() => import('@/pages/vault/VaultHubPage'), 'VaultHubPage');
+const LifeLogisticsHubPage = lazyRoute(
+  () => import('@/pages/life-logistics/LifeLogisticsHubPage'),
+  'LifeLogisticsHubPage',
+);
+const ExampleBreedHealthPage = lazyRoute(
+  () => import('@/pages/examples/ExampleBreedHealthPage'),
+  'ExampleBreedHealthPage',
+);
+const ExampleSymptomGuidePage = lazyRoute(
+  () => import('@/pages/examples/ExampleSymptomGuidePage'),
+  'ExampleSymptomGuidePage',
+);
+const ExampleVaccinationSchedulePage = lazyRoute(
+  () => import('@/pages/examples/ExampleVaccinationSchedulePage'),
+  'ExampleVaccinationSchedulePage',
+);
+const ExampleEmergencyGuidePage = lazyRoute(
+  () => import('@/pages/examples/ExampleEmergencyGuidePage'),
+  'ExampleEmergencyGuidePage',
+);
+const ExampleRecordsVaultPage = lazyRoute(
+  () => import('@/pages/examples/ExampleRecordsVaultPage'),
+  'ExampleRecordsVaultPage',
+);
+const ExampleLifeLogisticsPage = lazyRoute(
+  () => import('@/pages/examples/ExampleLifeLogisticsPage'),
+  'ExampleLifeLogisticsPage',
+);
+const ExampleComparisonPage = lazyRoute(
+  () => import('@/pages/examples/ExampleComparisonPage'),
+  'ExampleComparisonPage',
+);
+const ExampleToolPage = lazyRoute(() => import('@/pages/examples/ExampleToolPage'), 'ExampleToolPage');
+const VaccinationsIndexPage = lazyRoute(
+  () => import('@/pages/vaccinations/VaccinationsIndexPage'),
+  'VaccinationsIndexPage',
+);
+const VaccinationSchedulePage = lazyRoute(
+  () => import('@/pages/vaccinations/VaccinationSchedulePage'),
+  'VaccinationSchedulePage',
+);
+const EmergencyHubPage = lazyRoute(
+  () => import('@/pages/emergency/EmergencyHubPage'),
+  'EmergencyHubPage',
+);
+const EmergencyGuidePage = lazyRoute(
+  () => import('@/pages/emergency/EmergencyGuidePage'),
+  'EmergencyGuidePage',
+);
+const SymptomsIndexPage = lazyRoute(
+  () => import('@/pages/symptoms/SymptomsIndexPage'),
+  'SymptomsIndexPage',
+);
+const SymptomGuidePage = lazyRoute(
+  () => import('@/pages/symptoms/SymptomGuidePage'),
+  'SymptomGuidePage',
+);
 
 export function App() {
   return (
@@ -116,6 +191,25 @@ export function App() {
       <Routes>
         {/* Public - keep landing synchronous for fastest first paint */}
         <Route path={ROUTES.LANDING} element={<LandingPage />} />
+        <Route path="/breeds" element={<BreedsHubPage />} />
+        <Route path="/breeds/:breedSlug/:stageSlug" element={<BreedHealthGuidePage />} />
+        <Route path="/vault" element={<VaultHubPage />} />
+        <Route path="/life-logistics" element={<LifeLogisticsHubPage />} />
+        <Route path="/examples" element={<ContentExamplesIndexPage />} />
+        <Route path="/examples/breed-health/:slug" element={<ExampleBreedHealthPage />} />
+        <Route path="/examples/symptom/:slug" element={<ExampleSymptomGuidePage />} />
+        <Route path="/examples/vaccination/:slug" element={<ExampleVaccinationSchedulePage />} />
+        <Route path="/examples/emergency/:slug" element={<ExampleEmergencyGuidePage />} />
+        <Route path="/examples/vault/:slug" element={<ExampleRecordsVaultPage />} />
+        <Route path="/examples/life-logistics/:slug" element={<ExampleLifeLogisticsPage />} />
+        <Route path="/examples/compare/:slug" element={<ExampleComparisonPage />} />
+        <Route path="/examples/tools/:slug" element={<ExampleToolPage />} />
+        <Route path="/symptoms" element={<SymptomsIndexPage />} />
+        <Route path="/symptoms/:species/:slug" element={<SymptomGuidePage />} />
+        <Route path="/vaccinations" element={<VaccinationsIndexPage />} />
+        <Route path="/vaccinations/:slug" element={<VaccinationSchedulePage />} />
+        <Route path="/emergency" element={<EmergencyHubPage />} />
+        <Route path="/emergency/:slug" element={<EmergencyGuidePage />} />
         <Route path={ROUTES.PRICING} element={<PricingPage />} />
         <Route path={ROUTES.PET_MATCH} element={<PetMatchPage />} />
         <Route path={ROUTES.BLOG} element={<BlogIndexPage />} />
@@ -170,6 +264,9 @@ export function App() {
         <Route path={`${ROUTES.PUBLIC_TRIAGE}/:publicId`} element={<EmergencyProfilePage />} />
         <Route path={`${ROUTES.STORY_PUBLIC}/:token`} element={<PublicPetStoryPage />} />
         <Route path={ROUTES.TOOLS_VACCINE_SCHEDULER} element={<VaccineSchedulerPage />} />
+        <Route path={ROUTES.TOOLS_QR_GENERATOR} element={<ProtectedRoute><QRGeneratorPage /></ProtectedRoute>} />
+        <Route path={ROUTES.TOOLS_DOWNLOADS} element={<ToolsDownloadsHubPage />} />
+        <Route path={`${ROUTES.TOOLS_DOWNLOADS}/:slug`} element={<ToolDownloadPage />} />
 
         <Route path={ROUTES.ONBOARDING} element={<ProtectedRoute requireOnboardingComplete={false}><OnboardingPage /></ProtectedRoute>} />
         <Route path={ROUTES.DASHBOARD} element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
@@ -178,7 +275,6 @@ export function App() {
         <Route path={ROUTES.TIMELINE} element={<ProtectedRoute><TimelinePage /></ProtectedRoute>} />
         <Route path={ROUTES.REMINDERS} element={<ProtectedRoute><RemindersPage /></ProtectedRoute>} />
         <Route path={ROUTES.EMERGENCY_PASSPORT} element={<ProtectedRoute><EmergencyPassportPage /></ProtectedRoute>} />
-        <Route path={ROUTES.TOOLS_QR_GENERATOR} element={<ProtectedRoute><QRGeneratorPage /></ProtectedRoute>} />
         <Route path={ROUTES.PET_CARE_SCORE} element={<ProtectedRoute><InsightsPage /></ProtectedRoute>} />
         <Route path={ROUTES.VET_PORTAL} element={<ProtectedRoute><VetPortalPage /></ProtectedRoute>} />
         <Route path={ROUTES.MONTHLY_REPORT} element={<ProtectedRoute><MonthlyReportPage /></ProtectedRoute>} />

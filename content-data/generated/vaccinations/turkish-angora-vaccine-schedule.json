@@ -1,0 +1,47 @@
+{
+  "slug": "turkish-angora-vaccine-schedule",
+  "path": "/vaccinations/turkish-angora-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "turkish-angora",
+  "subjectName": "Turkish Angora",
+  "species": "cat",
+  "primaryKeyword": "Turkish Angora vaccine schedule",
+  "metaDescription": "Turkish Angora vaccine schedule with core ages in weeks. Set reminders so Turkish Angora boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/turkish-angora/adult-health-guide",
+  "breedHealthLabel": "Turkish Angora adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Turkish Angora owners tracking 12-18 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where panleukopenia risk concentrates for this kitten.",
+        "Use the 4-row Turkish Angora schedule as your only planning spine: 8 weeks (FVRCP); 12 weeks (FVRCP booster); 16 weeks (FVRCP booster); 16 weeks (Rabies).",
+        "Temperament note for Turkish Angora handling: Elegant; deafness risk in white cats is classic.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Turkish Angora dose.",
+        "Lifestyle add-ons stay off this Turkish Angora core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Turkish Angora misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Turkish Angora series from memory.",
+        "The danger for a delayed Turkish Angora is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Turkish Angora away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Turkish Angora due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Turkish Angora core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Turkish Angora misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Turkish Angora health context beyond vaccines?",
+      "answer": "See the Turkish Angora adult health guide for breed predispositions such as deafness risk (especially white/blue-eyed), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

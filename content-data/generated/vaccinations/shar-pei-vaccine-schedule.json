@@ -1,0 +1,47 @@
+{
+  "slug": "shar-pei-vaccine-schedule",
+  "path": "/vaccinations/shar-pei-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "shar-pei",
+  "subjectName": "Chinese Shar-Pei",
+  "species": "dog",
+  "primaryKeyword": "Chinese Shar-Pei vaccine schedule",
+  "metaDescription": "Chinese Shar-Pei vaccine schedule with core ages in weeks. Set reminders so Chinese Shar-Pei boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/shar-pei/adult-health-guide",
+  "breedHealthLabel": "Chinese Shar-Pei adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Chinese Shar-Pei core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a medium puppy is covered as maternal antibodies fade.",
+        "At 45-60 lb (20-27 kg), Chinese Shar-Pei visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring familial shar-pei fever risk and skin fold infections into the Chinese Shar-Pei exam-room conversation while you are already there for shots.",
+        "Rabies for a Chinese Shar-Pei still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Chinese Shar-Pei shots when the puppy seems “a little off,” travel intervenes, or familial shar-pei fever risk worries dominate the week — ask the clinic whether a same-week Chinese Shar-Pei make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Chinese Shar-Pei antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Chinese Shar-Pei dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Chinese Shar-Pei reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Chinese Shar-Pei core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Chinese Shar-Pei misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Chinese Shar-Pei health context beyond vaccines?",
+      "answer": "See the Chinese Shar-Pei adult health guide for breed predispositions such as familial shar-pei fever risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

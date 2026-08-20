@@ -1,0 +1,1256 @@
+{
+  "wave": 1,
+  "generatedAt": "2026-08-20T18:43:51.701Z",
+  "count": 247,
+  "pillars": {
+    "compare": 39,
+    "vaccinations": 202,
+    "breeds": 1,
+    "symptoms": 1,
+    "tools": 1,
+    "life-logistics": 1,
+    "vault": 1,
+    "emergency": 1
+  },
+  "poolSources": [
+    "compare",
+    "vaccinations+emergency"
+  ],
+  "urls": [
+    {
+      "path": "/compare",
+      "url": "https://petclues.com/compare",
+      "pillar": "compare"
+    },
+    {
+      "path": "/vaccinations",
+      "url": "https://petclues.com/vaccinations",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/emergency",
+      "url": "https://petclues.com/emergency",
+      "pillar": "emergency"
+    },
+    {
+      "path": "/vault",
+      "url": "https://petclues.com/vault",
+      "pillar": "vault"
+    },
+    {
+      "path": "/life-logistics",
+      "url": "https://petclues.com/life-logistics",
+      "pillar": "life-logistics"
+    },
+    {
+      "path": "/tools",
+      "url": "https://petclues.com/tools",
+      "pillar": "tools"
+    },
+    {
+      "path": "/symptoms",
+      "url": "https://petclues.com/symptoms",
+      "pillar": "symptoms"
+    },
+    {
+      "path": "/breeds",
+      "url": "https://petclues.com/breeds",
+      "pillar": "breeds"
+    },
+    {
+      "path": "/compare/petclues-vs-11pets",
+      "url": "https://petclues.com/compare/petclues-vs-11pets",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-airtable",
+      "url": "https://petclues.com/compare/petclues-vs-airtable",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-apple-notes",
+      "url": "https://petclues.com/compare/petclues-vs-apple-notes",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-box",
+      "url": "https://petclues.com/compare/petclues-vs-box",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-camera-roll",
+      "url": "https://petclues.com/compare/petclues-vs-camera-roll",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-coda",
+      "url": "https://petclues.com/compare/petclues-vs-coda",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-dropbox",
+      "url": "https://petclues.com/compare/petclues-vs-dropbox",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-email-inbox",
+      "url": "https://petclues.com/compare/petclues-vs-email-inbox",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-evernote",
+      "url": "https://petclues.com/compare/petclues-vs-evernote",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-excel",
+      "url": "https://petclues.com/compare/petclues-vs-excel",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-filing-cabinet",
+      "url": "https://petclues.com/compare/petclues-vs-filing-cabinet",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-fridge-notes",
+      "url": "https://petclues.com/compare/petclues-vs-fridge-notes",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-google-calendar",
+      "url": "https://petclues.com/compare/petclues-vs-google-calendar",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-google-drive",
+      "url": "https://petclues.com/compare/petclues-vs-google-drive",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-google-sheets",
+      "url": "https://petclues.com/compare/petclues-vs-google-sheets",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-icloud-drive",
+      "url": "https://petclues.com/compare/petclues-vs-icloud-drive",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-iphone-reminders",
+      "url": "https://petclues.com/compare/petclues-vs-iphone-reminders",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-notes-app",
+      "url": "https://petclues.com/compare/petclues-vs-notes-app",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-notion",
+      "url": "https://petclues.com/compare/petclues-vs-notion",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-onedrive",
+      "url": "https://petclues.com/compare/petclues-vs-onedrive",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-onenote",
+      "url": "https://petclues.com/compare/petclues-vs-onenote",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-paper-records",
+      "url": "https://petclues.com/compare/petclues-vs-paper-records",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-paper-vaccine-card",
+      "url": "https://petclues.com/compare/petclues-vs-paper-vaccine-card",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-pawlicy",
+      "url": "https://petclues.com/compare/petclues-vs-pawlicy",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-pawprint",
+      "url": "https://petclues.com/compare/petclues-vs-pawprint",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-pawza",
+      "url": "https://petclues.com/compare/petclues-vs-pawza",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-pdf-folder",
+      "url": "https://petclues.com/compare/petclues-vs-pdf-folder",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-pen-and-paper",
+      "url": "https://petclues.com/compare/petclues-vs-pen-and-paper",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-petdesk",
+      "url": "https://petclues.com/compare/petclues-vs-petdesk",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-physical-binder",
+      "url": "https://petclues.com/compare/petclues-vs-physical-binder",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-printer-file-box",
+      "url": "https://petclues.com/compare/petclues-vs-printer-file-box",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-shared-family-calendar",
+      "url": "https://petclues.com/compare/petclues-vs-shared-family-calendar",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-spreadsheet",
+      "url": "https://petclues.com/compare/petclues-vs-spreadsheet",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-text-messages",
+      "url": "https://petclues.com/compare/petclues-vs-text-messages",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-trello",
+      "url": "https://petclues.com/compare/petclues-vs-trello",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-vet-record",
+      "url": "https://petclues.com/compare/petclues-vs-vet-record",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-vitusvet",
+      "url": "https://petclues.com/compare/petclues-vs-vitusvet",
+      "pillar": "compare"
+    },
+    {
+      "path": "/compare/petclues-vs-whatsapp",
+      "url": "https://petclues.com/compare/petclues-vs-whatsapp",
+      "pillar": "compare"
+    },
+    {
+      "path": "/vaccinations/abyssinian-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/abyssinian-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/adult-cat-booster-schedule",
+      "url": "https://petclues.com/vaccinations/adult-cat-booster-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/adult-dog-booster-schedule",
+      "url": "https://petclues.com/vaccinations/adult-dog-booster-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/affenpinscher-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/affenpinscher-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/afghan-hound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/afghan-hound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/airedale-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/airedale-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/akita-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/akita-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/alaskan-malamute-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/alaskan-malamute-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-bobtail-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-bobtail-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-bully-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-bully-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-curl-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-curl-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-hairless-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-hairless-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-shorthair-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-shorthair-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-staffordshire-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-staffordshire-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/american-water-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/american-water-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/anatolian-shepherd-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/anatolian-shepherd-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/appenzeller-sennenhund-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/appenzeller-sennenhund-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/australian-cattle-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/australian-cattle-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/australian-kelpie-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/australian-kelpie-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/australian-shepherd-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/australian-shepherd-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/azawakh-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/azawakh-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/barbet-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/barbet-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/basenji-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/basenji-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/basset-hound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/basset-hound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/beagle-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/beagle-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bearded-collie-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bearded-collie-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bedlington-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bedlington-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/belgian-malinois-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/belgian-malinois-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/belgian-sheepdog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/belgian-sheepdog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/belgian-tervuren-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/belgian-tervuren-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bengal-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bengal-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bergamasco-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bergamasco-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bernese-mountain-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bernese-mountain-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bichon-frise-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bichon-frise-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/birman-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/birman-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bloodhound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bloodhound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/boarding-cat-vaccine-requirements",
+      "url": "https://petclues.com/vaccinations/boarding-cat-vaccine-requirements",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/boarding-dog-vaccine-requirements",
+      "url": "https://petclues.com/vaccinations/boarding-dog-vaccine-requirements",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bombay-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bombay-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/border-collie-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/border-collie-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/border-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/border-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/borzoi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/borzoi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/boston-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/boston-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/boxer-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/boxer-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/boykin-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/boykin-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bracco-italiano-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bracco-italiano-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/briard-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/briard-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/british-shorthair-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/british-shorthair-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/brittany-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/brittany-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/brussels-griffon-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/brussels-griffon-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bull-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bull-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bulldog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bulldog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/bullmastiff-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/bullmastiff-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/burmese-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/burmese-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cairn-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cairn-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/calico-domestic-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/calico-domestic-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/canaan-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/canaan-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cane-corso-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cane-corso-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cardigan-welsh-corgi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cardigan-welsh-corgi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/carolina-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/carolina-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cat-fvrcp-schedule",
+      "url": "https://petclues.com/vaccinations/cat-fvrcp-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cat-rabies-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cat-rabies-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cat-vaccine-after-missed-dose",
+      "url": "https://petclues.com/vaccinations/cat-vaccine-after-missed-dose",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/catahoula-leopard-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/catahoula-leopard-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cavalier-king-charles-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cavalier-king-charles-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cesky-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cesky-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/chartreux-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/chartreux-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/chesapeake-bay-retriever-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/chesapeake-bay-retriever-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/chihuahua-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/chihuahua-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/chinese-crested-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/chinese-crested-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/chow-chow-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/chow-chow-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cirneco-dell-etna-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cirneco-dell-etna-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/clumber-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/clumber-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cocker-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cocker-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/collie-rough-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/collie-rough-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/collie-smooth-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/collie-smooth-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cornish-rex-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cornish-rex-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/curly-coated-retriever-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/curly-coated-retriever-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/cymric-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/cymric-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dachshund-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/dachshund-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dalmatian-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/dalmatian-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dandie-dinmont-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/dandie-dinmont-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/danish-swedish-farmdog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/danish-swedish-farmdog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/devon-rex-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/devon-rex-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/doberman-pinscher-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/doberman-pinscher-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dog-bordetella-timing",
+      "url": "https://petclues.com/vaccinations/dog-bordetella-timing",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dog-distemper-parvo-schedule",
+      "url": "https://petclues.com/vaccinations/dog-distemper-parvo-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dog-lepto-vaccine-timing",
+      "url": "https://petclues.com/vaccinations/dog-lepto-vaccine-timing",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dog-rabies-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/dog-rabies-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dog-vaccine-after-missed-dose",
+      "url": "https://petclues.com/vaccinations/dog-vaccine-after-missed-dose",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/domestic-longhair-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/domestic-longhair-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/domestic-shorthair-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/domestic-shorthair-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/dutch-shepherd-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/dutch-shepherd-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/egyptian-mau-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/egyptian-mau-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/english-bulldog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/english-bulldog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/english-setter-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/english-setter-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/english-springer-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/english-springer-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/entlebucher-mountain-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/entlebucher-mountain-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/exotic-shorthair-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/exotic-shorthair-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/field-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/field-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/finnish-lapphund-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/finnish-lapphund-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/finnish-spitz-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/finnish-spitz-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/first-year-kitten-shots",
+      "url": "https://petclues.com/vaccinations/first-year-kitten-shots",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/first-year-puppy-shots",
+      "url": "https://petclues.com/vaccinations/first-year-puppy-shots",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/flat-coated-retriever-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/flat-coated-retriever-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/french-bulldog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/french-bulldog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/french-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/french-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/german-shepherd-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/german-shepherd-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/german-shorthaired-pointer-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/german-shorthaired-pointer-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/german-wirehaired-pointer-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/german-wirehaired-pointer-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/giant-breed-puppy-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/giant-breed-puppy-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/glen-of-imaal-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/glen-of-imaal-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/golden-retriever-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/golden-retriever-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/gordon-setter-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/gordon-setter-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/great-dane-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/great-dane-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/great-pyrenees-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/great-pyrenees-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/greater-swiss-mountain-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/greater-swiss-mountain-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/greyhound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/greyhound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/havanese-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/havanese-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/himalayan-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/himalayan-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/ibizan-hound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/ibizan-hound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/icelandic-sheepdog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/icelandic-sheepdog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/indoor-cat-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/indoor-cat-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/irish-red-and-white-setter-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/irish-red-and-white-setter-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/irish-setter-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/irish-setter-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/irish-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/irish-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/irish-water-spaniel-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/irish-water-spaniel-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/irish-wolfhound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/irish-wolfhound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/italian-greyhound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/italian-greyhound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/japanese-bobtail-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/japanese-bobtail-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/japanese-chin-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/japanese-chin-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/keeshond-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/keeshond-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/kerry-blue-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/kerry-blue-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/kitten-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/kitten-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/komondor-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/komondor-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/kuvasz-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/kuvasz-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/la-perm-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/la-perm-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/labrador-retriever-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/labrador-retriever-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/lagotto-romagnolo-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/lagotto-romagnolo-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/lakeland-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/lakeland-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/large-breed-puppy-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/large-breed-puppy-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/leonberger-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/leonberger-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/lhasa-apso-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/lhasa-apso-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/lykoi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/lykoi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/maine-coon-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/maine-coon-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/maltese-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/maltese-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/manchester-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/manchester-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/manx-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/manx-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/mastiff-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/mastiff-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/miniature-bull-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/miniature-bull-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/miniature-pinscher-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/miniature-pinscher-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/miniature-schnauzer-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/miniature-schnauzer-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/minskin-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/minskin-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/mudi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/mudi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/multi-cat-household-vaccine-calendar",
+      "url": "https://petclues.com/vaccinations/multi-cat-household-vaccine-calendar",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/multi-dog-household-vaccine-calendar",
+      "url": "https://petclues.com/vaccinations/multi-dog-household-vaccine-calendar",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/munchkin-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/munchkin-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/napoleon-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/napoleon-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/nebelung-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/nebelung-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/new-guinea-singing-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/new-guinea-singing-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/newfoundland-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/newfoundland-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/norfolk-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/norfolk-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/norwegian-buhund-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/norwegian-buhund-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/norwegian-elkhound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/norwegian-elkhound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/norwegian-forest-cat-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/norwegian-forest-cat-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/norwich-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/norwich-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/nova-scotia-duck-tolling-retriever-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/nova-scotia-duck-tolling-retriever-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/ocicat-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/ocicat-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/old-english-sheepdog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/old-english-sheepdog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/oriental-shorthair-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/oriental-shorthair-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/outdoor-cat-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/outdoor-cat-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/papillon-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/papillon-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pekingese-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pekingese-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pembroke-welsh-corgi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pembroke-welsh-corgi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/persian-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/persian-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/peruvian-inca-orchid-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/peruvian-inca-orchid-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pharaoh-hound-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pharaoh-hound-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pit-bull-type-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pit-bull-type-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/podenco-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/podenco-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pointer-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pointer-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pomeranian-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pomeranian-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/poodle-miniature-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/poodle-miniature-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/poodle-standard-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/poodle-standard-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/poodle-toy-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/poodle-toy-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/portuguese-water-dog-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/portuguese-water-dog-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pug-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pug-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pulik-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pulik-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/pumi-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/pumi-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/puppy-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/puppy-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/ragamuffin-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/ragamuffin-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/ragdoll-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/ragdoll-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/rat-terrier-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/rat-terrier-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/rescue-cat-vaccine-catch-up",
+      "url": "https://petclues.com/vaccinations/rescue-cat-vaccine-catch-up",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/rescue-dog-vaccine-catch-up",
+      "url": "https://petclues.com/vaccinations/rescue-dog-vaccine-catch-up",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/rhodesian-ridgeback-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/rhodesian-ridgeback-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/rottweiler-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/rottweiler-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/russian-blue-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/russian-blue-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/saint-bernard-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/saint-bernard-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/saluki-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/saluki-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/samoyed-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/samoyed-vaccine-schedule",
+      "pillar": "vaccinations"
+    },
+    {
+      "path": "/vaccinations/savannah-f4-plus-vaccine-schedule",
+      "url": "https://petclues.com/vaccinations/savannah-f4-plus-vaccine-schedule",
+      "pillar": "vaccinations"
+    }
+  ]
+}

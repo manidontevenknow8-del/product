@@ -1,0 +1,47 @@
+{
+  "slug": "entlebucher-mountain-dog-vaccine-schedule",
+  "path": "/vaccinations/entlebucher-mountain-dog-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "entlebucher-mountain-dog",
+  "subjectName": "Entlebucher Mountain Dog",
+  "species": "dog",
+  "primaryKeyword": "Entlebucher Mountain Dog vaccine schedule",
+  "metaDescription": "Entlebucher Mountain Dog vaccine schedule with core ages in weeks. Set reminders so Entlebucher Mountain Dog boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/entlebucher-mountain-dog/adult-health-guide",
+  "breedHealthLabel": "Entlebucher Mountain Dog adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Entlebucher Mountain Dog core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a medium puppy is covered as maternal antibodies fade.",
+        "At 40-55 lb (18-25 kg), Entlebucher Mountain Dog visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring hip dysplasia and progressive retinal atrophy (pra) into the Entlebucher Mountain Dog exam-room conversation while you are already there for shots.",
+        "Rabies for a Entlebucher Mountain Dog still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Entlebucher Mountain Dog shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Entlebucher Mountain Dog make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Entlebucher Mountain Dog antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Entlebucher Mountain Dog dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Entlebucher Mountain Dog reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Entlebucher Mountain Dog core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Entlebucher Mountain Dog misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Entlebucher Mountain Dog health context beyond vaccines?",
+      "answer": "See the Entlebucher Mountain Dog adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+Eligible pages in queue: 603; generating up to 603; skipped breeds: 19
+Batch 1: first batch, no prior comparison
+Batch 2: uniqueness fail on australian-shepherd__senior (shared=17). Revising body-generation version and regenerating batch.
+Batch 2: after revise, worst shared=16
+Batch 2: after sentence drop, worst shared=0
+Batch 3: uniqueness fail on akita__adult (shared=9). Revising body-generation version and regenerating batch.
+Batch 3: after revise, worst shared=9
+Batch 3: after sentence drop, worst shared=0
+Batch 4: uniqueness ok (worst shared=0)
+Batch 5: uniqueness fail on affenpinscher__senior (shared=6). Revising body-generation version and regenerating batch.
+Batch 5: after revise, worst shared=11
+Batch 5: after sentence drop, worst shared=1
+Batch 6: uniqueness fail on belgian-tervuren__adult (shared=10). Revising body-generation version and regenerating batch.
+Batch 6: after revise, worst shared=15
+Batch 6: after sentence drop, worst shared=0
+Batch 7: uniqueness ok (worst shared=0)
+Batch 8: uniqueness fail on australian-kelpie__senior (shared=14). Revising body-generation version and regenerating batch.
+Batch 8: after revise, worst shared=15
+Batch 8: after sentence drop, worst shared=0
+Batch 9: uniqueness fail on kerry-blue-terrier__adult (shared=9). Revising body-generation version and regenerating batch.
+Batch 9: after revise, worst shared=9
+Batch 9: after sentence drop, worst shared=0
+Batch 10: uniqueness ok (worst shared=0)
+Batch 11: uniqueness fail on burmese__senior (shared=5). Revising body-generation version and regenerating batch.
+Batch 11: after revise, worst shared=6
+Batch 11: after sentence drop, worst shared=0
+Batch 12: uniqueness fail on domestic-longhair__adult (shared=13). Revising body-generation version and regenerating batch.
+Batch 12: after revise, worst shared=10
+Batch 12: after sentence drop, worst shared=0
+Batch 13: uniqueness ok (worst shared=0)
+{
+  "generatedAt": "2026-08-20T18:04:03.345Z",
+  "breedsTotal": 220,
+  "breedsSkipped": 19,
+  "skippedBreeds": [
+    {
+      "slug": "french-bulldog",
+      "name": "French Bulldog",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "american-bully",
+      "name": "American Bully",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "pit-bull-type",
+      "name": "Pit Bull Type (American)",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "catahoula-leopard-dog",
+      "name": "Catahoula Leopard Dog",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "danish-swedish-farmdog",
+      "name": "Danish-Swedish Farmdog",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "peruvian-inca-orchid",
+      "name": "Peruvian Inca Orchid",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "cirneco-dell-etna",
+      "name": "Cirneco dell'Etna",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "podenco",
+      "name": "Podenco (type)",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "carolina-dog",
+      "name": "Carolina Dog",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "new-guinea-singing-dog",
+      "name": "New Guinea Singing Dog",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "scottish-fold",
+      "name": "Scottish Fold",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "manx",
+      "name": "Manx",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "cymric",
+      "name": "Cymric",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "savannah",
+      "name": "Savannah",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "lykoi",
+      "name": "Lykoi",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "minskin",
+      "name": "Minskin",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "munchkin",
+      "name": "Munchkin",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "napoleon",
+      "name": "Napoleon (Minuet)",
+      "reason": "NEEDS_VET_REVIEW"
+    },
+    {
+      "slug": "french-spaniel",
+      "name": "French Spaniel",
+      "reason": "NEEDS_VET_REVIEW"
+    }
+  ],
+  "pagesGenerated": 603,
+  "maxCap": 700,
+  "eligibleWithoutCap": 603,
+  "generatorRevisedDuringRun": true,
+  "finalGeneratorVersion": 12,
+  "wordCount": {
+    "min": 500,
+    "max": 781,
+    "mean": 671,
+    "p50": 673,
+    "p90": 747,
+    "under500": 0,
+    "over700": 220
+  }
+}

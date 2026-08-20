@@ -1,0 +1,47 @@
+{
+  "slug": "lhasa-apso-vaccine-schedule",
+  "path": "/vaccinations/lhasa-apso-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "lhasa-apso",
+  "subjectName": "Lhasa Apso",
+  "species": "dog",
+  "primaryKeyword": "Lhasa Apso vaccine schedule",
+  "metaDescription": "Lhasa Apso vaccine schedule with core ages in weeks. Set reminders so Lhasa Apso boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/lhasa-apso/adult-health-guide",
+  "breedHealthLabel": "Lhasa Apso adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Lhasa Apso core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a small puppy is covered as maternal antibodies fade.",
+        "At 12-18 lb (5-8 kg), Lhasa Apso visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring kidney disease risk and intervertebral disc disease (ivdd) risk into the Lhasa Apso exam-room conversation while you are already there for shots.",
+        "Rabies for a Lhasa Apso still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Lhasa Apso misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Lhasa Apso series from memory.",
+        "The danger for a delayed Lhasa Apso is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Lhasa Apso away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Lhasa Apso due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Lhasa Apso core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Lhasa Apso misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Lhasa Apso health context beyond vaccines?",
+      "answer": "See the Lhasa Apso adult health guide for breed predispositions such as kidney disease risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

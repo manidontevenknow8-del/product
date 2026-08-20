@@ -1,0 +1,18 @@
+{
+  "target_total": 200,
+  "batch_size": 30,
+  "completed_batches": [1, 2, 3, 4, 5, 6, 7],
+  "pages_generated": 200,
+  "status": "complete",
+  "cores_covered": 25,
+  "batch_files": [
+    "batch-01.json",
+    "batch-02.json",
+    "batch-03.json",
+    "batch-04.json",
+    "batch-05.json",
+    "batch-06.json",
+    "batch-07.json"
+  ],
+  "notes": "All 25 core emergencies have primary + long-tail variant pages under /emergency/{slug}. Loader: src/content/loadEmergencyGuides.ts."
+}

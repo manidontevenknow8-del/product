@@ -1,0 +1,47 @@
+{
+  "slug": "boston-terrier-vaccine-schedule",
+  "path": "/vaccinations/boston-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "boston-terrier",
+  "subjectName": "Boston Terrier",
+  "species": "dog",
+  "primaryKeyword": "Boston Terrier vaccine schedule",
+  "metaDescription": "Boston Terrier vaccine schedule with core ages in weeks. Set reminders so Boston Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/boston-terrier/adult-health-guide",
+  "breedHealthLabel": "Boston Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Boston Terriers: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Boston Terrier series closes at about 16 weeks.",
+        "Size class small does not invent new viruses for the Boston Terrier, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag patellar luxation at Boston Terrier vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Boston Terrier series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Boston Terrier boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Boston Terrier row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Boston Terrier item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Boston Terrier kennel reservation.",
+        "PetClues should hold both the new Boston Terrier due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Boston Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Boston Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Boston Terrier health context beyond vaccines?",
+      "answer": "See the Boston Terrier adult health guide for breed predispositions such as brachycephalic obstructive airway syndrome (boas), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

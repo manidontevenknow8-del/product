@@ -157,6 +157,14 @@ const ROUTE_COVERAGE = [
     count: 7,
   },
   {
+    id: 'vault-guide',
+    pathPattern: '/guides/:slug',
+    handler: 'vaultGuideSeo.ts',
+    required: ['Organization', 'WebSite', 'Article', 'FAQPage', 'BreadcrumbList'],
+    files: ['vaultGuideSeo.ts', 'structuredDataSchemas.ts'],
+    count: 150,
+  },
+  {
     id: 'guides-detail',
     pathPattern: '/guides/:collection/:slug',
     handler: 'programmaticSeo.tsx',

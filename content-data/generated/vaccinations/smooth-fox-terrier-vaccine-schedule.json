@@ -1,0 +1,47 @@
+{
+  "slug": "smooth-fox-terrier-vaccine-schedule",
+  "path": "/vaccinations/smooth-fox-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "smooth-fox-terrier",
+  "subjectName": "Smooth Fox Terrier",
+  "species": "dog",
+  "primaryKeyword": "Smooth Fox Terrier vaccine schedule",
+  "metaDescription": "Smooth Fox Terrier vaccine schedule with core ages in weeks. Set reminders so Smooth Fox Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/smooth-fox-terrier/adult-health-guide",
+  "breedHealthLabel": "Smooth Fox Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Smooth Fox Terrier owners tracking 12-15 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row Smooth Fox Terrier schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for Smooth Fox Terrier handling: Classic earthdog; deafness can appear.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Smooth Fox Terrier dose.",
+        "Lifestyle add-ons stay off this Smooth Fox Terrier core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Smooth Fox Terrier boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Smooth Fox Terrier row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Smooth Fox Terrier item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Smooth Fox Terrier kennel reservation.",
+        "PetClues should hold both the new Smooth Fox Terrier due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Smooth Fox Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Smooth Fox Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Smooth Fox Terrier health context beyond vaccines?",
+      "answer": "See the Smooth Fox Terrier adult health guide for breed predispositions such as deafness risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

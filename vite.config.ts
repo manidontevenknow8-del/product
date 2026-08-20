@@ -8,6 +8,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@content-data': fileURLToPath(new URL('./content-data', import.meta.url)),
+      '@content-types': fileURLToPath(new URL('./content-types', import.meta.url)),
     },
   },
   ssr: {

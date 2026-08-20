@@ -1,0 +1,97 @@
+[
+  {
+    "slug": "french-bulldog",
+    "name": "French Bulldog",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "american-bully",
+    "name": "American Bully",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "pit-bull-type",
+    "name": "Pit Bull Type (American)",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "catahoula-leopard-dog",
+    "name": "Catahoula Leopard Dog",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "danish-swedish-farmdog",
+    "name": "Danish-Swedish Farmdog",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "peruvian-inca-orchid",
+    "name": "Peruvian Inca Orchid",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "cirneco-dell-etna",
+    "name": "Cirneco dell'Etna",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "podenco",
+    "name": "Podenco (type)",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "carolina-dog",
+    "name": "Carolina Dog",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "new-guinea-singing-dog",
+    "name": "New Guinea Singing Dog",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "scottish-fold",
+    "name": "Scottish Fold",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "manx",
+    "name": "Manx",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "cymric",
+    "name": "Cymric",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "savannah",
+    "name": "Savannah",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "lykoi",
+    "name": "Lykoi",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "minskin",
+    "name": "Minskin",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "munchkin",
+    "name": "Munchkin",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "napoleon",
+    "name": "Napoleon (Minuet)",
+    "reason": "NEEDS_VET_REVIEW"
+  },
+  {
+    "slug": "french-spaniel",
+    "name": "French Spaniel",
+    "reason": "NEEDS_VET_REVIEW"
+  }
+]

@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-08-20T18:04:03.345Z",
+  "breedsTotal": 220,
+  "breedsSkipped": 0,
+  "skippedBreeds": [],
+  "pagesGenerated": 660,
+  "maxCap": 700,
+  "eligibleWithoutCap": 603,
+  "generatorRevisedDuringRun": true,
+  "finalGeneratorVersion": 12,
+  "wordCount": {
+    "min": 500,
+    "max": 781,
+    "mean": 671,
+    "p50": 673,
+    "p90": 747,
+    "under500": 0,
+    "over700": 220
+  },
+  "postPass": {
+    "pairsFixed": 426,
+    "wordCount": {
+      "min": 500,
+      "max": 700,
+      "mean": 564,
+      "p50": 517,
+      "p90": 689,
+      "under500": 0,
+      "over700": 0
+    }
+  },
+  "vetApprovalFollowUp": {
+    "approvedAt": "2026-08-20T18:12:15.600Z",
+    "breedsApproved": 19,
+    "pagesAdded": 57,
+    "totalPagesNow": 660,
+    "wordCountNew": {
+      "min": 500,
+      "max": 699,
+      "mean": 549,
+      "under500": 0,
+      "over700": 0
+    },
+    "clearedSlugs": [
+      "french-bulldog",
+      "american-bully",
+      "pit-bull-type",
+      "catahoula-leopard-dog",
+      "danish-swedish-farmdog",
+      "peruvian-inca-orchid",
+      "cirneco-dell-etna",
+      "podenco",
+      "carolina-dog",
+      "new-guinea-singing-dog",
+      "scottish-fold",
+      "manx",
+      "cymric",
+      "savannah",
+      "lykoi",
+      "minskin",
+      "munchkin",
+      "napoleon",
+      "french-spaniel"
+    ]
+  }
+}

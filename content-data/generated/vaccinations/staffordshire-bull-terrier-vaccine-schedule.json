@@ -1,0 +1,47 @@
+{
+  "slug": "staffordshire-bull-terrier-vaccine-schedule",
+  "path": "/vaccinations/staffordshire-bull-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "staffordshire-bull-terrier",
+  "subjectName": "Staffordshire Bull Terrier",
+  "species": "dog",
+  "primaryKeyword": "Staffordshire Bull Terrier vaccine schedule",
+  "metaDescription": "Staffordshire Bull Terrier vaccine schedule with core ages in weeks. Set reminders so Staffordshire Bull Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/staffordshire-bull-terrier/adult-health-guide",
+  "breedHealthLabel": "Staffordshire Bull Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Staffordshire Bull Terrier table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Staffordshire Bull Terrier dates, not intentions, so a Staffordshire Bull Terrier with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Hip dysplasia shows up often enough in Staffordshire Bull Terriers that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Staffordshire Bull Terrier profile immediately; lost paperwork is the most common reason Staffordshire Bull Terrier travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Staffordshire Bull Terrier shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Staffordshire Bull Terrier make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Staffordshire Bull Terrier antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Staffordshire Bull Terrier dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Staffordshire Bull Terrier reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Staffordshire Bull Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Staffordshire Bull Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Staffordshire Bull Terrier health context beyond vaccines?",
+      "answer": "See the Staffordshire Bull Terrier adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

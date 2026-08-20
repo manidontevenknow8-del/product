@@ -1,0 +1,90 @@
+.page {
+  min-height: 60vh;
+  background: #fff;
+  color: #121212;
+}
+
+.inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3.5rem;
+}
+
+.hero {
+  margin-bottom: 0.5rem;
+}
+
+.h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.lead {
+  margin: 0.75rem 0 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #444;
+}
+
+.body {
+  margin: 1.5rem 0 2rem;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: #222;
+}
+
+.body :where(p) {
+  margin: 0 0 1rem;
+}
+
+.body :where(h2) {
+  margin: 1.75rem 0 0.65rem;
+  font-size: 1.2rem;
+}
+
+.body :where(ul) {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.ctaWrap {
+  margin: 2rem 0;
+}
+
+.faq {
+  margin: 2.25rem 0;
+}
+
+.faqTitle {
+  margin: 0 0 0.85rem;
+  font-size: 1.15rem;
+}
+
+.faqList {
+  margin: 0;
+}
+
+.faqItem {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid #ebe7e0;
+}
+
+.faqItem dt {
+  font-weight: 600;
+  margin: 0 0 0.35rem;
+}
+
+.faqItem dd {
+  margin: 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

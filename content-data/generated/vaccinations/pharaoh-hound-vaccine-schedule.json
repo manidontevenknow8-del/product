@@ -1,0 +1,47 @@
+{
+  "slug": "pharaoh-hound-vaccine-schedule",
+  "path": "/vaccinations/pharaoh-hound-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "pharaoh-hound",
+  "subjectName": "Pharaoh Hound",
+  "species": "dog",
+  "primaryKeyword": "Pharaoh Hound vaccine schedule",
+  "metaDescription": "Pharaoh Hound vaccine schedule with core ages in weeks. Set reminders so Pharaoh Hound boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/pharaoh-hound/adult-health-guide",
+  "breedHealthLabel": "Pharaoh Hound adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Pharaoh Hound social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Pharaoh Hound exposure.",
+        "Weight range 45-55 lb (20-25 kg) and grooming needs (Short coat; blushes when excited.) belong in the same Pharaoh Hound household ops list as vaccine dates when busy weeks collide.",
+        "If your Pharaoh Hound is also monitored for demodex risk, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Pharaoh Hound appointments.",
+        "After the Pharaoh Hound puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Pharaoh Hound misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Pharaoh Hound series from memory.",
+        "The danger for a delayed Pharaoh Hound is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Pharaoh Hound away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Pharaoh Hound due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Pharaoh Hound core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Pharaoh Hound misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Pharaoh Hound health context beyond vaccines?",
+      "answer": "See the Pharaoh Hound adult health guide for breed predispositions such as allergies, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+.directory {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid color-mix(in srgb, var(--color-text-inverse) 18%, transparent);
+}
+
+.lead {
+  margin: 0 0 var(--space-3);
+  font-size: 0.9rem;
+  opacity: 0.85;
+  max-width: 40rem;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.pillar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.55rem 0.65rem;
+  border-radius: 0.35rem;
+  text-decoration: none;
+  color: inherit;
+  background: color-mix(in srgb, var(--color-text-inverse) 8%, transparent);
+}
+
+.pillar:hover {
+  background: color-mix(in srgb, var(--color-text-inverse) 14%, transparent);
+}
+
+.pillarLabel {
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.pillarHint {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.trees {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.details {
+  border: 1px solid color-mix(in srgb, var(--color-text-inverse) 16%, transparent);
+  border-radius: 0.35rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.details summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.speciesBlock {
+  margin-top: 0.75rem;
+}
+
+.speciesTitle {
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+}
+
+.breedList,
+.simpleList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.82rem;
+}
+
+.breedList li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.65rem;
+}
+
+.breedName {
+  min-width: 7rem;
+  opacity: 0.9;
+}
+
+.stageLink {
+  color: inherit;
+  opacity: 0.85;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.more {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: inherit;
+}
+
+.simpleList a {
+  color: inherit;
+}

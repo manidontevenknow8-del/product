@@ -1,0 +1,47 @@
+{
+  "slug": "great-dane-vaccine-schedule",
+  "path": "/vaccinations/great-dane-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "great-dane",
+  "subjectName": "Great Dane",
+  "species": "dog",
+  "primaryKeyword": "Great Dane vaccine schedule",
+  "metaDescription": "Great Dane vaccine schedule with core ages in weeks. Set reminders so Great Dane boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/great-dane/adult-health-guide",
+  "breedHealthLabel": "Great Dane adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Great Dane core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a giant puppy is covered as maternal antibodies fade.",
+        "At 110-175 lb (50-79 kg), Great Dane visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring bloat (gdv) and cardiomyopathy screening needs into the Great Dane exam-room conversation while you are already there for shots.",
+        "Rabies for a Great Dane still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Great Dane misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Great Dane series from memory.",
+        "The danger for a delayed Great Dane is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Great Dane away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Great Dane due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Great Dane core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Great Dane misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Great Dane health context beyond vaccines?",
+      "answer": "See the Great Dane adult health guide for breed predispositions such as bloat (gdv), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

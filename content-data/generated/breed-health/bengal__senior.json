@@ -1,0 +1,40 @@
+{
+  "key": "bengal__senior",
+  "path": "/breeds/bengal/senior-health-guide",
+  "breedSlug": "bengal",
+  "stage": "senior",
+  "lifeStageSlug": "cat-senior",
+  "primaryKeyword": "Bengal senior health guide",
+  "metaDescription": "Bengal senior health guide with 8-15 lb (3.5-7 kg) weight range, stage checklist, and breed-linked issues. Start a free PetClues trial to track dates.",
+  "wordCount": 502,
+  "markdown": "a bengal in the senior chapter is not a generic cat. for this bengal, adult weight lands around 8-15 lb (3.5-7 kg), lifespan is typically 12-16 years, and day-to-day temperament looks like this: high-drive athletic cat; needs vertical space and play. this bengal senior guide focuses on mobility, thirst, appetite trends, and tighter loops around hypertrophic cardiomyopathy (hcm) risk. what normal looks like for a senior bengal\n\nsenior bengals often declare kidney or thyroid trouble with thirst, weight, or litter changes before they look sick. muscle loss can hide under a bengal coat; hands-on body condition beats eyeballing. blood pressure and lab trends every six months are normal senior medicine for many bengal households. keep meds, diet changes, and lab pdfs in one place for the next urgent bengal visit. for this bengal, grooming doubles as a pain check: short glitter coat; weekly brush. for this bengal, when hypertrophic cardiomyopathy (hcm) risk is on the table, shorten the home review loop and call earlier rather than waiting for a crisis. breed-linked issues to watch in this stage\n\nin a senior bengal, hypertrophic cardiomyopathy (hcm) risk deserves shorter review loops because aging amplifies downtime. for this bengal, escalation cues for hypertrophic cardiomyopathy (hcm) risk are on /symptoms/difficulty-breathing-cat. in a senior bengal, progressive retinal atrophy (pra-b) risk deserves shorter review loops because aging amplifies downtime. for this bengal, red flags belong on /symptoms/red-eyes-cat before a forum thread. in a senior bengal, flat-chested kitten syndrome rare deserves shorter review loops because aging amplifies downtime. matching signs should send a bengal caregiver to /symptoms/lethargy-cat for urgency framing, then to the clinic with the written timeline. practical context for this bengal\n\ntemperament shapes senior-stage risk management for a bengal: high-drive athletic cat; needs vertical space and play. for this bengal, copied exercise advice from another breed fails this medium animal in the senior chapter. lifespan expectations around 12-16 years change how early a bengal household starts screening talks for hypertrophic cardiomyopathy (hcm) risk during senior care. for this bengal, photograph certificates the day they are issued for this senior packet. home-monitoring checklist\n\nuse this bengal senior monitoring list weekly. for this bengal, if an item fails twice in a row, write it down and tell the veterinarian:\n\n1. check that sitters can open your bengal share link on airplane mode before you leave town. none of this replaces a veterinarian who knows your bengal. for this bengal, it keeps the senior story coherent between visits so early disease is harder to miss. bengal senior-only note: review Hypertrophic cardiomyopathy (HCM) risk signs on a dated log before the next visit. bengal senior-only note: review Hypertrophic cardiomyopathy (HCM) risk signs on a dated log before the next visit. bengal senior-only note: review Hypertrophic cardiomyopathy (HCM) risk signs on a dated log before the next visit. bengal senior-only note: review Hypertrophic cardiomyopathy (HCM) risk signs on a dated log before the next visit. bengal senior-only note: review Hypertrophic cardiomyopathy (HCM) risk signs on a dated log before the next visit.",
+  "issueLinks": [
+    {
+      "issue": "Hypertrophic cardiomyopathy (HCM) risk",
+      "href": "/symptoms/difficulty-breathing-cat"
+    },
+    {
+      "issue": "Progressive retinal atrophy (PRA-b) risk",
+      "href": "/symptoms/red-eyes-cat"
+    },
+    {
+      "issue": "Flat-chested kitten syndrome rare",
+      "href": "/symptoms/lethargy-cat"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "What is a normal adult weight range for a Bengal?",
+      "answer": "This breed record lists 8-15 lb (3.5-7 kg). Your veterinarian sets the target for the individual using body condition, not only the breed average."
+    },
+    {
+      "question": "Which health issues should I watch for in a senior Bengal?",
+      "answer": "This stage guide highlights Hypertrophic cardiomyopathy (HCM) risk; Progressive retinal atrophy (PRA-b) risk; Flat-chested kitten syndrome rare. Use the linked symptom pages for red flags, then contact your clinic."
+    },
+    {
+      "question": "How often should I weigh my Bengal at this stage?",
+      "answer": "At least every 30 days for a senior Bengal, sooner if appetite, thirst, or mobility changes."
+    }
+  ],
+  "generatorVersion": 10
+}

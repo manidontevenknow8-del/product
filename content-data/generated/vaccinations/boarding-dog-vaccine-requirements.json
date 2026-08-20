@@ -1,0 +1,69 @@
+{
+  "slug": "boarding-dog-vaccine-requirements",
+  "path": "/vaccinations/boarding-dog-vaccine-requirements",
+  "kind": "general",
+  "subjectName": "Dog boarding vaccines",
+  "species": "dog",
+  "primaryKeyword": "dog boarding vaccine requirements",
+  "metaDescription": "dog boarding vaccine requirements: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "Bordetella booster",
+  "common_health_issues": [
+    "Last-minute booking denials",
+    "14-day vaccine lead times",
+    "Certificate name mismatches"
+  ],
+  "schedule": [
+    {
+      "vaccine": "DA2PP current",
+      "age_weeks": 0,
+      "age_label": "Facility policy"
+    },
+    {
+      "vaccine": "Rabies current",
+      "age_weeks": 0,
+      "age_label": "Legal + facility"
+    },
+    {
+      "vaccine": "Bordetella (often required)",
+      "age_weeks": 0,
+      "age_label": "Per kennel"
+    },
+    {
+      "vaccine": "Canine influenza (sometimes)",
+      "age_weeks": 0,
+      "age_label": "Regional / facility"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This dog boarding vaccines plan sequences doses against last-minute booking denials, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the dog boarding vaccines table (Facility policy; Legal + facility; Per kennel; Regional / facility) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished dog boarding vaccines puppy series is still incomplete.",
+        "If your household also wrestles with 14-day vaccine lead times or certificate name mismatches, put those constraints on the same calendar thread as the Bordetella booster so one reminder system owns the dog boarding vaccines week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed dog boarding vaccines dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the dog boarding vaccines series is current again, reduce the exposure pattern that matches last-minute booking denials, and do not wait for an annual wellness slot to ask about a dog boarding vaccines make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next Bordetella booster due date so the same dog boarding vaccines miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this dog boarding vaccine requirements a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this dog boarding vaccines schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to last-minute booking denials, and reset reminders as soon as the next dog boarding vaccines due date is known."
+    },
+    {
+      "question": "How do reminders help with Bordetella booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that dog boarding vaccines booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { LIFECYCLE_MATRIX } from '../src/data/lifecycleMatrix';
@@ -97,7 +97,22 @@ const FAQ_CATEGORIES = [
   'petclues-app',
 ] as const;
 
-type SitemapTier = 'commercial' | 'blog' | 'faq' | 'guides' | 'medical' | 'lifecycle' | 'resources';
+type SitemapTier =
+  | 'commercial'
+  | 'blog'
+  | 'faq'
+  | 'guides'
+  | 'medical'
+  | 'lifecycle'
+  | 'resources'
+  | 'breeds'
+  | 'symptoms'
+  | 'vaccinations'
+  | 'emergency'
+  | 'vault'
+  | 'life-logistics'
+  | 'compare'
+  | 'tools';
 
 interface SitemapEntry {
   loc: string;
@@ -164,11 +179,20 @@ function extractBlogEntries(): Array<{ slug: string; lastmod: string }> {
 }
 
 function extractCompareSlugs(): string[] {
-  const content = readFileSync(join(root, 'src/data/comparisons/competitorConfigs.ts'), 'utf8');
+  const content = readFileSync(join(root, 'content-data/comparisons.json'), 'utf8');
+  const records = JSON.parse(content) as Array<{
+    slug: string;
+    features?: Array<{ feature?: string; value?: string; source?: string }>;
+  }>;
   const slugs = new Set<string>();
-  for (const match of content.matchAll(/\n    slug: '([^']+)'/g)) {
-    const slug = match[1];
-    if (!COMPARE_SITEMAP_EXCLUDED.has(slug)) slugs.add(slug);
+  for (const record of records) {
+    const features = record.features ?? [];
+    const complete =
+      features.length > 0 &&
+      features.every((f) => Boolean(f.feature?.trim() && f.value?.trim() && f.source?.trim()));
+    if (!complete) continue;
+    const pageSlug = `petclues-vs-${record.slug}`;
+    if (!COMPARE_SITEMAP_EXCLUDED.has(pageSlug)) slugs.add(pageSlug);
   }
   return [...slugs].sort();
 }
@@ -204,6 +228,88 @@ function extractTemplateSlugs(exportName: string): string[] {
   return slugs.sort();
 }
 
+/** Flat /breeds/{slug}/{stage}-health-guide pages from generated index. */
+function extractBreedHealthPaths(): string[] {
+  const file = join(root, 'content-data/generated/breed-health/index.json');
+  if (!existsSync(file)) return [];
+  const entries = JSON.parse(readFileSync(file, 'utf8')) as { path?: string }[];
+  return entries
+    .map((e) => e.path)
+    .filter((p): p is string => typeof p === 'string' && p.startsWith('/breeds/'))
+    .sort();
+}
+
+/** /symptoms/{species}/{slug} pages from generated batches. */
+function extractSymptomGuidePaths(): string[] {
+  const dir = join(root, 'content-data/generated/symptoms');
+  if (!existsSync(dir)) return [];
+  const paths: string[] = [];
+  for (const file of readdirSync(dir)) {
+    if (!file.startsWith('batch-') || !file.endsWith('.json')) continue;
+    const raw = JSON.parse(readFileSync(join(dir, file), 'utf8')) as
+      | { pages?: { path?: string }[] }
+      | { path?: string }[];
+    const pages = Array.isArray(raw) ? raw : (raw.pages ?? []);
+    for (const page of pages) {
+      if (page.path) paths.push(page.path);
+    }
+  }
+  return [...new Set(paths)].sort();
+}
+
+/** /vaccinations/{slug} from generated manifest. */
+function extractVaccinationPaths(): string[] {
+  const file = join(root, 'content-data/generated/vaccinations/_manifest.json');
+  if (!existsSync(file)) return [];
+  const manifest = JSON.parse(readFileSync(file, 'utf8')) as { pages?: { path?: string }[] };
+  return (manifest.pages ?? [])
+    .map((p) => p.path)
+    .filter((p): p is string => typeof p === 'string' && p.startsWith('/vaccinations/'))
+    .sort();
+}
+
+function extractToolPaths(): string[] {
+  const file = join(root, 'content-data/tools.json');
+  if (!existsSync(file)) return [];
+  const pages = JSON.parse(readFileSync(file, 'utf8')) as { slug?: string }[];
+  return pages
+    .filter((p) => p.slug)
+    .map((p) => `/tools/${p.slug!}`)
+    .sort();
+}
+
+/** Flat /guides/{slug} life-logistics pillar pages from generated JSON batches. */
+function extractLifeLogisticsSlugs(): string[] {
+  const dir = join(root, 'content-data/generated/life-logistics');
+  if (!existsSync(dir)) return [];
+  const slugs: string[] = [];
+  for (let i = 1; i <= 5; i += 1) {
+    const file = join(dir, `batch-0${i}.json`);
+    if (!existsSync(file)) continue;
+    const pages = JSON.parse(readFileSync(file, 'utf8')) as { slug?: string }[];
+    for (const page of pages) {
+      if (page.slug) slugs.push(page.slug);
+    }
+  }
+  return [...new Set(slugs)].sort();
+}
+
+/** /emergency/{slug} pages from generated JSON batches. */
+function extractEmergencyGuideSlugs(): string[] {
+  const dir = join(root, 'content-data/generated/emergencies');
+  if (!existsSync(dir)) return [];
+  const slugs: string[] = [];
+  for (let i = 1; i <= 10; i += 1) {
+    const file = join(dir, `batch-${String(i).padStart(2, '0')}.json`);
+    if (!existsSync(file)) continue;
+    const pages = JSON.parse(readFileSync(file, 'utf8')) as { slug?: string }[];
+    for (const page of pages) {
+      if (page.slug) slugs.push(page.slug);
+    }
+  }
+  return [...new Set(slugs)].sort();
+}
+
 function extractLearnSlugs(): string[] {
   const content = readFileSync(join(root, 'src/data/learn/articleConfigs.ts'), 'utf8');
   const slugs = new Set<string>();
@@ -212,6 +318,16 @@ function extractLearnSlugs(): string[] {
     if (slug) slugs.add(slug);
   }
   return [...slugs].sort();
+}
+
+function extractVaultGuideSlugs(): string[] {
+  const file = join(root, 'content-data/generated/vault/pages.json');
+  if (!existsSync(file)) return [];
+  const pages = JSON.parse(readFileSync(file, 'utf8')) as { slug?: string }[];
+  return pages
+    .map((page) => page.slug)
+    .filter((slug): slug is string => typeof slug === 'string' && slug.length > 0)
+    .sort();
 }
 
 function slugifyFaqQuestion(question: string): string {
@@ -233,7 +349,12 @@ function extractFaqSlugs(): string[] {
   return [...slugs].sort();
 }
 
-function classifyTier(pathname: string, medicalPaths: Set<string>): SitemapTier {
+function classifyTier(
+  pathname: string,
+  medicalPaths: Set<string>,
+  vaultSlugs: Set<string>,
+  logisticsSlugs: Set<string>,
+): SitemapTier {
   if (/^\/resources(\/|$)/.test(pathname)) return 'resources';
   if (/^\/guides\/[^/]+\/lifecycle\/[^/]+$/.test(pathname)) return 'lifecycle';
   if (medicalPaths.has(pathname)) return 'medical';
@@ -241,12 +362,23 @@ function classifyTier(pathname: string, medicalPaths: Set<string>): SitemapTier 
   if (COMMERCIAL_PATH_SET.has(pathname)) return 'commercial';
   if (pathname === '/blog' || pathname.startsWith('/blog/')) return 'blog';
   if (pathname === '/faq' || pathname.startsWith('/faq/')) return 'faq';
+  if (pathname === '/breeds' || pathname.startsWith('/breeds/')) return 'breeds';
+  if (pathname === '/symptoms' || pathname.startsWith('/symptoms/')) return 'symptoms';
+  if (pathname === '/vaccinations' || pathname.startsWith('/vaccinations/')) return 'vaccinations';
+  if (pathname === '/emergency' || pathname.startsWith('/emergency/')) return 'emergency';
+  if (pathname === '/vault') return 'vault';
+  if (pathname === '/life-logistics') return 'life-logistics';
+  if (pathname === '/compare' || pathname.startsWith('/compare/')) return 'compare';
+  if (pathname === '/tools' || pathname.startsWith('/tools/')) return 'tools';
+  if (pathname.startsWith('/guides/')) {
+    const slug = pathname.slice('/guides/'.length);
+    if (!slug.includes('/') && vaultSlugs.has(slug)) return 'vault';
+    if (!slug.includes('/') && logisticsSlugs.has(slug)) return 'life-logistics';
+  }
   if (pathname === '/guides' || pathname.startsWith('/guides/')) return 'guides';
   if (
     pathname === '/learn' ||
     pathname.startsWith('/learn/') ||
-    pathname === '/compare' ||
-    pathname.startsWith('/compare/') ||
     pathname === '/best' ||
     pathname.startsWith('/best/')
   ) {
@@ -265,6 +397,15 @@ function buildRoutes(): SitemapEntry[] {
   const intentSlugs = extractIntentSlugs();
   const learnSlugs = extractLearnSlugs();
   const faqSlugs = extractFaqSlugs();
+  const lifeLogisticsSlugs = extractLifeLogisticsSlugs();
+  const emergencyGuideSlugs = extractEmergencyGuideSlugs();
+  const breedHealthPaths = extractBreedHealthPaths();
+  const symptomGuidePaths = extractSymptomGuidePaths();
+  const vaccinationPaths = extractVaccinationPaths();
+  const toolPaths = extractToolPaths();
+  const vaultGuideSlugs = extractVaultGuideSlugs();
+  const vaultSlugSet = new Set(vaultGuideSlugs);
+  const logisticsSlugSet = new Set(lifeLogisticsSlugs);
 
   const programmaticPages = [
     ...extractProgrammaticSlugs('src/data/programmatic/seeds/dogBreeds.ts', 'dog-vaccination-schedule'),
@@ -309,9 +450,7 @@ function buildRoutes(): SitemapEntry[] {
     { loc: '/', priority: '1.0', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/pricing', priority: '0.9', changefreq: 'monthly', lastmod: BUILD_DATE },
     { loc: '/pet-match', priority: '0.8', changefreq: 'monthly', lastmod: BUILD_DATE },
-    { loc: '/tools/vaccine-scheduler', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/founding-members', priority: '0.7', changefreq: 'monthly', lastmod: BUILD_DATE },
-    { loc: '/compare', priority: '0.85', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/best', priority: '0.88', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/learn', priority: '0.85', changefreq: 'weekly', lastmod: BUILD_DATE },
     { loc: '/privacy', priority: '0.3', changefreq: 'yearly', lastmod: CONTENT_LASTMOD.legal },
@@ -336,6 +475,17 @@ function buildRoutes(): SitemapEntry[] {
   const resourcesHub = { loc: '/resources', priority: '0.88', changefreq: 'weekly', lastmod: BUILD_DATE };
   const faqHub = { loc: '/faq', priority: '0.5', changefreq: 'monthly', lastmod: BUILD_DATE };
 
+  const pillarHubs = [
+    { loc: '/breeds', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/symptoms', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/vaccinations', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/emergency', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/vault', priority: '0.88', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/life-logistics', priority: '0.88', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/compare', priority: '0.92', changefreq: 'weekly', lastmod: BUILD_DATE },
+    { loc: '/tools', priority: '0.9', changefreq: 'weekly', lastmod: BUILD_DATE },
+  ];
+
   const raw = [
     ...staticCore,
     ...commercial,
@@ -343,6 +493,7 @@ function buildRoutes(): SitemapEntry[] {
     guidesHub,
     resourcesHub,
     faqHub,
+    ...pillarHubs,
     ...BLOG_CATEGORIES.map((category) => ({
       loc: `/blog?category=${category}`,
       priority: '0.75',
@@ -357,7 +508,7 @@ function buildRoutes(): SitemapEntry[] {
     })),
     ...compareSlugs.map((slug) => ({
       loc: `/compare/${slug}`,
-      priority: '0.75',
+      priority: '0.9',
       changefreq: 'monthly',
       lastmod: CONTENT_LASTMOD.compare,
     })),
@@ -379,6 +530,60 @@ function buildRoutes(): SitemapEntry[] {
       changefreq: 'monthly',
       lastmod: CONTENT_LASTMOD.programmatic,
     })),
+    ...vaultGuideSlugs.map((slug) => ({
+      loc: `/guides/${slug}`,
+      priority: '0.84',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...lifeLogisticsSlugs.map((slug) => ({
+      loc: `/guides/${slug}`,
+      priority: '0.83',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...emergencyGuideSlugs.map((slug) => ({
+      loc: `/emergency/${slug}`,
+      priority: '0.85',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...breedHealthPaths.map((loc) => ({
+      loc,
+      priority: '0.82',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...symptomGuidePaths.map((loc) => ({
+      loc,
+      priority: '0.84',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...vaccinationPaths.map((loc) => ({
+      loc,
+      priority: '0.86',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    ...toolPaths.map((loc) => ({
+      loc,
+      priority: '0.84',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    })),
+    {
+      loc: '/tools/vaccine-scheduler',
+      priority: '0.9',
+      changefreq: 'weekly',
+      lastmod: BUILD_DATE,
+    },
+    {
+      loc: '/tools/qr-generator',
+      priority: '0.75',
+      changefreq: 'monthly',
+      lastmod: BUILD_DATE,
+    },
     ...breedConditionPaths.map((loc) => ({
       loc,
       priority: '0.84',
@@ -436,7 +641,7 @@ function buildRoutes(): SitemapEntry[] {
     return {
       ...entry,
       loc: url.href,
-      tier: classifyTier(url.pathname, medicalPaths),
+      tier: classifyTier(url.pathname, medicalPaths, vaultSlugSet, logisticsSlugSet),
     };
   });
 }
@@ -481,29 +686,101 @@ const CHILD_SITEMAPS = [
   'sitemap-medical.xml',
   'sitemap-lifecycle.xml',
   'sitemap-resources.xml',
+  'sitemap-compare.xml',
+  'sitemap-vaccinations.xml',
+  'sitemap-emergency.xml',
+  'sitemap-vault.xml',
+  'sitemap-life-logistics.xml',
+  'sitemap-tools.xml',
+  'sitemap-symptoms.xml',
+  'sitemap-breeds.xml',
 ] as const;
 
 const LEGACY_SITEMAPS = ['sitemap-money.xml', 'sitemap-content.xml', 'sitemap-core.xml'] as const;
 
+function loadPassPathSet(): Set<string> | null {
+  const file = join(root, 'content-data/generated/reports/agent-11-qa-report.json');
+  if (!existsSync(file)) return null;
+  try {
+    const report = JSON.parse(readFileSync(file, 'utf8')) as {
+      pass?: { path?: string }[];
+    };
+    return new Set(
+      (report.pass ?? [])
+        .map((row) => row.path)
+        .filter((p): p is string => typeof p === 'string' && p.length > 0),
+    );
+  } catch {
+    return null;
+  }
+}
+
 function main(): void {
   const routes = buildRoutes();
-  const byTier = {
-    commercial: routes.filter((r) => r.tier === 'commercial'),
-    blog: routes.filter((r) => r.tier === 'blog'),
-    faq: routes.filter((r) => r.tier === 'faq'),
-    guides: routes.filter((r) => r.tier === 'guides'),
-    medical: routes.filter((r) => r.tier === 'medical'),
-    lifecycle: routes.filter((r) => r.tier === 'lifecycle'),
-    resources: routes.filter((r) => r.tier === 'resources'),
+  const passPaths = loadPassPathSet();
+  const pillarTiers = new Set<SitemapTier>([
+    'compare',
+    'vaccinations',
+    'emergency',
+    'vault',
+    'life-logistics',
+    'tools',
+    'symptoms',
+    'breeds',
+  ]);
+
+  const filteredRoutes =
+    passPaths == null
+      ? routes
+      : routes.filter((r) => {
+          if (!pillarTiers.has(r.tier)) return true;
+          const pathname = new URL(r.loc).pathname;
+          return passPaths.has(pathname);
+        });
+
+  const tiers: SitemapTier[] = [
+    'commercial',
+    'blog',
+    'faq',
+    'guides',
+    'medical',
+    'lifecycle',
+    'resources',
+    'compare',
+    'vaccinations',
+    'emergency',
+    'vault',
+    'life-logistics',
+    'tools',
+    'symptoms',
+    'breeds',
+  ];
+
+  const byTier = Object.fromEntries(
+    tiers.map((tier) => [tier, filteredRoutes.filter((r) => r.tier === tier)]),
+  ) as Record<SitemapTier, SitemapEntry[]>;
+
+  const fileForTier: Record<SitemapTier, string> = {
+    commercial: 'sitemap-commercial.xml',
+    blog: 'sitemap-blog.xml',
+    faq: 'sitemap-faq.xml',
+    guides: 'sitemap-guides.xml',
+    medical: 'sitemap-medical.xml',
+    lifecycle: 'sitemap-lifecycle.xml',
+    resources: 'sitemap-resources.xml',
+    compare: 'sitemap-compare.xml',
+    vaccinations: 'sitemap-vaccinations.xml',
+    emergency: 'sitemap-emergency.xml',
+    vault: 'sitemap-vault.xml',
+    'life-logistics': 'sitemap-life-logistics.xml',
+    tools: 'sitemap-tools.xml',
+    symptoms: 'sitemap-symptoms.xml',
+    breeds: 'sitemap-breeds.xml',
   };
 
-  writeFileSync(join(publicDir, 'sitemap-commercial.xml'), renderUrlset(byTier.commercial));
-  writeFileSync(join(publicDir, 'sitemap-blog.xml'), renderUrlset(byTier.blog));
-  writeFileSync(join(publicDir, 'sitemap-faq.xml'), renderUrlset(byTier.faq));
-  writeFileSync(join(publicDir, 'sitemap-guides.xml'), renderUrlset(byTier.guides));
-  writeFileSync(join(publicDir, 'sitemap-medical.xml'), renderUrlset(byTier.medical));
-  writeFileSync(join(publicDir, 'sitemap-lifecycle.xml'), renderUrlset(byTier.lifecycle));
-  writeFileSync(join(publicDir, 'sitemap-resources.xml'), renderUrlset(byTier.resources));
+  for (const tier of tiers) {
+    writeFileSync(join(publicDir, fileForTier[tier]), renderUrlset(byTier[tier]));
+  }
 
   const indexXml = renderSitemapIndex([...CHILD_SITEMAPS]);
   writeFileSync(join(publicDir, 'sitemap-index.xml'), indexXml);
@@ -515,13 +792,18 @@ function main(): void {
   }
 
   const counts = Object.fromEntries(
-    Object.entries(byTier).map(([tier, entries]) => [tier, entries.length]),
+    tiers.map((tier) => [tier, byTier[tier].length]),
   ) as Record<SitemapTier, number>;
 
   console.log(
-    `Wrote sitemap-index.xml + ${CHILD_SITEMAPS.length} child sitemaps (${routes.length} URLs: ` +
-      `commercial=${counts.commercial}, blog=${counts.blog}, faq=${counts.faq}, ` +
-      `guides=${counts.guides}, medical=${counts.medical}, lifecycle=${counts.lifecycle}, resources=${counts.resources})`,
+    `Wrote sitemap-index.xml + ${CHILD_SITEMAPS.length} child sitemaps (${filteredRoutes.length} URLs` +
+      (passPaths ? `; pillar URLs filtered to Agent 11 PASS=${passPaths.size}` : '') +
+      `)`,
+  );
+  console.log(
+    Object.entries(counts)
+      .map(([k, v]) => `${k}=${v}`)
+      .join(', '),
   );
 }
 

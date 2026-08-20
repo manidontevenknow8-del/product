@@ -1,0 +1,64 @@
+{
+  "slug": "dog-rabies-vaccine-schedule",
+  "path": "/vaccinations/dog-rabies-vaccine-schedule",
+  "kind": "general",
+  "subjectName": "Dog rabies",
+  "species": "dog",
+  "primaryKeyword": "dog rabies vaccine schedule",
+  "metaDescription": "dog rabies vaccine schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "rabies booster",
+  "common_health_issues": [
+    "Legal compliance",
+    "Travel certificates",
+    "Boarding denial without proof"
+  ],
+  "schedule": [
+    {
+      "vaccine": "First rabies dose",
+      "age_weeks": 16,
+      "age_label": "Typically ≥12–16 weeks"
+    },
+    {
+      "vaccine": "Rabies booster",
+      "age_weeks": 52,
+      "age_label": "~1 year later"
+    },
+    {
+      "vaccine": "Subsequent 1- or 3-year boosters",
+      "age_weeks": 156,
+      "age_label": "Per product & jurisdiction"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This dog rabies plan sequences doses against legal compliance, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the dog rabies table (Typically ≥12–16 weeks; ~1 year later; Per product & jurisdiction) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished dog rabies puppy series is still incomplete.",
+        "If your household also wrestles with travel certificates or boarding denial without proof, put those constraints on the same calendar thread as the rabies booster so one reminder system owns the dog rabies week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed dog rabies dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the dog rabies series is current again, reduce the exposure pattern that matches legal compliance, and do not wait for an annual wellness slot to ask about a dog rabies make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next rabies booster due date so the same dog rabies miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this dog rabies vaccine schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this dog rabies schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to legal compliance, and reset reminders as soon as the next dog rabies due date is known."
+    },
+    {
+      "question": "How do reminders help with rabies booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that dog rabies booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

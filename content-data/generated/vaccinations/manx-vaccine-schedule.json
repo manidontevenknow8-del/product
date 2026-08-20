@@ -1,0 +1,47 @@
+{
+  "slug": "manx-vaccine-schedule",
+  "path": "/vaccinations/manx-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "manx",
+  "subjectName": "Manx",
+  "species": "cat",
+  "primaryKeyword": "Manx vaccine schedule",
+  "metaDescription": "Manx vaccine schedule with core ages in weeks. Set reminders so Manx boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/manx/adult-health-guide",
+  "breedHealthLabel": "Manx adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Manx owners tracking 8-14 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where panleukopenia risk concentrates for this kitten.",
+        "Use the 4-row Manx schedule as your only planning spine: 8 weeks (FVRCP); 12 weeks (FVRCP booster); 16 weeks (FVRCP booster); 16 weeks (Rabies).",
+        "Temperament note for Manx handling: Tailless gene can affect spine; ethical breeding avoids extremes.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Manx dose.",
+        "Lifestyle add-ons stay off this Manx core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Manx boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the kitten and guilt math does not.",
+        "Bring prior dates for every Manx row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra FVRCP booster is required based on gap length and age.",
+        "If rabies was the missed Manx item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Manx kennel reservation.",
+        "PetClues should hold both the new Manx due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Manx core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Manx misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Manx health context beyond vaccines?",
+      "answer": "See the Manx adult health guide for breed predispositions such as manx syndrome (spinal/neural tube issues), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

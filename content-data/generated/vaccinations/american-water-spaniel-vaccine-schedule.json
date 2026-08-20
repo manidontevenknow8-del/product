@@ -1,0 +1,47 @@
+{
+  "slug": "american-water-spaniel-vaccine-schedule",
+  "path": "/vaccinations/american-water-spaniel-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "american-water-spaniel",
+  "subjectName": "American Water Spaniel",
+  "species": "dog",
+  "primaryKeyword": "American Water Spaniel vaccine schedule",
+  "metaDescription": "American Water Spaniel vaccine schedule with core ages in weeks. Set reminders so American Water Spaniel boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/american-water-spaniel/adult-health-guide",
+  "breedHealthLabel": "American Water Spaniel adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan American Water Spaniel social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader American Water Spaniel exposure.",
+        "Weight range 25-45 lb (11-20 kg) and grooming needs (Curly coat care.) belong in the same American Water Spaniel household ops list as vaccine dates when busy weeks collide.",
+        "If your American Water Spaniel is also monitored for ear infections, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed American Water Spaniel appointments.",
+        "After the American Water Spaniel puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone American Water Spaniel shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week American Water Spaniel make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave American Water Spaniel antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed American Water Spaniel dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the American Water Spaniel reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the American Water Spaniel core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my American Water Spaniel misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read American Water Spaniel health context beyond vaccines?",
+      "answer": "See the American Water Spaniel adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

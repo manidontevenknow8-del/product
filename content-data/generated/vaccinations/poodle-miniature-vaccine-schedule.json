@@ -1,0 +1,47 @@
+{
+  "slug": "poodle-miniature-vaccine-schedule",
+  "path": "/vaccinations/poodle-miniature-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "poodle-miniature",
+  "subjectName": "Miniature Poodle",
+  "species": "dog",
+  "primaryKeyword": "Miniature Poodle vaccine schedule",
+  "metaDescription": "Miniature Poodle vaccine schedule with core ages in weeks. Set reminders so Miniature Poodle boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/poodle-miniature/adult-health-guide",
+  "breedHealthLabel": "Miniature Poodle adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Miniature Poodles: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Miniature Poodle series closes at about 16 weeks.",
+        "Size class small does not invent new viruses for the Miniature Poodle, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag legg-calve-perthes risk at Miniature Poodle vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Miniature Poodle series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Miniature Poodle shots when the puppy seems “a little off,” travel intervenes, or progressive retinal atrophy (pra) worries dominate the week — ask the clinic whether a same-week Miniature Poodle make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Miniature Poodle antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Miniature Poodle dose for extra socialization; finish immunity first for this small dog.",
+        "Reset the Miniature Poodle reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Miniature Poodle core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Miniature Poodle misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Miniature Poodle health context beyond vaccines?",
+      "answer": "See the Miniature Poodle adult health guide for breed predispositions such as progressive retinal atrophy (pra), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

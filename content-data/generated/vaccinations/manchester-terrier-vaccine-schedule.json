@@ -1,0 +1,47 @@
+{
+  "slug": "manchester-terrier-vaccine-schedule",
+  "path": "/vaccinations/manchester-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "manchester-terrier",
+  "subjectName": "Manchester Terrier",
+  "species": "dog",
+  "primaryKeyword": "Manchester Terrier vaccine schedule",
+  "metaDescription": "Manchester Terrier vaccine schedule with core ages in weeks. Set reminders so Manchester Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/manchester-terrier/adult-health-guide",
+  "breedHealthLabel": "Manchester Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Manchester Terriers: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Manchester Terrier series closes at about 16 weeks.",
+        "Size class small does not invent new viruses for the Manchester Terrier, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag dental disease at Manchester Terrier vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Manchester Terrier series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Manchester Terrier misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Manchester Terrier series from memory.",
+        "The danger for a delayed Manchester Terrier is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Manchester Terrier away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Manchester Terrier due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Manchester Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Manchester Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Manchester Terrier health context beyond vaccines?",
+      "answer": "See the Manchester Terrier adult health guide for breed predispositions such as von willebrand risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

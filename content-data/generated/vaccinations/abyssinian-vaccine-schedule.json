@@ -1,0 +1,47 @@
+{
+  "slug": "abyssinian-vaccine-schedule",
+  "path": "/vaccinations/abyssinian-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "abyssinian",
+  "subjectName": "Abyssinian",
+  "species": "cat",
+  "primaryKeyword": "Abyssinian vaccine schedule",
+  "metaDescription": "Abyssinian vaccine schedule with core ages in weeks. Set reminders so Abyssinian boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/abyssinian/adult-health-guide",
+  "breedHealthLabel": "Abyssinian adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Abyssinian owners tracking 9-15 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where panleukopenia risk concentrates for this kitten.",
+        "Use the 4-row Abyssinian schedule as your only planning spine: 8 weeks (FVRCP); 12 weeks (FVRCP booster); 16 weeks (FVRCP booster); 16 weeks (Rabies).",
+        "Temperament note for Abyssinian handling: Busy athlete; kidney amyloidosis is a historical breed concern.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Abyssinian dose.",
+        "Lifestyle add-ons stay off this Abyssinian core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Abyssinian misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Abyssinian series from memory.",
+        "The danger for a delayed Abyssinian is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Abyssinian away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Abyssinian due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Abyssinian core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Abyssinian misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Abyssinian health context beyond vaccines?",
+      "answer": "See the Abyssinian adult health guide for breed predispositions such as progressive retinal atrophy risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

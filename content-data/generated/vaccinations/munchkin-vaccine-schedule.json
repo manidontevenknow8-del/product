@@ -1,0 +1,47 @@
+{
+  "slug": "munchkin-vaccine-schedule",
+  "path": "/vaccinations/munchkin-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "munchkin",
+  "subjectName": "Munchkin",
+  "species": "cat",
+  "primaryKeyword": "Munchkin vaccine schedule",
+  "metaDescription": "Munchkin vaccine schedule with core ages in weeks. Set reminders so Munchkin boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/munchkin/adult-health-guide",
+  "breedHealthLabel": "Munchkin adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Munchkin table, and doses at 8, 12, 16, 16 weeks exist to immunize the kitten while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Munchkin dates, not intentions, so a Munchkin with only the first FVRCP dose is still incomplete for most facilities.",
+        "Lordosis / chest issues debated shows up often enough in Munchkins that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Munchkin profile immediately; lost paperwork is the most common reason Munchkin travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Munchkin misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Munchkin series from memory.",
+        "The danger for a delayed Munchkin is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Munchkin away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Munchkin due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Munchkin core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Munchkin misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Munchkin health context beyond vaccines?",
+      "answer": "See the Munchkin adult health guide for breed predispositions such as lordosis / chest issues debated, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "birman-vaccine-schedule",
+  "path": "/vaccinations/birman-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "birman",
+  "subjectName": "Birman",
+  "species": "cat",
+  "primaryKeyword": "Birman vaccine schedule",
+  "metaDescription": "Birman vaccine schedule with core ages in weeks. Set reminders so Birman boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/birman/adult-health-guide",
+  "breedHealthLabel": "Birman adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Birman table, and doses at 8, 12, 16, 16 weeks exist to immunize the kitten while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Birman dates, not intentions, so a Birman with only the first FVRCP dose is still incomplete for most facilities.",
+        "Hypertrophic cardiomyopathy (HCM) risk shows up often enough in Birmans that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Birman profile immediately; lost paperwork is the most common reason Birman travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Birman misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Birman series from memory.",
+        "The danger for a delayed Birman is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Birman away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Birman due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Birman core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Birman misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Birman health context beyond vaccines?",
+      "answer": "See the Birman adult health guide for breed predispositions such as hypertrophic cardiomyopathy (hcm) risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

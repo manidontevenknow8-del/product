@@ -1,0 +1,47 @@
+{
+  "slug": "yorkshire-terrier-vaccine-schedule",
+  "path": "/vaccinations/yorkshire-terrier-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "yorkshire-terrier",
+  "subjectName": "Yorkshire Terrier",
+  "species": "dog",
+  "primaryKeyword": "Yorkshire Terrier vaccine schedule",
+  "metaDescription": "Yorkshire Terrier vaccine schedule with core ages in weeks. Set reminders so Yorkshire Terrier boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/yorkshire-terrier/adult-health-guide",
+  "breedHealthLabel": "Yorkshire Terrier adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Yorkshire Terrier owners tracking 13-16 years lifespans still lose the mid-series booster more often than the first shot, and the unprotected gap after week 8 is where parvovirus risk concentrates for this puppy.",
+        "Use the 4-row Yorkshire Terrier schedule as your only planning spine: 8 weeks (DA2PP / DHPP); 12 weeks (DA2PP / DHPP booster); 16 weeks (DA2PP / DHPP booster); 16 weeks (Rabies).",
+        "Temperament note for Yorkshire Terrier handling: Bold toy terrier; fragile trachea means harness over collar for many dogs.. Schedule quieter appointment slots if that profile makes clinic visits harder, but do not skip the Yorkshire Terrier dose.",
+        "Lifestyle add-ons stay off this Yorkshire Terrier core list until your veterinarian maps exposure, so keep core dates sacred either way."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Yorkshire Terrier boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Yorkshire Terrier row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Yorkshire Terrier item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Yorkshire Terrier kennel reservation.",
+        "PetClues should hold both the new Yorkshire Terrier due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Yorkshire Terrier core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Yorkshire Terrier misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Yorkshire Terrier health context beyond vaccines?",
+      "answer": "See the Yorkshire Terrier adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

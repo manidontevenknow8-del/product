@@ -1,0 +1,47 @@
+{
+  "slug": "domestic-longhair-vaccine-schedule",
+  "path": "/vaccinations/domestic-longhair-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "domestic-longhair",
+  "subjectName": "Domestic Longhair",
+  "species": "cat",
+  "primaryKeyword": "Domestic Longhair vaccine schedule",
+  "metaDescription": "Domestic Longhair vaccine schedule with core ages in weeks. Set reminders so Domestic Longhair boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/domestic-longhair/adult-health-guide",
+  "breedHealthLabel": "Domestic Longhair adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Domestic Longhairs: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Domestic Longhair series closes at about 16 weeks.",
+        "Size class medium does not invent new viruses for the Domestic Longhair, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final FVRCP booster.",
+        "Flag chronic kidney disease (senior) at Domestic Longhair vaccine checkups so the kitten’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Domestic Longhair series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Domestic Longhair misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Domestic Longhair series from memory.",
+        "The danger for a delayed Domestic Longhair is the gap, not the embarrassment, because panleukopenia pressure stays real for an under-vaccinated kitten even in clean-looking neighborhoods.",
+        "While waiting for the make-up FVRCP visit, skip high-traffic dog parks / unknown-cat intros and keep the Domestic Longhair away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Domestic Longhair due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Domestic Longhair core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Domestic Longhair misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Domestic Longhair health context beyond vaccines?",
+      "answer": "See the Domestic Longhair adult health guide for breed predispositions such as dental disease, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

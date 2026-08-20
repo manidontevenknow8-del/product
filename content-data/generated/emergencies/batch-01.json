@@ -1,0 +1,1131 @@
+[
+  {
+    "slug": "dog-ate-chocolate",
+    "core_slug": "chocolate-toxicity",
+    "angle": "primary",
+    "h1": "Dog ate chocolate: what to do right now",
+    "primary_keyword": "dog ate chocolate",
+    "meta_description": "Calm, numbered steps if your dog ate chocolate \u2014 who to call, what to note, and when this is an ER visit versus poison-control triage.",
+    "lead": "Act in order. You do not need to diagnose the dose yourself before you pick up the phone.",
+    "sections": [
+      {
+        "heading": "What information the clinic needs",
+        "paragraphs": [
+          "Write down the chocolate type if you know it (baker's, dark, milk, white), how much is missing, your dog's approximate weight, and the time you discovered it. Keep the wrapper. That single note often shortens the poison-control or ER conversation.",
+          "White chocolate is usually lower in the classic chocolate toxins than baker's or dark, but flavored fillings, caffeine, or xylitol in sugar-free products can still matter. Tell the clinician the full ingredient list when you can."
+        ]
+      },
+      {
+        "heading": "What not to do while you wait",
+        "paragraphs": [
+          "Do not give salt, hydrogen peroxide, oil, or leftover human medications unless a veterinarian or poison hotline specifically instructs you for this dog, this amount, and this moment.",
+          "If your dog is already wobbly, vomiting repeatedly, tremoring, or collapsed, prioritize transport to an ER over finishing a perfect inventory of the pantry."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I make my dog vomit at home?",
+        "answer": "Only if a veterinarian or pet poison hotline tells you to for this specific situation. Inducing vomiting can be unsafe if the dog is already symptomatic, sedated, or seizing."
+      },
+      {
+        "question": "Is a small piece always fine?",
+        "answer": "Risk depends on chocolate type, amount, and your dog's size. Treat any ingestion as worth a professional check rather than guessing from memory of a chart."
+      }
+    ]
+  },
+  {
+    "slug": "how-much-chocolate-is-toxic-to-dogs",
+    "core_slug": "chocolate-toxicity",
+    "angle": "toxicity-dose",
+    "h1": "How much chocolate is toxic to dogs?",
+    "primary_keyword": "how much chocolate is toxic to dogs",
+    "meta_description": "Why chocolate toxicity depends on type and dog size \u2014 and why a hotline or vet should run the numbers instead of a home chart alone.",
+    "lead": "There is no single safe square for every dog. Toxicity is a calculation, not a vibe check.",
+    "immediate_action_steps": [
+      "Identify chocolate type and estimate grams or ounces missing",
+      "Note your dog's weight (scale weight beats a guess)",
+      "Call pet poison control or your vet with those three numbers",
+      "Ask whether monitoring, decontamination, or ER evaluation is advised",
+      "Start transport immediately if they recommend the ER or if symptoms have started"
+    ],
+    "when_to_call_vet_vs_poison_control": "Poison control is built for dose math when the pet is still stable. Call the ER in parallel if baker's or dark chocolate volume is large for the dog's size, or if vomiting, hyperactivity, tremors, or collapse have already started.",
+    "sections": [
+      {
+        "heading": "Why type matters more than color memory",
+        "paragraphs": [
+          "Baker's and dark chocolate concentrate more methylxanthines than typical milk chocolate for the same weight. Cocoa powder and baking chocolate punch above their volume. White chocolate is a different risk profile and may still include other harmful ingredients.",
+          "Online charts are rough orientation only. Product recipes vary, and your dog's weight, age, and health change the plan. A poison hotline uses the label and your numbers; that is the point of the call."
+        ]
+      },
+      {
+        "heading": "What a dose conversation sounds like",
+        "paragraphs": [
+          "Expect questions about exact product, how much is gone, whether multiple pets shared it, and current behavior. Answer plainly. If you do not know the amount, say so \u2014 clinicians plan for uncertainty.",
+          "If the hotline says risk is low and your dog looks normal, follow their monitoring window anyway. Delayed signs can still appear; call back if anything changes."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I use an online mg/kg calculator instead of calling?",
+        "answer": "Use calculators only as a prompt to call. They cannot see your dog, confirm the product, or decide treatment. Poison control or your vet should interpret the dose."
+      },
+      {
+        "question": "Does cooking change toxicity?",
+        "answer": "Baking does not make chocolate safe for dogs. Cocoa content and other ingredients still drive risk."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "dog-ate-chocolate-symptoms-timeline",
+    "core_slug": "chocolate-toxicity",
+    "angle": "symptoms-timeline",
+    "h1": "Dog ate chocolate: symptoms timeline",
+    "primary_keyword": "dog ate chocolate symptoms timeline",
+    "meta_description": "What signs can follow chocolate ingestion in dogs, how timing often works, and when to stop watching and drive to the ER.",
+    "lead": "Timelines help you watch \u2014 they do not replace a live triage call.",
+    "immediate_action_steps": [
+      "Call poison control or your vet as soon as you know chocolate was eaten",
+      "Write down the time of ingestion and the time each new sign starts",
+      "Watch for vomiting, restlessness, panting, rapid heart rate, tremors, or collapse",
+      "Go to the ER if signs escalate or if you were already advised to come in",
+      "Bring the product package and your timeline notes"
+    ],
+    "sections": [
+      {
+        "heading": "Early hours",
+        "paragraphs": [
+          "Some dogs vomit or seem restless within a few hours. Others look normal at first, especially after smaller or milk-chocolate exposures. Normal behavior early on is not a clearance certificate if the dose may be significant.",
+          "Keep the dog quietly indoors during the watch window your clinician gives you. Note appetite, thirst, bathroom habits, and energy \u2014 short timestamped notes beat vague memory later."
+        ]
+      },
+      {
+        "heading": "When the timeline means leave now",
+        "paragraphs": [
+          "Tremors, stumbling, severe agitation, repeated vomiting, collapse, or seizures are not a continue-monitoring moment. Head to the ER and tell them chocolate is involved.",
+          "If poison control already flagged a high-risk dose, do not wait for the textbook timeline to prove them right. Treatment windows matter more than watching for a dramatic first sign."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How long should I watch after a low-risk call?",
+        "answer": "Follow the window your veterinarian or poison hotline gives for that dose. If they did not specify, call back rather than inventing an endpoint."
+      },
+      {
+        "question": "Can symptoms start the next day?",
+        "answer": "Most concerning signs are discussed in hours rather than days, but you should still follow professional monitoring advice and re-check if anything new appears."
+      }
+    ]
+  },
+  {
+    "slug": "dog-ate-dark-chocolate",
+    "core_slug": "chocolate-toxicity",
+    "angle": "product-type",
+    "h1": "Dog ate dark chocolate: next steps",
+    "primary_keyword": "dog ate dark chocolate",
+    "meta_description": "Dark chocolate is higher risk per ounce for many dogs. Here's what to record and who to call without panicking.",
+    "lead": "Dark chocolate raises the stakes per bite. Treat the phone call as part of first aid.",
+    "immediate_action_steps": [
+      "Secure remaining dark chocolate and note cacao percentage if listed",
+      "Estimate how much is missing and your dog's weight",
+      "Call pet poison control or your veterinarian promptly",
+      "Skip home remedies unless instructed",
+      "Go to the ER if advised or if symptoms have started"
+    ],
+    "when_to_call_vet_vs_poison_control": "For dark chocolate, call poison control for dose triage and your vet the same time if the amount is more than a lick or two for a small dog, or if any symptoms are present. ER if tremors, collapse, or severe vomiting begin.",
+    "sections": [
+      {
+        "heading": "Why dark chocolate gets escalated faster",
+        "paragraphs": [
+          "Higher cacao usually means more methylxanthines in less product. A brownie edge and a baking bar are not interchangeable risks even when both look brown.",
+          "If the package lists cacao percentage, read it to the hotline. If it does not, describe the brand and product line as precisely as you can."
+        ]
+      },
+      {
+        "heading": "Shared desserts and multiple pets",
+        "paragraphs": [
+          "If more than one dog had access, say so. Dose math changes when the missing amount is split unknown ways \u2014 clinicians often plan conservatively.",
+          "Cats in the same kitchen are a separate conversation; keep them away from wrappers and crumbs while you focus on the dog who ate it."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is 70% cacao always an emergency?",
+        "answer": "Not automatically \u2014 amount and dog size still matter \u2014 but dark chocolate should push you to call rather than wait-and-see without advice."
+      }
+    ]
+  },
+  {
+    "slug": "dog-ate-bakers-chocolate",
+    "core_slug": "chocolate-toxicity",
+    "angle": "product-type",
+    "h1": "Dog ate baker's chocolate",
+    "primary_keyword": "dog ate baker's chocolate",
+    "meta_description": "Baker's chocolate is a high-priority ingestion. Numbered steps, what to tell poison control, and when to drive to the ER.",
+    "lead": "Unsweetened baking chocolate is one of the highest-priority pantry chocolates. Move calmly and call early.",
+    "immediate_action_steps": [
+      "Remove access and keep the baker's chocolate wrapper",
+      "Estimate squares or ounces eaten and the time",
+      "Call pet poison control and your ER-capable clinic now",
+      "Do not induce vomiting unless instructed for this case",
+      "Transport if directed or if any neurologic or severe GI signs appear"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call poison control and arrange veterinary care in the same breath for baker's chocolate. This product type often needs more than a casual same-week checkup. Symptomatic dogs go to the ER.",
+    "sections": [
+      {
+        "heading": "Baking chocolate vs candy bars",
+        "paragraphs": [
+          "Baker's chocolate is meant for recipes, not snacking, and packs a dense toxin load relative to milk chocolate candy of similar weight. Do not reassure yourself with memories of a dog who once stole a milk-chocolate kiss.",
+          "If the dog also got into frosting, coffee, or sugar-free syrups, mention those extras \u2014 they can change the plan."
+        ]
+      },
+      {
+        "heading": "What good triage sounds like",
+        "paragraphs": [
+          "You are not bothering anyone by calling quickly. Clear facts help them decide between home monitoring, induced decontamination in clinic, or ER therapies.",
+          "If you are driving, put the clinic on speaker and keep the package in the car. Do not text and drive."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The dog only licked the wrapper \u2014 still call?",
+        "answer": "Yes if baker's chocolate residue was available. Describe it honestly so the clinician can judge whether the exposure was trivial or uncertain."
+      }
+    ]
+  },
+  {
+    "slug": "cat-ate-chocolate",
+    "core_slug": "chocolate-toxicity",
+    "angle": "species",
+    "h1": "Cat ate chocolate: what to do",
+    "primary_keyword": "cat ate chocolate",
+    "meta_description": "Cats and chocolate still need a real triage plan \u2014 steps to take, who to call, and why cats hide signs differently than dogs.",
+    "lead": "Cats eat chocolate less often than dogs, but when they do, you still treat it as a toxin call \u2014 not a wait-and-see snack.",
+    "immediate_action_steps": [
+      "Remove chocolate and note type, amount, and time",
+      "Confine the cat somewhere quiet where you can watch breathing and behavior",
+      "Call pet poison control or your veterinarian with the cat's weight",
+      "Avoid home remedies and essential-oil folk treatments",
+      "Go to the ER for vomiting, tremors, collapse, or if advised"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call poison control for dose context and your vet for a cat-specific plan. Cats often hide discomfort; do not wait for dramatic dog-like hyperactivity. ER for neurologic signs, severe lethargy, or known large exposures.",
+    "sections": [
+      {
+        "heading": "How cat ingestions often look different",
+        "paragraphs": [
+          "Cats may show quieter lethargy, hiding, or reduced appetite rather than frantic pacing. That does not mean the exposure is harmless.",
+          "Chocolate desserts can also include raisins, coffee, or sugar-free sweeteners. List every ingredient you know."
+        ]
+      },
+      {
+        "heading": "Transport notes for cats",
+        "paragraphs": [
+          "Use a secure carrier. Bring the package. If the cat is open-mouth breathing or extremely weak, call the ER so they can meet you at the door.",
+          "Do not force water or milk. Do not give activated charcoal unless a clinician directs the exact product and dose."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Are cats more resistant to chocolate than dogs?",
+        "answer": "Do not rely on species folklore. Call with the amount and product; let a professional decide risk for your cat."
+      }
+    ]
+  },
+  {
+    "slug": "chocolate-poisoning-dogs-what-to-do",
+    "core_slug": "chocolate-toxicity",
+    "angle": "primary",
+    "h1": "Chocolate poisoning in dogs: what to do",
+    "primary_keyword": "chocolate poisoning dogs what to do",
+    "meta_description": "A directive checklist for suspected chocolate poisoning in dogs \u2014 first actions, triage calls, and ER red flags.",
+    "lead": "If you are searching this phrase, skip the scroll spiral. Work the list, then call.",
+    "sections": [
+      {
+        "heading": "Stabilize the scene",
+        "paragraphs": [
+          "Get chocolate out of reach of every pet in the house. Check floors and couches for wrappers. If children are helping, give them one job: find the package.",
+          "If your dog is seizuring or unconscious, protect the airway from objects, keep hands clear of the mouth, and go to the ER. Someone else can call ahead."
+        ]
+      },
+      {
+        "heading": "The two-call pattern that saves time",
+        "paragraphs": [
+          "Poison control helps quantify risk. Your veterinarian or ER delivers treatment. Many owners need both conversations, not a debate about which one is more official.",
+          "Fees for hotlines are common. Paying for a clear plan is often cheaper than guessing wrong overnight."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What if I do not know when it was eaten?",
+        "answer": "Say the uncertainty out loud. Clinicians can still triage based on product, missing amount, and current signs."
+      }
+    ]
+  },
+  {
+    "slug": "dog-ate-chocolate-when-to-go-to-er",
+    "core_slug": "chocolate-toxicity",
+    "angle": "triage-er",
+    "h1": "Dog ate chocolate: when to go to the ER",
+    "primary_keyword": "dog ate chocolate when to go to ER",
+    "meta_description": "Clear ER-versus-call-first guidance after chocolate ingestion \u2014 red-flag signs and high-risk product situations.",
+    "lead": "Some chocolate calls are phone triage. Some are drive-now. Here is how to tell the difference without doomscrolling.",
+    "immediate_action_steps": [
+      "If your dog has tremors, collapse, seizures, or severe vomiting \u2014 go to the ER now",
+      "If the product was baker's or dark chocolate in a concerning amount for size \u2014 call while preparing to leave",
+      "If the dog looks normal after a tiny milk-chocolate exposure \u2014 call poison control or your vet before assuming ER",
+      "Bring packaging, timing notes, and any other foods involved",
+      "Call the ER on the way so they can prepare"
+    ],
+    "when_to_call_vet_vs_poison_control": "ER first when the dog is unstable. Poison control plus vet guidance when the dog is stable and you need dose math. Never use poison control as a substitute for ER care once red-flag signs appear.",
+    "sections": [
+      {
+        "heading": "Red flags that end the debate",
+        "paragraphs": [
+          "Seizures, collapse, unrelenting vomiting, marked agitation with a racing heart feel, stumbling, or gum-color changes are ER signs. Do not wait for a hotline callback if your dog is crashing.",
+          "A dog that seems only mildly restless after a large baking-chocolate theft may still need clinic care \u2014 stability is not the only input."
+        ]
+      },
+      {
+        "heading": "When a same-day vet visit may be enough",
+        "paragraphs": [
+          "After a professional risk assessment, some low-dose exposures are monitored at home or seen at a regular clinic rather than a specialty ER. That decision belongs to the clinician on the phone, not a search result.",
+          "If your usual clinic is closed and the hotline flags moderate or higher risk, use the ER. After-hours delay is not a treatment plan."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The ER is 45 minutes away \u2014 call first?",
+        "answer": "If the dog is unstable, start driving and call from the road. If the dog is stable, a two-minute poison-control or ER triage call can confirm whether you need that drive."
+      }
+    ]
+  },
+  {
+    "slug": "dog-hit-by-car",
+    "core_slug": "hit-by-car",
+    "angle": "primary",
+    "h1": "Dog hit by car: what to do",
+    "primary_keyword": "dog hit by car",
+    "meta_description": "Roadside-to-ER steps after a dog is hit by a car \u2014 human safety first, safe handling, and why walking away is not clearance.",
+    "lead": "Your safety comes first. Then stabilize for transport. Assume hidden injury until a veterinarian says otherwise.",
+    "sections": [
+      {
+        "heading": "Roadway reality",
+        "paragraphs": [
+          "Do not become a second patient. Use hazards, wait for a gap, and move the dog only when you can do it without standing in traffic.",
+          "Painful dogs bite. A loose muzzle or towel wrap can protect you if the dog can breathe normally and is not vomiting. Skip muffling the face if airway compromise is possible."
+        ]
+      },
+      {
+        "heading": "Why the ER visit is non-negotiable",
+        "paragraphs": [
+          "Dogs can walk on a broken pelvis, bruised lungs, or internal bleed for a while. Looking surprisingly okay is a known trap after blunt trauma.",
+          "Call the ER so radiology and shock care can be ready. Bring any videos of the incident only if it does not delay leaving."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "My dog stood up and wagged \u2014 still go in?",
+        "answer": "Yes. Walking after trauma does not rule out internal injury. Have a veterinarian examine the dog."
+      }
+    ]
+  },
+  {
+    "slug": "dog-hit-by-car-what-to-do",
+    "core_slug": "hit-by-car",
+    "angle": "primary",
+    "h1": "Dog hit by a car \u2014 step-by-step",
+    "primary_keyword": "dog hit by a car what to do",
+    "meta_description": "A calm handling sequence after a canine car strike: scene safety, spine-aware moves, bleeding control, and ER transport.",
+    "lead": "Work one step at a time. Speed matters; frantic improvisation does not.",
+    "sections": [
+      {
+        "heading": "Moving without making spinal injury worse",
+        "paragraphs": [
+          "Slide a board, sturdy blanket, or carrier base under the dog when you can. Keep the body aligned. Avoid twisting through doorways.",
+          "Two people help: one supports the head and chest, one the hips. If you are alone, prioritize getting out of traffic with the least twisting you can manage."
+        ]
+      },
+      {
+        "heading": "Bleeding and breathing",
+        "paragraphs": [
+          "Press clean cloth on obvious wounds and hold. Peek less; pressure works better when continuous.",
+          "Watch chest motion. Open-mouth breathing, blue-tinged gums, or extreme effort means say those words when you call the ER."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I give pain medication before driving?",
+        "answer": "No human pain meds. They can worsen bleeding, clotting, or blood pressure. Let the ER choose pain control."
+      }
+    ]
+  },
+  {
+    "slug": "cat-hit-by-car",
+    "core_slug": "hit-by-car",
+    "angle": "species",
+    "h1": "Cat hit by car: emergency steps",
+    "primary_keyword": "cat hit by car",
+    "meta_description": "How to handle a cat after a car strike \u2014 carrier transport, hidden injury risk, and why ER evaluation still matters.",
+    "lead": "Cats often hide pain and can look deceptively composed. Treat a car strike as an emergency exam, not a home rest day.",
+    "immediate_action_steps": [
+      "Protect people from traffic first",
+      "Use a towel and carrier; minimize twisting",
+      "Control visible bleeding with clean pressure",
+      "Keep the carrier warm and dark for transport",
+      "Go to an emergency veterinarian even if the cat walks into the carrier"
+    ],
+    "sections": [
+      {
+        "heading": "Cat-specific handling",
+        "paragraphs": [
+          "A covered carrier reduces struggle. Avoid dangling the cat under the armpits. Support the whole body.",
+          "Mouth breathing in cats is a serious sign. Say it clearly when you call ahead."
+        ]
+      },
+      {
+        "heading": "Indoor cats and unknown impact",
+        "paragraphs": [
+          "If you only heard a thud and found the cat outside later, still seek care when trauma is plausible. Delayed bruising and internal bleed are real.",
+          "Check for ID and microchip after the medical crisis is handed to the clinic \u2014 not instead of the ER drive."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The cat is hiding under the porch and seems mad. Wait it out?",
+        "answer": "Get the cat contained safely, then go in. Anger and hiding are common pain behaviors, not proof of wellness."
+      }
+    ]
+  },
+  {
+    "slug": "hit-by-car-internal-bleeding-signs",
+    "core_slug": "hit-by-car",
+    "angle": "complications",
+    "h1": "Hit by car: signs of internal bleeding",
+    "primary_keyword": "hit by car internal bleeding signs pet",
+    "meta_description": "Warning signs of internal bleeding after a pet is hit by a car \u2014 and why you still need an ER exam before signs appear.",
+    "lead": "Internal bleeding is why wait-and-see fails after blunt trauma. Learn the signs \u2014 then still get the exam.",
+    "immediate_action_steps": [
+      "Transport to an ER after any car strike; do not wait for classic bleed signs",
+      "Note pale gums, weakness, distended abdomen, or collapse if they appear",
+      "Keep the pet warm and as still as practical",
+      "Avoid food, water, and home medications",
+      "Call ahead so the ER can prepare shock care"
+    ],
+    "when_to_call_vet_vs_poison_control": "ER only for trauma with possible internal bleeding. Poison control is not the path unless a toxin was also involved.",
+    "sections": [
+      {
+        "heading": "Signs that scream urgency",
+        "paragraphs": [
+          "Pale or white gums, cold limbs, a rapidly swelling belly, extreme weakness, or collapse suggest shock until proven otherwise.",
+          "Restlessness, panting, or a pet that cannot get comfortable can also show pain from internal injury. Trust the mechanism: a car is enough reason to go."
+        ]
+      },
+      {
+        "heading": "Why normal gums early can mislead",
+        "paragraphs": [
+          "Compensation can keep a pet looking okay until reserves run out. An early ER exam may catch problems while treatment options are wider.",
+          "If your clinic offers trauma imaging and monitoring, use it. Home observation is not imaging."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can internal bleeding start hours later?",
+        "answer": "Yes. That is why pets should be evaluated after car strikes even when the first hour looks calm."
+      }
+    ]
+  },
+  {
+    "slug": "dog-hit-by-car-still-walking",
+    "core_slug": "hit-by-car",
+    "angle": "complications",
+    "h1": "Dog hit by car but still walking",
+    "primary_keyword": "dog hit by car still walking",
+    "meta_description": "Why a dog that walks after being hit by a car still needs emergency evaluation \u2014 delayed lung and internal injuries explained calmly.",
+    "lead": "Walking is good news for the moment. It is not a medical all-clear.",
+    "immediate_action_steps": [
+      "Leash gently and prevent running or jumping",
+      "Check for wounds, asymmetry, and breathing effort",
+      "Do not celebrate with food, treats, or a long walk",
+      "Go to an emergency veterinarian for a trauma exam",
+      "Monitor during the drive for sudden weakness or gum-color change"
+    ],
+    "sections": [
+      {
+        "heading": "Injuries that still allow walking",
+        "paragraphs": [
+          "Pulmonary contusions, internal bleeding, and some fractures can present with a surprisingly mobile dog. Adrenaline masks a lot in the first hour.",
+          "If your dog insists on walking into the clinic, great \u2014 still request a full trauma assessment rather than a quick look."
+        ]
+      },
+      {
+        "heading": "The first night myth",
+        "paragraphs": [
+          "Some owners wait to see how the dog sleeps it off. That delay can cost options if bleeding or lung bruising progresses.",
+          "Ask the ER what monitoring window they recommend after discharge. Follow it exactly."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The driver barely tapped my dog. Still go?",
+        "answer": "Yes if there was a real impact. Force estimates from the roadside are unreliable."
+      }
+    ]
+  },
+  {
+    "slug": "pet-hit-by-car-transport-safely",
+    "core_slug": "hit-by-car",
+    "angle": "transport",
+    "h1": "How to transport a pet hit by a car",
+    "primary_keyword": "transport pet hit by car",
+    "meta_description": "Safe transport after a car strike \u2014 boards, blankets, carriers, and what to tell the ER on the phone.",
+    "lead": "Good transport is part of treatment. Goal: spine-aware, warm, and fast.",
+    "immediate_action_steps": [
+      "Call the ER so they know you are coming",
+      "Use a flat support (board, tote lid, sturdy blanket sling)",
+      "Keep the neck and back aligned as you lift",
+      "Cover lightly to reduce heat loss and visual stress",
+      "Have a second person drive while you watch breathing"
+    ],
+    "sections": [
+      {
+        "heading": "Improvised stretchers that work",
+        "paragraphs": [
+          "A folding leaf-bag cardboard, baking sheet for tiny pets, or a coat stretched between two people can work when a board is unavailable. Smooth moves beat fancy gear.",
+          "Seat-belt the carrier or have a human hold the board. Sudden stops cause second injuries."
+        ]
+      },
+      {
+        "heading": "What to say when you call ahead",
+        "paragraphs": [
+          "Species, approximate weight, hit by car, consciousness, breathing effort, visible bleeding, and ETA. Short sentences help the triage nurse prepare oxygen and imaging.",
+          "If the pet deteriorates on the way, call again. Updated information changes bay readiness."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I muzzle for the whole car ride?",
+        "answer": "Only if safe for breathing and the pet is not vomiting. Reassess if breathing worsens \u2014 airway comes first."
+      }
+    ]
+  },
+  {
+    "slug": "hit-by-car-when-to-go-to-er",
+    "core_slug": "hit-by-car",
+    "angle": "triage-er",
+    "h1": "Hit by car: when to go to the ER",
+    "primary_keyword": "pet hit by car when to go to ER",
+    "meta_description": "After a car strike, the answer is almost always emergency care \u2014 here's why primary care wait-until-morning is the wrong default.",
+    "lead": "For car strikes, the ER is the default. Phone advice can guide transport details; it should not replace the exam.",
+    "immediate_action_steps": [
+      "Treat any car impact as ER-worthy",
+      "Stabilize for transport using the action list above",
+      "Call the ER while someone drives",
+      "Skip poison control unless a toxin is also involved",
+      "Do not wait overnight because the pet seems embarrassed but okay"
+    ],
+    "sections": [
+      {
+        "heading": "Why morning appointments are the wrong frame",
+        "paragraphs": [
+          "Trauma clocks run in hours. Lung bruising and internal bleeding do not respect clinic opening times.",
+          "If distance to the ER is long, still go. Call for guidance on what to watch during the drive."
+        ]
+      },
+      {
+        "heading": "Rare exceptions still need a live clinician",
+        "paragraphs": [
+          "A veterinarian might later decide a minor scrape needs only wound care. That decision comes after evaluation, not from a search page.",
+          "If cost is the fear, say so at triage. Many ERs will discuss essentials first. Delay is usually the more expensive path when trauma is real."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can my regular vet see us instead?",
+        "answer": "If they can examine trauma now and transfer if needed, call them. If they are closed or lack emergency capacity, go to the ER."
+      }
+    ]
+  },
+  {
+    "slug": "dog-heatstroke",
+    "core_slug": "heatstroke",
+    "angle": "primary",
+    "h1": "Dog heatstroke: what to do now",
+    "primary_keyword": "dog heatstroke",
+    "meta_description": "Immediate cooling and ER steps for dog heatstroke \u2014 calm actions that help without ice-bath extremes.",
+    "lead": "Move to cool air, start gentle cooling, and go to the vet even if your dog looks better.",
+    "sections": [
+      {
+        "heading": "Cooling without overshooting",
+        "paragraphs": [
+          "Room-temperature water on paw pads, groin, and belly is the usual field approach. Avoid ice baths and ice-water dumps that can cause more problems.",
+          "Airflow matters. A fan plus wet towels on those areas beats soaking the dog into a shivering mess."
+        ]
+      },
+      {
+        "heading": "Why improvement is not discharge",
+        "paragraphs": [
+          "Heatstroke can injure organs after the outside temperature comes down. Pets that brighten in the car can still need bloodwork and monitoring.",
+          "Tell the ER how long the dog was hot, whether a car or exercise was involved, and what cooling you already started."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Should I give ice water to drink?",
+        "answer": "Offer small amounts of cool water only if the dog can swallow normally. Do not force water. The ER manages fluids."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "dog-overheating-in-car",
+    "core_slug": "heatstroke",
+    "angle": "scenario",
+    "h1": "Dog overheating in a car",
+    "primary_keyword": "dog overheating in car",
+    "meta_description": "If your dog overheated in a car: get them out, cool gently, and seek veterinary care \u2014 even when they seem to bounce back.",
+    "lead": "Hot cars create heatstroke conditions fast. Your job is extraction, cooling, and clinic care.",
+    "immediate_action_steps": [
+      "Remove the dog from the car into shade or AC immediately",
+      "Start room-temperature water cooling on pads, groin, and belly",
+      "Offer small water sips only if swallowing is normal",
+      "Call an ER and transport \u2014 do not wait for full recovery at home",
+      "Note how long the dog was enclosed and the outdoor temperature if known"
+    ],
+    "sections": [
+      {
+        "heading": "Minutes matter more than guilt",
+        "paragraphs": [
+          "Owners freeze on blame. Save that for later. Get the dog into cooler air first.",
+          "Cracked windows and parked-in-shade stories do not change the medical need for an exam after significant enclosure heat."
+        ]
+      },
+      {
+        "heading": "What the ER needs from you",
+        "paragraphs": [
+          "Timeline, cooling methods used, any vomiting, gum color you noticed, and whether the dog had access to water. Short facts help.",
+          "If another pet remains in a warm vehicle, get them out too before you drive."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The dog seems fine after AC for ten minutes.",
+        "answer": "Still seek veterinary evaluation after car overheating. Delayed organ effects are the concern."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "brachycephalic-heatstroke-risk",
+    "core_slug": "heatstroke",
+    "angle": "breed-risk",
+    "h1": "Heatstroke risk in flat-faced dogs",
+    "primary_keyword": "brachycephalic dog heatstroke",
+    "meta_description": "Why bulldogs, pugs, and other flat-faced dogs overheat faster \u2014 and the exact first steps if heatstroke starts.",
+    "lead": "Short noses move air less efficiently. Heat emergencies escalate faster in these dogs \u2014 act early.",
+    "immediate_action_steps": [
+      "Stop exercise and move to AC or shade at the first heavy pant or reluctance to move",
+      "Cool with room-temperature water on pads, groin, and belly",
+      "Avoid forcing a flat-faced dog to walk long distances to the car \u2014 carry if needed",
+      "Watch for blue-tinged gums or collapsing \u2014 those are ER-now signs",
+      "Transport for veterinary care even if panting improves"
+    ],
+    "when_to_call_vet_vs_poison_control": "ER or urgent vet now for heatstroke signs in brachycephalic dogs. Poison control is unrelated unless a toxin contributed.",
+    "sections": [
+      {
+        "heading": "Why these breeds tip sooner",
+        "paragraphs": [
+          "Stenotic airways and inefficient panting reduce cooling. Humidity makes it worse. What feels like a mild hike to you can be a crisis for a pug or French bulldog.",
+          "Prevention is part of the emergency page for a reason: plan walks for cool hours, carry water, and skip midday car waits."
+        ]
+      },
+      {
+        "heading": "During an event",
+        "paragraphs": [
+          "Keep the neck extended and the environment calm. Do not cinch a tight collar that adds airway work.",
+          "Tell the ER the breed up front. They know these patients can decompensate quickly."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is a cooling vest enough instead of the vet?",
+        "answer": "No. Gear can help prevention and field cooling. Heatstroke still needs veterinary assessment."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "how-to-cool-down-overheated-dog",
+    "core_slug": "heatstroke",
+    "angle": "cooling",
+    "h1": "How to cool down an overheated dog",
+    "primary_keyword": "how to cool down overheated dog",
+    "meta_description": "Field cooling steps for an overheated dog \u2014 what to use, what to avoid, and why the vet visit still comes next.",
+    "lead": "Cool deliberately. Then drive. Cooling is first aid, not the whole treatment.",
+    "immediate_action_steps": [
+      "Move to shade or air conditioning",
+      "Wet paw pads, groin, and belly with room-temperature water",
+      "Add airflow with a fan if available",
+      "Skip ice baths and rubbing alcohol myths",
+      "Go to a veterinarian or ER while continuing gentle cooling"
+    ],
+    "sections": [
+      {
+        "heading": "Methods that usually help",
+        "paragraphs": [
+          "Room-temperature water and airflow are the practical combo most owners can do safely. Wet towels on the same high-heat-loss areas can help if you re-wet them so they do not trap heat when dry-warm.",
+          "If you have a rectal thermometer and know how to use it calmly, mention readings to the ER \u2014 but do not delay transport to chase a perfect number."
+        ]
+      },
+      {
+        "heading": "Methods to skip",
+        "paragraphs": [
+          "Ice-water immersion, ice packed into armpits without guidance, and alcohol rubs are not the home protocol to invent under stress.",
+          "Do not give human fever medications. They are not canine heatstroke care."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "When do I stop cooling?",
+        "answer": "Follow ER instructions. As a field rule, prioritize transport once cooling is started rather than running a long home cooling project."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "dog-heatstroke-symptoms",
+    "core_slug": "heatstroke",
+    "angle": "symptoms-timeline",
+    "h1": "Dog heatstroke symptoms",
+    "primary_keyword": "dog heatstroke symptoms",
+    "meta_description": "Recognize dog heatstroke symptoms early \u2014 heavy panting, gum changes, wobbliness \u2014 and the actions to take immediately.",
+    "lead": "Symptoms are a stop-and-cool signal. Do not finish the walk first.",
+    "immediate_action_steps": [
+      "Stop activity at heavy panting, drooling, weakness, or bright/dark gum changes",
+      "Move to cool air and begin room-temperature water cooling",
+      "Note symptom onset times for the clinician",
+      "Transport to veterinary care",
+      "Call ahead if gums look blue, the dog collapses, or vomiting starts"
+    ],
+    "sections": [
+      {
+        "heading": "Common early signs",
+        "paragraphs": [
+          "Relentless panting, thick drool, glazed expression, slowing down, or seeking shade obsessively are early cues. Trust the change from that dog's normal.",
+          "Vomiting, diarrhea, stumbling, or confusion mean you are past the subtle stage \u2014 cool and go."
+        ]
+      },
+      {
+        "heading": "Late signs",
+        "paragraphs": [
+          "Collapse, seizures, or gums turning muddy or blue are ER-critical. Someone drives; someone calls.",
+          "Even after symptoms ease with AC, organ injury can follow. The exam still matters."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is heavy panting after fetch always heatstroke?",
+        "answer": "Not always \u2014 but panting that does not settle with rest in a cool spot, or comes with weakness or gum changes, deserves urgent action."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "cat-heatstroke",
+    "core_slug": "heatstroke",
+    "angle": "species",
+    "h1": "Cat heatstroke: what to do",
+    "primary_keyword": "cat heatstroke",
+    "meta_description": "Cats can overheat in hot rooms and carriers too \u2014 quiet signs to notice and the cooling-plus-ER steps to take.",
+    "lead": "Cats show heat stress more quietly than dogs. Open-mouth breathing is a loud exception \u2014 treat it as urgent.",
+    "immediate_action_steps": [
+      "Move the cat to air conditioning or a cooler room",
+      "Offer water if the cat can swallow; do not syringe aggressively",
+      "Use room-temperature damp cloths on paw pads and less-furred areas",
+      "Avoid ice baths",
+      "Go to a veterinarian or ER \u2014 especially for open-mouth breathing or collapse"
+    ],
+    "sections": [
+      {
+        "heading": "Situations that catch owners off guard",
+        "paragraphs": [
+          "Hot cars, poorly ventilated carriers, dryer-adjacent laundry rooms, and apartments during heat waves are classic setups.",
+          "Brachycephalic cat breeds and overweight cats may struggle sooner. Mention breed and body condition when you call."
+        ]
+      },
+      {
+        "heading": "Carrier transport in heat events",
+        "paragraphs": [
+          "Keep the carrier cool and shaded. Do not leave a recovering cat in a hot parked car while you run inside to check wait times \u2014 call ahead.",
+          "If the cat is open-mouth breathing, say so in the first sentence to triage."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can indoor-only cats get heatstroke?",
+        "answer": "Yes. Indoor heat and poor airflow are enough without outdoor sun."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "heatstroke-when-to-go-to-er",
+    "core_slug": "heatstroke",
+    "angle": "triage-er",
+    "h1": "Heatstroke: when to go to the ER",
+    "primary_keyword": "pet heatstroke when to go to ER",
+    "meta_description": "When pet overheating becomes an ER drive \u2014 red-flag symptoms and why looking better after AC is not enough.",
+    "lead": "If you needed serious cooling, you need a veterinary exam. ER when signs are severe or your clinic cannot see you now.",
+    "immediate_action_steps": [
+      "Start gentle cooling immediately",
+      "Go to the ER for collapse, seizures, continuous vomiting, blue gums, or extreme lethargy",
+      "Use urgent veterinary care the same day for milder but clear heatstroke signs",
+      "Do not wait overnight because AC made the pet look brighter",
+      "Call poison control only if a toxin may also be involved"
+    ],
+    "sections": [
+      {
+        "heading": "ER-now list",
+        "paragraphs": [
+          "Collapse, neurologic signs, relentless vomiting, bloody diarrhea, or marked gum-color change belong in an emergency hospital.",
+          "Brachycephalic pets and pets from hot cars should be triaged with a low threshold for ER."
+        ]
+      },
+      {
+        "heading": "Same-day urgent care may fit when",
+        "paragraphs": [
+          "A clinician on the phone may direct a stable, mildly affected pet to an urgent appointment rather than a specialty ER \u2014 that is their call after hearing the timeline.",
+          "If nobody can examine the pet until tomorrow, use the ER tonight."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "We cooled at home and everything looks normal.",
+        "answer": "Still contact a veterinarian. Looking normal after heatstroke can hide organ stress that shows up on exam or lab work."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "dog-ate-xylitol",
+    "core_slug": "xylitol-toxicity",
+    "angle": "primary",
+    "h1": "Dog ate xylitol: what to do",
+    "primary_keyword": "dog ate xylitol",
+    "meta_description": "Xylitol can drop a dog's blood sugar fast. Numbered steps, who to call, and why you should not wait for symptoms.",
+    "lead": "Treat xylitol as time-sensitive even if your dog still looks playful.",
+    "sections": [
+      {
+        "heading": "Why speed matters here",
+        "paragraphs": [
+          "In dogs, xylitol can trigger insulin release and hypoglycemia. Waiting for wobbliness wastes the easiest treatment window.",
+          "Keep the gum, candy, peanut butter, or baked-good package. The ingredient list is the triage tool."
+        ]
+      },
+      {
+        "heading": "While you arrange care",
+        "paragraphs": [
+          "Do not induce vomiting unless a clinician says to for this product and timing. Some situations make vomiting the wrong move.",
+          "If your dog becomes weak, seizes, or collapses, that is ER transport with someone calling ahead."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The label says birch sugar \u2014 is that xylitol?",
+        "answer": "Birch sugar is often xylitol. Read it to poison control as written and let them confirm."
+      }
+    ]
+  },
+  {
+    "slug": "xylitol-poisoning-dogs-symptoms",
+    "core_slug": "xylitol-toxicity",
+    "angle": "symptoms-timeline",
+    "h1": "Xylitol poisoning in dogs: symptoms",
+    "primary_keyword": "xylitol poisoning dogs symptoms",
+    "meta_description": "Symptoms of xylitol poisoning in dogs \u2014 early weakness and vomiting, later concerns \u2014 and the actions to take before signs start.",
+    "lead": "Know the signs, but call before you need them. Xylitol care starts with exposure, not with drama.",
+    "immediate_action_steps": [
+      "Call poison control or your vet as soon as xylitol ingestion is known",
+      "Watch for vomiting, weakness, wobbliness, collapse, or seizures",
+      "Note the time of ingestion and time of each sign",
+      "Go to the ER at the first neurologic or severe weakness sign \u2014 or sooner if advised",
+      "Bring the product label"
+    ],
+    "sections": [
+      {
+        "heading": "Signs owners often notice first",
+        "paragraphs": [
+          "Vomiting, sudden tiredness, acting drunk, or seeming disoriented can appear relatively quickly in some dogs.",
+          "Not every dog shows a neat textbook sequence. Absence of signs is not a green light to skip professional advice."
+        ]
+      },
+      {
+        "heading": "Why liver concerns still need clinicians",
+        "paragraphs": [
+          "Some xylitol cases raise liver-injury concerns depending on dose and product. That is not a home diagnosis and not a reason to wait without guidance.",
+          "Your job is timely transport and accurate product information \u2014 not interpreting lab risk from a search page."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "How fast can symptoms start?",
+        "answer": "They can appear within a short window after ingestion in dogs. That is why calls happen immediately, not after a long observation hobby."
+      }
+    ]
+  },
+  {
+    "slug": "how-much-xylitol-is-toxic-to-dogs",
+    "core_slug": "xylitol-toxicity",
+    "angle": "toxicity-dose",
+    "h1": "How much xylitol is toxic to dogs?",
+    "primary_keyword": "how much xylitol is toxic to dogs",
+    "meta_description": "Xylitol toxicity depends on product concentration and dog size \u2014 why label math belongs to poison control, not a guess.",
+    "lead": "Concentration varies wildly between gums and baked goods. Let a hotline or vet run the numbers.",
+    "immediate_action_steps": [
+      "Save the package and count missing pieces or estimate baked-good portion",
+      "Know your dog's weight",
+      "Call pet poison control with those details",
+      "Follow their ER-versus-monitor recommendation exactly",
+      "Do not use another dog's past story as your dose chart"
+    ],
+    "when_to_call_vet_vs_poison_control": "Poison control is ideal for xylitol dose math when the dog is still stable. Concurrent ER care if the dog is symptomatic or the product amount is clearly large. Do not delay either call to finish web research.",
+    "sections": [
+      {
+        "heading": "Why gum count is not a universal rule",
+        "paragraphs": [
+          "Different brands pack different xylitol amounts per piece. Sugar-free peanut butters and protein bars vary even more.",
+          "If the label lists grams of xylitol, read that number aloud. If it only says sugar alcohols, say that too \u2014 uncertainty is useful information."
+        ]
+      },
+      {
+        "heading": "Small dogs and shared snacks",
+        "paragraphs": [
+          "The same cookie matters more in a 10-pound dog than in a 70-pound dog. Weight is not optional trivia on this call.",
+          "If multiple dogs shared a trash raid, tell the clinician. Conservative planning is normal when division is unknown."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Is one piece of gum always dangerous?",
+        "answer": "It depends on the gum and the dog. Treat it as a call-worthy ingestion rather than a universal always-or-never rule."
+      }
+    ],
+    "NEEDS_VET_REVIEW": true
+  },
+  {
+    "slug": "dog-ate-sugar-free-gum",
+    "core_slug": "xylitol-toxicity",
+    "angle": "product-type",
+    "h1": "Dog ate sugar-free gum",
+    "primary_keyword": "dog ate sugar free gum",
+    "meta_description": "Sugar-free gum is a classic xylitol risk for dogs. Here's the calm action list and who to call first.",
+    "lead": "Purse gum and nightstand tins are common. Assume xylitol until the label proves otherwise.",
+    "immediate_action_steps": [
+      "Collect the gum brand and remaining pack",
+      "Estimate pieces eaten and time",
+      "Call pet poison control or your veterinarian immediately",
+      "Keep the dog calm and supervised",
+      "Go to the ER if directed or if weakness, vomiting, or seizures begin"
+    ],
+    "sections": [
+      {
+        "heading": "Not all sugar-free gums are equal",
+        "paragraphs": [
+          "Some use xylitol; some use other sweeteners. You will not reliably taste the difference. The package decides the risk path.",
+          "If the dog ate gum plus chocolate or raisins from the same bag, say every ingredient."
+        ]
+      },
+      {
+        "heading": "Purse and toddler-bag scenarios",
+        "paragraphs": [
+          "If the pack is mangled and the count is unclear, report the maximum that could be missing. Overestimating on the phone is safer than false precision.",
+          "Check the floor for spit-out pieces so a second pet does not finish them."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The gum was sugar-free but xylitol is not listed. Still call?",
+        "answer": "Yes. Read the sweetener list to poison control. Other sugar alcohols and unknowns still deserve a professional look."
+      }
+    ]
+  },
+  {
+    "slug": "dog-ate-xylitol-timeline",
+    "core_slug": "xylitol-toxicity",
+    "angle": "symptoms-timeline",
+    "h1": "Dog ate xylitol: what happens next",
+    "primary_keyword": "dog ate xylitol timeline",
+    "meta_description": "A practical timeline mindset after xylitol ingestion \u2014 immediate calls, watch signs, and when the ER overrides waiting.",
+    "lead": "Think in phone calls and check-ins, not in hopeful waiting rooms at home.",
+    "immediate_action_steps": [
+      "Call for triage immediately after discovery",
+      "Write down ingestion time",
+      "Start travel when advised \u2014 do not invent a private observation period first",
+      "Log any vomiting, weakness, or behavior change with times",
+      "Re-call if new signs appear on the way"
+    ],
+    "sections": [
+      {
+        "heading": "The useful timeline",
+        "paragraphs": [
+          "Minute 0\u201310: secure the product, call, get a plan. That plan may be drive now.",
+          "If monitoring is allowed, use the exact window you were given. Set a phone timer. Watching TV without a timer is how windows get missed."
+        ]
+      },
+      {
+        "heading": "When the timeline collapses",
+        "paragraphs": [
+          "Any seizure, collapse, or sudden profound weakness ends home monitoring. ER now.",
+          "Bring your timeline notes. They help the clinician more than a vague it-happened-earlier."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can I wait to see if breakfast is normal tomorrow?",
+        "answer": "No. Xylitol decisions are made the day of exposure with professional input, not after an overnight hope cycle."
+      }
+    ]
+  },
+  {
+    "slug": "dog-ate-peanut-butter-xylitol",
+    "core_slug": "xylitol-toxicity",
+    "angle": "product-type",
+    "h1": "Dog ate peanut butter with xylitol",
+    "primary_keyword": "dog ate peanut butter xylitol",
+    "meta_description": "Some sugar-free peanut butters contain xylitol. If your dog ate one, use this action list and call for dose triage.",
+    "lead": "Peanut butter feels like a normal dog food. Xylitol versions are not. Check the jar and call.",
+    "immediate_action_steps": [
+      "Read the jar for xylitol or birch sugar and keep it",
+      "Estimate how much was eaten",
+      "Call pet poison control or your veterinarian now",
+      "Do not induce vomiting unless instructed",
+      "Transport if advised or if symptoms start"
+    ],
+    "sections": [
+      {
+        "heading": "Jar habits that hide risk",
+        "paragraphs": [
+          "Sugar-free and keto peanut butters are the usual surprises. Regular grocery jars often do not contain xylitol \u2014 but you verify by reading, not by brand loyalty.",
+          "If the peanut butter was baked into cookies, include flour, chocolate chips, and sweeteners in the call."
+        ]
+      },
+      {
+        "heading": "Kong and training-treat context",
+        "paragraphs": [
+          "If you stuffed a toy earlier and are unsure which jar you used, bring both jars to the phone call if needed. Identifying the product matters.",
+          "Wash toys after the crisis so leftover xylitol butter is not re-licked."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Natural peanut butter is always safe, right?",
+        "answer": "Natural is a marketing word. Ingredient lists decide safety. Scan for xylitol every time you buy a new jar for dog use."
+      }
+    ]
+  },
+  {
+    "slug": "xylitol-poisoning-when-to-call-poison-control",
+    "core_slug": "xylitol-toxicity",
+    "angle": "triage-er",
+    "h1": "Xylitol: poison control vs ER",
+    "primary_keyword": "xylitol poisoning poison control",
+    "meta_description": "When to call pet poison control versus drive to the ER for xylitol \u2014 a clear split for stable vs unstable dogs.",
+    "lead": "Stable dog, unknown dose: call. Unstable dog: drive, and call on the way.",
+    "immediate_action_steps": [
+      "If weak, seizuring, or collapsed \u2014 ER now while someone calls ahead",
+      "If still normal \u2014 call ASPCA APCC (888-426-4435) or Pet Poison Helpline (855-764-7661) with the label",
+      "Follow their instruction to monitor or proceed to clinic",
+      "Do not skip veterinary care when the hotline says go",
+      "Bring packaging to every visit"
+    ],
+    "when_to_call_vet_vs_poison_control": "Poison control excels at xylitol label math for stable dogs. The ER handles hypoglycemia, seizures, and in-hospital care. Many cases need the hotline and the clinic. Unstable dogs skip the debate and start the drive.",
+    "sections": [
+      {
+        "heading": "What poison control needs",
+        "paragraphs": [
+          "Product name, xylitol listing or grams if available, pieces or volume missing, dog weight, time since ingestion, and current behavior.",
+          "Hotlines often charge a consultation fee. That fee buys a specific plan \u2014 cheaper than improvising."
+        ]
+      },
+      {
+        "heading": "What the ER needs",
+        "paragraphs": [
+          "The same facts plus any home treatments already attempted. Do not give sugar gels or syrups unless a veterinarian told you to for this dog.",
+          "If you already spoke to poison control, share their case guidance. It speeds ER decision-making."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can my regular vet replace poison control?",
+        "answer": "Many vets manage xylitol cases and may still want hotline math for unusual products. Call someone now rather than waiting for the perfect caller."
+      }
+    ]
+  },
+  {
+    "slug": "dog-ate-chocolate-chip-cookies",
+    "core_slug": "chocolate-toxicity",
+    "angle": "product-type",
+    "h1": "Dog ate chocolate chip cookies",
+    "primary_keyword": "dog ate chocolate chip cookies",
+    "meta_description": "Chocolate chip cookies can mix chocolate with raisins, xylitol, or macadamia \u2014 how to inventory ingredients and who to call.",
+    "lead": "Cookies are combo toxins more often than plain chocolate bars. List every mix-in before you call.",
+    "immediate_action_steps": [
+      "Secure remaining cookies and keep the package or recipe card",
+      "List chocolate type plus raisins, sugar-free sweeteners, macadamia, coffee, or cannabutter if present",
+      "Estimate how many cookies and your dog's weight",
+      "Call pet poison control or your veterinarian with the full ingredient list",
+      "Go to the ER if advised or if vomiting, tremors, weakness, or collapse begin"
+    ],
+    "when_to_call_vet_vs_poison_control": "Call poison control for multi-ingredient cookie math and your vet for care. ER if the dog is symptomatic or the cookie likely included xylitol, lots of dark chocolate, or grapes/raisins in a concerning amount.",
+    "sections": [
+      {
+        "heading": "Why cookies are not just chocolate",
+        "paragraphs": [
+          "Raisins, sugar-free sweeteners, macadamia nuts, espresso powder, and cannabis butter each change triage. A chocolate-only assumption can miss the bigger risk.",
+          "Homemade batches are harder because there is no label. Read the recipe to the hotline as best you can, including approximate chocolate ounces."
+        ]
+      },
+      {
+        "heading": "Kids' plates and counter surfing",
+        "paragraphs": [
+          "If the dog finished a child's plate, ask what else was on it \u2014 frosting, gum, or medication crumbs matter.",
+          "Check the floor for chips and raisins so a second pet does not clean up after the first."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "question": "The cookies were milk chocolate chips only. Still call?",
+        "answer": "Yes if more than a trivial amount for your dog's size, or if you are unsure. Milk chocolate still warrants a professional risk check."
+      }
+    ]
+  }
+]

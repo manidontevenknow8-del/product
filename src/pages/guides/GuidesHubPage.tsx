@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/landing';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
@@ -9,8 +7,11 @@ import { listProgrammaticPages, PROGRAMMATIC_PAGE_COUNT } from '@/data/programma
 import { listBreedConditions, getBreedConditionPath } from '@/data/breedConditions';
 import { TOP_DOG_BREEDS, getLifecyclePath, EXPECTED_LIFECYCLE_URL_COUNT } from '@/data/lifecycleMatrix';
 import { EXPECTED_RESOURCE_URL_COUNT } from '@/data/resourceMatrix';
+import { listVaultPages } from '@/content/vaultPages';
 import { ProgrammaticHubSEO, getProgrammaticHubBreadcrumbs } from '@/seo/programmaticSeo';
 import { ROUTES } from '@/routes/paths';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './GuidesPages.module.css';
 
 export function GuidesHubPage() {
@@ -48,7 +49,8 @@ export function GuidesHubPage() {
                 <h1 className={styles.title}>Pet care guides &amp; templates</h1>
                 <p className={styles.lead}>
                   {PROGRAMMATIC_PAGE_COUNT} programmatic guides across {collections.length}{' '}
-                  collections, {breedConditions.length} breed-condition clinical briefs, and{' '}
+                  collections, {listVaultPages().length} records-vault guides,{' '}
+                  {breedConditions.length} breed-condition clinical briefs, and{' '}
                   {EXPECTED_LIFECYCLE_URL_COUNT.toLocaleString()} breed x lifecycle/diet pages and{' '}
                   {EXPECTED_RESOURCE_URL_COUNT.toLocaleString()} city record packets. Vaccination
                   schedules, travel checklists, emergency prep, and high-intent boarding files.
@@ -59,6 +61,28 @@ export function GuidesHubPage() {
 
               <p className={styles.meta}>
                 <Link to={ROUTES.RESOURCES}>Local boarding and ER packets</Link>
+              </p>
+
+              <h2 className={styles.sectionTitle}>Records vault guides</h2>
+              <div className={styles.grid}>
+                {listVaultPages()
+                  .slice(0, 12)
+                  .map((page) => (
+                    <Link
+                      key={page.slug}
+                      to={`${ROUTES.GUIDES}/${page.slug}`}
+                      className={styles.card}
+                    >
+                      <h2 className={styles.cardTitle}>{page.h1}</h2>
+                      <p className={styles.cardDesc}>{page.pain_point}</p>
+                      <span className={styles.cardMeta}>{page.cluster}</span>
+                      <span className={styles.cardLink}>Open vault guide →</span>
+                    </Link>
+                  ))}
+              </div>
+              <p className={styles.meta}>
+                {listVaultPages().length} long-tail vault guides covering organize, boarding,
+                lost records, transfers, and sharing.
               </p>
 
               <h2 className={styles.sectionTitle}>Breed clinical risks</h2>

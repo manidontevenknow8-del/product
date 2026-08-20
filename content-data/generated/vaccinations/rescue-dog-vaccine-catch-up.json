@@ -1,0 +1,69 @@
+{
+  "slug": "rescue-dog-vaccine-catch-up",
+  "path": "/vaccinations/rescue-dog-vaccine-catch-up",
+  "kind": "general",
+  "subjectName": "Rescue dog catch-up",
+  "species": "dog",
+  "primaryKeyword": "rescue dog vaccine catch-up",
+  "metaDescription": "rescue dog vaccine catch-up: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "DA2PP catch-up booster",
+  "common_health_issues": [
+    "Unknown prior vaccines",
+    "Shelter paperwork gaps",
+    "Quarantine vs socialization timing"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Exam + unknown-history core start",
+      "age_weeks": 0,
+      "age_label": "Intake week"
+    },
+    {
+      "vaccine": "Core booster",
+      "age_weeks": 2,
+      "age_label": "~2–4 weeks later"
+    },
+    {
+      "vaccine": "Core booster to finish",
+      "age_weeks": 4,
+      "age_label": "Until ≥16 weeks old or protocol met"
+    },
+    {
+      "vaccine": "Rabies if due / unknown",
+      "age_weeks": 0,
+      "age_label": "Per law & age"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This rescue dog catch-up plan sequences doses against unknown prior vaccines, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the rescue dog catch-up table (Intake week; ~2–4 weeks later; Until ≥16 weeks old or protocol met; Per law & age) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished rescue dog catch-up puppy series is still incomplete.",
+        "If your household also wrestles with shelter paperwork gaps or quarantine vs socialization timing, put those constraints on the same calendar thread as the DA2PP catch-up booster so one reminder system owns the rescue dog catch-up week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed rescue dog catch-up dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the rescue dog catch-up series is current again, reduce the exposure pattern that matches unknown prior vaccines, and do not wait for an annual wellness slot to ask about a rescue dog catch-up make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next DA2PP catch-up booster due date so the same rescue dog catch-up miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this rescue dog vaccine catch-up a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this rescue dog catch-up schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to unknown prior vaccines, and reset reminders as soon as the next rescue dog catch-up due date is known."
+    },
+    {
+      "question": "How do reminders help with DA2PP catch-up booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that rescue dog catch-up booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "adult-cat-booster-schedule",
+  "path": "/vaccinations/adult-cat-booster-schedule",
+  "kind": "general",
+  "subjectName": "Adult cat",
+  "species": "cat",
+  "primaryKeyword": "adult cat booster schedule",
+  "metaDescription": "adult cat booster schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "FVRCP adult booster",
+  "common_health_issues": [
+    "Indoor-only assumptions",
+    "Multi-cat FeLV status",
+    "Lost clinic reminders"
+  ],
+  "schedule": [
+    {
+      "vaccine": "FVRCP adult booster",
+      "age_weeks": 52,
+      "age_label": "~1 year after kitten series"
+    },
+    {
+      "vaccine": "Rabies booster (per law / product)",
+      "age_weeks": 52,
+      "age_label": "Per product & law"
+    },
+    {
+      "vaccine": "FeLV if risk persists",
+      "age_weeks": 52,
+      "age_label": "Lifestyle-dependent"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This adult cat plan sequences doses against indoor-only assumptions, not against a vague “sometime this season” intention for your cat.",
+        "Milestone labels on the adult cat table (~1 year after kitten series; Per product & law; Lifestyle-dependent) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished adult cat kitten series is still incomplete.",
+        "If your household also wrestles with multi-cat felv status or lost clinic reminders, put those constraints on the same calendar thread as the FVRCP adult booster so one reminder system owns the adult cat week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed adult cat dose; catch-up timing depends on age and gap length for this cat scenario.",
+        "Until the adult cat series is current again, reduce the exposure pattern that matches indoor-only assumptions, and do not wait for an annual wellness slot to ask about a adult cat make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next FVRCP adult booster due date so the same adult cat miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this adult cat booster schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual cat."
+    },
+    {
+      "question": "What if we already missed a date on this adult cat schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to indoor-only assumptions, and reset reminders as soon as the next adult cat due date is known."
+    },
+    {
+      "question": "How do reminders help with FVRCP adult booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that adult cat booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

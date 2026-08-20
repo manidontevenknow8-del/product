@@ -1,0 +1,47 @@
+{
+  "slug": "basenji-vaccine-schedule",
+  "path": "/vaccinations/basenji-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "basenji",
+  "subjectName": "Basenji",
+  "species": "dog",
+  "primaryKeyword": "Basenji vaccine schedule",
+  "metaDescription": "Basenji vaccine schedule with core ages in weeks. Set reminders so Basenji boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/basenji/adult-health-guide",
+  "breedHealthLabel": "Basenji adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Why timing is non-negotiable for Basenjis: each booster lands after the previous dose’s immunology window, usually every 2–4 weeks, until the Basenji series closes at about 16 weeks.",
+        "Size class small does not invent new viruses for the Basenji, but it does change crate fit, blood-draw ease, and how early you lock travel relative to the final DA2PP / DHPP booster.",
+        "Flag hip dysplasia at Basenji vaccine checkups so the puppy’s chart accumulates breed-relevant context, not just sticker dates.",
+        "When the Basenji series is complete, switch reminders to adult booster cadence instead of deleting the vaccine thread entirely."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Basenji boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Basenji row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Basenji item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Basenji kennel reservation.",
+        "PetClues should hold both the new Basenji due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Basenji core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Basenji misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Basenji health context beyond vaccines?",
+      "answer": "See the Basenji adult health guide for breed predispositions such as fanconi syndrome risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

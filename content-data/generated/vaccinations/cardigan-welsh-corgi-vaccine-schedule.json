@@ -1,0 +1,47 @@
+{
+  "slug": "cardigan-welsh-corgi-vaccine-schedule",
+  "path": "/vaccinations/cardigan-welsh-corgi-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "cardigan-welsh-corgi",
+  "subjectName": "Cardigan Welsh Corgi",
+  "species": "dog",
+  "primaryKeyword": "Cardigan Welsh Corgi vaccine schedule",
+  "metaDescription": "Cardigan Welsh Corgi vaccine schedule with core ages in weeks. Set reminders so Cardigan Welsh Corgi boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/cardigan-welsh-corgi/adult-health-guide",
+  "breedHealthLabel": "Cardigan Welsh Corgi adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Cardigan Welsh Corgi table, and doses at 8, 12, 16, 16 weeks exist to immunize the puppy while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Cardigan Welsh Corgi dates, not intentions, so a Cardigan Welsh Corgi with only the first DA2PP / DHPP dose is still incomplete for most facilities.",
+        "Intervertebral disc disease (IVDD) shows up often enough in Cardigan Welsh Corgis that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Cardigan Welsh Corgi profile immediately; lost paperwork is the most common reason Cardigan Welsh Corgi travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Cardigan Welsh Corgi shots when the puppy seems “a little off,” travel intervenes, or intervertebral disc disease (ivdd) worries dominate the week — ask the clinic whether a same-week Cardigan Welsh Corgi make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Cardigan Welsh Corgi antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Cardigan Welsh Corgi dose for extra socialization; finish immunity first for this small dog.",
+        "Reset the Cardigan Welsh Corgi reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Cardigan Welsh Corgi core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Cardigan Welsh Corgi misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Cardigan Welsh Corgi health context beyond vaccines?",
+      "answer": "See the Cardigan Welsh Corgi adult health guide for breed predispositions such as intervertebral disc disease (ivdd), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

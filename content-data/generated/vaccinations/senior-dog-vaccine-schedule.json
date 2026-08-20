@@ -1,0 +1,64 @@
+{
+  "slug": "senior-dog-vaccine-schedule",
+  "path": "/vaccinations/senior-dog-vaccine-schedule",
+  "kind": "general",
+  "subjectName": "Senior dog",
+  "species": "dog",
+  "primaryKeyword": "senior dog vaccine schedule",
+  "metaDescription": "senior dog vaccine schedule: timing table, what to do if a dose is late, and reminders before boosters are due.",
+  "reminderVaccine": "core adult booster",
+  "common_health_issues": [
+    "Comorbidity timing",
+    "Anesthesia-adjacent visits",
+    "Boarding still requires proof"
+  ],
+  "schedule": [
+    {
+      "vaccine": "Core booster per titer/clinic protocol",
+      "age_weeks": 52,
+      "age_label": "Annual wellness visit"
+    },
+    {
+      "vaccine": "Rabies per local law",
+      "age_weeks": 52,
+      "age_label": "Legal interval"
+    },
+    {
+      "vaccine": "Risk-based lifestyle vaccines",
+      "age_weeks": 52,
+      "age_label": "Discuss with vet"
+    }
+  ],
+  "bodySections": [
+    {
+      "heading": "Why timing matters",
+      "paragraphs": [
+        "This senior dog plan sequences doses against comorbidity timing, not against a vague “sometime this season” intention for your dog.",
+        "Milestone labels on the senior dog table (Annual wellness visit; Legal interval; Discuss with vet) are operational deadlines for daycare, boarding, travel, and multi-pet intros — a nearly finished senior dog puppy series is still incomplete.",
+        "If your household also wrestles with anesthesia-adjacent visits or boarding still requires proof, put those constraints on the same calendar thread as the core adult booster so one reminder system owns the senior dog week."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Call the clinic with product names and prior dates the day you notice a missed senior dog dose; catch-up timing depends on age and gap length for this dog scenario.",
+        "Until the senior dog series is current again, reduce the exposure pattern that matches comorbidity timing, and do not wait for an annual wellness slot to ask about a senior dog make-up dose.",
+        "After the visit, enable 7-, 3-, and 1-day nudges for the next core adult booster due date so the same senior dog miss cannot hide inside a shared family calendar."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is this senior dog vaccine schedule a prescription?",
+      "answer": "No. It is an editorial planning table aligned with common AAHA/AAFP-style windows and facility patterns. Your veterinarian sets the legal and medical plan for the individual dog."
+    },
+    {
+      "question": "What if we already missed a date on this senior dog schedule?",
+      "answer": "Contact the clinic for catch-up timing. Bring prior records, limit high-risk exposure tied to comorbidity timing, and reset reminders as soon as the next senior dog due date is known."
+    },
+    {
+      "question": "How do reminders help with core adult booster?",
+      "answer": "PetClues can nudge you 7, 3, and 1 day before that senior dog booster is due so boarding and travel deadlines stop arriving as surprises."
+    }
+  ]
+}

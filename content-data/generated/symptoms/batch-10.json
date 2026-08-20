@@ -1,0 +1,3894 @@
+{
+  "batch": 10,
+  "count": 40,
+  "startIndex": 361,
+  "endIndex": 400,
+  "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+  "pages": [
+    {
+      "id": "dog-coughing-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-and-lethargy-together",
+      "path": "/symptoms/dog/coughing-and-lethargy-together",
+      "symptomSlug": "coughing-dog",
+      "symptomSlugs": [
+        "coughing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "coughing",
+        "b": "lethargy"
+      },
+      "h1": "Dog coughing and lethargy: what it can mean",
+      "primaryKeyword": "dog coughing and lethargy",
+      "metaDescription": "dog coughing and lethargy: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your vet ",
+      "urgency_level": "urgent",
+      "lead": "Coughing with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing: Kennel cough / infectious tracheobronchitis; Heart disease with congestive changes; Allergies or inhaled irritants.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Coughing with blue gums or collapse",
+            "Cough that produces blood",
+            "Difficulty breathing between coughs",
+            "Cough after known choking episode",
+            "Puppy with harsh cough and fever",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "yorkshire-terrier",
+            "cavalier-king-charles-spaniel",
+            "pomeranian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "yorkshire-terrier",
+        "cavalier-king-charles-spaniel",
+        "pomeranian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-coughing-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/coughing-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "coughing-dog",
+      "symptomSlugs": [
+        "coughing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "coughing",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog coughing + lethargy",
+      "primaryKeyword": "dog coughing and lethargy vet",
+      "metaDescription": "dog coughing and lethargy vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your ",
+      "urgency_level": "urgent",
+      "lead": "Coughing with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing: Kennel cough / infectious tracheobronchitis; Heart disease with congestive changes; Allergies or inhaled irritants.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Coughing with blue gums or collapse",
+            "Cough that produces blood",
+            "Difficulty breathing between coughs",
+            "Cough after known choking episode",
+            "Puppy with harsh cough and fever",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "yorkshire-terrier",
+            "cavalier-king-charles-spaniel",
+            "pomeranian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "yorkshire-terrier",
+        "cavalier-king-charles-spaniel",
+        "pomeranian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-coughing-and-lethargy-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-and-lethargy-when-to-worry",
+      "path": "/symptoms/dog/coughing-and-lethargy-when-to-worry",
+      "symptomSlug": "coughing-dog",
+      "symptomSlugs": [
+        "coughing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "coughing",
+        "b": "lethargy"
+      },
+      "h1": "Dog coughing and lethargy: when to worry",
+      "primaryKeyword": "dog coughing and lethargy when to worry",
+      "metaDescription": "dog coughing and lethargy when to worry: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Con",
+      "urgency_level": "urgent",
+      "lead": "Coughing with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing: Kennel cough / infectious tracheobronchitis; Heart disease with congestive changes; Allergies or inhaled irritants.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Coughing with blue gums or collapse",
+            "Cough that produces blood",
+            "Difficulty breathing between coughs",
+            "Cough after known choking episode",
+            "Puppy with harsh cough and fever",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "yorkshire-terrier",
+            "cavalier-king-charles-spaniel",
+            "pomeranian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "yorkshire-terrier",
+        "cavalier-king-charles-spaniel",
+        "pomeranian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-emergency-signs",
+      "symptomSlug": "coughing-at-night-dog",
+      "symptomSlugs": [
+        "coughing-at-night-dog",
+        "exercise-intolerance-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "coughing-at-night",
+        "b": "exercise-intolerance"
+      },
+      "h1": "Emergency signs: dog with coughing at night and exercise intolerance",
+      "primaryKeyword": "dog coughing at night exercise intolerance emergency",
+      "metaDescription": "dog coughing at night exercise intolerance emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a d",
+      "urgency_level": "urgent",
+      "lead": "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing at night and exercise intolerance together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing at night: Congestive heart failure; Kennel cough; Collapsing trachea.",
+            "Possible contributors to exercise intolerance: Heart disease; Anemia; Respiratory disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Night cough with labored breathing",
+            "Pink frothy fluid",
+            "Blue gums",
+            "Collapse",
+            "Inability to lie down comfortably",
+            "Collapse during mild activity",
+            "Blue gums with exercise",
+            "Fainting"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "cavalier-king-charles-spaniel",
+            "doberman-pinscher",
+            "maine-coon",
+            "labrador-retriever",
+            "boxer"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing at night with exercise intolerance always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "cavalier-king-charles-spaniel",
+        "doberman-pinscher",
+        "maine-coon",
+        "labrador-retriever",
+        "boxer"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-coughing-at-night-and-exercise-intolerance-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-at-night-and-exercise-intolerance-together",
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-together",
+      "symptomSlug": "coughing-at-night-dog",
+      "symptomSlugs": [
+        "coughing-at-night-dog",
+        "exercise-intolerance-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "coughing-at-night",
+        "b": "exercise-intolerance"
+      },
+      "h1": "Dog coughing at night and exercise intolerance: what it can mean",
+      "primaryKeyword": "dog coughing at night and exercise intolerance",
+      "metaDescription": "dog coughing at night and exercise intolerance: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnos",
+      "urgency_level": "urgent",
+      "lead": "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing at night and exercise intolerance together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing at night: Congestive heart failure; Kennel cough; Collapsing trachea.",
+            "Possible contributors to exercise intolerance: Heart disease; Anemia; Respiratory disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Night cough with labored breathing",
+            "Pink frothy fluid",
+            "Blue gums",
+            "Collapse",
+            "Inability to lie down comfortably",
+            "Collapse during mild activity",
+            "Blue gums with exercise",
+            "Fainting"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "cavalier-king-charles-spaniel",
+            "doberman-pinscher",
+            "maine-coon",
+            "labrador-retriever",
+            "boxer"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing at night with exercise intolerance always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "cavalier-king-charles-spaniel",
+        "doberman-pinscher",
+        "maine-coon",
+        "labrador-retriever",
+        "boxer"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-what-to-tell-vet",
+      "symptomSlug": "coughing-at-night-dog",
+      "symptomSlugs": [
+        "coughing-at-night-dog",
+        "exercise-intolerance-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "coughing-at-night",
+        "b": "exercise-intolerance"
+      },
+      "h1": "What to tell the vet about dog coughing at night + exercise intolerance",
+      "primaryKeyword": "dog coughing at night and exercise intolerance vet",
+      "metaDescription": "dog coughing at night and exercise intolerance vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a dia",
+      "urgency_level": "urgent",
+      "lead": "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing at night and exercise intolerance together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing at night: Congestive heart failure; Kennel cough; Collapsing trachea.",
+            "Possible contributors to exercise intolerance: Heart disease; Anemia; Respiratory disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Night cough with labored breathing",
+            "Pink frothy fluid",
+            "Blue gums",
+            "Collapse",
+            "Inability to lie down comfortably",
+            "Collapse during mild activity",
+            "Blue gums with exercise",
+            "Fainting"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "cavalier-king-charles-spaniel",
+            "doberman-pinscher",
+            "maine-coon",
+            "labrador-retriever",
+            "boxer"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing at night with exercise intolerance always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "cavalier-king-charles-spaniel",
+        "doberman-pinscher",
+        "maine-coon",
+        "labrador-retriever",
+        "boxer"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "path": "/symptoms/dog/coughing-at-night-and-exercise-intolerance-when-to-worry",
+      "symptomSlug": "coughing-at-night-dog",
+      "symptomSlugs": [
+        "coughing-at-night-dog",
+        "exercise-intolerance-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "coughing-at-night",
+        "b": "exercise-intolerance"
+      },
+      "h1": "Dog coughing at night and exercise intolerance: when to worry",
+      "primaryKeyword": "dog coughing at night and exercise intolerance when to worry",
+      "metaDescription": "dog coughing at night and exercise intolerance when to worry: combined urgency urgent, shared red flags, and what to tell your vet. This is general information,",
+      "urgency_level": "urgent",
+      "lead": "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up coughing at night and exercise intolerance together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Coughing at night with Exercise intolerance often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to coughing at night: Congestive heart failure; Kennel cough; Collapsing trachea.",
+            "Possible contributors to exercise intolerance: Heart disease; Anemia; Respiratory disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Night cough with labored breathing",
+            "Pink frothy fluid",
+            "Blue gums",
+            "Collapse",
+            "Inability to lie down comfortably",
+            "Collapse during mild activity",
+            "Blue gums with exercise",
+            "Fainting"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "cavalier-king-charles-spaniel",
+            "doberman-pinscher",
+            "maine-coon",
+            "labrador-retriever",
+            "boxer"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is coughing at night with exercise intolerance always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "cavalier-king-charles-spaniel",
+        "doberman-pinscher",
+        "maine-coon",
+        "labrador-retriever",
+        "boxer"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-diarrhea-and-vomiting-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "diarrhea-and-vomiting-emergency-signs",
+      "path": "/symptoms/dog/diarrhea-and-vomiting-emergency-signs",
+      "symptomSlug": "diarrhea-dog",
+      "symptomSlugs": [
+        "diarrhea-dog",
+        "vomiting-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "diarrhea",
+        "b": "vomiting"
+      },
+      "h1": "Emergency signs: dog with diarrhea and vomiting",
+      "primaryKeyword": "dog diarrhea vomiting emergency",
+      "metaDescription": "dog diarrhea vomiting emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact you",
+      "urgency_level": "urgent",
+      "lead": "Diarrhea with Vomiting often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up diarrhea and vomiting together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Diarrhea with Vomiting often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours",
+            "Severe lethargy or dehydration signs",
+            "Known toxin exposure",
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "german-shepherd",
+            "domestic-shorthair",
+            "labrador-retriever",
+            "great-dane"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is diarrhea with vomiting always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "german-shepherd",
+        "domestic-shorthair",
+        "labrador-retriever",
+        "great-dane"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-diarrhea-and-vomiting-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "diarrhea-and-vomiting-together",
+      "path": "/symptoms/dog/diarrhea-and-vomiting-together",
+      "symptomSlug": "diarrhea-dog",
+      "symptomSlugs": [
+        "diarrhea-dog",
+        "vomiting-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "diarrhea",
+        "b": "vomiting"
+      },
+      "h1": "Dog diarrhea and vomiting: what it can mean",
+      "primaryKeyword": "dog diarrhea and vomiting",
+      "metaDescription": "dog diarrhea and vomiting: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your vet ",
+      "urgency_level": "urgent",
+      "lead": "Diarrhea with Vomiting often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up diarrhea and vomiting together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Diarrhea with Vomiting often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours",
+            "Severe lethargy or dehydration signs",
+            "Known toxin exposure",
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "german-shepherd",
+            "domestic-shorthair",
+            "labrador-retriever",
+            "great-dane"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is diarrhea with vomiting always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "german-shepherd",
+        "domestic-shorthair",
+        "labrador-retriever",
+        "great-dane"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-diarrhea-and-vomiting-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "diarrhea-and-vomiting-what-to-tell-vet",
+      "path": "/symptoms/dog/diarrhea-and-vomiting-what-to-tell-vet",
+      "symptomSlug": "diarrhea-dog",
+      "symptomSlugs": [
+        "diarrhea-dog",
+        "vomiting-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "diarrhea",
+        "b": "vomiting"
+      },
+      "h1": "What to tell the vet about dog diarrhea + vomiting",
+      "primaryKeyword": "dog diarrhea and vomiting vet",
+      "metaDescription": "dog diarrhea and vomiting vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your ",
+      "urgency_level": "urgent",
+      "lead": "Diarrhea with Vomiting often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up diarrhea and vomiting together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Diarrhea with Vomiting often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to diarrhea: Dietary change or scavenging; Parasites; Viral or bacterial gastroenteritis.",
+            "Possible contributors to vomiting: Dietary indiscretion (scavenging, sudden food change); Gastroenteritis; Pancreatitis.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Bloody or black tarry stool",
+            "Diarrhea with repeated vomiting",
+            "Puppy/kitten with diarrhea lasting more than a few hours",
+            "Severe lethargy or dehydration signs",
+            "Known toxin exposure",
+            "Repeated unproductive retching (possible GDV/bloat risk in deep-chested dogs)",
+            "Vomiting with blood or coffee-ground material",
+            "Collapse, pale gums, or severe lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "german-shepherd",
+            "domestic-shorthair",
+            "labrador-retriever",
+            "great-dane"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is diarrhea with vomiting always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "german-shepherd",
+        "domestic-shorthair",
+        "labrador-retriever",
+        "great-dane"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-difficulty-breathing-and-lethargy-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "difficulty-breathing-and-lethargy-emergency-signs",
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-emergency-signs",
+      "symptomSlug": "difficulty-breathing-dog",
+      "symptomSlugs": [
+        "difficulty-breathing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "difficulty-breathing",
+        "b": "lethargy"
+      },
+      "h1": "Emergency signs: dog with difficulty breathing and lethargy",
+      "primaryKeyword": "dog difficulty breathing lethargy emergency",
+      "metaDescription": "dog difficulty breathing lethargy emergency: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnos",
+      "urgency_level": "emergency",
+      "lead": "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up difficulty breathing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to difficulty breathing: Asthma / allergic airway disease; Congestive heart failure / cardiomyopathy complications; Pleural effusion.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Open-mouth breathing (especially in cats)",
+            "Blue or gray gums/tongue",
+            "Extreme effort or abdominal breathing",
+            "Collapse or inability to lie down comfortably",
+            "Sudden onset after possible toxin or trauma",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "maine-coon",
+            "ragdoll",
+            "persian",
+            "french-bulldog",
+            "pug"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "difficulty-breathing"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is difficulty breathing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "maine-coon",
+        "ragdoll",
+        "persian",
+        "french-bulldog",
+        "pug"
+      ],
+      "related_emergency_slug": "difficulty-breathing"
+    },
+    {
+      "id": "dog-difficulty-breathing-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "difficulty-breathing-and-lethargy-together",
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-together",
+      "symptomSlug": "difficulty-breathing-dog",
+      "symptomSlugs": [
+        "difficulty-breathing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "difficulty-breathing",
+        "b": "lethargy"
+      },
+      "h1": "Dog difficulty breathing and lethargy: what it can mean",
+      "primaryKeyword": "dog difficulty breathing and lethargy",
+      "metaDescription": "dog difficulty breathing and lethargy: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Co",
+      "urgency_level": "emergency",
+      "lead": "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up difficulty breathing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to difficulty breathing: Asthma / allergic airway disease; Congestive heart failure / cardiomyopathy complications; Pleural effusion.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Open-mouth breathing (especially in cats)",
+            "Blue or gray gums/tongue",
+            "Extreme effort or abdominal breathing",
+            "Collapse or inability to lie down comfortably",
+            "Sudden onset after possible toxin or trauma",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "maine-coon",
+            "ragdoll",
+            "persian",
+            "french-bulldog",
+            "pug"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "difficulty-breathing"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is difficulty breathing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "maine-coon",
+        "ragdoll",
+        "persian",
+        "french-bulldog",
+        "pug"
+      ],
+      "related_emergency_slug": "difficulty-breathing"
+    },
+    {
+      "id": "dog-difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "difficulty-breathing-dog",
+      "symptomSlugs": [
+        "difficulty-breathing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "difficulty-breathing",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog difficulty breathing + lethargy",
+      "primaryKeyword": "dog difficulty breathing and lethargy vet",
+      "metaDescription": "dog difficulty breathing and lethargy vet: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis",
+      "urgency_level": "emergency",
+      "lead": "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up difficulty breathing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to difficulty breathing: Asthma / allergic airway disease; Congestive heart failure / cardiomyopathy complications; Pleural effusion.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Open-mouth breathing (especially in cats)",
+            "Blue or gray gums/tongue",
+            "Extreme effort or abdominal breathing",
+            "Collapse or inability to lie down comfortably",
+            "Sudden onset after possible toxin or trauma",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "maine-coon",
+            "ragdoll",
+            "persian",
+            "french-bulldog",
+            "pug"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "difficulty-breathing"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is difficulty breathing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "maine-coon",
+        "ragdoll",
+        "persian",
+        "french-bulldog",
+        "pug"
+      ],
+      "related_emergency_slug": "difficulty-breathing"
+    },
+    {
+      "id": "dog-difficulty-breathing-and-lethargy-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "difficulty-breathing-and-lethargy-when-to-worry",
+      "path": "/symptoms/dog/difficulty-breathing-and-lethargy-when-to-worry",
+      "symptomSlug": "difficulty-breathing-dog",
+      "symptomSlugs": [
+        "difficulty-breathing-dog",
+        "lethargy-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "difficulty-breathing",
+        "b": "lethargy"
+      },
+      "h1": "Dog difficulty breathing and lethargy: when to worry",
+      "primaryKeyword": "dog difficulty breathing and lethargy when to worry",
+      "metaDescription": "dog difficulty breathing and lethargy when to worry: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a",
+      "urgency_level": "emergency",
+      "lead": "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up difficulty breathing and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Difficulty breathing with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to difficulty breathing: Asthma / allergic airway disease; Congestive heart failure / cardiomyopathy complications; Pleural effusion.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Open-mouth breathing (especially in cats)",
+            "Blue or gray gums/tongue",
+            "Extreme effort or abdominal breathing",
+            "Collapse or inability to lie down comfortably",
+            "Sudden onset after possible toxin or trauma",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "maine-coon",
+            "ragdoll",
+            "persian",
+            "french-bulldog",
+            "pug"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "difficulty-breathing"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is difficulty breathing with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "maine-coon",
+        "ragdoll",
+        "persian",
+        "french-bulldog",
+        "pug"
+      ],
+      "related_emergency_slug": "difficulty-breathing"
+    },
+    {
+      "id": "dog-excessive-thirst-and-frequent-urination-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "excessive-thirst-and-frequent-urination-emergency-signs",
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-emergency-signs",
+      "symptomSlug": "excessive-thirst-dog",
+      "symptomSlugs": [
+        "excessive-thirst-dog",
+        "frequent-urination-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "excessive-thirst",
+        "b": "frequent-urination"
+      },
+      "h1": "Emergency signs: dog with excessive thirst and frequent urination",
+      "primaryKeyword": "dog excessive thirst frequent urination emergency",
+      "metaDescription": "dog excessive thirst frequent urination emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diag",
+      "urgency_level": "urgent",
+      "lead": "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up excessive thirst and frequent urination together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to excessive thirst: Diabetes mellitus; Kidney disease; Cushing’s disease (more common in dogs).",
+            "Possible contributors to frequent urination: Urinary tract infection; Bladder stones; Diabetes.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Sudden extreme thirst with lethargy",
+            "Inability to urinate despite drinking",
+            "Vomiting with increased thirst",
+            "Collapse or disorientation",
+            "Known toxin (e.g., antifreeze) exposure",
+            "Straining with little or no urine produced",
+            "Crying while trying to urinate",
+            "Blood in urine with lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "poodle",
+            "dalmatian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is excessive thirst with frequent urination always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "poodle",
+        "dalmatian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-excessive-thirst-and-frequent-urination-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "excessive-thirst-and-frequent-urination-together",
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-together",
+      "symptomSlug": "excessive-thirst-dog",
+      "symptomSlugs": [
+        "excessive-thirst-dog",
+        "frequent-urination-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "excessive-thirst",
+        "b": "frequent-urination"
+      },
+      "h1": "Dog excessive thirst and frequent urination: what it can mean",
+      "primaryKeyword": "dog excessive thirst and frequent urination",
+      "metaDescription": "dog excessive thirst and frequent urination: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis.",
+      "urgency_level": "urgent",
+      "lead": "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up excessive thirst and frequent urination together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to excessive thirst: Diabetes mellitus; Kidney disease; Cushing’s disease (more common in dogs).",
+            "Possible contributors to frequent urination: Urinary tract infection; Bladder stones; Diabetes.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Sudden extreme thirst with lethargy",
+            "Inability to urinate despite drinking",
+            "Vomiting with increased thirst",
+            "Collapse or disorientation",
+            "Known toxin (e.g., antifreeze) exposure",
+            "Straining with little or no urine produced",
+            "Crying while trying to urinate",
+            "Blood in urine with lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "poodle",
+            "dalmatian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is excessive thirst with frequent urination always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "poodle",
+        "dalmatian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-what-to-tell-vet",
+      "symptomSlug": "excessive-thirst-dog",
+      "symptomSlugs": [
+        "excessive-thirst-dog",
+        "frequent-urination-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "excessive-thirst",
+        "b": "frequent-urination"
+      },
+      "h1": "What to tell the vet about dog excessive thirst + frequent urination",
+      "primaryKeyword": "dog excessive thirst and frequent urination vet",
+      "metaDescription": "dog excessive thirst and frequent urination vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagno",
+      "urgency_level": "urgent",
+      "lead": "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up excessive thirst and frequent urination together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to excessive thirst: Diabetes mellitus; Kidney disease; Cushing’s disease (more common in dogs).",
+            "Possible contributors to frequent urination: Urinary tract infection; Bladder stones; Diabetes.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Sudden extreme thirst with lethargy",
+            "Inability to urinate despite drinking",
+            "Vomiting with increased thirst",
+            "Collapse or disorientation",
+            "Known toxin (e.g., antifreeze) exposure",
+            "Straining with little or no urine produced",
+            "Crying while trying to urinate",
+            "Blood in urine with lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "poodle",
+            "dalmatian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is excessive thirst with frequent urination always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "poodle",
+        "dalmatian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-excessive-thirst-and-frequent-urination-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "excessive-thirst-and-frequent-urination-when-to-worry",
+      "path": "/symptoms/dog/excessive-thirst-and-frequent-urination-when-to-worry",
+      "symptomSlug": "excessive-thirst-dog",
+      "symptomSlugs": [
+        "excessive-thirst-dog",
+        "frequent-urination-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "excessive-thirst",
+        "b": "frequent-urination"
+      },
+      "h1": "Dog excessive thirst and frequent urination: when to worry",
+      "primaryKeyword": "dog excessive thirst and frequent urination when to worry",
+      "metaDescription": "dog excessive thirst and frequent urination when to worry: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, no",
+      "urgency_level": "urgent",
+      "lead": "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up excessive thirst and frequent urination together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Excessive thirst with Frequent urination often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to excessive thirst: Diabetes mellitus; Kidney disease; Cushing’s disease (more common in dogs).",
+            "Possible contributors to frequent urination: Urinary tract infection; Bladder stones; Diabetes.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Sudden extreme thirst with lethargy",
+            "Inability to urinate despite drinking",
+            "Vomiting with increased thirst",
+            "Collapse or disorientation",
+            "Known toxin (e.g., antifreeze) exposure",
+            "Straining with little or no urine produced",
+            "Crying while trying to urinate",
+            "Blood in urine with lethargy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "poodle",
+            "dalmatian"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is excessive thirst with frequent urination always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "poodle",
+        "dalmatian"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-itching-and-hair-loss-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "itching-and-hair-loss-emergency-signs",
+      "path": "/symptoms/dog/itching-and-hair-loss-emergency-signs",
+      "symptomSlug": "itching-dog",
+      "symptomSlugs": [
+        "itching-dog",
+        "hair-loss-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "itching",
+        "b": "hair-loss"
+      },
+      "h1": "Emergency signs: dog with itching and hair loss",
+      "primaryKeyword": "dog itching hair loss emergency",
+      "metaDescription": "dog itching hair loss emergency: combined urgency monitor, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact yo",
+      "urgency_level": "monitor",
+      "lead": "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up itching and hair loss together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to itching: Flea allergy dermatitis; Environmental allergies; Food allergy.",
+            "Possible contributors to hair loss: Allergies and over-grooming; Fleas or mites; Hormonal disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Face/muzzle swelling with itching",
+            "Difficulty breathing with hives",
+            "Open, bleeding wounds from self-trauma",
+            "Sudden severe itching after a new medication or sting",
+            "Fever with widespread skin infection",
+            "Rapid hair loss with open sores",
+            "Hair loss with severe lethargy",
+            "Suspected toxin on the coat"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "domestic-shorthair",
+            "german-shepherd"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is itching with hair loss always an emergency in dogs?",
+          "answer": "Combined urgency on this page is monitor. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "domestic-shorthair",
+        "german-shepherd"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-itching-and-hair-loss-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "itching-and-hair-loss-together",
+      "path": "/symptoms/dog/itching-and-hair-loss-together",
+      "symptomSlug": "itching-dog",
+      "symptomSlugs": [
+        "itching-dog",
+        "hair-loss-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "itching",
+        "b": "hair-loss"
+      },
+      "h1": "Dog itching and hair loss: what it can mean",
+      "primaryKeyword": "dog itching and hair loss",
+      "metaDescription": "dog itching and hair loss: combined urgency monitor, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your vet",
+      "urgency_level": "monitor",
+      "lead": "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up itching and hair loss together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to itching: Flea allergy dermatitis; Environmental allergies; Food allergy.",
+            "Possible contributors to hair loss: Allergies and over-grooming; Fleas or mites; Hormonal disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Face/muzzle swelling with itching",
+            "Difficulty breathing with hives",
+            "Open, bleeding wounds from self-trauma",
+            "Sudden severe itching after a new medication or sting",
+            "Fever with widespread skin infection",
+            "Rapid hair loss with open sores",
+            "Hair loss with severe lethargy",
+            "Suspected toxin on the coat"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "domestic-shorthair",
+            "german-shepherd"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is itching with hair loss always an emergency in dogs?",
+          "answer": "Combined urgency on this page is monitor. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "domestic-shorthair",
+        "german-shepherd"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-itching-and-hair-loss-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "itching-and-hair-loss-what-to-tell-vet",
+      "path": "/symptoms/dog/itching-and-hair-loss-what-to-tell-vet",
+      "symptomSlug": "itching-dog",
+      "symptomSlugs": [
+        "itching-dog",
+        "hair-loss-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "itching",
+        "b": "hair-loss"
+      },
+      "h1": "What to tell the vet about dog itching + hair loss",
+      "primaryKeyword": "dog itching and hair loss vet",
+      "metaDescription": "dog itching and hair loss vet: combined urgency monitor, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your",
+      "urgency_level": "monitor",
+      "lead": "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up itching and hair loss together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to itching: Flea allergy dermatitis; Environmental allergies; Food allergy.",
+            "Possible contributors to hair loss: Allergies and over-grooming; Fleas or mites; Hormonal disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Face/muzzle swelling with itching",
+            "Difficulty breathing with hives",
+            "Open, bleeding wounds from self-trauma",
+            "Sudden severe itching after a new medication or sting",
+            "Fever with widespread skin infection",
+            "Rapid hair loss with open sores",
+            "Hair loss with severe lethargy",
+            "Suspected toxin on the coat"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "domestic-shorthair",
+            "german-shepherd"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is itching with hair loss always an emergency in dogs?",
+          "answer": "Combined urgency on this page is monitor. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "domestic-shorthair",
+        "german-shepherd"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-itching-and-hair-loss-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "itching-and-hair-loss-when-to-worry",
+      "path": "/symptoms/dog/itching-and-hair-loss-when-to-worry",
+      "symptomSlug": "itching-dog",
+      "symptomSlugs": [
+        "itching-dog",
+        "hair-loss-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "itching",
+        "b": "hair-loss"
+      },
+      "h1": "Dog itching and hair loss: when to worry",
+      "primaryKeyword": "dog itching and hair loss when to worry",
+      "metaDescription": "dog itching and hair loss when to worry: combined urgency monitor, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Co",
+      "urgency_level": "monitor",
+      "lead": "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up itching and hair loss together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Itching with Hair loss can be mild and short-lived, but patterns matter. Stay calm, watch for the escalation signs below, and write down timing so your vet is not guessing from memory.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to itching: Flea allergy dermatitis; Environmental allergies; Food allergy.",
+            "Possible contributors to hair loss: Allergies and over-grooming; Fleas or mites; Hormonal disease.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Face/muzzle swelling with itching",
+            "Difficulty breathing with hives",
+            "Open, bleeding wounds from self-trauma",
+            "Sudden severe itching after a new medication or sting",
+            "Fever with widespread skin infection",
+            "Rapid hair loss with open sores",
+            "Hair loss with severe lethargy",
+            "Suspected toxin on the coat"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "domestic-shorthair",
+            "german-shepherd"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is itching with hair loss always an emergency in dogs?",
+          "answer": "Combined urgency on this page is monitor. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "domestic-shorthair",
+        "german-shepherd"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-limping-and-lethargy-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "limping-and-lethargy-emergency-signs",
+      "path": "/symptoms/dog/limping-and-lethargy-emergency-signs",
+      "symptomSlug": "limping-dog",
+      "symptomSlugs": [
+        "limping-dog",
+        "lethargy-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "limping",
+        "b": "lethargy"
+      },
+      "h1": "Emergency signs: dog with limping and lethargy",
+      "primaryKeyword": "dog limping lethargy emergency",
+      "metaDescription": "dog limping lethargy emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your",
+      "urgency_level": "urgent",
+      "lead": "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up limping and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to limping: Soft tissue sprain/strain; Paw pad injury or foreign body; Cruciate ligament injury.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Non-weight-bearing lameness",
+            "Limb held at abnormal angle (possible fracture/dislocation)",
+            "Dragged limbs, knuckling, or sudden paralysis",
+            "Severe pain, crying, or aggression when touched",
+            "Limping after known trauma (hit by car, fall)",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "dachshund"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is limping with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "dachshund"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-limping-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "limping-and-lethargy-together",
+      "path": "/symptoms/dog/limping-and-lethargy-together",
+      "symptomSlug": "limping-dog",
+      "symptomSlugs": [
+        "limping-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "limping",
+        "b": "lethargy"
+      },
+      "h1": "Dog limping and lethargy: what it can mean",
+      "primaryKeyword": "dog limping and lethargy",
+      "metaDescription": "dog limping and lethargy: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your vet f",
+      "urgency_level": "urgent",
+      "lead": "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up limping and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to limping: Soft tissue sprain/strain; Paw pad injury or foreign body; Cruciate ligament injury.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Non-weight-bearing lameness",
+            "Limb held at abnormal angle (possible fracture/dislocation)",
+            "Dragged limbs, knuckling, or sudden paralysis",
+            "Severe pain, crying, or aggression when touched",
+            "Limping after known trauma (hit by car, fall)",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "dachshund"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is limping with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "dachshund"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-limping-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "limping-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/limping-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "limping-dog",
+      "symptomSlugs": [
+        "limping-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "limping",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog limping + lethargy",
+      "primaryKeyword": "dog limping and lethargy vet",
+      "metaDescription": "dog limping and lethargy vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your v",
+      "urgency_level": "urgent",
+      "lead": "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up limping and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to limping: Soft tissue sprain/strain; Paw pad injury or foreign body; Cruciate ligament injury.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Non-weight-bearing lameness",
+            "Limb held at abnormal angle (possible fracture/dislocation)",
+            "Dragged limbs, knuckling, or sudden paralysis",
+            "Severe pain, crying, or aggression when touched",
+            "Limping after known trauma (hit by car, fall)",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "dachshund"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is limping with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "dachshund"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-limping-and-lethargy-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "limping-and-lethargy-when-to-worry",
+      "path": "/symptoms/dog/limping-and-lethargy-when-to-worry",
+      "symptomSlug": "limping-dog",
+      "symptomSlugs": [
+        "limping-dog",
+        "lethargy-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "limping",
+        "b": "lethargy"
+      },
+      "h1": "Dog limping and lethargy: when to worry",
+      "primaryKeyword": "dog limping and lethargy when to worry",
+      "metaDescription": "dog limping and lethargy when to worry: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Cont",
+      "urgency_level": "urgent",
+      "lead": "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up limping and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Limping with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to limping: Soft tissue sprain/strain; Paw pad injury or foreign body; Cruciate ligament injury.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Non-weight-bearing lameness",
+            "Limb held at abnormal angle (possible fracture/dislocation)",
+            "Dragged limbs, knuckling, or sudden paralysis",
+            "Severe pain, crying, or aggression when touched",
+            "Limping after known trauma (hit by car, fall)",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "labrador-retriever",
+            "french-bulldog",
+            "dachshund"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is limping with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "labrador-retriever",
+        "french-bulldog",
+        "dachshund"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-loss-of-appetite-and-lethargy-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "loss-of-appetite-and-lethargy-emergency-signs",
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-emergency-signs",
+      "symptomSlug": "loss-of-appetite-dog",
+      "symptomSlugs": [
+        "loss-of-appetite-dog",
+        "lethargy-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "loss-of-appetite",
+        "b": "lethargy"
+      },
+      "h1": "Emergency signs: dog with loss of appetite and lethargy",
+      "primaryKeyword": "dog loss of appetite lethargy emergency",
+      "metaDescription": "dog loss of appetite lethargy emergency: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Con",
+      "urgency_level": "urgent",
+      "lead": "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up loss of appetite and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to loss of appetite: Dental pain; Nausea or GI upset; Infection.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Cat not eating for more than 24 hours",
+            "Puppy/kitten refusing food",
+            "Appetite loss with vomiting or jaundice",
+            "Signs of pain when chewing",
+            "Dehydration or extreme lethargy",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is loss of appetite with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-loss-of-appetite-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "loss-of-appetite-and-lethargy-together",
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-together",
+      "symptomSlug": "loss-of-appetite-dog",
+      "symptomSlugs": [
+        "loss-of-appetite-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "loss-of-appetite",
+        "b": "lethargy"
+      },
+      "h1": "Dog loss of appetite and lethargy: what it can mean",
+      "primaryKeyword": "dog loss of appetite and lethargy",
+      "metaDescription": "dog loss of appetite and lethargy: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact y",
+      "urgency_level": "urgent",
+      "lead": "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up loss of appetite and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to loss of appetite: Dental pain; Nausea or GI upset; Infection.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Cat not eating for more than 24 hours",
+            "Puppy/kitten refusing food",
+            "Appetite loss with vomiting or jaundice",
+            "Signs of pain when chewing",
+            "Dehydration or extreme lethargy",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is loss of appetite with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "loss-of-appetite-dog",
+      "symptomSlugs": [
+        "loss-of-appetite-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "loss-of-appetite",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog loss of appetite + lethargy",
+      "primaryKeyword": "dog loss of appetite and lethargy vet",
+      "metaDescription": "dog loss of appetite and lethargy vet: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Conta",
+      "urgency_level": "urgent",
+      "lead": "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up loss of appetite and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to loss of appetite: Dental pain; Nausea or GI upset; Infection.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Cat not eating for more than 24 hours",
+            "Puppy/kitten refusing food",
+            "Appetite loss with vomiting or jaundice",
+            "Signs of pain when chewing",
+            "Dehydration or extreme lethargy",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is loss of appetite with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-loss-of-appetite-and-lethargy-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "loss-of-appetite-and-lethargy-when-to-worry",
+      "path": "/symptoms/dog/loss-of-appetite-and-lethargy-when-to-worry",
+      "symptomSlug": "loss-of-appetite-dog",
+      "symptomSlugs": [
+        "loss-of-appetite-dog",
+        "lethargy-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "loss-of-appetite",
+        "b": "lethargy"
+      },
+      "h1": "Dog loss of appetite and lethargy: when to worry",
+      "primaryKeyword": "dog loss of appetite and lethargy when to worry",
+      "metaDescription": "dog loss of appetite and lethargy when to worry: combined urgency urgent, shared red flags, and what to tell your vet. This is general information, not a diagno",
+      "urgency_level": "urgent",
+      "lead": "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up loss of appetite and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Loss of appetite with Lethargy often needs same-day veterinary guidance, especially if it is new, worsening, or paired with other symptoms. Use the red-flag list to decide whether to call now versus schedule promptly.",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to loss of appetite: Dental pain; Nausea or GI upset; Infection.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Cat not eating for more than 24 hours",
+            "Puppy/kitten refusing food",
+            "Appetite loss with vomiting or jaundice",
+            "Signs of pain when chewing",
+            "Dehydration or extreme lethargy",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair"
+          ]
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is loss of appetite with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is urgent. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair"
+      ],
+      "related_emergency_slug": null
+    },
+    {
+      "id": "dog-pale-gums-and-lethargy-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "pale-gums-and-lethargy-emergency-signs",
+      "path": "/symptoms/dog/pale-gums-and-lethargy-emergency-signs",
+      "symptomSlug": "pale-gums-dog",
+      "symptomSlugs": [
+        "pale-gums-dog",
+        "lethargy-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "pale-gums",
+        "b": "lethargy"
+      },
+      "h1": "Emergency signs: dog with pale gums and lethargy",
+      "primaryKeyword": "dog pale gums lethargy emergency",
+      "metaDescription": "dog pale gums lethargy emergency: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact",
+      "urgency_level": "emergency",
+      "lead": "Pale gums with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up pale gums and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Pale gums with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to pale gums: Anemia (blood loss, destruction, or underproduction); Shock; Internal bleeding.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Gums that are white or gray",
+            "Pale gums with collapse",
+            "Rapid breathing with pale gums",
+            "Known trauma or rodenticide exposure",
+            "Bloody vomit or black stool with pale gums",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "collapse"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is pale gums with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [],
+      "related_emergency_slug": "collapse"
+    },
+    {
+      "id": "dog-pale-gums-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "pale-gums-and-lethargy-together",
+      "path": "/symptoms/dog/pale-gums-and-lethargy-together",
+      "symptomSlug": "pale-gums-dog",
+      "symptomSlugs": [
+        "pale-gums-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "pale-gums",
+        "b": "lethargy"
+      },
+      "h1": "Dog pale gums and lethargy: what it can mean",
+      "primaryKeyword": "dog pale gums and lethargy",
+      "metaDescription": "dog pale gums and lethargy: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your ",
+      "urgency_level": "emergency",
+      "lead": "Pale gums with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up pale gums and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Pale gums with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to pale gums: Anemia (blood loss, destruction, or underproduction); Shock; Internal bleeding.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Gums that are white or gray",
+            "Pale gums with collapse",
+            "Rapid breathing with pale gums",
+            "Known trauma or rodenticide exposure",
+            "Bloody vomit or black stool with pale gums",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "collapse"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is pale gums with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [],
+      "related_emergency_slug": "collapse"
+    },
+    {
+      "id": "dog-pale-gums-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "pale-gums-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/pale-gums-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "pale-gums-dog",
+      "symptomSlugs": [
+        "pale-gums-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "pale-gums",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog pale gums + lethargy",
+      "primaryKeyword": "dog pale gums and lethargy vet",
+      "metaDescription": "dog pale gums and lethargy vet: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact y",
+      "urgency_level": "emergency",
+      "lead": "Pale gums with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up pale gums and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Pale gums with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to pale gums: Anemia (blood loss, destruction, or underproduction); Shock; Internal bleeding.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Gums that are white or gray",
+            "Pale gums with collapse",
+            "Rapid breathing with pale gums",
+            "Known trauma or rodenticide exposure",
+            "Bloody vomit or black stool with pale gums",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "collapse"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is pale gums with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [],
+      "related_emergency_slug": "collapse"
+    },
+    {
+      "id": "dog-seizures-and-tremors-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "seizures-and-tremors-emergency-signs",
+      "path": "/symptoms/dog/seizures-and-tremors-emergency-signs",
+      "symptomSlug": "seizures-dog",
+      "symptomSlugs": [
+        "seizures-dog",
+        "tremors-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "seizures",
+        "b": "tremors"
+      },
+      "h1": "Emergency signs: dog with seizures and tremors",
+      "primaryKeyword": "dog seizures tremors emergency",
+      "metaDescription": "dog seizures tremors emergency: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact y",
+      "urgency_level": "emergency",
+      "lead": "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up seizures and tremors together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to seizures: Idiopathic epilepsy; Toxin ingestion; Metabolic imbalance (low blood sugar, liver disease).",
+            "Possible contributors to tremors: Toxin exposure (e.g., chocolate, xylitol, certain insecticides); Low blood sugar; Pain or anxiety.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "First-time seizure",
+            "Seizure lasting longer than 2–3 minutes",
+            "Cluster seizures (more than one in 24 hours)",
+            "Seizure after possible toxin exposure",
+            "Not returning to normal within a short recovery window",
+            "Tremors with vomiting after possible toxin",
+            "Tremors progressing toward seizures",
+            "Inability to walk"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "border-collie",
+            "labrador-retriever",
+            "beagle",
+            "west-highland-white-terrier"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "seizure"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is seizures with tremors always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "border-collie",
+        "labrador-retriever",
+        "beagle",
+        "west-highland-white-terrier"
+      ],
+      "related_emergency_slug": "seizure"
+    },
+    {
+      "id": "dog-seizures-and-tremors-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "seizures-and-tremors-together",
+      "path": "/symptoms/dog/seizures-and-tremors-together",
+      "symptomSlug": "seizures-dog",
+      "symptomSlugs": [
+        "seizures-dog",
+        "tremors-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "seizures",
+        "b": "tremors"
+      },
+      "h1": "Dog seizures and tremors: what it can mean",
+      "primaryKeyword": "dog seizures and tremors",
+      "metaDescription": "dog seizures and tremors: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact your ve",
+      "urgency_level": "emergency",
+      "lead": "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up seizures and tremors together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to seizures: Idiopathic epilepsy; Toxin ingestion; Metabolic imbalance (low blood sugar, liver disease).",
+            "Possible contributors to tremors: Toxin exposure (e.g., chocolate, xylitol, certain insecticides); Low blood sugar; Pain or anxiety.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "First-time seizure",
+            "Seizure lasting longer than 2–3 minutes",
+            "Cluster seizures (more than one in 24 hours)",
+            "Seizure after possible toxin exposure",
+            "Not returning to normal within a short recovery window",
+            "Tremors with vomiting after possible toxin",
+            "Tremors progressing toward seizures",
+            "Inability to walk"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "border-collie",
+            "labrador-retriever",
+            "beagle",
+            "west-highland-white-terrier"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "seizure"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is seizures with tremors always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "border-collie",
+        "labrador-retriever",
+        "beagle",
+        "west-highland-white-terrier"
+      ],
+      "related_emergency_slug": "seizure"
+    },
+    {
+      "id": "dog-seizures-and-tremors-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "seizures-and-tremors-what-to-tell-vet",
+      "path": "/symptoms/dog/seizures-and-tremors-what-to-tell-vet",
+      "symptomSlug": "seizures-dog",
+      "symptomSlugs": [
+        "seizures-dog",
+        "tremors-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "seizures",
+        "b": "tremors"
+      },
+      "h1": "What to tell the vet about dog seizures + tremors",
+      "primaryKeyword": "dog seizures and tremors vet",
+      "metaDescription": "dog seizures and tremors vet: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Contact you",
+      "urgency_level": "emergency",
+      "lead": "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up seizures and tremors together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to seizures: Idiopathic epilepsy; Toxin ingestion; Metabolic imbalance (low blood sugar, liver disease).",
+            "Possible contributors to tremors: Toxin exposure (e.g., chocolate, xylitol, certain insecticides); Low blood sugar; Pain or anxiety.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "First-time seizure",
+            "Seizure lasting longer than 2–3 minutes",
+            "Cluster seizures (more than one in 24 hours)",
+            "Seizure after possible toxin exposure",
+            "Not returning to normal within a short recovery window",
+            "Tremors with vomiting after possible toxin",
+            "Tremors progressing toward seizures",
+            "Inability to walk"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "border-collie",
+            "labrador-retriever",
+            "beagle",
+            "west-highland-white-terrier"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "seizure"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is seizures with tremors always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "border-collie",
+        "labrador-retriever",
+        "beagle",
+        "west-highland-white-terrier"
+      ],
+      "related_emergency_slug": "seizure"
+    },
+    {
+      "id": "dog-seizures-and-tremors-when-to-worry",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "seizures-and-tremors-when-to-worry",
+      "path": "/symptoms/dog/seizures-and-tremors-when-to-worry",
+      "symptomSlug": "seizures-dog",
+      "symptomSlugs": [
+        "seizures-dog",
+        "tremors-dog"
+      ],
+      "angle": "when-to-worry",
+      "combination": {
+        "a": "seizures",
+        "b": "tremors"
+      },
+      "h1": "Dog seizures and tremors: when to worry",
+      "primaryKeyword": "dog seizures and tremors when to worry",
+      "metaDescription": "dog seizures and tremors when to worry: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. C",
+      "urgency_level": "emergency",
+      "lead": "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up seizures and tremors together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Seizures with Tremors in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to seizures: Idiopathic epilepsy; Toxin ingestion; Metabolic imbalance (low blood sugar, liver disease).",
+            "Possible contributors to tremors: Toxin exposure (e.g., chocolate, xylitol, certain insecticides); Low blood sugar; Pain or anxiety.",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "First-time seizure",
+            "Seizure lasting longer than 2–3 minutes",
+            "Cluster seizures (more than one in 24 hours)",
+            "Seizure after possible toxin exposure",
+            "Not returning to normal within a short recovery window",
+            "Tremors with vomiting after possible toxin",
+            "Tremors progressing toward seizures",
+            "Inability to walk"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "border-collie",
+            "labrador-retriever",
+            "beagle",
+            "west-highland-white-terrier"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "seizure"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is seizures with tremors always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "border-collie",
+        "labrador-retriever",
+        "beagle",
+        "west-highland-white-terrier"
+      ],
+      "related_emergency_slug": "seizure"
+    },
+    {
+      "id": "dog-straining-to-urinate-and-lethargy-emergency-signs",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "straining-to-urinate-and-lethargy-emergency-signs",
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-emergency-signs",
+      "symptomSlug": "straining-to-urinate-dog",
+      "symptomSlugs": [
+        "straining-to-urinate-dog",
+        "lethargy-dog"
+      ],
+      "angle": "emergency-signs",
+      "combination": {
+        "a": "straining-to-urinate",
+        "b": "lethargy"
+      },
+      "h1": "Emergency signs: dog with straining to urinate and lethargy",
+      "primaryKeyword": "dog straining to urinate lethargy emergency",
+      "metaDescription": "dog straining to urinate lethargy emergency: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnos",
+      "urgency_level": "emergency",
+      "lead": "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up straining to urinate and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to straining to urinate: Urethral obstruction (especially male cats); Urinary stones; Severe cystitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated trips to litter box/outside with no urine",
+            "Vocalizing while posturing to urinate",
+            "Distended, painful abdomen",
+            "Vomiting or collapse with urinary straining",
+            "Any male cat that cannot produce a stream",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "persian"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "urinary-blockage"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is straining to urinate with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "persian"
+      ],
+      "related_emergency_slug": "urinary-blockage"
+    },
+    {
+      "id": "dog-straining-to-urinate-and-lethargy-together",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "straining-to-urinate-and-lethargy-together",
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-together",
+      "symptomSlug": "straining-to-urinate-dog",
+      "symptomSlugs": [
+        "straining-to-urinate-dog",
+        "lethargy-dog"
+      ],
+      "angle": "together",
+      "combination": {
+        "a": "straining-to-urinate",
+        "b": "lethargy"
+      },
+      "h1": "Dog straining to urinate and lethargy: what it can mean",
+      "primaryKeyword": "dog straining to urinate and lethargy",
+      "metaDescription": "dog straining to urinate and lethargy: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis. Co",
+      "urgency_level": "emergency",
+      "lead": "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up straining to urinate and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Treat overlapping red flags from either symptom as actionable — you do not need both lists to “fully match.”"
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to straining to urinate: Urethral obstruction (especially male cats); Urinary stones; Severe cystitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated trips to litter box/outside with no urine",
+            "Vocalizing while posturing to urinate",
+            "Distended, painful abdomen",
+            "Vomiting or collapse with urinary straining",
+            "Any male cat that cannot produce a stream",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "persian"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "urinary-blockage"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is straining to urinate with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "persian"
+      ],
+      "related_emergency_slug": "urinary-blockage"
+    },
+    {
+      "id": "dog-straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "kind": "combination",
+      "species": "dog",
+      "pageSlug": "straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "path": "/symptoms/dog/straining-to-urinate-and-lethargy-what-to-tell-vet",
+      "symptomSlug": "straining-to-urinate-dog",
+      "symptomSlugs": [
+        "straining-to-urinate-dog",
+        "lethargy-dog"
+      ],
+      "angle": "what-to-tell-vet",
+      "combination": {
+        "a": "straining-to-urinate",
+        "b": "lethargy"
+      },
+      "h1": "What to tell the vet about dog straining to urinate + lethargy",
+      "primaryKeyword": "dog straining to urinate and lethargy vet",
+      "metaDescription": "dog straining to urinate and lethargy vet: combined urgency emergency, shared red flags, and what to tell your vet. This is general information, not a diagnosis",
+      "urgency_level": "emergency",
+      "lead": "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+      "disclaimer": "This is general information, not a diagnosis. Contact your vet for anything urgent or unclear.",
+      "productTieIn": "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for.",
+      "sections": [
+        {
+          "heading": "Why these two symptoms together matter",
+          "paragraphs": [
+            "Searchers often look up straining to urinate and lethargy together because the combination can change urgency. Alone, one sign might be “monitor”; together, veterinarians often want a faster call.",
+            "Straining to urinate with Lethargy in dogs is treated as time-sensitive. If any red-flag sign below is present, contact an emergency veterinarian now — do not wait to “see if it passes.”",
+            "Lead with the timeline: which sign started first, how far apart they appeared, and whether either is getting worse hour by hour."
+          ]
+        },
+        {
+          "heading": "Causes veterinarians may consider",
+          "paragraphs": [
+            "Possible contributors to straining to urinate: Urethral obstruction (especially male cats); Urinary stones; Severe cystitis.",
+            "Possible contributors to lethargy: Infection or fever; Pain from injury or illness; Metabolic disease (e.g., diabetes, kidney disease).",
+            "Overlapping causes (infection, toxins, pain, organ disease) are why combination pages exist — still not a diagnosis."
+          ]
+        },
+        {
+          "heading": "Call the vet now if you see",
+          "paragraphs": [
+            "If either symptom’s emergency signs appear, contact a veterinarian now:"
+          ],
+          "bullets": [
+            "Repeated trips to litter box/outside with no urine",
+            "Vocalizing while posturing to urinate",
+            "Distended, painful abdomen",
+            "Vomiting or collapse with urinary straining",
+            "Any male cat that cannot produce a stream",
+            "Collapse or inability to stand",
+            "Pale, blue, or yellow gums",
+            "Difficulty breathing with low energy"
+          ]
+        },
+        {
+          "heading": "Breed predispositions to keep in mind",
+          "paragraphs": [
+            "If your pet’s breed appears here, escalate sooner and keep tighter notes:"
+          ],
+          "breedLinks": [
+            "domestic-shorthair",
+            "persian"
+          ]
+        },
+        {
+          "heading": "Related emergency guide",
+          "paragraphs": [
+            "This combination can reach emergency urgency. See also:"
+          ],
+          "emergencySlug": "urinary-blockage"
+        },
+        {
+          "heading": "Track the pattern",
+          "paragraphs": [
+            "Logging symptoms over time helps you and your vet spot patterns — that's what PetClues' health timeline is for."
+          ]
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Is straining to urinate with lethargy always an emergency in dogs?",
+          "answer": "Combined urgency on this page is emergency. If any red-flag sign appears, contact a vet now. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Should I treat the symptoms separately?",
+          "answer": "Track both, but decide urgency from the worse sign and from overlap. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        },
+        {
+          "question": "Can an app replace a veterinary exam?",
+          "answer": "No. Logging helps communication; it does not diagnose. This is general information, not a diagnosis. Contact your vet for anything urgent or unclear."
+        }
+      ],
+      "related_breed_predispositions": [
+        "domestic-shorthair",
+        "persian"
+      ],
+      "related_emergency_slug": "urinary-blockage"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+.pricingStrip {
+  margin: 0 0 2rem;
+  padding: 1rem 0 0;
+}
+
+.pricingTitle {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+}
+
+.pricingTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.pricingTable th,
+.pricingTable td {
+  border-bottom: 1px solid #ebe7e0;
+  padding: 0.55rem 0.4rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.pricingTable th {
+  font-weight: 600;
+  color: #333;
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "siberian-husky-vaccine-schedule",
+  "path": "/vaccinations/siberian-husky-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "siberian-husky",
+  "subjectName": "Siberian Husky",
+  "species": "dog",
+  "primaryKeyword": "Siberian Husky vaccine schedule",
+  "metaDescription": "Siberian Husky vaccine schedule with core ages in weeks. Set reminders so Siberian Husky boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/siberian-husky/adult-health-guide",
+  "breedHealthLabel": "Siberian Husky adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "The Siberian Husky core series (DA2PP / DHPP plus rabies per law) is plotted at 8, 12, 16, 16 weeks in the table above so a medium puppy is covered as maternal antibodies fade.",
+        "At 35-60 lb (16-27 kg), Siberian Husky visit logistics matter as much as antigens: book the 16-week appointment before class, daycare, or boarding asks for proof.",
+        "Bring hip dysplasia and eye issues (cataracts/corneal dystrophy risk) into the Siberian Husky exam-room conversation while you are already there for shots.",
+        "Rabies for a Siberian Husky still follows local statute, and when the clinic allows you can pair it with the ≥16-week core finish, then photograph the certificate into PetClues the same day."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Siberian Husky shots when the puppy seems “a little off,” travel intervenes, or hip dysplasia worries dominate the week — ask the clinic whether a same-week Siberian Husky make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Siberian Husky antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Siberian Husky dose for extra socialization; finish immunity first for this medium dog.",
+        "Reset the Siberian Husky reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Siberian Husky core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Siberian Husky misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Siberian Husky health context beyond vaccines?",
+      "answer": "See the Siberian Husky adult health guide for breed predispositions such as hip dysplasia, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

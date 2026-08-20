@@ -1,0 +1,47 @@
+{
+  "slug": "doberman-pinscher-vaccine-schedule",
+  "path": "/vaccinations/doberman-pinscher-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "doberman-pinscher",
+  "subjectName": "Doberman Pinscher",
+  "species": "dog",
+  "primaryKeyword": "Doberman Pinscher vaccine schedule",
+  "metaDescription": "Doberman Pinscher vaccine schedule with core ages in weeks. Set reminders so Doberman Pinscher boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/doberman-pinscher/adult-health-guide",
+  "breedHealthLabel": "Doberman Pinscher adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Doberman Pinscher social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Doberman Pinscher exposure.",
+        "Weight range 60-100 lb (27-45 kg) and grooming needs (Short coat, minimal brush; nail care matters for active dogs.) belong in the same Doberman Pinscher household ops list as vaccine dates when busy weeks collide.",
+        "If your Doberman Pinscher is also monitored for von willebrand disease, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Doberman Pinscher appointments.",
+        "After the Doberman Pinscher puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Delayed Doberman Pinscher boosters usually need one well-timed catch-up, not a homemade double dose, because spacing rules protect the puppy and guilt math does not.",
+        "Bring prior dates for every Doberman Pinscher row (8, 12, 16, 16 weeks on this page’s plan) so clinics can decide whether an extra DA2PP / DHPP booster is required based on gap length and age.",
+        "If rabies was the missed Doberman Pinscher item, legal and boarding consequences stack on top of medical ones — restore compliance before the next Doberman Pinscher kennel reservation.",
+        "PetClues should hold both the new Doberman Pinscher due date and the certificate photo so household members stop arguing about which fridge sticky note is current."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Doberman Pinscher core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Doberman Pinscher misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Doberman Pinscher health context beyond vaccines?",
+      "answer": "See the Doberman Pinscher adult health guide for breed predispositions such as dilated cardiomyopathy risk, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

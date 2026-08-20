@@ -1,0 +1,47 @@
+{
+  "slug": "collie-rough-vaccine-schedule",
+  "path": "/vaccinations/collie-rough-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "collie-rough",
+  "subjectName": "Collie (Rough)",
+  "species": "dog",
+  "primaryKeyword": "Collie (Rough) vaccine schedule",
+  "metaDescription": "Collie (Rough) vaccine schedule with core ages in weeks. Set reminders so Collie (Rough) boosters are not missed.",
+  "reminderVaccine": "DA2PP / DHPP booster",
+  "breedHealthHref": "/breeds/collie-rough/adult-health-guide",
+  "breedHealthLabel": "Collie (Rough) adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Plan Collie (Rough) social milestones around the schedule rows, not the other way around, because the 16-week finish is the usual green light clinics cite for broader Collie (Rough) exposure.",
+        "Weight range 50-75 lb (23-34 kg) and grooming needs (Long coat daily care.) belong in the same Collie (Rough) household ops list as vaccine dates when busy weeks collide.",
+        "If your Collie (Rough) is also monitored for collie eye anomaly, ask whether bloodwork or orthopedic checks can share a visit with a booster to cut missed Collie (Rough) appointments.",
+        "After the Collie (Rough) puppy/kitten series, keep adult DA2PP / DHPP and rabies renewals on 7/3/1-day reminders so year-two surprises disappear."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "If your Collie (Rough) misses the dose scheduled near week 12, call the clinic the same day with product names — do not restart the Collie (Rough) series from memory.",
+        "The danger for a delayed Collie (Rough) is the gap, not the embarrassment, because parvovirus pressure stays real for an under-vaccinated puppy even in clean-looking neighborhoods.",
+        "While waiting for the make-up DA2PP / DHPP visit, skip high-traffic dog parks / unknown-cat intros and keep the Collie (Rough) away from unvaccinated animals.",
+        "After catch-up, rewrite reminders for the next Collie (Rough) due date (7, 3, and 1 day prior) so the same miss does not recur."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Collie (Rough) core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual puppy."
+    },
+    {
+      "question": "What should I do if my Collie (Rough) misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Collie (Rough) health context beyond vaccines?",
+      "answer": "See the Collie (Rough) adult health guide for breed predispositions such as mdr1 drug sensitivity, then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "scottish-fold-vaccine-schedule",
+  "path": "/vaccinations/scottish-fold-vaccine-schedule",
+  "kind": "breed",
+  "breedSlug": "scottish-fold",
+  "subjectName": "Scottish Fold",
+  "species": "cat",
+  "primaryKeyword": "Scottish Fold vaccine schedule",
+  "metaDescription": "Scottish Fold vaccine schedule with core ages in weeks. Set reminders so Scottish Fold boosters are not missed.",
+  "reminderVaccine": "FVRCP booster",
+  "breedHealthHref": "/breeds/scottish-fold/adult-health-guide",
+  "breedHealthLabel": "Scottish Fold adult health guide",
+  "bodySections": [
+    {
+      "heading": "Why timing matters for this schedule",
+      "paragraphs": [
+        "Colostrum fade is the clock behind this Scottish Fold table, and doses at 8, 12, 16, 16 weeks exist to immunize the kitten while exposure (parks, foster homes, boarding intros) is rising.",
+        "Boarding desks ask for finished Scottish Fold dates, not intentions, so a Scottish Fold with only the first FVRCP dose is still incomplete for most facilities.",
+        "Osteochondrodysplasia (fold ear cartilage disease) shows up often enough in Scottish Folds that vaccine day is also screening day — keep both on the same visit when possible.",
+        "Store the rabies label with the Scottish Fold profile immediately; lost paperwork is the most common reason Scottish Fold travel and kennel check-ins stall."
+      ]
+    },
+    {
+      "heading": "If a dose is missed or delayed",
+      "paragraphs": [
+        "Owners postpone Scottish Fold shots when the kitten seems “a little off,” travel intervenes, or osteochondrodysplasia (fold ear cartilage disease) worries dominate the week — ask the clinic whether a same-week Scottish Fold make-up is still appropriate instead of sliding to the annual exam.",
+        "Long gaps can leave Scottish Fold antibody levels uncertain, so expect either an added booster or a titer conversation rather than a shrug.",
+        "Do not trade the missed Scottish Fold dose for extra socialization; finish immunity first for this medium cat.",
+        "Reset the Scottish Fold reminder stack the evening of the make-up appointment — including the eventual adult booster after the 16-week finish."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "When does the Scottish Fold core vaccine series usually finish?",
+      "answer": "This breed record completes core vaccines around 16 weeks of age, with rabies timed per local law. Your clinic may adjust intervals for the individual kitten."
+    },
+    {
+      "question": "What should I do if my Scottish Fold misses a booster?",
+      "answer": "Contact your veterinarian for a catch-up plan instead of restarting or skipping ahead. Keep prior dates handy and limit high-risk exposure until the series is current again."
+    },
+    {
+      "question": "Where can I read Scottish Fold health context beyond vaccines?",
+      "answer": "See the Scottish Fold adult health guide for breed predispositions such as osteochondrodysplasia (fold ear cartilage disease), then bring those notes to wellness and vaccine visits."
+    }
+  ]
+}

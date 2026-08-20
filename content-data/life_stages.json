@@ -1,0 +1,109 @@
+[
+  {
+    "slug": "dog-puppy",
+    "name": "Puppy (dog)",
+    "species": "dog",
+    "stage": "puppy",
+    "typical_age_range": "Birth to ~12-18 months (size-dependent; giants mature later)",
+    "care_checklist": [
+      "Complete core vaccine series on the clinic schedule",
+      "Start parasite prevention as prescribed",
+      "Weigh every 1-2 weeks and keep a growth log",
+      "Socialization and bite inhibition training",
+      "House-training and crate/rest routines",
+      "Dental chewing plan and toy safety",
+      "Microchip and ID tags",
+      "Spay/neuter timing discussion with the veterinarian"
+    ],
+    "source_notes": "Age cutoffs vary by breed size. Checklist is preventive-care oriented, not a substitute for a wellness plan."
+  },
+  {
+    "slug": "cat-kitten",
+    "name": "Kitten (cat)",
+    "species": "cat",
+    "stage": "kitten",
+    "typical_age_range": "Birth to ~12 months",
+    "care_checklist": [
+      "Complete FVRCP kitten series and rabies as required",
+      "FeLV testing and FeLV vaccine discussion based on lifestyle",
+      "Parasite prevention as prescribed",
+      "Litter box setup and enrichment",
+      "Nutrition appropriate for growth (measured meals)",
+      "Play and socialization without rough hand play",
+      "Microchip and indoor safety proofing",
+      "Spay/neuter timing discussion with the veterinarian"
+    ],
+    "source_notes": "FeLV recommendations are lifestyle-dependent per AAFP guidance themes."
+  },
+  {
+    "slug": "dog-adult",
+    "name": "Adult (dog)",
+    "species": "dog",
+    "stage": "adult",
+    "typical_age_range": "~1-7 years (earlier senior transition for giant breeds)",
+    "care_checklist": [
+      "Annual (or as advised) wellness exam",
+      "Keep core vaccines current; add lifestyle vaccines if indicated",
+      "Year-round parasite prevention as prescribed",
+      "Body condition scoring and weight checks",
+      "Dental home care and professional cleaning as advised",
+      "Exercise plan matched to breed energy",
+      "Update emergency contacts and records vault",
+      "Discuss breed-risk screening with the veterinarian"
+    ]
+  },
+  {
+    "slug": "cat-adult",
+    "name": "Adult (cat)",
+    "species": "cat",
+    "stage": "adult",
+    "typical_age_range": "~1-10 years (individual variation)",
+    "care_checklist": [
+      "Annual wellness exam (more often if outdoor or chronic disease)",
+      "Keep core vaccines current based on lifestyle",
+      "Parasite prevention as prescribed",
+      "Weight and muscle-condition monitoring",
+      "Litter box hygiene and urinary habit notes",
+      "Dental care plan",
+      "Environmental enrichment and scratching outlets",
+      "Keep vaccine certificates and medical PDFs in one vault"
+    ]
+  },
+  {
+    "slug": "dog-senior",
+    "name": "Senior (dog)",
+    "species": "dog",
+    "stage": "senior",
+    "typical_age_range": "Often ~7+ years (earlier for large/giant breeds)",
+    "care_checklist": [
+      "Exam every 6 months unless otherwise directed",
+      "Baseline and trend labs as recommended",
+      "Pain and mobility screening (joints, spine)",
+      "Dental disease management",
+      "Cognitive change notes (sleep, disorientation, housetraining)",
+      "Calorie adjustment to avoid sarcopenia vs obesity",
+      "Medication log with dose times",
+      "Quality-of-life tracking with the care team"
+    ],
+    "NEEDS_VET_REVIEW": true,
+    "source_notes": "Senior age cutoffs are not universal. NEEDS_VET_REVIEW before publishing breed-specific senior age claims."
+  },
+  {
+    "slug": "cat-senior",
+    "name": "Senior (cat)",
+    "species": "cat",
+    "stage": "senior",
+    "typical_age_range": "Often ~10+ years",
+    "care_checklist": [
+      "Exam every 6 months unless otherwise directed",
+      "Kidney, thyroid, and blood pressure screening as advised",
+      "Track appetite, water intake, and litter box output",
+      "Dental disease management",
+      "Weight and muscle loss monitoring",
+      "Pain assessment (mobility, grooming decline)",
+      "Medication and diet transition logs",
+      "Home modifications for arthritis (steps, litter box access)"
+    ],
+    "source_notes": "CKD and hyperthyroidism are common senior feline themes in clinical practice; screening cadence is veterinarian-directed."
+  }
+]
