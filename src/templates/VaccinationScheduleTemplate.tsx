@@ -130,6 +130,7 @@ export function VaccinationScheduleTemplate({
       related={related}
       relatedHeading="Other vaccine schedules"
       faqs={faqs}
+      medicalReview
     />
   );
 }

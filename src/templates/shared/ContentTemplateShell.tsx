@@ -4,12 +4,19 @@ import type { SEOConfig } from '@/data/seoConfig';
 import {
   Breadcrumbs,
   CTABlock,
+  ContinueReadingStrip,
+  ContentEngagementBar,
+  MedicalReviewByline,
   RelatedLinks,
   SchemaMarkup,
   type BreadcrumbPathItem,
   type CTABlockProps,
   type RelatedLinkItem,
 } from '@/components/content';
+import { buildMedicalWebPageSchema } from '@/seo/medicalWebPageSchema';
+import { getPrimaryMedicalReviewer, MEDICAL_CONTENT_LAST_REVIEWED } from '@/data/editorialBoard';
+import { buildReviewedBySchema } from '@/seo/buildPersonSchema';
+import { ROUTES } from '@/routes/paths';
 import { DataFacts, type DataFactRow } from './DataFacts';
 import styles from './ContentTemplateShell.module.css';
 
@@ -32,8 +39,14 @@ export type ContentTemplateShellProps = {
   relatedHeading?: string;
   faqs?: ContentFaq[];
   afterCta?: ReactNode;
+  /** Optional slot rendered between body and CTA for mid-content nudges. */
+  engagementNudge?: ReactNode;
+  /** Show/hide the sticky engagement bottom bar. Defaults true for indexed pages. */
+  engagementBar?: boolean;
   /** Example routes stay noIndex; production content pillars set false. */
   noIndex?: boolean;
+  /** Enable medical review byline + MedicalWebPage schema. Default false. */
+  medicalReview?: boolean | { lastReviewed?: string };
 };
 
 export function ContentTemplateShell({
@@ -50,8 +63,29 @@ export function ContentTemplateShell({
   relatedHeading,
   faqs,
   afterCta,
+  engagementNudge,
+  engagementBar,
   noIndex = true,
+  medicalReview = false,
 }: ContentTemplateShellProps) {
+  const medicalReviewEnabled = !!medicalReview;
+  const medicalLastReviewed =
+    typeof medicalReview === 'object' && medicalReview.lastReviewed
+      ? medicalReview.lastReviewed
+      : MEDICAL_CONTENT_LAST_REVIEWED;
+
+  const medicalSchema = medicalReviewEnabled
+    ? buildMedicalWebPageSchema({
+        url: meta.canonical ?? '',
+        name: meta.title ?? h1,
+        description: meta.description ?? '',
+        lastReviewed: medicalLastReviewed,
+        reviewedBy: buildReviewedBySchema(getPrimaryMedicalReviewer()),
+      })
+    : null;
+
+  const showEngagementBar = engagementBar ?? !noIndex;
+
   const faqSchema =
     faqs && faqs.length > 0
       ? {
@@ -70,6 +104,7 @@ export function ContentTemplateShell({
     <>
       <MetaTags config={{ ...meta, noIndex }} />
       {faqSchema ? <SchemaMarkup type="FAQPage" data={faqSchema} /> : null}
+      {medicalSchema ? <SchemaMarkup type="MedicalWebPage" data={medicalSchema} /> : null}
 
       <div className={styles.page}>
         <div className={styles.inner}>
@@ -79,9 +114,29 @@ export function ContentTemplateShell({
             {lead ? <p className={styles.lead}>{lead}</p> : null}
           </header>
 
+          {medicalReviewEnabled ? (
+            <MedicalReviewByline
+              lastReviewed={medicalLastReviewed}
+              variant="health"
+            />
+          ) : null}
+
           <DataFacts title={dataTitle} rows={dataRows} lists={dataLists} />
 
           <div className={styles.body}>{body}</div>
+
+          {engagementNudge ? (
+            <aside className={styles.nudge}>{engagementNudge}</aside>
+          ) : !noIndex ? (
+            <aside className={styles.nudge}>
+              <p className={styles.nudgeText}>
+                Save this guide to your pet's vault.{' '}
+                <a href={ROUTES.SIGNUP} className={styles.nudgeLink}>
+                  Create a free account
+                </a>
+              </p>
+            </aside>
+          ) : null}
 
           <div className={styles.ctaWrap}>
             <CTABlock {...cta} />
@@ -104,8 +159,14 @@ export function ContentTemplateShell({
           ) : null}
 
           <RelatedLinks items={related} heading={relatedHeading} />
+
+          <ContinueReadingStrip items={related} heading="Next up" />
         </div>
       </div>
+
+      {showEngagementBar && related.length > 0 ? (
+        <ContentEngagementBar nextItem={related[0]} />
+      ) : null}
     </>
   );
 }

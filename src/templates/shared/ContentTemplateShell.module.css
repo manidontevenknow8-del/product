@@ -53,6 +53,31 @@
   margin: 2rem 0;
 }
 
+.nudge {
+  margin: 1.5rem 0 0.5rem;
+  padding: 0.75rem 1rem;
+  background: #f7f6f3;
+  border-left: 3px solid #d4cfc6;
+}
+
+.nudgeText {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.nudgeLink {
+  color: #121212;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.nudgeLink:hover {
+  color: #000;
+}
+
 .faq {
   margin: 2.25rem 0;
 }

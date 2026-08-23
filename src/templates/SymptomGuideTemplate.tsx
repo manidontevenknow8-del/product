@@ -220,6 +220,7 @@ export function SymptomGuideTemplate({
       related={getSymptomGuideRelated(symptom, page)}
       relatedHeading="Related guides"
       faqs={resolvedFaqs}
+      medicalReview
     />
   );
 }

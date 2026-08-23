@@ -83,6 +83,7 @@ export function EmergencyGuideTemplate({
       related={getRelatedEmergencyPages(relatedSlug, emergency.slug)}
       relatedHeading="Related emergency guides"
       faqs={faqs}
+      medicalReview
       afterCta={
         <p role="note" style={{ marginTop: '1.25rem', fontSize: '0.95rem', lineHeight: 1.5, opacity: 0.9 }}>
           {EMERGENCY_HEALTH_DISCLAIMER}

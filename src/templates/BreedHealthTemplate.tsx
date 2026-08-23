@@ -65,6 +65,7 @@ export function BreedHealthTemplate({
       related={getBreedHealthRelated(breed, lifeStage)}
       relatedHeading="Related guides"
       faqs={faqs}
+      medicalReview
     />
   );
 }

@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-export type SchemaMarkupType = 'Article' | 'FAQPage';
+export type SchemaMarkupType = 'Article' | 'FAQPage' | 'MedicalWebPage' | 'AboutPage';
 
 export type SchemaMarkupProps = {
   type: SchemaMarkupType;
@@ -19,7 +19,7 @@ function withContext(type: SchemaMarkupType, data: Record<string, unknown>) {
   };
 }
 
-/** Outputs a JSON-LD script tag for Article or FAQPage schemas. */
+/** Outputs a JSON-LD script tag for Article, FAQPage, MedicalWebPage, or AboutPage schemas. */
 export function SchemaMarkup({ type, data }: SchemaMarkupProps) {
   const json = useMemo(() => JSON.stringify(withContext(type, data)), [type, data]);
 

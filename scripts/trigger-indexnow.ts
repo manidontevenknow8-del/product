@@ -16,6 +16,7 @@
  */
 
 import { PSEO_MATRIX } from '../src/data/breedConditions';
+import { fileURLToPath } from 'node:url';
 
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
 const HOST = 'petclues.com';
@@ -143,7 +144,11 @@ async function main(): Promise<void> {
   process.exitCode = 1;
 }
 
-main().catch((error) => {
-  console.error(error instanceof Error ? error.message : error);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
+
+if (isDirectRun) {
+  main().catch((error) => {
+    console.error(error instanceof Error ? error.message : error);
+    process.exit(1);
+  });
+}

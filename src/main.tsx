@@ -45,6 +45,8 @@ function scheduleMetaPixelInit() {
 if (!botOptimized) {
   schedulePostHogInit();
   scheduleMetaPixelInit();
+
+  void import('@/analytics/webVitals').then(({ initWebVitals }) => initWebVitals());
 }
 
 if (!botOptimized && 'serviceWorker' in navigator) {

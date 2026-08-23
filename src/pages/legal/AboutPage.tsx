@@ -2,13 +2,32 @@ import { Link } from 'react-router-dom';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Button, Badge } from '@/components/ui';
+import { SchemaMarkup } from '@/components/content';
 import { PAGE_IMG } from '@/data/pageImages';
 import { ROUTES } from '@/routes/paths';
+import { getEditorialBoardForAbout, MEDICAL_DISCLAIMER_SHORT } from '@/data/editorialBoard';
 import styles from './AboutPage.module.css';
+
+const ABOUT_PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'AboutPage',
+  name: 'About PetClues',
+  description:
+    'PetClues preserves pet memories, milestones, and care details. Learn about our editorial standards and team.',
+  url: 'https://petclues.com/about',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'PetClues',
+    url: 'https://petclues.com',
+    description:
+      'PetClues organizes pet health records, vaccination schedules, and care timelines in one place.',
+  },
+};
 
 export function AboutPage() {
   return (
     <div className={styles.page}>
+      <SchemaMarkup type="AboutPage" data={ABOUT_PAGE_SCHEMA} />
       <Header variant="landing" />
 
       {/* 1. Fullscreen emotional hero */}
@@ -186,7 +205,56 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* 7. Trust section */}
+      {/* 7. Editorial Standards */}
+      <section id="editorial-standards" className={styles.section} aria-label="Editorial standards">
+        <div className={`container ${styles.sectionInner}`}>
+          <p className={styles.sectionEyebrow}>Editorial standards</p>
+          <h2 className={styles.sectionTitle}>How health content is reviewed</h2>
+          <p className={styles.sectionLead}>
+            Pet health information carries responsibility. Here is how we approach it.
+          </p>
+
+          <div className={styles.editorialGrid}>
+            <div className={styles.editorialCard}>
+              <h3 className={styles.editorialCardTitle}>Sourcing</h3>
+              <p className={styles.prose}>
+                Health content is synthesized from AVMA and AAHA-aligned public veterinary guidance,
+                peer-reviewed literature where available, and standard clinical reference checklists.
+              </p>
+            </div>
+            <div className={styles.editorialCard}>
+              <h3 className={styles.editorialCardTitle}>Review process</h3>
+              <p className={styles.prose}>
+                Every health page is checked against clinical reference standards before publication.
+                Content is reviewed periodically and updated when guidance changes.
+              </p>
+            </div>
+            <div className={styles.editorialCard}>
+              <h3 className={styles.editorialCardTitle}>Limitations</h3>
+              <p className={styles.prose}>
+                {MEDICAL_DISCLAIMER_SHORT} For diagnosis, treatment, or emergencies, always consult a
+                licensed veterinarian directly.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.editorialBoard}>
+            <h3 className={styles.editorialBoardTitle}>Editorial board</h3>
+            {getEditorialBoardForAbout().map((person) => (
+              <div key={person.id} className={styles.editorialPerson}>
+                <p className={styles.editorialPersonName}>
+                  {person.name}
+                  {person.credentials ? `, ${person.credentials}` : ''}
+                </p>
+                <p className={styles.editorialPersonRole}>{person.role}</p>
+                <p className={styles.prose}>{person.bio}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 8. Trust section */}
       <section className={styles.sectionAlt} aria-label="Trust">
         <div className={`container ${styles.sectionInner}`}>
           <p className={styles.sectionEyebrow}>Trust</p>

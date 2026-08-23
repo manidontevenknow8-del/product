@@ -16,6 +16,8 @@ export type BuildMedicalWebPageOptions = {
   description: string;
   about?: readonly MedicalWebPageAbout[];
   audienceType?: string;
+  lastReviewed?: string;
+  reviewedBy?: object;
 };
 
 /**
@@ -59,6 +61,8 @@ export function buildMedicalWebPageSchema(options: BuildMedicalWebPageOptions) {
       '@type': 'PeopleAudience' as const,
       audienceType: options.audienceType ?? 'Dog Owners, Cat Owners, Veterinary Specialists',
     },
+    ...(options.lastReviewed ? { lastReviewed: options.lastReviewed } : {}),
+    ...(options.reviewedBy ? { reviewedBy: options.reviewedBy } : {}),
     isPartOf: { '@id': WEBSITE_ID },
     publisher: { '@id': ORGANIZATION_ID },
   };

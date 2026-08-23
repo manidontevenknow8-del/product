@@ -5,7 +5,7 @@
  * driven by Agent 11 PASS publish waves.
  *
  * After a recent ~6k page push, defaults are intentionally conservative:
- *   - 40 URLs/day (hard max 100)
+ *   - 40 URLs/day (hard max 200 = Google Indexing API daily quota)
  *   - 2.5s between requests
  *   - ≥24h between live runs
  *   - one wave segment per day
@@ -41,9 +41,9 @@ const PROJECT_ROOT = join(__dirname, '..');
 const INDEXING_SCOPE = 'https://www.googleapis.com/auth/indexing';
 const PUBLISH_ENDPOINT = 'https://indexing.googleapis.com/v3/urlNotifications:publish';
 
-/** Conservative after a large recent push. Override with --limit=N (capped). */
+/** Conservative default; Google's documented Indexing API quota is ~200/day. */
 const DEFAULT_DAILY_LIMIT = 40;
-const HARD_MAX_DAILY = 100;
+const HARD_MAX_DAILY = 200;
 const REQUEST_DELAY_MS = 2500;
 const MIN_HOURS_BETWEEN_RUNS = 24;
 
@@ -177,11 +177,12 @@ function parseArgs(): CliArgs {
   if (!Number.isFinite(limit) || limit < 1) {
     throw new Error('--limit must be a positive number');
   }
-  if (limit > HARD_MAX_DAILY) {
+  const maxLimit = args.includes('--force') ? 2000 : HARD_MAX_DAILY;
+  if (limit > maxLimit) {
     console.warn(
-      `${c.yellow}Clamping --limit=${limit} to hard max ${HARD_MAX_DAILY}/day (sandbox-safe).${c.reset}`,
+      `${c.yellow}Clamping --limit=${limit} to max ${maxLimit}${args.includes('--force') ? ' (--force blast)' : '/day'}.${c.reset}`,
     );
-    limit = HARD_MAX_DAILY;
+    limit = maxLimit;
   }
 
   return {
